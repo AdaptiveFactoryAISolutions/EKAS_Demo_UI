@@ -1,0 +1,11 @@
+# HELP-01 all-pages obligation — provisional V70 delta
+
+Patrick’s later all-pages requirement is additive to the original55rows/35criteria/original351 and three full master texts. Exact user authority reference: Sentinel_95f690cacde4819192dd46748e80c5ba. Do not narrow it to CASE-003 or register page visits as usability acceptance.
+
+The current V70 working slice registers44current screens (original42 plus metriclab/canonicalmetrics), all85original workflow details and8Northworks page states. Existing shared Help is nonmodal; exact help/typo/approval intents precede calculations/mutations in both conversation and root. Current service guard readiness is separate from captured answers; the root uses its own existing local case projection rather than claiming an unconfirmed unified production authority. Exact V66 verification0/10 is covered by source and mounted tests, preserving all decision drafts and case history. No automatic simulation advance, completion, repair proof or grant.
+
+Registration is implemented, but richer procedure/control wording and safe stateful next-step/recovery for every original85workflow, every new service/controlled-document/comparison subview, all relevant role/state/error paths, labels/defaults/validation and accessible mobile controls remain a full coverage obligation. Representative uncoached novice correct completion and recovery needs actual human evidence; simulated agent or owner tests cannot establish it. Exact page/role/state evidence must be recorded before full HELP-01 acceptance.
+
+The confirmed V69 scope P2 is separate from this addition: original target was disclosed, yet scope edits retained confirmation intent. Current guard/pause/field-retention fixes have supporting regressions and require independent V70 retest. The working guide does not close firstRun timing, original351/full masters/native/highcharts/layout/export/security or OpenAI/Tom gates.
+
+See ekas-v70-context-guide-working/docs/V70-HELP-COVERAGE-PROVISIONAL.json (127original screen/workflow rows), V70-CONTEXT-GUIDE-DRAFT.md and V70-PROGRESS-CHECKPOINT.json. Full current owner suite passed1382checks across233files. Final build/package identity and independent review are separate. No Library save or full HELP-01/human-usability acceptance is claimed.

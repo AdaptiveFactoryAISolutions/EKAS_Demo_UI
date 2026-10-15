@@ -1,0 +1,4 @@
+/** The old store formatter used UTC and omitted T/Z, retaining minute precision. */
+function auditEpoch(at:string){if(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}$/.test(at)){const value=Date.parse(at.replace(' ','T')+':00Z');return Number.isFinite(value)&&new Date(value).toISOString().slice(0,16).replace('T',' ')===at?value:NaN}return /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(?::\d{2}(?:\.\d{1,3})?)?(?:Z|[+-]\d{2}:\d{2})$/.test(at)?Date.parse(at):NaN}
+/** Preserve source timestamp strings; never fabricate missing dates or precision. */
+export function retainedAuditWindow(audit:readonly {at:string}[]){const dated=audit.map((event,index)=>({at:event.at,index,epoch:auditEpoch(event.at)})).filter(event=>Number.isFinite(event.epoch)).sort((a,b)=>a.epoch-b.epoch||a.index-b.index);return{start:dated[0]?.at,end:dated.at(-1)?.at,unavailable:audit.length-dated.length,total:audit.length}}

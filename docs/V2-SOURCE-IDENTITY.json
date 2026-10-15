@@ -1,0 +1,60 @@
+{
+  "repository": "/home/pat/EKAS_Platform_v2",
+  "branch": "docs/d274-sonar-host-identity-skips",
+  "head": "fe2635cef64cf99eccad6c84df82bff466cb46df",
+  "inspection": "read-only; no scripts/servers/hooks/backend changes",
+  "files": [
+    {
+      "path": "contracts/pilot/api-surface.v1.md",
+      "sha256": "0da4690ad07052e36d40678376cf18fe6c371e32a85e62225b767bb4fc6f3162"
+    },
+    {
+      "path": "apps/api/ekas_api/conversations.py",
+      "sha256": "cf7f8b3085484c56889dc9a0c485c1bb936cef49a103e28d627b962e5279eb2f"
+    },
+    {
+      "path": "apps/api/ekas_api/knowledge.py",
+      "sha256": "ad6f7e35f2c41d183f6b0ec413591cbf0186863c7f05766c0096c9dc08bd4495"
+    },
+    {
+      "path": "apps/api/ekas_api/acquisition.py",
+      "sha256": "7ae419c1e8ad3eaa73dc35b355d40a87d0f4876eb52cc6ade924b3bfddd9dc31"
+    },
+    {
+      "path": "apps/api/ekas_api/actions.py",
+      "sha256": "0fe685d99def32848f7741325edcf9f1f5869ac77edc82fe41c42331ccdd54ea"
+    },
+    {
+      "path": "apps/api/ekas_api/auth.py",
+      "sha256": "dce3e7806c88be1b1854d8050ca5b511dd3bb4effed6313059d774f48974d745"
+    },
+    {
+      "path": "apps/web/src/features/pilot/schemas.ts",
+      "sha256": "f1a119915cf03380a41d6d8ecb6010f7391839ffaa8be0d326ac9666dd897901"
+    },
+    {
+      "path": "apps/web/src/features/pilot/pilotClient.ts",
+      "sha256": "9c5935dc2f6eab00c03faceb6ec9967e4fc787cf3da13b7fef90210c4e5fa88d"
+    },
+    {
+      "path": "contracts/tools/kernel.compute_metric.arguments.v1.json",
+      "sha256": "a8d335ad2c0fc833970dc1fd8caf5fc10c52a63ebe59d61b1047663de7e54e82"
+    },
+    {
+      "path": "contracts/tools/kernel.compute_metric.result.v1.json",
+      "sha256": "86c07a361fba695862f710bd86cb841632da0f09b4bde6ce8e05e6118b283e74"
+    },
+    {
+      "path": "contracts/charts/oee-chart-contract.v2.json",
+      "sha256": "27cbc6db77088115aa313c817f1e24f43e0b16095e33f43795622288b6fb20e0"
+    },
+    {
+      "path": "contracts/ontology/resolve-terms.v1.json",
+      "sha256": "65e07fc323e451ffda367ee752881909a9c3cfd422b3c21e08f04e0f5a7d8465"
+    },
+    {
+      "path": "contracts/api/openapi-v1.json",
+      "sha256": "e6a9b33022d01600f1e9e9c9cfb0603425ba7ae43ba9c1cee5d96ad27743e95d"
+    }
+  ]
+}

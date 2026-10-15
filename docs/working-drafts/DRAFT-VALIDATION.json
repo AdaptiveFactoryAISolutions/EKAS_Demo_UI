@@ -1,0 +1,9 @@
+{
+  "rows": 55,
+  "criteria": 35,
+  "original351": 351,
+  "original_register_sha256_exact": true,
+  "all_three_master_hashes_match": true,
+  "all_source_evidence_paths_exist": true,
+  "status": "Draft consistency checks only; no acceptance claim"
+}

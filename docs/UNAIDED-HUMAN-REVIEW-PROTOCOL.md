@@ -1,0 +1,13 @@
+# Unaided human product review protocol
+
+Status: prepared procedure, not an executed test or acceptance. Begin only after technical acceptance, on the exact frozen RC identity. Use a fresh representative manufacturing plant leader who has no developer context. Record the exact ZIP/source/static/server identity, browser, viewport, actual zoom, date, reviewer background and actual provider mode. A synthetic transport does not establish real OpenAI conversational quality.
+
+Give the tester only this brief: “Act as a manufacturing plant leader using this demonstration for your work. Explore naturally for two hours. Think aloud when comfortable. Use the product's own help whenever you choose.” Explain that business records are synthetic. Do not provide the developer prompt sequence, suggested answers, navigation instructions or coaching. This is an unscripted 120-minute evaluation, not an agent simulation. If intervention becomes necessary, record its time and nature; do not claim that portion was unaided.
+
+The observer records actual start/end and pauses, confusion, dead ends, incorrect or misleading answers, recovery, time to first value, time to investigation, trust and next-action clarity. Separately observe whether daily review, metrics, comparison, investigation, evidence, hypotheses, actions, approval, performed work, verification, sustain, recovery, Guide and navigation arise naturally. If an area is not exercised, record “not observed”; do not silently count it as passed or steer the tester to it during the unaided period.
+
+Record first useful answer and useful daily review against the under-two-minute thresholds. Record orientation against the 10–15-minute target. Preserve exact quotations only with tester permission, and distinguish the tester's assessment from an observer inference.
+
+After the two-hour period, obtain independent 0–10 ratings and comments for first-use clarity, conversational quality, navigation, investigation coherence, action workflow clarity, learnability and trust. Each target is at least9. Overall live-test readiness must be at least8. Record all actual scores, including failures or missing ratings. Record P0/P1 findings; readiness requires zero of each. Do not fill scores from automated evidence or propose ratings to the tester.
+
+Complete a report with identity, actual duration, observation timeline, timings, unobserved areas, interventions, scores, defects, recovery evidence, limitations and the tester/reviewer's actual readiness decision. Any required product APPROVE must come from the fresh independent reviewer. No decision is prewritten here.

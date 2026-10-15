@@ -1,0 +1,91 @@
+{
+  "namespace": "training-plant-v1",
+  "as_of": "2026-09-29T00:00:00Z",
+  "independentlyComputedFromSeed": true,
+  "production": {
+    "planned_asset_min": 11520,
+    "run_asset_min": 10320,
+    "down_asset_min": 1200,
+    "ideal_total_min": 9283.5,
+    "ideal_good_min": 9106.5,
+    "time_weighted_oee_pct": 79.04947916666667,
+    "availability_pct": 89.58333333333333,
+    "performance_pct": 89.9563953488372,
+    "time_weighted_quality_pct": 98.09339150105025,
+    "count_quality_pct": 98.08660624370594,
+    "good_units": 11688,
+    "total_units": 11916,
+    "loss_waterfall_min": {
+      "availability": 1200,
+      "performance": 1036.5,
+      "quality": 177.0,
+      "ideal_good": 9106.5
+    }
+  },
+  "downtime_reason_min": {
+    "jam": 120,
+    "changeover": 120,
+    "sensor": 130,
+    "starved": 140,
+    "blocked": 150,
+    "repair": 150,
+    "clean": 140,
+    "minor_stop": 130,
+    "other": 120
+  },
+  "delivery": {
+    "orders": 12,
+    "otif_orders": 6,
+    "order_otif_pct": 50.0,
+    "lines": 24,
+    "otif_lines": 15,
+    "line_otif_pct": 62.5
+  },
+  "maintenance": {
+    "due_pm": 8,
+    "on_time_pm": 6,
+    "pm_compliance_pct": 75.0,
+    "known_repairs": 12,
+    "active_elapsed_min": 72,
+    "restoration_elapsed_min": 120,
+    "technician_person_min": 144,
+    "mttr_repair_min": 6,
+    "mttr_restore_min": 10,
+    "mtbfPopulationNotInferred": true
+  },
+  "capabilityAlgebraOnly": {
+    "n": 125,
+    "mean": 100.0,
+    "within_sigma": 2.0,
+    "overall_sigma": 2.5,
+    "cp": 1.6666666666666667,
+    "cpk": 1.6666666666666667,
+    "pp": 1.3333333333333333,
+    "ppk": 1.3333333333333333
+  },
+  "inventory": {
+    "item_opening_value": 300,
+    "item_closing_value": 500,
+    "item_time_weighted_average_90days": 400,
+    "periodTurnsUnavailableWithoutCogs": true
+  },
+  "energy": {
+    "eligible_daily_deltas": 90,
+    "kwh_total": 9000,
+    "idle_kwh": 900,
+    "idle_pct": 10,
+    "threeIntervalPeak_kw": 40,
+    "wholePeriodPeakUnavailablePartialCoverage": true
+  },
+  "safety": {
+    "recordables": 2,
+    "dart": 1,
+    "worked_h": 384,
+    "exposureNote": "only6days labor coverage; do not publish90dayTRIR with this numerator/denominator mismatch"
+  },
+  "finance": {
+    "coq": 150,
+    "copq": 100,
+    "realizedSavingsAvailability": "unavailable"
+  }
+}

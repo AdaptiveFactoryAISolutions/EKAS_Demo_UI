@@ -1,0 +1,9 @@
+import governance from '../../inputs/verification-plan-governance-v57.json';
+import type {CaseFixture,Context} from './cases';
+export type PlanRecord={plan:CaseFixture['verification'];scope:Context;createdAt:string;fixedAt:string|null;reason:string;status:'draft'|'fixed';approval:null|{id:string;actor:string;at:string;synthetic:true;notGranted:true};definitionVersion:'independent-metric-contract-1.0';minimumCoverage:.95;plannedMinPerShift:480;idealCycleMin:.5;source:string};
+export function sourcePlan(f:CaseFixture):PlanRecord{const record=governance.records.find(r=>r.caseId===f.caseId)!;return {plan:structuredClone(f.verification),scope:structuredClone(f.context),createdAt:record.knownAt,fixedAt:record.fixedAt,reason:'Original source policy with explicit additional fictional preregistration governance.',status:'fixed',approval:{id:record.id,actor:record.actor,at:record.approvedAt,synthetic:true,notGranted:true},definitionVersion:'independent-metric-contract-1.0',minimumCoverage:.95,plannedMinPerShift:480,idealCycleMin:.5,source:record.source+'; policy '+f.verification.source}}
+export function draftPlan(f:CaseFixture,target:unknown,requiredShifts:unknown,version:number,at:string,reason:string):PlanRecord{
+ const limit=f.verification.endpoint==='fpy'?100:f.verification.target;
+ if(typeof target!=='number'||!Number.isFinite(target)||target<0||target>limit||f.verification.endpoint==='fpy'&&target<f.verification.target||typeof requiredShifts!=='number'||!Number.isSafeInteger(requiredShifts)||requiredShifts<10||requiredShifts>100)throw Error('Use an own-case target in its declared range and at least ten eligible shifts; no weaker sample or cross-case endpoint.');
+ return {...sourcePlan(f),plan:{...structuredClone(f.verification),version,target,requiredShifts,source:'synthetic-chat-plan-v57; evidence/guardrail authority '+f.verification.source},createdAt:at,fixedAt:null,reason,status:'draft',source:'synthetic-chat-plan-v57',approval:null};
+}

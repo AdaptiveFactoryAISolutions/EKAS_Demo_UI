@@ -1,0 +1,7 @@
+import {it,expect} from 'vitest';import {validConversationResult} from './service';
+import a from '../../inputs/prior-calendar-histories/v81-comparison.json';import b from '../../inputs/prior-calendar-histories/v81-scope.json';import c from '../../inputs/prior-calendar-histories/v82-comparison.json';import d from '../../inputs/prior-calendar-histories/v82-scope.json';import e from '../../inputs/prior-calendar-histories/v83-clock.json';
+import f from '../../inputs/prior-calendar-histories/v87-downtime.json';
+import g from '../../inputs/prior-calendar-histories/v88-asset-duration.json';import h from '../../inputs/prior-calendar-histories/v88-monthly-duration-compare.json';
+const cases=[['v81-comparison',a],['v81-scope',b],['v82-comparison',c],['v82-scope',d],['v83-clock',e],['v87-downtime',f],['v88-asset-duration',g],['v88-monthly-duration-compare',h]] as const;
+it.each(cases)('actual frozen %s history reopens unchanged under newer reader',(_tag,record)=>{const original=JSON.stringify(record);expect(validConversationResult(record,record.id)).toBe(true);expect(JSON.stringify(record)).toBe(original)});
+it.each(cases)('actual frozen %s history cannot be silently replaced by current validity',(_tag,record)=>{const altered=structuredClone(record);altered.content.conversation.turns.at(-1)!.answer.text='Current verified result with no original qualification';expect(validConversationResult(altered,record.id)).toBe(false);expect(altered.content.conversation.turns.at(-1)!.asOf).toBe(record.content.conversation.turns.at(-1)!.asOf)});

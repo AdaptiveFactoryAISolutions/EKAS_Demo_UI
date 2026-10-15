@@ -1,0 +1,12 @@
+import {selectConversationProvider,type ProviderConfiguration} from './providerConfiguration';
+import {createSyntheticSessionAuthority} from './syntheticSession';
+import {MockRepository} from '../platform/mockRepository';import {ManufacturingService,syntheticManufacturingAssets} from '../investigation/service';import {createManufacturingClient} from '../investigation/clientPort';import {createApplicationHandler} from './applicationHandler';import {createNodeApplicationListener} from './nodeListener';import {ownedFileStorage,staticApplicationHandler,syntheticSessionId,syntheticSessionCookieName} from './demoRuntime';import type {Provider} from './conversationBoundary';
+/** Explicit synthetic-only launch; disabled by default, trusted configuration injected. No environment/key reads. */
+export async function startSyntheticApplicationDemo(options:{port:number;directory:string;statePath:string;fakeDelayMs?:number;providerConfiguration?:ProviderConfiguration}){
+ const canonical=new ManufacturingService(new MockRepository(ownedFileStorage(options.statePath))),local=createManufacturingClient(canonical);let conversation=(await local.listConversations()).find(c=>!c.content.conversation.archived);if(!conversation){conversation=await local.createConversation('synthetic-bootstrap');conversation=await local.turn(conversation.id,conversation.version,'Investigate quality on FORM-Q1.','synthetic-context');}
+ if(options.fakeDelayMs!==undefined&&options.providerConfiguration)throw Error('AMBIGUOUS_PROVIDER_CONFIGURATION');const selection=selectConversationProvider(options.providerConfiguration??(options.fakeDelayMs!==undefined?{mode:'scripted-test',delayMs:options.fakeDelayMs}:undefined)),provider=selection.provider;
+ const sessions=createSyntheticSessionAuthority({assetIds:[...syntheticManufacturingAssets],defaultRole:'manager',nextId:syntheticSessionId,cookieName:syntheticSessionCookieName(options.statePath),store:ownedFileStorage(options.statePath+'.roles.json')}),application=createApplicationHandler({canonical,provider,principal:sessions.principal}),handler=staticApplicationHandler(request=>new URL(request.url).pathname==='/api/v1/demo/session'?sessions.handle(request):application(request),options.directory,{version:1,mode:selection.mode,synthetic:true,conversationId:conversation.id}),server=createNodeApplicationListener({handler});await new Promise<void>(resolve=>server.listen(options.port,'127.0.0.1',resolve));return server;
+}
+
+export {prepareOperatorLaunch} from './operatorLaunch';
+export {createProviderBudget} from './providerBudget';

@@ -1,0 +1,3 @@
+import {validWorkspaceQuery} from './stateValidation';import type {Query} from './model';
+export type EmbedPreset={id:string;name:string;query:Query;width:320|390|768;savedAt:string};
+export function validEmbedPresets(value:unknown):value is EmbedPreset[]{return Array.isArray(value)&&value.length<=10&&new Set(value.map(p=>p?.id)).size===value.length&&value.every(p=>p&&typeof p.id==='string'&&p.id.length>0&&typeof p.name==='string'&&p.name.trim().length>0&&p.name.length<=80&&validWorkspaceQuery(p.query)&&[320,390,768].includes(p.width)&&typeof p.savedAt==='string'&&Number.isFinite(Date.parse(p.savedAt)))}

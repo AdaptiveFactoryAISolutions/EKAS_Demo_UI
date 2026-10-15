@@ -1,0 +1,12 @@
+# V104 native continuation inherited qualification
+
+Direct owner Chrome approval resolved the prior authorization block in the independent reviewer’s scope. Fresh V104 native review is PARTIAL, not whole-product acceptance. Preserve both older denial history and this new sampled evidence. The owner performs no browser actions here.
+
+F056 exact owned Board schedule saved and ran locally without dispatch. Sampled quality genealogy/root and obligations preserve unknown quantities/pending PPAP; local review survives reload, impossible Feb31 refuses and valid leap day accepts. Native equal-date sorting proves header state, not changed row order; sampled layout400→444 restored. Export bytes remain untested.
+
+F003 eventually matched active/one across pixel/DOM but earlier capture discrepancy remains qualified; independent report establishes no root cause, so do not invent a fix or close historical V102 discrepancy. F015/F016 remain unavailable in the tested manufacturing Ask view. Current F015 procedure explicitly states panel absent in manufacturing mode and says preserve context instead of forcing a retained query. F016 current recipe describes a global feedback.ask preference, not a historical answer rating. Their retained/training tests do not establish normal manufacturing-target availability or native completion. No hidden alternate target is credited. This is a retained acceptance limitation rather than a new proven mutation defect.
+
+V105 keeps all current notification and secure operator work. Latest independent ordinary baseline is V104 PASS1,103; fresh V105 ordinary/native verification still pending. Live provider, security, Tom integration and held exclusions remain unaccepted.
+
+
+Later17:10 prerequisite diagnosis establishes an actionable Guide applicability/discoverability defect, not failed memory/feedback storage: manufacturing profile lists F015/F016 and starts active guidance but shows only generic unavailable messaging for retained-only targets. Next appropriate V106 will explain/label the actual prerequisite in the normal path without changing layout or exposing inappropriate controls. All75 declared evidence artifacts now verified against independent EVIDENCE-SHA256.json and copied byteexact; prior16:43 report remains separately preserved. F083 note persistence and F084 Cancel/original reload sampled passes retained. Both F003 paired JPEGs inspected read-only and reproduce paused0→active1 capture ordering; root cause still unknown.

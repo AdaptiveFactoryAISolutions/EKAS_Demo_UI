@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "semanticModel": "ekas-manufacturing-shift-v1",
+  "fixtureVersion": "training-plant-v1",
+  "synthetic": true,
+  "entries": {
+    "qa-v42-owned.northworks.guided-v1-main.retained.ekas-answers-v2": "{\"schemaVersion\": 1, \"semanticModel\": \"ekas-manufacturing-shift-v1\", \"fixtureVersion\": \"training-plant-v1\", \"synthetic\": true, \"version\": 1, \"notDispatched\": true, \"notGranted\": true, \"state\": {\"qaDefinition\": {\"fixture\": \"QA-RATE\", \"version\": 99}}}"
+  }
+}

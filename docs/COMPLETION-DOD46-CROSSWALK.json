@@ -1,0 +1,917 @@
+{
+  "source_library_id": "libfile_9a6272df0400819186d232ac73597356",
+  "source_lines": 1003,
+  "source_local_sha256": "98023cd5f34edf12983aa4d458ab4383218ab948c6075e1f50ef2e4bfb8bba70",
+  "status": "46 additive obligations; existing55/35/351/metric/HELP01 preserved, no regrade",
+  "requirements": [
+    {
+      "dod": 1,
+      "text": "One exact final build exists.",
+      "existing_rows": [
+        "MIW-53"
+      ],
+      "existing_criteria": [
+        "TN-29",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 2,
+      "text": "All known current defects are closed.",
+      "existing_rows": [
+        "MIW-20",
+        "MIW-50"
+      ],
+      "existing_criteria": [
+        "TN-07",
+        "TN-26",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 3,
+      "text": "V72 comparison failures are resolved.",
+      "existing_rows": [
+        "MIW-20",
+        "MIW-50"
+      ],
+      "existing_criteria": [
+        "TN-07",
+        "TN-26",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 4,
+      "text": "V71 Guide defect is closed.",
+      "existing_rows": [
+        "MIW-21",
+        "MIW-42"
+      ],
+      "existing_criteria": [
+        "TN-02",
+        "TN-28",
+        "TN-32",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [
+        "HELP-01"
+      ],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 5,
+      "text": "Full conversational chat works naturally.",
+      "existing_rows": [
+        "MIW-30",
+        "MIW-31",
+        "MIW-32",
+        "MIW-33",
+        "MIW-34",
+        "MIW-35",
+        "MIW-36",
+        "MIW-37",
+        "MIW-38",
+        "MIW-39",
+        "MIW-40",
+        "MIW-41",
+        "MIW-42"
+      ],
+      "existing_criteria": [
+        "TN-01",
+        "TN-02",
+        "TN-03",
+        "TN-04",
+        "TN-06",
+        "TN-18",
+        "TN-28",
+        "TN-30",
+        "TN-31",
+        "TN-32",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 6,
+      "text": "Context survives follow-ups/corrections.",
+      "existing_rows": [
+        "MIW-19",
+        "MIW-41",
+        "MIW-43"
+      ],
+      "existing_criteria": [
+        "TN-03",
+        "TN-07",
+        "TN-26",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 7,
+      "text": "Metric switching works.",
+      "existing_rows": [
+        "MIW-39",
+        "MIW-41"
+      ],
+      "existing_criteria": [
+        "TN-03",
+        "TN-04",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [
+        "original351 preservation",
+        "metric registry/cohort"
+      ],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 8,
+      "text": "No wrong-metric fallback.",
+      "existing_rows": [
+        "MIW-39",
+        "MIW-41"
+      ],
+      "existing_criteria": [
+        "TN-03",
+        "TN-04",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [
+        "original351 preservation",
+        "metric registry/cohort"
+      ],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 9,
+      "text": "Daily plant review works.",
+      "existing_rows": [
+        "MIW-29"
+      ],
+      "existing_criteria": [
+        "TN-05",
+        "TN-06",
+        "TN-32",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 10,
+      "text": "Goal exceptions lead into investigation.",
+      "existing_rows": [
+        "MIW-29",
+        "MIW-38",
+        "MIW-40"
+      ],
+      "existing_criteria": [
+        "TN-01",
+        "TN-05",
+        "TN-06",
+        "TN-18",
+        "TN-30",
+        "TN-31",
+        "TN-32",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 11,
+      "text": "Investigation persists.",
+      "existing_rows": [
+        "MIW-19",
+        "MIW-43",
+        "MIW-50"
+      ],
+      "existing_criteria": [
+        "TN-03",
+        "TN-07",
+        "TN-26",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 12,
+      "text": "Loss bridge works.",
+      "existing_rows": [
+        "MIW-02",
+        "MIW-03",
+        "MIW-04"
+      ],
+      "existing_criteria": [
+        "TN-04",
+        "TN-08",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [
+        "original351 preservation",
+        "metric registry/cohort"
+      ],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 13,
+      "text": "Contributors work.",
+      "existing_rows": [
+        "MIW-05",
+        "MIW-07"
+      ],
+      "existing_criteria": [
+        "TN-09",
+        "TN-25",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [
+        "original351 preservation",
+        "metric registry/cohort"
+      ],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 14,
+      "text": "Evidence is traceable.",
+      "existing_rows": [
+        "MIW-06",
+        "MIW-07",
+        "MIW-44"
+      ],
+      "existing_criteria": [
+        "TN-09",
+        "TN-10",
+        "TN-25",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 15,
+      "text": "Facts/hypotheses/causes remain distinct.",
+      "existing_rows": [
+        "MIW-08",
+        "MIW-45"
+      ],
+      "existing_criteria": [
+        "TN-11",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 16,
+      "text": "Ownership works.",
+      "existing_rows": [
+        "MIW-09",
+        "MIW-46"
+      ],
+      "existing_criteria": [
+        "TN-12",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 17,
+      "text": "Assignment acceptance works.",
+      "existing_rows": [
+        "MIW-46"
+      ],
+      "existing_criteria": [
+        "TN-12",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 18,
+      "text": "Authorization works.",
+      "existing_rows": [
+        "MIW-47",
+        "MIW-55"
+      ],
+      "existing_criteria": [
+        "TN-13",
+        "TN-14",
+        "TN-23",
+        "TN-24",
+        "TN-33",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 19,
+      "text": "Performed work is distinct.",
+      "existing_rows": [
+        "MIW-11",
+        "MIW-47"
+      ],
+      "existing_criteria": [
+        "TN-13",
+        "TN-14",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 20,
+      "text": "Verification works.",
+      "existing_rows": [
+        "MIW-12",
+        "MIW-13",
+        "MIW-48"
+      ],
+      "existing_criteria": [
+        "TN-08",
+        "TN-15",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 21,
+      "text": "Sustain works.",
+      "existing_rows": [
+        "MIW-14",
+        "MIW-49"
+      ],
+      "existing_criteria": [
+        "TN-16",
+        "TN-17",
+        "TN-18",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 22,
+      "text": "Reopen works.",
+      "existing_rows": [
+        "MIW-14",
+        "MIW-40",
+        "MIW-49"
+      ],
+      "existing_criteria": [
+        "TN-01",
+        "TN-06",
+        "TN-16",
+        "TN-17",
+        "TN-18",
+        "TN-30",
+        "TN-31",
+        "TN-32",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 23,
+      "text": "Downtime case works.",
+      "existing_rows": [
+        "MIW-26"
+      ],
+      "existing_criteria": [
+        "TN-01",
+        "TN-06",
+        "TN-09",
+        "TN-18",
+        "TN-19",
+        "TN-30",
+        "TN-31",
+        "TN-32",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 24,
+      "text": "Speed-loss case works.",
+      "existing_rows": [
+        "MIW-27"
+      ],
+      "existing_criteria": [
+        "TN-01",
+        "TN-18",
+        "TN-20",
+        "TN-30",
+        "TN-31",
+        "TN-32",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 25,
+      "text": "Quality-loss case works.",
+      "existing_rows": [
+        "MIW-28"
+      ],
+      "existing_criteria": [
+        "TN-01",
+        "TN-18",
+        "TN-21",
+        "TN-30",
+        "TN-31",
+        "TN-32",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 26,
+      "text": "Guide works across required states.",
+      "existing_rows": [
+        "MIW-21",
+        "MIW-22",
+        "MIW-23",
+        "MIW-42"
+      ],
+      "existing_criteria": [
+        "TN-02",
+        "TN-27",
+        "TN-28",
+        "TN-32",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [
+        "HELP-01"
+      ],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 27,
+      "text": "Mock data drives real service behavior.",
+      "existing_rows": [
+        "MIW-01",
+        "MIW-51",
+        "MIW-52"
+      ],
+      "existing_criteria": [
+        "TN-01",
+        "TN-04",
+        "TN-22",
+        "TN-23",
+        "TN-30",
+        "TN-32",
+        "TN-33",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 28,
+      "text": "UI does not require direct fixture manipulation.",
+      "existing_rows": [
+        "MIW-51",
+        "MIW-52"
+      ],
+      "existing_criteria": [
+        "TN-04",
+        "TN-22",
+        "TN-23",
+        "TN-30",
+        "TN-33",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 29,
+      "text": "Typed service/API boundaries are stable.",
+      "existing_rows": [
+        "MIW-51",
+        "MIW-52"
+      ],
+      "existing_criteria": [
+        "TN-04",
+        "TN-22",
+        "TN-23",
+        "TN-30",
+        "TN-33",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 30,
+      "text": "Backend adapter path is documented.",
+      "existing_rows": [
+        "MIW-51",
+        "MIW-55"
+      ],
+      "existing_criteria": [
+        "TN-04",
+        "TN-13",
+        "TN-14",
+        "TN-22",
+        "TN-23",
+        "TN-24",
+        "TN-30",
+        "TN-33",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 31,
+      "text": "Security remains intact.",
+      "existing_rows": [
+        "MIW-54",
+        "MIW-55"
+      ],
+      "existing_criteria": [
+        "TN-13",
+        "TN-14",
+        "TN-23",
+        "TN-24",
+        "TN-26",
+        "TN-33",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 32,
+      "text": "Persistence/reload works.",
+      "existing_rows": [
+        "MIW-19",
+        "MIW-43",
+        "MIW-50"
+      ],
+      "existing_criteria": [
+        "TN-03",
+        "TN-07",
+        "TN-26",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 33,
+      "text": "Recovery works.",
+      "existing_rows": [
+        "MIW-20",
+        "MIW-50"
+      ],
+      "existing_criteria": [
+        "TN-07",
+        "TN-26",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 34,
+      "text": "Copy/export/print work where required.",
+      "existing_rows": [
+        "MIW-24"
+      ],
+      "existing_criteria": [
+        "TN-25",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 35,
+      "text": "Desktop passes.",
+      "existing_rows": [
+        "MIW-21"
+      ],
+      "existing_criteria": [
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 36,
+      "text": "390 px passes.",
+      "existing_rows": [
+        "MIW-22"
+      ],
+      "existing_criteria": [
+        "TN-27",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 37,
+      "text": "320 px passes.",
+      "existing_rows": [
+        "MIW-22"
+      ],
+      "existing_criteria": [
+        "TN-27",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 38,
+      "text": "Keyboard passes.",
+      "existing_rows": [
+        "MIW-23"
+      ],
+      "existing_criteria": [
+        "TN-28",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 39,
+      "text": "Accessibility passes.",
+      "existing_rows": [
+        "MIW-23",
+        "MIW-42"
+      ],
+      "existing_criteria": [
+        "TN-02",
+        "TN-28",
+        "TN-32",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 40,
+      "text": "Perceived performance is acceptable.",
+      "existing_rows": [
+        "MIW-20",
+        "MIW-42"
+      ],
+      "existing_criteria": [
+        "TN-02",
+        "TN-28",
+        "TN-32",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 41,
+      "text": "Existing accepted functionality remains intact.",
+      "existing_rows": [
+        "MIW-53"
+      ],
+      "existing_criteria": [
+        "TN-29",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [
+        "original351 preservation",
+        "metric registry/cohort"
+      ],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 42,
+      "text": "End-user documentation matches the build.",
+      "existing_rows": [
+        "MIW-21",
+        "MIW-42",
+        "MIW-53"
+      ],
+      "existing_criteria": [
+        "TN-02",
+        "TN-28",
+        "TN-29",
+        "TN-32",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 43,
+      "text": "Developer/API documentation matches the build.",
+      "existing_rows": [
+        "MIW-51",
+        "MIW-55"
+      ],
+      "existing_criteria": [
+        "TN-04",
+        "TN-13",
+        "TN-14",
+        "TN-22",
+        "TN-23",
+        "TN-24",
+        "TN-30",
+        "TN-33",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 44,
+      "text": "Cowork plant-leader usability review passes.",
+      "existing_rows": [
+        "MIW-26",
+        "MIW-27",
+        "MIW-28",
+        "MIW-29",
+        "MIW-40",
+        "MIW-42"
+      ],
+      "existing_criteria": [
+        "TN-01",
+        "TN-02",
+        "TN-05",
+        "TN-06",
+        "TN-09",
+        "TN-18",
+        "TN-19",
+        "TN-20",
+        "TN-21",
+        "TN-28",
+        "TN-30",
+        "TN-31",
+        "TN-32",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 45,
+      "text": "Fresh independent review returns APPROVE.",
+      "existing_rows": [
+        "MIW-01",
+        "MIW-53"
+      ],
+      "existing_criteria": [
+        "TN-01",
+        "TN-29",
+        "TN-30",
+        "TN-32",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    },
+    {
+      "dod": 46,
+      "text": "No current-scope blocker remains.",
+      "existing_rows": [
+        "MIW-01",
+        "MIW-20",
+        "MIW-55"
+      ],
+      "existing_criteria": [
+        "TN-01",
+        "TN-13",
+        "TN-14",
+        "TN-23",
+        "TN-24",
+        "TN-30",
+        "TN-32",
+        "TN-33",
+        "TN-34",
+        "TN-35"
+      ],
+      "additional_registers": [],
+      "acceptance": "NOT_ASSERTED",
+      "note": "Cross-reference only; does not substitute bounded tests for whole requirement."
+    }
+  ],
+  "distinct_gates": {
+    "independent_code_domain_native": "Required fresh exact-candidate APPROVE",
+    "Cowork_roleplay": "Separately authorized external review; not launched or passed",
+    "inexperienced_human": "Distinct unaided acceptance; not satisfied by roleplay or DOM",
+    "OpenAI_Tom": "Optional live activation/conformance separate from local demo; no credentials/API invented"
+  },
+  "source_size_bytes": 21377,
+  "complete_read_and_reconstructed_bytes_match_reported_size": true
+}

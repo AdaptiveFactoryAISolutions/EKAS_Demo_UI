@@ -1,0 +1,1064 @@
+EKAS INDUSTRY-LEADING UI COMPLETION GOAL
+CHAT-FIRST UNIFICATION + ZERO REGRESSION
+
+MISSION
+
+Complete the EKAS UI so it becomes one cohesive, industry-leading manufacturing intelligence product for real plant users.
+
+This is a product-completion goal, not a cosmetic redesign.
+
+The objective is to preserve all working EKAS capabilities while eliminating the fragmentation, confusing navigation, contradictory state, conversational dead ends, hidden workflows, and developer-oriented presentation identified in the independent end-user review.
+
+The final user experience must feel like:
+
+ONE MANUFACTURING EXPERT
+ONE CONVERSATION
+ONE CONTEXT
+ONE INVESTIGATION STATE
+ONE EVIDENCE MODEL
+ONE ACTION LIFECYCLE
+ONE COHESIVE PRODUCT
+
+Do not simplify EKAS by removing capability.
+
+Simplify EKAS by reorganizing and progressively disclosing capability.
+
+==================================================
+SOURCE OF TRUTH
+==================================================
+
+Use the independent EKAS Pre-Live End-User Acceptance Report as the governing usability baseline.
+
+The current user verdict is:
+
+NOT READY FOR LIVE USER TESTING
+
+Primary live-pilot blockers include:
+
+P0
+- silent metric/plant substitution;
+- contradictory case state across surfaces.
+
+P1
+- wrong front door;
+- common conversational follow-ups fail;
+- sticky/leaking context;
+- case workflow cannot be progressed from chat;
+- scenario/time controls can overwrite user-entered state.
+
+The current report also identifies important strengths that MUST be preserved:
+
+- EKAS does not invent causes;
+- plan gap and capacity loss remain distinct;
+- comparisons and corrections work well in supported cases;
+- unavailable is not treated as zero;
+- premature actions fail safely;
+- approval, performed work, verification, sustain and cause remain separate;
+- verification guardrails are strong;
+- controlled/superseded/uncontrolled documents remain distinct;
+- synthetic/fictional status is explicit;
+- reload/navigation persistence is strong;
+- performance is good.
+
+==================================================
+ABSOLUTE PRODUCT PRINCIPLE
+==================================================
+
+EKAS must behave like:
+
+one manufacturing expert with many capabilities,
+
+not:
+
+many applications with one brand.
+
+The conversation becomes the primary plant-user operating environment.
+
+Supporting screens become views into the SAME underlying context and state.
+
+==================================================
+ZERO-REGRESSION CONTRACT
+==================================================
+
+The usability transformation MUST NOT regress any accepted EKAS behavior.
+
+Before changing UI architecture, create a protected regression baseline for all accepted capabilities.
+
+At minimum protect:
+
+- metric arithmetic;
+- source-unit behavior;
+- comparison semantics;
+- primary/comparison-period separation;
+- explicit metric switching;
+- unavailable-state behavior;
+- evidence/provenance;
+- historical immutability;
+- corrected-answer preservation;
+- case-state transitions;
+- assignment;
+- authorization;
+- performed work;
+- verification;
+- sustain;
+- recurrence;
+- reopen;
+- controlled document effectivity;
+- superseded-document handling;
+- safe failure;
+- synthetic labeling;
+- persistence/reload;
+- security/policy controls;
+- tenant/scope constraints;
+- idempotency/versioning;
+- responsive behavior;
+- keyboard/accessibility behaviors already passing.
+
+If a UI change breaks any protected behavior:
+
+STOP
+FIX REGRESSION
+RERUN PROTECTED TESTS
+ONLY THEN CONTINUE.
+
+No functionality may be removed merely to make the UI simpler.
+
+==================================================
+PHASE 0 — BASELINE AND PROTECTION
+==================================================
+
+Before implementation:
+
+1. Record exact current branch/head.
+2. Record current accepted/frozen baselines.
+3. Build a no-regression matrix:
+   capability
+   current evidence
+   test
+   browser journey
+   protected invariant.
+4. Identify all accepted behavior from prior checkpoints/reviews.
+5. Freeze screenshots/evidence for:
+   - chat;
+   - plant review;
+   - investigation;
+   - evidence;
+   - action;
+   - verification;
+   - sustain;
+   - responsive/mobile;
+   - keyboard.
+6. Do not begin broad UI refactoring until this baseline exists.
+
+==================================================
+PHASE 1 — FIX P0 TRUST FAILURES FIRST
+==================================================
+
+P0-A: SILENT METRIC / PLANT SUBSTITUTION
+
+Absolute rule:
+
+If EKAS cannot answer the requested metric + plant + entity + period,
+it must clarify or refuse.
+
+It must NEVER silently substitute:
+- another metric;
+- another plant;
+- another dataset;
+- another investigation.
+
+Examples that must be fixed:
+
+"Why did quality drop?"
+must not answer good units from a different plant.
+
+"Why was FPY lower?"
+must not answer a downtime bridge.
+
+Before response publication validate:
+
+requested metric
+resolved metric
+
+requested plant
+resolved plant
+
+requested entity
+resolved entity
+
+requested period
+resolved period
+
+requested investigation
+resolved investigation
+
+If materially different:
+CLARIFY OR REFUSE.
+
+Do not publish a confident unrelated answer.
+
+==================================================
+P0-B — ONE CASE, ONE STATE
+==================================================
+
+Ask, chat, Guide, case workspace, evidence, actions and verification must all consume one canonical investigation state.
+
+Eliminate:
+
+Ask state
+≠ Northworks state
+≠ Guide state
+≠ case screen state
+
+One authoritative Investigation aggregate/service must own:
+
+- case version;
+- owner;
+- assignment state;
+- recommendation;
+- authorization;
+- performed work;
+- verification;
+- sustain;
+- recurrence;
+- history.
+
+Every UI surface renders that same state.
+
+No local duplicate status stores.
+
+==================================================
+PHASE 2 — MAKE CHAT THE PLANT-USER PRODUCT
+==================================================
+
+For plant-facing roles, make the conversational EKAS experience the default Home/Ask experience.
+
+The user should land in:
+
+- current plant context;
+- current shift/period;
+- key status;
+- active conversation;
+- suggested starting questions.
+
+Do not land plant users in a BI/developer shell.
+
+Preserve analyst/developer capabilities, but role-hide them from ordinary plant navigation.
+
+Plant-role primary navigation should be approximately:
+
+- New conversation
+- Conversations
+- Plant review
+- Investigations
+- Boards
+
+Advanced/role-based tools may include:
+
+- Search
+- Catalog
+- Metric workbench
+- Data
+- Develop
+- Inspection
+- Admin
+
+Do not delete these capabilities.
+
+Move them behind the appropriate role/advanced access.
+
+==================================================
+PHASE 3 — MERGE THE TWO CHAT EXPERIENCES
+==================================================
+
+There must be ONE canonical chat experience.
+
+Merge the strengths of:
+- Ask
+- Northworks conversation
+
+into one continuous transcript.
+
+Requirements:
+
+- full transcript;
+- pinned composer;
+- Enter submits;
+- Shift+Enter newline;
+- stable Run/send control;
+- earlier replies remain visible;
+- context persists;
+- investigation persists;
+- reload persists;
+- correction persists;
+- evidence/action controls can appear inline.
+
+Do not maintain two competing conversational systems.
+
+==================================================
+PHASE 4 — UNIVERSAL CONTEXT BAR
+==================================================
+
+Create one persistent context bar across plant-facing surfaces.
+
+Example:
+
+Northworks · Line 03 · FEED03 · JOB8303 · NW-A Rev P2 · Oct 6 day shift · Synthetic
+Investigation: Feeder jam · Cycle 1
+
+Context dimensions should be independently managed:
+
+- plant;
+- line;
+- asset;
+- job;
+- part;
+- revision;
+- operation;
+- shift;
+- primary period;
+- comparison period;
+- metric;
+- investigation;
+- cycle.
+
+Users must be able to:
+- see;
+- change;
+- clear
+
+relevant context.
+
+The bar is driven from authoritative ContextContract/state.
+
+Not local page state.
+
+==================================================
+PHASE 5 — EXPLICIT TOPIC / CONTEXT SEMANTICS
+==================================================
+
+Implement a conversational intent policy distinguishing:
+
+FOLLOW-UP
+"Why?"
+
+DIMENSION CHANGE
+"What about Machine 2?"
+
+COMPARISON
+"Compare with last month."
+
+NEW METRIC
+"What was FPY?"
+
+NEW TOPIC
+"Run my plant review."
+
+NEW INVESTIGATION
+"Investigate quality."
+
+New-topic/new-investigation requests must release incompatible sticky context.
+
+Do not let:
+- Machine 1 leak into unrelated speed case;
+- February comparison leak into October case;
+- active investigation block plant review;
+- ordinal words such as "first" become asset names.
+
+==================================================
+PHASE 6 — ROBUST CONVERSATIONAL INTENTS
+==================================================
+
+Support everyday plant-leader follow-ups from any appropriate state:
+
+"What should I focus on first?"
+"How do you know that?"
+"Are you sure?"
+"What proves it?"
+"Where did we lose the most?"
+"What should we check first?"
+"Did maintenance accept it?"
+"What should we do?"
+"Did it work?"
+"Did it hold?"
+"Why is this called a recurrence?"
+"What did this cost us?"
+"So is that the root cause?"
+
+When intent is still ambiguous:
+
+do not return generic developer language.
+
+Offer likely next questions/actions.
+
+Example:
+
+"I can help with that. Are you asking about:
+- the biggest production loss,
+- the evidence behind the feeder-jam hypothesis,
+- or the next action?"
+
+==================================================
+PHASE 7 — NEXT ACTION AS A FIRST-CLASS SERVICE
+==================================================
+
+Every workflow state must expose:
+
+- current state;
+- missing prerequisite;
+- allowed next actions;
+- recommended next action;
+- blocked reason.
+
+The user should always know:
+
+WHAT HAPPENED
+WHAT IS MISSING
+WHAT TO DO NEXT
+
+Examples:
+
+"Maintenance assignment is waiting for acceptance."
+[Accept assignment]
+
+"A bounded action is required before approval."
+[Review recommended action]
+
+"Approval is required before work can be recorded."
+[Request approval]
+
+"No post-action observations are available yet."
+[Advance demo time]
+
+This guidance must come from workflow/service state, not hard-coded page copy.
+
+==================================================
+PHASE 8 — FULL CASE LIFECYCLE FROM CHAT
+==================================================
+
+A plant leader must be able to progress the entire case from chat:
+
+- open investigation;
+- inspect contributors;
+- inspect evidence;
+- ask possible causes;
+- create/test hypothesis;
+- assign owner;
+- accept assignment;
+- create recommendation;
+- request authorization;
+- approve/reject;
+- record performed work;
+- start verification;
+- advance simulation time;
+- inspect results;
+- accept/reject result;
+- enter sustain;
+- detect recurrence;
+- reopen next cycle.
+
+No hidden developer-only step may be required.
+
+Supporting screens remain available for deeper inspection.
+
+==================================================
+PHASE 9 — SAFE DEMO TIMELINE
+==================================================
+
+Replace the hidden "Simulated scenario" behavior with an explicit Demo Timeline.
+
+Requirements:
+
+- current simulated date/time visible;
+- next authored milestone visible;
+- user must intentionally advance;
+- confirmation explains effect;
+- existing user-entered records preserved;
+- no silent state replacement.
+
+Example:
+
+Current simulated time:
+Oct 6, 2:00 PM
+
+"No post-action measurements are available yet."
+
+[Advance to Oct 20 measurement period]
+
+Confirmation:
+
+"This advances the synthetic demo clock. Your recorded investigation and work history will be preserved."
+
+Do NOT overwrite SIM records with DEMO fixture records.
+
+==================================================
+PHASE 10 — PLANT REVIEW REDESIGN
+==================================================
+
+Keep the existing seven governed metrics.
+
+Present them as a concise scorecard:
+
+Production vs Plan
+OEE
+Downtime
+Quality Loss
+Schedule Adherence
+Inventory Days
+OTIF
+
+Each row:
+
+Metric
+Actual
+Target
+Status
+Change if useful
+
+Then exactly one recommended priority:
+
+FOCUS FIRST:
+<issue>
+
+WHY:
+<evidence-based reason>
+
+Actions:
+
+[Investigate]
+[Show evidence]
+[Compare]
+
+Do not return a 400-word wall of text for normal daily review.
+
+Do not present competing priorities without explaining the ranking method.
+
+==================================================
+PHASE 11 — EVIDENCE PRESENTATION LAYER
+==================================================
+
+Preserve the strong evidence model.
+
+Change the default presentation.
+
+PLAIN LANGUAGE FIRST.
+
+Example:
+
+PFMEA 030 — Current
+Failure mode: Interrupted feed / feeder jam
+Detection control: DC 030-01
+Effective: Sep 16, 2026
+Status: Controlled
+
+Technical details ▸
+
+Only under Technical details expose:
+
+- raw JSON;
+- internal path;
+- source IDs;
+- hashes;
+- implementation codes.
+
+Translate:
+
+- FIC codes;
+- tuple;
+- cohort;
+- finite grammar;
+- authored alias map;
+- source fixture paths
+
+into user language.
+
+==================================================
+PHASE 12 — GUARDRAILS / EMPTY STATES
+==================================================
+
+Never combine:
+
+PENDING
+and
+FAILED.
+
+Show separately:
+
+Quality: Pending
+Energy: Passed
+Safety: Pending
+
+Hypotheses section must have a meaningful empty state.
+
+Example:
+
+"No hypotheses have been recorded yet."
+
+or
+
+"Two hypotheses are under investigation."
+
+==================================================
+PHASE 13 — DISABLED CONTROLS
+==================================================
+
+Disabled actions must:
+
+- remain readable;
+- look disabled;
+- explain why;
+- show the prerequisite;
+- provide the next available action if possible.
+
+No invisible disabled text.
+
+No enabled-looking dead buttons.
+
+No silent click.
+
+==================================================
+PHASE 14 — TIME / CYCLE CONSISTENCY
+==================================================
+
+Every visible date/cutoff/scope indicator must track the active simulation/state.
+
+If snapshot is Oct 20:
+do not show Oct 6 as though current.
+
+Sustain tiles must show:
+
+- units;
+- success target;
+- recurrence threshold;
+- current state.
+
+Reopen must visibly create:
+
+Cycle 2
+
+or the correct new cycle/version.
+
+==================================================
+PHASE 15 — ROLE-SENSITIVE EXPERIENCE
+==================================================
+
+Use the same governed truth, but adapt presentation depth.
+
+Plant Manager:
+- concise decision summary.
+
+Operations Manager:
+- plant/line comparison.
+
+Supervisor:
+- shift/asset/action focus.
+
+Maintenance Manager:
+- assigned cases/work/evidence.
+
+Quality Manager:
+- quality cases/document evidence.
+
+Manufacturing Engineer:
+- deeper calculations/evidence.
+
+Analyst:
+- Search/Boards/metric tools.
+
+Developer/Admin:
+- contracts/inspection/develop/admin.
+
+Do not duplicate truth logic by role.
+
+Only presentation/navigation changes by role.
+
+==================================================
+PHASE 16 — ONE DESIGN SYSTEM
+==================================================
+
+Standardize:
+
+- navigation;
+- transcript;
+- composer;
+- context bar;
+- drawers;
+- buttons;
+- state pills;
+- empty states;
+- loading states;
+- errors;
+- evidence cards;
+- next-action pattern;
+- responsive layout.
+
+Do not create another visual language.
+
+Use the conversational interface as the design anchor.
+
+==================================================
+PHASE 17 — MOBILE / ZOOM / ACCESSIBILITY
+==================================================
+
+Correct the current issues:
+
+- excessive chrome before first answer;
+- cramped tabs;
+- five stacked full-width buttons per answer;
+- sticky header occupying too much at 200% zoom;
+- no main-shell skip link;
+- Ask keyboard submit missing;
+- disabled-control contrast.
+
+Validate:
+
+1366x768
+390x844
+320x844
+200% zoom where applicable.
+
+No horizontal overflow.
+No focus trap.
+Visible focus.
+Logical tab order.
+Enter/Shift+Enter works.
+Escape returns focus.
+
+==================================================
+PHASE 18 — ERROR RECOVERY
+==================================================
+
+Rewrite developer errors into recoverable user guidance.
+
+BAD:
+
+"An explicitly requested asset is not supplied by the authored asset/alias map."
+
+GOOD:
+
+"I don't have a Machine 9 in this demo. Available machines are Machine 1 and Machine 2. I also couldn't interpret 'Febtober' as a month."
+
+Every recoverable error should:
+
+- explain the issue;
+- preserve valid context;
+- list valid options;
+- provide a next step.
+
+==================================================
+PHASE 19 — COPY / EXPORT
+==================================================
+
+Copy answer should include enough context to remain meaningful:
+
+- result;
+- plant/scope;
+- period;
+- synthetic/demo label where applicable.
+
+Do not leak technical-only detail.
+
+==================================================
+PHASE 20 — PROTECT CURRENT STRENGTHS
+==================================================
+
+The following are HARD INVARIANTS:
+
+1. Never invent a cause.
+2. Plan gap and capacity-loss baseline remain separate.
+3. Comparison period never silently replaces primary period.
+4. Missing/unavailable never becomes zero.
+5. Premature actions fail closed.
+6. Approval != performed work.
+7. Performed work != verification.
+8. Verification != causal proof.
+9. Controlled != superseded != uncontrolled.
+10. Synthetic/demo state remains explicit.
+11. Historical answers remain immutable.
+12. Reload/navigation persistence remains.
+13. Security/policy boundaries remain.
+14. Metric definitions/calculations remain governed.
+15. No wrong-metric fallback.
+
+Create regression tests for all 15.
+
+==================================================
+PHASE 21 — IMPLEMENTATION ORDER
+==================================================
+
+Execute in this order:
+
+1. Build no-regression baseline.
+2. Fix F01 silent substitution.
+3. Fix F02 canonical case state.
+4. Unify chat state.
+5. Create role-based plant shell.
+6. Make chat Home.
+7. Add universal context bar.
+8. Add topic-reset/context policy.
+9. Repair common conversational intents.
+10. Add next-action service/presenter.
+11. Make full workflow operable from chat.
+12. Replace scenario picker with safe Demo Timeline.
+13. Redesign Plant Review.
+14. Redesign Evidence presentation.
+15. Fix guardrail/hypothesis states.
+16. Fix disabled controls.
+17. Fix time/cycle indicators.
+18. Standardize design system.
+19. Fix responsive/accessibility.
+20. Fix errors/recovery.
+21. Run full regression.
+22. Run visible Chrome acceptance.
+23. Run fresh plant-leader usability test.
+24. Fix remaining P0/P1.
+25. Freeze exact candidate.
+26. Fresh independent final review.
+
+Do not start unrelated new functionality during this sequence.
+
+==================================================
+TESTING STRATEGY
+==================================================
+
+During implementation:
+
+BUILD
+→ TARGETED TEST
+→ REAL CHROME
+→ FIX
+→ REPEAT
+
+For every major UI architecture change:
+
+run protected regression cohort first.
+
+At final candidate:
+
+- full owner suite;
+- domain/oracle;
+- security regression;
+- conversational master chain;
+- investigation chain;
+- plant review;
+- action chain;
+- verification/sustain;
+- persistence/reload;
+- mobile;
+- accessibility;
+- fresh extraction.
+
+==================================================
+MANDATORY CONVERSATIONAL ACCEPTANCE
+==================================================
+
+Fresh conversation:
+
+"What was OEE in January?"
+"And March?"
+"What about Machine 2?"
+"No, I meant Machine 1."
+"Why?"
+"Show me."
+"Compare it with last month."
+"Go back to the first machine."
+"What was FPY?"
+
+Then:
+
+"Run my plant review."
+"What's off target?"
+"What should I focus on first?"
+"Investigate it."
+"Where did we lose the most?"
+"Which line?"
+"Which machine?"
+"What job?"
+"What evidence do we have?"
+"How do you know that?"
+"Are you sure?"
+"What are the possible causes?"
+"What should we check first?"
+"Who owns it?"
+"Assign it to maintenance."
+"Did maintenance accept it?"
+"What should we do?"
+"Request approval."
+"Was it approved?"
+"Record the repair."
+"Did it work?"
+"Show me."
+"Did it hold?"
+"Why is this called a recurrence?"
+"Reopen it."
+
+PASS requires:
+
+- correct metric;
+- correct plant;
+- correct period;
+- correct context;
+- correct case;
+- one consistent case state;
+- natural response;
+- no wrong substitution;
+- no context wedge;
+- no hidden manual workaround.
+
+==================================================
+MANDATORY PLANT-LEADER USABILITY RETEST
+==================================================
+
+Use a fresh Claude Cowork/session with no developer context.
+
+Role-play a plant leader.
+
+Repeat the same comprehensive pre-live end-user test.
+
+Required outcome:
+
+READY FOR LIVE USER TESTING
+
+Hard exit criteria:
+
+0 P0
+0 P1
+
+And scores:
+
+First-use clarity >= 9/10
+Conversational quality >= 9/10
+Navigation >= 9/10
+Investigation coherence >= 9/10
+Action workflow clarity >= 9/10
+Learnability >= 9/10
+Trust >= 9/10
+Overall readiness >= 8/10
+
+Target orientation:
+<= 10–15 minutes
+
+Target:
+new plant leader gets first useful answer in <2 minutes.
+
+Target:
+daily plant review usable in <2 minutes.
+
+==================================================
+FINAL FREEZE
+==================================================
+
+Only after all required acceptance passes:
+
+freeze exact artifact.
+
+Record:
+
+- ZIP hash;
+- source hash;
+- build hash;
+- member hashes;
+- size;
+- exact path;
+- test evidence;
+- native evidence;
+- usability evidence.
+
+==================================================
+INDEPENDENT FINAL REVIEW
+==================================================
+
+Fresh independent reviewer must verify:
+
+- no-regression matrix;
+- corrected P0/P1 findings;
+- chat-first product shell;
+- canonical state;
+- context semantics;
+- workflow;
+- evidence;
+- Plant Review;
+- mobile/accessibility;
+- preserved manufacturing logic;
+- security.
+
+Require:
+
+VERDICT: APPROVE
+
+No self-approval.
+
+==================================================
+DEFINITION OF DONE
+==================================================
+
+This goal is complete only when:
+
+1. EKAS feels like one product.
+2. Plant users land in chat.
+3. Analyst/developer capability remains preserved.
+4. No silent metric/plant substitution exists.
+5. One case has one state everywhere.
+6. One canonical conversation exists.
+7. One context bar exists.
+8. Sticky context is controlled.
+9. New-topic resets work.
+10. Common follow-ups work.
+11. Generic dead ends are replaced by guided recovery.
+12. Full case lifecycle can be driven from chat.
+13. Next action is always understandable.
+14. Demo timeline is explicit and non-destructive.
+15. Plant Review is scannable in under two minutes.
+16. One recommended priority is clearly explained.
+17. Evidence is plain language first.
+18. Technical details remain available.
+19. Pending != failed.
+20. Disabled controls are readable and explained.
+21. Visible dates/cycles are correct.
+22. Cycle reopen is clear.
+23. Mobile is usable.
+24. 200% zoom is usable.
+25. Keyboard works.
+26. Accessibility remains strong.
+27. Errors explain recovery.
+28. Copy/export preserve context.
+29. All protected manufacturing invariants pass.
+30. All security invariants pass.
+31. All existing accepted capability remains available.
+32. No hidden manual manipulation is required.
+33. Fresh user test returns READY FOR LIVE USER TESTING.
+34. No P0 remains.
+35. No P1 remains.
+36. Final independent review returns VERDICT: APPROVE.
+
+==================================================
+FINAL TRUE NORTH
+==================================================
+
+A plant leader must be able to open EKAS and simply think like a plant leader.
+
+They should not need to think like:
+
+- a developer;
+- an analyst;
+- a database user;
+- a workflow designer;
+- a QA engineer.
+
+The user should be able to say:
+
+"We missed our goal. Why?"
+
+and EKAS should naturally carry them through:
+
+UNDERSTAND
+→ INVESTIGATE
+→ DECIDE
+→ ACT
+→ VERIFY
+→ SUSTAIN
+
+while preserving all of the governance, manufacturing rigor, evidence,
+security and functionality already built.
+
+Do not declare completion until this is achieved without regression.

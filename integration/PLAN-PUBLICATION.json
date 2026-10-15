@@ -1,0 +1,12 @@
+{
+  "sourceHandoff": "/home/pat/Documents/Codex/2026-10-13/ekas-diagnostic-demo-extension-draft.md",
+  "sourceSha256": "26714525a4aec0ae4eb5ad8f638fe96ab15e05aec4157eab6b21cae76e85f06b",
+  "independentReview": "/home/pat/Documents/Codex/2026-10-11/task-3/review-diagnostic-extension/REPORT.md",
+  "reviewSha256": "04564c95bfd459b42900a40ec2c79bcfe891b000a0747b5983925c59bddde131",
+  "selectedSuccessor": "V99_DIAGNOSTIC_INVESTIGATION",
+  "planPath": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v99-diagnostic-investigation-working/docs/V99-DIAGNOSTIC-INTEGRATION-PLAN.md",
+  "planSha256": "9de6d0cfb6645be106d7403da9a1a6187c1a69f2c6e845aa61b302028f35edaa",
+  "implementationStarted": false,
+  "v98SourceChanged": false,
+  "productionCapabilityClaimed": false
+}

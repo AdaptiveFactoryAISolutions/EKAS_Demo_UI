@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.cache/
+evidence/
+release-rc1/
+*-server/
+*.log
+.env*

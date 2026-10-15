@@ -1,0 +1,11 @@
+# V67 engineering/user-guide addendum — working draft
+
+V67 final owner1302/223PASS, targeted39/6PASS, all1268V66assertions and85inputs preserved. Full55/35/351/master reconciliation and guides remain working drafts pending release. Complete three master texts are bundled byte-exact.
+
+V67 fixes complete whole-unit count interpretation and legacy pending-review restatement, prompted bare reason/current-good wording, observed comparison aliases/Reason acceptance, original-clock return capture, transition-scoped Run feedback and independent old/new receipts, plus truthful source/type labels. Captured legacy answers keep their original time and interpretation; future commands use new semantics. Typed business admission, work/safety proof, causal/financial qualification and explicit simulation remain unchanged.
+
+Owner mounted red proof: an old turn committed, its response held, New created another conversation, old response completed and left stale Reply saved on the empty view. Green proof checks no stale success and first new Run produces its own visible turn. Direct receipt proof allows a new transition request while the old committed response is held, without redirection/duplicate indexing. This is one demonstrated race; broader historical no-reply/first-Run native closure is pending.
+
+Comparison680 accepted/later-unaccepted/baseline correction stale→681, claim-link replay/continued writing, cutoff clarification, saved-answer isolation and scrolled390/320Menu are completed bounded V66native positives and remain retest requirements. Post-source correction form is absent; next bounded work exposes baseline/post eligible source rows and exact unit selection through the existing typed correction endpoint, adding detached eligible-unit metadata if needed. Full raw-unit/claim/link conversation writes and remaining presentation/kernel/live transport boundaries remain required.
+
+The historical guide files under working-drafts name their V66 evidence and defects. This addendum records the V67 owner changes, not independent closure or release instruction for unverified paths. No OpenAI key/backend/provider use or real workplace mutation. Tom's actual authenticated API adapter remains unverified. Local review only. OriginalR5 supplied approval retained; mergedDotV54 review remains denied/unexecuted; Library supported upload unavailable.

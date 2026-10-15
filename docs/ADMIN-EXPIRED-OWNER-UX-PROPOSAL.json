@@ -1,0 +1,51 @@
+{
+  "id": "ADMIN-EXPIRED-OWNER-UX-01",
+  "status": "Bounded UI/client fix implemented in isolated d68f; independent/native verification pending; no auth policy or live change.",
+  "source": "served cf296231",
+  "confirmedOrigin": "http://127.0.0.1:18329",
+  "facts": [
+    "Private bootstrap code is consumed after one successful login.",
+    "Session maximum is7200000ms/twohours.",
+    "No renewal/reissue endpoint exists.",
+    "Editing owner-code file cannot update consumed in-memory authority.",
+    "Initial session failures are silently converted to signed-out UI.",
+    "Login failure should display an alert, but latest reported silent POST outcome remains unverified; login requests bypass current audit."
+  ],
+  "boundedFutureFix": [
+    "Display owner-session expiry time and distinguish signed-out/expired from provider disabled; do not changeTTL.",
+    "Explain consumed one-use code and operator-controlled recovery; do not suggest reusing it or automatically restarting.",
+    "Keep failed-login message persistent, move accessible focus to error summary, test delayed initial-session/login races and remount/navigation with public dummy input only.",
+    "Add closed-schema redacted login outcome metadata (timestamp/status/safe reason only); never log body,code,key,cookie,session token orCSRF.",
+    "Document operator recovery consequences: preserve exact history/budget paths; restart clears volatile key and disablesAI; separate private entry and explicitTest/Enable."
+  ],
+  "notAuthorized": [
+    "restart",
+    "new code generation/rotation",
+    "key read or transfer",
+    "automatic paidTest",
+    "longer sessions/reusable codes/new recovery privilege"
+  ],
+  "immediateRecovery": "The separately user-approved same-artifact recovery was completed on2026-10-15. It does not authorize another recovery. Current private session/provider state is not reinspected; bounded UX correction remains unimplemented.",
+  "at": "2026-10-15T15:39:07.863185+00:00",
+  "historicalApprovedRecovery": {
+    "performedAt": "2026-10-15T15:46:25Z",
+    "candidate": "cf296231",
+    "sameArtifact": true,
+    "historyAndBudgetByteExact": true,
+    "freshCodeUnread": true,
+    "paidTestPerformed": false,
+    "evidence": "evidence/LIVE-CF296231-OWNER-RECOVERY-VERIFIED.json"
+  },
+  "documentationUpdatedAt": "2026-10-15T18:52:24.732039+00:00",
+  "boundedImplementation": {
+    "source": "d68f632c304c96aa4e6a75310e929b946d266d66f4b9397fda03577b1c657354",
+    "handoff": "docs/OWNER-SIGNIN-UX-HANDOFF.md",
+    "relatedPassed": 63,
+    "httpPassed": 3,
+    "policyChanged": false,
+    "promoted": false
+  },
+  "proposalFacetsNotImplemented": [
+    "No new server login audit telemetry; historical silent POST cause remains unverified."
+  ]
+}

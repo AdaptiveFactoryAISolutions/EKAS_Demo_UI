@@ -1,0 +1,3 @@
+import {it,expect} from 'vitest';import * as fixtures from './fixtures';
+it('unmatched later simulated clock never falls back to Initial review',()=>{const f=(fixtures as any).scenarioSelection;expect(f).toBeTypeOf('function');const x=f('2026-11-03T15:15:00Z',false);expect(x.value).toBe('current-clock');expect(x.label).toContain('2026-11-03');expect(x.label).not.toContain('Initial')});
+it('exact preset and rehearsal retain their explicit selection semantics',()=>{const f=(fixtures as any).scenarioSelection;expect(f).toBeTypeOf('function');expect(f(fixtures.snapshotChoices[0].at,false).value).toBe('initial');expect(f('2026-11-03T15:15:00Z',true).value).toBe('rehearsal')});

@@ -1,0 +1,1938 @@
+{
+  "schemaVersion": "1.0.0",
+  "tables": {
+    "simulation_authorities": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 1,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "kind": [
+          "str"
+        ],
+        "role": [
+          "str"
+        ],
+        "real_authorization": [
+          "bool"
+        ],
+        "reference": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "entities": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 10,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "entity_type": [
+          "str"
+        ],
+        "unit": [
+          "NoneType",
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "revisions": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 1,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "product_id": [
+          "str"
+        ],
+        "revision": [
+          "str"
+        ],
+        "valid_from": [
+          "str"
+        ],
+        "valid_to_exclusive": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "production_orders": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 2,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "asset_id": [
+          "str"
+        ],
+        "line_id": [
+          "str"
+        ],
+        "operation_id": [
+          "str"
+        ],
+        "product_id": [
+          "str"
+        ],
+        "revision_id": [
+          "str"
+        ],
+        "tool_id": [
+          "str"
+        ],
+        "configuration_version": [
+          "str"
+        ],
+        "window_start": [
+          "str"
+        ],
+        "window_end": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "planned_runtime_standards": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 2,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "operation_id": [
+          "str"
+        ],
+        "product_id": [
+          "str"
+        ],
+        "revision_id": [
+          "str"
+        ],
+        "asset_id": [
+          "str"
+        ],
+        "tool_id": [
+          "str"
+        ],
+        "value": [
+          "float"
+        ],
+        "unit": [
+          "str"
+        ],
+        "valid_from": [
+          "str"
+        ],
+        "valid_to_exclusive": [
+          "str"
+        ],
+        "configuration_version": [
+          "str"
+        ],
+        "authority_id": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "oee_component_standards": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 1,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "operation_id": [
+          "str"
+        ],
+        "product_id": [
+          "str"
+        ],
+        "revision_id": [
+          "str"
+        ],
+        "asset_id": [
+          "str"
+        ],
+        "value": [
+          "float"
+        ],
+        "unit": [
+          "str"
+        ],
+        "valid_from": [
+          "str"
+        ],
+        "valid_to_exclusive": [
+          "str"
+        ],
+        "source_component": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "oee_entitlements": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 1,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "asset_id": [
+          "str"
+        ],
+        "line_id": [
+          "str"
+        ],
+        "operation_id": [
+          "str"
+        ],
+        "product_id": [
+          "str"
+        ],
+        "revision_id": [
+          "str"
+        ],
+        "tool_id": [
+          "str"
+        ],
+        "configuration_version": [
+          "str"
+        ],
+        "value": [
+          "float"
+        ],
+        "unit": [
+          "str"
+        ],
+        "valid_from": [
+          "str"
+        ],
+        "valid_to_exclusive": [
+          "str"
+        ],
+        "approval_state": [
+          "str"
+        ],
+        "authority_id": [
+          "str"
+        ],
+        "not_computed_from_best_components": [
+          "bool"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "equipment_intervals": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 34,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "order_id": [
+          "str"
+        ],
+        "asset_id": [
+          "str"
+        ],
+        "start": [
+          "str"
+        ],
+        "end": [
+          "str"
+        ],
+        "primary_state": [
+          "str"
+        ],
+        "clock": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "production_counts": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 11,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "order_id": [
+          "str"
+        ],
+        "asset_id": [
+          "str"
+        ],
+        "operation_id": [
+          "str"
+        ],
+        "revision_id": [
+          "str"
+        ],
+        "produced_unique_pieces": [
+          "int"
+        ],
+        "accepted_good_unique_pieces": [
+          "int"
+        ],
+        "first_pass_good_unique_pieces": [
+          "int"
+        ],
+        "terminal_scrap_unique_pieces": [
+          "int"
+        ],
+        "rework_reentries": [
+          "int"
+        ],
+        "window_start": [
+          "str"
+        ],
+        "window_end": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "improvement_proposals": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 1,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "order_id": [
+          "str"
+        ],
+        "cause_evidence_id": [
+          "str"
+        ],
+        "countermeasure_id": [
+          "str"
+        ],
+        "validation_method_id": [
+          "NoneType"
+        ],
+        "overlap_attribution_method": [
+          "NoneType"
+        ],
+        "stage": [
+          "str"
+        ],
+        "reason": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "cause_evidence": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 1,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "status": [
+          "str"
+        ],
+        "source": [
+          "str"
+        ],
+        "causation_proven": [
+          "bool"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "countermeasures": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 1,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "status": [
+          "str"
+        ],
+        "description": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "valuation_models": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 1,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "model_id": [
+          "NoneType"
+        ],
+        "customer_approved_basis": [
+          "bool"
+        ],
+        "real_finance_approval": [
+          "bool"
+        ],
+        "not_calculated_reason": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "changeovers": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 1,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "asset_id": [
+          "str"
+        ],
+        "operation_id": [
+          "str"
+        ],
+        "from_tool_id": [
+          "str"
+        ],
+        "to_tool_id": [
+          "str"
+        ],
+        "product_id": [
+          "str"
+        ],
+        "revision_id": [
+          "str"
+        ],
+        "start": [
+          "str"
+        ],
+        "end": [
+          "str"
+        ],
+        "boundary_start": [
+          "str"
+        ],
+        "boundary_end": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "planned_setup_standards": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 1,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "asset_id": [
+          "str"
+        ],
+        "from_tool_id": [
+          "str"
+        ],
+        "to_tool_id": [
+          "str"
+        ],
+        "material_configuration": [
+          "str"
+        ],
+        "automation_configuration": [
+          "str"
+        ],
+        "crew_assumptions": [
+          "str"
+        ],
+        "quality_release_requirement": [
+          "str"
+        ],
+        "value": [
+          "int"
+        ],
+        "unit": [
+          "str"
+        ],
+        "valid_from": [
+          "str"
+        ],
+        "valid_to_exclusive": [
+          "str"
+        ],
+        "authority_id": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "changeover_segments": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 3,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "changeover_id": [
+          "str"
+        ],
+        "start": [
+          "str"
+        ],
+        "end": [
+          "str"
+        ],
+        "primary_blocking_state": [
+          "str"
+        ],
+        "causal_asset_id": [
+          "NoneType",
+          "str"
+        ],
+        "causal_evidence_id": [
+          "NoneType",
+          "str"
+        ],
+        "reason_class": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "causal_assertions": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 1,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "asset_id": [
+          "str"
+        ],
+        "failure_event_id": [
+          "str"
+        ],
+        "assertion": [
+          "str"
+        ],
+        "fixture_validated": [
+          "bool"
+        ],
+        "real_cause_proven": [
+          "bool"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "tool_failures": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 1,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "tool_id": [
+          "str"
+        ],
+        "at": [
+          "str"
+        ],
+        "press_failed": [
+          "bool"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "failure_events": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 1,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "asset_id": [
+          "str"
+        ],
+        "repair_action_type": [
+          "str"
+        ],
+        "failure_mode": [
+          "str"
+        ],
+        "candidate": [
+          "bool"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "semantic_anchors": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 10,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "failure_event_id": [
+          "str"
+        ],
+        "anchor": [
+          "str"
+        ],
+        "semantic": [
+          "str"
+        ],
+        "at": [
+          "str"
+        ],
+        "source_class": [
+          "str"
+        ],
+        "validated_in_fictional_fixture": [
+          "bool"
+        ],
+        "source_precedence": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "work_orders": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 2,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "failure_event_id": [
+          "str"
+        ],
+        "reported_at": [
+          "str"
+        ],
+        "completed_at": [
+          "str"
+        ],
+        "role": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "person_work_intervals": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 4,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "failure_event_id": [
+          "str"
+        ],
+        "person_token": [
+          "str"
+        ],
+        "start": [
+          "str"
+        ],
+        "end": [
+          "str"
+        ],
+        "source_record_key": [
+          "str"
+        ],
+        "activity": [
+          "str"
+        ],
+        "allocation": [
+          "str"
+        ],
+        "unit": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "plan_snapshots": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 1,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "as_of": [
+          "str"
+        ],
+        "source_watermark": [
+          "str"
+        ],
+        "schedule_version": [
+          "str"
+        ],
+        "authority_id": [
+          "str"
+        ],
+        "customer_authority_real": [
+          "bool"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "commitment_lines": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 6,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "customer_order_token": [
+          "str"
+        ],
+        "product_id": [
+          "str"
+        ],
+        "revision_id": [
+          "str"
+        ],
+        "committed_quantity": [
+          "int"
+        ],
+        "unit": [
+          "str"
+        ],
+        "required_ship_ready_cutoff": [
+          "str"
+        ],
+        "customer_delivery_due": [
+          "str"
+        ],
+        "snapshot_id": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "accepted_completions": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 6,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "commitment_line_id": [
+          "str"
+        ],
+        "production_order_token": [
+          "str"
+        ],
+        "quantity": [
+          "int"
+        ],
+        "unit": [
+          "str"
+        ],
+        "disposition": [
+          "str"
+        ],
+        "acceptance_authority": [
+          "str"
+        ],
+        "source_fact": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "accepted_shipments": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 4,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "commitment_line_id": [
+          "str"
+        ],
+        "quantity": [
+          "int"
+        ],
+        "unit": [
+          "str"
+        ],
+        "disposition": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "finished_goods_allocations": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 4,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "commitment_line_id": [
+          "str"
+        ],
+        "quantity": [
+          "int"
+        ],
+        "unit": [
+          "str"
+        ],
+        "stock_state": [
+          "str"
+        ],
+        "approval_state": [
+          "str"
+        ],
+        "authority_id": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "commitment_production_links": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 5,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "commitment_line_id": [
+          "str"
+        ],
+        "production_order_token": [
+          "str"
+        ],
+        "allocated_commitment_quantity": [
+          "int"
+        ],
+        "unit": [
+          "str"
+        ],
+        "routing_version": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "current_schedule_lines": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 5,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "commitment_line_id": [
+          "str"
+        ],
+        "snapshot_id": [
+          "str"
+        ],
+        "scheduled_completion": [
+          "str"
+        ],
+        "approval_state": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "routing_states": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 5,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "commitment_line_id": [
+          "str"
+        ],
+        "operation_id": [
+          "str"
+        ],
+        "blocked": [
+          "bool"
+        ],
+        "approved_alternate": [
+          "bool"
+        ],
+        "alternate_asset_id": [
+          "NoneType",
+          "str"
+        ],
+        "qualified_capacity_available": [
+          "bool"
+        ],
+        "material_available": [
+          "bool"
+        ],
+        "tooling_available": [
+          "bool"
+        ],
+        "stop_invalidated_plan": [
+          "bool"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "quality_holds": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 1,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "commitment_line_id": [
+          "str"
+        ],
+        "unresolved": [
+          "bool"
+        ],
+        "prevents_fulfillment": [
+          "bool"
+        ],
+        "held_quantity": [
+          "int"
+        ],
+        "held_goods_available": [
+          "bool"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "qualified_rate_runs": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 3,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "job_token": [
+          "str"
+        ],
+        "product_id": [
+          "str"
+        ],
+        "operation_id": [
+          "str"
+        ],
+        "asset_id": [
+          "str"
+        ],
+        "quote_id": [
+          "str"
+        ],
+        "quote_revision": [
+          "str"
+        ],
+        "unit": [
+          "str"
+        ],
+        "start": [
+          "str"
+        ],
+        "end": [
+          "str"
+        ],
+        "machine_time_basis": [
+          "str"
+        ],
+        "qualification_basis": [
+          "str"
+        ],
+        "source_watermark": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "rate_machine_intervals": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 3,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "rate_run_id": [
+          "str"
+        ],
+        "start": [
+          "str"
+        ],
+        "end": [
+          "str"
+        ],
+        "primary_state": [
+          "str"
+        ],
+        "clock": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "quoted_rates": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 3,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "rate_run_id": [
+          "str"
+        ],
+        "quote_id": [
+          "str"
+        ],
+        "quote_revision": [
+          "str"
+        ],
+        "product_id": [
+          "str"
+        ],
+        "operation_id": [
+          "str"
+        ],
+        "asset_id": [
+          "str"
+        ],
+        "value": [
+          "int"
+        ],
+        "unit": [
+          "str"
+        ],
+        "approval_state": [
+          "str"
+        ],
+        "authority_id": [
+          "str"
+        ],
+        "valid_from": [
+          "str"
+        ],
+        "valid_to_exclusive": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "rate_piece_observations": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 1200,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "rate_run_id": [
+          "str"
+        ],
+        "sequence_number": [
+          "int"
+        ],
+        "piece_token": [
+          "str"
+        ],
+        "at": [
+          "str"
+        ],
+        "accepted_good": [
+          "bool"
+        ],
+        "trial": [
+          "bool"
+        ],
+        "engineering_test": [
+          "bool"
+        ],
+        "rework_reentry": [
+          "bool"
+        ],
+        "unit": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "rate_packages": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 1,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "membership_revision": [
+          "str"
+        ],
+        "component_run_ids": [
+          "list"
+        ],
+        "cost_severity_configuration_id": [
+          "NoneType"
+        ],
+        "policy": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "quote_packages": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 1,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "quote_revision": [
+          "str"
+        ],
+        "line_id": [
+          "str"
+        ],
+        "operation_id": [
+          "str"
+        ],
+        "tool_id": [
+          "str"
+        ],
+        "asset_id": [
+          "str"
+        ],
+        "product_id": [
+          "str"
+        ],
+        "quantity": [
+          "int"
+        ],
+        "run_count": [
+          "int"
+        ],
+        "start": [
+          "str"
+        ],
+        "end": [
+          "str"
+        ],
+        "method_version": [
+          "str"
+        ],
+        "authority_id": [
+          "str"
+        ],
+        "approved_total_input_basis": [
+          "str"
+        ],
+        "source_provenance": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "quote_assumptions": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 7,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "contract_id": [
+          "str"
+        ],
+        "contract_version": [
+          "str"
+        ],
+        "quote_id": [
+          "str"
+        ],
+        "assumption_type": [
+          "str"
+        ],
+        "presence_state": [
+          "str"
+        ],
+        "value": [
+          "float",
+          "int"
+        ],
+        "unit": [
+          "str"
+        ],
+        "basis": [
+          "str"
+        ],
+        "quote_revision": [
+          "str"
+        ],
+        "line_id": [
+          "str"
+        ],
+        "operation_id": [
+          "str"
+        ],
+        "tool_id": [
+          "str"
+        ],
+        "asset_id": [
+          "str"
+        ],
+        "product_id": [
+          "str"
+        ],
+        "effective_from": [
+          "str"
+        ],
+        "effective_to_exclusive": [
+          "str"
+        ],
+        "approval_at": [
+          "str"
+        ],
+        "approval_state": [
+          "str"
+        ],
+        "authority_id": [
+          "str"
+        ],
+        "method_version": [
+          "str"
+        ],
+        "source_artifact_class": [
+          "str"
+        ],
+        "source_locator": [
+          "str"
+        ],
+        "extraction_method": [
+          "str"
+        ],
+        "extractor_token": [
+          "str"
+        ],
+        "captured_at": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "quote_actual_runs": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 12,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "quote_id": [
+          "str"
+        ],
+        "good_unique_pieces": [
+          "int"
+        ],
+        "produced_unique_pieces": [
+          "int"
+        ],
+        "setup_events": [
+          "int"
+        ],
+        "lot_count": [
+          "int"
+        ],
+        "accepted_good_first_pass": [
+          "bool"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "quote_actual_intervals": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 36,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "quote_run_id": [
+          "str"
+        ],
+        "bridge_b_bucket": [
+          "str"
+        ],
+        "start": [
+          "str"
+        ],
+        "end": [
+          "str"
+        ],
+        "clock": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "quote_total_conversion_intervals": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 12,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "quote_run_id": [
+          "str"
+        ],
+        "start": [
+          "str"
+        ],
+        "end": [
+          "str"
+        ],
+        "clock": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "quote_productive_loss_intervals": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 24,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "quote_run_id": [
+          "str"
+        ],
+        "source_bucket": [
+          "str"
+        ],
+        "bridge_a_bucket": [
+          "str"
+        ],
+        "start": [
+          "str"
+        ],
+        "end": [
+          "str"
+        ],
+        "classification": [
+          "str"
+        ],
+        "method_version": [
+          "str"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    },
+    "qac_transform_methods": {
+      "primaryKey": "namespace,id,record_version",
+      "recordCount": 1,
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "method_version": [
+          "str"
+        ],
+        "rate_to_hours": [
+          "str"
+        ],
+        "setup_to_hours": [
+          "str"
+        ],
+        "downtime_to_hours": [
+          "str"
+        ],
+        "speed_cycle_delta": [
+          "str"
+        ],
+        "quality_yield_delta": [
+          "str"
+        ],
+        "source_bucket": [
+          "str"
+        ],
+        "target_buckets": [
+          "list"
+        ],
+        "no_double_count": [
+          "bool"
+        ],
+        "approval_state": [
+          "str"
+        ],
+        "real_customer_method_approval": [
+          "bool"
+        ]
+      },
+      "unitRules": "explicit unit/basis fields; timestamps ISOUTC; durations derive in h or min; counts uniquepieces; moneyUSD only hypothetical; ratios fractions internally",
+      "grain": "one domain record/event/interval as linked keys specify; consumers must use gap-contract grain"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "contractId": "canonical-gap-mock-result@1.0.0",
+  "status": "proposed offline simulation envelope, not approved liveAPI contract",
+  "request": {
+    "metricId": "exact MET-NNN",
+    "mockSpecVersion": "canonical-gap-spec@1.0.1",
+    "sourceDefinitionPointer": "verified version required, proposed source pointer separately labelled",
+    "fixtureVersion": "ekas-canonical-gap-synthetic-v1",
+    "scope": "site,line,asset,partrevision,operation,tool,job,orderline,quoteversion according to contract",
+    "window": "half-open ISOUTC, explicitly closed observational or historicalcurrentplan snapshot",
+    "asOf": "explicit snapshot/watermark; no future knownrecords",
+    "boundary": "MET022 technical t7-t0 vs t7-t1;productiont8-t0;release t8-t7; MET024 anchor t3/t4/t5",
+    "groupBy": "allow only contract-compatible grains; no unlikepart/unit merge",
+    "mode": "SYNTHETIC_UNCERTIFIED only"
+  },
+  "responseRequired": [
+    "resultId",
+    "metricId",
+    "mockSpecVersion",
+    "sourceDocumentVersion",
+    "sourceDefinitionPointerAndAuthority",
+    "scope",
+    "window",
+    "asOf",
+    "sourceWatermarks",
+    "grain",
+    "unit",
+    "formula",
+    "numeratorDenominatorOrEventVector",
+    "valueOrTypedUnavailable",
+    "publicationState",
+    "sourceDefinedRefusalOrProposedDiagnostic",
+    "eligibility",
+    "candidateIncludedExcludedUnknownOpenCounts",
+    "coveragePercent",
+    "exclusionReasons",
+    "lineageRecordRefsWithVersions",
+    "effectiveReferenceAndApprovalVersions",
+    "oracleVersionAndHash",
+    "sourceConflictsOrOpenDecisions",
+    "certificationStatus",
+    "dataOrigin",
+    "realApprovalClaimedFalse"
+  ],
+  "perMetricExtensions": {
+    "MET022": [
+      "named boundary",
+      "event IDs",
+      "anchor precedence per event",
+      "stratified repairaction type",
+      "median",
+      "upperpercentile/protocol or withheldaggregate",
+      "maximum",
+      "open age",
+      "eligiblecandidate counts"
+    ],
+    "MET026": [
+      "person-hours",
+      "unique source work keys",
+      "dedup/conflict handling",
+      "event denominator"
+    ],
+    "MET027": [
+      "exposedcount",
+      "grossopenquantity bycompatibleunit",
+      "unknowncount",
+      "eligiblecovered counts",
+      "shipreadycutoffbasis",
+      "currentapprovedscheduleversion",
+      "ruleversion",
+      "line-levelstates",
+      "actual accepted completion quantity and independent acceptance lineage; never shipment substitution",
+      "separate accepted shipped quantity and approved available finished-goods allocation"
+    ],
+    "MET028": [
+      "quotedrate",
+      "demonstratedrate",
+      "signedgap",
+      "fractiongap and percentdisplay",
+      "quoteeffectiverevision",
+      "consecutivequalification counts",
+      "machineinterval basis",
+      "package membershipversion",
+      "nullable severity with configurationversion"
+    ],
+    "MET029": [
+      "activevaluationlens",
+      "reconciledhoursref",
+      "rateandallowancepresencestates",
+      "adjacent confidence band only with governed method",
+      "no savings/profitability certification"
+    ],
+    "QAC001": [
+      "immutable scoped assumption records",
+      "presence states",
+      "bridgeA/B residuals",
+      "bucket transformations/method/no-doublecount",
+      "affected assumptions andtotal-only fallback"
+    ]
+  },
+  "typedCodeAuthority": "Retain source exact codes where defined; new test diagnostic names are not approvedproductionerror enums. Production certified-serving path remains NO_CERTIFIED_PATH absent certification; do not label toy approval as certification.",
+  "existingDecisionDispositions": {
+    "TBC417": "resolved by CR-051 / D-096; customer severity configuration still absent",
+    "TBC420": "open exact confidence method/thresholds",
+    "WP-P4-16": "logical inputs approved; physical mappings and activation not inferred"
+  }
+}

@@ -1,0 +1,3 @@
+# V81 acceptance register
+
+82 unique master/UX obligations remain without whole-obligation acceptance; no completion percentage or final-ready claim. Bounded Highcharts integration repair explicitly reauthorized by the user; native resize acceptance remains pending, licence purchase separate. Native downstream approval/performed/verification/sustainment/recurrence/reopen and mobile/export remain review gates. Actual OpenAI activation/unrestricted model acceptance, Tom exact API/auth/version conformance and security/licence gates remain separate. User requires OpenAI server-held key, not Ollama; no credentials read or live provider/backend calls.

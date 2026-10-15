@@ -1,0 +1,4168 @@
+{
+  "status": "Owner occurrence-to-executable-definition reconciliation; source dispositions retained; not full branch acceptance",
+  "occurrences": 322,
+  "executableDefinitions": 178,
+  "coveredOccurrences": 269,
+  "rows": [
+    {
+      "occurrenceReviewID": "OCC-001",
+      "sourceID": "KPI-001",
+      "sourceLines": "11\u201311",
+      "metricIDs": [
+        "ekas.oee"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.oee"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-002",
+      "sourceID": "KPI-002",
+      "sourceLines": "12\u201312",
+      "metricIDs": [
+        "ekas.availability"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.availability"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-003",
+      "sourceID": "KPI-003",
+      "sourceLines": "13\u201313",
+      "metricIDs": [
+        "ekas.run_time"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.run_time"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-004",
+      "sourceID": "KPI-004",
+      "sourceLines": "14\u201314",
+      "metricIDs": [
+        "ekas.performance"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.performance"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-005",
+      "sourceID": "KPI-005",
+      "sourceLines": "15\u201315",
+      "metricIDs": [
+        "ekas.quality"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.quality"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-006",
+      "sourceID": "KPI-006",
+      "sourceLines": "16\u201316",
+      "metricIDs": [
+        "ekas.overall_utilization"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.overall_utilization"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-007",
+      "sourceID": "KPI-007",
+      "sourceLines": "17\u201317",
+      "metricIDs": [
+        "ekas.asset_utilization"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.asset_utilization"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-008",
+      "sourceID": "KPI-008",
+      "sourceLines": "18\u201318",
+      "metricIDs": [
+        "ekas.teep"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.teep"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-009",
+      "sourceID": "KPI-009",
+      "sourceLines": "19\u201319",
+      "metricIDs": [
+        "ekas.loading"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.loading"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-010",
+      "sourceID": "KPI-010",
+      "sourceLines": "20\u201320",
+      "metricIDs": [
+        "ekas.oee_gap_to_target"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.oee_gap_to_target"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-011",
+      "sourceID": "KPI-011",
+      "sourceLines": "21\u201321",
+      "metricIDs": [
+        "ekas.oee_improvement"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.oee_improvement"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-012",
+      "sourceID": "KPI-012",
+      "sourceLines": "31\u201331",
+      "metricIDs": [
+        "ekas.production_vs_plan"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.production_vs_plan"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-013",
+      "sourceID": "KPI-013",
+      "sourceLines": "32\u201332",
+      "metricIDs": [
+        "ekas.production_vs_plan"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.production_vs_plan"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-014",
+      "sourceID": "KPI-014",
+      "sourceLines": "33\u201333",
+      "metricIDs": [
+        "ekas.production_variance"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.production_variance"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-015",
+      "sourceID": "KPI-015",
+      "sourceLines": "34\u201334",
+      "metricIDs": [
+        "ekas.net_throughput"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.net_throughput"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-016",
+      "sourceID": "KPI-016",
+      "sourceLines": "35\u201335",
+      "metricIDs": [
+        "ekas.gross_throughput"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.gross_throughput"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-017",
+      "sourceID": "KPI-017",
+      "sourceLines": "36\u201336",
+      "metricIDs": [
+        "ekas.net_throughput"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.net_throughput"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-018",
+      "sourceID": "KPI-018",
+      "sourceLines": "37\u201337",
+      "metricIDs": [
+        "ekas.run_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.run_rate"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-019",
+      "sourceID": "KPI-019",
+      "sourceLines": "38\u201338",
+      "metricIDs": [
+        "ekas.target_run_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.target_run_rate"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-020",
+      "sourceID": "KPI-020",
+      "sourceLines": "39\u201339",
+      "metricIDs": [
+        "ekas.run_rate_attainment"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.run_rate_attainment"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-021",
+      "sourceID": "KPI-021",
+      "sourceLines": "40\u201340",
+      "metricIDs": [
+        "ekas.capacity_utilization"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.capacity_utilization"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-022",
+      "sourceID": "KPI-022",
+      "sourceLines": "41\u201341",
+      "metricIDs": [
+        "ekas.capacity_attainment"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.capacity_attainment"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-023",
+      "sourceID": "KPI-023",
+      "sourceLines": "42\u201342",
+      "metricIDs": [
+        "ekas.unused_capacity"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.unused_capacity"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-024",
+      "sourceID": "KPI-024",
+      "sourceLines": "43\u201343",
+      "metricIDs": [
+        "ekas.constraint_utilization"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.constraint_utilization"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-025",
+      "sourceID": "KPI-025",
+      "sourceLines": "44\u201344",
+      "metricIDs": [
+        "ekas.constraint_throughput"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.constraint_throughput"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-026",
+      "sourceID": "KPI-026",
+      "sourceLines": "63\u201363",
+      "metricIDs": [
+        "ekas.schedule_adherence"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.schedule_adherence"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-027",
+      "sourceID": "KPI-027",
+      "sourceLines": "64\u201364",
+      "metricIDs": [
+        "ekas.schedule_attainment"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.schedule_attainment"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-028",
+      "sourceID": "KPI-028",
+      "sourceLines": "65\u201365",
+      "metricIDs": [
+        "ekas.production_vs_plan"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.production_vs_plan"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-029",
+      "sourceID": "KPI-029",
+      "sourceLines": "66\u201366",
+      "metricIDs": [
+        "ekas.schedule_variance"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.schedule_variance"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-030",
+      "sourceID": "KPI-030",
+      "sourceLines": "67\u201367",
+      "metricIDs": [
+        "ekas.orders_completed_to_schedule"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.orders_completed_to_schedule"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-031",
+      "sourceID": "KPI-031",
+      "sourceLines": "79\u201379",
+      "metricIDs": [
+        "ekas.actual_cycle_time"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.actual_cycle_time"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-032",
+      "sourceID": "KPI-032",
+      "sourceLines": "80\u201380",
+      "metricIDs": [
+        "ekas.ideal_cycle_time"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.ideal_cycle_time"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-033",
+      "sourceID": "KPI-033",
+      "sourceLines": "81\u201381",
+      "metricIDs": [
+        "ekas.cycle_time_variance"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.cycle_time_variance"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-034",
+      "sourceID": "KPI-034",
+      "sourceLines": "82\u201382",
+      "metricIDs": [
+        "ekas.cycle_time_performance"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.cycle_time_performance"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-035",
+      "sourceID": "KPI-035",
+      "sourceLines": "83\u201383",
+      "metricIDs": [
+        "ekas.takt_time"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.takt_time"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-036",
+      "sourceID": "KPI-036",
+      "sourceLines": "84\u201384",
+      "metricIDs": [
+        "ekas.takt_attainment"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.takt_attainment"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-037",
+      "sourceID": "KPI-037",
+      "sourceLines": "85\u201385",
+      "metricIDs": [
+        "ekas.cycle_to_takt_ratio"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.cycle_to_takt_ratio"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-038",
+      "sourceID": "KPI-038",
+      "sourceLines": "86\u201386",
+      "metricIDs": [
+        "ekas.lead_time"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.lead_time"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-039",
+      "sourceID": "KPI-039",
+      "sourceLines": "87\u201387",
+      "metricIDs": [
+        "ekas.manufacturing_lead_time"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.manufacturing_lead_time"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-040",
+      "sourceID": "KPI-040",
+      "sourceLines": "88\u201388",
+      "metricIDs": [
+        "ekas.touch_time"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.touch_time"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-041",
+      "sourceID": "KPI-041",
+      "sourceLines": "89\u201389",
+      "metricIDs": [
+        "ekas.flow_efficiency"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.flow_efficiency"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-042",
+      "sourceID": "KPI-042",
+      "sourceLines": "102\u2013102",
+      "metricIDs": [
+        "ekas.total_downtime"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.total_downtime"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-043",
+      "sourceID": "KPI-043",
+      "sourceLines": "103\u2013103",
+      "metricIDs": [
+        "ekas.unplanned_downtime"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.unplanned_downtime"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-044",
+      "sourceID": "KPI-044",
+      "sourceLines": "104\u2013104",
+      "metricIDs": [
+        "ekas.planned_downtime"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.planned_downtime"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-045",
+      "sourceID": "KPI-045",
+      "sourceLines": "105\u2013105",
+      "metricIDs": [
+        "ekas.downtime"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.downtime"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-046",
+      "sourceID": "KPI-046",
+      "sourceLines": "106\u2013106",
+      "metricIDs": [
+        "ekas.availability"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.availability"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-047",
+      "sourceID": "KPI-047",
+      "sourceLines": "107\u2013107",
+      "metricIDs": [
+        "ekas.downtime_frequency"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.downtime_frequency"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-048",
+      "sourceID": "KPI-048",
+      "sourceLines": "108\u2013108",
+      "metricIDs": [
+        "ekas.average_downtime_event"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.average_downtime_event"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-049",
+      "sourceID": "KPI-049",
+      "sourceLines": "109\u2013109",
+      "metricIDs": [
+        "ekas.downtime_by_reason"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.downtime_by_reason"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-050",
+      "sourceID": "KPI-050",
+      "sourceLines": "110\u2013110",
+      "metricIDs": [
+        "ekas.downtime_contribution"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.downtime_contribution"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-051",
+      "sourceID": "KPI-051",
+      "sourceLines": "111\u2013111",
+      "metricIDs": [
+        "ekas.top_loss_contribution"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.top_loss_contribution"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-052",
+      "sourceID": "KPI-052",
+      "sourceLines": "112\u2013112",
+      "metricIDs": [
+        "ekas.minor_stop_time"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.minor_stop_time"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-053",
+      "sourceID": "KPI-053",
+      "sourceLines": "113\u2013113",
+      "metricIDs": [
+        "ekas.speed_loss"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.speed_loss"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-054",
+      "sourceID": "KPI-054",
+      "sourceLines": "114\u2013114",
+      "metricIDs": [
+        "ekas.lost_production_from_downtime"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.lost_production_from_downtime"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-055",
+      "sourceID": "KPI-055",
+      "sourceLines": "115\u2013115",
+      "metricIDs": [
+        "ekas.downtime_cost"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.downtime_cost"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-056",
+      "sourceID": "KPI-056",
+      "sourceLines": "125\u2013125",
+      "metricIDs": [
+        "ekas.changeover_time"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.changeover_time"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-057",
+      "sourceID": "KPI-057",
+      "sourceLines": "126\u2013126",
+      "metricIDs": [
+        "ekas.average_changeover_time"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.average_changeover_time"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-058",
+      "sourceID": "KPI-058",
+      "sourceLines": "127\u2013127",
+      "metricIDs": [
+        "ekas.changeover_variance"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.changeover_variance"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-059",
+      "sourceID": "KPI-059",
+      "sourceLines": "128\u2013128",
+      "metricIDs": [
+        "ekas.changeover_attainment"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.changeover_attainment"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-060",
+      "sourceID": "KPI-060",
+      "sourceLines": "129\u2013129",
+      "metricIDs": [
+        "ekas.setup_loss"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.setup_loss"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-061",
+      "sourceID": "KPI-061",
+      "sourceLines": "139\u2013139",
+      "metricIDs": [
+        "ekas.quality"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.quality"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-062",
+      "sourceID": "KPI-062",
+      "sourceLines": "140\u2013140",
+      "metricIDs": [
+        "ekas.quality"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.quality"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-063",
+      "sourceID": "KPI-063",
+      "sourceLines": "141\u2013141",
+      "metricIDs": [
+        "ekas.first_pass_yield"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.first_pass_yield"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-064",
+      "sourceID": "KPI-064",
+      "sourceLines": "142\u2013142",
+      "metricIDs": [
+        "ekas.first_time_through"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.first_time_through"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-065",
+      "sourceID": "KPI-065",
+      "sourceLines": "143\u2013143",
+      "metricIDs": [
+        "ekas.scrap_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.scrap_rate"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-066",
+      "sourceID": "KPI-066",
+      "sourceLines": "144\u2013144",
+      "metricIDs": [
+        "ekas.reject_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.reject_rate"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-067",
+      "sourceID": "KPI-067",
+      "sourceLines": "145\u2013145",
+      "metricIDs": [
+        "ekas.rework_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.rework_rate"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-068",
+      "sourceID": "KPI-068",
+      "sourceLines": "146\u2013146",
+      "metricIDs": [
+        "ekas.defect_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.defect_rate"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-069",
+      "sourceID": "KPI-069",
+      "sourceLines": "147\u2013147",
+      "metricIDs": [
+        "ekas.defects_per_unit_dpu"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.defects_per_unit_dpu"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-070",
+      "sourceID": "KPI-070",
+      "sourceLines": "148\u2013148",
+      "metricIDs": [
+        "ekas.dpmo"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.dpmo"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-071",
+      "sourceID": "KPI-071",
+      "sourceLines": "149\u2013149",
+      "metricIDs": [
+        "ekas.ppm_defective"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.ppm_defective"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-072",
+      "sourceID": "KPI-072",
+      "sourceLines": "150\u2013150",
+      "metricIDs": [
+        "ekas.customer_reject_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.customer_reject_rate"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-073",
+      "sourceID": "KPI-073",
+      "sourceLines": "151\u2013151",
+      "metricIDs": [
+        "ekas.customer_ppm"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.customer_ppm"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-074",
+      "sourceID": "KPI-074",
+      "sourceLines": "152\u2013152",
+      "metricIDs": [
+        "ekas.quality_loss"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.quality_loss"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-075",
+      "sourceID": "KPI-075",
+      "sourceLines": "153\u2013153",
+      "metricIDs": [
+        "ekas.good_count"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.good_count"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-076",
+      "sourceID": "KPI-076",
+      "sourceLines": "163\u2013178",
+      "metricIDs": [
+        "ekas.rolled_throughput_yield"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.rolled_throughput_yield"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-077",
+      "sourceID": "KPI-077",
+      "sourceLines": "187\u2013187",
+      "metricIDs": [
+        "ekas.cp"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.cp"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-078",
+      "sourceID": "KPI-078",
+      "sourceLines": "188\u2013188",
+      "metricIDs": [
+        "ekas.cpk"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.cpk"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-079",
+      "sourceID": "KPI-079",
+      "sourceLines": "189\u2013189",
+      "metricIDs": [
+        "ekas.pp"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.pp"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-080",
+      "sourceID": "KPI-080",
+      "sourceLines": "190\u2013190",
+      "metricIDs": [
+        "ekas.ppk"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.ppk"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-081",
+      "sourceID": "KPI-081",
+      "sourceLines": "207\u2013207",
+      "metricIDs": [
+        "ekas.mtbf"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.mtbf"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-082",
+      "sourceID": "KPI-082",
+      "sourceLines": "208\u2013208",
+      "metricIDs": [
+        "ekas.mttr_repair"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.mttr_repair"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-083",
+      "sourceID": "KPI-083",
+      "sourceLines": "209\u2013209",
+      "metricIDs": [
+        "ekas.mttr_restore"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.mttr_restore"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-084",
+      "sourceID": "KPI-084",
+      "sourceLines": "210\u2013210",
+      "metricIDs": [
+        "ekas.mttf"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.mttf"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-085",
+      "sourceID": "KPI-085",
+      "sourceLines": "211\u2013211",
+      "metricIDs": [
+        "ekas.failure_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.failure_rate"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-086",
+      "sourceID": "KPI-086",
+      "sourceLines": "212\u2013212",
+      "metricIDs": [
+        "ekas.reliability"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.reliability"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-087",
+      "sourceID": "KPI-087",
+      "sourceLines": "213\u2013213",
+      "metricIDs": [
+        "ekas.repair_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.repair_rate"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-088",
+      "sourceID": "KPI-088",
+      "sourceLines": "214\u2013214",
+      "metricIDs": [
+        "ekas.maintenance_downtime"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.maintenance_downtime"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-089",
+      "sourceID": "KPI-089",
+      "sourceLines": "215\u2013215",
+      "metricIDs": [
+        "ekas.breakdown_frequency"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.breakdown_frequency"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-090",
+      "sourceID": "KPI-090",
+      "sourceLines": "216\u2013216",
+      "metricIDs": [
+        "ekas.reactive_maintenance"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.reactive_maintenance"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-091",
+      "sourceID": "KPI-091",
+      "sourceLines": "217\u2013217",
+      "metricIDs": [
+        "ekas.planned_maintenance"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.planned_maintenance"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-092",
+      "sourceID": "KPI-092",
+      "sourceLines": "218\u2013218",
+      "metricIDs": [
+        "ekas.pm_compliance"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.pm_compliance"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-093",
+      "sourceID": "KPI-093",
+      "sourceLines": "219\u2013219",
+      "metricIDs": [
+        "ekas.schedule_compliance_maintenance"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.schedule_compliance_maintenance"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-094",
+      "sourceID": "KPI-094",
+      "sourceLines": "220\u2013220",
+      "metricIDs": [
+        "ekas.maintenance_backlog"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.maintenance_backlog"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-095",
+      "sourceID": "KPI-095",
+      "sourceLines": "221\u2013221",
+      "metricIDs": [
+        "ekas.repeat_failure_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.repeat_failure_rate"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-096",
+      "sourceID": "KPI-096",
+      "sourceLines": "222\u2013222",
+      "metricIDs": [
+        "ekas.emergency_work"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.emergency_work"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-097",
+      "sourceID": "KPI-097",
+      "sourceLines": "247\u2013247",
+      "metricIDs": [
+        "ekas.otif"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.otif"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-098",
+      "sourceID": "KPI-098",
+      "sourceLines": "248\u2013248",
+      "metricIDs": [
+        "ekas.on_time_delivery_otd"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.on_time_delivery_otd"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-099",
+      "sourceID": "KPI-099",
+      "sourceLines": "249\u2013249",
+      "metricIDs": [
+        "ekas.in_full_delivery"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.in_full_delivery"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-100",
+      "sourceID": "KPI-100",
+      "sourceLines": "250\u2013250",
+      "metricIDs": [
+        "ekas.fill_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.fill_rate"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-101",
+      "sourceID": "KPI-101",
+      "sourceLines": "251\u2013251",
+      "metricIDs": [
+        "ekas.perfect_order_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.perfect_order_rate"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-102",
+      "sourceID": "KPI-102",
+      "sourceLines": "252\u2013252",
+      "metricIDs": [
+        "ekas.late_order_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.late_order_rate"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-103",
+      "sourceID": "KPI-103",
+      "sourceLines": "253\u2013253",
+      "metricIDs": [
+        "ekas.past_due_quantity"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.past_due_quantity"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-104",
+      "sourceID": "KPI-104",
+      "sourceLines": "254\u2013254",
+      "metricIDs": [
+        "ekas.average_delivery_delay"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.average_delivery_delay"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-105",
+      "sourceID": "KPI-105",
+      "sourceLines": "264\u2013264",
+      "metricIDs": [
+        "ekas.inventory_turns"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.inventory_turns"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-106",
+      "sourceID": "KPI-106",
+      "sourceLines": "265\u2013265",
+      "metricIDs": [
+        "ekas.inventory_days_dio"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.inventory_days_dio"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-107",
+      "sourceID": "KPI-107",
+      "sourceLines": "266\u2013266",
+      "metricIDs": [
+        "ekas.raw_material_days"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.raw_material_days"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-108",
+      "sourceID": "KPI-108",
+      "sourceLines": "267\u2013267",
+      "metricIDs": [
+        "ekas.wip_days_value",
+        "ekas.wip_days_units"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.wip_days_value",
+        "ekas.wip_days_units"
+      ],
+      "disposition": "unresolved_choice_required",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-109",
+      "sourceID": "KPI-109",
+      "sourceLines": "268\u2013268",
+      "metricIDs": [
+        "ekas.finished_goods_days"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.finished_goods_days"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-110",
+      "sourceID": "KPI-110",
+      "sourceLines": "269\u2013269",
+      "metricIDs": [
+        "ekas.wip_units"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.wip_units"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-111",
+      "sourceID": "KPI-111",
+      "sourceLines": "270\u2013270",
+      "metricIDs": [
+        "ekas.inventory_accuracy"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.inventory_accuracy"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-112",
+      "sourceID": "KPI-112",
+      "sourceLines": "271\u2013271",
+      "metricIDs": [
+        "ekas.obsolete_inventory"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.obsolete_inventory"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-113",
+      "sourceID": "KPI-113",
+      "sourceLines": "272\u2013272",
+      "metricIDs": [
+        "ekas.excess_inventory"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.excess_inventory"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-114",
+      "sourceID": "KPI-114",
+      "sourceLines": "280\u2013297",
+      "metricIDs": [
+        "ekas.little_s_law"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.little_s_law"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-115",
+      "sourceID": "KPI-115",
+      "sourceLines": "304\u2013304",
+      "metricIDs": [
+        "ekas.labor_productivity"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.labor_productivity"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-116",
+      "sourceID": "KPI-116",
+      "sourceLines": "305\u2013305",
+      "metricIDs": [
+        "ekas.labor_efficiency"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.labor_efficiency"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-117",
+      "sourceID": "KPI-117",
+      "sourceLines": "306\u2013306",
+      "metricIDs": [
+        "ekas.standard_hours_earned"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.standard_hours_earned"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-118",
+      "sourceID": "KPI-118",
+      "sourceLines": "307\u2013307",
+      "metricIDs": [
+        "ekas.labor_utilization"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.labor_utilization"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-119",
+      "sourceID": "KPI-119",
+      "sourceLines": "308\u2013308",
+      "metricIDs": [
+        "ekas.direct_labor_utilization"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.direct_labor_utilization"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-120",
+      "sourceID": "KPI-120",
+      "sourceLines": "309\u2013309",
+      "metricIDs": [
+        "ekas.overtime"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.overtime"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-121",
+      "sourceID": "KPI-121",
+      "sourceLines": "310\u2013310",
+      "metricIDs": [
+        "ekas.absenteeism_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.absenteeism_rate"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-122",
+      "sourceID": "KPI-122",
+      "sourceLines": "311\u2013311",
+      "metricIDs": [
+        "ekas.units_per_employee_hour"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.units_per_employee_hour"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-123",
+      "sourceID": "KPI-123",
+      "sourceLines": "312\u2013312",
+      "metricIDs": [
+        "ekas.labor_cost_per_unit"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.labor_cost_per_unit"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-124",
+      "sourceID": "KPI-124",
+      "sourceLines": "322\u2013322",
+      "metricIDs": [
+        "ekas.manufacturing_cost_per_unit"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.manufacturing_cost_per_unit"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-125",
+      "sourceID": "KPI-125",
+      "sourceLines": "323\u2013323",
+      "metricIDs": [
+        "ekas.conversion_cost_per_unit"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.conversion_cost_per_unit"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-126",
+      "sourceID": "KPI-126",
+      "sourceLines": "324\u2013324",
+      "metricIDs": [
+        "ekas.scrap_cost"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.scrap_cost"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-127",
+      "sourceID": "KPI-127",
+      "sourceLines": "325\u2013325",
+      "metricIDs": [
+        "ekas.rework_cost"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.rework_cost"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-128",
+      "sourceID": "KPI-128",
+      "sourceLines": "326\u2013326",
+      "metricIDs": [
+        "ekas.downtime_cost"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.downtime_cost"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-129",
+      "sourceID": "KPI-129",
+      "sourceLines": "327\u2013327",
+      "metricIDs": [
+        "ekas.cost_variance"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.cost_variance"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-130",
+      "sourceID": "KPI-130",
+      "sourceLines": "328\u2013328",
+      "metricIDs": [
+        "ekas.cost_variance_percent"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.cost_variance_percent"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-131",
+      "sourceID": "KPI-131",
+      "sourceLines": "329\u2013329",
+      "metricIDs": [
+        "ekas.material_usage_variance"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.material_usage_variance"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-132",
+      "sourceID": "KPI-132",
+      "sourceLines": "330\u2013330",
+      "metricIDs": [
+        "ekas.labor_efficiency_variance"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.labor_efficiency_variance"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-133",
+      "sourceID": "KPI-133",
+      "sourceLines": "338\u2013338",
+      "metricIDs": [
+        "ekas.copq_cost_of_poor_quality"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.copq_cost_of_poor_quality"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-134",
+      "sourceID": "KPI-134",
+      "sourceLines": "339\u2013339",
+      "metricIDs": [
+        "ekas.cost_of_quality"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.cost_of_quality"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-135",
+      "sourceID": "KPI-135",
+      "sourceLines": "340\u2013340",
+      "metricIDs": [
+        "ekas.copq_sales"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.copq_sales"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-136",
+      "sourceID": "KPI-136",
+      "sourceLines": "341\u2013341",
+      "metricIDs": [
+        "ekas.scrap_cost_share"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.scrap_cost_share"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-137",
+      "sourceID": "KPI-137",
+      "sourceLines": "342\u2013342",
+      "metricIDs": [
+        "ekas.warranty_cost"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.warranty_cost"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-138",
+      "sourceID": "KPI-138",
+      "sourceLines": "350\u2013350",
+      "metricIDs": [
+        "ekas.energy_consumption"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.energy_consumption"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-139",
+      "sourceID": "KPI-139",
+      "sourceLines": "351\u2013351",
+      "metricIDs": [
+        "ekas.energy_per_unit"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.energy_per_unit"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-140",
+      "sourceID": "KPI-140",
+      "sourceLines": "352\u2013352",
+      "metricIDs": [
+        "ekas.energy_intensity"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.energy_intensity"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-141",
+      "sourceID": "KPI-141",
+      "sourceLines": "353\u2013353",
+      "metricIDs": [
+        "ekas.idle_energy"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.idle_energy"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-142",
+      "sourceID": "KPI-142",
+      "sourceLines": "354\u2013354",
+      "metricIDs": [
+        "ekas.peak_demand"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.peak_demand"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-143",
+      "sourceID": "KPI-143",
+      "sourceLines": "355\u2013355",
+      "metricIDs": [
+        "ekas.co_e_per_unit"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.co_e_per_unit"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-144",
+      "sourceID": "KPI-144",
+      "sourceLines": "356\u2013356",
+      "metricIDs": [
+        "ekas.waste_per_unit"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.waste_per_unit"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-145",
+      "sourceID": "KPI-145",
+      "sourceLines": "357\u2013357",
+      "metricIDs": [
+        "ekas.water_per_unit"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.water_per_unit"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-146",
+      "sourceID": "KPI-146",
+      "sourceLines": "369\u2013369",
+      "metricIDs": [
+        "ekas.constraint_productive_utilization"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.constraint_productive_utilization"
+      ],
+      "disposition": "source_definition_split",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-147",
+      "sourceID": "KPI-147",
+      "sourceLines": "370\u2013370",
+      "metricIDs": [
+        "ekas.constraint_throughput"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.constraint_throughput"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-148",
+      "sourceID": "KPI-148",
+      "sourceLines": "371\u2013371",
+      "metricIDs": [
+        "ekas.constraint_lost_time"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.constraint_lost_time"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-149",
+      "sourceID": "KPI-149",
+      "sourceLines": "372\u2013372",
+      "metricIDs": [
+        "ekas.constraint_yield"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.constraint_yield"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-150",
+      "sourceID": "KPI-150",
+      "sourceLines": "373\u2013373",
+      "metricIDs": [
+        "ekas.throughput_contribution"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.throughput_contribution"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-151",
+      "sourceID": "KPI-151",
+      "sourceLines": "383\u2013383",
+      "metricIDs": [
+        "ekas.trir"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.trir"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-152",
+      "sourceID": "KPI-152",
+      "sourceLines": "384\u2013384",
+      "metricIDs": [
+        "ekas.dart_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.dart_rate"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-153",
+      "sourceID": "KPI-153",
+      "sourceLines": "385\u2013385",
+      "metricIDs": [
+        "ekas.lost_time_incident_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.lost_time_incident_rate"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-154",
+      "sourceID": "KPI-154",
+      "sourceLines": "386\u2013386",
+      "metricIDs": [
+        "ekas.near_miss_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.near_miss_rate"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-155",
+      "sourceID": "KPI-155",
+      "sourceLines": "398\u2013398",
+      "metricIDs": [
+        "ekas.production_vs_plan"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.production_vs_plan"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-156",
+      "sourceID": "KPI-156",
+      "sourceLines": "399\u2013399",
+      "metricIDs": [
+        "ekas.oee"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.oee"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-157",
+      "sourceID": "KPI-157",
+      "sourceLines": "400\u2013400",
+      "metricIDs": [
+        "ekas.total_downtime"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.total_downtime"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-158",
+      "sourceID": "KPI-158",
+      "sourceLines": "401\u2013401",
+      "metricIDs": [
+        "ekas.quality_loss"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.quality_loss"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-159",
+      "sourceID": "KPI-159",
+      "sourceLines": "402\u2013402",
+      "metricIDs": [
+        "ekas.schedule_adherence"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.schedule_adherence"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-160",
+      "sourceID": "KPI-160",
+      "sourceLines": "403\u2013403",
+      "metricIDs": [
+        "ekas.inventory_days_dio"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.inventory_days_dio"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-161",
+      "sourceID": "KPI-161",
+      "sourceLines": "404\u2013404",
+      "metricIDs": [
+        "ekas.otif"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.otif"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-162",
+      "sourceID": "KPI-162",
+      "sourceLines": "410\u2013410",
+      "metricIDs": [
+        "ekas.production_vs_plan"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.production_vs_plan"
+      ],
+      "disposition": "illustrative_reference_target_not_metric",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-163",
+      "sourceID": "KPI-163",
+      "sourceLines": "411\u2013411",
+      "metricIDs": [
+        "ekas.oee"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.oee"
+      ],
+      "disposition": "illustrative_reference_target_not_metric",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-164",
+      "sourceID": "KPI-164",
+      "sourceLines": "412\u2013412",
+      "metricIDs": [
+        "ekas.total_downtime"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.total_downtime"
+      ],
+      "disposition": "illustrative_reference_target_not_metric",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-165",
+      "sourceID": "KPI-165",
+      "sourceLines": "413\u2013413",
+      "metricIDs": [
+        "ekas.quality_loss"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.quality_loss"
+      ],
+      "disposition": "illustrative_reference_target_not_metric",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-166",
+      "sourceID": "KPI-166",
+      "sourceLines": "414\u2013414",
+      "metricIDs": [
+        "ekas.schedule_adherence"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.schedule_adherence"
+      ],
+      "disposition": "illustrative_reference_target_not_metric",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-167",
+      "sourceID": "KPI-167",
+      "sourceLines": "415\u2013415",
+      "metricIDs": [
+        "ekas.inventory_days_dio"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.inventory_days_dio"
+      ],
+      "disposition": "illustrative_reference_target_not_metric",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-168",
+      "sourceID": "KPI-168",
+      "sourceLines": "416\u2013416",
+      "metricIDs": [
+        "ekas.otif"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.otif"
+      ],
+      "disposition": "illustrative_reference_target_not_metric",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-169",
+      "sourceID": "KPI-169",
+      "sourceLines": "426\u2013429",
+      "metricIDs": [
+        "ekas.availability_loss_time"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.availability_loss_time"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-170",
+      "sourceID": "KPI-170",
+      "sourceLines": "430\u2013435",
+      "metricIDs": [
+        "ekas.performance_loss_time"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.performance_loss_time"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-171",
+      "sourceID": "KPI-171",
+      "sourceLines": "436\u2013443",
+      "metricIDs": [
+        "ekas.quality_loss_units",
+        "ekas.quality_loss_time"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.quality_loss_units",
+        "ekas.quality_loss_time"
+      ],
+      "disposition": "multi_quantity_bundle",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-172",
+      "sourceID": "KPI-172",
+      "sourceLines": "444\u2013447",
+      "metricIDs": [
+        "ekas.lost_units"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.lost_units"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-173",
+      "sourceID": "KPI-173",
+      "sourceLines": "448\u2013459",
+      "metricIDs": [
+        "ekas.unfavorable_gap_higher",
+        "ekas.unfavorable_gap_lower"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.unfavorable_gap_higher",
+        "ekas.unfavorable_gap_lower"
+      ],
+      "disposition": "multi_quantity_bundle",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-174",
+      "sourceID": "KPI-174",
+      "sourceLines": "466\u2013473",
+      "metricIDs": [
+        "ekas.absolute_change"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.absolute_change"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-175",
+      "sourceID": "KPI-175",
+      "sourceLines": "474\u2013486",
+      "metricIDs": [
+        "ekas.relative_percentage_change"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.relative_percentage_change"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-176",
+      "sourceID": "KPI-176",
+      "sourceLines": "487\u2013496",
+      "metricIDs": [
+        "ekas.target_variance_absolute",
+        "ekas.target_variance_relative"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.target_variance_absolute",
+        "ekas.target_variance_relative"
+      ],
+      "disposition": "multi_quantity_bundle",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-177",
+      "sourceID": "KPI-177",
+      "sourceLines": "503\u2013506",
+      "metricIDs": [
+        "ekas.moving_average"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.moving_average"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-178",
+      "sourceID": "KPI-178",
+      "sourceLines": "507\u2013510",
+      "metricIDs": [
+        "ekas.rolling_change"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.rolling_change"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-179",
+      "sourceID": "KPI-179",
+      "sourceLines": "511\u2013514",
+      "metricIDs": [
+        "ekas.trend_slope"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.trend_slope"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-180",
+      "sourceID": "KPI-180",
+      "sourceLines": "515\u2013522",
+      "metricIDs": [
+        "ekas.volatility"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.volatility"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-181",
+      "sourceID": "KPI-181",
+      "sourceLines": "529\u2013532",
+      "metricIDs": [
+        "ekas.category_contribution"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.category_contribution"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-182",
+      "sourceID": "KPI-182",
+      "sourceLines": "533\u2013542",
+      "metricIDs": [
+        "ekas.cumulative_contribution"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.cumulative_contribution"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-183",
+      "sourceID": "KPI-183",
+      "sourceLines": "549\u2013554",
+      "metricIDs": [
+        "ekas.improvement_absolute"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.improvement_absolute"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-184",
+      "sourceID": "KPI-184",
+      "sourceLines": "555\u2013558",
+      "metricIDs": [
+        "ekas.improvement_relative"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.improvement_relative"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-185",
+      "sourceID": "KPI-185",
+      "sourceLines": "559\u2013564",
+      "metricIDs": [
+        "ekas.sustained_improvement"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.sustained_improvement"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-186",
+      "sourceID": "KPI-186",
+      "sourceLines": "565\u2013568",
+      "metricIDs": [
+        "ekas.recurrence_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.recurrence_rate"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-187",
+      "sourceID": "KPI-187",
+      "sourceLines": "569\u2013572",
+      "metricIDs": [
+        "ekas.action_closure_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.action_closure_rate"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-188",
+      "sourceID": "KPI-188",
+      "sourceLines": "573\u2013580",
+      "metricIDs": [
+        "ekas.on_time_action_closure"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.on_time_action_closure"
+      ],
+      "disposition": "executable_definition",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-189",
+      "sourceID": "KPI-189",
+      "sourceLines": "121\u2013134",
+      "metricIDs": [
+        "ekas.internal_setup_time"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.internal_setup_time"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-190",
+      "sourceID": "KPI-190",
+      "sourceLines": "121\u2013134",
+      "metricIDs": [
+        "ekas.external_setup_time"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.external_setup_time"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-191",
+      "sourceID": "KPI-191",
+      "sourceLines": "121\u2013134",
+      "metricIDs": [
+        "unresolved.smed"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "non_scalar_governed_concept",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-192",
+      "sourceID": "KPI-192",
+      "sourceLines": "181\u2013202",
+      "metricIDs": [
+        "unresolved.usl"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "non_scalar_governed_concept",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-193",
+      "sourceID": "KPI-193",
+      "sourceLines": "181\u2013202",
+      "metricIDs": [
+        "unresolved.lsl"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "non_scalar_governed_concept",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-194",
+      "sourceID": "KPI-194",
+      "sourceLines": "181\u2013202",
+      "metricIDs": [
+        "ekas.process_mean"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.process_mean"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-195",
+      "sourceID": "KPI-195",
+      "sourceLines": "181\u2013202",
+      "metricIDs": [
+        "ekas.within_subgroup_sigma"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.within_subgroup_sigma"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-196",
+      "sourceID": "KPI-196",
+      "sourceLines": "181\u2013202",
+      "metricIDs": [
+        "ekas.overall_sigma"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.overall_sigma"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-197",
+      "sourceID": "KPI-197",
+      "sourceLines": "181\u2013202",
+      "metricIDs": [
+        "unresolved.sample_adequacy"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "non_scalar_governed_concept",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-198",
+      "sourceID": "KPI-198",
+      "sourceLines": "181\u2013202",
+      "metricIDs": [
+        "unresolved.measurement_system_integrity"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "non_scalar_governed_concept",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-199",
+      "sourceID": "KPI-199",
+      "sourceLines": "203\u2013242",
+      "metricIDs": [
+        "unresolved.mttr_clarification"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "non_scalar_governed_concept",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-200",
+      "sourceID": "KPI-200",
+      "sourceLines": "392\u2013421",
+      "metricIDs": [
+        "unresolved.plant_head_daily_operations_audit"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "non_scalar_governed_concept",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-201",
+      "sourceID": "KPI-201",
+      "sourceLines": "392\u2013421",
+      "metricIDs": [
+        "unresolved.governed_operating_range"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "non_scalar_governed_concept",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-202",
+      "sourceID": "KPI-202",
+      "sourceLines": "422\u2013461",
+      "metricIDs": [
+        "ekas.unfavorable_gap_higher"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.unfavorable_gap_higher"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-203",
+      "sourceID": "KPI-203",
+      "sourceLines": "422\u2013461",
+      "metricIDs": [
+        "ekas.unfavorable_gap_lower"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.unfavorable_gap_lower"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-204",
+      "sourceID": "KPI-204",
+      "sourceLines": "422\u2013461",
+      "metricIDs": [
+        "unresolved.positive_unfavorable_gap_ranking"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "non_scalar_governed_concept",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-205",
+      "sourceID": "KPI-205",
+      "sourceLines": "462\u2013498",
+      "metricIDs": [
+        "ekas.absolute_change"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.absolute_change"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-206",
+      "sourceID": "KPI-206",
+      "sourceLines": "462\u2013498",
+      "metricIDs": [
+        "ekas.relative_percentage_change"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.relative_percentage_change"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-207",
+      "sourceID": "KPI-207",
+      "sourceLines": "462\u2013498",
+      "metricIDs": [
+        "ekas.target_variance_relative"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.target_variance_relative"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-208",
+      "sourceID": "KPI-208",
+      "sourceLines": "499\u2013524",
+      "metricIDs": [
+        "ekas.standard_deviation"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.standard_deviation"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-209",
+      "sourceID": "KPI-209",
+      "sourceLines": "499\u2013524",
+      "metricIDs": [
+        "ekas.coefficient_of_variation"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.coefficient_of_variation"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-210",
+      "sourceID": "KPI-210",
+      "sourceLines": "525\u2013544",
+      "metricIDs": [
+        "ekas.category_contribution"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.category_contribution"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-211",
+      "sourceID": "KPI-211",
+      "sourceLines": "545\u2013582",
+      "metricIDs": [
+        "unresolved.find_quantify_act_sustain"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "non_scalar_governed_concept",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-212",
+      "sourceID": "KPI-212",
+      "sourceLines": "545\u2013582",
+      "metricIDs": [
+        "unresolved.action_completion_evidence"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "non_scalar_governed_concept",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-213",
+      "sourceID": "KPI-213",
+      "sourceLines": "545\u2013582",
+      "metricIDs": [
+        "unresolved.verification_window"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "non_scalar_governed_concept",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-214",
+      "sourceID": "KPI-214",
+      "sourceLines": "652\u2013685",
+      "metricIDs": [
+        "unresolved.deterministic_metric"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "non_scalar_governed_concept",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-215",
+      "sourceID": "KPI-215",
+      "sourceLines": "652\u2013685",
+      "metricIDs": [
+        "unresolved.derived_observation"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "non_scalar_governed_concept",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-216",
+      "sourceID": "KPI-216",
+      "sourceLines": "652\u2013685",
+      "metricIDs": [
+        "unresolved.reasoning_investigation"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "non_scalar_governed_concept",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-217",
+      "sourceID": "KPI-217",
+      "sourceLines": "652\u2013685",
+      "metricIDs": [
+        "unresolved.root_cause"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "non_scalar_governed_concept",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-218",
+      "sourceID": "KPI-218",
+      "sourceLines": "686\u2013729",
+      "metricIDs": [
+        "unresolved.governed_metric_identity"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "non_scalar_governed_concept",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-219",
+      "sourceID": "KPI-219",
+      "sourceLines": "588\u2013588",
+      "metricIDs": [
+        "registry.metric_id"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-220",
+      "sourceID": "KPI-220",
+      "sourceLines": "589\u2013589",
+      "metricIDs": [
+        "registry.canonical_name"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-221",
+      "sourceID": "KPI-221",
+      "sourceLines": "590\u2013590",
+      "metricIDs": [
+        "registry.display_name"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-222",
+      "sourceID": "KPI-222",
+      "sourceLines": "591\u2013591",
+      "metricIDs": [
+        "registry.aliases"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-223",
+      "sourceID": "KPI-223",
+      "sourceLines": "592\u2013592",
+      "metricIDs": [
+        "registry.domain"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-224",
+      "sourceID": "KPI-224",
+      "sourceLines": "593\u2013593",
+      "metricIDs": [
+        "registry.definition"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-225",
+      "sourceID": "KPI-225",
+      "sourceLines": "594\u2013594",
+      "metricIDs": [
+        "registry.formula"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-226",
+      "sourceID": "KPI-226",
+      "sourceLines": "595\u2013595",
+      "metricIDs": [
+        "registry.formula_version"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-227",
+      "sourceID": "KPI-227",
+      "sourceLines": "596\u2013596",
+      "metricIDs": [
+        "registry.calculation_owner"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-228",
+      "sourceID": "KPI-228",
+      "sourceLines": "597\u2013597",
+      "metricIDs": [
+        "registry.numerator"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-229",
+      "sourceID": "KPI-229",
+      "sourceLines": "598\u2013598",
+      "metricIDs": [
+        "registry.denominator"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-230",
+      "sourceID": "KPI-230",
+      "sourceLines": "599\u2013599",
+      "metricIDs": [
+        "registry.units"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-231",
+      "sourceID": "KPI-231",
+      "sourceLines": "600\u2013600",
+      "metricIDs": [
+        "registry.display_units"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-232",
+      "sourceID": "KPI-232",
+      "sourceLines": "601\u2013601",
+      "metricIDs": [
+        "registry.precision"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-233",
+      "sourceID": "KPI-233",
+      "sourceLines": "602\u2013602",
+      "metricIDs": [
+        "registry.aggregation_method"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-234",
+      "sourceID": "KPI-234",
+      "sourceLines": "603\u2013603",
+      "metricIDs": [
+        "registry.valid_entity_scopes"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-235",
+      "sourceID": "KPI-235",
+      "sourceLines": "604\u2013604",
+      "metricIDs": [
+        "registry.valid_time_grains"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-236",
+      "sourceID": "KPI-236",
+      "sourceLines": "605\u2013605",
+      "metricIDs": [
+        "registry.good_direction"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-237",
+      "sourceID": "KPI-237",
+      "sourceLines": "606\u2013606",
+      "metricIDs": [
+        "registry.target_source"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-238",
+      "sourceID": "KPI-238",
+      "sourceLines": "607\u2013607",
+      "metricIDs": [
+        "registry.target"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-239",
+      "sourceID": "KPI-239",
+      "sourceLines": "608\u2013608",
+      "metricIDs": [
+        "registry.warning_threshold"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-240",
+      "sourceID": "KPI-240",
+      "sourceLines": "609\u2013609",
+      "metricIDs": [
+        "registry.critical_threshold"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-241",
+      "sourceID": "KPI-241",
+      "sourceLines": "610\u2013610",
+      "metricIDs": [
+        "registry.required_sources"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-242",
+      "sourceID": "KPI-242",
+      "sourceLines": "611\u2013611",
+      "metricIDs": [
+        "registry.required_data_coverage"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-243",
+      "sourceID": "KPI-243",
+      "sourceLines": "612\u2013612",
+      "metricIDs": [
+        "registry.evidence_requirements"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-244",
+      "sourceID": "KPI-244",
+      "sourceLines": "613\u2013613",
+      "metricIDs": [
+        "registry.certification_owner"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-245",
+      "sourceID": "KPI-245",
+      "sourceLines": "614\u2013614",
+      "metricIDs": [
+        "registry.comparison_semantics"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-246",
+      "sourceID": "KPI-246",
+      "sourceLines": "615\u2013615",
+      "metricIDs": [
+        "registry.chart_semantics"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-247",
+      "sourceID": "KPI-247",
+      "sourceLines": "616\u2013616",
+      "metricIDs": [
+        "registry.clarification_rules"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-248",
+      "sourceID": "KPI-248",
+      "sourceLines": "617\u2013617",
+      "metricIDs": [
+        "registry.effectivity"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-249",
+      "sourceID": "KPI-249",
+      "sourceLines": "618\u2013618",
+      "metricIDs": [
+        "registry.version"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-250",
+      "sourceID": "KPI-250",
+      "sourceLines": "619\u2013619",
+      "metricIDs": [
+        "registry.status"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-251",
+      "sourceID": "KPI-251",
+      "sourceLines": "625\u2013625",
+      "metricIDs": [
+        "registry.recognition_status"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-252",
+      "sourceID": "KPI-252",
+      "sourceLines": "626\u2013626",
+      "metricIDs": [
+        "registry.execution_status"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-253",
+      "sourceID": "KPI-253",
+      "sourceLines": "627\u2013627",
+      "metricIDs": [
+        "registry.certification_status"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "registry_field",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-254",
+      "sourceID": "KPI-254",
+      "sourceLines": "691\u2013691",
+      "metricIDs": [
+        "ekas.oee"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.oee"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-255",
+      "sourceID": "KPI-255",
+      "sourceLines": "691\u2013691",
+      "metricIDs": [
+        "ekas.availability"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.availability"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-256",
+      "sourceID": "KPI-256",
+      "sourceLines": "691\u2013691",
+      "metricIDs": [
+        "ekas.performance"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.performance"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-257",
+      "sourceID": "KPI-257",
+      "sourceLines": "691\u2013691",
+      "metricIDs": [
+        "ekas.quality"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.quality"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-258",
+      "sourceID": "KPI-258",
+      "sourceLines": "691\u2013691",
+      "metricIDs": [
+        "ekas.teep"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.teep"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-259",
+      "sourceID": "KPI-259",
+      "sourceLines": "691\u2013691",
+      "metricIDs": [
+        "ekas.overall_utilization",
+        "ekas.asset_utilization",
+        "ekas.capacity_utilization",
+        "ekas.labor_utilization",
+        "ekas.direct_labor_utilization",
+        "ekas.constraint_utilization"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.overall_utilization",
+        "ekas.asset_utilization",
+        "ekas.capacity_utilization",
+        "ekas.labor_utilization",
+        "ekas.direct_labor_utilization",
+        "ekas.constraint_utilization"
+      ],
+      "disposition": "unresolved_choice_required",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-260",
+      "sourceID": "KPI-260",
+      "sourceLines": "694\u2013694",
+      "metricIDs": [
+        "ekas.production_vs_plan"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.production_vs_plan"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-261",
+      "sourceID": "KPI-261",
+      "sourceLines": "694\u2013694",
+      "metricIDs": [
+        "ekas.net_throughput",
+        "ekas.gross_throughput",
+        "ekas.run_rate",
+        "ekas.constraint_throughput"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.net_throughput",
+        "ekas.gross_throughput",
+        "ekas.run_rate",
+        "ekas.constraint_throughput"
+      ],
+      "disposition": "unresolved_choice_required",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-262",
+      "sourceID": "KPI-262",
+      "sourceLines": "694\u2013694",
+      "metricIDs": [
+        "ekas.production_vs_plan",
+        "ekas.schedule_attainment",
+        "ekas.capacity_attainment",
+        "ekas.run_rate_attainment",
+        "ekas.takt_attainment"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.production_vs_plan",
+        "ekas.schedule_attainment",
+        "ekas.capacity_attainment",
+        "ekas.run_rate_attainment",
+        "ekas.takt_attainment"
+      ],
+      "disposition": "unresolved_choice_required",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-263",
+      "sourceID": "KPI-263",
+      "sourceLines": "694\u2013694",
+      "metricIDs": [
+        "ekas.run_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.run_rate"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-264",
+      "sourceID": "KPI-264",
+      "sourceLines": "694\u2013694",
+      "metricIDs": [
+        "ekas.capacity_utilization"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.capacity_utilization"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-265",
+      "sourceID": "KPI-265",
+      "sourceLines": "694\u2013694",
+      "metricIDs": [
+        "ekas.actual_cycle_time"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.actual_cycle_time"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-266",
+      "sourceID": "KPI-266",
+      "sourceLines": "694\u2013694",
+      "metricIDs": [
+        "ekas.takt_time"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.takt_time"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-267",
+      "sourceID": "KPI-267",
+      "sourceLines": "697\u2013697",
+      "metricIDs": [
+        "ekas.downtime"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.downtime"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-268",
+      "sourceID": "KPI-268",
+      "sourceLines": "697\u2013697",
+      "metricIDs": [
+        "ekas.unplanned_downtime"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.unplanned_downtime"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-269",
+      "sourceID": "KPI-269",
+      "sourceLines": "697\u2013697",
+      "metricIDs": [
+        "ekas.planned_downtime"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.planned_downtime"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-270",
+      "sourceID": "KPI-270",
+      "sourceLines": "697\u2013697",
+      "metricIDs": [
+        "ekas.minor_stop_time"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.minor_stop_time"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-271",
+      "sourceID": "KPI-271",
+      "sourceLines": "697\u2013697",
+      "metricIDs": [
+        "ekas.speed_loss"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.speed_loss"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-272",
+      "sourceID": "KPI-272",
+      "sourceLines": "697\u2013697",
+      "metricIDs": [
+        "ekas.changeover_time"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.changeover_time"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-273",
+      "sourceID": "KPI-273",
+      "sourceLines": "700\u2013700",
+      "metricIDs": [
+        "ekas.first_pass_yield"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.first_pass_yield"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-274",
+      "sourceID": "KPI-274",
+      "sourceLines": "700\u2013700",
+      "metricIDs": [
+        "ekas.quality",
+        "ekas.first_pass_yield",
+        "ekas.rolled_throughput_yield"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.quality",
+        "ekas.first_pass_yield",
+        "ekas.rolled_throughput_yield"
+      ],
+      "disposition": "unresolved_choice_required",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-275",
+      "sourceID": "KPI-275",
+      "sourceLines": "700\u2013700",
+      "metricIDs": [
+        "ekas.rolled_throughput_yield"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.rolled_throughput_yield"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-276",
+      "sourceID": "KPI-276",
+      "sourceLines": "700\u2013700",
+      "metricIDs": [
+        "ekas.scrap_rate",
+        "ekas.scrap_cost",
+        "ekas.scrap_cost_share"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.scrap_rate",
+        "ekas.scrap_cost",
+        "ekas.scrap_cost_share"
+      ],
+      "disposition": "unresolved_choice_required",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-277",
+      "sourceID": "KPI-277",
+      "sourceLines": "700\u2013700",
+      "metricIDs": [
+        "ekas.reject_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.reject_rate"
+      ],
+      "disposition": "unresolved_choice_required",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-278",
+      "sourceID": "KPI-278",
+      "sourceLines": "700\u2013700",
+      "metricIDs": [
+        "ekas.rework_rate",
+        "ekas.rework_cost"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.rework_rate",
+        "ekas.rework_cost"
+      ],
+      "disposition": "unresolved_choice_required",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-279",
+      "sourceID": "KPI-279",
+      "sourceLines": "700\u2013700",
+      "metricIDs": [
+        "ekas.ppm_defective",
+        "ekas.customer_ppm"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.ppm_defective",
+        "ekas.customer_ppm"
+      ],
+      "disposition": "unresolved_choice_required",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-280",
+      "sourceID": "KPI-280",
+      "sourceLines": "700\u2013700",
+      "metricIDs": [
+        "ekas.dpmo"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.dpmo"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-281",
+      "sourceID": "KPI-281",
+      "sourceLines": "700\u2013700",
+      "metricIDs": [
+        "ekas.quality_loss"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.quality_loss"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-282",
+      "sourceID": "KPI-282",
+      "sourceLines": "700\u2013700",
+      "metricIDs": [
+        "ekas.cp",
+        "ekas.cpk"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.cp",
+        "ekas.cpk"
+      ],
+      "disposition": "unresolved_choice_required",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-283",
+      "sourceID": "KPI-283",
+      "sourceLines": "703\u2013703",
+      "metricIDs": [
+        "ekas.mtbf"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.mtbf"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-284",
+      "sourceID": "KPI-284",
+      "sourceLines": "703\u2013703",
+      "metricIDs": [
+        "ekas.mttr_repair"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.mttr_repair"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-285",
+      "sourceID": "KPI-285",
+      "sourceLines": "703\u2013703",
+      "metricIDs": [
+        "ekas.mttr_restore"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.mttr_restore"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-286",
+      "sourceID": "KPI-286",
+      "sourceLines": "703\u2013703",
+      "metricIDs": [
+        "ekas.failure_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.failure_rate"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-287",
+      "sourceID": "KPI-287",
+      "sourceLines": "703\u2013703",
+      "metricIDs": [
+        "ekas.breakdown_frequency"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.breakdown_frequency"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-288",
+      "sourceID": "KPI-288",
+      "sourceLines": "703\u2013703",
+      "metricIDs": [
+        "ekas.pm_compliance"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.pm_compliance"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-289",
+      "sourceID": "KPI-289",
+      "sourceLines": "703\u2013703",
+      "metricIDs": [
+        "ekas.reactive_maintenance"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.reactive_maintenance"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-290",
+      "sourceID": "KPI-290",
+      "sourceLines": "703\u2013703",
+      "metricIDs": [
+        "ekas.maintenance_backlog"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.maintenance_backlog"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-291",
+      "sourceID": "KPI-291",
+      "sourceLines": "706\u2013706",
+      "metricIDs": [
+        "ekas.schedule_adherence"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.schedule_adherence"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-292",
+      "sourceID": "KPI-292",
+      "sourceLines": "706\u2013706",
+      "metricIDs": [
+        "ekas.otif"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.otif"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-293",
+      "sourceID": "KPI-293",
+      "sourceLines": "706\u2013706",
+      "metricIDs": [
+        "ekas.on_time_delivery_otd"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.on_time_delivery_otd"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-294",
+      "sourceID": "KPI-294",
+      "sourceLines": "706\u2013706",
+      "metricIDs": [
+        "ekas.fill_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.fill_rate"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-295",
+      "sourceID": "KPI-295",
+      "sourceLines": "706\u2013706",
+      "metricIDs": [
+        "unresolved.late_orders"
+      ],
+      "ownerPositiveCoverage": [],
+      "disposition": "explicit_unresolved_item",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-296",
+      "sourceID": "KPI-296",
+      "sourceLines": "709\u2013709",
+      "metricIDs": [
+        "ekas.inventory_days_dio"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.inventory_days_dio"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-297",
+      "sourceID": "KPI-297",
+      "sourceLines": "709\u2013709",
+      "metricIDs": [
+        "ekas.inventory_turns"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.inventory_turns"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-298",
+      "sourceID": "KPI-298",
+      "sourceLines": "709\u2013709",
+      "metricIDs": [
+        "ekas.wip_units",
+        "ekas.wip_days_value",
+        "ekas.wip_days_units"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.wip_units",
+        "ekas.wip_days_value",
+        "ekas.wip_days_units"
+      ],
+      "disposition": "unresolved_choice_required",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-299",
+      "sourceID": "KPI-299",
+      "sourceLines": "709\u2013709",
+      "metricIDs": [
+        "ekas.wip_days_value",
+        "ekas.wip_days_units"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.wip_days_value",
+        "ekas.wip_days_units"
+      ],
+      "disposition": "unresolved_choice_required",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-300",
+      "sourceID": "KPI-300",
+      "sourceLines": "709\u2013709",
+      "metricIDs": [
+        "ekas.raw_material_days"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.raw_material_days"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-301",
+      "sourceID": "KPI-301",
+      "sourceLines": "709\u2013709",
+      "metricIDs": [
+        "ekas.finished_goods_days"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.finished_goods_days"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-302",
+      "sourceID": "KPI-302",
+      "sourceLines": "709\u2013709",
+      "metricIDs": [
+        "ekas.flow_efficiency"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.flow_efficiency"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-303",
+      "sourceID": "KPI-303",
+      "sourceLines": "709\u2013709",
+      "metricIDs": [
+        "ekas.lead_time"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.lead_time"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-304",
+      "sourceID": "KPI-304",
+      "sourceLines": "712\u2013712",
+      "metricIDs": [
+        "ekas.labor_productivity"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.labor_productivity"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-305",
+      "sourceID": "KPI-305",
+      "sourceLines": "712\u2013712",
+      "metricIDs": [
+        "ekas.labor_efficiency"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.labor_efficiency"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-306",
+      "sourceID": "KPI-306",
+      "sourceLines": "712\u2013712",
+      "metricIDs": [
+        "ekas.overall_utilization",
+        "ekas.asset_utilization",
+        "ekas.capacity_utilization",
+        "ekas.labor_utilization",
+        "ekas.direct_labor_utilization",
+        "ekas.constraint_utilization"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.overall_utilization",
+        "ekas.asset_utilization",
+        "ekas.capacity_utilization",
+        "ekas.labor_utilization",
+        "ekas.direct_labor_utilization",
+        "ekas.constraint_utilization"
+      ],
+      "disposition": "unresolved_choice_required",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-307",
+      "sourceID": "KPI-307",
+      "sourceLines": "712\u2013712",
+      "metricIDs": [
+        "ekas.overtime"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.overtime"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-308",
+      "sourceID": "KPI-308",
+      "sourceLines": "715\u2013715",
+      "metricIDs": [
+        "ekas.manufacturing_cost_per_unit",
+        "ekas.conversion_cost_per_unit",
+        "ekas.labor_cost_per_unit"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.manufacturing_cost_per_unit",
+        "ekas.conversion_cost_per_unit",
+        "ekas.labor_cost_per_unit"
+      ],
+      "disposition": "unresolved_choice_required",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-309",
+      "sourceID": "KPI-309",
+      "sourceLines": "715\u2013715",
+      "metricIDs": [
+        "ekas.scrap_cost"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.scrap_cost"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-310",
+      "sourceID": "KPI-310",
+      "sourceLines": "715\u2013715",
+      "metricIDs": [
+        "ekas.rework_cost"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.rework_cost"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-311",
+      "sourceID": "KPI-311",
+      "sourceLines": "715\u2013715",
+      "metricIDs": [
+        "ekas.downtime_cost"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.downtime_cost"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-312",
+      "sourceID": "KPI-312",
+      "sourceLines": "715\u2013715",
+      "metricIDs": [
+        "ekas.copq_cost_of_poor_quality"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.copq_cost_of_poor_quality"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-313",
+      "sourceID": "KPI-313",
+      "sourceLines": "718\u2013718",
+      "metricIDs": [
+        "ekas.energy_per_unit"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.energy_per_unit"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-314",
+      "sourceID": "KPI-314",
+      "sourceLines": "718\u2013718",
+      "metricIDs": [
+        "ekas.idle_energy"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.idle_energy"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-315",
+      "sourceID": "KPI-315",
+      "sourceLines": "718\u2013718",
+      "metricIDs": [
+        "ekas.peak_demand"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.peak_demand"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-316",
+      "sourceID": "KPI-316",
+      "sourceLines": "721\u2013721",
+      "metricIDs": [
+        "ekas.unfavorable_gap_higher",
+        "ekas.unfavorable_gap_lower"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.unfavorable_gap_higher",
+        "ekas.unfavorable_gap_lower"
+      ],
+      "disposition": "unresolved_choice_required",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-317",
+      "sourceID": "KPI-317",
+      "sourceLines": "721\u2013721",
+      "metricIDs": [
+        "ekas.moving_average",
+        "ekas.rolling_change",
+        "ekas.trend_slope",
+        "ekas.volatility"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.moving_average",
+        "ekas.rolling_change",
+        "ekas.trend_slope",
+        "ekas.volatility"
+      ],
+      "disposition": "unresolved_choice_required",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-318",
+      "sourceID": "KPI-318",
+      "sourceLines": "721\u2013721",
+      "metricIDs": [
+        "ekas.category_contribution"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.category_contribution"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-319",
+      "sourceID": "KPI-319",
+      "sourceLines": "721\u2013721",
+      "metricIDs": [
+        "ekas.top_loss_contribution",
+        "ekas.downtime_by_reason"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.top_loss_contribution",
+        "ekas.downtime_by_reason"
+      ],
+      "disposition": "unresolved_choice_required",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-320",
+      "sourceID": "KPI-320",
+      "sourceLines": "721\u2013721",
+      "metricIDs": [
+        "ekas.improvement_absolute"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.improvement_absolute"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-321",
+      "sourceID": "KPI-321",
+      "sourceLines": "721\u2013721",
+      "metricIDs": [
+        "ekas.recurrence_rate"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.recurrence_rate"
+      ],
+      "disposition": "conditional_alias_or_concept_binding",
+      "independentlyAccepted": false
+    },
+    {
+      "occurrenceReviewID": "OCC-322",
+      "sourceID": "KPI-322",
+      "sourceLines": "721\u2013721",
+      "metricIDs": [
+        "ekas.action_closure_rate",
+        "ekas.on_time_action_closure",
+        "ekas.sustained_improvement"
+      ],
+      "ownerPositiveCoverage": [
+        "ekas.action_closure_rate",
+        "ekas.on_time_action_closure",
+        "ekas.sustained_improvement"
+      ],
+      "disposition": "unresolved_choice_required",
+      "independentlyAccepted": false
+    }
+  ]
+}

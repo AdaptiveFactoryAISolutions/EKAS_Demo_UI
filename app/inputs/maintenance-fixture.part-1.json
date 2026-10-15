@@ -1,0 +1,1030 @@
+{
+  "asset_context": {
+    "aliases": {
+      "ASSET-L03-FDR01": "FEED-03"
+    },
+    "area_id": "assembly",
+    "enterprise_id": "demo-enterprise",
+    "functional_levels_note": "ISA-95 functional levels 0–4 describe activity categories, not enterprise/site/area/equipment positions.",
+    "hierarchy_basis": "ISA-95-style application mapping; site terminology must be validated",
+    "maintenance_spare": "SPARE-GUIDE-03",
+    "product_part": {
+      "display_name": "Housing A",
+      "id": "NW-A",
+      "revision": "P2"
+    },
+    "site_id": "northworks",
+    "warning": "A manufactured part is not a maintenance spare; a production job is not a maintenance work order.",
+    "work_center": {
+      "id": "line-03",
+      "type": "production_line"
+    },
+    "work_unit": {
+      "id": "FEED-03",
+      "type": "equipment_unit"
+    }
+  },
+  "case_id": "CASE-003",
+  "kind": "wholly synthetic design fixture; no CMMS connection or physical instructions",
+  "production_jobs": [
+    {
+      "asset_id": "FEED-03",
+      "date": "2026-09-21",
+      "entity_type": "production_job",
+      "exposure_ref": "NW-L03-20260921-D",
+      "id": "JOB-8301",
+      "operation_id": "OP-030",
+      "product_id": "NW-A",
+      "product_revision": "P2"
+    },
+    {
+      "asset_id": "FEED-03",
+      "date": "2026-09-23",
+      "entity_type": "production_job",
+      "exposure_ref": "NW-L03-20260923-D",
+      "id": "JOB-8302",
+      "operation_id": "OP-030",
+      "product_id": "NW-A",
+      "product_revision": "P2"
+    },
+    {
+      "asset_id": "FEED-03",
+      "date": "2026-10-06",
+      "entity_type": "production_job",
+      "exposure_ref": null,
+      "id": "JOB-8303",
+      "operation_id": "OP-030",
+      "product_id": "NW-A",
+      "product_revision": "P2"
+    }
+  ],
+  "schema_version": "maintenance-demo-v1",
+  "scope": {
+    "area_id": "assembly",
+    "asset_id": "FEED-03",
+    "line_id": "line-03",
+    "operation_id": "OP-030",
+    "product_id": "NW-A",
+    "product_revision": "P2",
+    "site_id": "northworks"
+  },
+  "source_notes": [
+    {
+      "author_role": "Demo maintenance technician",
+      "available_from": "2026-09-21T10:10:00Z",
+      "field": "technician_note",
+      "id": "NOTE-2401",
+      "known_at": "2026-09-21T10:10:00Z",
+      "record_version": "FIC-1",
+      "recorded_at": "2026-09-21T10:10:00Z",
+      "sentences": [
+        {
+          "id": "NOTE-2401:s1",
+          "ordinal": 1,
+          "text": "Feeder stopped with housings backed up at the guide during JOB-8301."
+        },
+        {
+          "id": "NOTE-2401:s2",
+          "ordinal": 2,
+          "text": "Guide wear may be contributing; no dimensional inspection was completed."
+        },
+        {
+          "id": "NOTE-2401:s3",
+          "ordinal": 3,
+          "text": "No motor fault was observed on the available alarm display."
+        },
+        {
+          "id": "NOTE-2401:s4",
+          "ordinal": 4,
+          "text": "Production resumed after the approved recovery procedure; cause remains unconfirmed."
+        }
+      ],
+      "synthetic": true,
+      "text": "Feeder stopped with housings backed up at the guide during JOB-8301. Guide wear may be contributing; no dimensional inspection was completed. No motor fault was observed on the available alarm display. Production resumed after the approved recovery procedure; cause remains unconfirmed.",
+      "work_order_id": "MAINT-WO-2401"
+    },
+    {
+      "author_role": "Demo maintenance technician",
+      "available_from": "2026-09-23T11:00:00Z",
+      "field": "technician_note",
+      "id": "NOTE-2402",
+      "known_at": "2026-09-23T11:00:00Z",
+      "record_version": "FIC-1",
+      "recorded_at": "2026-09-23T11:00:00Z",
+      "sentences": [
+        {
+          "id": "NOTE-2402:s1",
+          "ordinal": 1,
+          "text": "Feeder jam recurred during JOB-8302 with NW-A revision P2."
+        },
+        {
+          "id": "NOTE-2402:s2",
+          "ordinal": 2,
+          "text": "Visual check found no obvious guide damage."
+        },
+        {
+          "id": "NOTE-2402:s3",
+          "ordinal": 3,
+          "text": "Setup variation is suspected, but setup measurements were not recorded."
+        },
+        {
+          "id": "NOTE-2402:s4",
+          "ordinal": 4,
+          "text": "No component was replaced; return to service was recorded by the shift lead."
+        }
+      ],
+      "synthetic": true,
+      "text": "Feeder jam recurred during JOB-8302 with NW-A revision P2. Visual check found no obvious guide damage. Setup variation is suspected, but setup measurements were not recorded. No component was replaced; return to service was recorded by the shift lead.",
+      "work_order_id": "MAINT-WO-2402"
+    },
+    {
+      "author_role": "Demo maintenance technician",
+      "available_from": "2026-09-23T14:00:00Z",
+      "field": "handover_copy",
+      "id": "NOTE-2402-COPY",
+      "known_at": "2026-09-23T14:00:00Z",
+      "record_version": "FIC-1",
+      "recorded_at": "2026-09-23T14:00:00Z",
+      "sentences": [
+        {
+          "id": "NOTE-2402-COPY:s1",
+          "ordinal": 1,
+          "text": "Feeder jam recurred during JOB-8302 with NW-A revision P2."
+        }
+      ],
+      "synthetic": true,
+      "text": "Feeder jam recurred during JOB-8302 with NW-A revision P2.",
+      "work_order_id": "MAINT-WO-2402"
+    },
+    {
+      "author_role": "Demo maintenance technician",
+      "available_from": "2026-10-06T15:10:00Z",
+      "field": "inspection_and_repair_note",
+      "id": "NOTE-003",
+      "known_at": "2026-10-06T15:10:00Z",
+      "record_version": "FIC-1",
+      "recorded_at": "2026-10-06T15:10:00Z",
+      "sentences": [
+        {
+          "id": "NOTE-003:s1",
+          "ordinal": 1,
+          "text": "Inspection record INSPECT-003 documents visible localized guide wear."
+        },
+        {
+          "id": "NOTE-003:s2",
+          "ordinal": 2,
+          "text": "The worn guide is a probable contributor to repeat jams; a unique causal mechanism has not been demonstrated."
+        },
+        {
+          "id": "NOTE-003:s3",
+          "ordinal": 3,
+          "text": "The guide component was replaced under the simulated approved work record."
+        },
+        {
+          "id": "NOTE-003:s4",
+          "ordinal": 4,
+          "text": "No unauthorized recipe, setpoint, or released work-instruction change was made."
+        },
+        {
+          "id": "NOTE-003:s5",
+          "ordinal": 5,
+          "text": "Return to service was recorded for the simulated intervention; repair completion is not proof of lasting effectiveness."
+        }
+      ],
+      "synthetic": true,
+      "text": "Inspection record INSPECT-003 documents visible localized guide wear. The worn guide is a probable contributor to repeat jams; a unique causal mechanism has not been demonstrated. The guide component was replaced under the simulated approved work record. No unauthorized recipe, setpoint, or released work-instruction change was made. Return to service was recorded for the simulated intervention; repair completion is not proof of lasting effectiveness.",
+      "work_order_id": "DEMO-WO-003"
+    },
+    {
+      "author_role": "Demo maintenance technician",
+      "available_from": "2026-10-20T15:15:00Z",
+      "field": "verification_note",
+      "id": "NOTE-VERIFY-003",
+      "known_at": "2026-10-20T15:15:00Z",
+      "record_version": "FIC-1",
+      "recorded_at": "2026-10-20T15:15:00Z",
+      "sentences": [
+        {
+          "id": "NOTE-VERIFY-003:s1",
+          "ordinal": 1,
+          "text": "Ten comparable post-action shifts averaged 30 feeder-jam minutes versus 60 in the baseline."
+        },
+        {
+          "id": "NOTE-VERIFY-003:s2",
+          "ordinal": 2,
+          "text": "The observed reduction supports a beneficial change but does not isolate guide replacement from other influences."
+        },
+        {
+          "id": "NOTE-VERIFY-003:s3",
+          "ordinal": 3,
+          "text": "Root cause remains unconfirmed; retain the sustain observation and the engineering-change release gates."
+        }
+      ],
+      "synthetic": true,
+      "text": "Ten comparable post-action shifts averaged 30 feeder-jam minutes versus 60 in the baseline. The observed reduction supports a beneficial change but does not isolate guide replacement from other influences. Root cause remains unconfirmed; retain the sustain observation and the engineering-change release gates.",
+      "work_order_id": "MAINT-WO-2404"
+    },
+    {
+      "author_role": "Demo maintenance technician",
+      "available_from": "2026-11-03T14:15:00Z",
+      "field": "recurrence_note",
+      "id": "NOTE-RECUR-003",
+      "known_at": "2026-11-03T14:15:00Z",
+      "record_version": "FIC-1",
+      "recorded_at": "2026-11-03T14:15:00Z",
+      "sentences": [
+        {
+          "id": "NOTE-RECUR-003:s1",
+          "ordinal": 1,
+          "text": "Two consecutive eligible shifts exceeded the 45-minute feeder-jam threshold."
+        },
+        {
+          "id": "NOTE-RECUR-003:s2",
+          "ordinal": 2,
+          "text": "Reopen CASE-003 for investigation; no new cause has been verified."
+        }
+      ],
+      "synthetic": true,
+      "text": "Two consecutive eligible shifts exceeded the 45-minute feeder-jam threshold. Reopen CASE-003 for investigation; no new cause has been verified.",
+      "work_order_id": "MAINT-WO-2405"
+    }
+  ],
+  "work_orders": [
+    {
+      "available_from": "2026-09-21T10:10:00Z",
+      "case_id": "CASE-003",
+      "data_quality": [
+        "Labor is person-minutes, not downtime or elapsed repair time.",
+        "Null means unavailable; never impute zero."
+      ],
+      "date": "2026-09-21",
+      "entity_type": "maintenance_work_order",
+      "failure_event_id": "MFAIL-2401",
+      "field_provenance": {
+        "downtime_minutes": {
+          "exact_value": null,
+          "field": "fields.downtime_minutes",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2401",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "exposure": {
+          "exact_value": null,
+          "field": "fields.exposure",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2401",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "failure_mode": {
+          "exact_value": "FM-030-01",
+          "field": "fields.failure_mode",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2401",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "labor_minutes": {
+          "exact_value": 12,
+          "field": "fields.labor_minutes",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2401",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "parts_replaced": {
+          "exact_value": [],
+          "field": "fields.parts_replaced",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2401",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "repair_elapsed_minutes": {
+          "exact_value": null,
+          "field": "fields.repair_elapsed_minutes",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2401",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "return_to_service_at": {
+          "exact_value": null,
+          "field": "fields.return_to_service_at",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2401",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.area_id": {
+          "exact_value": "assembly",
+          "field": "scope.area_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2401",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.asset_id": {
+          "exact_value": "FEED-03",
+          "field": "scope.asset_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2401",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.line_id": {
+          "exact_value": "line-03",
+          "field": "scope.line_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2401",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.operation_id": {
+          "exact_value": "OP-030",
+          "field": "scope.operation_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2401",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.product_id": {
+          "exact_value": "NW-A",
+          "field": "scope.product_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2401",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.product_revision": {
+          "exact_value": "P2",
+          "field": "scope.product_revision",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2401",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.site_id": {
+          "exact_value": "northworks",
+          "field": "scope.site_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2401",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "production_job_ids": {
+          "exact_value": [
+            "JOB-8301"
+          ],
+          "field": "production_job_ids",
+          "link_status": "synthetic_explicit_link",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2401",
+          "source_type": "synthetic_CMMS_MES_link"
+        }
+      },
+      "fields": {
+        "downtime_minutes": null,
+        "exposure": null,
+        "failure_mode": "FM-030-01",
+        "labor_minutes": 12,
+        "parts_replaced": [],
+        "repair_elapsed_minutes": null,
+        "return_to_service_at": null
+      },
+      "id": "MAINT-WO-2401",
+      "known_at": "2026-09-21T10:10:00Z",
+      "production_job_ids": [
+        "JOB-8301"
+      ],
+      "recorded_at": "2026-09-21T10:10:00Z",
+      "scope": {
+        "area_id": "assembly",
+        "asset_id": "FEED-03",
+        "line_id": "line-03",
+        "operation_id": "OP-030",
+        "product_id": "NW-A",
+        "product_revision": "P2",
+        "site_id": "northworks"
+      },
+      "source_note_ids": [
+        "NOTE-2401"
+      ],
+      "state_as_of": "2026-09-21T10:10:00Z",
+      "status": "completed_simulated",
+      "type": "corrective"
+    },
+    {
+      "available_from": "2026-09-23T14:00:00Z",
+      "case_id": "CASE-003",
+      "data_quality": [
+        "Labor is person-minutes, not downtime or elapsed repair time.",
+        "Null means unavailable; never impute zero."
+      ],
+      "date": "2026-09-23",
+      "entity_type": "maintenance_work_order",
+      "failure_event_id": "MFAIL-2402",
+      "field_provenance": {
+        "downtime_minutes": {
+          "exact_value": null,
+          "field": "fields.downtime_minutes",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2402",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "exposure": {
+          "exact_value": null,
+          "field": "fields.exposure",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2402",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "failure_mode": {
+          "exact_value": "FM-030-01",
+          "field": "fields.failure_mode",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2402",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "labor_minutes": {
+          "exact_value": 14,
+          "field": "fields.labor_minutes",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2402",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "parts_replaced": {
+          "exact_value": [],
+          "field": "fields.parts_replaced",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2402",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "repair_elapsed_minutes": {
+          "exact_value": null,
+          "field": "fields.repair_elapsed_minutes",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2402",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "return_to_service_at": {
+          "exact_value": null,
+          "field": "fields.return_to_service_at",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2402",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.area_id": {
+          "exact_value": "assembly",
+          "field": "scope.area_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2402",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.asset_id": {
+          "exact_value": "FEED-03",
+          "field": "scope.asset_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2402",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.line_id": {
+          "exact_value": "line-03",
+          "field": "scope.line_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2402",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.operation_id": {
+          "exact_value": "OP-030",
+          "field": "scope.operation_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2402",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.product_id": {
+          "exact_value": "NW-A",
+          "field": "scope.product_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2402",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.product_revision": {
+          "exact_value": "P2",
+          "field": "scope.product_revision",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2402",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.site_id": {
+          "exact_value": "northworks",
+          "field": "scope.site_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2402",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "production_job_ids": {
+          "exact_value": [
+            "JOB-8302"
+          ],
+          "field": "production_job_ids",
+          "link_status": "synthetic_explicit_link",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2402",
+          "source_type": "synthetic_CMMS_MES_link"
+        }
+      },
+      "fields": {
+        "downtime_minutes": null,
+        "exposure": null,
+        "failure_mode": "FM-030-01",
+        "labor_minutes": 14,
+        "parts_replaced": [],
+        "repair_elapsed_minutes": null,
+        "return_to_service_at": null
+      },
+      "id": "MAINT-WO-2402",
+      "known_at": "2026-09-23T14:00:00Z",
+      "production_job_ids": [
+        "JOB-8302"
+      ],
+      "recorded_at": "2026-09-23T14:00:00Z",
+      "scope": {
+        "area_id": "assembly",
+        "asset_id": "FEED-03",
+        "line_id": "line-03",
+        "operation_id": "OP-030",
+        "product_id": "NW-A",
+        "product_revision": "P2",
+        "site_id": "northworks"
+      },
+      "source_note_ids": [
+        "NOTE-2402",
+        "NOTE-2402-COPY"
+      ],
+      "state_as_of": "2026-09-23T14:00:00Z",
+      "status": "completed_simulated",
+      "type": "corrective"
+    },
+    {
+      "available_from": "2026-10-06T15:10:00Z",
+      "case_id": "CASE-003",
+      "data_quality": [
+        "Labor is person-minutes, not downtime or elapsed repair time.",
+        "Null means unavailable; never impute zero."
+      ],
+      "date": "2026-10-06",
+      "entity_type": "maintenance_work_order",
+      "failure_event_id": null,
+      "field_provenance": {
+        "downtime_minutes": {
+          "exact_value": null,
+          "field": "fields.downtime_minutes",
+          "record_version": "FIC-1",
+          "source_id": "DEMO-WO-003",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "exposure": {
+          "exact_value": null,
+          "field": "fields.exposure",
+          "record_version": "FIC-1",
+          "source_id": "DEMO-WO-003",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "failure_mode": {
+          "exact_value": null,
+          "field": "fields.failure_mode",
+          "record_version": "FIC-1",
+          "source_id": "DEMO-WO-003",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "labor_minutes": {
+          "exact_value": 30,
+          "field": "fields.labor_minutes",
+          "record_version": "FIC-1",
+          "source_id": "DEMO-WO-003",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "parts_replaced": {
+          "exact_value": [
+            {
+              "maintenance_spare_id": "SPARE-GUIDE-03",
+              "provenance": {
+                "exact_excerpt": "The guide component was replaced under the simulated approved work record.",
+                "field": "inspection_and_repair_note",
+                "record_version": "FIC-1",
+                "sentence_id": "NOTE-003:s3",
+                "sentence_ordinal": 3,
+                "source_id": "NOTE-003"
+              },
+              "quantity": 1
+            }
+          ],
+          "field": "fields.parts_replaced",
+          "record_version": "FIC-1",
+          "source_id": "DEMO-WO-003",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "repair_elapsed_minutes": {
+          "exact_value": null,
+          "field": "fields.repair_elapsed_minutes",
+          "record_version": "FIC-1",
+          "source_id": "DEMO-WO-003",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "return_to_service_at": {
+          "exact_value": "2026-10-06T15:10:00Z",
+          "field": "fields.return_to_service_at",
+          "record_version": "FIC-1",
+          "source_id": "DEMO-WO-003",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.area_id": {
+          "exact_value": "assembly",
+          "field": "scope.area_id",
+          "record_version": "FIC-1",
+          "source_id": "DEMO-WO-003",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.asset_id": {
+          "exact_value": "FEED-03",
+          "field": "scope.asset_id",
+          "record_version": "FIC-1",
+          "source_id": "DEMO-WO-003",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.line_id": {
+          "exact_value": "line-03",
+          "field": "scope.line_id",
+          "record_version": "FIC-1",
+          "source_id": "DEMO-WO-003",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.operation_id": {
+          "exact_value": "OP-030",
+          "field": "scope.operation_id",
+          "record_version": "FIC-1",
+          "source_id": "DEMO-WO-003",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.product_id": {
+          "exact_value": "NW-A",
+          "field": "scope.product_id",
+          "record_version": "FIC-1",
+          "source_id": "DEMO-WO-003",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.product_revision": {
+          "exact_value": "P2",
+          "field": "scope.product_revision",
+          "record_version": "FIC-1",
+          "source_id": "DEMO-WO-003",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.site_id": {
+          "exact_value": "northworks",
+          "field": "scope.site_id",
+          "record_version": "FIC-1",
+          "source_id": "DEMO-WO-003",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "production_job_ids": {
+          "exact_value": [
+            "JOB-8303"
+          ],
+          "field": "production_job_ids",
+          "link_status": "synthetic_explicit_link",
+          "record_version": "FIC-1",
+          "source_id": "DEMO-WO-003",
+          "source_type": "synthetic_CMMS_MES_link"
+        }
+      },
+      "fields": {
+        "downtime_minutes": null,
+        "exposure": null,
+        "failure_mode": null,
+        "labor_minutes": 30,
+        "parts_replaced": [
+          {
+            "maintenance_spare_id": "SPARE-GUIDE-03",
+            "provenance": {
+              "exact_excerpt": "The guide component was replaced under the simulated approved work record.",
+              "field": "inspection_and_repair_note",
+              "record_version": "FIC-1",
+              "sentence_id": "NOTE-003:s3",
+              "sentence_ordinal": 3,
+              "source_id": "NOTE-003"
+            },
+            "quantity": 1
+          }
+        ],
+        "repair_elapsed_minutes": null,
+        "return_to_service_at": "2026-10-06T15:10:00Z"
+      },
+      "id": "DEMO-WO-003",
+      "known_at": "2026-10-06T15:10:00Z",
+      "production_job_ids": [
+        "JOB-8303"
+      ],
+      "recorded_at": "2026-10-06T15:10:00Z",
+      "scope": {
+        "area_id": "assembly",
+        "asset_id": "FEED-03",
+        "line_id": "line-03",
+        "operation_id": "OP-030",
+        "product_id": "NW-A",
+        "product_revision": "P2",
+        "site_id": "northworks"
+      },
+      "source_note_ids": [
+        "NOTE-003"
+      ],
+      "state_as_of": "2026-10-06T15:10:00Z",
+      "status": "completed_simulated",
+      "type": "planned_corrective",
+      "planned_record_ref": "scenario-fixture.json#/case/events",
+      "visibility_rule": "This completed version is hidden before 15:10. The earlier approved action is represented by its separate case event, not this completed work record."
+    },
+    {
+      "available_from": "2026-10-20T15:15:00Z",
+      "case_id": "CASE-003",
+      "data_quality": [
+        "Labor is person-minutes, not downtime or elapsed repair time.",
+        "Null means unavailable; never impute zero."
+      ],
+      "date": "2026-10-20",
+      "entity_type": "maintenance_work_order",
+      "failure_event_id": null,
+      "field_provenance": {
+        "downtime_minutes": {
+          "exact_value": null,
+          "field": "fields.downtime_minutes",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2404",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "exposure": {
+          "exact_value": null,
+          "field": "fields.exposure",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2404",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "failure_mode": {
+          "exact_value": null,
+          "field": "fields.failure_mode",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2404",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "labor_minutes": {
+          "exact_value": 20,
+          "field": "fields.labor_minutes",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2404",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "parts_replaced": {
+          "exact_value": [],
+          "field": "fields.parts_replaced",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2404",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "repair_elapsed_minutes": {
+          "exact_value": null,
+          "field": "fields.repair_elapsed_minutes",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2404",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "return_to_service_at": {
+          "exact_value": null,
+          "field": "fields.return_to_service_at",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2404",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.area_id": {
+          "exact_value": "assembly",
+          "field": "scope.area_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2404",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.asset_id": {
+          "exact_value": "FEED-03",
+          "field": "scope.asset_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2404",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.line_id": {
+          "exact_value": "line-03",
+          "field": "scope.line_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2404",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.operation_id": {
+          "exact_value": "OP-030",
+          "field": "scope.operation_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2404",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.product_id": {
+          "exact_value": "NW-A",
+          "field": "scope.product_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2404",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.product_revision": {
+          "exact_value": "P2",
+          "field": "scope.product_revision",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2404",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.site_id": {
+          "exact_value": "northworks",
+          "field": "scope.site_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2404",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "production_job_ids": {
+          "exact_value": [],
+          "field": "production_job_ids",
+          "link_status": "synthetic_explicit_link",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2404",
+          "source_type": "synthetic_CMMS_MES_link"
+        }
+      },
+      "fields": {
+        "downtime_minutes": null,
+        "exposure": null,
+        "failure_mode": null,
+        "labor_minutes": 20,
+        "parts_replaced": [],
+        "repair_elapsed_minutes": null,
+        "return_to_service_at": null
+      },
+      "id": "MAINT-WO-2404",
+      "known_at": "2026-10-20T15:15:00Z",
+      "production_job_ids": [],
+      "recorded_at": "2026-10-20T15:15:00Z",
+      "scope": {
+        "area_id": "assembly",
+        "asset_id": "FEED-03",
+        "line_id": "line-03",
+        "operation_id": "OP-030",
+        "product_id": "NW-A",
+        "product_revision": "P2",
+        "site_id": "northworks"
+      },
+      "source_note_ids": [
+        "NOTE-VERIFY-003"
+      ],
+      "state_as_of": "2026-10-20T15:15:00Z",
+      "status": "completed_simulated",
+      "type": "effectiveness_review"
+    },
+    {
+      "available_from": "2026-11-03T14:15:00Z",
+      "case_id": "CASE-003",
+      "data_quality": [
+        "Labor is person-minutes, not downtime or elapsed repair time.",
+        "Null means unavailable; never impute zero."
+      ],
+      "date": "2026-11-03",
+      "entity_type": "maintenance_work_order",
+      "failure_event_id": null,
+      "field_provenance": {
+        "downtime_minutes": {
+          "exact_value": null,
+          "field": "fields.downtime_minutes",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2405",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "exposure": {
+          "exact_value": null,
+          "field": "fields.exposure",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2405",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "failure_mode": {
+          "exact_value": null,
+          "field": "fields.failure_mode",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2405",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "labor_minutes": {
+          "exact_value": null,
+          "field": "fields.labor_minutes",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2405",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "parts_replaced": {
+          "exact_value": [],
+          "field": "fields.parts_replaced",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2405",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "repair_elapsed_minutes": {
+          "exact_value": null,
+          "field": "fields.repair_elapsed_minutes",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2405",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "return_to_service_at": {
+          "exact_value": null,
+          "field": "fields.return_to_service_at",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2405",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.area_id": {
+          "exact_value": "assembly",
+          "field": "scope.area_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2405",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.asset_id": {
+          "exact_value": "FEED-03",
+          "field": "scope.asset_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2405",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.line_id": {
+          "exact_value": "line-03",
+          "field": "scope.line_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2405",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.operation_id": {
+          "exact_value": "OP-030",
+          "field": "scope.operation_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2405",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.product_id": {
+          "exact_value": "NW-A",
+          "field": "scope.product_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2405",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.product_revision": {
+          "exact_value": "P2",
+          "field": "scope.product_revision",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2405",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "scope.site_id": {
+          "exact_value": "northworks",
+          "field": "scope.site_id",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2405",
+          "source_type": "synthetic_structured_CMMS_field"
+        },
+        "production_job_ids": {
+          "exact_value": [],
+          "field": "production_job_ids",
+          "link_status": "synthetic_explicit_link",
+          "record_version": "FIC-1",
+          "source_id": "MAINT-WO-2405",
+          "source_type": "synthetic_CMMS_MES_link"
+        }
+      },
+      "fields": {
+        "downtime_minutes": null,
+        "exposure": null,
+        "failure_mode": null,
+        "labor_minutes": null,
+        "parts_replaced": [],
+        "repair_elapsed_minutes": null,
+        "return_to_service_at": null
+      },
+      "id": "MAINT-WO-2405",
+      "known_at": "2026-11-03T14:15:00Z",
+      "production_job_ids": [],
+      "recorded_at": "2026-11-03T14:15:00Z",
+      "scope": {
+        "area_id": "assembly",
+        "asset_id": "FEED-03",
+        "line_id": "line-03",
+        "operation_id": "OP-030",
+        "product_id": "NW-A",
+        "product_revision": "P2",
+        "site_id": "northworks"
+      },
+      "source_note_ids": [
+        "NOTE-RECUR-003"
+      ],
+      "state_as_of": "2026-11-03T14:15:00Z",
+      "status": "open",
+      "type": "investigation"
+    }
+  ]
+}

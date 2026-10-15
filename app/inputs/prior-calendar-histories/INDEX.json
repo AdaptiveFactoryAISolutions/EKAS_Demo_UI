@@ -1,0 +1,88 @@
+[
+  {
+    "tag": "v81-comparison",
+    "producer": "v81",
+    "questions": [
+      "What was Machine 2 OEE in March?",
+      "No, compare with January"
+    ],
+    "originalReadStatus": 200,
+    "sha256": "481cc0b16e62bc9fe10d9d79c143387a2b85d67bc566646da737938798eb2a1f"
+  },
+  {
+    "tag": "v81-scope",
+    "producer": "v81",
+    "questions": [
+      "We missed our production goal.",
+      "May quality improve?"
+    ],
+    "originalReadStatus": 200,
+    "sha256": "c05621cc36c0f81501cc1dde1f6ba2777383f69a4d0484f232f907d12ba9db0a"
+  },
+  {
+    "tag": "v82-comparison",
+    "producer": "v82",
+    "questions": [
+      "What was Machine 2 OEE in March?",
+      "No, compare with January"
+    ],
+    "originalReadStatus": 200,
+    "sha256": "668279239cf832ef5828ef75b3a3aff7fbb8e1113c51590173322286ac40e45b"
+  },
+  {
+    "tag": "v82-scope",
+    "producer": "v82",
+    "questions": [
+      "We missed our production goal.",
+      "Compare with January"
+    ],
+    "originalReadStatus": 200,
+    "sha256": "70aa91ed190a49e1b1489a0d9a05a2ec114edcb997ab0ed4578119a0e9511e99"
+  },
+  {
+    "tag": "v83-clock",
+    "producer": "v83",
+    "questions": [
+      "We missed our production goal.",
+      "Advance time to post verification October 20"
+    ],
+    "originalReadStatus": 200,
+    "sha256": "d8160411b7982cb44f5e8ef176809226daad125917cb7a1ee5c5c0ca0b52d8f6"
+  },
+  {
+    "tag": "v87-downtime",
+    "producer": "v87",
+    "questions": [
+      "Investigate downtime.",
+      "Show OEE.",
+      "Show downtime."
+    ],
+    "originalReadStatus": 200,
+    "sha256": "0c35fb684970aad5f045a05cc6d2a253258c5baa0ab193f955d93e0d0754a372"
+  },
+  {
+    "tag": "v88-asset-duration",
+    "producer": "V88",
+    "producerSourceSha256": "298602afaf067de9ef94c027f32bea077395c12c577c62c8c95bd39940824f0c",
+    "questions": [
+      "Investigate downtime.",
+      "Show downtime on FEED-99.",
+      "Show as a table."
+    ],
+    "originalReadStatus": 200,
+    "sha256": "8a41b1d2f8eefcf08b30ccc727098cff3df088b54ead1f73eda9c043efadd9a0",
+    "oldMetric": "oee"
+  },
+  {
+    "tag": "v88-monthly-duration-compare",
+    "producer": "V88",
+    "producerSourceSha256": "298602afaf067de9ef94c027f32bea077395c12c577c62c8c95bd39940824f0c",
+    "questions": [
+      "What was downtime in March?",
+      "Compare that to last month."
+    ],
+    "originalReadStatus": 200,
+    "sha256": "0f4ca50b68886a2ab3abcb05ca7c7bca66379cf7b02be2f2723da34d97fe3c5d",
+    "oldMetric": "downtime"
+  }
+]

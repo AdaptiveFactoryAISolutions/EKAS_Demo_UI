@@ -1,0 +1,94 @@
+{
+  "conversation capture": [
+    9,
+    13
+  ],
+  "query/draft/presentation changes": [
+    14,
+    19,
+    20,
+    21,
+    22,
+    23,
+    28,
+    29,
+    30,
+    33,
+    34,
+    35,
+    43
+  ],
+  "identity-bound navigation/inspection": [
+    7,
+    10,
+    11,
+    24,
+    36,
+    37,
+    47,
+    49,
+    58,
+    63,
+    70,
+    82
+  ],
+  "pattern computation/preferences": [
+    17,
+    46,
+    62
+  ],
+  "saved local objects": [
+    8,
+    12,
+    38,
+    39,
+    45,
+    59
+  ],
+  "board scoped mutations": [
+    48,
+    50,
+    51,
+    52,
+    54,
+    55
+  ],
+  "monitors/schedules/notices": [
+    2,
+    56,
+    60,
+    61
+  ],
+  "local content/preferences": [
+    5,
+    16,
+    69,
+    76,
+    79,
+    81
+  ],
+  "alias reconciliation": [
+    64,
+    72
+  ],
+  "captured board review": [
+    73
+  ],
+  "preview/export/copy/presentation": [
+    40,
+    41,
+    42,
+    53,
+    57,
+    67,
+    74
+  ],
+  "versioned offline API": [
+    75
+  ],
+  "held exclusions": [
+    77,
+    78,
+    85
+  ]
+}

@@ -1,0 +1,2 @@
+export type LocalOwnerPrincipal={subject:'local-demo-owner'|'synthetic-rehearsal-owner';scope:'local-demo-ai'|'synthetic-rehearsal-ai';csrf:string;expiresAt:number};
+export function createLocalOwnerAuthority(options:{origin:string;bootstrapCode:string;now?:()=>number;sessionTtlMs?:number;rehearsalOnly?:boolean}):{authorize(request:Request,mutation?:boolean):LocalOwnerPrincipal;cookieName:string;login(request:Request):Promise<Response>;logout(request:Request):Response};

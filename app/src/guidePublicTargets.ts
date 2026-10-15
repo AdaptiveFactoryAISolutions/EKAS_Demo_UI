@@ -1,0 +1,19 @@
+import bindings from '../inputs/current-guide-action-bindings-v90.json';
+import type {GuideTarget,GuideProcedure} from './guideModel';
+export type PublicGuideTarget={id:string;page:string;scopeSelector?:string;selector?:string;label?:string;kind:'public_opener'|'authored_control';orientationFallback:string;qualification:string;prerequisiteHint?:string};
+const openers:Record<string,string>={'workflow:F025':'Add formula','workflow:F026':'Add set','workflow:F027':'Add parameter','workflow:F037':'SQL','workflow:F002':'Notices','workflow:F008':'Create','workflow:F017':'Run','workflow:F067':'Export alias definitions JSON','workflow:F074':'Copy preview payload','workflow:F075':'Run local request'};
+const prerequisites:Record<string,string>={
+ 'workflow:F019':'Enter a matching authored column name or synonym in the Search draft; no suggestion exists for an empty or unmatched draft.',
+ 'workflow:F021':'Undo needs a prior working-query edit. Redo needs an undone edit. Reset requires a saved answer; no history is fabricated.',
+ 'workflow:F034':'Select an eligible point or exact Grid slice first, then choose an authored drill column. No other cohort is substituted.',
+ 'workflow:F035':'Select an eligible point or exact Grid slice first. Keep only and Exclude operate on that exact selected scope.',
+ 'workflow:F036':'Select an eligible point or exact Grid slice before opening Underlying. The normal result source and cutoff remain authoritative.',
+ 'workflow:F044':'The notice applies only to a second grouped attribute when a one-axis chart omits it. Table/pivot or a single group legitimately has no notice.',
+ 'workflow:F083':'Enter a non-empty local Expert note before Save local note enables. This does not contact anyone or book a meeting.'
+};
+/** A public page/control registry, distinct from a source callback or completion receipt. */
+export const publicGuideTargets:PublicGuideTarget[]=bindings.bindings.map(b=>{const page=b.id==='workflow:F083'?'contact':b.page,global=b.sourceFile==='src/retained/console.tsx'||b.id==='workflow:F002'||b.id==='workflow:F008';return {id:b.id,page,...(!global?{scopeSelector:'[data-guide-page="'+page+'"]'}:{}),...(b.id==='workflow:F083'?{selector:'#expert-note',label:'Expert note'}:b.id==='workflow:F058'?{selector:'[data-guide-action="saved-answer-open"]',label:'Create an answer'}:b.id==='workflow:F064'?{selector:'[data-guide-action="object-open"]'}:openers[b.id]?{label:openers[b.id]}:'selector' in b&&b.selector?{selector:b.selector}:{label:b.label}),...(prerequisites[b.id]?{prerequisiteHint:prerequisites[b.id]}:{}),kind:openers[b.id]||b.id==='workflow:F058'||b.id==='workflow:F064'?'public_opener':'authored_control',orientationFallback:'[data-guide-page="'+page+'"]',qualification:'Focus a visible ordinary control. A form opener is not a save, receipt or execution; missing/disabled action prerequisites remain authoritative.'};});
+export function publicPurposeTarget(procedure:GuideProcedure):{page:string;target:GuideTarget}{const b=publicGuideTargets.find(b=>b.id===procedure.id);if(!b)return {page:procedure.page,target:{labels:[],selector:'[data-guide-page="'+procedure.page+'"]',orientation:true}};return {page:b.page,target:{labels:b.label?[b.label]:[],...(b.selector?{selector:b.selector}:{}),...(b.scopeSelector?{scopeSelector:b.scopeSelector}:{}),fallbackSelector:b.orientationFallback,orientation:true}};}
+export function publicActionTarget(procedure:GuideProcedure,target:GuideTarget):GuideTarget{const b=publicGuideTargets.find(b=>b.id===procedure.id);if(!b)return target;if(b.kind==='public_opener')return {labels:b.label?[b.label]:[],...(b.selector?{selector:b.selector}:{}),scopeSelector:b.scopeSelector};return {...target,...(b.scopeSelector?{scopeSelector:b.scopeSelector}:{})};}
+
+export function publicPrerequisite(id:string){return publicGuideTargets.find(b=>b.id===id)?.prerequisiteHint;}

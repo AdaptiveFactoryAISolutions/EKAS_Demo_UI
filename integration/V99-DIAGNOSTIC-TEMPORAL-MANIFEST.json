@@ -1,0 +1,595 @@
+{
+  "schemaVersion": 1,
+  "synthetic": true,
+  "originalTemporalRecordCount": 72,
+  "originalTemporalPolicyUnchanged": true,
+  "fixtureSha256": "abfda9675f4dd7503982be5d32442ce5ec2c07c84b62103124cad158af330e0e",
+  "authorship": "Independent EKAS synthetic diagnostic examples; no plant alarm/historian/topology integration, copied templates, metric recalculation or verified cause.",
+  "episodes": [
+    {
+      "caseId": "downtime",
+      "label": "initial",
+      "coverageFrom": "2026-10-06T13:00:00Z",
+      "coverageTo": "2026-10-06T14:00:00Z",
+      "sourceCutoff": "2026-10-06T14:00:00Z",
+      "illustrativeStopAt": "2026-10-06T13:20:00Z",
+      "records": [
+        {
+          "id": "DIAG-DOWNTIME-M1",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:05:00Z",
+          "knownAt": "2026-10-06T13:05:00Z",
+          "sourceId": "DIAG-DOWNTIME-HIST-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-DOWNTIME-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-DOWNTIME-M2",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:15:00Z",
+          "knownAt": "2026-10-06T13:15:00Z",
+          "sourceId": "DIAG-DOWNTIME-HIST-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-DOWNTIME-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-DOWNTIME-M3",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:25:00Z",
+          "knownAt": "2026-10-06T13:25:00Z",
+          "sourceId": "DIAG-DOWNTIME-HIST-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-DOWNTIME-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-DOWNTIME-A1",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:16:00Z",
+          "knownAt": "2026-10-06T13:16:00Z",
+          "sourceId": "DIAG-DOWNTIME-ALARM-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-DOWNTIME-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-DOWNTIME-A2",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:18:00Z",
+          "knownAt": "2026-10-06T13:18:00Z",
+          "sourceId": "DIAG-DOWNTIME-ALARM-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-DOWNTIME-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-DOWNTIME-A3",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:26:00Z",
+          "knownAt": "2026-10-06T13:26:00Z",
+          "sourceId": "DIAG-DOWNTIME-ALARM-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-DOWNTIME-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-DOWNTIME-CONTROL-1",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:21:00Z",
+          "knownAt": "2026-10-06T13:21:00Z",
+          "sourceId": "DIAG-DOWNTIME-CONTROL-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-DOWNTIME-CONTROL"
+        },
+        {
+          "id": "DIAG-DOWNTIME-HUMAN-1",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:22:00Z",
+          "knownAt": "2026-10-06T13:24:00Z",
+          "sourceId": "DIAG-DOWNTIME-OBS-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-DOWNTIME-HUMAN"
+        },
+        {
+          "id": "DIAG-DOWNTIME-LATE-1",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:12:00Z",
+          "knownAt": "2026-10-06T15:05:00Z",
+          "sourceId": "independently-authored-late-observation",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-DOWNTIME-LATE-CHAIN"
+        },
+        {
+          "id": "DIAG-DOWNTIME-ALARM-A2",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:27:00Z",
+          "knownAt": "2026-10-06T13:27:00Z",
+          "sourceId": "DIAG-DOWNTIME-ALARM-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-DOWNTIME-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-DOWNTIME-M-TIE",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:27:00Z",
+          "knownAt": "2026-10-06T13:27:00Z",
+          "sourceId": "DIAG-DOWNTIME-HIST-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-DOWNTIME-AUX-SENSOR"
+        }
+      ],
+      "selection": "Original explicit case snapshots; late-known event only after inspection simulation",
+      "qualification": "Independently authored auxiliary episode. No claim these observations comprise the original stop intervals, primary metric cohorts or production historian."
+    },
+    {
+      "caseId": "downtime",
+      "label": "recurrence",
+      "coverageFrom": "2026-11-03T14:05:00Z",
+      "coverageTo": "2026-11-03T14:50:00Z",
+      "sourceCutoff": "2026-11-03T15:00:00Z",
+      "illustrativeStopAt": "2026-11-03T14:20:00Z",
+      "records": [
+        {
+          "id": "DIAG-DOWNTIME-C2-1",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:06:00Z",
+          "knownAt": "2026-11-03T14:07:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-DOWNTIME-C2-DIAG-DOWNTIME-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-DOWNTIME-C2-2",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:11:00Z",
+          "knownAt": "2026-11-03T14:12:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-DOWNTIME-C2-DIAG-DOWNTIME-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-DOWNTIME-C2-3",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:16:00Z",
+          "knownAt": "2026-11-03T14:17:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-DOWNTIME-C2-DIAG-DOWNTIME-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-DOWNTIME-C2-4",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:21:00Z",
+          "knownAt": "2026-11-03T14:22:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-DOWNTIME-C2-DIAG-DOWNTIME-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-DOWNTIME-C2-5",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:26:00Z",
+          "knownAt": "2026-11-03T14:27:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-DOWNTIME-C2-DIAG-DOWNTIME-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-DOWNTIME-C2-6",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:31:00Z",
+          "knownAt": "2026-11-03T14:32:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-DOWNTIME-C2-DIAG-DOWNTIME-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-DOWNTIME-C2-7",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:36:00Z",
+          "knownAt": "2026-11-03T14:37:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-DOWNTIME-C2-DIAG-DOWNTIME-CONTROL"
+        },
+        {
+          "id": "DIAG-DOWNTIME-C2-8",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:41:00Z",
+          "knownAt": "2026-11-03T14:42:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-DOWNTIME-C2-DIAG-DOWNTIME-HUMAN"
+        }
+      ],
+      "selection": "diagnostic-cycle2-nov3-1500",
+      "qualification": "Independently authored auxiliary episode. No claim these observations comprise the original stop intervals, primary metric cohorts or production historian."
+    },
+    {
+      "caseId": "speed",
+      "label": "initial",
+      "coverageFrom": "2026-10-06T13:00:00Z",
+      "coverageTo": "2026-10-06T14:00:00Z",
+      "sourceCutoff": "2026-10-06T14:00:00Z",
+      "illustrativeStopAt": "2026-10-06T13:20:00Z",
+      "records": [
+        {
+          "id": "DIAG-SPEED-M1",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:05:00Z",
+          "knownAt": "2026-10-06T13:05:00Z",
+          "sourceId": "DIAG-SPEED-HIST-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-SPEED-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-SPEED-M2",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:15:00Z",
+          "knownAt": "2026-10-06T13:15:00Z",
+          "sourceId": "DIAG-SPEED-HIST-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-SPEED-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-SPEED-M3",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:25:00Z",
+          "knownAt": "2026-10-06T13:25:00Z",
+          "sourceId": "DIAG-SPEED-HIST-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-SPEED-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-SPEED-A1",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:16:00Z",
+          "knownAt": "2026-10-06T13:16:00Z",
+          "sourceId": "DIAG-SPEED-ALARM-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-SPEED-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-SPEED-A2",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:18:00Z",
+          "knownAt": "2026-10-06T13:18:00Z",
+          "sourceId": "DIAG-SPEED-ALARM-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-SPEED-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-SPEED-A3",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:26:00Z",
+          "knownAt": "2026-10-06T13:26:00Z",
+          "sourceId": "DIAG-SPEED-ALARM-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-SPEED-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-SPEED-CONTROL-1",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:21:00Z",
+          "knownAt": "2026-10-06T13:21:00Z",
+          "sourceId": "DIAG-SPEED-CONTROL-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-SPEED-CONTROL"
+        },
+        {
+          "id": "DIAG-SPEED-HUMAN-1",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:22:00Z",
+          "knownAt": "2026-10-06T13:24:00Z",
+          "sourceId": "DIAG-SPEED-OBS-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-SPEED-HUMAN"
+        },
+        {
+          "id": "DIAG-SPEED-LATE-1",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:12:00Z",
+          "knownAt": "2026-10-06T15:05:00Z",
+          "sourceId": "independently-authored-late-observation",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-SPEED-LATE-CHAIN"
+        },
+        {
+          "id": "DIAG-SPEED-ALARM-A2",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:27:00Z",
+          "knownAt": "2026-10-06T13:27:00Z",
+          "sourceId": "DIAG-SPEED-ALARM-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-SPEED-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-SPEED-M-TIE",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:27:00Z",
+          "knownAt": "2026-10-06T13:27:00Z",
+          "sourceId": "DIAG-SPEED-HIST-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-SPEED-AUX-SENSOR"
+        }
+      ],
+      "selection": "Original explicit case snapshots; late-known event only after inspection simulation",
+      "qualification": "Independently authored auxiliary episode. No claim these observations comprise the original stop intervals, primary metric cohorts or production historian."
+    },
+    {
+      "caseId": "speed",
+      "label": "recurrence",
+      "coverageFrom": "2026-11-03T14:05:00Z",
+      "coverageTo": "2026-11-03T14:50:00Z",
+      "sourceCutoff": "2026-11-03T15:00:00Z",
+      "illustrativeStopAt": "2026-11-03T14:20:00Z",
+      "records": [
+        {
+          "id": "DIAG-SPEED-C2-1",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:06:00Z",
+          "knownAt": "2026-11-03T14:07:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-SPEED-C2-DIAG-SPEED-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-SPEED-C2-2",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:11:00Z",
+          "knownAt": "2026-11-03T14:12:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-SPEED-C2-DIAG-SPEED-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-SPEED-C2-3",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:16:00Z",
+          "knownAt": "2026-11-03T14:17:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-SPEED-C2-DIAG-SPEED-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-SPEED-C2-4",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:21:00Z",
+          "knownAt": "2026-11-03T14:22:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-SPEED-C2-DIAG-SPEED-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-SPEED-C2-5",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:26:00Z",
+          "knownAt": "2026-11-03T14:27:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-SPEED-C2-DIAG-SPEED-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-SPEED-C2-6",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:31:00Z",
+          "knownAt": "2026-11-03T14:32:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-SPEED-C2-DIAG-SPEED-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-SPEED-C2-7",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:36:00Z",
+          "knownAt": "2026-11-03T14:37:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-SPEED-C2-DIAG-SPEED-CONTROL"
+        },
+        {
+          "id": "DIAG-SPEED-C2-8",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:41:00Z",
+          "knownAt": "2026-11-03T14:42:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-SPEED-C2-DIAG-SPEED-HUMAN"
+        }
+      ],
+      "selection": "diagnostic-cycle2-nov3-1500",
+      "qualification": "Independently authored auxiliary episode. No claim these observations comprise the original stop intervals, primary metric cohorts or production historian."
+    },
+    {
+      "caseId": "quality",
+      "label": "initial",
+      "coverageFrom": "2026-10-06T13:00:00Z",
+      "coverageTo": "2026-10-06T14:00:00Z",
+      "sourceCutoff": "2026-10-06T14:00:00Z",
+      "illustrativeStopAt": "2026-10-06T13:20:00Z",
+      "records": [
+        {
+          "id": "DIAG-QUALITY-M1",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:05:00Z",
+          "knownAt": "2026-10-06T13:05:00Z",
+          "sourceId": "DIAG-QUALITY-HIST-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-QUALITY-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-QUALITY-M2",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:15:00Z",
+          "knownAt": "2026-10-06T13:15:00Z",
+          "sourceId": "DIAG-QUALITY-HIST-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-QUALITY-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-QUALITY-M3",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:25:00Z",
+          "knownAt": "2026-10-06T13:25:00Z",
+          "sourceId": "DIAG-QUALITY-HIST-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-QUALITY-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-QUALITY-A1",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:16:00Z",
+          "knownAt": "2026-10-06T13:16:00Z",
+          "sourceId": "DIAG-QUALITY-ALARM-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-QUALITY-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-QUALITY-A2",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:18:00Z",
+          "knownAt": "2026-10-06T13:18:00Z",
+          "sourceId": "DIAG-QUALITY-ALARM-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-QUALITY-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-QUALITY-A3",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:26:00Z",
+          "knownAt": "2026-10-06T13:26:00Z",
+          "sourceId": "DIAG-QUALITY-ALARM-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-QUALITY-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-QUALITY-CONTROL-1",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:21:00Z",
+          "knownAt": "2026-10-06T13:21:00Z",
+          "sourceId": "DIAG-QUALITY-CONTROL-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-QUALITY-CONTROL"
+        },
+        {
+          "id": "DIAG-QUALITY-HUMAN-1",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:22:00Z",
+          "knownAt": "2026-10-06T13:24:00Z",
+          "sourceId": "DIAG-QUALITY-OBS-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-QUALITY-HUMAN"
+        },
+        {
+          "id": "DIAG-QUALITY-LATE-1",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:12:00Z",
+          "knownAt": "2026-10-06T15:05:00Z",
+          "sourceId": "independently-authored-late-observation",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-QUALITY-LATE-CHAIN"
+        },
+        {
+          "id": "DIAG-QUALITY-ALARM-A2",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:27:00Z",
+          "knownAt": "2026-10-06T13:27:00Z",
+          "sourceId": "DIAG-QUALITY-ALARM-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-QUALITY-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-QUALITY-M-TIE",
+          "cycle": 1,
+          "eventTime": "2026-10-06T13:27:00Z",
+          "knownAt": "2026-10-06T13:27:00Z",
+          "sourceId": "DIAG-QUALITY-HIST-V1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-QUALITY-AUX-SENSOR"
+        }
+      ],
+      "selection": "Original explicit case snapshots; late-known event only after inspection simulation",
+      "qualification": "Independently authored auxiliary episode. No claim these observations comprise the original stop intervals, primary metric cohorts or production historian."
+    },
+    {
+      "caseId": "quality",
+      "label": "recurrence",
+      "coverageFrom": "2026-11-03T14:05:00Z",
+      "coverageTo": "2026-11-03T14:50:00Z",
+      "sourceCutoff": "2026-11-03T15:00:00Z",
+      "illustrativeStopAt": "2026-11-03T14:20:00Z",
+      "records": [
+        {
+          "id": "DIAG-QUALITY-C2-1",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:06:00Z",
+          "knownAt": "2026-11-03T14:07:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-QUALITY-C2-DIAG-QUALITY-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-QUALITY-C2-2",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:11:00Z",
+          "knownAt": "2026-11-03T14:12:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-QUALITY-C2-DIAG-QUALITY-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-QUALITY-C2-3",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:16:00Z",
+          "knownAt": "2026-11-03T14:17:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-QUALITY-C2-DIAG-QUALITY-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-QUALITY-C2-4",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:21:00Z",
+          "knownAt": "2026-11-03T14:22:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-QUALITY-C2-DIAG-QUALITY-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-QUALITY-C2-5",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:26:00Z",
+          "knownAt": "2026-11-03T14:27:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-QUALITY-C2-DIAG-QUALITY-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-QUALITY-C2-6",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:31:00Z",
+          "knownAt": "2026-11-03T14:32:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-QUALITY-C2-DIAG-QUALITY-AUX-SENSOR"
+        },
+        {
+          "id": "DIAG-QUALITY-C2-7",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:36:00Z",
+          "knownAt": "2026-11-03T14:37:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-QUALITY-C2-DIAG-QUALITY-CONTROL"
+        },
+        {
+          "id": "DIAG-QUALITY-C2-8",
+          "cycle": 2,
+          "eventTime": "2026-11-03T14:41:00Z",
+          "knownAt": "2026-11-03T14:42:00Z",
+          "sourceId": "independently-authored-recurrence-episode-v1",
+          "sourceVersion": 1,
+          "independenceGroupId": "DIAG-QUALITY-C2-DIAG-QUALITY-HUMAN"
+        }
+      ],
+      "selection": "diagnostic-cycle2-nov3-1500",
+      "qualification": "Independently authored auxiliary episode. No claim these observations comprise the original stop intervals, primary metric cohorts or production historian."
+    }
+  ]
+}

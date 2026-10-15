@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "kind": "Owned Northworks QA snapshot",
+  "fixture": "northworks-demo-v1",
+  "synthetic": true,
+  "key": "unowned.synthetic-northworks",
+  "createdAt": "2026-10-11T00:01:00Z",
+  "raw": "{}"
+}

@@ -1,0 +1,309 @@
+{
+  "source": {
+    "library_file_id": "libfile_136f5a7833708191b1bbf4392d7d8f9a",
+    "file_name": "Pasted text(2).md",
+    "lines": 52,
+    "bytes": 9684,
+    "read_complete": true
+  },
+  "adaptation": "EKAS governed synthetic data replaces finance Cartesian placeholders; ratio-of-sums, exact units/source versions/cutoffs retained. Actual Highcharts12.6/Dashboards4.2/GridLite3.2 retained. No production authority or external dispatch.",
+  "rows": [
+    {
+      "id": "A01",
+      "clause": "Identity/synthetic boundary",
+      "required_interactions": "EKAS Answers original identity, dismiss exact strip, no cause assertion/login/live authority",
+      "code": "retained/console.tsx",
+      "owner_test_evidence": "retained/templateEntry.test.tsx",
+      "implementation_note": "Implemented local synthetic flow; source presence does not establish all-branch or native acceptance.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A02",
+      "clause": "Stack/theme/density",
+      "required_interactions": "React/TS/store persistence, dark tokens/font stacks;44pxcontrols;390/laptop;compact shrinks only small text",
+      "code": "retained/retained.css, retained/template-tailwind.css, ../public/fonts",
+      "owner_test_evidence": "retained/templateEntry.test.tsx",
+      "implementation_note": "Actual Tailwind4.3.3 utilities compiled and scoped; editable generated CSS included; regeneration takes public compiler as argument. Official IBM Plex TTFs/license bundled; no runtime font request.44px controls. Native390/laptop pending.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A03",
+      "clause": "Default shell",
+      "required_interactions": "Root mounts sticky header, fourareas/search/actions/secondarylinks,220pxaside/Create;phone Menu",
+      "code": "main.tsx, retained/workspace.tsx, retained/console.tsx",
+      "owner_test_evidence": "retained/templateEntry.test.tsx",
+      "implementation_note": "Implemented local synthetic flow; source presence does not establish all-branch or native acceptance.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A04",
+      "clause": "Complete navigation",
+      "required_interactions": "All39original items/group/order, firstscreen perarea; everydestination functional; native mobilecollapse",
+      "code": "retained/console.tsx, retained/screens.tsx",
+      "owner_test_evidence": "retained/retention.test.tsx",
+      "implementation_note": "Implemented local synthetic flow; source presence does not establish all-branch or native acceptance.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A05",
+      "clause": "Palette",
+      "required_interactions": "Ctrl+K and fieldfocus open; substring query filters screenlabels;select navigates and closes;keyboard exit",
+      "code": "retained/console.tsx, retained/screens.tsx Dialog/Overlays",
+      "owner_test_evidence": "retained/exactSpecUi.test.tsx",
+      "implementation_note": "Implemented local synthetic flow; source presence does not establish all-branch or native acceptance.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A06",
+      "clause": "Model/catalog",
+      "required_interactions": "Exact actualworksheet/source/version;description/synonyms, governedcontext;every sourceoccurrence traceable;missing inputs truthful",
+      "code": "platform/workspaceQuery.ts, retained/MetricLab.tsx",
+      "owner_test_evidence": "retained/positiveUi.test.tsx",
+      "implementation_note": "Implemented local synthetic flow; source presence does not establish all-branch or native acceptance.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A07",
+      "clause": "Query tokens/filter/scope",
+      "required_interactions": "in/not exactvalues;empty/no-data vszero;rowrule-site;unknownID cannotbroaden;maskdowntime/formulas+CSV",
+      "code": "platform/workspaceQuery.ts, retained/capturedView.ts",
+      "owner_test_evidence": "retained/model.test.ts, retained/capturedViewUi.test.tsx",
+      "implementation_note": "Implemented local synthetic flow; source presence does not establish all-branch or native acceptance.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A08",
+      "clause": "Ratio aggregation",
+      "required_interactions": "Pooled OEE sumidealgoodminutes/sumplanned;FPY/scrap/attainment denominator exact;energy missing not0;mixedrev eachstandard",
+      "code": "platform/workspaceQuery.ts, platform/metricEngine.ts",
+      "owner_test_evidence": "platform/integrationRecheck.test.ts",
+      "implementation_note": "Implemented local synthetic flow; source presence does not establish all-branch or native acceptance.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A09",
+      "clause": "Date buckets/prior",
+      "required_interactions": "month/quarter/year/Mondayweek;samecohort previousrequestedbucket;no priorlabel not0;asof excludefuture",
+      "code": "platform/workspaceQuery.ts mondayWeek/priorBucket",
+      "owner_test_evidence": "retained/exactSpecQuery.test.ts",
+      "implementation_note": "Fixed quarter/year prior crash and Monday-week buckets. Previous bucket matched only within identical other dimensions/cutoff. Missing prior remains absent/null.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A10",
+      "clause": "Sort/limit/history",
+      "required_interactions": "firstmeasuredescending;stableidentity;max80groups+visiblecutnote;undo/redo;save/reset restoreslastsave;reload",
+      "code": "platform/workspaceQuery.ts limitGroups, retained/store.ts",
+      "owner_test_evidence": "retained/exactSpecQuery.test.ts, retained/retention.test.tsx",
+      "implementation_note": "First-measure descending with stable tie identity;80limit and total/truncation disclosure; temporal line/area display is explicitly chronological. No invented seed expansion.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A11",
+      "clause": "Phrase intent",
+      "required_interactions": "synonym matches;why/drop onlycompare;no cause;followup exactscope/asof",
+      "code": "platform/workspaceQuery.ts compilePhrase, retained/synonyms.ts",
+      "owner_test_evidence": "retained/exactSpecQuery.test.ts, retained/synonyms.test.ts",
+      "implementation_note": "Implemented local synthetic flow; source presence does not establish all-branch or native acceptance.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A12",
+      "clause": "Home",
+      "required_interactions": "submit\u2192Ask;truthfulsourcechip;attachment unreviewed;3headlines withproperprior/missing;addcurrentKPI;recent open/share/schedule/remove;searchfilters",
+      "code": "retained/screens.tsx Home",
+      "owner_test_evidence": "retained/workflowActions.test.tsx",
+      "implementation_note": "Implemented local synthetic flow; source presence does not establish all-branch or native acceptance.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A13",
+      "clause": "Ask",
+      "required_interactions": "multiplequestions eachquery/chart/SQL;fixedsuggestions;matchingmemory notesascontext;Useful/Unclear;Patternaddmenu",
+      "code": "retained/screens.tsx Ask/CapturedQuestion, retained/conversationClient.ts",
+      "owner_test_evidence": "retained/exactSpecUi.test.tsx, platform/workspaceConversation.test.ts",
+      "implementation_note": "Each question now captures its own query, rows, source IDs, context, timestamp and SQL. Current stricter access withholds historical data rather than requerying another site. Older captures without rows remain unavailable.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A14",
+      "clause": "Search input/columns",
+      "required_interactions": "Go commitsdraft;clear removes tokens;firstvisit noresultsuntilGo;typingsuggestions;Popular/All/find;groupsMeasures/Attributes/Dates;info/filter",
+      "code": "retained/screens.tsx Search/useRows",
+      "owner_test_evidence": "retained/exactSpecUi.test.tsx",
+      "implementation_note": "Fresh empty Search does not call query service or draw results before Go. Existing saved nonempty queries open deliberately. Go deduplicates inherited filters.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A15",
+      "clause": "Formula/sets/parameters",
+      "required_interactions": "emptyformula initially;compatibleunits/zero rule;All/Yours actualselector;createsetsvalues;apply/disable exactfilter restoration",
+      "code": "retained/screens.tsx Search/Overlays, retained/workflowRuntime.ts",
+      "owner_test_evidence": "retained/exactSpecUi.test.tsx, retained/workflowActions.test.tsx",
+      "implementation_note": "Real All/Yours selectors, editable exact dimension/value set creation, compatible-unit formula/zero denominator guard, applied parameter restoration.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A16",
+      "clause": "Charts/config",
+      "required_interactions": "eightactualtypes notbuttons alone;labels/decimal/bucket/compare;table sort;legendexclude;secondattrnotice;realChart/DataPool/Grid sync",
+      "code": "retained/viz.tsx, retained/chartData.ts",
+      "owner_test_evidence": "retained/exactSpecQuery.test.ts, retained/layoutRestore.test.ts",
+      "implementation_note": "Real Highcharts Board/DataPool/Grid; actual pivot reshapes exact cells, prior series use null not zero, native sorting/layout signatures. Ratios refused for pie/waterfall accumulation; additive waterfall supported. Native exports and synchronization must be exercised.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A17",
+      "clause": "Selectedpoint/explore",
+      "required_interactions": "selectedonlydrill/filterdrop/addnext;keep/exclude exactIDs;underlying exactscope;explorefilter/add/replace/compare;Backundo",
+      "code": "retained/screens.tsx Search, retained/store.ts drill/keepOnly/excludePoint",
+      "owner_test_evidence": "retained/completenessRegressions.test.tsx",
+      "implementation_note": "Implemented local synthetic flow; source presence does not establish all-branch or native acceptance.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A18",
+      "clause": "Save/pin/share/export",
+      "required_interactions": "exactquery/chart/sourceversion/resulttime;chooseboard/tab;share localcapture;CSVcurrentpermittedresult;print;watch/pattern",
+      "code": "retained/screens.tsx Search, retained/store.ts pinTo, retained/capturedView.ts",
+      "owner_test_evidence": "retained/exactSpecUi.test.tsx, retained/capturedViewUi.test.tsx",
+      "implementation_note": "Selectable exact board/tab; shares remain local immutable captures with current access/redaction eligibility and export refusal.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A19",
+      "clause": "Board list/tabs",
+      "required_interactions": "yours/tagselectors;create name;Overview/Mix/People orapprovedEKAS equivalent;addtab;tile exactsavedquery",
+      "code": "retained/screens.tsx Boards/BoardView",
+      "owner_test_evidence": "retained/boardCompletion.test.tsx",
+      "implementation_note": "Implemented local synthetic flow; source presence does not establish all-branch or native acceptance.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A20",
+      "clause": "Board filterlayers",
+      "required_interactions": "editablegovernedboardfilters+personalfilters intersecttile/currentaccess;pointadds personal;resetpersonal leavesboard;presentation exactlayers",
+      "code": "retained/screens.tsx BoardView",
+      "owner_test_evidence": "retained/exactSpecUi.test.tsx",
+      "implementation_note": "Saved/personal filter dimension/op/value selectors; removal and personal-only reset; point preserves other dimensions. Historical canonical tiles explicitly disclose no re-computation.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A21",
+      "clause": "Board collaboration",
+      "required_interactions": "tileup/noteedit;presentthroughonlyselectedtabtiles;Useful/Question;personreviewnotcause/cert;follow;weekday schedule;JSONexport",
+      "code": "retained/screens.tsx BoardView, retained/boardReview.ts",
+      "owner_test_evidence": "retained/boardCompletion.test.tsx",
+      "implementation_note": "Presentation restricted to selected tab; review remains human local mark, not certification.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A22",
+      "clause": "Answers/collections",
+      "required_interactions": "opens exactsavedanswer;groupsboards/answers;addopenanswer;remove/undoonlyselectedmembership/order",
+      "code": "retained/screens.tsx Answers/Collections, retained/collectionActions.ts",
+      "owner_test_evidence": "retained/boardCompletion.test.tsx",
+      "implementation_note": "Implemented local synthetic flow; source presence does not establish all-branch or native acceptance.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A23",
+      "clause": "Schedules",
+      "required_interactions": "cadence/recipient/lastrun/failedrow;RunNow capturedquery notcurrent;noemail;failedstorage truthful",
+      "code": "retained/screens.tsx Schedules, retained/workflowRuntime.ts",
+      "owner_test_evidence": "retained/workflowActions.test.tsx",
+      "implementation_note": "Implemented local synthetic flow; source presence does not establish all-branch or native acceptance.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A24",
+      "clause": "Monitors",
+      "required_interactions": "below/above/change controls;finiteeligiblestatus;mute/channel;createinappnotice;missingprior notclear",
+      "code": "retained/screens.tsx Monitors, retained/workflowRuntime.ts",
+      "owner_test_evidence": "retained/monitor.test.ts",
+      "implementation_note": "Implemented local synthetic flow; source presence does not establish all-branch or native acceptance.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A25",
+      "clause": "Pattern scans",
+      "required_interactions": "queryoutlier/change/trend withnoncausalcopy;definedratio relation onlyalgebraic;Useful/Not useful;dropempty/zeros;headlinewithoutattributeblocked",
+      "code": "platform/workspaceQuery.ts analyze, retained/screens.tsx Patterns",
+      "owner_test_evidence": "retained/exactSpecUi.test.tsx, platform/patternAnalysis.test.ts",
+      "implementation_note": "Attribute-free scans blocked; descriptive IQR/calendar trend, no causal or statistical proof; definition relation is arithmetic, not inferred correlation.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A26",
+      "clause": "Inspection",
+      "required_interactions": "searchableworkflow list;everyrowopens correspondingfunctionalscreen",
+      "code": "retained/screens.tsx Inspection, retained/workflows.ts",
+      "owner_test_evidence": "retained/retention.test.tsx",
+      "implementation_note": "Implemented local synthetic flow; source presence does not establish all-branch or native acceptance.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A27",
+      "clause": "Data objects/details",
+      "required_interactions": "type/name/source/tags/author/modified;All/Yours/pages;model/worksheet/tables grounded;joins/columns/synonyms/hidden/rowrule",
+      "code": "retained/screens.tsx DataScreens",
+      "owner_test_evidence": "retained/retention.test.tsx",
+      "implementation_note": "Implemented local synthetic flow; source presence does not establish all-branch or native acceptance.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A28",
+      "clause": "Data workflow",
+      "required_interactions": "oneconnection labelledsynthetic notlive;otherunconnected;boundedStudio refuses;aliasJSONvalidate/export;syncaudit;memoryadd/removecited;catalogsearch;usageaudit;definitiontime;boardreview",
+      "code": "retained/screens.tsx DataScreens, retained/studioGrammar.ts, retained/synonyms.ts",
+      "owner_test_evidence": "retained/studioGrammar.test.ts, retained/synonyms.test.ts, retained/boardCompletion.test.tsx",
+      "implementation_note": "Implemented local synthetic flow; source presence does not establish all-branch or native acceptance.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A29",
+      "clause": "Develop",
+      "required_interactions": "embedtag+realheadline;APIJSONsql\u22645rows/version/uncertainty;displayname/compact;actionpersonconfirm \u201cAuthorized\u2014notdispatched\u201d;alloweddomain;rowrule/mask;webhooklocalonly",
+      "code": "retained/screens.tsx DevelopScreens, retained/ApiPlayground.tsx, retained/localActions.ts, retained/localWebhooks.ts",
+      "owner_test_evidence": "retained/apiPlayground.test.tsx, retained/localWebhooks.test.ts, retained/boardCompletion.test.tsx",
+      "implementation_note": "Embed uses manufacturing_shift_model/definition1/training-plant-v1 instead of leftover executive_leadership/rev3. Actions and hooks are local only.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A30",
+      "clause": "Admin",
+      "required_interactions": "userssearch/sort/select/group/add/more/invite;groups;welcome/checklist;trialseat/queryaudit;gettingstarted status;freezeeditableonly;termsnodispatch",
+      "code": "retained/screens.tsx AdminScreens",
+      "owner_test_evidence": "retained/completenessRegressions.test.tsx, retained/workflowActions.test.tsx",
+      "implementation_note": "Implemented local synthetic flow; source presence does not establish all-branch or native acceptance.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A31",
+      "clause": "Overlays",
+      "required_interactions": "CreateAnswer/Board/Collection/Monitor realcreation;Notices;Help3sections;Profileplant/invite/signoutnoaccount;shareview/editlocal",
+      "code": "retained/screens.tsx Overlays/Dialog",
+      "owner_test_evidence": "retained/workflowActions.test.tsx, retained/exactSpecUi.test.tsx",
+      "implementation_note": "Implemented local synthetic flow; source presence does not establish all-branch or native acceptance.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A32",
+      "clause": "Persistence/seed",
+      "required_interactions": "functionsnotserialized;versionedkey/rehydratevalidshape;save/reload/reset/history;separateNorthworks;qualifiedboard/watch/answer/collection/monitor/failedschedule/commentseeds",
+      "code": "retained/stateClient.ts, retained/stateValidation.ts, retained/store.ts, retained/backup.ts",
+      "owner_test_evidence": "retained/backup.test.ts, retained/completenessRegressions.test.tsx",
+      "implementation_note": "Implemented local synthetic flow; source presence does not establish all-branch or native acceptance.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    },
+    {
+      "id": "A33",
+      "clause": "Finaldone",
+      "required_interactions": "allnavreal;Go actualchart;drillundo/save/reload/reset;unavailableprior;stripclose;authorize neverdispatch;nogap\u2192cause",
+      "code": "retained/screens.tsx, retained/console.tsx, retained/viz.tsx",
+      "owner_test_evidence": "retained/retention.test.tsx, retained/exactSpecUi.test.tsx",
+      "implementation_note": "No blanket completion claim: independent native E2E register contains351entries; all must receive pass/fail/blocked evidence and screenshots, with defects retained through retest.",
+      "independent_native_status": "Pending exact latest freeze E2E; no pass inferred"
+    }
+  ]
+}

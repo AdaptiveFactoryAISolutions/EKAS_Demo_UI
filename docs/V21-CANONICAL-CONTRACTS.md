@@ -1,0 +1,31 @@
+# V21 canonical contracts: isolated, not deployed
+
+The original 178 definitions and all 38 previous input files are byte-identical. Their base dispositions remain 49 observed / 125 missing / 4 unsupported; positive arithmetic agreement is separate. The new author package is pinned byte-identically (20 files), with 43 tables / 1,431 synthetic records. No legacy repository is required at runtime. Source definitions, proposed mock versions, controlled active pointers and physical production activation retain separate authority.
+
+`canonicalGap.ts` reads raw records, without importing expected-value oracles. Separate tests compare 25 positive/conditional cases, 60 negative/boundary cases and the QAC reference. These representative examples do not certify every production branch or mixed-product aggregation. Full result provenance preserves source anchors, IDs/versions, knowledge timestamps, declared watermarks, definitions, eligibility and independent oracle identities/hashes.
+
+MET011–014 homogeneous capacity gives 40h gross loss / 15h opportunity / 1500pieces / 20h released-equivalent opportunity. Missing entitlement/PRI preserves fallbacks; entitlement-exceeded opportunity clamps at zero. None is labelled recoverable or savings. MET015 recovery definition and MET016 customer Finance valuation remain unavailable. No default percentage/model is invented.
+
+MET018/019/020 gives clamped parent overrun45min, signed setup excess15min and evidence-labelled tooling delay30min. Under-standard0/−5 is defined. Overlapping states/missing cause evidence refuse. MET021 arithmetic66.5% is conditional; publication/chart stays unavailable pending versioned component binding.
+
+MET022 source-defined event boundaries are120/115/150/30min. One-event mean arithmetic, median and maximum remain evidence; fleet mean publication/upper percentile is withheld pending method/estimator. Contradictory anchors quarantine; missing endpoints refuse. MET023 is an administrative proxy, distinct from restoration; MET024 explicitly selects t3/t4/t5 from t2. Multiple WOs do not create failures.
+
+MET026 exact source deduplication yields1.5person-h / one repair, separate from1equipment-h union. Conflicting source identity, same-worker overlaps and unresolved allocations refuse. MET027 requires independently supplied completion facts; shipment never substitutes. Open quantity uses committed−accepted shipped−approved available FG only; completion is not its operand. Result2exposed/100pieces/1unknown/5of6coverage. Missing/bad-unit completion becomes unknown, changing completion quantity alone preserves exposure. Negative open quantity refuses without clamp. Unknown lines retain diagnostic open quantities when those operands exist but remain unranked.
+
+MET028 qualified four-hour PartX runs give25/0/−25piece/h gaps with matching percentages. At least300consecutive eligible parts in1–8h and equipment clock are enforced. Severity is unavailable without customer configuration; TBC417 doctrine is resolved, not reopened. QAC001 independently uses Part4471 quote revision1. Both bridges reconcile:3+3+18=24h and10+8=18h. Seven assumption types retain explicit value/zero/not-modeled/source-unavailable; missing never becomes zero. The1e−9 tolerance is synthetic oracle comparison, not production approval. Its490min/run reconstruction is not a qualified MET028 run.
+
+MET029 retains the adopted standard-cost conversion variance lens. $2400 is a calculation-test candidate only; published dollars/confidence remain unavailable pending governed confidence and explicit shop-rate applicability to conversion hours. No verified financial savings or profitability claim.
+
+## Separate API and history
+
+`/api/mock-canonical/v1/query` and capabilities are separately versioned offline operations behind TrainingTransport, not adopted GLiDE/proposed-v2 HTTP. Exact fixed synthetic scope/window/namespace, permitted parameters and idempotency key are required. Unsupported scopes/windows/extrapolated later cutoffs refuse. The original capabilities still list178definitions. Owned generic answer resources preserve the complete immutable captured snapshot; reopening does not recompute or relabel its cutoff/status as current. Production authorization is not established by presentation session controls.
+
+MET027 plan state/source watermark isSep29; source first knownOct1. The protected author positive oracle labels queryAsOfSep29 despite Oct1 knowledge metadata. The product discloses both timestamps and correctly withholds later-known records at Sep29. Oct1 admits the historical Sep29 state. No protected oracle is silently rewritten. Declared source watermarks are separate from maximum known-at timestamps. No customer freshness threshold is invented; the examples are fixed historical data.
+
+## UI and Board
+
+Canonical contracts is a separate screen; existing178workbench and Northworks remain intact. Definitions, cutoff, event/run choices, units, status, evidence and saved history are visible. Numeric eligible results use actual Highcharts/Dashboards Board/DataPool/components and Grid with connected highlight/visibility. QAC uses a signed waterfall; rates compare quote/demonstrated. Unavailable/conditional NEE/dollar results have no numerical chart. Layout edit/save/restore preserves units/ranges, source IDs/connectors, series visibility and Grid sorting for the exact snapshot. SVG/CSV export is local with URL/external fallback disabled.
+
+All459tests/88files and build pass. Regression evidence covers independent oracles, API persistence/replay/refusals/role/cutoff, actual React controls/history and Board configuration restoration. All prior inputs and pinned author files are byte-verified. Frozen hashes are recorded in the manifest. Native pointer/geometry, real sorting interactions, offline export/network and full browser workflows await independent retest. No serving/browser/storage/Main/root mutations occurred.
+
+Unresolved methods D01/D02/D03/D05/D07 remain explicit. Production activation also awaits physical DAT TBC411–414, controlled active pointers, representative quote validation TBC418, appropriate source freshness/adjudication and customer configuration. Do not relabel the existing351/33review registers from these representative fixtures. Final Patrick/Tom guides remain dependent on final UI acceptance.

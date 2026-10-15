@@ -1,0 +1,7 @@
+import {it,expect,vi,afterEach} from 'vitest';
+import {namespaceKey,namespaceFor,variant,ownsStorageKey,demoRunId} from './experience';
+afterEach(()=>vi.unstubAllGlobals());
+it('new runs cannot own ordinary, other-run, other-variant or legacy storage',()=>{const ordinary=namespaceKey('workspace.v1');vi.stubGlobal('window',{location:{search:'?demonstration=fresh-run&return=%2Fguided%2Fc%2F'}});const key=namespaceKey('workspace.v1');expect(key).toBe(namespaceFor(variant)+'showme-v2.fresh-run.workspace.v1');expect(ownsStorageKey(key)).toBe(true);expect(ownsStorageKey(ordinary)).toBe(false);expect(ownsStorageKey(namespaceFor(variant)+'showme-v2.other-run.workspace.v1')).toBe(false);expect(ownsStorageKey('northworks.clean-sheet.v1')).toBe(false);for(const other of ['A','B','C'] as const)if(other!==variant)expect(ownsStorageKey('northworks.guided-v1-'+other.toLowerCase()+'.showme-v2.fresh-run.workspace.v1')).toBe(false)});
+it('restart keeps previous namespace intact while selecting a fresh destination',()=>{vi.stubGlobal('window',{location:{search:'?demonstration=run-one'}});const previous=namespaceKey('board.oee');vi.stubGlobal('window',{location:{search:'?demonstration=run-two'}});expect(namespaceKey('board.oee')).not.toBe(previous);expect(ownsStorageKey(previous)).toBe(false)});
+
+it('invalid or corrupt run identity never enables demonstration mode',()=>{expect(demoRunId('?demonstration=../../ordinary')).toBe(null);expect(demoRunId('?demonstration=')).toBe(null);expect(demoRunId('?demonstration=safe-run')).toBe('safe-run')});

@@ -1,0 +1,11 @@
+# V69 conversational collector working draft
+
+Separate editable candidate; V68 bytes/runtime remain frozen. Parent-authorized next gap is conversational raw-unit/claim/link collectors under existing typed governed services.
+
+Implemented working claim flow: open exact case; Record a reviewed claim; Document ID version VERSION; Quote: exact source text; Claim type: OBSERVATION / HYPOTHESIS / RECOMMENDATION; Reviewer: human name; Reason: human review sentence; Known at exact UTC; review visible tuple/source/version/quote/type/reviewer/reason/time/stream version; Confirm the reviewed claim or Cancel the claim review. Only confirmation calls existing governedRequest, in staged repository committed atomically with conversation. Invalid replacements clear the field; unknown asset clears draft; switching case/dataset/comparison clears pending scope. Human source content is not asset selection. Historical captures replay deterministic collector and exact governed proof; no old captures rewritten.
+
+Targeted84checks plus8collectorchecks PASS; fresh full1359/1359 across226files PASS; build PASS. All1351V68assertions and85inputs retained. First genuine red proves missing collector; switch-scope red proves draft retention then passes after cleanup. Initial document version failure corrected to preserve authored number|string identity. Test-only idempotency-key collision corrected and preserved as harness error evidence. No causal promotion, automatic extraction, work authority or real document mutation.
+
+Known remaining collector gaps: raw-unit review and explicit claim relationships remain unavailable conversationally; existing governed UI/typed service stays available. Complete native reviewed-claim flow, full human applicability/rejection/conflict/quote/history/master breadth requires independent demonstration. All55/35/original351/master/cohort scope preserved with historical statuses unchanged. Wider model path requires separately gated server-held OpenAI; actual Tom contract confirmation separate. No provider/Chrome/hosting/security work.
+
+V68 independent domain/oracle report freshly read:2887checks/0fail, bounded source-only. Closure2004 includes arithmetic1313, not double-counted. Owner1351 is not added to independent count. Native still pending; provisional P2 firstRun remains open pending parent findings.

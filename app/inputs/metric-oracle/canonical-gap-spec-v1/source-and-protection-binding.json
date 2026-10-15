@@ -1,0 +1,67 @@
+{
+  "sourceDocuments": [
+    {
+      "path": "/home/pat/EKAS_Platform_v2/EKAS_Platform_v2_Cleanroom_Build_Program/09-manufacturing-kernel/EKAS-MIK-001-metric-definition-standard.md",
+      "sha256": "30fae2b58ea33c4b46c69f98fc0c7887a1ac77d2a4472750d4b6e72d8a5a2b70",
+      "role": "semanticauthority"
+    },
+    {
+      "path": "/home/pat/EKAS_Platform_v2/EKAS_Platform_v2_Cleanroom_Build_Program/09-manufacturing-kernel/EKAS-MIK-004-metric-register.md",
+      "sha256": "1d81018150a7fb9544ff63e3fcdb981962df74f352c4404b48a3a09f4ea21952",
+      "role": "supplement; own document status retained"
+    },
+    {
+      "path": "/home/pat/EKAS_Platform_v2/EKAS_Platform_v2_Cleanroom_Build_Program/09-manufacturing-kernel/EKAS-MIK-003-manufacturing-acceptance-corpus.md",
+      "sha256": "a87b1d94564692bfc5272d0fedd50597e7c44f560a42bf7adae9a2a972355da3",
+      "role": "supplement; own document status retained"
+    },
+    {
+      "path": "/home/pat/EKAS_Platform_v2/EKAS_Platform_v2_Cleanroom_Build_Program/09-manufacturing-kernel/EKAS-MIK-002-calculation-certification-standard.md",
+      "sha256": "23215bf27d3680acf0a0403cc901500f24ad82e74f12f13e1e4c2c917650b0af",
+      "role": "supplement; own document status retained"
+    },
+    {
+      "path": "/home/pat/EKAS_Platform_v2/PM/decisions/D-092-quoted-versus-demonstrated-rate-gap.md",
+      "sha256": "534eacf9aec6f5468e2a576fd162ded0e30b7a1cb74973c92423d793fecacfc7",
+      "role": "existing approved decision/input-contract or retained synthetic oracle; precedence/status explicitly distinguished"
+    },
+    {
+      "path": "/home/pat/EKAS_Platform_v2/PM/decisions/D-093-quote-assumption-input-contract.md",
+      "sha256": "21a9d2c9250a91768f79d407bfbfdeddc6c67d5b0f5d5fa4255205e1992958b0",
+      "role": "existing approved decision/input-contract or retained synthetic oracle; precedence/status explicitly distinguished"
+    },
+    {
+      "path": "/home/pat/EKAS_Platform_v2/PM/decisions/D-096-dollar-valuation-layer.md",
+      "sha256": "f0aa8bd0de8cd462f2f260fa3baca631f37a7c10367b85ec5b04dd85456921c9",
+      "role": "existing approved decision/input-contract or retained synthetic oracle; precedence/status explicitly distinguished"
+    },
+    {
+      "path": "/home/pat/EKAS_Platform_v2/docs/registers/change-requests/CR-051.md",
+      "sha256": "f66ed471567f59135e79a6a48a6a6a280594a4d8ef2b52674c4ddb2a21b36810",
+      "role": "existing approved decision/input-contract or retained synthetic oracle; precedence/status explicitly distinguished"
+    },
+    {
+      "path": "/home/pat/EKAS_Platform_v2/docs/registers/tbc-register.md",
+      "sha256": "dd53a7df6edf6d0f548aebc7cd5d6603be163202c73250fe11311056e2650446",
+      "role": "existing approved decision/input-contract or retained synthetic oracle; precedence/status explicitly distinguished"
+    },
+    {
+      "path": "/home/pat/EKAS_Platform_v2/docs/governance/contracts/WP-P4-16-met-011-027-input-contract.md",
+      "sha256": "78544436ed0412d54875fe99a59375746d53a44d353be191eb9809ff254b58c1",
+      "role": "existing approved decision/input-contract or retained synthetic oracle; precedence/status explicitly distinguished"
+    },
+    {
+      "path": "/home/pat/EKAS_Platform_v2/tests/corpus/quote_assumption_reconciliation_oracle.py",
+      "sha256": "22856eda38ce3012e1dddb4cc80ff60aba09798254040e306d313eb55063a76f",
+      "role": "existing approved decision/input-contract or retained synthetic oracle; precedence/status explicitly distinguished"
+    }
+  ],
+  "protectedArtifacts": {
+    "/home/pat/Documents/Codex/2026-10-09/task/metric-oracle/metric-contract.json": "cd284e340bd354612ae852e1e8b2f696c6f08f66daec8d9df0c0195a57532867",
+    "/home/pat/Documents/Codex/2026-10-09/task/metric-oracle/training-relational-seed.json": "5b88498b10b80bcf18dc1fd1afe3f6b3442d5daf14889d1f7b58d63d89e5dab2",
+    "/home/pat/Documents/Codex/2026-10-09/task/metric-oracle/known-answer-scenarios.json": "142eb753db2b121880b3996cc97571b2cb8b58ac672c5a50b09ffed643ef31d8",
+    "/home/pat/Documents/Codex/2026-10-09/task/metric-oracle/northworks-freeze-contract.json": "464245bbfcdb885d8b5999d973be856c51ca526e554ca61420326005bc2d1311",
+    "/home/pat/Documents/Codex/2026-10-09/task/metric-oracle/positive-extension-v2/additive-domain-records.json": "4eb3aa41dc6ae1225606f440fbbad95707e1cda2ebb791c86ddf9a521fa5f539",
+    "/home/pat/Documents/Codex/2026-10-09/task/metric-oracle/positive-extension-v2/known-answer-outputs.json": "d8684d8cd67d9d6ba53f2482cedaeef425eda0e87970259fe35342e3a22e844e"
+  }
+}

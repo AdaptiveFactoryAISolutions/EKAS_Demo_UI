@@ -1,0 +1,11 @@
+import {it,expect} from 'vitest';import {qaRoot,qaNamespace,qaDatabase} from './isolatedQa';
+it('admits only the new owned root and keeps Main/review/default storage unchanged',()=>{expect(qaRoot('/ekas-qa-v42/')).toBe(true);for(const p of ['/','/ekas/','/ekas-review/','/ekas-qa-v42-other/'])expect(qaRoot(p)).toBe(false);expect(qaNamespace('/ekas-qa-v42/')).toBe('qa-v42-owned.');expect(qaNamespace('/ekas-review/')).toBe('');expect(qaDatabase('/ekas-qa-v42/')).toBe('ekas-qa-v42-owned');expect(qaDatabase('/ekas-review/')).toBe('ekas-local-persistence-v1')});
+it('keeps the next owned Northworks QA root separate from V42 and all existing roots',()=>{expect(qaRoot('/ekas-qa-v43/')).toBe(true);expect(qaNamespace('/ekas-qa-v43/')).toBe('qa-v43-owned.');expect(qaDatabase('/ekas-qa-v43/')).toBe('ekas-qa-v43-owned');expect(qaNamespace('/ekas-qa-v43/')).not.toBe(qaNamespace('/ekas-qa-v42/'))});
+
+it('keeps QA45 separate from frozen QA42/QA43 and rejects lookalike paths',()=>{expect(qaRoot('/ekas-qa-v45/')).toBe(true);expect(qaNamespace('/ekas-qa-v45/')).toBe('qa-v45-owned.');expect(qaDatabase('/ekas-qa-v45/')).toBe('ekas-qa-v45-owned');expect(qaRoot('/ekas-qa-v45-other/')).toBe(false);expect(qaNamespace('/ekas-qa-v45/')).not.toBe(qaNamespace('/ekas-qa-v43/'))});
+
+it('keeps QA46 isolated from frozen QA45',()=>{expect(qaRoot('/ekas-qa-v46/')).toBe(true);expect(qaNamespace('/ekas-qa-v46/')).toBe('qa-v46-owned.');expect(qaDatabase('/ekas-qa-v46/')).toBe('ekas-qa-v46-owned');expect(qaNamespace('/ekas-qa-v46/')).not.toBe(qaNamespace('/ekas-qa-v45/'));expect(qaRoot('/ekas-qa-v46-other/')).toBe(false)});
+
+it('keeps QA47 isolated from frozen QA46',()=>{expect(qaRoot('/ekas-qa-v47/')).toBe(true);expect(qaNamespace('/ekas-qa-v47/')).toBe('qa-v47-owned.');expect(qaDatabase('/ekas-qa-v47/')).toBe('ekas-qa-v47-owned');expect(qaNamespace('/ekas-qa-v47/')).not.toBe(qaNamespace('/ekas-qa-v46/'));expect(qaRoot('/ekas-qa-v47-other/')).toBe(false)});
+
+it('keeps QA48 isolated from frozen QA47',()=>{expect(qaRoot('/ekas-qa-v48/')).toBe(true);expect(qaNamespace('/ekas-qa-v48/')).toBe('qa-v48-owned.');expect(qaDatabase('/ekas-qa-v48/')).toBe('ekas-qa-v48-owned');expect(qaNamespace('/ekas-qa-v48/')).not.toBe(qaNamespace('/ekas-qa-v47/'));expect(qaRoot('/ekas-qa-v48-other/')).toBe(false)});

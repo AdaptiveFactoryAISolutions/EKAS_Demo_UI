@@ -1,0 +1,213 @@
+{
+  "scope": "Read-only ownership audit; EKASv2.0 authorized reference; no production backend or major refactor authorized",
+  "candidate": "V63 unchanged",
+  "ownership_map": [
+    {
+      "area": "UI presentation and interaction",
+      "modules": "retained/screens.tsx; retained/AskReplies.tsx; retained/dialog.tsx; retained/viz.tsx; investigation/SourceEditor.tsx; investigation/DependencyPanel.tsx; investigation/ComparisonPanel.tsx; investigation/EvidenceBoard.tsx",
+      "UI_when_connected": "Keep shell, composer, review forms, chart/Grid/Board layouts, formatting, accessibility and unsaved drafts. Render returned read models and dispatch typed intent/commands.",
+      "replaceable_or_shared_by_agreement": "Synthetic source metadata currently imported by ComparisonPanel; screens calls local calculation facade. Replace data access with the agreed client, not a second production calculation authority.",
+      "Tom_required": "Tom supplies authoritative read models, evidence identities and accepted/error command responses."
+    },
+    {
+      "area": "Conversation and proposed shared contracts",
+      "modules": "investigation/conversation.ts; investigation/clientPort.ts; investigation/manufacturingContract.ts; platform/contract.ts; platform/client.ts; platform/pilotAdapter.ts",
+      "UI_when_connected": "Keep UI dimensional context and request/presenter plumbing if the boundary agreement assigns it to frontend; backend retains durable conversation/investigation truth.",
+      "replaceable_or_shared_by_agreement": "Reference regex router/presenter and proposed interfaces could be shared by agreement only; contracts are proposed, not verified Tom/OpenAPI parity.",
+      "Tom_required": "Tom supplies exact routes, schemas, authenticated session, capability/version negotiation, source/evidence payloads and error/timeout/idempotency semantics."
+    },
+    {
+      "area": "Local synthetic mock orchestration",
+      "modules": "investigation/unified.ts; investigation/service.ts; platform/trainingService.ts; platform/mockService.ts; platform/workspaceApi.ts",
+      "UI_when_connected": "UI client factory/transport injection point stays. Exactly one selected authoritative transport; no silent mock fallback after live failure.",
+      "replaceable_or_shared_by_agreement": "Current factories always instantiate local services, not HTTP clients. Local service endpoint dispatch, fictional sessions, mock adapters and input fixtures are replaceable demonstration scaffolding. Do not deploy them as a competing production backend.",
+      "Tom_required": "Tom implements or maps authoritative application APIs; real service routing, data reads and command commits."
+    },
+    {
+      "area": "Deterministic calculation authority",
+      "modules": "platform/metricEngine.ts; platform/workspaceQuery.ts; investigation/cases.ts; investigation/model.ts; investigation/operatingReview.ts; investigation/dependencies.ts; investigation/auditRefresh.ts; model.ts",
+      "UI_when_connected": "UI keeps display formatting, unit labels and charts; authoritative result values/eligibility/versions come from the selected service.",
+      "replaceable_or_shared_by_agreement": "Registry/formula evaluator, interval union and validation rules may be shared libraries only if Tom agrees and owns a single definition/version. Legacy model.ts and local bridges/presenter calculations are duplicate derivations to isolate, not a second live truth.",
+      "Tom_required": "Tom supplies governed metric/target definitions, aggregation/time/exposure rules, source lineage, calculation results and certification/eligibility authority."
+    },
+    {
+      "area": "Investigation/action/evidence rules",
+      "modules": "investigation/workflow.ts; investigation/planGovernance.ts; investigation/governedRecords.ts; investigation/revisionPolicy.ts; investigation/comparison.ts; investigation/monthlyInvestigation.ts; investigation/turnSemantics.ts",
+      "UI_when_connected": "UI keeps review interaction, exact context and result presentation; no client-only approval/performed/verification toggle as live authority.",
+      "replaceable_or_shared_by_agreement": "These implement real bounded demo semantics (version checks, proof/cutoff/guardrails, immutable captures) over synthetic records. They could be reusable shared domain rules only by explicit agreement; they are not authority alongside Tom.",
+      "Tom_required": "Tom supplies authoritative lifecycle/owner/authorization/work/document/verification/sustain state transitions, transactional commits and audit/evidence history."
+    },
+    {
+      "area": "Persistence and client working state",
+      "modules": "platform/documentStore.ts; platform/mockRepository.ts; platform/durableRepository.ts; retained/store.ts; retained/stateClient.ts; conversationBook.ts",
+      "UI_when_connected": "Keep UI preferences, layouts, unsaved drafts, local presentation caches and reviewed cache/snapshot policy. Server identity/history overrides cache; no offline domain commit replay without agreed semantics.",
+      "replaceable_or_shared_by_agreement": "Durable IndexedDB domain repository and local mock idempotency ledger are demo persistence. Shared schema/replay validation only by agreement. Legacy conversationBook/model state is separate local scaffolding.",
+      "Tom_required": "Tom supplies durable server records, concurrency/idempotency, recovery, history/version and any offline synchronization protocol."
+    },
+    {
+      "area": "Authentication and authorization",
+      "modules": "platform/contract.ts Session; investigation/clientPort.ts; investigation/unified.ts; investigation/workflow.ts; platform/mockService.ts; experience.ts namespace helpers",
+      "UI_when_connected": "Keep sign-in UI/session forwarding and read-only presentation gating once specified. Client role selection does not grant real authority.",
+      "replaceable_or_shared_by_agreement": "Hardcoded manufacturing-role session, presentationOnly, client allowedAssetIds, fictional role selection and synthetic notGranted/notDispatched are simulation controls. Existing held R5/security review is separate and not covered by ordinary source tests.",
+      "Tom_required": "Tom/server identity and policy layer supplies authenticated principal, tenant isolation, current server permissions/policy revision, masking, immutable auditable authorization and action dispatch; OpenAI key/budget/governor stay server-side."
+    }
+  ],
+  "source_findings": [
+    {
+      "id": "B1",
+      "path": "investigation/ComparisonPanel.tsx:5",
+      "scope": "current retained Ask supporting comparison",
+      "issue": "UI directly imports quality-correction-comparison-v63 fixture for snapshots/work/safety IDs and target; violates the intended replaceable adapter read-model boundary. No direct repository mutation was found in current investigation TSX controls; they call manufacturingClient."
+    },
+    {
+      "id": "B2",
+      "path": "retained/screens.tsx:73; retained/model.ts:2; platform/workspaceQuery.ts",
+      "scope": "current retained workspace",
+      "issue": "UI runQuery() is a re-export of local source joins/calculation/cache, not an HTTP service request. Multiple chart/board/underlying/Studio paths calculate locally. Developer MetricLab intentionally imports raw oracle fixtures; it must remain diagnostic, not live truth."
+    },
+    {
+      "id": "B3",
+      "path": "main.tsx:95; main.tsx:157; retained/workspace.tsx:14; model.ts:5; Charts.tsx; DecisionWorkspace.tsx; Workspaces.tsx",
+      "scope": "preserved alternate Northworks/reference experience",
+      "issue": "Alternate App directly changes React caseState via model.command and local setters, imports raw fixture/model sources and duplicate formulas. Actual entry selects retained workspace for suite=workspace, alternate reference for certain other URL states. Preserve it, but do not present it as the same authoritative connected lifecycle without a boundary decision."
+    },
+    {
+      "id": "B4",
+      "path": "model.ts:5; model.ts:10; investigation/model.ts; investigation/cases.ts:37; investigation/conversation.ts:147; investigation/auditRefresh.ts:4",
+      "scope": "local calculation derivations",
+      "issue": "Legacy model.ts contains direct production/OEE/quality/schedule/inventory/OTIF ratios, while canonical metricEngine evaluates registry definitions. Interval union exists in both metricEngine and investigation/model. Investigation bridges/audit derived ratios and monthly presenter component calculations also exist locally. Some are necessary derived accounting, but definition/ownership must be consolidated or explicitly delegated, not independently recomputed in live UI."
+    },
+    {
+      "id": "B5",
+      "path": "platform/contract.ts:2; investigation/clientPort.ts; investigation/manufacturingContract.ts; platform/pilotAdapter.ts",
+      "scope": "proposed transport/contracts",
+      "issue": "Transport.send(Request) is in-process typed message dispatch with HTTP-like method/path/status fields. Resource/Response require synthetic:true and Session requires presentationOnly:true; not an authenticated production wire. Many manufacturing command/response types remain generic/any and V63 endpoints are not fully advertised. Injected PilotAdapter uses a separate source-confirmed /v1 wire shape but is not selected by ordinary client and implements no auth. No verified Tom OpenAPI compatibility."
+    },
+    {
+      "id": "B6",
+      "path": "investigation/unified.ts:10; platform/trainingService.ts:23",
+      "scope": "runtime service selection",
+      "issue": "Factories select only local mock service/repository. There is no existing tested live/mock adapter substitution or genuine GLiDE connection. Adding a network backend beside this browser authority would create two sources of truth unless selection/ownership is explicitly defined."
+    },
+    {
+      "id": "B7",
+      "path": "investigation/api.ts:5; investigation/client.ts",
+      "scope": "legacy separate investigation transport",
+      "issue": "Located source comment Tom adapter must implement the same port. This is a local proposal, not an agreement; adapt frontend to verified v2.0 instead. Separate legacy repository/transport reinforces the parallel local authority finding."
+    }
+  ],
+  "recommended_minimal_plan": [
+    "Finish only the reported source-notice isolation and bounded downtime submit reproduction/fix in a separate candidate; no service expansion.",
+    "Review and agree the ownership table with Patrick/Tom. Choose one canonical connected experience and one authoritative service transport. Preserve historical alternatives as labelled references.",
+    "After reviewing the verified EKASv2.0 contract/revision, adapt the existing frontend application port to those contracts. Do not require Tom to adopt the demo routes/schema. List every actual payload/capability/identity/version/error/command mismatch and distinguish Tom\u2019s unverified changes. No separate production backend or silent mock fallback.",
+    "Move current comparison metadata behind existing read-model contracts and isolate presentation calculations only after boundary review; avoid broad rewrite or new backend subsystem.",
+    "Agree any reusable domain calculation/workflow libraries and schema versions explicitly. If Tom owns them, frontend consumes outputs; do not maintain duplicate authoritative formulas/rules.",
+    "Live integration acceptance requires actual HTTP/schema/auth/error/concurrency tests against Tom and separate OpenAI/server/security authorization. Current local tests prove bounded mock behavior only."
+  ],
+  "master_reconciliation": "Mock data/transport, not service means the demo must execute genuine workflow/calculation/version semantics over fictional records; it does not authorize another production backend. These local rule implementations are demonstration behavior or possible shared libraries by agreement. Once connected, Tom must be the authoritative data/calculation/lifecycle/authorization/persistence owner unless specific responsibility is explicitly delegated. UI must not certify a second truth.",
+  "held": "No credentials, external contact, hosting, security-review retry, provider execution or paused-backend mutation. V63 and runtimes remain unchanged.",
+  "ordinary_lifecycle_authority": "Authorized fictional lifecycle tests through normal prerequisites; no connection to declined Dot review. No disabled-prerequisite bypass.",
+  "incremental_refactor_proposal": [
+    {
+      "step": 1,
+      "scope": "UI-only defects now",
+      "files": [
+        "investigation/SourceEditor.tsx",
+        "investigation/sourceNoticeIsolation.test.tsx",
+        "investigation/downtimeSubmitReproduction.test.tsx"
+      ],
+      "change": "Isolate transient UI state/read completion to the exact active conversation/turn context; reproduce downtime submit before any submit change. No new service/authority."
+    },
+    {
+      "step": 2,
+      "scope": "After boundary review: explicit application port",
+      "files": [
+        "investigation/clientPort.ts",
+        "investigation/unified.ts",
+        "platform/client.ts",
+        "platform/contract.ts",
+        "retained/stateClient.ts"
+      ],
+      "change": "Use the independently verified EKASv2.0 contracts/revision as backend reference. Define only a frontend application facade for query, conversation/history, evidence, investigation/read-model and typed command needs; adapt it to v2.0 rather than require Tom to adopt demo endpoints. Where capabilities differ, document the mismatch and agree an adapter/backend-owned extension. Inject one selected transport; no new HTTP backend."
+    },
+    {
+      "step": 3,
+      "scope": "After agreed port: current UI boundary leaks only",
+      "files": [
+        "investigation/ComparisonPanel.tsx",
+        "retained/screens.tsx",
+        "retained/model.ts",
+        "investigation/conversation.ts"
+      ],
+      "change": "Render returned metadata/results/permissions/receipts, remove current fixture metadata import and presenter calculations from authority path. Preserve shell/chart/layout/persistence of UI drafts; keep reference alternatives unchanged and explicitly distinct."
+    },
+    {
+      "step": 4,
+      "scope": "Only after agreed authority: pure shared kernels or Tom outputs",
+      "files": [
+        "platform/metricEngine.ts",
+        "platform/workspaceQuery.ts",
+        "investigation/cases.ts",
+        "investigation/workflow.ts",
+        "investigation/model.ts",
+        "model.ts"
+      ],
+      "change": "Choose one calculation/lifecycle/policy owner and version. Share pure kernels only by explicit agreement; otherwise demo rules stay behind demo adapter and connected UI consumes Tom results. Avoid duplicate production persistence/authorization/source ledgers."
+    }
+  ],
+  "integration_decisions_required": [
+    {
+      "id": "D1",
+      "decision": "Which verified EKASv2.0 revision/endpoints/schema/authentication/capabilities are the reference, and what changes has Tom made from it?",
+      "owner": "Independent read-only auditor supplies v2.0 exact map/revision; Tom confirms changes; parent reviews frontend adapter mismatches."
+    },
+    {
+      "id": "D2",
+      "decision": "Who owns deterministic metric definitions/calculation, evidence eligibility, investigation/action/verification/sustain state and durable history?",
+      "recommendation": "Tom is authoritative. Any explicitly shared pure kernel/schema needs an agreed owner/version and consistency test."
+    },
+    {
+      "id": "D3",
+      "decision": "Where do GLiDE routing, durable conversation context and OpenAI phrasing/tool orchestration execute?",
+      "recommendation": "Agree frontend presentation/context versus server routing; OpenAI key/governor/provider/budget and command authority server-side. No claim that reference regex router is actual GLiDE."
+    },
+    {
+      "id": "D4",
+      "decision": "What distinguishes disconnected synthetic demonstration from connected production at startup, and what happens on failure?",
+      "recommendation": "Explicit one-transport selection and visibly isolated namespaces; no silent fallback from production into mock results or client-only approved states."
+    },
+    {
+      "id": "D5",
+      "decision": "Which canonical experience is connected, and what remains a preserved reference/diagnostic surface?",
+      "recommendation": "Current retained Ask as canonical candidate; keep legacy Northworks/direct-state and MetricLab as labelled references/diagnostics unless separately migrated by agreement."
+    },
+    {
+      "id": "D6",
+      "decision": "What response versions/permissions/command receipts, source known-times, identity mappings, timeout/unknown commit and idempotency protocol does Tom guarantee?",
+      "recommendation": "Use supplied contract and real conformance tests. Current proposed-v1 and injected pilot wire are not parity evidence."
+    }
+  ],
+  "backend_reference": {
+    "authority": "Patrick 2026-10-11 12:40UTC: EKASv2.0 is what Tom uses and may be the backend example",
+    "source_evidence": "Independent auditor is mapping actual local v2.0 modules/contracts read-only with exact revision. Do not duplicate inspection or mutate/restart backend.",
+    "limit": "Local v2.0 reference is not proof of Tom\u2019s current deployed changes/authentication. This demo pilotAdapter comment cites baseline fe2635cef64cf99eccad6c84df82bff466cb46df; authoritative v2.0 revision/map must come from auditor evidence.",
+    "checkout": "/home/pat/EKAS_Platform_v2",
+    "branch": "docs/d274-sonar-host-identity-skips",
+    "commit": "fe2635cef64cf99eccad6c84df82bff466cb46df",
+    "inspection": "Independent read-only auditor verified; no backend executed; Tomactualrevisionunverified",
+    "verified_modules": {
+      "conversation": "apps/api/ekas_api/conversations.py /v1/conversations/messages/turns/events andtenantboundevidence",
+      "metrics": "manufacturingkernel api.py/oee.py/models.py + graph_runtime/facts.py governedOEE; inspectedfacts machine-monthMET-004",
+      "knowledge": "knowledge.py ingestion/applicability/conflictdisposition",
+      "actions": "actions.py + services/action_loop opportunity/recommendation/disposition/intervention/certifiedverification/sustain",
+      "persistence": "SQL records; EKAS_CONVERSATION_STORE=durable selectsdurableconversationstore"
+    },
+    "mismatches": [
+      "Referenceverification2certifiedMET-004machine-months vs demos shift/FPY/cohortprotocols",
+      "No equivalent complete investigation aggregate established",
+      "Actionexpected-version/idempotency notfound ininspectedhandlers; conversationmessageidempotency exists",
+      "Scope/grain/aggregate/authenticatedauthority/concurrency differ"
+    ]
+  },
+  "current_authorization": "Patrick superseded temporary service-expansion hold at12:42UTC: resume fullsynthetic contract-first demo work, incrementalinterfaces; noAzuredeployment/wholesalerewrite orTomcontractimposition. Actualsecurity/liveexecutionboundaries unchanged."
+}

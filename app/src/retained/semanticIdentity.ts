@@ -1,0 +1,4 @@
+import {selectedProvider,providerFixture} from '../platform/fixtureSelection';
+export const workspaceSemanticIdentity={semanticModel:'ekas-manufacturing-shift-v1',fixtureVersion:providerFixture(selectedProvider),...(selectedProvider?{providerVersion:selectedProvider.version,contextId:selectedProvider.contextId}:{})} as const;
+export const semanticRecoveryMessage='Saved workspace semantic identity is missing or incompatible. Existing titles, SQL and captures were not migrated or recalculated. Export the original training backup, then deliberately reset to the manufacturing seed or request a reviewed migration. Workspace edits are blocked until recovery.';
+export function compatibleWorkspaceIdentity(doc:unknown){return !!doc&&typeof doc==='object'&&Object.entries(workspaceSemanticIdentity).every(([k,v])=>(doc as Record<string,unknown>)[k]===v)}

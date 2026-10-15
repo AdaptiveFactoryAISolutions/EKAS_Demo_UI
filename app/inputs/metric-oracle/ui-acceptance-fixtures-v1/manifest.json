@@ -1,0 +1,18 @@
+{
+  "fixtureVersion": "training-ui-acceptance-v1",
+  "status": "additive synthetic author package; not integrated",
+  "files": {
+    "README.md": "85d27394e558874275e8b68420b2d9d67e244e0a2c02ae82ab37d735fa32bfad",
+    "build_contexts.py": "3b4e3d744db67f9cbf4f595348ec1668676bf05a73f2ecd49d4af73f5f41166a",
+    "build_records.py": "fd10c80bc32c4f235742d73857c02ced91aa75e15f9643f0f823b55c6c98fd81",
+    "calculate_oracles.py": "bc0d4d8a79314d1139aa766f600b26f4691a2da6e164363ccaa6ed1cc5ff2b30",
+    "known-answers.json": "cba7b103797c32ccfdc98469bac46aaacc13c9a31e173ab63c2e465a43579603",
+    "ownership-metadata.json": "419db3b5b8d7d81fca6886e45e95750253e4dd235760ac542b30663a61ac5748",
+    "raw-records.json": "3abff22e42ba8470202c0d39fd40d976c0f81eed05b4e9c70de380a7b4fa2205",
+    "schema.json": "a393b865a86c6d523644d6832357f46ed701c707836f1a1cc98636eb4199c324",
+    "selectable-contexts.json": "87c86fc448c157a0c017ac0c48e40152590625ec046bce052d6cf762b2d1b301",
+    "source-and-protection-binding.json": "b3915b67bb1446b81711550657c6c7459495634db72798c91f41c62371263e20",
+    "validate.py": "7bb9f79c3c13b99d7747aae9dd48ccd4bec3ab1ca7200a620416fa14cfe02a7d",
+    "verification-report.json": "6546c0a7a7f330ff68f0922e1b419f9a22b6e358c009aad9e3e5e9118c85ab78"
+  }
+}

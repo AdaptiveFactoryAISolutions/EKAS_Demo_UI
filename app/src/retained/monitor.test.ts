@@ -1,0 +1,2 @@
+import {it,expect} from 'vitest';import {monitorStatus} from './monitor';
+it('evaluates all monitor rules without counting absent comparisons or unavailable data as clear',()=>{expect(monitorStatus('below',.8,.79)).toBe('Open');expect(monitorStatus('above',30,31)).toBe('Open');expect(monitorStatus('change',5,14,8)).toBe('Open');expect(monitorStatus('below',.8,.9)).toBe('Clear');expect(monitorStatus('change',5,14)).toBe('Unavailable');expect(monitorStatus('below',.8,NaN)).toBe('Unavailable')});

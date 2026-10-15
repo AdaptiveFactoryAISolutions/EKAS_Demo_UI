@@ -1,0 +1,171 @@
+{
+  "candidate": "V99",
+  "sourceCases": 30,
+  "all30Passed": true,
+  "sourceReport": "evidence/final-source-full-shards/shard-v99-final-results.json",
+  "sourceReportSha256": "ae8a2e51fa0e4c266867586b1871126db415688bf0e9b6a424a50a5b978f6916",
+  "cases": [
+    {
+      "file": "src/investigation/v99DiagnosticAdverse.test.ts",
+      "fullName": "snapshot-stable chronology pages reject mismatched cursors and late-known events stay hidden at the original cutoff",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticAdverse.test.ts",
+      "fullName": "bounded topology traverses actual hops, handles cycles and selects the known effective version without causal ranking",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticAdverse.test.ts",
+      "fullName": "genuinely authored new-cycle downtime evidence needs explicit diagnostic simulation, cannot inherit physical acceptance or old references",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticAdverse.test.ts",
+      "fullName": "genuinely authored new-cycle speed evidence needs explicit diagnostic simulation, cannot inherit physical acceptance or old references",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticAdverse.test.ts",
+      "fullName": "genuinely authored new-cycle quality evidence needs explicit diagnostic simulation, cannot inherit physical acceptance or old references",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticChecks.test.ts",
+      "fullName": "attributable inconclusive cause/symptom check persists in the canonical aggregate without overwriting source-backed test status or measured results",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticChecks.test.ts",
+      "fullName": "foreign case/cycle/hypothesis revision/evidence, arbitrary confidence and missing human confirmation refuse diagnostic writes",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticChecks.test.ts",
+      "fullName": "timeline correlation cannot create a supported inspection disposition and no verified-cause command is introduced",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticChecks.test.ts",
+      "fullName": "failed diagnostic persistence acknowledges no successful change and exact retry/restart preserves attributable original history",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticChecks.test.ts",
+      "fullName": "current diagnostic contract exposes actual typed prototype routes and preserves the OpenAI server-held boundary without claiming Tom conformance",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticConversation.test.ts",
+      "fullName": "five diagnostic questions stay in the downtime conversation and preserve immutable dated evidence without automatic checks",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticConversation.test.ts",
+      "fullName": "five diagnostic questions stay in the speed conversation and preserve immutable dated evidence without automatic checks",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticConversation.test.ts",
+      "fullName": "five diagnostic questions stay in the quality conversation and preserve immutable dated evidence without automatic checks",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticConversation.test.ts",
+      "fullName": "diagnostic question without a canonical case asks for scope and cannot silently open another investigation",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticConversation.test.ts",
+      "fullName": "diagnostic Guide identifies public controls, prerequisites and unresolved evidence without completing a business step",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticConversation.test.ts",
+      "fullName": "modified diagnostic capture or silently rewritten source/cycle cannot validate as the historical saved answer",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticRead.test.ts",
+      "fullName": "diagnostic downtime read uses the canonical case, original endpoint and explicit synthetic uncertainty without mutating investigation",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticRead.test.ts",
+      "fullName": "diagnostic speed read uses the canonical case, original endpoint and explicit synthetic uncertainty without mutating investigation",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticRead.test.ts",
+      "fullName": "diagnostic quality read uses the canonical case, original endpoint and explicit synthetic uncertainty without mutating investigation",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticRead.test.ts",
+      "fullName": "unauthorized diagnostic/chronology/neighborhood read refuses before evidence or foreign asset disclosure",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticRead.test.ts",
+      "fullName": "chronology binds event-time and known-time/cutoff and labels shared sensor provenance without treating alarms as independent witnesses",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticRead.test.ts",
+      "fullName": "upstream neighborhood declares typed relationship meaning, version and bounded traversal instead of causal direction",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticRead.test.ts",
+      "fullName": "invalid/future/duplicate chronology bounds and excessive topology traversal cannot produce a silently substituted snapshot",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticRead.test.ts",
+      "fullName": "partial chronology and valid empty windows differ without claiming no prior alarms or zero defects",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticRead.test.ts",
+      "fullName": "wrong revision or stale current observation cannot relabel auxiliary diagnostic facts as fresh same-context measurements",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticRead.test.ts",
+      "fullName": "diagnostic routes reject irrelevant or silently ignored parameters rather than substitute current state",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticRead.test.ts",
+      "fullName": "repeated alarm occurrences and timestamp ties retain distinct instances/configurations and explicit clock uncertainty without false witnesses",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticUi.test.tsx",
+      "fullName": "public diagnostic panel reads the canonical case then explicitly saves an inconclusive check and retains fields on a version conflict",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticUi.test.tsx",
+      "fullName": "saved reply evidence dialog exposes its original auxiliary diagnostics and keeps original aggregate intervals explicitly separate",
+      "status": "passed"
+    },
+    {
+      "file": "src/investigation/v99DiagnosticUi.test.tsx",
+      "fullName": "lost acknowledgement after committed diagnostic save stays held and reload recognizes the exact original event without another commit",
+      "status": "passed"
+    }
+  ],
+  "productionDependencies": [
+    "Actual Tom versioned OpenAPI/JSON Schema",
+    "Authenticated principal/tenant/object/asset/tag permissions",
+    "Durable transaction/version/idempotency receipt/status/reconciliation",
+    "Historian/alarm event and knowledge time, instance/configuration/lifecycle/quality/units/clock/coverage/paging",
+    "Governed effective topology and controlled procedures",
+    "Qualified responsible physical-cause review policy"
+  ],
+  "independentRetestRequired": true,
+  "nativeHumanAccepted": false,
+  "liveProviderAccepted": false,
+  "TomProductionConformance": false
+}

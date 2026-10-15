@@ -1,0 +1,11 @@
+# V68 provisional behavior delta
+
+V67 remains frozen and independently bounded: oracle 2735 pass, native report 88 evidence files with provisional P2 New first-Run no-visible-effect and explicit SW-Q1 default-substitution failure. V68 does not reopen R5 or regrade original requirements.
+
+Comparison controls now select exact baseline or post cohort row and an eligible non-first-pass unit; first-pass and future units are unavailable. Source versions invalidate old acceptance, require new measurement and separate acceptance, and preserve earlier result/acceptance records. Mounted 13 checks pass, including post correction, reversal and reload. MIW48 prior baseline-only UI absence is addressed within this bounded flow; full native requirements remain unverified.
+
+Asset interpretation policy2 checks unknown, ambiguous and case-conflicting explicit scope before case/default selection. SW-Q1 is not an authored alias; asks clarification, suppresses numeric result and retains prior context/history. Known aliases disclose canonical resolution. Historical policy1 captures remain byte-exact. Pending source review is cleared on unresolved explicit asset selection; human contextual reason text can mention uncontrolled identifiers without choosing them. Month names and endpoint names retain temporal/metric meaning. Test-only historical fixture adds no production input.
+
+Native New first-Run remains provisional P2: exact New conversation control beside Saved history and qualified timeline recorded in evidence/V68-NATIVE-RACE-DIAGNOSTIC.json. Handler delivery/old settlement/unseen commit unestablished; eight mounted interleavings do not close native evidence. Further independently visible activation/settlement retest required.
+
+All 55 rows, 35 criteria, original351, complete three masters and distinct metric/conversation cohorts remain required without status narrowing. Existing reconciliation drafts retain their historical statuses and full remaining assertions; this delta adds bounded evidence only. OpenAI temporary demonstration gates stay separate from actual Tom adapter-contract confirmation. No live key/provider spend/backend mutation/hosting. Library upload unsupported; all deliverables provisional local drafts.

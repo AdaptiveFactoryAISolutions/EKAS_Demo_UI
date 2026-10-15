@@ -1,0 +1,2 @@
+import {it,expect} from 'vitest';import {answer} from './model';
+it.each(['Why did quality drop?','Why is FPY lower?'])('F01 root keeps the requested quality endpoint for %s',q=>{const result=answer(q,'Plant');expect(result).not.toContain('72 minutes of feeder jams');expect(result).toMatch(/quality|FPY|first.pass/i);expect(result).toMatch(/unavailable|unknown|unconfirmed|not supplied|not established/i);});

@@ -1,0 +1,748 @@
+# EKAS clean-sheet experience gap and coverage register
+
+Audit date: 2026-10-09
+
+Design audit; proposals not implementation or production capability evidence.
+
+Synthetic self-contained frontend; engineer owns GLiDE backend; no system replacement, live data, external mutation, compliance or superiority claim.
+
+## Executive judgment
+
+The existing proposal is unusually strong on metric semantics, evidence provenance, controlled knowledge, engineering-change gates and separation of operational versus financial value. The missing work is mostly turning those contracts into complete everyday tasks under imperfect data, limited staff, interrupted connectivity and changing scope. A larger menu is not the answer.
+
+Highest-value additions: outcome-led onboarding/readiness; source-health consequences; goal/driver/guardrail and workload-aware prioritization; part/revision/job/operation problem discovery; accepted ownership and shift handover; notification burden; uncertainty/negative outcomes; shared-device privacy; comparative usability proof. The completed maintenance design has been reconciled: technician evidence and PM review are covered specifications to preserve/test, while spare/tool readiness remains an explicit extension. The completed Highcharts specification is also retained as a required contract, not assumed runtime capability.
+
+## How to use this register
+
+Audit of supplied design/research documents and representative fixture structures. Metric inventory is retained in its own 322-occurrence ledger; this register adds cross-cutting outcomes and acceptance gaps, not a duplicate metric inventory. No external research or source-system audit performed. Maintenance design now reconciled: two covered contracts retained as test obligations; spare/tool readiness remains a production extension. No interactive implementation is marked complete.
+
+Priority and disposition are separate. P0 means a truth/authority gate, not “build a new enterprise system immediately.” A boundary or blocked/read-only state can satisfy demo needs where production capability is absent. Every row remains proposed until its acceptance proof is executed and linked. “demo_now” means feasible in the local demonstration, not done. Customer policy, actual interfaces and business authority remain undecided where noted.
+
+- P0: Truth, safety, authority, provenance or release-integrity gate before affected behavior can be represented as trustworthy
+- P1: Core task completeness and decision/adoption value
+- P2: Validate with customer before adding burden
+
+- demo_now (37): Can be specified and illustrated with deterministic local synthetic data now; NOT yet implemented by this audit
+- preserve_and_test (5): Already specified strongly; preserve and execute regression/acceptance proof
+- delegate_maintenance (0): Maintenance worker owns detailed design; cross-link and reconcile, never mark closed merely delegated
+- contract_before_production (10): Define and demonstrate boundary now; actual production behavior requires engineer/customer-approved capability and policy
+- customer_decision (4): Explicit decision/research needed; do not imply a feature, policy or commercial claim has been approved
+
+## Proposed navigation placement
+
+- Keep Brief / Explore / Improvements / Knowledge / Metrics. Do not add a module per domain.
+- Brief: objective context, problem-job/opportunity queue, attention and review entry points.
+- Explore: hierarchy/part/job/lot scope, evidence, comparable cohorts, what-if and source-health detail.
+- Improvements: cases, changes, accepted ownership, technician links, reviews, lessons and sustain.
+- Knowledge: controlled sources, applicable procedures, source relationships and evidence.
+- Utilities/onboarding: setup/readiness, capabilities, identity/privacy, local reset/export and deployment disclosure.
+
+## Source review
+
+- `implementation-contract.md` — Product intent, Interaction contract, Deterministic synthetic fixture, Full improvement case, Minimum self-contained demo behaviors, Proposed integration boundary, v0.2, v0.3. Core proposed experience and local-demo boundary.
+- `metrics.inventory.md` — All 28 section headings and occurrence structure. Catalog coverage; not capability proof.
+- `metrics.json` — requirements, canonical_metric_families, additional_global_ui_contract. Machine-readable catalog structure inspected.
+- `metrics.review.md` — Highest-priority corrections, Further definition and UX requirements, Common metric detail, Minimum acceptance tests. Existing mathematical/trust coverage preserved.
+- `metrics.workflows.md` — WF-01 through WF-11. Representative domain decision workflows.
+- `bible-source-review.md` — Product/requirements/action/source-version review. Source authority distinctions and durable work; no inference that legacy backend binds GLiDE.
+- `research-improvement.md` — Competitor briefs, H1–H7, Questions to answer. Existing documented research and validation hypotheses, not new live competitor verification.
+- `research-industrial.md` — Evidence matrix, Product briefs, Opportunity hypotheses, Demo questions. Existing documented research and recovery/privacy/workflow evidence.
+- `knowledge-requirements.md` — §§1–7. Knowledge authority/applicability/traceability/citation controls.
+- `sme-change-requirements.md` — §§1–7. Whole-SME domains and engineering change; regulatory edition claims not independently reverified by this audit.
+- `maintenance-requirements.md` — §§1–9. Completed parallel technician/PM design, reconciled before final register.
+- `maintenance-fixture.json` — Referenced by maintenance contract. Synthetic fixture existence and contract verified; UI not executed.
+- `highcharts-dashboards-requirements.md` — §§1–9. Completed chart architecture/scientific eligibility contract; runtime not tested.
+- `scenario-fixture.json` — Top-level model/product catalog. Existing one-product demo scope.
+- `knowledge-fixtures.json` — Top-level document/traceability/challenge model. Knowledge demo scope.
+- `sme-change-fixture.json` — Top-level change/profile model. Engineering-change demo scope.
+
+## Complete requirement register
+
+### GAP-001 · Outcome-led first use
+
+Discover and activate | P1 | Coverage: missing | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Plant leader needs a useful first decision without configuring hundreds of metrics; otherwise onboarding becomes a catalog tour.
+- Evidence/gap: implementation-contract.md Product intent/Minimum demo begins at an already populated Brief; SME domain map lists objectives but no first-use journey.
+- UI interaction: Choose role, plant scope and one outcome; show a recommended investigation, required evidence and a skip/resume path. Demo starts with sample plant clearly selected.
+- Backend dependency: Production needs permitted site discovery, saved onboarding state and source capability inventory; no connector provisioning is implied.
+- Acceptance proof: An unconfigured user can identify a relevant next step, missing prerequisite and owner; skipping setup never manufactures ready data.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-002 · Data-readiness checklist per outcome
+
+Discover and activate | P0 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: CI engineer must know whether a question can be answered and which gap to close.
+- Evidence/gap: metrics.review.md separates recognition/execution/certification and typed empties; no assembled readiness workspace links deficiencies to outcomes.
+- UI interaction: Open readiness from any unavailable result: inputs, mapping, units, calendars, coverage, authority, blocker owner and affected metrics. Preserve partial useful results.
+- Backend dependency: Capabilities, governed definitions, profiling results and owner assignments from engineer-approved services.
+- Acceptance proof: Missing good count disables quality/OEE but leaves availability usable; no synthetic readiness percentage implies certification.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-003 · Integration health with decision impact
+
+Discover and activate | P0 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Users must distinguish no loss from a blind data source and know which decisions cannot proceed.
+- Evidence/gap: Contract freshness envelope and offline/stale toggles; research-industrial.md opportunity 7 requires monitor health; consolidated source-to-result impact is absent.
+- UI interaction: Context freshness opens sources, last successful event/ingest, lag, coverage, clock, failure reason, affected cases and next owner action; read-only status only.
+- Backend dependency: Connector health, lineage/dependency graph, event-time watermarks and scoped authorization; no inferred live connection.
+- Acceptance proof: Stale source marks dependent results and sustain checks not observing; unrelated healthy metrics remain available.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-004 · Identity mapping and reconciliation
+
+Discover and activate | P0 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Engineer must resolve incompatible asset/part identifiers before trusting joins; wrong joins create plausible false root causes.
+- Evidence/gap: metrics.review.md identity and units; knowledge scope includes IDs; scenario has one product alias. Mapping review, ambiguity and reconciliation workflow missing.
+- UI interaction: Show source ID → proposed canonical ID with match basis, unresolved/duplicate counts and previewed affected joins; simulated review cannot silently approve.
+- Backend dependency: Governed identity registry, source keys, mapping versions and approvals; mapping writes optional and engineer-owned.
+- Acceptance proof: Two assets with identical names remain distinct; unresolved part alias excludes join and explains missing coverage.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-005 · Goal → driver → guardrail chain
+
+Goals and decisions | P1 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Leader needs to understand why this opportunity matters to an agreed objective and whether local gains harm other outcomes.
+- Evidence/gap: Contract has seven outcomes and CASE-003 guardrails; SME Leadership row mentions objectives; no explicit goal/driver ownership/effectivity.
+- UI interaction: Goal drawer links target, driver, affected case, constraint and mandatory safety/quality/delivery guardrails; show owner and target version.
+- Backend dependency: Approved objective/target records and dependency links; causal relationship types must distinguish hypothesis from established model.
+- Acceptance proof: Opening ranked case shows its objective and counter-metrics; modifying a goal previews ranking changes without rewriting approved case.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-006 · Transparent priority and constrained portfolio
+
+Goals and decisions | P1 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Plant leader must choose work feasible with limited maintenance time, skills, cash and shutdown windows.
+- Evidence/gap: Contract ranked queue lacks score explanation, capacity constraint or competing-case overlap; research-improvement.md H1/H2 value and coordination tests.
+- UI interaction: Explain rank using physical impact, urgency, uncertainty, controllability, obligations and effort; compare two cases sharing resource or loss; allow reasoned defer.
+- Backend dependency: Available resource windows, owner capacity and governed rank policy; no automatic scheduling/optimization or external assignment.
+- Acceptance proof: High-dollar uncertain item does not silently outrank required safety review; two cases claiming same loss are flagged and not summed.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-007 · ISA-95-aligned equipment navigation
+
+Scope and traceability | P1 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Users need stable plant-to-work-unit drilldown without confusing functional hierarchy, physical equipment and aggregation.
+- Evidence/gap: Contract site/area/asset strip and maintenance-requirements.md §2 now define ISA-95-style role hierarchy separately from activity levels 0–4. Actual customer terminology remains to validate; do not claim standards conformance.
+- UI interaction: Expandable enterprise/site/area/work-center/work-unit view using configured local terms; show physical-equipment relation separately, hierarchy version and unassigned assets.
+- Backend dependency: Engineer/customer-agreed hierarchy model, temporal parentage and aggregation semantics. This is an alignment proposal, not a claim of ISA-95 conformance.
+- Acceptance proof: Drilldown retains scope breadcrumbs; moving equipment historically does not reparent old case evidence; no double count shared equipment.
+- Proposed owner: Product + frontend
+- Approval boundary: Customer approves hierarchy terminology and mapping; engineer approves source model; no licensed standard reproduced
+
+### GAP-008 · Problem jobs by part and revision
+
+Scope and traceability | P1 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Planner/CI engineer must find recurrent problem jobs for a part number, not just aggregate line loss.
+- Evidence/gap: User requested problem jobs by part number. maintenance-requirements.md §§2,3,5 now defines part-first NW-A/P2 → OP-030 → jobs → equipment with separate production-job/maintenance-WO identities and exposure gaps. Broader lateness/quality exception queue still needs design.
+- UI interaction: Search part number/alias; show problem jobs grouped by part revision, route/operation, asset, shift, lot, quantity, loss, lateness and reason. Drill into frozen job evidence.
+- Backend dependency: ERP/MES job/operation identity, routing version, status/event joins and governed problem criteria; read-only source links.
+- Acceptance proof: Same part at different revisions or operations never merges silently; late-but-quality-good job and quality-held on-time job retain distinct exceptions.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-009 · Mixed-product comparisons and plan baselines
+
+Scope and traceability | P0 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Engineer needs valid line/shift comparisons where product mix, ideal cycle, revision and frozen schedule change.
+- Evidence/gap: metrics.review.md covers mix and effective dates; contract explicitly uses same product/ideal cycle, leaving these failure modes unexercised.
+- UI interaction: Comparison setup explains exact/normalized/ineligible cohorts and excluded jobs; show original versus revised plan; preview period and denominator differences.
+- Backend dependency: Product-specific standards, schedule/calendar versions, comparable-cohort eligibility and optional normalization method.
+- Acceptance proof: Mix-shift fixture cannot present raw OEE delta as attributable improvement; plan revision does not erase original miss.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-010 · Lot genealogy and bounded affected scope
+
+Scope and traceability | P0 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Quality needs to trace suspect material through operations to shipped units without overstating containment coverage.
+- Evidence/gap: Knowledge and SME affected-object graphs list lot/serial/order genealogy but no navigable investigation scenario.
+- UI interaction: From defect/lot show upstream supplier/material and downstream WIP/finished/shipped cohort, unknown links, cutoff time and authorized source disposition.
+- Backend dependency: Genealogy, split/merge/rework events, shipment links and scoped access from source systems; no hold/release mutation.
+- Acceptance proof: Split/rework genealogy counts unique units and exposes unmapped quantity; missing links show unknown exposure, never all product contained.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-011 · Containment versus corrective-action outcome
+
+Quality and customer | P0 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Quality/operator must distinguish immediate authorized containment, root-cause investigation, correction and sustained corrective action.
+- Evidence/gap: Knowledge includes NCR and SME temporary deviation gates; main case still maintenance-loss led, with no escaped-defect/containment walkthrough.
+- UI interaction: NCR-linked case displays suspected cohort, containment authority/status, residual exposure, customer obligation, root-cause evidence and effectiveness separately.
+- Backend dependency: QMS/ERP authoritative status, customer obligations and authorized disposition; EKAS offers evidence and draft handoff only.
+- Acceptance proof: Closed task cannot mark product released or customer escape resolved; unknown containment owner remains prominent.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-012 · Supplier/customer obligation exception review
+
+Quality and customer | P1 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Quality manager must see whether supplier change, complaint or overdue submission invalidates an otherwise good performance result.
+- Evidence/gap: SME domain map includes supplier qualification, customer scorecards and PPAP; no concise cross-domain exception interaction.
+- UI interaction: Customer/program/supplier facet exposes required evidence, due date, external decision, affected parts/jobs and current owner; link source complaint/SCAR/CSR.
+- Backend dependency: Authorized QMS/customer/supplier records, contractual applicability and calendar; no automated portal submission/contact.
+- Acceptance proof: Submitted PPAP remains pending; supplier qualification unknown is not approved; program-specific condition does not spread to all customers.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-013 · Measurement trust changes the decision
+
+Quality and customer | P0 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Engineer must not trust a capability/quality conclusion based on invalid measurement or expired calibration.
+- Evidence/gap: metrics.review.md statistical eligibility and SME inspection/metrology map already strong; no end-to-end out-of-tolerance evidence impact case.
+- UI interaction: From measurement open gage/MSA/spec/sample plan and validity window; show affected measurements and review-needed decisions when trust changes.
+- Backend dependency: Gage calibration, MSA and specification versions with temporal linkage; qualified quality owner decides impact, not frontend.
+- Acceptance proof: Expired/unknown measurement eligibility blocks capability conclusion, retains raw readings and never automatically scraps/releases product.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-014 · Special characteristics and safety escalation
+
+Quality and customer | P0 | Coverage: partial | Disposition: contract_before_production | Status: proposed, not implemented
+
+- Task/risk: Users must recognize when a finding needs authorized specialist/customer review beyond normal CI workflow.
+- Evidence/gap: SME product-safety and customer context rows and case safety guardrail exist; authority-specific escalation/acknowledgment remains undefined.
+- UI interaction: Persistent affected-characteristic and obligation banner with authorized escalation path, missing evidence and decision authority; no generic AI operating instruction.
+- Backend dependency: Customer-approved characteristic classification, escalation policy, authority and source status; no universal hardcoded standard checklist.
+- Acceptance proof: Unresolved safety-related obligation cannot become green on OEE improvement, absence of incidents or generic supervisor click.
+- Proposed owner: Quality/safety owner + engineer
+- Approval boundary: Customer quality/safety authority must define scope and routing before production
+
+### GAP-015 · Preserve controlled-document and EC separation
+
+Change and knowledge | P0 | Coverage: covered | Disposition: preserve_and_test | Status: proposed, not implemented
+
+- Task/risk: Users need current applicable instructions while preserving historical evidence and controlled release authority.
+- Evidence/gap: knowledge-requirements.md §§2–7 and sme-change-requirements.md §§4–6 comprehensively define revisions, conflicts, effectivity, training, PPAP and release blockers.
+- UI interaction: Keep first-class Knowledge and Engineering changes; link case → exact source row → proposed revision → release/effectivity gates.
+- Backend dependency: Production document lifecycle/permissions remain authoritative; existing proposed capabilities need engineer confirmation.
+- Acceptance proof: All existing knowledge/EC fixture tests pass; no future draft is current guidance; operational improvement does not release EC-003.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-016 · Search beyond the happy-path phrase
+
+Change and knowledge | P1 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Operator may know a local nickname, fault code, part number or another language, not document taxonomy.
+- Evidence/gap: Knowledge facets/aliases and original-language fields exist; exact no-result, synonym collision and terminology repair journeys not specified.
+- UI interaction: Unified search disambiguates entity/code/metric/document; zero results explain permission/configuration/no-match without leaking records; local glossary suggestions.
+- Backend dependency: Approved terminology, localized labels, language-capability disclosure and authorized multi-object search; OCR/translation fidelity.
+- Acceptance proof: Feeder nickname resolves only when scoped; ambiguous code offers choices; translated text never silently replaces authoritative original.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-017 · Learning capture after success or failure
+
+Change and knowledge | P1 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: CI engineer needs reusable lessons, including failed hypotheses, without promoting unverified notes into controlled guidance.
+- Evidence/gap: Knowledge evidence history strong; SME lessons row and sustain loop lack explicit closeout capture and reuse eligibility.
+- UI interaction: Closeout proposes concise lesson with conditions, observed outcome, failed tests, source anchors and review owner; searches label applicability and approval separately.
+- Backend dependency: Case snapshots, reviewed lesson objects and permission-aware search; publication to controlled knowledge separate optional workflow.
+- Acceptance proof: Failed/neutral case can yield a useful lesson; lesson from one revision does not become current instruction for another.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-018 · Technician evidence, diagnosis and work-order phases
+
+Maintenance | P0 | Coverage: covered | Disposition: preserve_and_test | Status: proposed, not implemented
+
+- Task/risk: Technician needs repair history, current work context and findings; closure cannot imply verified repair or root cause.
+- Evidence/gap: maintenance-requirements.md §§1–6,8–9 and maintenance-fixture.json now provide technician source claims, negation/conflicts, deduplication, work-order/job distinctions and repair verification. Specification/fixture coverage is complete for the stated demonstration; interactive UI remains unimplemented/unverified.
+- UI interaction: Link asset → source work order → symptoms/inspection/evidence → cause hypothesis/confirmation → performed phases → return-to-service evidence and linked verification.
+- Backend dependency: CMMS/EAM authoritative work-order lifecycle, technician access, status mapping, downtime boundaries; no machinery control or automatic work-order write.
+- Acceptance proof: Waiting-for-parts, wrench time, testing and restoration remain distinct; closed work order alone never proves fault removed or financial benefit.
+- Proposed owner: Maintenance design owner + frontend + customer maintenance authority
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-019 · PM review and recurring failure feedback
+
+Maintenance | P1 | Coverage: covered | Disposition: preserve_and_test | Status: proposed, not implemented
+
+- Task/risk: Reliability engineer needs to test whether PM addresses recurrent mechanism without inventing maintenance intervals.
+- Evidence/gap: maintenance-requirements.md §§5–9 and maintenance-fixture.json PM-REVIEW-003 now separate schedule, compliance, task effectiveness and interval optimization; missing exposure/OEM/constraint evidence blocks a numeric interval. Specification/fixture coverage exists; interactive UI remains unimplemented/unverified.
+- UI interaction: Compare failure mode, asset duty, PM version/completion evidence and recurrence; propose review of task/interval with authorization and controlled-document links.
+- Backend dependency: CMMS PM plan/revision, actual completion, runtime exposure and authorized maintenance engineering assessment.
+- Acceptance proof: Late PM and ineffective PM are distinct; no fabricated interval or safety procedure; proposal cannot mark PM plan changed.
+- Proposed owner: Maintenance design owner + frontend + customer maintenance authority
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-020 · Critical spares, tooling life and availability constraints
+
+Maintenance | P1 | Coverage: partial | Disposition: contract_before_production | Status: proposed, not implemented
+
+- Task/risk: Planner must know why approved repair cannot proceed and whether shared tooling blocks other jobs.
+- Evidence/gap: Maintenance design now identifies maintenance spare versus manufactured part and work-order phases. Complete spare availability/tooling-life/skill/window readiness is not represented in the supplied fixture; keep this extension explicitly pending.
+- UI interaction: Work readiness shows authorized parts availability, tooling identity/life status, skill and maintenance window; flag unknown vs unavailable.
+- Backend dependency: CMMS/EAM/ERP spares and tooling records; no procurement/reservation or scheduler replacement.
+- Acceptance proof: Approved repair with unavailable spare stays blocked; tool retirement limit is source-controlled and never estimated from model memory.
+- Proposed owner: Maintenance planner + engineer
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-021 · Assignment acceptance and accountable handover
+
+Collaboration and ownership | P1 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Leader must know someone accepted work and next shift knows outstanding risk; assigning a name is insufficient.
+- Evidence/gap: Contract case owner/due date and history; research-improvement.md H5 tests shift handoff; no accepted/reassigned/absent-owner contract.
+- UI interaction: Case next decision shows accountable owner, assignment pending/accepted, backup, due time and handover note; shift review includes new facts, pending decisions and blocked work.
+- Backend dependency: Identity/team/shift roster, assignment events and access; notifications optional agreed capability.
+- Acceptance proof: Reassignment retains prior owner/time; absent owner routes to explicit unresolved queue; handover preserves exact scope, evidence and open safety conditions.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-022 · Reviews, decisions and escalation queues
+
+Collaboration and ownership | P1 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Plant review meeting must distinguish overdue execution, overdue verification and awaiting external decision.
+- Evidence/gap: Improvements Reviews tab exists but review agenda, decision authority and aging buckets not specified.
+- UI interaction: Review queue grouped by next decision and accountable role; include reason, evidence age, dependency, agenda snapshot and approve/reject/defer-with-reason simulation.
+- Backend dependency: Case workflow, authority map, due-date/calendar policy and event log; customer-approved escalation routes.
+- Acceptance proof: Approval changes only authorized stage; defer requires next review date; overdue verification cannot disappear under completed actions.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-023 · Comments, mentions and decision context
+
+Collaboration and ownership | P1 | Coverage: partial | Disposition: contract_before_production | Status: proposed, not implemented
+
+- Task/risk: Cross-functional collaborators need discussion tied to evidence rather than disconnected chat summaries.
+- Evidence/gap: Contract notes/history and knowledge annotations exist; reply/resolution, mention permissions and decision versus comment semantics absent.
+- UI interaction: Threaded note anchored to case/claim/revision with unresolved/resolved status; summarize decisions separately; preview recipients and accessible content.
+- Backend dependency: Permission-aware collaboration, identity and notification service; recipient resolution and data access must be server enforced.
+- Acceptance proof: Mentioning a colleague neither grants access nor sends restricted excerpt; resolving comment cannot approve intervention.
+- Proposed owner: Product + frontend
+- Approval boundary: Customer/engineer approve collaboration and outbound notification channels; no messages sent by demo
+
+### GAP-024 · Notification burden and acknowledgment
+
+Collaboration and ownership | P1 | Coverage: missing | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Operators must see urgent meaningful exceptions without alert fatigue or duplicate alarms masking safety signals.
+- Evidence/gap: Bible review mentions alerts and research sustain health; contract has no notification deduplication, acknowledgment, snooze or overload design.
+- UI interaction: Local attention inbox groups same event/case, separates critical/escalation/digest; show why notified, acknowledgment, permitted snooze and expiry. Never treat read as resolved.
+- Backend dependency: Event identity, severity/route policy, durable delivery/acknowledgment and customer-approved channels; safety escalation cannot rely on unverified delivery.
+- Acceptance proof: Ten duplicate events form one expandable group; snoozed recurrence resurfaces under policy; delivery failure remains visible; local demo sends nothing.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-025 · Capability matrix instead of role theater
+
+Permissions and privacy | P0 | Coverage: partial | Disposition: contract_before_production | Status: proposed, not implemented
+
+- Task/risk: Users need trustworthy view/edit/review/export boundaries across sites and objects.
+- Evidence/gap: Contract says role selector only changes density; knowledge auth boundaries well specified; complete case/metric/export action matrix not shown.
+- UI interaction: Capability-derived controls distinguish denied, missing capability, configured read-only and absent data; optional why/access-owner path without secret leakage.
+- Backend dependency: Server-authenticated principal, tenant/site/object/action authorization and fresh permission checks on all reads/mutations.
+- Acceptance proof: Operator persona switch cannot gain approval rights; direct URL, search, export and cached citation all obey same denial.
+- Proposed owner: Engineer + customer security
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-026 · Shared workstation and session handoff
+
+Permissions and privacy | P0 | Coverage: missing | Disposition: contract_before_production | Status: proposed, not implemented
+
+- Task/risk: Shopfloor shared devices risk one person acting under another identity or exposing private cases.
+- Evidence/gap: research-improvement.md H6 names shared workstation tests; main contract has actor fields but no session/lock/switch behavior.
+- UI interaction: Persistent signed-in identity and active site; lock/switch user clears private view and unsent changes warning; no cached personal content in kiosk after sign-out.
+- Backend dependency: Customer identity/session policy, device mode, idle timeout and audit actor assurance. Demo may illustrate but cannot prove security.
+- Acceptance proof: User switch clears restricted content and reauthorizes case; simulated persona switch never impersonates production principal.
+- Proposed owner: Engineer + customer IT/security
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-027 · Personnel minimization and no worker ranking
+
+Permissions and privacy | P0 | Coverage: partial | Disposition: contract_before_production | Status: proposed, not implemented
+
+- Task/risk: Engineer may need crew context without unsupported individual productivity scoring or disclosure of health/personnel data.
+- Evidence/gap: metrics.review.md warns against employee performance inference and knowledge minimizes personal data; no aggregate/privacy view contract.
+- UI interaction: Default crew/shift-level comparisons; restrict identities and small-cohort detail under customer policy; explain missing access without revealing sensitive attributes.
+- Backend dependency: Customer-approved purposes, retention, authorization and aggregation/disclosure policy; no inferred protected or medical traits.
+- Acceptance proof: Operator analysis does not create a best/worst employee leaderboard; restricted identities absent from search, exports and logs.
+- Proposed owner: Customer privacy/HR + engineer
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-028 · Actual data flow and deployment capability disclosure
+
+Permissions and privacy | P0 | Coverage: partial | Disposition: customer_decision | Status: proposed, not implemented
+
+- Task/risk: Customer must understand where prompts, records, models, telemetry and backups go; local UI does not guarantee privacy or air gap.
+- Evidence/gap: Bible charter deployment independence and both research files warn local backend is not unique privacy; demo local-only boundary exists, production profiles unknown.
+- UI interaction: About/data-flow panel names actual storage, inference, connector, telemetry and support boundaries; capability matrix for connected/offline/on-prem/air-gapped profile, unknown until approved.
+- Backend dependency: Engineer architecture, model/provider routing, packaging, telemetry, retention and network/deployment controls.
+- Acceptance proof: No air-gap/private/no-training promise without verified configured evidence; network-disabled demo cannot be passed as production air-gap certification.
+- Proposed owner: Engineer + customer IT/security
+- Approval boundary: Engineer and customer choose supported deployment and data policy; no architecture mandated
+
+### GAP-029 · Offline read versus queued work
+
+Failure and recovery | P0 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Operator must know what is stale and whether a note/action was actually saved after connectivity loss.
+- Evidence/gap: Contract offline toggle and browser local storage; no detailed read-cache, draft, resync and expired-authorization behavior.
+- UI interaction: Offline banner shows last snapshot and clock; cached evidence read-only with expiry; local draft distinct from submitted; reconnect offers state reconciliation, never auto-executes plant action.
+- Backend dependency: Approved caching/retention, durable draft policy and permission revalidation; offline writes optional, not assumed.
+- Acceptance proof: Offline completion click cannot show external work performed; reconnect conflict preserves draft and authoritative state.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-030 · Partial/truncated query results and scale
+
+Failure and recovery | P0 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Leader must not interpret first page or timed-out subset as full plant totals.
+- Evidence/gap: Contract result coverage and metrics missingness; research-industrial.md documents vendor limits; query pagination/row limits and completeness presentation absent.
+- UI interaction: Show requested/returned scope, pagination, omitted/late records and completeness before aggregating; progressive result with clear incomplete status and narrow-scope recovery.
+- Backend dependency: Query completeness, limits, continuation tokens, timeouts and cancellation status; no frontend aggregation of partial pages as whole.
+- Acceptance proof: 100 returned of 1,000 eligible jobs cannot be labeled plant total; sorting/top-N discloses basis; incomplete export carries warning.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-031 · Late data, corrections and restatement
+
+Failure and recovery | P0 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Reviewer must see when backfill or corrected classifications change a previous result or sustain outcome.
+- Evidence/gap: metrics.review.md as-known-then/restatement and contract immutable contexts; user-visible correction diff and downstream review workflow absent.
+- UI interaction: Original snapshot beside restated result, changed records/reason, affected decisions and review-needed marker; allow explicit re-evaluation preserving approved evidence.
+- Backend dependency: Event-time/ingest-time versions, correction provenance, dependency invalidation and idempotent reevaluation.
+- Acceptance proof: Corrected downtime changes restated value but not original approved snapshot; missed sustain intervals are unknown until eligible backfill.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-032 · Mutation recovery and consequential boundary
+
+Failure and recovery | P0 | Coverage: covered | Disposition: preserve_and_test | Status: proposed, not implemented
+
+- Task/risk: User must never duplicate action after unknown delivery, confuse approval with performance or believe cancellation rolls back committed work.
+- Evidence/gap: Contract integration boundary explicitly covers command IDs/idempotency/version, unknown delivery, cancel and resume; knowledge and EC repeat these controls.
+- UI interaction: Keep pending/accepted/rejected/unknown-delivery/performed/verified distinct; inspect current state before retry; demo labels every local command.
+- Backend dependency: Engineer must map actual command support and durable status; unsupported actions remain draft/reference.
+- Acceptance proof: Lost response retry uses same command identity after read; stale edit cannot overwrite; cancellation does not invent rollback.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-033 · Comparable best-known run and cohort eligibility
+
+Benchmarks and simulation | P1 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Engineer needs a credible attainable comparison, not a generic world-class target or cherry-picked maximum.
+- Evidence/gap: metrics.review.md targets/comparability and research-improvement.md Oden historical stable segments; no best-known-run selector or representativeness view.
+- UI interaction: Find comparable runs by part/revision/route/equipment/mix/duty; show eligibility, distribution, outliers, recency and why excluded; distinguish site target from reference cohort.
+- Backend dependency: Historical run segmentation, quality eligibility and agreed comparison method; no external peer benchmark implied.
+- Acceptance proof: Fast nonconforming run is not recommended benchmark; one lucky run visibly lacks robust evidence; no universal 85% OEE superiority claim.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-034 · What-if trade-offs with feasible bounds
+
+Benchmarks and simulation | P1 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Leader/engineer must compare recovery options without interpreting arithmetic as a production recommendation.
+- Evidence/gap: CASE-003 adjustable recoverable time/effectiveness and financial caveats; no multi-option quality/energy/WIP/delivery trade-off surface.
+- UI interaction: Scenario editor compares bounded options, assumptions, capacity/demand/constraint effects and guardrail unknowns; reset to baseline; store scenario version separately.
+- Backend dependency: Only approved deterministic relations demo now; production simulation/optimization model, uncertainty and feasibility evidence require engineer/customer validation.
+- Acceptance proof: Changing recoverable time recomputes physical capacity and opportunity; unsupported quality prediction reads unavailable, not green; no recipe or setpoint execution.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-035 · Constraint, demand and sell-through bridge
+
+Capacity and value | P0 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Leader must understand why recovered local minutes may not improve plant throughput, sales or cash.
+- Evidence/gap: CASE-003 explicitly conditions contribution on demand/sell-through/constraint; bridge not interactive and fixture assumes one-product line.
+- UI interaction: Physical recovery → usable constraint capacity → demand-covered output → incremental contribution → validated benefit; show each gate/assumption and non-additivity.
+- Backend dependency: Constraint/routing capacity, firm demand, bottleneck displacement and finance-approved margins/cost behavior; optional scenario only.
+- Acceptance proof: No demand or downstream constraint makes saleable gain unavailable/limited while physical recovery remains visible; no dollar total from overlapping opportunities.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-036 · Finance signoff and benefit ownership
+
+Capacity and value | P0 | Coverage: partial | Disposition: contract_before_production | Status: proposed, not implemented
+
+- Task/risk: Controller must reconcile claimed benefits, recurring/one-time costs, timing and ownership without double counting.
+- Evidence/gap: metrics.review.md financial governance and contract financial validation unavailable; production signoff evidence, benefit ledger and overlapping-program ownership unspecified.
+- UI interaction: Benefit review shows physical result, valuation version, gross/net, one-time/recurring, avoided cost/contribution/cash distinction, expense evidence and finance decision.
+- Backend dependency: Approved finance rates/ledger, currencies/effective dates, benefit attribution and authorized signoff; no accounting-system writes required.
+- Acceptance proof: Finance rejection leaves operational result intact; portfolio totals exclude duplicate loss claims and unapproved financial benefits.
+- Proposed owner: Finance owner + engineer
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-037 · Hypothesis discrimination and refutation
+
+Explainability and uncertainty | P1 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Engineer needs the next useful test and contradictory evidence rather than a confident list of probable causes.
+- Evidence/gap: Contract correlation caveat, knowledge claim classes and research-improvement.md H3; explicit competing hypotheses/test result UI not fully specified.
+- UI interaction: Hypothesis panel records support, contradiction, missing evidence, proposed discriminating test, authorized owner and disposition; preserve rejected hypotheses.
+- Backend dependency: Case evidence model and approved test plans; any causal model or prediction requires actual capability validation.
+- Acceptance proof: Confounder fixture leads to unresolved or rejected hypothesis, not automatic root cause; operational gain cannot retroactively prove mechanism.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-038 · Distinct uncertainty dimensions and negative results
+
+Explainability and uncertainty | P0 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Reviewer must distinguish incomplete data, model uncertainty, execution-effectiveness assumption and ordinary variability.
+- Evidence/gap: Existing docs correctly separate confidence/assumptions and forbid unsupported p-values; only successful improvement scenario dominates.
+- UI interaction: Expand uncertainty by source, method, sample/cohort and assumptions; include neutral, harmful and insufficient-evidence outcomes with next decision.
+- Backend dependency: Coverage/quality metadata and validated statistical outputs when available; frontend cannot synthesize confidence intervals.
+- Acceptance proof: 80% effectiveness assumption never appears as 80% confidence; negative outcome remains failed/needs review rather than forced verified-success.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-039 · Evidence coverage at claim level
+
+Explainability and uncertainty | P0 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: User must verify every consequential narrative claim and notice source conflict or missing evidence.
+- Evidence/gap: Knowledge exact citations and result provenance already present; analytical summaries need explicit claim-to-calculation/input link and completeness checks.
+- UI interaction: Click claim → calculation/records/document anchor; label observed, computed, inferred, proposed; show dissenting source and no-evidence state.
+- Backend dependency: Claim provenance, deterministic calculation trace, query/filter version and authorized evidence retrieval.
+- Acceptance proof: Each material numeric claim reproduces from pinned inputs; generated narrative cannot cite an unrelated source as support.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-040 · Operator quick task and correction loop
+
+Adoption and human factors | P1 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Operator needs to report a bad reason code or useful observation in seconds, not complete analyst forms.
+- Evidence/gap: Contract role density and mobile focused tasks; detailed capture/edit burden, source correction and visible feedback loop absent.
+- UI interaction: Current asset/job task card: review scoped fact, add concise observation, propose reason-code correction, mark unresolved; retain original source and pending-review state.
+- Backend dependency: Authorized annotation/correction proposal service and source-of-record review; no unilateral overwrite of machine event.
+- Acceptance proof: Operator completes agreed quick task without navigating Metrics; correction preserves original event and clearly indicates whether accepted upstream.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-041 · Workload-aware action and verification planning
+
+Adoption and human factors | P1 | Coverage: missing | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: CI leader must avoid generating more investigations than owners can complete or verify.
+- Evidence/gap: Ranked queue and action closure metrics exist; no work-in-progress limits, owner load or verification-capacity view.
+- UI interaction: Owner/team queue shows accepted work, blocked dependencies, verification due, estimated effort and configurable WIP guidance; merge duplicate investigations with provenance.
+- Backend dependency: Task ownership, capacity inputs and duplicate-case relationships; planning aid, not employee productivity scoring.
+- Acceptance proof: New case warns about duplicate scope/shared loss and overdue verification; overload remains visible rather than hidden in a success count.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-042 · Accessibility and shopfloor acceptance beyond screenshots
+
+Adoption and human factors | P0 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Users on bright/noisy floors, shared touch screens or assistive tech must safely understand scope and next action.
+- Evidence/gap: Contract keyboard/table/color/responsive rules and research H6; no complete assistive/touch/zoom/readability execution evidence yet.
+- UI interaction: Keyboard focus order, semantic live-status updates, text equivalents, reduced motion, reflow/zoom, touch targets, long labels, high-contrast modes; no hover-only critical data.
+- Backend dependency: Frontend accessibility implementation and customer device/browser profile; localization and shopfloor hardware tests need participants.
+- Acceptance proof: Run keyboard/screen reader, 200% zoom, 390px and long-label tests; task-critical warning persists; compare bright/low-light recognition with representative users.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-043 · Time, units and language localization
+
+Adoption and human factors | P0 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Cross-shift/site users risk acting on wrong day, timezone, decimal or unit convention.
+- Evidence/gap: Contract frozen UTC and metrics review midnight/DST; language support and local formatting behavior not exercised.
+- UI interaction: Always show plant timezone/shift calendar; local display with unambiguous export values; retain units/original-language source and translation label.
+- Backend dependency: Governed calendars/timezones, unit conversions and locale capabilities; plant terminology validated by users.
+- Acceptance proof: Cross-midnight and DST fixtures do not duplicate/miss exposure; changing display locale never changes calculation or source interpretation.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-044 · Adoption outcomes without surveillance
+
+Adoption and human factors | P2 | Coverage: missing | Disposition: customer_decision | Status: proposed, not implemented
+
+- Task/risk: Product/customer need to know whether EKAS helps work rather than merely increases clicks or tracks people.
+- Evidence/gap: Competitor studies propose task-speed/error tests; contract lacks instrumentation/feedback consent and outcome measures.
+- UI interaction: Optional contextual feedback on usefulness/correctness, reason for dismissal and unresolved need; aggregate task completion and time-to-decision, not individual leaderboard.
+- Backend dependency: Customer-approved minimal telemetry, retention/access and opt-out policy; local usability observation possible without production telemetry.
+- Acceptance proof: Pilot measures decision accuracy, completed verified work and burden; no sensitive prompt/record payload recorded by default.
+- Proposed owner: Product research + customer privacy
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-045 · Export an evidence-complete review packet
+
+Audit and sustain | P0 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Reviewer needs a portable result that remains understandable without app session or mutable latest links.
+- Evidence/gap: Contract export and metrics common-detail provenance exist; packet schema, redaction and missing attachments not fully specified.
+- UI interaction: Export preview lists scope/as-of, claim classes, inputs/formula versions, case decisions, source anchors, coverage, assumptions, financial status and excluded restricted items.
+- Backend dependency: Permission-aware export, immutable snapshot/manifest and approved file storage; no certification/signature guarantee.
+- Acceptance proof: Export and screen values match; reopen packet without app to reconstruct result; restricted data absent; missing source listed rather than silently omitted.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-046 · Retention, archive and evidence deletion policy
+
+Audit and sustain | P0 | Coverage: partial | Disposition: contract_before_production | Status: proposed, not implemented
+
+- Task/risk: Owners must preserve required evidence without promising indefinite storage or retaining unnecessary personal data.
+- Evidence/gap: Knowledge retention/access policy reference and local reset exist; production retention/legal hold/archive/delete semantics unchosen.
+- UI interaction: Show archive versus deletion, retention owner/policy and auditability; irreversible action requires authorized flow; source removal marks affected citation unavailable.
+- Backend dependency: Customer retention/legal policies, backup/deletion behavior and audit integrity; no standard-specific retention period assumed.
+- Acceptance proof: Archiving case cannot erase previous verification; local reset warning is distinct from production deletion; source deletion never leaves live cached secrets.
+- Proposed owner: Customer records/privacy owner + engineer
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-047 · Sustain observer coverage and ownership changes
+
+Audit and sustain | P0 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Leader needs to know improvement remains observed after source outage, owner departure or product revision change.
+- Evidence/gap: Contract sustain recurrence and fixture monitoring health; owner transfer and changed applicability need explicit test.
+- UI interaction: Sustain card separates outcome from observer health, eligible exposure and next review; owner transfer/retired asset/revised product prompts review, not automatic success.
+- Backend dependency: Monitor state, source health, eligible windows, owner authority and approved transfer/backfill policy.
+- Acceptance proof: No data over five shifts is not sustained; departing owner leaves review-required until accepted transfer; revised part breaks prior eligibility visibly.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-048 · Intervention overlap and verification plan changes
+
+Audit and sustain | P0 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Engineer must preserve evaluability when two changes overlap or verification plan changes after results are known.
+- Evidence/gap: Contract locked before-action verification plan; research-improvement.md H2 includes overlapping interventions but no explicit scenario.
+- UI interaction: Timeline overlays other interventions and context changes; amend plan with reason/version/approver and distinguish precommitted from exploratory analysis.
+- Backend dependency: Intervention events and versioned plan/change approvals; causal adjustment only when validated method exists.
+- Acceptance proof: Post-hoc excluded bad shifts are flagged; two simultaneous changes prevent unqualified attribution to CASE-003; original plan remains exportable.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-049 · Capability-to-experience negotiation
+
+Governance and release | P0 | Coverage: partial | Disposition: contract_before_production | Status: proposed, not implemented
+
+- Task/risk: Engineer needs a frontend contract that adapts honestly to actual GLiDE capabilities without a surprise backend rewrite.
+- Evidence/gap: Contract typed proposed capability names and no URLs; broad knowledge/EC proposals could still be mistaken for committed backend requirements.
+- UI interaction: Capability matrix maps each task to implemented/read-only/definition-only/unavailable with source/owner; UI hides fake actions while preserving discoverability of unsupported outcomes.
+- Backend dependency: Engineer-owned capabilities/schema/version negotiation, optional adapters and integration test fixtures.
+- Acceptance proof: Backend lacking EC mutations still supports source review with explicit handoff; no fake progress or unsupported result; every capability marked verified or proposed.
+- Proposed owner: Engineer + frontend lead
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-050 · Requirement disposition and change control
+
+Governance and release | P0 | Coverage: missing | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: User asked no hidden exceptions; team must know what is demonstrated, deferred, dependent or rejected with reasons.
+- Evidence/gap: Contract promises full source→requirement→UX→demo→test mapping; metric occurrences tracked but cross-domain disposition ledger not yet present.
+- UI interaction: Requirement coverage/release report links source, requirement, UI, fixture, test evidence, owner and disposition; not extra top-level product module.
+- Backend dependency: Build/release artifact or product management record; not a new production backend service.
+- Acceptance proof: Every identified row has explicit state/owner/proof; unimplemented item never marked complete; dispositions cannot silently disappear from next revision.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-051 · Comparative task testing before leadership claim
+
+Governance and release | P1 | Coverage: partial | Disposition: customer_decision | Status: proposed, not implemented
+
+- Task/risk: Product must earn number-one experience claims through representative performance and correct decisions, not feature count.
+- Evidence/gap: Both research reports explicitly label differentiation hypotheses and untested experiential metrics; no comparative hands-on study executed.
+- UI interaction: Run same realistic tasks across selected current vendor editions and EKAS; record scope correction, evidence accuracy, handoff, verification, recovery, time, errors and perceived workload.
+- Backend dependency: Authorized product access, matched scenarios, representative plant leader/CI/operator/technician participants and preregistered scoring; no mandatory product backend.
+- Acceptance proof: Publish tested versions, participants/task limits, raw outcomes and unresolved vendor unknowns; no winner from screenshots, marketing absence or demo polish.
+- Proposed owner: Product research + customer sponsor
+- Approval boundary: Customer approves participant access/data and paid/vendor evaluation; no external contact authorized
+
+### GAP-052 · Customer operating-profile discovery
+
+Governance and release | P0 | Coverage: partial | Disposition: customer_decision | Status: proposed, not implemented
+
+- Task/risk: Design cannot safely hardcode customer-specific approval, quality, shift or deployment assumptions.
+- Evidence/gap: SME §1 lists unknown certificate basis/scope/customer requirements; contract uses fictional Northworks and fixed roles.
+- UI interaction: Implementation discovery checklist records plant/process type, certificate basis, customer obligations, authorities, system ownership, terminology, calendars, device/access constraints and escalation routes.
+- Backend dependency: Customer-provided legitimate source access and accountable approvals; licensed clauses/methods remain outside generic demo.
+- Acceptance proof: Unknown customer obligation stays unknown; proposal never claims ISO/IATF compliance or universal workflow applicability.
+- Proposed owner: Customer sponsor/quality owner + engineer
+- Approval boundary: Customer validates operating profile and authority; this audit does not determine compliance
+
+### GAP-053 · Management review and audit finding follow-through
+
+Audit and sustain | P1 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Plant leader must use the same evidence to review objectives, recurring issues and overdue corrective-action effectiveness.
+- Evidence/gap: SME audit/management rows and Reviews tab exist; no concrete management-review/audit-finding evidence packet and follow-through path.
+- UI interaction: Review agenda ties objective trends, changed risks, audit findings, customer issues, capacity needs and prior decisions to cases; authorized draft minutes separate from signed record.
+- Backend dependency: QMS audit/review source links, decisions/owners and authorized record service; no automatic audit conclusion or certification.
+- Acceptance proof: Audit finding cannot close merely because linked case task completes; effectiveness and authority remain separate; each prior review decision has an explicit state.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-054 · Useful manual-data and low-maturity path
+
+Discover and activate | P1 | Coverage: missing | Disposition: contract_before_production | Status: proposed, not implemented
+
+- Task/risk: SME without complete MES/CMMS integration needs useful bounded analysis rather than an all-or-nothing implementation.
+- Evidence/gap: SME production row allows manual source of record; contract fixtures populated, but validated import/manual-evidence provenance flow absent.
+- UI interaction: Preview authorized CSV/manual evidence with schema, units, time, source owner, duplicate checks and readiness gaps; retain imported-versus-connected distinction.
+- Backend dependency: Optional approved import/manual-record adapter, validation and provenance; source-of-record agreement and upload authorization required.
+- Acceptance proof: Missing column blocks dependent result, duplicate import cannot inflate counts, manually entered figure never appears sensor-measured.
+- Proposed owner: Engineer + data owner
+- Approval boundary: Customer approves source-of-record/import workflow and data handling before real uploads
+
+### GAP-055 · Contingency and disruption context
+
+Collaboration and ownership | P1 | Coverage: partial | Disposition: demo_now | Status: proposed, not implemented
+
+- Task/risk: Leader must avoid interpreting outage or emergency operating conditions as routine production improvement and missing customer consequence.
+- Evidence/gap: SME continuity domain map exists; ordinary case ranking does not incorporate active disruption/contingency context.
+- UI interaction: Active disruption context shows affected scope, source plan, authorized incident owner, unmet obligations and links to impacted cases/orders; no autonomous emergency instructions.
+- Backend dependency: Approved continuity/incident records, applicable customer obligations and authorized escalation paths.
+- Acceptance proof: Outage suppresses misleading normal-baseline comparisons and marks service risk; absent contingency plan remains unknown, never generated on the fly.
+- Proposed owner: Product + frontend
+- Approval boundary: Engineer capability review before production; local synthetic demonstration only
+
+### GAP-056 · Actual Highcharts Dashboards and scientific chart choice
+
+Analytical presentation | P0 | Coverage: covered | Disposition: preserve_and_test | Status: proposed, not implemented
+
+- Task/risk: Users need linked charts/Grid that answer the question and preserve evidence, rather than decorative or statistically misleading graphics.
+- Evidence/gap: highcharts-dashboards-requirements.md §§1–9 now specifies actual Board/DataPool/native layouts/Grid, chart-choice matrix, scientific eligibility, local assets/export, licensing boundaries and acceptance tests. Main implementation-contract.md predates this exact technology requirement; reconcile rather than lose it.
+- UI interaction: Use real coordinated Dashboards canvas with safe native edit mode; explain query-to-chart choice, preserve persistent scope versus viewport/hover, supply exact evidence Grid and chart-family fallback.
+- Backend dependency: Frontend package compatibility and approved entitlement; canonical typed query result and optional validated statistical methods. Production backend architecture remains engineer-owned.
+- Acceptance proof: Runtime proves real Board/connector/components; waterfall/Pareto/flow totals reconcile; network-disabled restore/export works; no SPC/capability assertion without eligible method; missing module/license cannot be faked.
+- Proposed owner: Frontend builder + engineer
+- Approval boundary: Honor explicit Highcharts requirement; verify package versions and license before commercial use; no installation or purchase by this audit
+
+## Integration and release rules
+
+1. Merge each accepted row into the source → requirement → UI → fixture → test ledger. Record deferred/rejected/covered decisions with rationale, owner and review trigger; retain IDs. Do not silently remove an item to make coverage look complete.
+2. Frontend can demonstrate fixtures, disabled controls, capability/readiness labels and recovery UX. It cannot establish production authentication, permissions, connector health, air-gap guarantees, model validity, authorized release or real delivery.
+3. GAP-018–019 reference the completed maintenance contract/fixture and are preserve-and-test obligations; GAP-020 remains a production extension. GAP-056 preserves the actual Highcharts contract. None is a claim that interactive implementation or backend capability has passed.
+4. First customer decisions: real operating profile, hierarchy/part/job identities, source ownership, privacy/deployment constraints, quality/safety/customer authority, escalation and retention policy. First engineer decision: supported read/write capability map and result/command envelopes.
+5. Market leadership is an outcome to test. Use representative plant-leader, CI-engineer, operator and technician tasks, equivalent scopes, injected data/permission failures and current product editions. Assess correct decisions, evidence comprehension, time, error recovery and workload. Public documentation and a polished synthetic demo are insufficient.
+
+## Suggested minimal demonstration additions
+
+A. First use → choose a goal → inspect readiness → see unavailable metric and valid partial result (001–005, 049).
+B. Problem job for NW-A revision P2 → OP-030 → asset hierarchy → mapped source records → compare eligible cohort (007–010).
+C. Assign and accept investigation → shift handover → review blocked verification and notification grouping (021–024, 041).
+D. Inspect technician/PM evidence via maintenance worker, preserving CMMS read-only authority and repair-versus-verification distinction (018–020).
+E. Introduce missing source, partial query, late correction, permission revocation, offline draft and failed/neutral result (025, 029–032, 038, 047–048).
+F. Export a reviewable packet and show requirement dispositions, without certified-compliance, financial-validation or competitive-leadership claims (045, 050–052).

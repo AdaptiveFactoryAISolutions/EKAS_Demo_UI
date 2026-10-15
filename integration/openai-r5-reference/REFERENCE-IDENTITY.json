@@ -1,0 +1,35 @@
+{
+  "status": "Unmodified approved-R5 code reference; not integrated, not enabled, not new review approval",
+  "files": [
+    {
+      "file": "openai.mjs",
+      "sha256": "37e0579ea42ea511a39896a91f49e88aaf86591e2f83ecf47be5134b85327dfc",
+      "source": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-dot-r5-working/dot-review-r5/server/dot/openai.mjs"
+    },
+    {
+      "file": "gateway.mjs",
+      "sha256": "82a974a39a3f561f8968ecfef1d5a12abf8146cf28c6a2cbe1dfd2887b0190c8",
+      "source": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-dot-r5-working/dot-review-r5/server/dot/gateway.mjs"
+    },
+    {
+      "file": "policy.mjs",
+      "sha256": "757cb734a8c634255077dbd8d80e08077db4253ea267d4991e791ea714140059",
+      "source": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-dot-r5-working/dot-review-r5/server/dot/policy.mjs"
+    },
+    {
+      "file": "budget.mjs",
+      "sha256": "ded1b628dc955a0aa142900c4a595ad0c1b479772594823b97150513e8d1038f",
+      "source": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-dot-r5-working/dot-review-r5/server/dot/budget.mjs"
+    },
+    {
+      "file": "ledgerSchema.mjs",
+      "sha256": "2105c7b74c0410cf86992f14aefd6544a2081c423f0a6a8935509d4b3409381d",
+      "source": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-dot-r5-working/dot-review-r5/server/dot/ledgerSchema.mjs"
+    },
+    {
+      "file": "tom.mjs",
+      "sha256": "6e9d2eb7f439f562f8da79d8b5c8801588d715854e613c8fb8a7e71522fca264",
+      "source": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-dot-r5-working/dot-review-r5/server/dot/tom.mjs"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "stage": "source-complete",
+  "at": "2026-10-15T18:45:56.998038+00:00",
+  "sourceSha256": "f2b1292c975203593e64b9320d86edaba566710b739da45059b1f7a556b91978",
+  "passed": 2910,
+  "failed": 0,
+  "testFiles": 492,
+  "groups": 61,
+  "sourceFullStatus": "PASSED_CONTROLLED_RESUME",
+  "compiled501CleanPass": true,
+  "browserAcceptance": "PENDING",
+  "promotion": "NOT_PERFORMED",
+  "releaseReady": false
+}

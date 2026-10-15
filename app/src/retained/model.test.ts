@@ -1,0 +1,9 @@
+import {describe,it,expect} from 'vitest';
+import {emptyQuery,runQuery,compilePhrase,sourceRecords,resultIdentity,FACTS} from './model';
+const ctx={rls:false,site:'TP-S1',maskDowntime:false};
+describe('retained workspace canonical query behavior',()=>{
+ it('binds Highcharts/table/presentation/export callers to one semantic result identity',()=>{const q={...emptyQuery(),columns:['oee','site']};const rows=runQuery(q,ctx),again=runQuery({...q,title:'A changed display title'},ctx);expect(rows[0].values.oee).toBeGreaterThan(0);expect(resultIdentity.get(rows)).toBeTruthy();expect(rows).toBe(again);expect(rows.reduce((s,r)=>s+r.evidence.length,0)).toBe(FACTS.length*5)});
+ it('intersects row policy with explicit filters and distinguishes empty/masked from observed zero',()=>{const q={...emptyQuery(),columns:['goodUnits','site'],filters:[{col:'site',op:'in' as const,values:['TP-S2']}]};expect(runQuery(q,{...ctx,rls:true})).toHaveLength(0);expect(runQuery({...emptyQuery(),columns:['downtime']},{...ctx,maskDowntime:true})[0].values.downtime).toBeNaN();expect(sourceRecords(q,ctx).every(f=>f.site==='TP-S2')).toBe(true)});
+ it('retains multi-turn context and rejects unknown metric theater',()=>{const previous={...emptyQuery(),columns:['oee','site'],filters:[{col:'site',op:'in' as const,values:['TP-S1']}]};const next=compilePhrase('now by line',previous);expect(next.columns).toContain('oee');expect(next.columns).toContain('line');expect(next.filters).toEqual(previous.filters);expect(compilePhrase('invent a new measure').columns).toEqual([])});
+ it('returns chronological days and withholds future facts rather than inventing zero',()=>{const q={...emptyQuery(),columns:['goodUnits','date_raw']};const rows=runQuery(q,ctx);expect(rows.map(r=>r.key)).toEqual([...rows.map(r=>r.key)].sort());expect(runQuery({...q,asOf:'2026-07-01T05:00:00Z'},ctx)).toHaveLength(0)});
+});

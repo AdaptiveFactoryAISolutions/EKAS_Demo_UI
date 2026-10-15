@@ -1,0 +1,2602 @@
+{
+  "status": "PROVISIONAL HELP-01 coverage register; registration is not usability acceptance",
+  "generated_utc": "2026-10-11T18:10:15.328458+00:00",
+  "original_screens": 42,
+  "original_workflows": 85,
+  "current_screen_registration": 44,
+  "new_current_screens": [
+    "canonicalmetrics",
+    "metriclab"
+  ],
+  "northworks_pages": 8,
+  "service_case_guard_probe_cases": [
+    "downtime",
+    "speed",
+    "quality"
+  ],
+  "service_actor_states": [
+    "supervisor",
+    "maintenance",
+    "manager",
+    "safety",
+    "viewer"
+  ],
+  "guide_condition_policy": "All declared workflowConditions tested against the same actual executeWorkflow guards; separate from native/human proof",
+  "original_scope_unchanged": true,
+  "rows": [
+    {
+      "original_id": "home",
+      "label": "Brief / Home",
+      "destinations": [
+        "home"
+      ],
+      "source_reference": {
+        "id": "home",
+        "destination": "Brief / Home",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "ask",
+      "label": "Brief / Conversations",
+      "destinations": [
+        "ask"
+      ],
+      "source_reference": {
+        "id": "ask",
+        "destination": "Brief / Conversations",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "search",
+      "label": "Explore / Query workspace",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "search",
+        "destination": "Explore / Query workspace",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "boards",
+      "label": "Explore / Boards / boards",
+      "destinations": [
+        "boards"
+      ],
+      "source_reference": {
+        "id": "boards",
+        "destination": "Explore / Boards / boards",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "board",
+      "label": "Explore / Boards / board",
+      "destinations": [
+        "board"
+      ],
+      "source_reference": {
+        "id": "board",
+        "destination": "Explore / Boards / board",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "answers",
+      "label": "Explore / Saved library / answers",
+      "destinations": [
+        "answers"
+      ],
+      "source_reference": {
+        "id": "answers",
+        "destination": "Explore / Saved library / answers",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "collections",
+      "label": "Explore / Saved library / collections",
+      "destinations": [
+        "collections"
+      ],
+      "source_reference": {
+        "id": "collections",
+        "destination": "Explore / Saved library / collections",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "schedules",
+      "label": "Improvements / Watch / schedules",
+      "destinations": [
+        "schedules"
+      ],
+      "source_reference": {
+        "id": "schedules",
+        "destination": "Improvements / Watch / schedules",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "monitors",
+      "label": "Improvements / Watch / monitors",
+      "destinations": [
+        "monitors"
+      ],
+      "source_reference": {
+        "id": "monitors",
+        "destination": "Improvements / Watch / monitors",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "patterns",
+      "label": "Improvements / Watch / patterns",
+      "destinations": [
+        "patterns"
+      ],
+      "source_reference": {
+        "id": "patterns",
+        "destination": "Improvements / Watch / patterns",
+        "accepted": false
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "objects",
+      "label": "Knowledge / Data & governance / objects",
+      "destinations": [
+        "objects"
+      ],
+      "source_reference": {
+        "id": "objects",
+        "destination": "Knowledge / Data & governance / objects",
+        "accepted": false
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "connections",
+      "label": "Knowledge / Data & governance / connections",
+      "destinations": [
+        "connections"
+      ],
+      "source_reference": {
+        "id": "connections",
+        "destination": "Knowledge / Data & governance / connections",
+        "accepted": false
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "studio",
+      "label": "Knowledge / Data & governance / studio",
+      "destinations": [
+        "studio"
+      ],
+      "source_reference": {
+        "id": "studio",
+        "destination": "Knowledge / Data & governance / studio",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "utilities",
+      "label": "Knowledge / Data & governance / utilities",
+      "destinations": [
+        "utilities"
+      ],
+      "source_reference": {
+        "id": "utilities",
+        "destination": "Knowledge / Data & governance / utilities",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "sync",
+      "label": "Knowledge / Data & governance / sync",
+      "destinations": [
+        "sync"
+      ],
+      "source_reference": {
+        "id": "sync",
+        "destination": "Knowledge / Data & governance / sync",
+        "accepted": false
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "memory",
+      "label": "Knowledge / Data & governance / memory",
+      "destinations": [
+        "memory"
+      ],
+      "source_reference": {
+        "id": "memory",
+        "destination": "Knowledge / Data & governance / memory",
+        "accepted": false
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "catalog",
+      "label": "Knowledge / Data & governance / catalog",
+      "destinations": [
+        "catalog"
+      ],
+      "source_reference": {
+        "id": "catalog",
+        "destination": "Knowledge / Data & governance / catalog",
+        "accepted": false
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "usage",
+      "label": "Knowledge / Data & governance / usage",
+      "destinations": [
+        "usage"
+      ],
+      "source_reference": {
+        "id": "usage",
+        "destination": "Knowledge / Data & governance / usage",
+        "accepted": false
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "dbt",
+      "label": "Knowledge / Data & governance / dbt",
+      "destinations": [
+        "dbt"
+      ],
+      "source_reference": {
+        "id": "dbt",
+        "destination": "Knowledge / Data & governance / dbt",
+        "accepted": false
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "verify",
+      "label": "Knowledge / Data & governance / verify",
+      "destinations": [
+        "verify"
+      ],
+      "source_reference": {
+        "id": "verify",
+        "destination": "Knowledge / Data & governance / verify",
+        "accepted": false
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "devhome",
+      "label": "Workspace tools / Developer tools / devhome",
+      "destinations": [
+        "devhome"
+      ],
+      "source_reference": {
+        "id": "devhome",
+        "destination": "Workspace tools / Developer tools / devhome",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "embed",
+      "label": "Workspace tools / Developer tools / embed",
+      "destinations": [
+        "embed"
+      ],
+      "source_reference": {
+        "id": "embed",
+        "destination": "Workspace tools / Developer tools / embed",
+        "accepted": false
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "playground",
+      "label": "Workspace tools / Developer tools / playground",
+      "destinations": [
+        "playground"
+      ],
+      "source_reference": {
+        "id": "playground",
+        "destination": "Workspace tools / Developer tools / playground",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "apiguide",
+      "label": "Workspace tools / Developer tools / apiguide",
+      "destinations": [
+        "apiguide"
+      ],
+      "source_reference": {
+        "id": "apiguide",
+        "destination": "Workspace tools / Developer tools / apiguide",
+        "accepted": false
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "apiplay",
+      "label": "Workspace tools / Developer tools / apiplay",
+      "destinations": [
+        "apiplay"
+      ],
+      "source_reference": {
+        "id": "apiplay",
+        "destination": "Workspace tools / Developer tools / apiplay",
+        "accepted": false
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "theme",
+      "label": "Workspace tools / Developer tools / theme",
+      "destinations": [
+        "theme"
+      ],
+      "source_reference": {
+        "id": "theme",
+        "destination": "Workspace tools / Developer tools / theme",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "actions",
+      "label": "Workspace tools / Developer tools / actions",
+      "destinations": [
+        "actions"
+      ],
+      "source_reference": {
+        "id": "actions",
+        "destination": "Workspace tools / Developer tools / actions",
+        "accepted": false
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "styles",
+      "label": "Workspace tools / Developer tools / styles",
+      "destinations": [
+        "styles"
+      ],
+      "source_reference": {
+        "id": "styles",
+        "destination": "Workspace tools / Developer tools / styles",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "links",
+      "label": "Workspace tools / Developer tools / links",
+      "destinations": [
+        "links"
+      ],
+      "source_reference": {
+        "id": "links",
+        "destination": "Workspace tools / Developer tools / links",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "security",
+      "label": "Workspace tools / Developer tools / security",
+      "destinations": [
+        "security"
+      ],
+      "source_reference": {
+        "id": "security",
+        "destination": "Workspace tools / Developer tools / security",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "webhooks",
+      "label": "Workspace tools / Developer tools / webhooks",
+      "destinations": [
+        "webhooks"
+      ],
+      "source_reference": {
+        "id": "webhooks",
+        "destination": "Workspace tools / Developer tools / webhooks",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "users",
+      "label": "Workspace tools / Administration / users",
+      "destinations": [
+        "users"
+      ],
+      "source_reference": {
+        "id": "users",
+        "destination": "Workspace tools / Administration / users",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "groups",
+      "label": "Workspace tools / Administration / groups",
+      "destinations": [
+        "groups"
+      ],
+      "source_reference": {
+        "id": "groups",
+        "destination": "Workspace tools / Administration / groups",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "customization",
+      "label": "Workspace tools / Administration / customization",
+      "destinations": [
+        "customization"
+      ],
+      "source_reference": {
+        "id": "customization",
+        "destination": "Workspace tools / Administration / customization",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "onboarding",
+      "label": "Workspace tools / Administration / onboarding",
+      "destinations": [
+        "onboarding"
+      ],
+      "source_reference": {
+        "id": "onboarding",
+        "destination": "Workspace tools / Administration / onboarding",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "pricing",
+      "label": "Workspace tools / Administration / pricing",
+      "destinations": [
+        "pricing"
+      ],
+      "source_reference": {
+        "id": "pricing",
+        "destination": "Workspace tools / Administration / pricing",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "datausage",
+      "label": "Workspace tools / Administration / datausage",
+      "destinations": [
+        "datausage"
+      ],
+      "source_reference": {
+        "id": "datausage",
+        "destination": "Workspace tools / Administration / datausage",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "contact",
+      "label": "Workspace tools / Administration / contact",
+      "destinations": [
+        "contact"
+      ],
+      "source_reference": {
+        "id": "contact",
+        "destination": "Workspace tools / Administration / contact",
+        "accepted": false
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "getstarted",
+      "label": "Workspace tools / Administration / getstarted",
+      "destinations": [
+        "getstarted"
+      ],
+      "source_reference": {
+        "id": "getstarted",
+        "destination": "Workspace tools / Administration / getstarted",
+        "accepted": false
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "maintenance",
+      "label": "Workspace tools / Administration / maintenance",
+      "destinations": [
+        "maintenance"
+      ],
+      "source_reference": {
+        "id": "maintenance",
+        "destination": "Workspace tools / Administration / maintenance",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "terms",
+      "label": "Workspace tools / Administration / terms",
+      "destinations": [
+        "terms"
+      ],
+      "source_reference": {
+        "id": "terms",
+        "destination": "Workspace tools / Administration / terms",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "inspection",
+      "label": "Workspace tools / Feature inspection",
+      "destinations": [
+        "inspection"
+      ],
+      "source_reference": {
+        "id": "inspection",
+        "destination": "Workspace tools / Feature inspection",
+        "accepted": false
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F001",
+      "label": "Command palette",
+      "destinations": [
+        "home"
+      ],
+      "source_reference": {
+        "id": "F001",
+        "name": "Command palette",
+        "screen": "home",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F002",
+      "label": "Notifications",
+      "destinations": [
+        "monitors"
+      ],
+      "source_reference": {
+        "id": "F002",
+        "name": "Notifications",
+        "screen": "monitors",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "completenessRegressions: captured monitor eligibility; native notice acceptance pending",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F003",
+      "label": "Help",
+      "destinations": [
+        "home"
+      ],
+      "source_reference": {
+        "id": "F003",
+        "name": "Help",
+        "screen": "home",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F004",
+      "label": "Profile",
+      "destinations": [
+        "home"
+      ],
+      "source_reference": {
+        "id": "F004",
+        "name": "Profile",
+        "screen": "home",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F005",
+      "label": "Invite teammate",
+      "destinations": [
+        "users"
+      ],
+      "source_reference": {
+        "id": "F005",
+        "name": "Invite teammate",
+        "screen": "users",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Local simulated/reference behavior; external/native acceptance separately required.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F006",
+      "label": "Status strip",
+      "destinations": [
+        "home"
+      ],
+      "source_reference": {
+        "id": "F006",
+        "name": "Status strip",
+        "screen": "home",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F007",
+      "label": "Trial resources",
+      "destinations": [
+        "pricing"
+      ],
+      "source_reference": {
+        "id": "F007",
+        "name": "Trial resources",
+        "screen": "pricing",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Local simulated/reference behavior; external/native acceptance separately required.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F008",
+      "label": "Create new",
+      "destinations": [
+        "home"
+      ],
+      "source_reference": {
+        "id": "F008",
+        "name": "Create new",
+        "screen": "home",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F009",
+      "label": "Home ask",
+      "destinations": [
+        "home"
+      ],
+      "source_reference": {
+        "id": "F009",
+        "name": "Home ask",
+        "screen": "home",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F010",
+      "label": "Library search",
+      "destinations": [
+        "home"
+      ],
+      "source_reference": {
+        "id": "F010",
+        "name": "Library search",
+        "screen": "home",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F011",
+      "label": "Recents",
+      "destinations": [
+        "home"
+      ],
+      "source_reference": {
+        "id": "F011",
+        "name": "Recents",
+        "screen": "home",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "libraryActions.test persisted favorite/removal/exact restoration; no recalculation",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F012",
+      "label": "Watchlist",
+      "destinations": [
+        "home"
+      ],
+      "source_reference": {
+        "id": "F012",
+        "name": "Watchlist",
+        "screen": "home",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F013",
+      "label": "Conversation",
+      "destinations": [
+        "ask"
+      ],
+      "source_reference": {
+        "id": "F013",
+        "name": "Conversation",
+        "screen": "ask",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F014",
+      "label": "Suggestions",
+      "destinations": [
+        "ask"
+      ],
+      "source_reference": {
+        "id": "F014",
+        "name": "Suggestions",
+        "screen": "ask",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F015",
+      "label": "Memory",
+      "destinations": [
+        "ask"
+      ],
+      "source_reference": {
+        "id": "F015",
+        "name": "Memory",
+        "screen": "ask",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F016",
+      "label": "Feedback",
+      "destinations": [
+        "ask"
+      ],
+      "source_reference": {
+        "id": "F016",
+        "name": "Feedback",
+        "screen": "ask",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F017",
+      "label": "Deep analysis",
+      "destinations": [
+        "patterns"
+      ],
+      "source_reference": {
+        "id": "F017",
+        "name": "Deep analysis",
+        "screen": "patterns",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F018",
+      "label": "Source",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F018",
+        "name": "Source",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F019",
+      "label": "Suggestions",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F019",
+        "name": "Suggestions",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F020",
+      "label": "Go and clear",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F020",
+        "name": "Go and clear",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F021",
+      "label": "Undo, redo, reset",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F021",
+        "name": "Undo, redo, reset",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "workflowActions: chart/configuration undo/redo/reset",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F022",
+      "label": "Column browser",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F022",
+        "name": "Column browser",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F023",
+      "label": "Add as filter",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F023",
+        "name": "Add as filter",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F024",
+      "label": "Column information",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F024",
+        "name": "Column information",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F025",
+      "label": "Formula",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F025",
+        "name": "Formula",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "workflowActions: incompatible/compatible formula",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F026",
+      "label": "Set",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F026",
+        "name": "Set",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "workflowActions: create/apply set",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F027",
+      "label": "Parameter",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F027",
+        "name": "Parameter",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "completenessRegressions: repeated apply preserves original scope; disable refuses changed scope",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F028",
+      "label": "Coach mark",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F028",
+        "name": "Coach mark",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F029",
+      "label": "Chart catalog",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F029",
+        "name": "Chart catalog",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "workflowActions: eight chart choices; native Viz mocked",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F030",
+      "label": "Configure",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F030",
+        "name": "Configure",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "workflowActions: labels/decimals/compare/bucket",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F031",
+      "label": "Conditional color",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F031",
+        "name": "Conditional color",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F032",
+      "label": "Sort",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F032",
+        "name": "Sort",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F033",
+      "label": "Legend exclude",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F033",
+        "name": "Legend exclude",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F034",
+      "label": "Drill",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F034",
+        "name": "Drill",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F035",
+      "label": "Keep only and exclude",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F035",
+        "name": "Keep only and exclude",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F036",
+      "label": "Underlying rows",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F036",
+        "name": "Underlying rows",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "completenessRegressions: selected underlying point intersection, all eligible records, no first-12 truncation",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F037",
+      "label": "SQL",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F037",
+        "name": "SQL",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F038",
+      "label": "Save",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F038",
+        "name": "Save",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "workflowActions save; canonicalActions exact captured result",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F039",
+      "label": "Pin",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F039",
+        "name": "Pin",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "retention pin; canonicalActions exact result pin",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F040",
+      "label": "Share",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F040",
+        "name": "Share",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "boardCompletion: captures query/rows/scope/result/timestamp; immutable local view and editable working copy; JSON export",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Local view/edit simulation. Real account permissions require authenticated production sharing.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)",
+        "localImplementation": "functional deterministic simulation; owner evidence, independent acceptance pending"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F041",
+      "label": "Download",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F041",
+        "name": "Download",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Local simulated/reference behavior; external/native acceptance separately required.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "partial",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F042",
+      "label": "Embed snippet",
+      "destinations": [
+        "embed"
+      ],
+      "source_reference": {
+        "id": "F042",
+        "name": "Embed snippet",
+        "screen": "embed",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Local simulated/reference behavior; external/native acceptance separately required.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F043",
+      "label": "Explore",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F043",
+        "name": "Explore",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F044",
+      "label": "Not visualized",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F044",
+        "name": "Not visualized",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F045",
+      "label": "Add to watchlist",
+      "destinations": [
+        "search"
+      ],
+      "source_reference": {
+        "id": "F045",
+        "name": "Add to watchlist",
+        "screen": "search",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F046",
+      "label": "Pattern scan",
+      "destinations": [
+        "patterns"
+      ],
+      "source_reference": {
+        "id": "F046",
+        "name": "Pattern scan",
+        "screen": "patterns",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "patternAnalysis: finite endpoint trend within each date cohort, interpolated1.5\u00d7IQR screen with n>=4, exact prior-calendar delta; prefs respected",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Descriptive method only; no causality, significance, trained ML or SPC approval.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)",
+        "localImplementation": "functional deterministic simulation; owner evidence, independent acceptance pending"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F047",
+      "label": "List, yours, tags",
+      "destinations": [
+        "boards"
+      ],
+      "source_reference": {
+        "id": "F047",
+        "name": "List, yours, tags",
+        "screen": "boards",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "boardCompletion: exact owner and tag filters; session selectors, clear/all states; tag editor saves tags",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Owners are local persona labels, not authenticated principals.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)",
+        "localImplementation": "functional deterministic simulation; owner evidence, independent acceptance pending"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F048",
+      "label": "Tabs",
+      "destinations": [
+        "board"
+      ],
+      "source_reference": {
+        "id": "F048",
+        "name": "Tabs",
+        "screen": "board",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "workflowActions add tab",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F049",
+      "label": "Tiles and headlines",
+      "destinations": [
+        "board"
+      ],
+      "source_reference": {
+        "id": "F049",
+        "name": "Tiles and headlines",
+        "screen": "board",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F050",
+      "label": "Board filters",
+      "destinations": [
+        "board"
+      ],
+      "source_reference": {
+        "id": "F050",
+        "name": "Board filters",
+        "screen": "board",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F051",
+      "label": "Cross-filter",
+      "destinations": [
+        "board"
+      ],
+      "source_reference": {
+        "id": "F051",
+        "name": "Cross-filter",
+        "screen": "board",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F052",
+      "label": "Layout",
+      "destinations": [
+        "board"
+      ],
+      "source_reference": {
+        "id": "F052",
+        "name": "Layout",
+        "screen": "board",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F053",
+      "label": "Present",
+      "destinations": [
+        "board"
+      ],
+      "source_reference": {
+        "id": "F053",
+        "name": "Present",
+        "screen": "board",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F054",
+      "label": "Comments",
+      "destinations": [
+        "board"
+      ],
+      "source_reference": {
+        "id": "F054",
+        "name": "Comments",
+        "screen": "board",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F055",
+      "label": "Verify and follow",
+      "destinations": [
+        "board"
+      ],
+      "source_reference": {
+        "id": "F055",
+        "name": "Verify and follow",
+        "screen": "board",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "workflowActions local review/follow",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F056",
+      "label": "Schedule from board",
+      "destinations": [
+        "schedules"
+      ],
+      "source_reference": {
+        "id": "F056",
+        "name": "Schedule from board",
+        "screen": "schedules",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Local simulated/reference behavior; external/native acceptance separately required.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F057",
+      "label": "Export definition",
+      "destinations": [
+        "board"
+      ],
+      "source_reference": {
+        "id": "F057",
+        "name": "Export definition",
+        "screen": "board",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F058",
+      "label": "Answers",
+      "destinations": [
+        "answers"
+      ],
+      "source_reference": {
+        "id": "F058",
+        "name": "Answers",
+        "screen": "answers",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F059",
+      "label": "Collections",
+      "destinations": [
+        "collections"
+      ],
+      "source_reference": {
+        "id": "F059",
+        "name": "Collections",
+        "screen": "collections",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "boardCompletion: exact board/answer membership, names, open/remove/undo preserving order; persisted state",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Unavailable exact members remain visibly unavailable, never substituted.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)",
+        "localImplementation": "functional deterministic simulation; owner evidence, independent acceptance pending"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F060",
+      "label": "Monitors",
+      "destinations": [
+        "monitors"
+      ],
+      "source_reference": {
+        "id": "F060",
+        "name": "Monitors",
+        "screen": "monitors",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Captured monitor threshold/change evaluation works; broad production monitoring is unavailable.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F061",
+      "label": "Schedules",
+      "destinations": [
+        "schedules"
+      ],
+      "source_reference": {
+        "id": "F061",
+        "name": "Schedules",
+        "screen": "schedules",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "workflowActions captured schedule and no-data failure",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F062",
+      "label": "Pattern preferences",
+      "destinations": [
+        "patterns"
+      ],
+      "source_reference": {
+        "id": "F062",
+        "name": "Pattern preferences",
+        "screen": "patterns",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "completenessRegressions: drop-empty changes unavailable descriptive slices",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F063",
+      "label": "Objects",
+      "destinations": [
+        "objects"
+      ],
+      "source_reference": {
+        "id": "F063",
+        "name": "Objects",
+        "screen": "objects",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "retention object selection binding",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F064",
+      "label": "Object detail",
+      "destinations": [
+        "objects"
+      ],
+      "source_reference": {
+        "id": "F064",
+        "name": "Object detail",
+        "screen": "objects",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "synonyms.test actual semantic compiler; exact aliases/ambiguity/invalid import",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F065",
+      "label": "Connections",
+      "destinations": [
+        "connections"
+      ],
+      "source_reference": {
+        "id": "F065",
+        "name": "Connections",
+        "screen": "connections",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Local simulated/reference behavior; external/native acceptance separately required.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F066",
+      "label": "Studio",
+      "destinations": [
+        "studio"
+      ],
+      "source_reference": {
+        "id": "F066",
+        "name": "Studio",
+        "screen": "studio",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "studioGrammar/completenessRegressions: bounded editable SELECT, additive SUM, governed METRIC ratios, exact WHERE equality/AND and GROUP BY; real shared query rows",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "No arbitrary SQL, joins, writes, subqueries or ratio summation; supported grammar is displayed.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)",
+        "localImplementation": "functional deterministic simulation; owner evidence, independent acceptance pending"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F067",
+      "label": "Utilities",
+      "destinations": [
+        "utilities"
+      ],
+      "source_reference": {
+        "id": "F067",
+        "name": "Utilities",
+        "screen": "utilities",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "synonyms.test bounded validated import; unknown/duplicate IDs rejected",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F068",
+      "label": "Sync",
+      "destinations": [
+        "sync"
+      ],
+      "source_reference": {
+        "id": "F068",
+        "name": "Sync",
+        "screen": "sync",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Local simulated/reference behavior; external/native acceptance separately required.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F069",
+      "label": "Memory sources",
+      "destinations": [
+        "memory"
+      ],
+      "source_reference": {
+        "id": "F069",
+        "name": "Memory sources",
+        "screen": "memory",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "workspaceConversation: relevant local notes captured as unreviewed context; no numeric override; historical replay preserved",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Controlled production document ingestion needs approved connector, document revisions, authority and release rules.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)",
+        "localImplementation": "functional deterministic simulation; owner evidence, independent acceptance pending"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F070",
+      "label": "Catalog",
+      "destinations": [
+        "catalog"
+      ],
+      "source_reference": {
+        "id": "F070",
+        "name": "Catalog",
+        "screen": "catalog",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Local simulated/reference behavior; external/native acceptance separately required.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F071",
+      "label": "Usage",
+      "destinations": [
+        "usage"
+      ],
+      "source_reference": {
+        "id": "F071",
+        "name": "Usage",
+        "screen": "usage",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Local simulated/reference behavior; external/native acceptance separately required.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F072",
+      "label": "Definition sync",
+      "destinations": [
+        "dbt"
+      ],
+      "source_reference": {
+        "id": "F072",
+        "name": "Definition sync",
+        "screen": "dbt",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "boardCompletion/synonyms: actual validated aliases applied to compiler; applied revision and time persisted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Fixed metric formulas/units stay governed. Production semantic changes require engineer-approved mapping/version contract.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)",
+        "localImplementation": "functional deterministic simulation; owner evidence, independent acceptance pending"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F073",
+      "label": "Verification queue",
+      "destinations": [
+        "verify"
+      ],
+      "source_reference": {
+        "id": "F073",
+        "name": "Verification queue",
+        "screen": "verify",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "boardCompletion: inspect exact tile queries/canonical captures, persist timestamp/reviewer/result/evidence and unavailable eligibility; historical board signature retained",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Local review is separate from numeric eligibility. No production certification or signed controlled approval.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)",
+        "localImplementation": "functional deterministic simulation; owner evidence, independent acceptance pending"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F074",
+      "label": "Embed guide and playground",
+      "destinations": [
+        "playground"
+      ],
+      "source_reference": {
+        "id": "F074",
+        "name": "Embed guide and playground",
+        "screen": "playground",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "apiPlayground.test: actual capabilities/query/exact result lookup, invalid schema refusal; no live authentication",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F075",
+      "label": "API guide and playground",
+      "destinations": [
+        "apiplay"
+      ],
+      "source_reference": {
+        "id": "F075",
+        "name": "API guide and playground",
+        "screen": "apiplay",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "apiPlayground.test: actual controlled client and raw JSON response; no backend HTTP compatibility claim",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F076",
+      "label": "Theme and styles",
+      "destinations": [
+        "theme"
+      ],
+      "source_reference": {
+        "id": "F076",
+        "name": "Theme and styles",
+        "screen": "theme",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Local simulated/reference behavior; external/native acceptance separately required.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F077",
+      "label": "Custom actions",
+      "destinations": [
+        "actions"
+      ],
+      "source_reference": {
+        "id": "F077",
+        "name": "Custom actions",
+        "screen": "actions",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "boardCompletion/workflowActions: persist owner, original query/context/result and requested stage",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Default performer supports local line-review artifact only; machine/CMMS/EC performers require engineer integration.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)",
+        "localImplementation": "functional deterministic simulation; owner evidence, independent acceptance pending"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F078",
+      "label": "Links, security, webhooks",
+      "destinations": [
+        "security"
+      ],
+      "source_reference": {
+        "id": "F078",
+        "name": "Links, security, webhooks",
+        "screen": "security",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "localWebhooks/boardCompletion: actual row rule/masking, allowed-domain validation, captured test payload and actual answer events; fetch spy proves no outbound fetch in tested paths",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "No real security grants or webhook dispatch. Production requires authentication, authorization and an approved delivery adapter.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)",
+        "localImplementation": "functional deterministic simulation; owner evidence, independent acceptance pending"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F079",
+      "label": "Users",
+      "destinations": [
+        "users"
+      ],
+      "source_reference": {
+        "id": "F079",
+        "name": "Users",
+        "screen": "users",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "retention simulated user selection binding",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Retained local source behavior; source mapping is not full branch verification.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F080",
+      "label": "Groups",
+      "destinations": [
+        "groups"
+      ],
+      "source_reference": {
+        "id": "F080",
+        "name": "Groups",
+        "screen": "groups",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Local simulated/reference behavior; external/native acceptance separately required.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F081",
+      "label": "Customization and onboarding",
+      "destinations": [
+        "onboarding"
+      ],
+      "source_reference": {
+        "id": "F081",
+        "name": "Customization and onboarding",
+        "screen": "onboarding",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Local preferences/onboarding references; no production tenant customization.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F082",
+      "label": "Pricing and data usage",
+      "destinations": [
+        "pricing"
+      ],
+      "source_reference": {
+        "id": "F082",
+        "name": "Pricing and data usage",
+        "screen": "pricing",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Local simulated/reference behavior; external/native acceptance separately required.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F083",
+      "label": "Contact and get started",
+      "destinations": [
+        "getstarted"
+      ],
+      "source_reference": {
+        "id": "F083",
+        "name": "Contact and get started",
+        "screen": "getstarted",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Local simulated/reference behavior; external/native acceptance separately required.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F084",
+      "label": "Maintenance and terms",
+      "destinations": [
+        "maintenance"
+      ],
+      "source_reference": {
+        "id": "F084",
+        "name": "Maintenance and terms",
+        "screen": "maintenance",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "not yet asserted",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Local simulated/reference behavior; external/native acceptance separately required.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    },
+    {
+      "original_id": "F085",
+      "label": "Human gate",
+      "destinations": [
+        "actions"
+      ],
+      "source_reference": {
+        "id": "F085",
+        "name": "Human gate",
+        "screen": "actions",
+        "navigation": "owner component PASS",
+        "actionBranchEvidence": "boardCompletion: authorization is a distinct saved stage; only explicit later simulation produces local review artifact",
+        "allBranchesAccepted": false,
+        "independentAccepted": false,
+        "functionalBoundary": "Approval never performs a repair/intervention. Production identity/signature/dispatch are unavailable.",
+        "currentSourceMapping": "CONTROL-RECONCILIATION.json (original owner controls mapped individually)",
+        "localImplementation": "functional deterministic simulation; owner evidence, independent acceptance pending"
+      },
+      "historical_status_unchanged": "pass",
+      "guide_registration": "registered plain page purpose/first-step/recovery; shared Help entry and page workflow details",
+      "role_state_acceptance": "not established by registration",
+      "remaining": "Fresh page/role/state-specific readiness, disabled and error recovery, keyboard/mobile and representative uncoached human task completion"
+    }
+  ],
+  "exact_example": {
+    "source": "/home/pat/Documents/Codex/2026-10-11/task/V66-EXACT-CONTEXTUAL-HELP-INSPECTION.md",
+    "source_sha256": "54e231d7bd63a5822c4390d4f35d9582dd3e5d1013e76326944cf2ec2207e82c",
+    "retained_frozen_url": "http://localhost:18212/ekas/?task=shift&pane=decision&scope=Line+03&suite=northworks&demonstration=miw-v66-independent-20261011",
+    "expected": "Current case verification0/10eligible follow-up shifts; acceptance unavailable. Inspect source/event history or return to conversation; no automatic clock change, completion or grant.",
+    "owner_proof": "northworksGuide.test.ts and rootContextualGuide.test.tsx; native V70 and uncoached human proof pending"
+  },
+  "remaining_all_pages_obligation": [
+    "Refine procedure/control wording and live readiness for every original85workflow and new service/controlled-knowledge/comparison subview",
+    "Improve labels/defaults/validation and recovery where ordinary use remains unclear, preserving all layouts/features",
+    "Fresh page/role/state matrix for ready/blocked/stale/missing/conflicting/durability/scope changes",
+    "Keyboard/screenreader/mobile, actual visible controls, focus and pause/reload recovery",
+    "Representative uncoached novice correct completion/recovery; owner/simulated agent tests do not prove human usability"
+  ],
+  "external_gates": [
+    "Authentic Tom contract and adapter conformance",
+    "Separate temporary OpenAI server-held key/authority/conformance",
+    "Native firstRun and required human interactions",
+    "Supported Library prepare_uploads unavailable"
+  ],
+  "review_truth": "V69 confirmed grouped P2 scope/restatement UX issue; old target explicitly disclosed in ready summaries and confirmations, no claim of hidden March/night writes."
+}

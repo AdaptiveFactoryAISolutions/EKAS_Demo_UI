@@ -1,0 +1,8 @@
+import {it,expect} from 'vitest';import {routeConversation,emptyConversationContext} from './conversation';
+import {createManufacturingClient,ManufacturingService} from './service';import {MockRepository} from '../platform/mockRepository';
+it.each([['PRESS-S1','speed'],['FORM-Q1','quality'],['FEED-03','downtime']] as const)('natural shortfall on %s selects its own %s case and preserves exact evidence',async(asset,caseId)=>{
+ const client=createManufacturingClient(new ManufacturingService(new MockRepository()));let c=await client.createConversation(asset);c=await client.turn(c.id,c.version,'We missed our target on '+asset+'.','open');expect(c.content.conversation.turns.at(-1)?.view?.caseId).toBe(caseId);c=await client.turn(c.id,c.version,'Ask maintenance to own this investigation.','owner');expect(c.content.conversation.turns.at(-1)?.view?.owner.requested).toBe('maintenance');c=await client.turn(c.id,c.version,'Has maintenance accepted the assignment?','question');expect(c.content.conversation.turns.at(-1)?.commands).toEqual([]);c=await client.turn(c.id,c.version,'Record their acceptance.','accept');expect(c.content.conversation.turns.at(-1)?.view?.owner.accepted).toBe('maintenance');expect(c.content.conversation.turns.at(-1)?.view?.action.status).toBe('draft');
+});
+it('plan question is read-only and a mismatched named endpoint never silently becomes own-case plan',()=>{
+ const c={...emptyConversationContext(),caseFocus:'downtime' as const};expect(routeConversation('Could we create a verification plan?',c).commands).toEqual([]);const r=routeConversation('Create a verification plan for FPY to 95 over 10 eligible shifts.',c);expect(r.commands[0]).toHaveProperty('endpoint','fpy');
+});

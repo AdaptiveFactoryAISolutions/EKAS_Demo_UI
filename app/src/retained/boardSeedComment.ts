@@ -1,0 +1,2 @@
+export const manufacturingSeedComment='Feeder-jam evidence identifies a loss; the root cause remains unconfirmed.';
+export function boardCommentPresentation(c:{id:string;boardId:string;text:string}){const legacy=c.id==='c1'&&c.boardId==='board-revision'&&c.text==='October margin move is located, not explained.';return {text:legacy?manufacturingSeedComment:c.text,original:legacy?c.text:undefined};}

@@ -1,0 +1,13 @@
+{
+  "all_counts_match": true,
+  "55_ids_statuses_unchanged": true,
+  "35_ids_text_mapping_statuses_unchanged": true,
+  "351_kind_id_status_remainingAssertions_exact": true,
+  "all322_occurrence_IDs_and_metric_bindings_preserved": true,
+  "162_257_178_56_cohorts_separate": true,
+  "all55_have_specific_remaining_task_and_finite_package": true,
+  "all35_mapping_retained": true,
+  "V69_zip_unchanged": true,
+  "HELP01_additive_not_denominator_rewrite": true,
+  "reference_hashes_verified": true
+}

@@ -1,0 +1,2266 @@
+{
+  "id": "conversation-3",
+  "kind": "conversation",
+  "content": {
+    "domain": "manufacturing-conversation-v1",
+    "conversation": {
+      "schemaVersion": 1,
+      "dataset": "manufacturing",
+      "trainingContext": {
+        "title": "Untitled answer",
+        "description": "Independent training-plant-v1; synthetic. Mixed-cycle OEE uses proposed time-weighted quality. No financial certification.",
+        "columns": [],
+        "filters": [],
+        "chart": "column",
+        "bucket": "month",
+        "compare": false,
+        "decimals": 1,
+        "labels": true,
+        "asOf": "2026-09-29T00:00:00Z"
+      },
+      "trainingPresentation": {
+        "rls": false,
+        "site": "TP-S1",
+        "maskDowntime": false
+      },
+      "monthlyContext": {
+        "plant": "Monthly synthetic plant",
+        "line": null,
+        "shift": null,
+        "comparisonEntity": null,
+        "activeInvestigationId": null,
+        "investigationStage": null,
+        "clarification": null,
+        "machine": "Machine 1",
+        "period": "January",
+        "comparisonPeriod": null,
+        "metric": "oee",
+        "caseFocus": null,
+        "job": null,
+        "part": null,
+        "revision": null,
+        "operation": null,
+        "lastIntent": "metric",
+        "chart": "column"
+      },
+      "context": {
+        "plant": "Northworks",
+        "line": "Line 03",
+        "shift": "day",
+        "comparisonEntity": null,
+        "activeInvestigationId": "action-5",
+        "investigationStage": "draft",
+        "clarification": "An explicitly requested asset is not supplied by the authored asset/alias map. Requested: FEED-99. Choose an exact authored asset or clarify the intended scope. No case was substituted; prior context is retained.",
+        "machine": "FEED-03",
+        "period": "2026-10-06 day shift",
+        "comparisonPeriod": null,
+        "metric": "oee",
+        "caseFocus": "downtime",
+        "job": "JOB-8303",
+        "part": "NW-A",
+        "revision": "P2",
+        "operation": "OP-030",
+        "lastIntent": "asset-scope-clarify",
+        "chart": "column"
+      },
+      "investigationId": "action-5",
+      "investigationIds": {
+        "downtime": "action-5"
+      },
+      "archived": false,
+      "turns": [
+        {
+          "id": "turn-1",
+          "captureId": "conversation-3/turn-1",
+          "dialogueVersion": 1,
+          "scopedDialogue": 1,
+          "interactionVersion": 1,
+          "scopeInterpretationVersion": 3,
+          "assignmentIntentVersion": 2,
+          "intentContextVersion": 4,
+          "clockOperandVersion": 2,
+          "question": "Investigate downtime.",
+          "answer": {
+            "text": "Production finished 150 good units below the approved plan: 2154 against 2304. Line 03 missed by 138 units; Line 02 missed by 38 units; Line 01 exceeded plan by 26 units. The 726-unit loss from theoretical capacity is a different baseline from this 150-unit plan miss.\n\nI would start with the feeder-jam evidence on Line 03. The speed residual remains unattributed.",
+            "evidence": "loss",
+            "chart": false,
+            "metric": "oee",
+            "sourceIds": [
+              "production-jobs-fixture.json#/jobs/JOB-8401",
+              "production-jobs-fixture.json#/jobs/JOB-8402",
+              "production-jobs-fixture.json#/jobs/JOB-8303",
+              "DEMO-RAW-JOB-8401-1",
+              "DEMO-RAW-JOB-8401-2",
+              "DEMO-RAW-JOB-8402-1",
+              "DEMO-RAW-JOB-8402-2",
+              "DEMO-RAW-JOB-8402-3",
+              "stop-01",
+              "stop-02",
+              "stop-03",
+              "stop-04",
+              "stop-05",
+              "stop-06",
+              "stop-07",
+              "stop-08",
+              "stop-09",
+              "stop-10",
+              "stop-11",
+              "stop-12",
+              "northworks-investigation-v1.json#/extraShiftIntervals"
+            ],
+            "qualification": null
+          },
+          "metricPublicationVersion": 5,
+          "context": {
+            "plant": "Northworks",
+            "line": "Line 03",
+            "shift": "day",
+            "comparisonEntity": null,
+            "activeInvestigationId": "action-5",
+            "investigationStage": "draft",
+            "clarification": null,
+            "machine": "FEED-03",
+            "period": "2026-10-06 day shift",
+            "comparisonPeriod": null,
+            "metric": "oee",
+            "caseFocus": "downtime",
+            "job": "JOB-8303",
+            "part": "NW-A",
+            "revision": "P2",
+            "operation": "OP-030",
+            "lastIntent": "goal",
+            "chart": "column"
+          },
+          "requestContext": {
+            "plant": "Monthly synthetic plant",
+            "line": null,
+            "shift": null,
+            "comparisonEntity": null,
+            "activeInvestigationId": null,
+            "investigationStage": null,
+            "clarification": null,
+            "machine": "Machine 1",
+            "period": "January",
+            "comparisonPeriod": null,
+            "metric": "oee",
+            "caseFocus": null,
+            "job": null,
+            "part": null,
+            "revision": null,
+            "operation": null,
+            "lastIntent": "metric",
+            "chart": "column"
+          },
+          "routingQuestion": "Investigate downtime.",
+          "reviewAsOf": "2026-10-06T14:45:00Z",
+          "asOf": "2026-10-06T14:45:00Z",
+          "investigationId": "action-5",
+          "investigationVersion": 1,
+          "view": {
+            "challenge": {
+              "id": "MIW-NEG-complete",
+              "synthetic": true,
+              "baseFixtures": [
+                "northworks-investigation-v1",
+                "speed-investigation-v1",
+                "quality-investigation-v1"
+              ],
+              "authorship": "Explicit synthetic negative challenge; not an additional original source observation.",
+              "meaning": "complete",
+              "source": "investigation-negative-variants-v1.json#/variants/complete"
+            },
+            "fixtureVersion": "northworks-investigation-v1",
+            "caseId": "downtime",
+            "context": {
+              "tenant": "synthetic-demo",
+              "plant": "Northworks",
+              "line": "Line 03",
+              "asset": "FEED-03",
+              "job": "JOB-8303",
+              "part": "NW-A",
+              "revision": "P2",
+              "operation": "OP-030",
+              "from": "2026-10-06T06:00:00Z",
+              "to": "2026-10-06T14:00:00Z"
+            },
+            "selected": {
+              "context": {
+                "tenant": "synthetic-demo",
+                "plant": "Northworks",
+                "line": "Line 03",
+                "asset": "FEED-03",
+                "job": "JOB-8303",
+                "part": "NW-A",
+                "revision": "P2",
+                "operation": "OP-030",
+                "from": "2026-10-06T06:00:00Z",
+                "to": "2026-10-06T14:00:00Z"
+              },
+              "metrics": {
+                "planned": 480,
+                "run": 360,
+                "total": 648,
+                "good": 630,
+                "down": 120,
+                "idealTotal": 324,
+                "idealGood": 315,
+                "oee": {
+                  "metricId": "ekas.oee",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": 65.625,
+                  "availability": "observed",
+                  "reason": null
+                },
+                "availability": {
+                  "metricId": "ekas.availability",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": 75,
+                  "availability": "observed",
+                  "reason": null
+                },
+                "performance": {
+                  "metricId": "ekas.performance",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": 90,
+                  "availability": "observed",
+                  "reason": null
+                },
+                "quality": {
+                  "metricId": "ekas.quality",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": 97.22222222222223,
+                  "availability": "observed",
+                  "reason": null
+                },
+                "fpy": {
+                  "metricId": "ekas.first_pass_yield",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": null,
+                  "availability": "missing_input",
+                  "reason": "Missing operand: first_pass_good_units"
+                },
+                "qualityLoss": {
+                  "metricId": "ekas.quality_loss",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": 2.7777777777777777,
+                  "availability": "observed",
+                  "reason": null
+                },
+                "speedLoss": {
+                  "metricId": "ekas.performance_loss_time",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "min",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": 36,
+                  "availability": "observed",
+                  "reason": null
+                },
+                "qualityLossMin": {
+                  "metricId": "ekas.quality_loss_time",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "min",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": 9,
+                  "availability": "observed",
+                  "reason": null
+                },
+                "jamMean": 72,
+                "energyPerGood": null
+              },
+              "sourceIds": [
+                "production-jobs-fixture.json#/jobs/JOB-8303",
+                "stop-01",
+                "stop-02",
+                "stop-03",
+                "stop-04",
+                "stop-05",
+                "stop-06",
+                "stop-07",
+                "stop-08",
+                "stop-09",
+                "stop-10",
+                "stop-11",
+                "stop-12"
+              ]
+            },
+            "parent": {
+              "context": {
+                "kind": "plant",
+                "tenant": "synthetic-demo",
+                "plant": "Northworks",
+                "from": "2026-10-06T06:00:00Z",
+                "to": "2026-10-06T14:00:00Z",
+                "jobIds": [
+                  "JOB-8401",
+                  "JOB-8402",
+                  "JOB-8303"
+                ]
+              },
+              "metrics": {
+                "planned": 1440,
+                "run": 1200,
+                "total": 2202,
+                "good": 2154,
+                "down": 240,
+                "idealTotal": 1101,
+                "idealGood": 1077,
+                "oee": {
+                  "metricId": "ekas.oee",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": 74.79166666666667,
+                  "availability": "observed",
+                  "reason": null
+                },
+                "availability": {
+                  "metricId": "ekas.availability",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": 83.33333333333333,
+                  "availability": "observed",
+                  "reason": null
+                },
+                "performance": {
+                  "metricId": "ekas.performance",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": 91.75,
+                  "availability": "observed",
+                  "reason": null
+                },
+                "quality": {
+                  "metricId": "ekas.quality",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": 97.82016348773843,
+                  "availability": "observed",
+                  "reason": null
+                },
+                "fpy": {
+                  "metricId": "ekas.first_pass_yield",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": null,
+                  "availability": "missing_input",
+                  "reason": "Missing operand: first_pass_good_units"
+                },
+                "qualityLoss": {
+                  "metricId": "ekas.quality_loss",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": 2.1798365122615806,
+                  "availability": "observed",
+                  "reason": null
+                },
+                "speedLoss": {
+                  "metricId": "ekas.performance_loss_time",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "min",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": 99,
+                  "availability": "observed",
+                  "reason": null
+                },
+                "qualityLossMin": {
+                  "metricId": "ekas.quality_loss_time",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "min",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": 24,
+                  "availability": "observed",
+                  "reason": null
+                },
+                "jamMean": 72,
+                "energyPerGood": null
+              },
+              "rawDowntimeMin": 240,
+              "eventReconciliation": [
+                {
+                  "jobId": "JOB-8401",
+                  "unionMin": 48,
+                  "sourceIds": [
+                    "DEMO-RAW-JOB-8401-1",
+                    "DEMO-RAW-JOB-8401-2"
+                  ]
+                },
+                {
+                  "jobId": "JOB-8402",
+                  "unionMin": 72,
+                  "sourceIds": [
+                    "DEMO-RAW-JOB-8402-1",
+                    "DEMO-RAW-JOB-8402-2",
+                    "DEMO-RAW-JOB-8402-3"
+                  ]
+                },
+                {
+                  "jobId": "JOB-8303",
+                  "unionMin": 120,
+                  "sourceIds": [
+                    "stop-01",
+                    "stop-02",
+                    "stop-03",
+                    "stop-04",
+                    "stop-05",
+                    "stop-06",
+                    "stop-07",
+                    "stop-08",
+                    "stop-09",
+                    "stop-10",
+                    "stop-11",
+                    "stop-12"
+                  ]
+                }
+              ],
+              "goal": {
+                "actual": 2154,
+                "target": 2304,
+                "gap": 150,
+                "attainment": 93.48958333333333
+              },
+              "bridge": [
+                2880,
+                -480,
+                -198,
+                -48,
+                2154
+              ],
+              "sourceIds": [
+                "production-jobs-fixture.json#/jobs/JOB-8401",
+                "production-jobs-fixture.json#/jobs/JOB-8402",
+                "production-jobs-fixture.json#/jobs/JOB-8303",
+                "DEMO-RAW-JOB-8401-1",
+                "DEMO-RAW-JOB-8401-2",
+                "DEMO-RAW-JOB-8402-1",
+                "DEMO-RAW-JOB-8402-2",
+                "DEMO-RAW-JOB-8402-3",
+                "stop-01",
+                "stop-02",
+                "stop-03",
+                "stop-04",
+                "stop-05",
+                "stop-06",
+                "stop-07",
+                "stop-08",
+                "stop-09",
+                "stop-10",
+                "stop-11",
+                "stop-12",
+                "northworks-investigation-v1.json#/extraShiftIntervals"
+              ],
+              "eligibility": {
+                "status": "ready",
+                "reasons": []
+              },
+              "metricsQualification": "observed synthetic operands"
+            },
+            "goalContext": {
+              "kind": "plant",
+              "tenant": "synthetic-demo",
+              "plant": "Northworks",
+              "from": "2026-10-06T06:00:00Z",
+              "to": "2026-10-06T14:00:00Z",
+              "jobIds": [
+                "JOB-8401",
+                "JOB-8402",
+                "JOB-8303"
+              ]
+            },
+            "bridgeContext": {
+              "kind": "plant",
+              "tenant": "synthetic-demo",
+              "plant": "Northworks",
+              "from": "2026-10-06T06:00:00Z",
+              "to": "2026-10-06T14:00:00Z",
+              "jobIds": [
+                "JOB-8401",
+                "JOB-8402",
+                "JOB-8303"
+              ]
+            },
+            "asOf": "2026-10-06T14:45:00Z",
+            "cycle": 1,
+            "title": "Northworks feeder-jam plan miss",
+            "eligibility": {
+              "status": "ready",
+              "reasons": []
+            },
+            "goal": {
+              "actual": 2154,
+              "target": 2304,
+              "gap": 150,
+              "attainment": 93.48958333333333
+            },
+            "goalSource": {
+              "id": "NW-GOAL-PLAN-003",
+              "version": 1,
+              "value": 2304,
+              "unit": "good units",
+              "scope": "Plant",
+              "effectiveFrom": "2026-10-06T06:00:00Z",
+              "effectiveTo": "2026-10-06T14:00:00Z",
+              "approvalId": "DEMO-PLAN-APPROVAL-003",
+              "approvedAt": "2026-10-06T05:45:00Z",
+              "approver": "Fictional Northworks planner",
+              "status": "approved in explicitly authored synthetic scenario only",
+              "source": "northworks-investigation-v1#/goal; values from scenario-fixture.json lines plan_good_units",
+              "caseGoal": {
+                "id": "NW-GOAL-JOB-8303",
+                "value": 768,
+                "unit": "good units",
+                "jobId": "JOB-8303",
+                "source": "production-jobs-fixture.json#/jobs/JOB-8303/plan_good_units"
+              }
+            },
+            "bridge": [
+              2880,
+              -480,
+              -198,
+              -48,
+              2154
+            ],
+            "metrics": {
+              "planned": 480,
+              "run": 360,
+              "total": 648,
+              "good": 630,
+              "down": 120,
+              "idealTotal": 324,
+              "idealGood": 315,
+              "oee": {
+                "metricId": "ekas.oee",
+                "definitionVersion": "independent-metric-contract-1.0",
+                "unit": "%",
+                "synthetic": true,
+                "qualified": false,
+                "value": 65.625,
+                "availability": "observed",
+                "reason": null
+              },
+              "availability": {
+                "metricId": "ekas.availability",
+                "definitionVersion": "independent-metric-contract-1.0",
+                "unit": "%",
+                "synthetic": true,
+                "qualified": false,
+                "value": 75,
+                "availability": "observed",
+                "reason": null
+              },
+              "performance": {
+                "metricId": "ekas.performance",
+                "definitionVersion": "independent-metric-contract-1.0",
+                "unit": "%",
+                "synthetic": true,
+                "qualified": false,
+                "value": 90,
+                "availability": "observed",
+                "reason": null
+              },
+              "quality": {
+                "metricId": "ekas.quality",
+                "definitionVersion": "independent-metric-contract-1.0",
+                "unit": "%",
+                "synthetic": true,
+                "qualified": false,
+                "value": 97.22222222222223,
+                "availability": "observed",
+                "reason": null
+              },
+              "fpy": {
+                "metricId": "ekas.first_pass_yield",
+                "definitionVersion": "independent-metric-contract-1.0",
+                "unit": "%",
+                "synthetic": true,
+                "qualified": false,
+                "value": null,
+                "availability": "missing_input",
+                "reason": "Missing operand: first_pass_good_units"
+              },
+              "qualityLoss": {
+                "metricId": "ekas.quality_loss",
+                "definitionVersion": "independent-metric-contract-1.0",
+                "unit": "%",
+                "synthetic": true,
+                "qualified": false,
+                "value": 2.7777777777777777,
+                "availability": "observed",
+                "reason": null
+              },
+              "speedLoss": {
+                "metricId": "ekas.performance_loss_time",
+                "definitionVersion": "independent-metric-contract-1.0",
+                "unit": "min",
+                "synthetic": true,
+                "qualified": false,
+                "value": 36,
+                "availability": "observed",
+                "reason": null
+              },
+              "qualityLossMin": {
+                "metricId": "ekas.quality_loss_time",
+                "definitionVersion": "independent-metric-contract-1.0",
+                "unit": "min",
+                "synthetic": true,
+                "qualified": false,
+                "value": 9,
+                "availability": "observed",
+                "reason": null
+              },
+              "jamMean": 72,
+              "energyPerGood": null
+            },
+            "contributors": [
+              {
+                "job": "JOB-8303",
+                "asset": "FEED-03",
+                "line": "Line 03",
+                "part": "NW-A",
+                "revision": "P2",
+                "operation": "OP-030",
+                "plannedMin": 480,
+                "downMin": 120,
+                "good": 630,
+                "target": 768,
+                "gap": 138,
+                "downPct": 25,
+                "speedUnits": 72,
+                "qualityUnits": 18,
+                "sourceId": "DEMO-MES-JOB-8303-v1"
+              },
+              {
+                "job": "JOB-8402",
+                "asset": "FEED-02",
+                "line": "Line 02",
+                "part": "NW-A",
+                "revision": "P2",
+                "operation": "OP-030",
+                "plannedMin": 480,
+                "downMin": 72,
+                "good": 730,
+                "target": 768,
+                "gap": 38,
+                "downPct": 15,
+                "speedUnits": 72,
+                "qualityUnits": 14,
+                "sourceId": "DEMO-MES-JOB-8402-v1"
+              },
+              {
+                "job": "JOB-8401",
+                "asset": "FEED-01",
+                "line": "Line 01",
+                "part": "NW-A",
+                "revision": "P2",
+                "operation": "OP-030",
+                "plannedMin": 480,
+                "downMin": 48,
+                "good": 794,
+                "target": 768,
+                "gap": -26,
+                "downPct": 10,
+                "speedUnits": 54,
+                "qualityUnits": 16,
+                "sourceId": "DEMO-MES-JOB-8401-v1"
+              }
+            ],
+            "events": [
+              {
+                "id": "stop-01",
+                "start": 18,
+                "end": 30,
+                "reason": "feeder_jams",
+                "startAt": "2026-10-06T06:18:00Z",
+                "endAt": "2026-10-06T06:30:00Z",
+                "knownAt": null,
+                "recordedAt": null,
+                "source": "scenario-fixture.json#/line_03_stop_events/stop-01"
+              },
+              {
+                "id": "stop-02",
+                "start": 50,
+                "end": 56,
+                "reason": "other",
+                "startAt": "2026-10-06T06:50:00Z",
+                "endAt": "2026-10-06T06:56:00Z",
+                "knownAt": null,
+                "recordedAt": null,
+                "source": "scenario-fixture.json#/line_03_stop_events/stop-02"
+              },
+              {
+                "id": "stop-03",
+                "start": 70,
+                "end": 82,
+                "reason": "feeder_jams",
+                "startAt": "2026-10-06T07:10:00Z",
+                "endAt": "2026-10-06T07:22:00Z",
+                "knownAt": null,
+                "recordedAt": null,
+                "source": "scenario-fixture.json#/line_03_stop_events/stop-03"
+              },
+              {
+                "id": "stop-04",
+                "start": 110,
+                "end": 122,
+                "reason": "changeover",
+                "startAt": "2026-10-06T07:50:00Z",
+                "endAt": "2026-10-06T08:02:00Z",
+                "knownAt": null,
+                "recordedAt": null,
+                "source": "scenario-fixture.json#/line_03_stop_events/stop-04"
+              },
+              {
+                "id": "stop-05",
+                "start": 140,
+                "end": 152,
+                "reason": "feeder_jams",
+                "startAt": "2026-10-06T08:20:00Z",
+                "endAt": "2026-10-06T08:32:00Z",
+                "knownAt": null,
+                "recordedAt": null,
+                "source": "scenario-fixture.json#/line_03_stop_events/stop-05"
+              },
+              {
+                "id": "stop-06",
+                "start": 180,
+                "end": 186,
+                "reason": "other",
+                "startAt": "2026-10-06T09:00:00Z",
+                "endAt": "2026-10-06T09:06:00Z",
+                "knownAt": null,
+                "recordedAt": null,
+                "source": "scenario-fixture.json#/line_03_stop_events/stop-06"
+              },
+              {
+                "id": "stop-07",
+                "start": 210,
+                "end": 222,
+                "reason": "feeder_jams",
+                "startAt": "2026-10-06T09:30:00Z",
+                "endAt": "2026-10-06T09:42:00Z",
+                "knownAt": null,
+                "recordedAt": null,
+                "source": "scenario-fixture.json#/line_03_stop_events/stop-07"
+              },
+              {
+                "id": "stop-08",
+                "start": 250,
+                "end": 262,
+                "reason": "changeover",
+                "startAt": "2026-10-06T10:10:00Z",
+                "endAt": "2026-10-06T10:22:00Z",
+                "knownAt": null,
+                "recordedAt": null,
+                "source": "scenario-fixture.json#/line_03_stop_events/stop-08"
+              },
+              {
+                "id": "stop-09",
+                "start": 295,
+                "end": 307,
+                "reason": "feeder_jams",
+                "startAt": "2026-10-06T10:55:00Z",
+                "endAt": "2026-10-06T11:07:00Z",
+                "knownAt": null,
+                "recordedAt": null,
+                "source": "scenario-fixture.json#/line_03_stop_events/stop-09"
+              },
+              {
+                "id": "stop-10",
+                "start": 340,
+                "end": 346,
+                "reason": "other",
+                "startAt": "2026-10-06T11:40:00Z",
+                "endAt": "2026-10-06T11:46:00Z",
+                "knownAt": null,
+                "recordedAt": null,
+                "source": "scenario-fixture.json#/line_03_stop_events/stop-10"
+              },
+              {
+                "id": "stop-11",
+                "start": 380,
+                "end": 392,
+                "reason": "feeder_jams",
+                "startAt": "2026-10-06T12:20:00Z",
+                "endAt": "2026-10-06T12:32:00Z",
+                "knownAt": null,
+                "recordedAt": null,
+                "source": "scenario-fixture.json#/line_03_stop_events/stop-11"
+              },
+              {
+                "id": "stop-12",
+                "start": 430,
+                "end": 436,
+                "reason": "other",
+                "startAt": "2026-10-06T13:10:00Z",
+                "endAt": "2026-10-06T13:16:00Z",
+                "knownAt": null,
+                "recordedAt": null,
+                "source": "scenario-fixture.json#/line_03_stop_events/stop-12"
+              }
+            ],
+            "reasonMinutes": {
+              "feeder_jams": 72,
+              "changeover": 24,
+              "other_stops": 24
+            },
+            "reasonEvidence": null,
+            "documents": [
+              {
+                "id": "PFMEA-030",
+                "version": "FIC-C",
+                "kind": "PFMEA",
+                "controlled": true,
+                "status": "approved",
+                "effectiveFrom": "2026-09-15T00:00:00Z",
+                "effectiveTo": null,
+                "knownAt": "2026-09-14T12:00:00Z",
+                "part": "NW-A",
+                "revision": "P2",
+                "assetId": "FEED-03",
+                "operation": "OP-030",
+                "text": "Fictional process OP-030 feeds NW-A P2 components on FEED-03. This fragment links potential failures and controls. No approved numerical rating method or licensed scoring content is loaded.\n{\"detection_control\":\"DC-030-01 · fictional recorded feed-interruption event and review\",\"effect\":\"Line stoppage and reduced output; downstream quality impact unassessed\",\"failure_mode\":\"Interrupted feed / feeder jam\",\"function\":\"Present one component to the next operation\",\"potential_cause\":\"Guide wear or setup variation may contribute\",\"prevention_control\":\"PC-030-01 · fictional setup conformance record\"}",
+                "source": "demo://knowledge/PFMEA-030/FIC-C",
+                "eligible": true
+              },
+              {
+                "id": "CP-030",
+                "version": "FIC-B",
+                "kind": "CP",
+                "controlled": true,
+                "status": "approved",
+                "effectiveFrom": "2026-09-15T00:00:00Z",
+                "effectiveTo": null,
+                "knownAt": "2026-09-14T12:00:00Z",
+                "part": "NW-A",
+                "revision": "P2",
+                "assetId": "FEED-03",
+                "operation": "OP-030",
+                "text": "{\"characteristic\":\"Documented feeder setup conformity\",\"detection\":\"DC-030-01 · retain feed-interruption record for review\",\"prevention\":\"PC-030-01 · record setup acceptance against employer-approved reference\",\"process_step\":\"OP-030\",\"reaction\":\"Use the approved site escalation procedure; this demo contains no operating or safety instructions\",\"record\":\"Fictional setup record SR-030 and event ledger\"}",
+                "source": "demo://knowledge/CP-030/FIC-B",
+                "eligible": true
+              },
+              {
+                "id": "SW-030",
+                "version": "FIC-D",
+                "kind": "SW",
+                "controlled": true,
+                "status": "approved",
+                "effectiveFrom": "2026-09-15T00:00:00Z",
+                "effectiveTo": null,
+                "knownAt": "2026-09-14T12:00:00Z",
+                "part": "NW-A",
+                "revision": "P2",
+                "assetId": "FEED-03",
+                "operation": "OP-030",
+                "text": "Fictional revision D replaces C for NW-A P2. It adds a setup conformance evidence field and connects the record to the current control plan. This document deliberately omits machine operation, adjustment, isolation and restart instructions.\nFor the demo record, capture setup reference ID, product revision, observation timestamp, reviewer and conformance disposition. Equipment actions require actual employer-approved procedures, qualified personnel and applicable safety controls. This text is not an instruction to operate equipment.",
+                "source": "demo://knowledge/SW-030/FIC-D",
+                "eligible": true
+              },
+              {
+                "id": "SW-030",
+                "version": "FIC-C",
+                "kind": "SW",
+                "controlled": true,
+                "status": "superseded",
+                "effectiveFrom": "2026-08-01T00:00:00Z",
+                "effectiveTo": "2026-09-15T00:00:00Z",
+                "knownAt": "2026-07-31T12:00:00Z",
+                "part": "NW-A",
+                "revision": "P2",
+                "assetId": "FEED-03",
+                "operation": "OP-030",
+                "text": "Historical fictional revision: record setup reference ID and reviewer. It does not include the product revision or conformance evidence field introduced in FIC-D. Retained for historical investigation only.",
+                "source": "demo://knowledge/SW-030/FIC-C",
+                "eligible": false
+              },
+              {
+                "id": "NCR-003",
+                "version": "FIC-A",
+                "kind": "NCR_8D",
+                "controlled": true,
+                "status": "retained_record",
+                "effectiveFrom": "",
+                "effectiveTo": null,
+                "knownAt": "2026-10-06T14:35:00Z",
+                "part": "NW-A",
+                "revision": "P2",
+                "assetId": "FEED-03",
+                "operation": "OP-030",
+                "text": "Fictional CASE-003: feeder-jam loss is 600 minutes over ten comparable baseline shifts, 2026-09-21 through 2026-10-02. The selected 2026-10-06 shift has 72 feeder-jam minutes. These periods must not be conflated.\nGuide wear or setup variation is a hypothesis linked to FC-030-01, not an established cause. Competing hypotheses include component variation and event classification error. No measurement establishing a causal mechanism is included.\nCompare ten eligible post-action shifts with the pinned baseline, retain performed-work evidence and evaluate final quality loss, energy and safety guardrails. Numerical improvement alone does not prove the hypothesis or justify risk re-rating. Financial validation is unavailable.",
+                "source": "demo://knowledge/NCR-003/FIC-A",
+                "eligible": false
+              },
+              {
+                "id": "NOTE-030",
+                "version": "FIC-1",
+                "kind": "uncontrolled_note",
+                "controlled": false,
+                "status": "uncontrolled",
+                "effectiveFrom": "",
+                "effectiveTo": null,
+                "knownAt": "2026-10-06T14:00:00Z",
+                "part": "NW-A",
+                "revision": null,
+                "assetId": "FEED-03",
+                "operation": "OP-030",
+                "text": "Fictional note claims the old two-field setup record is sufficient for all product revisions. It conflicts with SW-030 FIC-D and has no approval or effective scope.",
+                "source": "demo://knowledge/NOTE-030/FIC-1",
+                "eligible": false
+              },
+              {
+                "id": "NOTE-2401",
+                "version": 1,
+                "kind": "note",
+                "controlled": false,
+                "status": "uncontrolled",
+                "effectiveFrom": "",
+                "effectiveTo": null,
+                "knownAt": "2026-09-21T10:10:00Z",
+                "part": "NW-A",
+                "revision": "P2",
+                "assetId": "FEED-03",
+                "operation": "OP-030",
+                "text": "NOTE-2401:s1: Feeder stopped with housings backed up at the guide during JOB-8301.\nNOTE-2401:s2: Guide wear may be contributing; no dimensional inspection was completed.\nNOTE-2401:s3: No motor fault was observed on the available alarm display.\nNOTE-2401:s4: Production resumed after the approved recovery procedure; cause remains unconfirmed.",
+                "source": "maintenance-fixture.json",
+                "eligible": false
+              },
+              {
+                "id": "NOTE-2402",
+                "version": 1,
+                "kind": "note",
+                "controlled": false,
+                "status": "uncontrolled",
+                "effectiveFrom": "",
+                "effectiveTo": null,
+                "knownAt": "2026-09-23T11:00:00Z",
+                "part": "NW-A",
+                "revision": "P2",
+                "assetId": "FEED-03",
+                "operation": "OP-030",
+                "text": "NOTE-2402:s1: Feeder jam recurred during JOB-8302 with NW-A revision P2.\nNOTE-2402:s2: Visual check found no obvious guide damage.\nNOTE-2402:s3: Setup variation is suspected, but setup measurements were not recorded.\nNOTE-2402:s4: No component was replaced; return to service was recorded by the shift lead.",
+                "source": "maintenance-fixture.json",
+                "eligible": false
+              },
+              {
+                "id": "NOTE-2402-COPY",
+                "version": 1,
+                "kind": "note",
+                "controlled": false,
+                "status": "uncontrolled",
+                "effectiveFrom": "",
+                "effectiveTo": null,
+                "knownAt": "2026-09-23T14:00:00Z",
+                "part": "NW-A",
+                "revision": "P2",
+                "assetId": "FEED-03",
+                "operation": "OP-030",
+                "text": "NOTE-2402-COPY:s1: Feeder jam recurred during JOB-8302 with NW-A revision P2.",
+                "source": "maintenance-fixture.json",
+                "eligible": false
+              }
+            ],
+            "sourceIds": [
+              "production-jobs-fixture.json#/jobs/JOB-8401",
+              "production-jobs-fixture.json#/jobs/JOB-8402",
+              "production-jobs-fixture.json#/jobs/JOB-8303",
+              "DEMO-RAW-JOB-8401-1",
+              "DEMO-RAW-JOB-8401-2",
+              "DEMO-RAW-JOB-8402-1",
+              "DEMO-RAW-JOB-8402-2",
+              "DEMO-RAW-JOB-8402-3",
+              "stop-01",
+              "stop-02",
+              "stop-03",
+              "stop-04",
+              "stop-05",
+              "stop-06",
+              "stop-07",
+              "stop-08",
+              "stop-09",
+              "stop-10",
+              "stop-11",
+              "stop-12",
+              "northworks-investigation-v1.json#/extraShiftIntervals"
+            ],
+            "availableHypotheses": [
+              {
+                "id": "downtime-H1",
+                "description": "Guide wear or feeder setup may contribute to jams.",
+                "supportingEvidenceIds": [
+                  "NOTE-2401:s2"
+                ],
+                "contradictingEvidenceIds": [],
+                "test": "Inspect guide wear and setup against applicable standard work."
+              },
+              {
+                "id": "downtime-H2",
+                "description": "Material or crew variation may contribute; present records do not establish either.",
+                "supportingEvidenceIds": [
+                  "PFMEA-030"
+                ],
+                "contradictingEvidenceIds": [],
+                "test": "Compare material and setup observations while preserving product and exposure."
+              }
+            ],
+            "availableTests": [],
+            "availableWork": null,
+            "owner": {
+              "requested": null,
+              "accepted": null,
+              "requestedAt": null,
+              "acceptedAt": null
+            },
+            "action": {
+              "status": "draft",
+              "description": "",
+              "authorizationId": null,
+              "authorizedAt": null,
+              "performedId": null,
+              "performedAt": null,
+              "performer": null,
+              "confirmation": null,
+              "reason": "",
+              "expectedBenefit": null,
+              "lifecycleState": "DRAFT",
+              "verified": false
+            },
+            "hypotheses": [],
+            "plan": {
+              "version": 1,
+              "endpoint": "jamMin",
+              "direction": "lower",
+              "target": 30,
+              "unit": "min per eligible shift",
+              "requiredShifts": 10,
+              "qualityMaxPct": 2.5,
+              "energyMaxKwhPerGood": 1.2,
+              "baselineIds": [
+                "NW-L03-20260921-D",
+                "NW-L03-20260922-D",
+                "NW-L03-20260923-D",
+                "NW-L03-20260924-D",
+                "NW-L03-20260925-D",
+                "NW-L03-20260928-D",
+                "NW-L03-20260929-D",
+                "NW-L03-20260930-D",
+                "NW-L03-20261001-D",
+                "NW-L03-20261002-D"
+              ],
+              "postIds": [
+                "NW-L03-20261007-D",
+                "NW-L03-20261008-D",
+                "NW-L03-20261009-D",
+                "NW-L03-20261012-D",
+                "NW-L03-20261013-D",
+                "NW-L03-20261014-D",
+                "NW-L03-20261015-D",
+                "NW-L03-20261016-D",
+                "NW-L03-20261019-D",
+                "NW-L03-20261020-D"
+              ],
+              "source": "scenario-fixture.json#/case/verification_plan"
+            },
+            "planGovernance": {
+              "active": {
+                "plan": {
+                  "version": 1,
+                  "endpoint": "jamMin",
+                  "direction": "lower",
+                  "target": 30,
+                  "unit": "min per eligible shift",
+                  "requiredShifts": 10,
+                  "qualityMaxPct": 2.5,
+                  "energyMaxKwhPerGood": 1.2,
+                  "baselineIds": [
+                    "NW-L03-20260921-D",
+                    "NW-L03-20260922-D",
+                    "NW-L03-20260923-D",
+                    "NW-L03-20260924-D",
+                    "NW-L03-20260925-D",
+                    "NW-L03-20260928-D",
+                    "NW-L03-20260929-D",
+                    "NW-L03-20260930-D",
+                    "NW-L03-20261001-D",
+                    "NW-L03-20261002-D"
+                  ],
+                  "postIds": [
+                    "NW-L03-20261007-D",
+                    "NW-L03-20261008-D",
+                    "NW-L03-20261009-D",
+                    "NW-L03-20261012-D",
+                    "NW-L03-20261013-D",
+                    "NW-L03-20261014-D",
+                    "NW-L03-20261015-D",
+                    "NW-L03-20261016-D",
+                    "NW-L03-20261019-D",
+                    "NW-L03-20261020-D"
+                  ],
+                  "source": "scenario-fixture.json#/case/verification_plan"
+                },
+                "scope": {
+                  "tenant": "synthetic-demo",
+                  "plant": "Northworks",
+                  "line": "Line 03",
+                  "asset": "FEED-03",
+                  "job": "JOB-8303",
+                  "part": "NW-A",
+                  "revision": "P2",
+                  "operation": "OP-030",
+                  "from": "2026-10-06T06:00:00Z",
+                  "to": "2026-10-06T14:00:00Z"
+                },
+                "createdAt": "2026-10-06T14:30:00Z",
+                "fixedAt": "2026-10-06T14:30:00Z",
+                "reason": "Original source policy with explicit additional fictional preregistration governance.",
+                "status": "fixed",
+                "approval": {
+                  "id": "FICTIONAL-PREREG-V57-downtime",
+                  "actor": "Fictional CI engineer",
+                  "at": "2026-10-06T14:30:00Z",
+                  "synthetic": true,
+                  "notGranted": true
+                },
+                "definitionVersion": "independent-metric-contract-1.0",
+                "minimumCoverage": 0.95,
+                "plannedMinPerShift": 480,
+                "idealCycleMin": 0.5,
+                "source": "verification-plan-governance-v57.json#/records/downtime; policy scenario-fixture.json#/case/verification_plan"
+              },
+              "draft": null,
+              "versions": [
+                {
+                  "plan": {
+                    "version": 1,
+                    "endpoint": "jamMin",
+                    "direction": "lower",
+                    "target": 30,
+                    "unit": "min per eligible shift",
+                    "requiredShifts": 10,
+                    "qualityMaxPct": 2.5,
+                    "energyMaxKwhPerGood": 1.2,
+                    "baselineIds": [
+                      "NW-L03-20260921-D",
+                      "NW-L03-20260922-D",
+                      "NW-L03-20260923-D",
+                      "NW-L03-20260924-D",
+                      "NW-L03-20260925-D",
+                      "NW-L03-20260928-D",
+                      "NW-L03-20260929-D",
+                      "NW-L03-20260930-D",
+                      "NW-L03-20261001-D",
+                      "NW-L03-20261002-D"
+                    ],
+                    "postIds": [
+                      "NW-L03-20261007-D",
+                      "NW-L03-20261008-D",
+                      "NW-L03-20261009-D",
+                      "NW-L03-20261012-D",
+                      "NW-L03-20261013-D",
+                      "NW-L03-20261014-D",
+                      "NW-L03-20261015-D",
+                      "NW-L03-20261016-D",
+                      "NW-L03-20261019-D",
+                      "NW-L03-20261020-D"
+                    ],
+                    "source": "scenario-fixture.json#/case/verification_plan"
+                  },
+                  "scope": {
+                    "tenant": "synthetic-demo",
+                    "plant": "Northworks",
+                    "line": "Line 03",
+                    "asset": "FEED-03",
+                    "job": "JOB-8303",
+                    "part": "NW-A",
+                    "revision": "P2",
+                    "operation": "OP-030",
+                    "from": "2026-10-06T06:00:00Z",
+                    "to": "2026-10-06T14:00:00Z"
+                  },
+                  "createdAt": "2026-10-06T14:30:00Z",
+                  "fixedAt": "2026-10-06T14:30:00Z",
+                  "reason": "Original source policy with explicit additional fictional preregistration governance.",
+                  "status": "fixed",
+                  "approval": {
+                    "id": "FICTIONAL-PREREG-V57-downtime",
+                    "actor": "Fictional CI engineer",
+                    "at": "2026-10-06T14:30:00Z",
+                    "synthetic": true,
+                    "notGranted": true
+                  },
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "minimumCoverage": 0.95,
+                  "plannedMinPerShift": 480,
+                  "idealCycleMin": 0.5,
+                  "source": "verification-plan-governance-v57.json#/records/downtime; policy scenario-fixture.json#/case/verification_plan"
+                }
+              ],
+              "draftDoesNotChangeMeasurements": true
+            },
+            "verification": {
+              "status": "awaiting_work",
+              "proof": false,
+              "baselineCount": 10,
+              "postCount": 0,
+              "before": 60,
+              "after": null,
+              "absoluteChange": null,
+              "relativeChange": null,
+              "outputGain": null,
+              "oeeGain": null,
+              "beforeMetrics": {
+                "planned": 4800,
+                "run": 3900,
+                "total": 7000,
+                "good": 6860,
+                "down": 900,
+                "idealTotal": 3500,
+                "idealGood": 3430,
+                "oee": {
+                  "metricId": "ekas.oee",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": 71.45833333333333,
+                  "availability": "observed",
+                  "reason": null
+                },
+                "availability": {
+                  "metricId": "ekas.availability",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": 81.25,
+                  "availability": "observed",
+                  "reason": null
+                },
+                "performance": {
+                  "metricId": "ekas.performance",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": 89.74358974358974,
+                  "availability": "observed",
+                  "reason": null
+                },
+                "quality": {
+                  "metricId": "ekas.quality",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": 98,
+                  "availability": "observed",
+                  "reason": null
+                },
+                "fpy": {
+                  "metricId": "ekas.first_pass_yield",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": null,
+                  "availability": "missing_input",
+                  "reason": "Missing operand: first_pass_good_units"
+                },
+                "qualityLoss": {
+                  "metricId": "ekas.quality_loss",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": 2,
+                  "availability": "observed",
+                  "reason": null
+                },
+                "speedLoss": {
+                  "metricId": "ekas.performance_loss_time",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "min",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": 400,
+                  "availability": "observed",
+                  "reason": null
+                },
+                "qualityLossMin": {
+                  "metricId": "ekas.quality_loss_time",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "min",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": 70,
+                  "availability": "observed",
+                  "reason": null
+                },
+                "jamMean": 60,
+                "energyPerGood": 1.1661807580174928
+              },
+              "afterMetrics": {
+                "planned": 0,
+                "run": 0,
+                "total": 0,
+                "good": 0,
+                "down": 0,
+                "idealTotal": 0,
+                "idealGood": 0,
+                "oee": {
+                  "metricId": "ekas.oee",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": null,
+                  "availability": "partial_coverage",
+                  "reason": "Incomplete eligible observation coverage."
+                },
+                "availability": {
+                  "metricId": "ekas.availability",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": null,
+                  "availability": "partial_coverage",
+                  "reason": "Incomplete eligible observation coverage."
+                },
+                "performance": {
+                  "metricId": "ekas.performance",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": null,
+                  "availability": "partial_coverage",
+                  "reason": "Incomplete eligible observation coverage."
+                },
+                "quality": {
+                  "metricId": "ekas.quality",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": null,
+                  "availability": "partial_coverage",
+                  "reason": "Incomplete eligible observation coverage."
+                },
+                "fpy": {
+                  "metricId": "ekas.first_pass_yield",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": null,
+                  "availability": "partial_coverage",
+                  "reason": "Incomplete eligible observation coverage."
+                },
+                "qualityLoss": {
+                  "metricId": "ekas.quality_loss",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "%",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": null,
+                  "availability": "partial_coverage",
+                  "reason": "Incomplete eligible observation coverage."
+                },
+                "speedLoss": {
+                  "metricId": "ekas.performance_loss_time",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "min",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": null,
+                  "availability": "partial_coverage",
+                  "reason": "Incomplete eligible observation coverage."
+                },
+                "qualityLossMin": {
+                  "metricId": "ekas.quality_loss_time",
+                  "definitionVersion": "independent-metric-contract-1.0",
+                  "unit": "min",
+                  "synthetic": true,
+                  "qualified": false,
+                  "value": null,
+                  "availability": "partial_coverage",
+                  "reason": "Incomplete eligible observation coverage."
+                },
+                "jamMean": null,
+                "energyPerGood": null
+              },
+              "beforeSources": [
+                "scenario-fixture.json#/case/baseline/shifts/NW-L03-20260921-D",
+                "scenario-fixture.json#/case/baseline/shifts/NW-L03-20260922-D",
+                "scenario-fixture.json#/case/baseline/shifts/NW-L03-20260923-D",
+                "scenario-fixture.json#/case/baseline/shifts/NW-L03-20260924-D",
+                "scenario-fixture.json#/case/baseline/shifts/NW-L03-20260925-D",
+                "scenario-fixture.json#/case/baseline/shifts/NW-L03-20260928-D",
+                "scenario-fixture.json#/case/baseline/shifts/NW-L03-20260929-D",
+                "scenario-fixture.json#/case/baseline/shifts/NW-L03-20260930-D",
+                "scenario-fixture.json#/case/baseline/shifts/NW-L03-20261001-D",
+                "scenario-fixture.json#/case/baseline/shifts/NW-L03-20261002-D"
+              ],
+              "afterSources": [],
+              "guardrails": {
+                "quality": {
+                  "status": "unavailable",
+                  "value": null,
+                  "limit": 2.5,
+                  "unit": "percent final quality loss",
+                  "source": "scenario-fixture.json#/case/verification_plan"
+                },
+                "energy": {
+                  "status": "unavailable",
+                  "value": null,
+                  "limit": 1.2,
+                  "unit": "kWh/good unit",
+                  "source": "scenario-fixture.json#/case/verification_plan"
+                }
+              },
+              "qualityPass": false,
+              "energyPass": false,
+              "safetyPass": false,
+              "causalStatus": "unconfirmed",
+              "financiallyValidated": false
+            },
+            "sustain": {
+              "status": "insufficient",
+              "threshold": 45,
+              "required": 5,
+              "observations": [],
+              "policyVersion": 2,
+              "primaryTarget": 30,
+              "recurrenceAlarm": 45,
+              "windowIds": [],
+              "qualification": "An accepted result and complete monitoring window are required."
+            },
+            "resultRejectedReason": null,
+            "synthetic": true,
+            "notDispatched": true,
+            "notGranted": true
+          },
+          "workflowSnapshot": {
+            "schemaVersion": 2,
+            "sustainPolicyVersion": 2,
+            "testPolicyVersion": 2,
+            "origin": {
+              "resultId": "northworks-investigation-v1-current-result",
+              "resultVersion": 1,
+              "goalId": "NW-GOAL-PLAN-003",
+              "fixtureVersion": "northworks-investigation-v1",
+              "asOf": "2026-10-06T14:45:00Z",
+              "context": {
+                "tenant": "synthetic-demo",
+                "plant": "Northworks",
+                "line": "Line 03",
+                "asset": "FEED-03",
+                "job": "JOB-8303",
+                "part": "NW-A",
+                "revision": "P2",
+                "operation": "OP-030",
+                "from": "2026-10-06T06:00:00Z",
+                "to": "2026-10-06T14:00:00Z"
+              }
+            },
+            "fixtureVersion": "northworks-investigation-v1",
+            "caseId": "downtime",
+            "condition": "complete",
+            "context": {
+              "tenant": "synthetic-demo",
+              "plant": "Northworks",
+              "line": "Line 03",
+              "asset": "FEED-03",
+              "job": "JOB-8303",
+              "part": "NW-A",
+              "revision": "P2",
+              "operation": "OP-030",
+              "from": "2026-10-06T06:00:00Z",
+              "to": "2026-10-06T14:00:00Z"
+            },
+            "asOf": "2026-10-06T14:45:00Z",
+            "cycle": 1,
+            "openedAt": "2026-10-06T14:45:00Z",
+            "owner": {
+              "requested": null,
+              "accepted": null,
+              "requestedAt": null,
+              "acceptedAt": null
+            },
+            "hypotheses": [],
+            "action": {
+              "status": "draft",
+              "description": "",
+              "authorizationId": null,
+              "authorizedAt": null,
+              "performedId": null,
+              "performedAt": null,
+              "performer": null,
+              "confirmation": null,
+              "reason": "",
+              "expectedBenefit": null
+            },
+            "plan": {
+              "version": 1,
+              "endpoint": "jamMin",
+              "direction": "lower",
+              "target": 30,
+              "unit": "min per eligible shift",
+              "requiredShifts": 10,
+              "qualityMaxPct": 2.5,
+              "energyMaxKwhPerGood": 1.2,
+              "baselineIds": [
+                "NW-L03-20260921-D",
+                "NW-L03-20260922-D",
+                "NW-L03-20260923-D",
+                "NW-L03-20260924-D",
+                "NW-L03-20260925-D",
+                "NW-L03-20260928-D",
+                "NW-L03-20260929-D",
+                "NW-L03-20260930-D",
+                "NW-L03-20261001-D",
+                "NW-L03-20261002-D"
+              ],
+              "postIds": [
+                "NW-L03-20261007-D",
+                "NW-L03-20261008-D",
+                "NW-L03-20261009-D",
+                "NW-L03-20261012-D",
+                "NW-L03-20261013-D",
+                "NW-L03-20261014-D",
+                "NW-L03-20261015-D",
+                "NW-L03-20261016-D",
+                "NW-L03-20261019-D",
+                "NW-L03-20261020-D"
+              ],
+              "source": "scenario-fixture.json#/case/verification_plan"
+            },
+            "planVersions": [
+              {
+                "plan": {
+                  "version": 1,
+                  "endpoint": "jamMin",
+                  "direction": "lower",
+                  "target": 30,
+                  "unit": "min per eligible shift",
+                  "requiredShifts": 10,
+                  "qualityMaxPct": 2.5,
+                  "energyMaxKwhPerGood": 1.2,
+                  "baselineIds": [
+                    "NW-L03-20260921-D",
+                    "NW-L03-20260922-D",
+                    "NW-L03-20260923-D",
+                    "NW-L03-20260924-D",
+                    "NW-L03-20260925-D",
+                    "NW-L03-20260928-D",
+                    "NW-L03-20260929-D",
+                    "NW-L03-20260930-D",
+                    "NW-L03-20261001-D",
+                    "NW-L03-20261002-D"
+                  ],
+                  "postIds": [
+                    "NW-L03-20261007-D",
+                    "NW-L03-20261008-D",
+                    "NW-L03-20261009-D",
+                    "NW-L03-20261012-D",
+                    "NW-L03-20261013-D",
+                    "NW-L03-20261014-D",
+                    "NW-L03-20261015-D",
+                    "NW-L03-20261016-D",
+                    "NW-L03-20261019-D",
+                    "NW-L03-20261020-D"
+                  ],
+                  "source": "scenario-fixture.json#/case/verification_plan"
+                },
+                "scope": {
+                  "tenant": "synthetic-demo",
+                  "plant": "Northworks",
+                  "line": "Line 03",
+                  "asset": "FEED-03",
+                  "job": "JOB-8303",
+                  "part": "NW-A",
+                  "revision": "P2",
+                  "operation": "OP-030",
+                  "from": "2026-10-06T06:00:00Z",
+                  "to": "2026-10-06T14:00:00Z"
+                },
+                "createdAt": "2026-10-06T14:30:00Z",
+                "fixedAt": "2026-10-06T14:30:00Z",
+                "reason": "Original source policy with explicit additional fictional preregistration governance.",
+                "status": "fixed",
+                "approval": {
+                  "id": "FICTIONAL-PREREG-V57-downtime",
+                  "actor": "Fictional CI engineer",
+                  "at": "2026-10-06T14:30:00Z",
+                  "synthetic": true,
+                  "notGranted": true
+                },
+                "definitionVersion": "independent-metric-contract-1.0",
+                "minimumCoverage": 0.95,
+                "plannedMinPerShift": 480,
+                "idealCycleMin": 0.5,
+                "source": "verification-plan-governance-v57.json#/records/downtime; policy scenario-fixture.json#/case/verification_plan"
+              }
+            ],
+            "planDraft": null,
+            "verificationRecorded": false,
+            "safetyEvidence": null,
+            "accepted": false,
+            "resultRejectedReason": null,
+            "sustainIds": [],
+            "priorCycles": [],
+            "captures": [],
+            "history": [],
+            "synthetic": true,
+            "notDispatched": true,
+            "notGranted": true,
+            "financiallyValidated": false
+          },
+          "actor": "manager",
+          "commands": [],
+          "blocked": null,
+          "semanticEnvelope": {
+            "version": 1,
+            "claimScope": "captured investigation state",
+            "claims": [
+              {
+                "id": "conversation-3/turn-1-claim-1",
+                "version": 1,
+                "classificationVersion": "ekas-claim-semantics-v1",
+                "kind": "MEASURED RESULT",
+                "text": "Observed output in the declared goal scope.",
+                "evidenceIds": [
+                  "production-jobs-fixture.json#/jobs/JOB-8401",
+                  "production-jobs-fixture.json#/jobs/JOB-8402",
+                  "production-jobs-fixture.json#/jobs/JOB-8303",
+                  "DEMO-RAW-JOB-8401-1",
+                  "DEMO-RAW-JOB-8401-2",
+                  "DEMO-RAW-JOB-8402-1",
+                  "DEMO-RAW-JOB-8402-2",
+                  "DEMO-RAW-JOB-8402-3",
+                  "stop-01",
+                  "stop-02",
+                  "stop-03",
+                  "stop-04",
+                  "stop-05",
+                  "stop-06",
+                  "stop-07",
+                  "stop-08",
+                  "stop-09",
+                  "stop-10",
+                  "stop-11",
+                  "stop-12",
+                  "northworks-investigation-v1.json#/extraShiftIntervals"
+                ],
+                "provenanceIds": [
+                  "conversation-3/turn-1"
+                ],
+                "scope": {
+                  "kind": "plant",
+                  "tenant": "synthetic-demo",
+                  "plant": "Northworks",
+                  "from": "2026-10-06T06:00:00Z",
+                  "to": "2026-10-06T14:00:00Z",
+                  "jobIds": [
+                    "JOB-8401",
+                    "JOB-8402",
+                    "JOB-8303"
+                  ]
+                },
+                "asOf": "2026-10-06T14:45:00Z",
+                "quantity": {
+                  "kind": "metric_level",
+                  "value": 2154,
+                  "unit": "good units"
+                },
+                "causalStatus": "unconfirmed",
+                "confidence": null,
+                "synthetic": true,
+                "financiallyValidated": false
+              },
+              {
+                "id": "conversation-3/turn-1-claim-2",
+                "version": 1,
+                "classificationVersion": "ekas-claim-semantics-v1",
+                "kind": "DERIVED RESULT",
+                "text": "Goal shortfall; scopes are not additive.",
+                "evidenceIds": [
+                  "production-jobs-fixture.json#/jobs/JOB-8401",
+                  "production-jobs-fixture.json#/jobs/JOB-8402",
+                  "production-jobs-fixture.json#/jobs/JOB-8303",
+                  "DEMO-RAW-JOB-8401-1",
+                  "DEMO-RAW-JOB-8401-2",
+                  "DEMO-RAW-JOB-8402-1",
+                  "DEMO-RAW-JOB-8402-2",
+                  "DEMO-RAW-JOB-8402-3",
+                  "stop-01",
+                  "stop-02",
+                  "stop-03",
+                  "stop-04",
+                  "stop-05",
+                  "stop-06",
+                  "stop-07",
+                  "stop-08",
+                  "stop-09",
+                  "stop-10",
+                  "stop-11",
+                  "stop-12",
+                  "northworks-investigation-v1.json#/extraShiftIntervals",
+                  "northworks-investigation-v1#/goal; values from scenario-fixture.json lines plan_good_units"
+                ],
+                "provenanceIds": [
+                  "conversation-3/turn-1"
+                ],
+                "scope": {
+                  "kind": "plant",
+                  "tenant": "synthetic-demo",
+                  "plant": "Northworks",
+                  "from": "2026-10-06T06:00:00Z",
+                  "to": "2026-10-06T14:00:00Z",
+                  "jobIds": [
+                    "JOB-8401",
+                    "JOB-8402",
+                    "JOB-8303"
+                  ]
+                },
+                "asOf": "2026-10-06T14:45:00Z",
+                "quantity": {
+                  "kind": "absolute_difference",
+                  "value": 150,
+                  "unit": "good units",
+                  "metricUnit": "good units"
+                },
+                "causalStatus": "unconfirmed",
+                "confidence": null,
+                "synthetic": true,
+                "financiallyValidated": false
+              }
+            ],
+            "corrections": [
+              {
+                "dimension": "plant",
+                "previous": "Monthly synthetic plant",
+                "requested": "Northworks"
+              },
+              {
+                "dimension": "line",
+                "previous": null,
+                "requested": "Line 03"
+              },
+              {
+                "dimension": "machine",
+                "previous": "Machine 1",
+                "requested": "FEED-03"
+              },
+              {
+                "dimension": "job",
+                "previous": null,
+                "requested": "JOB-8303"
+              },
+              {
+                "dimension": "part",
+                "previous": null,
+                "requested": "NW-A"
+              },
+              {
+                "dimension": "revision",
+                "previous": null,
+                "requested": "P2"
+              },
+              {
+                "dimension": "operation",
+                "previous": null,
+                "requested": "OP-030"
+              },
+              {
+                "dimension": "shift",
+                "previous": null,
+                "requested": "day"
+              },
+              {
+                "dimension": "period",
+                "previous": "January",
+                "requested": "2026-10-06 day shift"
+              }
+            ],
+            "execution": {
+              "status": "read",
+              "attemptedKinds": [],
+              "committedKinds": [],
+              "reason": null
+            },
+            "action": {
+              "lifecycleState": "DRAFT",
+              "dueAt": null,
+              "performedRecord": null,
+              "authorizedAt": null,
+              "performedAt": null,
+              "verifiedAt": null,
+              "verified": false,
+              "derivedFrom": "Existing performed proof, eligible measurement, guardrails, safety and accepted result; no manual verification toggle"
+            },
+            "hypothesisLifecycle": [],
+            "confirmedCause": {
+              "status": "unavailable",
+              "reason": "A separate governed causal disposition is not supplied; language cannot promote it."
+            },
+            "synthetic": true,
+            "notGranted": true,
+            "notDispatched": true,
+            "financiallyValidated": false
+          },
+          "providerInterpretationCapture": {
+            "schemaVersion": 1,
+            "conversationId": "conversation-3",
+            "operationId": "v88-asset-duration-0",
+            "expectedVersion": 1,
+            "question": "Investigate downtime.",
+            "policyRevision": "{\"actor\":\"manager\",\"assetIds\":[\"FEED-01\",\"FEED-02\",\"FEED-03\",\"PRESS-S1\",\"FORM-Q1\",\"MONTH-MACHINE1\",\"MONTH-MACHINE2\",\"TP-A1\",\"TP-A2\",\"TP-A3\",\"TP-A4\",\"TP-A5\",\"TP-A6\",\"TP-A7\",\"TP-A8\"],\"policyRevision\":\"synthetic-role-v1:1:1:manager\",\"synthetic\":true}",
+            "sourceRevision": "[[\"action-2\",1]]",
+            "provider": "fake",
+            "response": {
+              "interpretation": "",
+              "claims": []
+            },
+            "receipts": [
+              {
+                "id": "canonical:turn",
+                "sourceIds": [
+                  "production-jobs-fixture.json#/jobs/JOB-8401",
+                  "production-jobs-fixture.json#/jobs/JOB-8402",
+                  "production-jobs-fixture.json#/jobs/JOB-8303",
+                  "DEMO-RAW-JOB-8401-1",
+                  "DEMO-RAW-JOB-8401-2",
+                  "DEMO-RAW-JOB-8402-1",
+                  "DEMO-RAW-JOB-8402-2",
+                  "DEMO-RAW-JOB-8402-3",
+                  "stop-01",
+                  "stop-02",
+                  "stop-03",
+                  "stop-04",
+                  "stop-05",
+                  "stop-06",
+                  "stop-07",
+                  "stop-08",
+                  "stop-09",
+                  "stop-10",
+                  "stop-11",
+                  "stop-12",
+                  "northworks-investigation-v1.json#/extraShiftIntervals"
+                ],
+                "asOf": "2026-10-06T14:45:00Z",
+                "status": "observed",
+                "facts": [
+                  {
+                    "key": "canonical_turn",
+                    "value": "{\"question\":\"Investigate downtime.\",\"answer\":{\"text\":\"Production finished 150 good units below the approved plan: 2154 against 2304. Line 03 missed by 138 units; Line 02 missed by 38 units; Line 01 exceeded plan by 26 units. The 726-unit loss from theoretical capacity is a different baseline from this 150-unit plan miss.\\n\\nI would start with the feeder-jam evidence on Line 03. The speed residual remains unattributed.\",\"evidence\":\"loss\",\"chart\":false,\"metric\":\"oee\",\"sourceIds\":[\"production-jobs-fixture.json#/jobs/JOB-8401\",\"production-jobs-fixture.json#/jobs/JOB-8402\",\"production-jobs-fixture.json#/jobs/JOB-8303\",\"DEMO-RAW-JOB-8401-1\",\"DEMO-RAW-JOB-8401-2\",\"DEMO-RAW-JOB-8402-1\",\"DEMO-RAW-JOB-8402-2\",\"DEMO-RAW-JOB-8402-3\",\"stop-01\",\"stop-02\",\"stop-03\",\"stop-04\",\"stop-05\",\"stop-06\",\"stop-07\",\"stop-08\",\"stop-09\",\"stop-10\",\"stop-11\",\"stop-12\",\"northworks-investigation-v1.json#/extraShiftIntervals\"],\"qualification\":null},\"context\":{\"plant\":\"Northworks\",\"line\":\"Line 03\",\"shift\":\"day\",\"comparisonEntity\":null,\"activeInvestigationId\":\"action-5\",\"investigationStage\":\"draft\",\"clarification\":null,\"machine\":\"FEED-03\",\"period\":\"2026-10-06 day shift\",\"comparisonPeriod\":null,\"metric\":\"oee\",\"caseFocus\":\"downtime\",\"job\":\"JOB-8303\",\"part\":\"NW-A\",\"revision\":\"P2\",\"operation\":\"OP-030\",\"lastIntent\":\"goal\",\"chart\":\"column\"},\"asOf\":\"2026-10-06T14:45:00Z\",\"blocked\":null,\"commands\":[],\"semantics\":{\"version\":1,\"claimScope\":\"captured investigation state\",\"claims\":[{\"id\":\"conversation-3/turn-1-claim-1\",\"version\":1,\"classificationVersion\":\"ekas-claim-semantics-v1\",\"kind\":\"MEASURED RESULT\",\"text\":\"Observed output in the declared goal scope.\",\"evidenceIds\":[\"production-jobs-fixture.json#/jobs/JOB-8401\",\"production-jobs-fixture.json#/jobs/JOB-8402\",\"production-jobs-fixture.json#/jobs/JOB-8303\",\"DEMO-RAW-JOB-8401-1\",\"DEMO-RAW-JOB-8401-2\",\"DEMO-RAW-JOB-8402-1\",\"DEMO-RAW-JOB-8402-2\",\"DEMO-RAW-JOB-8402-3\",\"stop-01\",\"stop-02\",\"stop-03\",\"stop-04\",\"stop-05\",\"stop-06\",\"stop-07\",\"stop-08\",\"stop-09\",\"stop-10\",\"stop-11\",\"stop-12\",\"northworks-investigation-v1.json#/extraShiftIntervals\"],\"provenanceIds\":[\"conversation-3/turn-1\"],\"scope\":{\"kind\":\"plant\",\"tenant\":\"synthetic-demo\",\"plant\":\"Northworks\",\"from\":\"2026-10-06T06:00:00Z\",\"to\":\"2026-10-06T14:00:00Z\",\"jobIds\":[\"JOB-8401\",\"JOB-8402\",\"JOB-8303\"]},\"asOf\":\"2026-10-06T14:45:00Z\",\"quantity\":{\"kind\":\"metric_level\",\"value\":2154,\"unit\":\"good units\"},\"causalStatus\":\"unconfirmed\",\"confidence\":null,\"synthetic\":true,\"financiallyValidated\":false},{\"id\":\"conversation-3/turn-1-claim-2\",\"version\":1,\"classificationVersion\":\"ekas-claim-semantics-v1\",\"kind\":\"DERIVED RESULT\",\"text\":\"Goal shortfall; scopes are not additive.\",\"evidenceIds\":[\"production-jobs-fixture.json#/jobs/JOB-8401\",\"production-jobs-fixture.json#/jobs/JOB-8402\",\"production-jobs-fixture.json#/jobs/JOB-8303\",\"DEMO-RAW-JOB-8401-1\",\"DEMO-RAW-JOB-8401-2\",\"DEMO-RAW-JOB-8402-1\",\"DEMO-RAW-JOB-8402-2\",\"DEMO-RAW-JOB-8402-3\",\"stop-01\",\"stop-02\",\"stop-03\",\"stop-04\",\"stop-05\",\"stop-06\",\"stop-07\",\"stop-08\",\"stop-09\",\"stop-10\",\"stop-11\",\"stop-12\",\"northworks-investigation-v1.json#/extraShiftIntervals\",\"northworks-investigation-v1#/goal; values from scenario-fixture.json lines plan_good_units\"],\"provenanceIds\":[\"conversation-3/turn-1\"],\"scope\":{\"kind\":\"plant\",\"tenant\":\"synthetic-demo\",\"plant\":\"Northworks\",\"from\":\"2026-10-06T06:00:00Z\",\"to\":\"2026-10-06T14:00:00Z\",\"jobIds\":[\"JOB-8401\",\"JOB-8402\",\"JOB-8303\"]},\"asOf\":\"2026-10-06T14:45:00Z\",\"quantity\":{\"kind\":\"absolute_difference\",\"value\":150,\"unit\":\"good units\",\"metricUnit\":\"good units\"},\"causalStatus\":\"unconfirmed\",\"confidence\":null,\"synthetic\":true,\"financiallyValidated\":false}],\"corrections\":[{\"dimension\":\"plant\",\"previous\":\"Monthly synthetic plant\",\"requested\":\"Northworks\"},{\"dimension\":\"line\",\"previous\":null,\"requested\":\"Line 03\"},{\"dimension\":\"machine\",\"previous\":\"Machine 1\",\"requested\":\"FEED-03\"},{\"dimension\":\"job\",\"previous\":null,\"requested\":\"JOB-8303\"},{\"dimension\":\"part\",\"previous\":null,\"requested\":\"NW-A\"},{\"dimension\":\"revision\",\"previous\":null,\"requested\":\"P2\"},{\"dimension\":\"operation\",\"previous\":null,\"requested\":\"OP-030\"},{\"dimension\":\"shift\",\"previous\":null,\"requested\":\"day\"},{\"dimension\":\"period\",\"previous\":\"January\",\"requested\":\"2026-10-06 day shift\"}],\"execution\":{\"status\":\"read\",\"attemptedKinds\":[],\"committedKinds\":[],\"reason\":null},\"action\":{\"lifecycleState\":\"DRAFT\",\"dueAt\":null,\"performedRecord\":null,\"authorizedAt\":null,\"performedAt\":null,\"verifiedAt\":null,\"verified\":false,\"derivedFrom\":\"Existing performed proof, eligible measurement, guardrails, safety and accepted result; no manual verification toggle\"},\"hypothesisLifecycle\":[],\"confirmedCause\":{\"status\":\"unavailable\",\"reason\":\"A separate governed causal disposition is not supplied; language cannot promote it.\"},\"synthetic\":true,\"notGranted\":true,\"notDispatched\":true,\"financiallyValidated\":false}}",
+                    "unit": ""
+                  },
+                  {
+                    "key": "quantity:0",
+                    "value": 2154,
+                    "unit": "good units"
+                  },
+                  {
+                    "key": "quantity:1",
+                    "value": 150,
+                    "unit": "good units"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "turn-2",
+          "captureId": "conversation-3/turn-2",
+          "dialogueVersion": 1,
+          "scopedDialogue": 1,
+          "interactionVersion": 1,
+          "scopeInterpretationVersion": 3,
+          "assignmentIntentVersion": 2,
+          "intentContextVersion": 4,
+          "clockOperandVersion": 2,
+          "question": "Show downtime on FEED-99.",
+          "routingQuestion": "Show downtime on FEED-99.",
+          "requestContext": {
+            "plant": "Northworks",
+            "line": "Line 03",
+            "shift": "day",
+            "comparisonEntity": null,
+            "activeInvestigationId": "action-5",
+            "investigationStage": "draft",
+            "clarification": null,
+            "machine": "FEED-03",
+            "period": "2026-10-06 day shift",
+            "comparisonPeriod": null,
+            "metric": "oee",
+            "caseFocus": "downtime",
+            "job": "JOB-8303",
+            "part": "NW-A",
+            "revision": "P2",
+            "operation": "OP-030",
+            "lastIntent": "goal",
+            "chart": "column"
+          },
+          "context": {
+            "plant": "Northworks",
+            "line": "Line 03",
+            "shift": "day",
+            "comparisonEntity": null,
+            "activeInvestigationId": "action-5",
+            "investigationStage": "draft",
+            "clarification": "An explicitly requested asset is not supplied by the authored asset/alias map. Requested: FEED-99. Choose an exact authored asset or clarify the intended scope. No case was substituted; prior context is retained.",
+            "machine": "FEED-03",
+            "period": "2026-10-06 day shift",
+            "comparisonPeriod": null,
+            "metric": "oee",
+            "caseFocus": "downtime",
+            "job": "JOB-8303",
+            "part": "NW-A",
+            "revision": "P2",
+            "operation": "OP-030",
+            "lastIntent": "asset-scope-clarify",
+            "chart": "column"
+          },
+          "asOf": "2026-10-06T14:45:00Z",
+          "reviewAsOf": "2026-10-06T14:45:00Z",
+          "investigationId": "action-5",
+          "investigationVersion": null,
+          "view": null,
+          "workflowSnapshot": null,
+          "actor": "manager",
+          "commands": [],
+          "blocked": null,
+          "answer": {
+            "text": "An explicitly requested asset is not supplied by the authored asset/alias map. Requested: FEED-99. Choose an exact authored asset or clarify the intended scope. No case was substituted; prior context is retained.",
+            "evidence": "none",
+            "chart": false,
+            "metric": "oee",
+            "sourceIds": [],
+            "qualification": "The requested asset is unavailable, ambiguous or conflicts with the declared case; no numeric result or case was substituted."
+          },
+          "assetScopeClarificationCapture": {
+            "schemaVersion": 1,
+            "policyVersion": 3,
+            "question": "Show downtime on FEED-99.",
+            "previousContext": {
+              "plant": "Northworks",
+              "line": "Line 03",
+              "shift": "day",
+              "comparisonEntity": null,
+              "activeInvestigationId": "action-5",
+              "investigationStage": "draft",
+              "clarification": null,
+              "machine": "FEED-03",
+              "period": "2026-10-06 day shift",
+              "comparisonPeriod": null,
+              "metric": "oee",
+              "caseFocus": "downtime",
+              "job": "JOB-8303",
+              "part": "NW-A",
+              "revision": "P2",
+              "operation": "OP-030",
+              "lastIntent": "goal",
+              "chart": "column"
+            },
+            "asOf": "2026-10-06T14:45:00Z",
+            "clearedCorrectionReview": false
+          },
+          "semanticEnvelope": {
+            "version": 1,
+            "claimScope": "captured investigation state",
+            "claims": [],
+            "corrections": [],
+            "execution": {
+              "status": "read",
+              "attemptedKinds": [],
+              "committedKinds": [],
+              "reason": "The requested asset is unavailable, ambiguous or conflicts with the declared case; no numeric result or case was substituted."
+            },
+            "action": {
+              "lifecycleState": "UNAVAILABLE",
+              "dueAt": null,
+              "performedRecord": null,
+              "authorizedAt": null,
+              "performedAt": null,
+              "verifiedAt": null,
+              "verified": false,
+              "derivedFrom": "Existing performed proof, eligible measurement, guardrails, safety and accepted result; no manual verification toggle"
+            },
+            "hypothesisLifecycle": [],
+            "confirmedCause": {
+              "status": "unavailable",
+              "reason": "A separate governed causal disposition is not supplied; language cannot promote it."
+            },
+            "synthetic": true,
+            "notGranted": true,
+            "notDispatched": true,
+            "financiallyValidated": false
+          },
+          "providerInterpretationCapture": {
+            "schemaVersion": 1,
+            "conversationId": "conversation-3",
+            "operationId": "v88-asset-duration-1",
+            "expectedVersion": 2,
+            "question": "Show downtime on FEED-99.",
+            "policyRevision": "{\"actor\":\"manager\",\"assetIds\":[\"FEED-01\",\"FEED-02\",\"FEED-03\",\"PRESS-S1\",\"FORM-Q1\",\"MONTH-MACHINE1\",\"MONTH-MACHINE2\",\"TP-A1\",\"TP-A2\",\"TP-A3\",\"TP-A4\",\"TP-A5\",\"TP-A6\",\"TP-A7\",\"TP-A8\"],\"policyRevision\":\"synthetic-role-v1:1:1:manager\",\"synthetic\":true}",
+            "sourceRevision": "[[\"action-2\",1],[\"action-5\",1]]",
+            "provider": "fake",
+            "response": {
+              "interpretation": "",
+              "claims": []
+            },
+            "receipts": [
+              {
+                "id": "canonical:turn",
+                "sourceIds": [],
+                "asOf": "2026-10-06T14:45:00Z",
+                "status": "unavailable",
+                "facts": [
+                  {
+                    "key": "canonical_turn",
+                    "value": "{\"question\":\"Show downtime on FEED-99.\",\"answer\":{\"text\":\"An explicitly requested asset is not supplied by the authored asset/alias map. Requested: FEED-99. Choose an exact authored asset or clarify the intended scope. No case was substituted; prior context is retained.\",\"evidence\":\"none\",\"chart\":false,\"metric\":\"oee\",\"sourceIds\":[],\"qualification\":\"The requested asset is unavailable, ambiguous or conflicts with the declared case; no numeric result or case was substituted.\"},\"context\":{\"plant\":\"Northworks\",\"line\":\"Line 03\",\"shift\":\"day\",\"comparisonEntity\":null,\"activeInvestigationId\":\"action-5\",\"investigationStage\":\"draft\",\"clarification\":\"An explicitly requested asset is not supplied by the authored asset/alias map. Requested: FEED-99. Choose an exact authored asset or clarify the intended scope. No case was substituted; prior context is retained.\",\"machine\":\"FEED-03\",\"period\":\"2026-10-06 day shift\",\"comparisonPeriod\":null,\"metric\":\"oee\",\"caseFocus\":\"downtime\",\"job\":\"JOB-8303\",\"part\":\"NW-A\",\"revision\":\"P2\",\"operation\":\"OP-030\",\"lastIntent\":\"asset-scope-clarify\",\"chart\":\"column\"},\"asOf\":\"2026-10-06T14:45:00Z\",\"blocked\":null,\"commands\":[],\"semantics\":{\"version\":1,\"claimScope\":\"captured investigation state\",\"claims\":[],\"corrections\":[],\"execution\":{\"status\":\"read\",\"attemptedKinds\":[],\"committedKinds\":[],\"reason\":\"The requested asset is unavailable, ambiguous or conflicts with the declared case; no numeric result or case was substituted.\"},\"action\":{\"lifecycleState\":\"UNAVAILABLE\",\"dueAt\":null,\"performedRecord\":null,\"authorizedAt\":null,\"performedAt\":null,\"verifiedAt\":null,\"verified\":false,\"derivedFrom\":\"Existing performed proof, eligible measurement, guardrails, safety and accepted result; no manual verification toggle\"},\"hypothesisLifecycle\":[],\"confirmedCause\":{\"status\":\"unavailable\",\"reason\":\"A separate governed causal disposition is not supplied; language cannot promote it.\"},\"synthetic\":true,\"notGranted\":true,\"notDispatched\":true,\"financiallyValidated\":false}}",
+                    "unit": ""
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "turn-3",
+          "captureId": "conversation-3/turn-3",
+          "dialogueVersion": 1,
+          "scopedDialogue": 1,
+          "interactionVersion": 1,
+          "scopeInterpretationVersion": 3,
+          "assignmentIntentVersion": 2,
+          "intentContextVersion": 4,
+          "clockOperandVersion": 2,
+          "question": "Show as a table.",
+          "routingQuestion": "Show as a table.",
+          "requestContext": {
+            "plant": "Northworks",
+            "line": "Line 03",
+            "shift": "day",
+            "comparisonEntity": null,
+            "activeInvestigationId": "action-5",
+            "investigationStage": "draft",
+            "clarification": "An explicitly requested asset is not supplied by the authored asset/alias map. Requested: FEED-99. Choose an exact authored asset or clarify the intended scope. No case was substituted; prior context is retained.",
+            "machine": "FEED-03",
+            "period": "2026-10-06 day shift",
+            "comparisonPeriod": null,
+            "metric": "oee",
+            "caseFocus": "downtime",
+            "job": "JOB-8303",
+            "part": "NW-A",
+            "revision": "P2",
+            "operation": "OP-030",
+            "lastIntent": "asset-scope-clarify",
+            "chart": "column"
+          },
+          "context": {
+            "plant": "Northworks",
+            "line": "Line 03",
+            "shift": "day",
+            "comparisonEntity": null,
+            "activeInvestigationId": "action-5",
+            "investigationStage": "draft",
+            "clarification": "An explicitly requested asset is not supplied by the authored asset/alias map. Requested: FEED-99. Choose an exact authored asset or clarify the intended scope. No case was substituted; prior context is retained.",
+            "machine": "FEED-03",
+            "period": "2026-10-06 day shift",
+            "comparisonPeriod": null,
+            "metric": "oee",
+            "caseFocus": "downtime",
+            "job": "JOB-8303",
+            "part": "NW-A",
+            "revision": "P2",
+            "operation": "OP-030",
+            "lastIntent": "asset-scope-clarify",
+            "chart": "column"
+          },
+          "asOf": "2026-10-06T14:45:00Z",
+          "reviewAsOf": "2026-10-06T14:45:00Z",
+          "investigationId": "action-5",
+          "investigationVersion": null,
+          "view": null,
+          "workflowSnapshot": null,
+          "actor": "manager",
+          "commands": [],
+          "blocked": null,
+          "answer": {
+            "text": "An explicitly requested asset is not supplied by the authored asset/alias map. Requested: FEED-99. Choose an exact authored asset or clarify the intended scope. No case was substituted; prior context is retained.",
+            "evidence": "none",
+            "chart": false,
+            "metric": "oee",
+            "sourceIds": [],
+            "qualification": "The requested asset is unavailable, ambiguous or conflicts with the declared case; no numeric result or case was substituted."
+          },
+          "presentationCapture": {
+            "schemaVersion": 4,
+            "question": "Show as a table.",
+            "previousTurnId": "turn-2",
+            "context": {
+              "plant": "Northworks",
+              "line": "Line 03",
+              "shift": "day",
+              "comparisonEntity": null,
+              "activeInvestigationId": "action-5",
+              "investigationStage": "draft",
+              "clarification": "An explicitly requested asset is not supplied by the authored asset/alias map. Requested: FEED-99. Choose an exact authored asset or clarify the intended scope. No case was substituted; prior context is retained.",
+              "machine": "FEED-03",
+              "period": "2026-10-06 day shift",
+              "comparisonPeriod": null,
+              "metric": "oee",
+              "caseFocus": "downtime",
+              "job": "JOB-8303",
+              "part": "NW-A",
+              "revision": "P2",
+              "operation": "OP-030",
+              "lastIntent": "asset-scope-clarify",
+              "chart": "column"
+            },
+            "beforeContext": {
+              "plant": "Northworks",
+              "line": "Line 03",
+              "shift": "day",
+              "comparisonEntity": null,
+              "activeInvestigationId": "action-5",
+              "investigationStage": "draft",
+              "clarification": "An explicitly requested asset is not supplied by the authored asset/alias map. Requested: FEED-99. Choose an exact authored asset or clarify the intended scope. No case was substituted; prior context is retained.",
+              "machine": "FEED-03",
+              "period": "2026-10-06 day shift",
+              "comparisonPeriod": null,
+              "metric": "oee",
+              "caseFocus": "downtime",
+              "job": "JOB-8303",
+              "part": "NW-A",
+              "revision": "P2",
+              "operation": "OP-030",
+              "lastIntent": "asset-scope-clarify",
+              "chart": "column"
+            },
+            "previousAnswer": {
+              "text": "An explicitly requested asset is not supplied by the authored asset/alias map. Requested: FEED-99. Choose an exact authored asset or clarify the intended scope. No case was substituted; prior context is retained.",
+              "evidence": "none",
+              "chart": false,
+              "metric": "oee",
+              "sourceIds": [],
+              "qualification": "The requested asset is unavailable, ambiguous or conflicts with the declared case; no numeric result or case was substituted."
+            },
+            "previousView": null,
+            "investigationVersion": null,
+            "asOf": "2026-10-06T14:45:00Z",
+            "currentUnavailable": null
+          },
+          "semanticEnvelope": {
+            "version": 1,
+            "claimScope": "captured investigation state",
+            "claims": [],
+            "corrections": [],
+            "execution": {
+              "status": "read",
+              "attemptedKinds": [],
+              "committedKinds": [],
+              "reason": "The requested asset is unavailable, ambiguous or conflicts with the declared case; no numeric result or case was substituted."
+            },
+            "action": {
+              "lifecycleState": "UNAVAILABLE",
+              "dueAt": null,
+              "performedRecord": null,
+              "authorizedAt": null,
+              "performedAt": null,
+              "verifiedAt": null,
+              "verified": false,
+              "derivedFrom": "Existing performed proof, eligible measurement, guardrails, safety and accepted result; no manual verification toggle"
+            },
+            "hypothesisLifecycle": [],
+            "confirmedCause": {
+              "status": "unavailable",
+              "reason": "A separate governed causal disposition is not supplied; language cannot promote it."
+            },
+            "synthetic": true,
+            "notGranted": true,
+            "notDispatched": true,
+            "financiallyValidated": false
+          },
+          "providerInterpretationCapture": {
+            "schemaVersion": 1,
+            "conversationId": "conversation-3",
+            "operationId": "v88-asset-duration-2",
+            "expectedVersion": 3,
+            "question": "Show as a table.",
+            "policyRevision": "{\"actor\":\"manager\",\"assetIds\":[\"FEED-01\",\"FEED-02\",\"FEED-03\",\"PRESS-S1\",\"FORM-Q1\",\"MONTH-MACHINE1\",\"MONTH-MACHINE2\",\"TP-A1\",\"TP-A2\",\"TP-A3\",\"TP-A4\",\"TP-A5\",\"TP-A6\",\"TP-A7\",\"TP-A8\"],\"policyRevision\":\"synthetic-role-v1:1:1:manager\",\"synthetic\":true}",
+            "sourceRevision": "[[\"action-2\",1],[\"action-5\",1]]",
+            "provider": "fake",
+            "response": {
+              "interpretation": "",
+              "claims": []
+            },
+            "receipts": [
+              {
+                "id": "canonical:turn",
+                "sourceIds": [],
+                "asOf": "2026-10-06T14:45:00Z",
+                "status": "unavailable",
+                "facts": [
+                  {
+                    "key": "canonical_turn",
+                    "value": "{\"question\":\"Show as a table.\",\"answer\":{\"text\":\"An explicitly requested asset is not supplied by the authored asset/alias map. Requested: FEED-99. Choose an exact authored asset or clarify the intended scope. No case was substituted; prior context is retained.\",\"evidence\":\"none\",\"chart\":false,\"metric\":\"oee\",\"sourceIds\":[],\"qualification\":\"The requested asset is unavailable, ambiguous or conflicts with the declared case; no numeric result or case was substituted.\"},\"context\":{\"plant\":\"Northworks\",\"line\":\"Line 03\",\"shift\":\"day\",\"comparisonEntity\":null,\"activeInvestigationId\":\"action-5\",\"investigationStage\":\"draft\",\"clarification\":\"An explicitly requested asset is not supplied by the authored asset/alias map. Requested: FEED-99. Choose an exact authored asset or clarify the intended scope. No case was substituted; prior context is retained.\",\"machine\":\"FEED-03\",\"period\":\"2026-10-06 day shift\",\"comparisonPeriod\":null,\"metric\":\"oee\",\"caseFocus\":\"downtime\",\"job\":\"JOB-8303\",\"part\":\"NW-A\",\"revision\":\"P2\",\"operation\":\"OP-030\",\"lastIntent\":\"asset-scope-clarify\",\"chart\":\"column\"},\"asOf\":\"2026-10-06T14:45:00Z\",\"blocked\":null,\"commands\":[],\"semantics\":{\"version\":1,\"claimScope\":\"captured investigation state\",\"claims\":[],\"corrections\":[],\"execution\":{\"status\":\"read\",\"attemptedKinds\":[],\"committedKinds\":[],\"reason\":\"The requested asset is unavailable, ambiguous or conflicts with the declared case; no numeric result or case was substituted.\"},\"action\":{\"lifecycleState\":\"UNAVAILABLE\",\"dueAt\":null,\"performedRecord\":null,\"authorizedAt\":null,\"performedAt\":null,\"verifiedAt\":null,\"verified\":false,\"derivedFrom\":\"Existing performed proof, eligible measurement, guardrails, safety and accepted result; no manual verification toggle\"},\"hypothesisLifecycle\":[],\"confirmedCause\":{\"status\":\"unavailable\",\"reason\":\"A separate governed causal disposition is not supplied; language cannot promote it.\"},\"synthetic\":true,\"notGranted\":true,\"notDispatched\":true,\"financiallyValidated\":false}}",
+                    "unit": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "collectorScopePaused": false
+    }
+  },
+  "version": 4,
+  "createdAt": "2026-10-06T14:45:00Z",
+  "updatedAt": "2026-10-06T14:45:00Z",
+  "ownerSessionId": "manufacturing-demo",
+  "assetIds": [
+    "MONTH-MACHINE1",
+    "MONTH-MACHINE2",
+    "FEED-03"
+  ],
+  "synthetic": true,
+  "notDispatched": true,
+  "notGranted": true
+}

@@ -1,0 +1,449 @@
+/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */
+@layer properties;
+.retained-console, .retained-console {
+  --font-mono: "IBM Plex Mono",ui-monospace,monospace;
+  --spacing: 0.25rem;
+  --container-lg: 32rem;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: calc(1 / 0.75);
+  --text-sm: 0.875rem;
+  --text-sm--line-height: calc(1.25 / 0.875);
+  --text-lg: 1.125rem;
+  --text-lg--line-height: calc(1.75 / 1.125);
+  --text-xl: 1.25rem;
+  --text-xl--line-height: calc(1.75 / 1.25);
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: calc(2 / 1.5);
+  --text-4xl: 2.25rem;
+  --text-4xl--line-height: calc(2.5 / 2.25);
+  --font-weight-semibold: 600;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --default-transition-duration: 150ms;
+  --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --color-bg: #0b1220;
+  --color-surface: #131d31;
+  --color-surface-2: #1a2740;
+  --color-line: #24344f;
+  --color-fg: #e7eef8;
+  --color-muted: #93a4be;
+  --color-primary: #2bb6a3;
+  --color-primary-fg: #06221c;
+  --color-amber: #e0a24a;
+  --color-info: #6c9cff;
+}
+.retained-console .visible {
+  visibility: visible;
+}
+.retained-console .fixed {
+  position: fixed;
+}
+.retained-console .sticky {
+  position: sticky;
+}
+.retained-console .inset-0 {
+  inset: 0px;
+}
+.retained-console .top-0 {
+  top: 0px;
+}
+.retained-console .z-30 {
+  z-index: 30;
+}
+.retained-console .z-40 {
+  z-index: 40;
+}
+.retained-console .z-50 {
+  z-index: 50;
+}
+.retained-console .container {
+  width: 100%;
+  @media (width >= 40rem) {
+    max-width: 40rem;
+  }
+  @media (width >= 48rem) {
+    max-width: 48rem;
+  }
+  @media (width >= 64rem) {
+    max-width: 64rem;
+  }
+  @media (width >= 80rem) {
+    max-width: 80rem;
+  }
+  @media (width >= 96rem) {
+    max-width: 96rem;
+  }
+}
+.retained-console .mt-1 {
+  margin-top: var(--spacing);
+}
+.retained-console .mt-2 {
+  margin-top: calc(var(--spacing) * 2);
+}
+.retained-console .mt-3 {
+  margin-top: calc(var(--spacing) * 3);
+}
+.retained-console .mb-2 {
+  margin-bottom: calc(var(--spacing) * 2);
+}
+.retained-console .ml-2 {
+  margin-left: calc(var(--spacing) * 2);
+}
+.retained-console .block {
+  display: block;
+}
+.retained-console .flex {
+  display: flex;
+}
+.retained-console .grid {
+  display: grid;
+}
+.retained-console .hidden {
+  display: none;
+}
+.retained-console .table {
+  display: table;
+}
+.retained-console .max-h-48 {
+  max-height: calc(var(--spacing) * 48);
+}
+.retained-console .max-h-64 {
+  max-height: calc(var(--spacing) * 64);
+}
+.retained-console .min-h-11 {
+  min-height: calc(var(--spacing) * 11);
+}
+.retained-console .min-h-20 {
+  min-height: calc(var(--spacing) * 20);
+}
+.retained-console .min-h-24 {
+  min-height: calc(var(--spacing) * 24);
+}
+.retained-console .min-h-32 {
+  min-height: calc(var(--spacing) * 32);
+}
+.retained-console .min-h-screen {
+  min-height: 100vh;
+}
+.retained-console .w-full {
+  width: 100%;
+}
+.retained-console .max-w-lg {
+  max-width: var(--container-lg);
+}
+.retained-console .min-w-0 {
+  min-width: 0px;
+}
+.retained-console .flex-1 {
+  flex: 1;
+}
+.retained-console .shrink-0 {
+  flex-shrink: 0;
+}
+.retained-console .flex-col {
+  flex-direction: column;
+}
+.retained-console .flex-wrap {
+  flex-wrap: wrap;
+}
+.retained-console .content-center {
+  align-content: center;
+}
+.retained-console .items-center {
+  align-items: center;
+}
+.retained-console .items-end {
+  align-items: flex-end;
+}
+.retained-console .items-start {
+  align-items: flex-start;
+}
+.retained-console .justify-between {
+  justify-content: space-between;
+}
+.retained-console .justify-center {
+  justify-content: center;
+}
+.retained-console .gap-1 {
+  gap: var(--spacing);
+}
+.retained-console .gap-2 {
+  gap: calc(var(--spacing) * 2);
+}
+.retained-console .gap-3 {
+  gap: calc(var(--spacing) * 3);
+}
+.retained-console .gap-4 {
+  gap: calc(var(--spacing) * 4);
+}
+.retained-console .overflow-auto {
+  overflow: auto;
+}
+.retained-console .overflow-x-auto {
+  overflow-x: auto;
+}
+.retained-console .overflow-x-hidden {
+  overflow-x: hidden;
+}
+.retained-console .rounded-full {
+  border-radius: calc(infinity * 1px);
+}
+.retained-console .rounded-lg {
+  border-radius: var(--radius-lg);
+}
+.retained-console .rounded-xl {
+  border-radius: var(--radius-xl);
+}
+.retained-console .border {
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+}
+.retained-console .border-t {
+  border-top-style: var(--tw-border-style);
+  border-top-width: 1px;
+}
+.retained-console .border-b {
+  border-bottom-style: var(--tw-border-style);
+  border-bottom-width: 1px;
+}
+.retained-console .border-amber {
+  border-color: var(--color-amber);
+}
+.retained-console .border-line {
+  border-color: var(--color-line);
+}
+.retained-console .bg-bg {
+  background-color: var(--color-bg);
+}
+.retained-console .bg-bg\/80 {
+  background-color: color-mix(in srgb, #0b1220 80%, transparent);
+  @supports (color: color-mix(in lab, red, red)) {
+    background-color: color-mix(in oklab, var(--color-bg) 80%, transparent);
+  }
+}
+.retained-console .bg-primary {
+  background-color: var(--color-primary);
+}
+.retained-console .bg-surface {
+  background-color: var(--color-surface);
+}
+.retained-console .bg-surface-2 {
+  background-color: var(--color-surface-2);
+}
+.retained-console .p-2 {
+  padding: calc(var(--spacing) * 2);
+}
+.retained-console .p-3 {
+  padding: calc(var(--spacing) * 3);
+}
+.retained-console .p-4 {
+  padding: calc(var(--spacing) * 4);
+}
+.retained-console .p-6 {
+  padding: calc(var(--spacing) * 6);
+}
+.retained-console .px-2 {
+  padding-inline: calc(var(--spacing) * 2);
+}
+.retained-console .px-3 {
+  padding-inline: calc(var(--spacing) * 3);
+}
+.retained-console .px-4 {
+  padding-inline: calc(var(--spacing) * 4);
+}
+.retained-console .py-1 {
+  padding-block: var(--spacing);
+}
+.retained-console .py-2 {
+  padding-block: calc(var(--spacing) * 2);
+}
+.retained-console .py-6 {
+  padding-block: calc(var(--spacing) * 6);
+}
+.retained-console .pb-2 {
+  padding-bottom: calc(var(--spacing) * 2);
+}
+.retained-console .text-left {
+  text-align: left;
+}
+.retained-console .font-mono {
+  font-family: var(--font-mono);
+}
+.retained-console .text-2xl {
+  font-size: var(--text-2xl);
+  line-height: var(--tw-leading, var(--text-2xl--line-height));
+}
+.retained-console .text-4xl {
+  font-size: var(--text-4xl);
+  line-height: var(--tw-leading, var(--text-4xl--line-height));
+}
+.retained-console .text-lg {
+  font-size: var(--text-lg);
+  line-height: var(--tw-leading, var(--text-lg--line-height));
+}
+.retained-console .text-sm {
+  font-size: var(--text-sm);
+  line-height: var(--tw-leading, var(--text-sm--line-height));
+}
+.retained-console .text-xl {
+  font-size: var(--text-xl);
+  line-height: var(--tw-leading, var(--text-xl--line-height));
+}
+.retained-console .text-xs {
+  font-size: var(--text-xs);
+  line-height: var(--tw-leading, var(--text-xs--line-height));
+}
+.retained-console .font-semibold {
+  --tw-font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold);
+}
+.retained-console .text-amber {
+  color: var(--color-amber);
+}
+.retained-console .text-fg {
+  color: var(--color-fg);
+}
+.retained-console .text-info {
+  color: var(--color-info);
+}
+.retained-console .text-muted {
+  color: var(--color-muted);
+}
+.retained-console .text-primary {
+  color: var(--color-primary);
+}
+.retained-console .text-primary-fg {
+  color: var(--color-primary-fg);
+}
+.retained-console .uppercase {
+  text-transform: uppercase;
+}
+.retained-console .filter {
+  filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,);
+}
+.retained-console .transition {
+  transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+}
+@media (width >= 48rem) {
+  .retained-console .md\:block {
+    display: block;
+  }
+  .retained-console .md\:grid {
+    display: grid;
+  }
+  .retained-console .md\:hidden {
+    display: none;
+  }
+  .retained-console .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .retained-console .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .retained-console .md\:grid-cols-\[220px_1fr\] {
+    grid-template-columns: 220px 1fr;
+  }
+  .retained-console .md\:flex-row {
+    flex-direction: row;
+  }
+  .retained-console .md\:items-center {
+    align-items: center;
+  }
+  .retained-console .md\:border-r {
+    border-right-style: var(--tw-border-style);
+    border-right-width: 1px;
+  }
+  .retained-console .md\:p-6 {
+    padding: calc(var(--spacing) * 6);
+  }
+}
+@media (width >= 64rem) {
+  .retained-console .lg\:grid-cols-\[280px_1fr\] {
+    grid-template-columns: 280px 1fr;
+  }
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-blur {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-brightness {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-contrast {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-grayscale {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-hue-rotate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-invert {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-opacity {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-saturate {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-sepia {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-drop-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-drop-shadow-size {
+  syntax: "*";
+  inherits: false;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    .retained-console *, .retained-console ::before, .retained-console ::after, .retained-console ::backdrop {
+      --tw-border-style: solid;
+      --tw-font-weight: initial;
+      --tw-blur: initial;
+      --tw-brightness: initial;
+      --tw-contrast: initial;
+      --tw-grayscale: initial;
+      --tw-hue-rotate: initial;
+      --tw-invert: initial;
+      --tw-opacity: initial;
+      --tw-saturate: initial;
+      --tw-sepia: initial;
+      --tw-drop-shadow: initial;
+      --tw-drop-shadow-color: initial;
+      --tw-drop-shadow-alpha: 100%;
+      --tw-drop-shadow-size: initial;
+    }
+  }
+}

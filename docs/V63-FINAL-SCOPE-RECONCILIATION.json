@@ -1,0 +1,1113 @@
+{
+  "scope": "Read-only final-scope reconciliation; no source/runtime changes",
+  "frozen_candidate": {
+    "zip_sha256": "3441a5f432d53f8ecc2ec3303c11acdf815aa2f2d11d7c2600a7b7ecc66a2013",
+    "source_tree_sha256": "fd5f624507a0494611f7ce2599b1d803e7abb9f76b5e2872d24b81adb7255a18",
+    "build_tree_sha256": "7be43a077c2fb1bdcad2c4915190ed093bc104f69e0f263c864cb3a2b72024f6"
+  },
+  "master_documents": [
+    {
+      "path": "/home/pat/Documents/Codex/2026-10-08/task-4/master-requirements/Pasted text(20261011-060550).txt",
+      "sha256": "3a71c02f0bac352da8da2f4b8b17ebe1243e329f30e7d444ff254a8bb3088049"
+    },
+    {
+      "path": "/home/pat/Documents/Codex/2026-10-08/task-4/master-requirements/Pasted text(20261011-060553).txt",
+      "sha256": "e4a00c2bd5f3b94c79d12f2409bf4bdbb07f863dcfee253f8e5fc7f687c93aaa"
+    },
+    {
+      "path": "/home/pat/Documents/Codex/2026-10-08/task-4/master-requirements/Pasted text(20261011-062241).txt",
+      "sha256": "915cff63e0844c8d964100b75dbc0ec50e1b177ba91f0f8d2e8a99835aa256a3"
+    }
+  ],
+  "matrix": {
+    "path": "/home/pat/Documents/Codex/2026-10-11/task/MANUFACTURING-WORKFLOW-ACCEPTANCE-MATRIX.json",
+    "sha256": "7b5d739d03c928ba8e2daa6e1a9db0bfc058cacd7ea6de7d30ecde82b4cdc4e4",
+    "rows": 55,
+    "statuses_unchanged": true
+  },
+  "independent_evidence": {
+    "V63_math": "Parent reports2356 bounded checks PASS,82original inputs and628members verified; report metric-oracle/v63-manufacturing-independent/REPORT.md not accessible at searched path",
+    "V63_native": "V63 report + ordinary lifecycle addendum: comparisonmanual681measurement/fictionalacceptance/reloadPASS; Quality/Speed conversationalaction\u2192verification\u2192sustain\u2192recurrencePASS; QualityreloadPASS. Downtimeaccepted andsustainrecorded; finalrecurrence/reload andSpeedreload interrupted bybrowserconnection, notpolicydenial. No wholeproduct/unaidedmatrixPASS. ResumedDowntimeDidithold/Nov3recurrence/reloadPASS(D17\u2013D23), supersedinginterruption. Separatecomparisonresult1acceptedretained; supervisorlegitimatelymeasuredresult2unaccepted, currentstatusmeasured. Do notdescribecurrentcomparisonasaccepted.",
+    "V63_persisted_comparison": "Fresh independent visiblemanualcomparisonaccepted681gain persists afterreload. Later680correction/stalefingerprint andfullnegative variants untested."
+  },
+  "ordinary_packages": [
+    {
+      "id": "O1",
+      "name": "Complete the declared chat-driven journeys and reviewed writes",
+      "rows": [
+        1,
+        12,
+        18,
+        26,
+        27,
+        28,
+        40,
+        41,
+        43,
+        48,
+        49,
+        52
+      ],
+      "finding": "Current source correction/quote route responses direct the user to forms; comparison is a supporting UI with no conversation command/cursor. The separate experiment is not the original three-case continuous chat lifecycle. Exact refresh grammar is available but broad ordinary correction/raw-review/comparison dialogue is not connected.",
+      "action": "Reuse the existing original three-case workflow services; do not rebuild them. Use one versioned conversation cursor with optional separately identified comparison reference. Route the masters\u2019 10-turn metric and 18-turn investigation chains for all3 cases; collect only missing dimensions/evidence, propose exact reviewed source/unit/claim drafts and commit only after explicit confirmation. Open/read/advance/measure/accept the existing separate comparison through the same typed services. Keep independent original case/cohort identities and missing prerequisites visible. Add bounded paraphrase and mixed-dimension tests, not arbitrary NLP or new scenarios.",
+      "finish": "Mounted complete journeys from fresh Ask, ordinary master phrasing, source correction/raw review, comparison measurement/acceptance and reload; no manual API injection/hidden fixture manipulation. Independent native acceptance separately."
+    },
+    {
+      "id": "O2",
+      "name": "Correct sustain target versus recurrence and observation health",
+      "rows": [
+        14,
+        15,
+        26,
+        27,
+        28,
+        40,
+        49
+      ],
+      "finding": "workflow.ts outside() uses f.sustain.threshold both for recurrence and sustained acceptance, and sustained checks the first required observations. cases.ts supplies downtime45 although the primary target is30; speed50 vs target35; quality92 vs target95. Thus off-target observations between target and alarm can be treated as sustained. Older first5 passing observations can also leave sustained true after a newer single regression. Normal sustain observation shape lacks separate source/version/coverage/observer-health/known-at fields.",
+      "action": "Introduce an additive/versioned sustain policy: primary endpoint target drives target attainment; recurrence alarm remains separate (downtime>45 for2 eligible consecutive observations). Define current evaluated window, gaps/freshness/observer interruption, exposure and known-at eligibility. Preserve original82 inputs and historical policy/captures. Reject/qualify insufficient, stale, interrupted or regressed windows. Reopen preserves prior cycle and starts an unmeasured new cycle.",
+      "finish": "Borderlines31/45/46 downtime,36/50/51 speed,94/92/91 quality; isolated regression vs consecutive alarm; missing/stale/coverage-gap observations; future cutoff; reload; original successful fixture math unchanged. No newcycle inventedwork."
+    },
+    {
+      "id": "O3",
+      "name": "Finish controlled claim/test review as one versioned evidence trail",
+      "rows": [
+        6,
+        7,
+        8,
+        18,
+        44,
+        45,
+        52
+      ],
+      "finding": "Reviewed quote contract permits OBSERVATION/HYPOTHESIS/RECOMMENDATION, but SourceEditor submits OBSERVATION only; no reviewed contradiction/negation link operation is exposed. extractionContract describes linked contradiction output but unrestricted extraction is explicitly unavailable. workflow record-test still jumps test_planned directly to fixture disposition while record-test-evidence/dispose-tested-hypothesis has the required TESTED split.",
+      "action": "Expose bounded exact-source reviewed claim kinds and support/contradiction/negation/supersession links, including controlled-vs-note distinction, as typed service drafts driven by chat. Route new natural test-result recording through TESTED then explicit source-bound disposition; preserve old record-test replay behind its historical version. Clarify multiple candidate tests rather than pick one. Keep unsupported causal confirmation a precise refusal unless qualifying reviewed same-scope causal proof actually exists.",
+      "finish": "One applicable quote plus wrong/superseded/future source negatives, reviewed conflicting note/claim links, exact TESTED\u2192SUPPORTED/REFUTED/INCONCLUSIVE with reload and immutable versions. No LLM extraction or new causal-proof fixture needed."
+    },
+    {
+      "id": "O4",
+      "name": "Connect revised review and source versions to subsequent investigation services",
+      "rows": [
+        2,
+        3,
+        4,
+        5,
+        12,
+        18,
+        26,
+        27,
+        28,
+        29,
+        40,
+        48,
+        51
+      ],
+      "finding": "V63 combined audit produces correct captured gaps/links, but sets lastIntent audit-refreshed; router top-issue logic calls operatingReview(), and service audit-discovery is forced source-stale after eligible correction. Captured revised rankings are not the next investigation input. Any eligible source revision also blocks existing workflow commands; raw reconciliation does not bind a refreshed workflow source version. A separate comparison does not repair this original-case dependency path.",
+      "action": "Store/reference the exact refreshed audit ID/hash/cutoff/source versions and use that for next off-target/top-issue/open-exact-case action. Bind updated current read models to reviewed source versions without rewriting historical results. Use explicit dependency mapping to distinguish current contributors from unaffected fixed comparison members; permit unaffected/read stages and refuse only unresolved dependent transitions. Any revised verification uses its own matching plan/work/source membership and result, never blanket same-job propagation.",
+      "finish": "All3 corrections gaps151/115/59, correct governed metric ranking and next exact case, sourcev2 renewed raw prerequisites, before-known exclusion, unlinked cohort refusal, separate comparison success and historical capture immutability. No arbitrary dependency framework."
+    },
+    {
+      "id": "O5",
+      "name": "Finish production-shaped typed mock contracts and remove UI fixture dependence",
+      "rows": [
+        19,
+        20,
+        24,
+        40,
+        50,
+        51,
+        52,
+        53
+      ],
+      "finding": "Command in model.ts is kind:string plus arbitrary unknown fields; clientPort comparison responses are any and command payloads Record<string,unknown>; ComparisonState results/history commands are any. Runtime checks exist, but public compile-time discriminants/read models are incomplete. manufacturingContract.ts still describes V62 dependencies and omits V63 comparison/audit/policy2. ComparisonPanel imports fixture data directly. Monthly presenter computes components from raw rows.",
+      "action": "Define discriminated command/request/response/read-model types for existing route families, comparison/audit records and resource subtypes. Update advertised contract/capability/version/timeout/idempotency details. Supply UI actions, snapshot/source metadata and derived metrics through service read models; remove ComparisonPanel fixture import and calculations from presenter. Preserve injected in-process transport and separate existing pilot wire adapter; do not invent Tom endpoints or start an HTTP manufacturing backend.",
+      "finish": "Unknown/extra/missing fields, authorization scope, timeout/unknown commit, storage failure, stale version and exact retry have typed/runtime tests; source architecture scan proves no UI fixture writes/import-dependent behavior or presenter-owned truth. ActualTom conformance remains external."
+    },
+    {
+      "id": "O6",
+      "name": "Fresh entry and user-readable next-step responses",
+      "rows": [
+        1,
+        9,
+        17,
+        20,
+        21,
+        22,
+        23,
+        40,
+        41,
+        42,
+        43
+      ],
+      "finding": "V62 native review found no New before first investigation; sampled later New/type/Run passed. V63 supporting source/comparison forms expose exact recipe controls, but native first-entry/complete form/keyboard matrix is unaccepted. Replies often describe service/record mechanics rather than current manufacturing meaning and missing next evidence. Full three-case paraphrase/persistence coherence remains unestablished. V63 native now confirms old save notice705 leaks into new FEED03 context while loading; downtime submission remains an unresolved tool/interaction observation, not a confirmed app defect. Reproduce and isolate before classifying.",
+      "action": "Make New usable from empty Ask with isolated draft identity and preserve transition race protection. Keep exact-source review details in supporting disclosures, composer and decisive statuses reachable at desktop/390/320, and sensible empty/error/return-focus behavior. Compose answer-first scope-qualified manufacturing explanations plus specific next requirement/owner/action/result; do not hide legitimate blockers or imply unavailable mechanics.",
+      "finish": "Fresh\u2192New\u2192type\u2192Run, rapidNew/history/reload, missing/empty scope restoration, keyboard/dialog/menu at1366/390/320 and reviewed draft write failures. Natural readings of all declared chain replies meet master criteria. Native re-test required."
+    }
+  ],
+  "external_requirements": [
+    {
+      "id": "E1",
+      "rows": [
+        54,
+        55
+      ],
+      "boundary": "Real policy/authorization/security/provider execution",
+      "next": "Ordinary fictional business lifecycle testing is authorized through normal UI/service prerequisites in owned namespaces; it was conservatively excluded previously, not tool-denied. Do not bypass disabled prerequisites. Real R5/Dot policy/disclosure/gateway review remains separately declined: no retry/reroute, provider/credentials/spending/production dispatch or security changes."
+    },
+    {
+      "id": "E2",
+      "rows": [
+        43,
+        51,
+        52,
+        55
+      ],
+      "boundary": "Actual OpenAI, Tom authenticated API, GLiDE and real systems/authentication",
+      "next": "Tom supplies actual OpenAPI/schema/baseURL, identity/tenant/capability/entity/version mappings, read/action/document/error/timeout/idempotency contracts; configure server-held OpenAI key only through authorized server flow and held controls. No Ollama. Static HTTP file server is not a running manufacturing HTTP backend; reference router is not actual GLiDE."
+    },
+    {
+      "id": "E3",
+      "rows": [
+        24,
+        25,
+        53,
+        55
+      ],
+      "boundary": "Supported Library delivery and protected real/native actions",
+      "next": "Supported prepare_uploads must become available for Library upload. No workaround/retry. Real dispatch, external notifications, financial realization, native print/chooser/genuine IME or sign-in only when supported and separately permitted; excluded action is not an ordinary implementation excuse."
+    }
+  ],
+  "independent_acceptance": [
+    {
+      "id": "I1",
+      "rows": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53
+      ],
+      "action": "Independent full ordinary native stage/matrix review after final source freeze, including all3 unaided journeys, both master chains, negative paths, desktop1366x768/mobile390x844/320x844, keyboard, evidence, history, saved answers/boards/collections, layouts/sorting/export and recovery. V63 ongoing review is not assumed passed."
+    },
+    {
+      "id": "I2",
+      "rows": [
+        2,
+        3,
+        4,
+        5,
+        12,
+        15,
+        16,
+        18,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        48,
+        49,
+        50,
+        53
+      ],
+      "action": "Retain original351 criterion identities and original register statuses; independently re-test affected criteria and all newly changed source/math branches on final candidate. V63 deterministic2356 checks are bounded fresh evidence, not complete matrix approval."
+    }
+  ],
+  "row_reconciliation": [
+    {
+      "id": "MIW-01",
+      "requirement": "Deterministic complete journey",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O1",
+        "O6"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-02",
+      "requirement": "Goal versus actual",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O4"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-03",
+      "requirement": "Loss reconciliation",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O4"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-04",
+      "requirement": "Overlap and double counting",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O4"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-05",
+      "requirement": "Scoped contributors",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O4"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-06",
+      "requirement": "Effective documents",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O3"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-07",
+      "requirement": "Traceable events",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O3"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-08",
+      "requirement": "Hypothesis versus cause",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O3"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-09",
+      "requirement": "Action plan",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O6"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-10",
+      "requirement": "Rejected or failed action",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-11",
+      "requirement": "Performed-work proof",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-12",
+      "requirement": "Eligible before/after",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O1",
+        "O4"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks.",
+      "fresh_bounded_assessment": {
+        "status": "PARTIAL_row_with_demonstrated_PASS_segments",
+        "evidence": "/home/pat/Documents/Codex/2026-10-11/task/V63-ORDINARY-LIFECYCLE-ADDENDUM.md",
+        "scope": "Separate comparison nativebefore/after7919\u21928600good,85\u219295.909%FPY,gain681; own20sources/prerequisites; boundedmanualPASS.",
+        "whole_row_status_not_regraded": true
+      }
+    },
+    {
+      "id": "MIW-13",
+      "requirement": "No improvement / worse outcome",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-14",
+      "requirement": "Sustainment",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O2"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks.",
+      "fresh_bounded_assessment": {
+        "status": "PARTIAL_row_with_demonstrated_PASS_segments",
+        "evidence": "/home/pat/Documents/Codex/2026-10-11/task/V63-ORDINARY-LIFECYCLE-ADDENDUM.md",
+        "scope": "Quality/Speed5eligibleobservations\u2192recurrence nativePASS, QualityreloadPASS; DowntimerecordsustainPASSbutfinalread/recurrence/reloadinterrupted. Doesnotverifyprimary-vs-alarmborderlinepolicy; O2defect remains.",
+        "whole_row_status_not_regraded": true,
+        "latest_addendum": "Downtimesustain/recurrence/reloadnowPASS. Comparisoncurrentresult2measured/unaccepted; result1acceptancehistoricalpreserved. Speedreloadstillunrepeated."
+      }
+    },
+    {
+      "id": "MIW-15",
+      "requirement": "Missing/stale target or input",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O2"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-16",
+      "requirement": "Zero versus unavailable",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-17",
+      "requirement": "Invalid / empty scope",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O6"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-18",
+      "requirement": "Late evidence and reproducibility",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O1",
+        "O3",
+        "O4"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks.",
+      "fresh_bounded_assessment": {
+        "status": "PARTIAL_row_with_demonstrated_PASS_segments",
+        "evidence": "/home/pat/Documents/Codex/2026-10-11/task/V63-ORDINARY-LIFECYCLE-ADDENDUM.md",
+        "scope": "Currentraw/cutoff/auditnativePASS; separatecomparisonbaseline10correctionPASS; laterpostcorrection680/stalefingerprintNOT_RUNnative.",
+        "whole_row_status_not_regraded": true
+      }
+    },
+    {
+      "id": "MIW-19",
+      "requirement": "Persistence and working copy",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O5"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-20",
+      "requirement": "Errors and recovery",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O5",
+        "O6"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-21",
+      "requirement": "Desktop comprehension",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O6"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-22",
+      "requirement": "Mobile 390 / 320",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O6"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-23",
+      "requirement": "Keyboard",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O6"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-24",
+      "requirement": "Truthful summary/export",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O5"
+      ],
+      "external_or_held": [
+        "E3"
+      ],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-25",
+      "requirement": "Safe boundary",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [],
+      "external_or_held": [
+        "E3"
+      ],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-26",
+      "requirement": "CASE A downtime unaided journey",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O1",
+        "O2",
+        "O4"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks.",
+      "fresh_bounded_assessment": {
+        "status": "PARTIAL_row_with_demonstrated_PASS_segments",
+        "evidence": "/home/pat/Documents/Codex/2026-10-11/task/V63-ORDINARY-LIFECYCLE-ADDENDUM.md",
+        "scope": "Downtimeassignment/recommendation/request/fictionalauthorization/work/measurement/safety/acceptance andrecordsustainPASS; recurrence/reloadincomplete afterbrowsercontrolinterruption; first-entrysubmitunresolved.",
+        "whole_row_status_not_regraded": true,
+        "latest_addendum": "Downtimesustain/recurrence/reloadnowPASS. Comparisoncurrentresult2measured/unaccepted; result1acceptancehistoricalpreserved. Speedreloadstillunrepeated."
+      }
+    },
+    {
+      "id": "MIW-27",
+      "requirement": "CASE B speed unaided journey",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O1",
+        "O2",
+        "O4"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks.",
+      "fresh_bounded_assessment": {
+        "status": "PARTIAL_row_with_demonstrated_PASS_segments",
+        "evidence": "/home/pat/Documents/Codex/2026-10-11/task/V63-ORDINARY-LIFECYCLE-ADDENDUM.md",
+        "scope": "Speedconversationwork/measurement/safety/acceptance/sustain/recurrencePASS; finalreloadNOT_RUN; recipeassistednotfullunaided.",
+        "whole_row_status_not_regraded": true
+      }
+    },
+    {
+      "id": "MIW-28",
+      "requirement": "CASE C quality unaided journey",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O1",
+        "O2",
+        "O4"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks.",
+      "fresh_bounded_assessment": {
+        "status": "PARTIAL_row_with_demonstrated_PASS_segments",
+        "evidence": "/home/pat/Documents/Codex/2026-10-11/task/V63-ORDINARY-LIFECYCLE-ADDENDUM.md",
+        "scope": "Qualityconversationwork/measurement/safety/acceptance/sustain/recurrence/reloadPASS; recipeassistednotfullunaided, corrections/comparisonmanualnotchatparity.",
+        "whole_row_status_not_regraded": true
+      }
+    },
+    {
+      "id": "MIW-29",
+      "requirement": "Plant Head operating review front door",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O4"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-30",
+      "requirement": "Existing chat chain: What was OEE in January?",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-31",
+      "requirement": "Existing chat chain: And March?",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-32",
+      "requirement": "Existing chat chain: What about Machine 2?",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-33",
+      "requirement": "Existing chat chain: No, I meant Machine 1.",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-34",
+      "requirement": "Existing chat chain: Why?",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-35",
+      "requirement": "Existing chat chain: Show me.",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-36",
+      "requirement": "Existing chat chain: Compare that to last month.",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-37",
+      "requirement": "Existing chat chain: Go back to the first machine.",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-38",
+      "requirement": "Existing chat chain: Investigate the root cause.",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-39",
+      "requirement": "Existing chat chain: What was FPY?",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-40",
+      "requirement": "Full required investigation chat chain",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O1",
+        "O2",
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks.",
+      "fresh_bounded_assessment": {
+        "status": "PARTIAL_row_with_demonstrated_PASS_segments",
+        "evidence": "/home/pat/Documents/Codex/2026-10-11/task/V63-ORDINARY-LIFECYCLE-ADDENDUM.md",
+        "scope": "Recipe-assisted originalcase conversationalprogression demonstratesboundedtransitions;18-turnnaturalvariants/fullunaidedlanguage remainspartial.",
+        "whole_row_status_not_regraded": true
+      }
+    },
+    {
+      "id": "MIW-41",
+      "requirement": "Free-form ambiguity and dimension retention",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O1",
+        "O6"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-42",
+      "requirement": "Conversation response quality",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O6"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-43",
+      "requirement": "Conversation/history lifecycle",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O1",
+        "O6"
+      ],
+      "external_or_held": [
+        "E2"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks.",
+      "fresh_bounded_assessment": {
+        "status": "PARTIAL_row_with_demonstrated_PASS_segments",
+        "evidence": "/home/pat/Documents/Codex/2026-10-11/task/V63-ORDINARY-LIFECYCLE-ADDENDUM.md",
+        "scope": "Comparisonacceptedreload andQualityrecurrencereloadPASS;Speed/DowntimefinalreloadNOT_RUN.",
+        "whole_row_status_not_regraded": true,
+        "latest_addendum": "Downtimesustain/recurrence/reloadnowPASS. Comparisoncurrentresult2measured/unaccepted; result1acceptancehistoricalpreserved. Speedreloadstillunrepeated."
+      }
+    },
+    {
+      "id": "MIW-44",
+      "requirement": "Controlled evidence, supersession and contradictions",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O3"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-45",
+      "requirement": "Claim and hypothesis state machine",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O3"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-46",
+      "requirement": "Assignment acceptance and owner change",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-47",
+      "requirement": "Action state and performed-work evidence",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks.",
+      "fresh_bounded_assessment": {
+        "status": "PARTIAL_row_with_demonstrated_PASS_segments",
+        "evidence": "/home/pat/Documents/Codex/2026-10-11/task/V63-ORDINARY-LIFECYCLE-ADDENDUM.md",
+        "scope": "All3 originalcase distinctrequest/fictionalauthorization/performedproof/verification/safetyacceptance nativePASS; missingproof/safetyrefusals observed; realauthoritynotgranted.",
+        "whole_row_status_not_regraded": true
+      }
+    },
+    {
+      "id": "MIW-48",
+      "requirement": "Verification plan immutability and guardrails",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O1",
+        "O4"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks.",
+      "fresh_bounded_assessment": {
+        "status": "PARTIAL_row_with_demonstrated_PASS_segments",
+        "evidence": "/home/pat/Documents/Codex/2026-10-11/task/V63-ORDINARY-LIFECYCLE-ADDENDUM.md",
+        "scope": "Separatecomparisonprospectiveplanfixedbeforework, ownknownwork/safety/measurement/acceptance manualPASS; changedpostversionstalingnegativeunrun native.",
+        "whole_row_status_not_regraded": true
+      }
+    },
+    {
+      "id": "MIW-49",
+      "requirement": "Explicit simulation clock and result acceptance",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O1",
+        "O2"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks.",
+      "fresh_bounded_assessment": {
+        "status": "PARTIAL_row_with_demonstrated_PASS_segments",
+        "evidence": "/home/pat/Documents/Codex/2026-10-11/task/V63-ORDINARY-LIFECYCLE-ADDENDUM.md",
+        "scope": "Explicitsnapshotrevealsseparatework/postcohort; measuredrecordacceptedfalse immutable + separateacceptancearray/sourcefingerprint accepted nativePASS/reload. No cause/financialproof.",
+        "whole_row_status_not_regraded": true,
+        "latest_addendum": "Downtimesustain/recurrence/reloadnowPASS. Comparisoncurrentresult2measured/unaccepted; result1acceptancehistoricalpreserved. Speedreloadstillunrepeated."
+      }
+    },
+    {
+      "id": "MIW-50",
+      "requirement": "Versioning, duplicate commands and write failure",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O5"
+      ],
+      "external_or_held": [],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-51",
+      "requirement": "Production-shaped contracts and mock adapter separation",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O4",
+        "O5"
+      ],
+      "external_or_held": [
+        "E2"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-52",
+      "requirement": "Router and presenter boundary / LLM-disabled",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O1",
+        "O3",
+        "O5"
+      ],
+      "external_or_held": [
+        "E2"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-53",
+      "requirement": "Existing product preservation",
+      "unchanged_independent_status": "NOT_RUN",
+      "ordinary_work_packages": [
+        "O5"
+      ],
+      "external_or_held": [
+        "E3"
+      ],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-54",
+      "requirement": "R5 security/policy preservation external dependency",
+      "unchanged_independent_status": "BLOCKED",
+      "ordinary_work_packages": [],
+      "external_or_held": [
+        "E1"
+      ],
+      "independent_actions": [],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    },
+    {
+      "id": "MIW-55",
+      "requirement": "Held authorization/provider/external integration",
+      "unchanged_independent_status": "BLOCKED",
+      "ordinary_work_packages": [],
+      "external_or_held": [
+        "E1",
+        "E2",
+        "E3"
+      ],
+      "independent_actions": [],
+      "assessment": "Source implementation/evidence exists; full row acceptance not inferred. Required next actions are linked; no linked ordinary package means retain existing implementation and execute independent row checks."
+    }
+  ],
+  "preservation": {
+    "original_criteria": 351,
+    "derived_masters": 35,
+    "original_inputs": 82,
+    "no_regrading": true
+  },
+  "finite_scope_rule": "Close O1\u2013O6 on the existing three cases, monthly regression and existing V63 experiment. Do not add arbitrary scenarios, generic graphs, speculative causal proof or disconnected features. Each package has concrete exit checks; then one final freeze/full regression/affected351 reconciliation and fresh independent review. E1\u2013E3 remain visibly blocked; no complete product/VERDICT APPROVE while they or ordinary major gaps remain.",
+  "source_evidence": [
+    {
+      "path": "ekas-v63-comparison-working/app/src/investigation/conversation.ts",
+      "finding": "Correction/quote clarify responses route users to forms; master quoted chains use bounded regex routing."
+    },
+    {
+      "path": "ekas-v63-comparison-working/app/src/investigation/ComparisonPanel.tsx",
+      "finding": "Direct fixture import and separate form-driven comparison, no conversation reference."
+    },
+    {
+      "path": "ekas-v63-comparison-working/app/src/investigation/workflow.ts:62",
+      "finding": "Sustain uses recurrence outside predicate and first observation window."
+    },
+    {
+      "path": "ekas-v63-comparison-working/app/src/investigation/workflow.ts:85",
+      "finding": "Legacy record-test skips TESTED split."
+    },
+    {
+      "path": "ekas-v63-comparison-working/app/src/investigation/service.ts:104",
+      "finding": "Eligible revision blocks existing workflow progression."
+    },
+    {
+      "path": "ekas-v63-comparison-working/app/src/investigation/service.ts:116",
+      "finding": "Audit discovery becomes source-stale after eligible correction."
+    },
+    {
+      "path": "ekas-v63-comparison-working/app/src/investigation/manufacturingContract.ts",
+      "finding": "V62-era contract metadata omits V63 comparison/audit/policy2."
+    },
+    {
+      "path": "ekas-v63-comparison-working/app/src/investigation/model.ts:13",
+      "finding": "Workflow Command is unbounded kind:string payload."
+    }
+  ],
+  "current_scope_hold": "Temporary service-expansion hold superseded by Patrick12:42UTC. Resume O1\u2013O6 incrementally using explicit synthetic service contracts, preservingUI andcoverage. Realcredentials/provider/securityreview boundaries unchanged.",
+  "backend_reference": "Verified read-only /home/pat/EKAS_Platform_v2 commitfe2635cef64cf99eccad6c84df82bff466cb46df; Tomrevisionunverified. Scope/grain/aggregate/auth/concurrency mismatches documented.",
+  "current_next_work": "Do not rebuild originalthreecase lifecyclealreadydemonstrated. Complete remaining nativeinterrupted/negative/unaidedlanguage segments; fixsource-notices inV64; retain O2policydefect andO1/O3/O4/O5/O6specificgaps, notwholecase absence.",
+  "role_semantics": "Masterdocuments do not prescribe manager-only measurement. Existing workflow record-verification and comparison record-comparison-verification allow nonviewerengineer fictional actors; separateacceptance ismanager-only. Supervisor measurement consistentwith frozenimplementation, not a demonstratedpermissiondefect; Tomrealidentity/authoritymappingunverified. Do notspeculativelytightenpolicy."
+}

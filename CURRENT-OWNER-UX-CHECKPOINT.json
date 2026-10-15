@@ -1,0 +1,85 @@
+{
+  "exitCode": 0,
+  "at": "2026-10-15T19:26:04.600801+00:00",
+  "terminalProcessObserved": true,
+  "stages": [
+    {
+      "stage": "http-integration",
+      "exitCode": 0,
+      "terminalProcessObserved": true
+    },
+    {
+      "stage": "final-related",
+      "exitCode": 0,
+      "terminalProcessObserved": true
+    },
+    {
+      "stage": "typecheck",
+      "exitCode": 0,
+      "terminalProcessObserved": true
+    },
+    {
+      "stage": "browser-build",
+      "exitCode": 0,
+      "terminalProcessObserved": true
+    },
+    {
+      "stage": "server-build",
+      "exitCode": 0,
+      "terminalProcessObserved": true
+    }
+  ],
+  "relatedPassed": 63,
+  "relatedFailed": 0,
+  "relatedFiles": 12,
+  "httpIntegrationPassed": 3,
+  "identities": {
+    "source": "d68f632c304c96aa4e6a75310e929b946d266d66f4b9397fda03577b1c657354",
+    "static": "b64a6d6efa39e774e2d8bf91c2f710029134d1d32621c71aacbd035183b9288c",
+    "server": "262aa8491ced0aecf1e7349b6d41c6ed399937d9f91f24c8d12bc1ef2be0cf8b"
+  },
+  "serverByteExactToF2B": true,
+  "serverDirectoryByteExactToF2B": true,
+  "original711bAndF2BSourceByteExact": true,
+  "wholeSourceSuiteClaimed": false,
+  "nativeAcceptance": false,
+  "servedPreviewsTouched": false,
+  "liveProfileAccessed": false,
+  "paidCalls": 0,
+  "browserActions": 0,
+  "releaseReady": false,
+  "finalZip": false,
+  "sourceFiles": 995,
+  "staticMembers": 81,
+  "deltaFromF2B": [
+    "src/admin/AdminAiPage.tsx",
+    "src/admin/localAiAdminClient.test.ts",
+    "src/admin/localAiAdminClient.ts",
+    "src/admin/ownerSignInRecovery.test.tsx"
+  ],
+  "newRegressionCasesPassed": 14,
+  "existingRelatedCasesPassed": 49,
+  "httpHarnessSha256": "22827c55699ae94b9e801c2f9acf7dfdd039609c8a1b8b97bd9c17676fee7832",
+  "httpConfigSha256": "5ec3cb76c64e96ca1b1485591cf0f3c1084cb09540163c1e3633786d9211d3fc",
+  "finalRunnerSha256": "6f91cf00d7f2ecab4d026b361d2788a1517e1b38eab26556ae03203b9deb0777",
+  "serverFileSha256": "710763924f253801eb2025e3fbc05e8e8b5a2b57129ebc840e57adb30cb1aced",
+  "sourceFullSuccessorRun": false,
+  "baselineF2BFullSource": "2910/492 controlled resume; separate baseline evidence",
+  "baselineF2BCompiled": "501cleanpass; separate baseline UI artifact",
+  "policyFiles": "Every server source file byte-exact to f2b; no endpoint, TTL, principal, origin/CSRF, credential or budget policy edits.",
+  "credentials": "Synthetic fixture codes only; no live/private credential access.",
+  "historicalSilentPostCause": "not reconstructed; observed source races/hidden failures reproduced and fixed",
+  "independentReview": "PENDING",
+  "competingWorkspacesRedesign": "NOT_IMPLEMENTED",
+  "sourceBytesStableThroughFinalValidation": true,
+  "allValidationProcessesTerminal": true,
+  "supportingFixture": {
+    "path": "docs/FEATURE-RETENTION.json",
+    "sha256": "6a72f9a48daa96605d38b4115ce248529888edc48cb1086ecf2f5325244311d6"
+  },
+  "evidence": {
+    "related": "evidence/owner-signin-ux-candidate/final-related-results.json",
+    "http": "evidence/owner-signin-ux-candidate/final-http-results.json",
+    "identity": "evidence/owner-signin-ux-candidate/VALIDATED-IDENTITY.json"
+  }
+}

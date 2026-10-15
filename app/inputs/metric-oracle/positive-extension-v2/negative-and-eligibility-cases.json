@@ -1,0 +1,67 @@
+{
+  "separateFromPositiveRecords": true,
+  "cases": [
+    {
+      "id": "old_capability",
+      "target": "original TP-CHAR1",
+      "expected": "withhold Cp/Cpk/Pp/Ppk; original MSA/stability evidence remains unqualified"
+    },
+    {
+      "id": "future_annual",
+      "target": "annual_inventory_turns asOf2026-09-29",
+      "expected": "withhold annual actual COGS/year-end inventory; never annualize quarterly values"
+    },
+    {
+      "id": "peak_90days",
+      "target": "TP-METER1 Jul1-Sep29",
+      "expected": "partial coverage, only45min demand register exists"
+    },
+    {
+      "id": "missing_asset",
+      "target": "TP-A2 production OEE",
+      "expected": "no_data, not zero; component lifetime examples do not imply production observation"
+    },
+    {
+      "id": "northworks_p3",
+      "target": "Northworks P3",
+      "expected": "unsupported; sidecar/base training never substituted"
+    },
+    {
+      "id": "energy_wrong_window",
+      "target": "90day energy /6day good count",
+      "expected": "incompatible exposure window; no intensity result"
+    },
+    {
+      "id": "masked_evidence",
+      "target": "any required raw source denied",
+      "expected": "masked; no cached aggregate escape"
+    },
+    {
+      "id": "changed_revision",
+      "target": "PX-CHAR atR2 or operation other than TP-P1-R1-OP30",
+      "expected": "ineligible specification/subgroup/gauge context"
+    },
+    {
+      "id": "zero_exposure",
+      "target": "failure rate/production/labor denominator zero",
+      "expected": "zero_denominator, never infinity/zero fill"
+    },
+    {
+      "id": "verification_partial",
+      "target": "PX-CASE asOfAug22 or missing shift",
+      "expected": "sustain incomplete lastfive cohort, withhold sustained claim"
+    },
+    {
+      "id": "production_protocol",
+      "target": "capability under expanded run-rule/MSA policy",
+      "expected": "requires re-evaluation under new version; limited protocol evidence cannot authorize other rules"
+    },
+    {
+      "id": "unrelated_cohorts",
+      "target": "base monetary WIP /new WIPclosed throughput",
+      "expected": "incompatible cohort; no Little-law result"
+    }
+  ],
+  "inheritedBoundaryCases": "../known-answer-scenarios.json boundaryCases, unchanged",
+  "executionStatus": "specification only; owner service not executed"
+}

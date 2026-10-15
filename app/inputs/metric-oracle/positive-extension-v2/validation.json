@@ -1,0 +1,87 @@
+{
+  "newRecordCount": 2802,
+  "newTables": 50,
+  "namespaceQualifiedAndLocalForeignKeysChecked": 3453,
+  "danglingReferences": [],
+  "definitionsWithReproduciblePositiveArithmetic": 178,
+  "remainingUnsuppliedMetrics": [],
+  "baseSeedSha256": "5b88498b10b80bcf18dc1fd1afe3f6b3442d5daf14889d1f7b58d63d89e5dab2",
+  "ownerCodeExecuted": false,
+  "ownerFilesEdited": false,
+  "productionApprovalClaimed": false,
+  "capabilityProtocolChecks": {
+    "data_origin": "synthetic",
+    "production_certified": false,
+    "assessment_n": 125,
+    "subgroups": 25,
+    "subgroup_size": 5,
+    "gauge_repeatability_sigma_mm": 0.010000000000005116,
+    "six_sigma_percent_spec": 0.3000000000001535,
+    "study_mean_bias_mm": 0.0,
+    "operator_mean_bias_mm": {
+      "SYN-OP0": 0.0,
+      "SYN-OP1": 0.0,
+      "SYN-OP2": 0.0
+    },
+    "part_operator_cells": 30,
+    "trials_per_cell": 3,
+    "calibration_max_abs_error_mm": 0.0010000000000047748,
+    "baseline_subgroups": 30,
+    "baseline_mean": 100.0,
+    "frozen_xbar_limits": [
+      97.31671842700025,
+      102.68328157299975
+    ],
+    "frozen_s_limits": [
+      0,
+      4.178
+    ],
+    "xbar_points_outside_limits": 0,
+    "s_points_outside_limits": 0,
+    "additional_run_rules_enabled": false,
+    "eligibility_basis": "passes specified limited synthetic demo protocol; no blanket qualified boolean; no normality/yield prediction or real plant certification",
+    "limitations": [
+      "repeatability/reproducibility protocol is simplified, not full AIAG crossed ANOVA approval",
+      "independence is synthetic scenario assumption",
+      "expanded run rules could flag alternating subgroup means; current rules must be stated",
+      "customer policy must approve adequacy/MSA thresholds/stability rules before production"
+    ]
+  },
+  "independentConservationChecks": {
+    "all178DefinitionsMapped": true,
+    "allOperandEvidenceIdsResolve": true,
+    "24LotJourneysContiguous600min": true,
+    "warehouseBalancesNonnegativeAndClosing50Each": true,
+    "90DispatchesMatchStockMovements": true,
+    "closedWipFlow20UnitsAnd450Completions": true,
+    "4ImmediateOrdersConserve100Each": true,
+    "25HandRecognizableMetricAnswers": true,
+    "basePooledOeeUnchanged": true
+  },
+  "verifiedExpectedSamples": {
+    "ekas.oee": 79.0625,
+    "ekas.availability": 89.58333333333334,
+    "ekas.quality": 98.06201550387597,
+    "ekas.lead_time": 600,
+    "ekas.manufacturing_lead_time": 600,
+    "ekas.touch_time": 450,
+    "ekas.flow_efficiency": 71.66666666666667,
+    "ekas.changeover_time": 10,
+    "ekas.internal_setup_time": 10,
+    "ekas.external_setup_time": 5,
+    "ekas.otif": 50,
+    "ekas.fill_rate": 80,
+    "ekas.peak_demand": 40,
+    "ekas.energy_consumption": 600,
+    "ekas.improvement_absolute": -30,
+    "ekas.improvement_relative": -50,
+    "ekas.action_closure_rate": 75,
+    "ekas.on_time_action_closure": 50,
+    "ekas.mttf": 130,
+    "ekas.wip_days_units": 4,
+    "ekas.little_s_law": 4,
+    "ekas.inventory_accuracy": 83.33333333333334,
+    "ekas.inventory_turns": 7.56236932479352,
+    "ekas.cp": 1.6666666666666667
+  }
+}

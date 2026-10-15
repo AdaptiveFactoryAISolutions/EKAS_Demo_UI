@@ -1,0 +1,258 @@
+canonical_key,source_ids,analytical,remaining
+absenteeism_rate,"[""KPI-121""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+absolute_change,"[""KPI-174""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+action_closure_and_sustain_metrics,"[""KPI-322""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+action_closure_rate,"[""KPI-187""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+action_completion_evidence,"[""KPI-212""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+actual_cycle_time,"[""KPI-031""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+aggregation_method,"[""KPI-233""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+aliases,"[""KPI-222""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+asset_utilization,"[""KPI-007""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+attainment,"[""KPI-262""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+availability,"[""KPI-002"", ""KPI-046"", ""KPI-255""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+availability_loss_time,"[""KPI-169""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+average_changeover_time,"[""KPI-057""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+average_delivery_delay,"[""KPI-104""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+average_downtime_event,"[""KPI-048""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+breakdown_frequency,"[""KPI-089"", ""KPI-287""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+calculation_owner,"[""KPI-227""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+canonical_name,"[""KPI-220""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+capacity_attainment,"[""KPI-022""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+capacity_utilization,"[""KPI-021"", ""KPI-264""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+category_contribution,"[""KPI-181""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+certification_owner,"[""KPI-244""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+certification_status,"[""KPI-253""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+changeover,"[""KPI-272""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+changeover_attainment,"[""KPI-059""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+changeover_time,"[""KPI-056""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+changeover_variance,"[""KPI-058""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+chart_semantics,"[""KPI-246""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+clarification_rules,"[""KPI-247""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+co_e_per_unit,"[""KPI-143""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+coefficient_of_variation,"[""KPI-209""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+comparison_semantics,"[""KPI-245""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+constraint_lost_time,"[""KPI-148""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+constraint_throughput,"[""KPI-025"", ""KPI-147""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+constraint_utilization,"[""KPI-024"", ""KPI-146""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+constraint_yield,"[""KPI-149""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+conversion_cost_per_unit,"[""KPI-125""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+copq,"[""KPI-312""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+copq_cost_of_poor_quality,"[""KPI-133""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+copq_sales,"[""KPI-135""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+cost_of_quality,"[""KPI-134""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+cost_unit,"[""KPI-308""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+cost_variance,"[""KPI-129"", ""KPI-130""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+cp,"[""KPI-077""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+cp_cpk_where_appropriate,"[""KPI-282""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+cpk,"[""KPI-078""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+critical_threshold,"[""KPI-240""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+cumulative_contribution,"[""KPI-182""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+customer_ppm,"[""KPI-073""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+customer_reject_rate,"[""KPI-072""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+cycle_time,"[""KPI-265""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+cycle_time_performance,"[""KPI-034""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+cycle_time_variance,"[""KPI-033""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+cycle_to_takt_ratio,"[""KPI-037""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+dart_rate,"[""KPI-152""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+defect_rate,"[""KPI-068""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+defects_per_unit_dpu,"[""KPI-069""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+definition,"[""KPI-224""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+denominator,"[""KPI-229""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+derived_observation,"[""KPI-215""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+deterministic_metric,"[""KPI-214""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+direct_labor_utilization,"[""KPI-119""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+display_name,"[""KPI-221""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+display_units,"[""KPI-231""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+domain,"[""KPI-223""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+downtime,"[""KPI-045"", ""KPI-267""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+downtime_by_reason,"[""KPI-049""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+downtime_contribution,"[""KPI-050""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+downtime_cost,"[""KPI-055"", ""KPI-128"", ""KPI-311""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+downtime_frequency,"[""KPI-047""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+dpmo,"[""KPI-070"", ""KPI-280""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+effectivity,"[""KPI-248""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+emergency_work,"[""KPI-096""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+energy_consumption,"[""KPI-138""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+energy_intensity,"[""KPI-140""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+energy_per_unit,"[""KPI-139""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+energy_unit,"[""KPI-313""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+evidence_requirements,"[""KPI-243""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+excess_inventory,"[""KPI-113""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+execution_status,"[""KPI-252""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+external_setup_time,"[""KPI-190""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+failure_rate,"[""KPI-085"", ""KPI-286""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+fg_days,"[""KPI-301""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+fill_rate,"[""KPI-100"", ""KPI-294""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+find_quantify_act_sustain,"[""KPI-211""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+finished_goods_days,"[""KPI-109""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+first_pass_yield,"[""KPI-063""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+first_time_through,"[""KPI-064""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+flow_efficiency,"[""KPI-041"", ""KPI-302""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+formula,"[""KPI-225""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+formula_version,"[""KPI-226""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+fpy,"[""KPI-273""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+gap_to_target,"[""KPI-316""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+good_count,"[""KPI-075""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+good_direction,"[""KPI-236""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+governed_metric_identity,"[""KPI-218""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+governed_operating_range,"[""KPI-201""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+gross_throughput,"[""KPI-016""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+higher_is_better_gap,"[""KPI-202""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+ideal_cycle_time,"[""KPI-032""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+idle_energy,"[""KPI-141"", ""KPI-314""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+improvement,"[""KPI-183"", ""KPI-184"", ""KPI-320""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+in_full_delivery,"[""KPI-099""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+internal_setup_time,"[""KPI-189""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+inventory_accuracy,"[""KPI-111""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+inventory_days,"[""KPI-296""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+inventory_days_dio,"[""KPI-106"", ""KPI-160"", ""KPI-167""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+inventory_turns,"[""KPI-105"", ""KPI-297""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+labor_cost_per_unit,"[""KPI-123""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+labor_efficiency,"[""KPI-116"", ""KPI-305""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+labor_efficiency_variance,"[""KPI-132""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+labor_productivity,"[""KPI-115"", ""KPI-304""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+labor_utilization,"[""KPI-118""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+late_order_rate,"[""KPI-102""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+late_orders,"[""KPI-295""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+lead_time,"[""KPI-038"", ""KPI-303""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+little_s_law,"[""KPI-114""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+loading,"[""KPI-009""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+loss_pareto,"[""KPI-210""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+lost_production_from_downtime,"[""KPI-054""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+lost_time_incident_rate,"[""KPI-153""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+lost_units,"[""KPI-172""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+lower_is_better_gap,"[""KPI-203""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+lsl,"[""KPI-193""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+maintenance_backlog,"[""KPI-094"", ""KPI-290""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+maintenance_downtime,"[""KPI-088""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+manufacturing_cost_per_unit,"[""KPI-124""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+manufacturing_lead_time,"[""KPI-039""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+material_usage_variance,"[""KPI-131""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+measurement_system_integrity,"[""KPI-198""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+metric_id,"[""KPI-219""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+minor_stop_time,"[""KPI-052""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+minor_stops,"[""KPI-270""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+moving_average,"[""KPI-177""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+mtbf,"[""KPI-081"", ""KPI-283""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+mttf,"[""KPI-084""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+mttr_clarification,"[""KPI-199""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+mttr_repair,"[""KPI-082"", ""KPI-284""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+mttr_restore,"[""KPI-083"", ""KPI-285""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+near_miss_rate,"[""KPI-154""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+net_throughput,"[""KPI-015"", ""KPI-017""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+normalized_target_variance,"[""KPI-207""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+numerator,"[""KPI-228""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+obsolete_inventory,"[""KPI-112""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+oee,"[""KPI-001"", ""KPI-156"", ""KPI-163"", ""KPI-254""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+oee_gap_to_target,"[""KPI-010""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+oee_improvement,"[""KPI-011""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+on_time_action_closure,"[""KPI-188""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+on_time_delivery_otd,"[""KPI-098""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+orders_completed_to_schedule,"[""KPI-030""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+otd,"[""KPI-293""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+otif,"[""KPI-097"", ""KPI-161"", ""KPI-168"", ""KPI-292""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+overall_sigma,"[""KPI-196""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+overall_utilization,"[""KPI-006""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+overtime,"[""KPI-120"", ""KPI-307""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+pareto_contribution,"[""KPI-318""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+past_due_quantity,"[""KPI-103""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+peak_demand,"[""KPI-142"", ""KPI-315""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+percentage_points,"[""KPI-205""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+perfect_order_rate,"[""KPI-101""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+performance,"[""KPI-004"", ""KPI-256""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+performance_loss_time,"[""KPI-170""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+planned_downtime,"[""KPI-044"", ""KPI-269""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+planned_maintenance,"[""KPI-091""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+plant_head_daily_operations_audit,"[""KPI-200""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+pm_compliance,"[""KPI-092"", ""KPI-288""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+positive_unfavorable_gap_ranking,"[""KPI-204""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+pp,"[""KPI-079""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+ppk,"[""KPI-080""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+ppm,"[""KPI-279""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+ppm_defective,"[""KPI-071""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+precision,"[""KPI-232""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+process_mean,"[""KPI-194""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+production_variance,"[""KPI-014""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+production_vs_plan,"[""KPI-012"", ""KPI-013"", ""KPI-028"", ""KPI-155"", ""KPI-162"", ""KPI-260""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+quality,"[""KPI-005"", ""KPI-061"", ""KPI-062"", ""KPI-257""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+quality_loss,"[""KPI-074"", ""KPI-158"", ""KPI-165"", ""KPI-281""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+quality_loss_units_and_quality_loss_time,"[""KPI-171""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+raw_material_days,"[""KPI-107""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+reactive_maintenance,"[""KPI-090"", ""KPI-289""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+reasoning_investigation,"[""KPI-216""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+recognition_status,"[""KPI-251""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+recurrence,"[""KPI-321""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+recurrence_rate,"[""KPI-186""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+reject_rate,"[""KPI-066""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+rejects,"[""KPI-277""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+relative_percent_change,"[""KPI-206""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+relative_percentage_change,"[""KPI-175""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+reliability,"[""KPI-086""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+repair_rate,"[""KPI-087""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+repeat_failure_rate,"[""KPI-095""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+required_data_coverage,"[""KPI-242""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+required_sources,"[""KPI-241""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+rework,"[""KPI-278""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+rework_cost,"[""KPI-127"", ""KPI-310""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+rework_rate,"[""KPI-067""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+rm_days,"[""KPI-300""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+rolled_throughput_yield,"[""KPI-076""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+rolling_change,"[""KPI-178""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+root_cause,"[""KPI-217""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+rty,"[""KPI-275""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+run_rate,"[""KPI-018"", ""KPI-263""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+run_rate_attainment,"[""KPI-020""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+run_time,"[""KPI-003""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+sample_adequacy,"[""KPI-197""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+schedule_adherence,"[""KPI-026"", ""KPI-159"", ""KPI-166"", ""KPI-291""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+schedule_attainment,"[""KPI-027""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+schedule_compliance_maintenance,"[""KPI-093""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+schedule_variance,"[""KPI-029""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+scrap,"[""KPI-276""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+scrap_cost,"[""KPI-126"", ""KPI-136"", ""KPI-309""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+scrap_rate,"[""KPI-065""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+setup_loss,"[""KPI-060""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+smed,"[""KPI-191""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+speed_loss,"[""KPI-053"", ""KPI-271""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+standard_deviation,"[""KPI-208""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+standard_hours_earned,"[""KPI-117""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+status,"[""KPI-250""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+sustained_improvement,"[""KPI-185""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+takt,"[""KPI-266""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+takt_attainment,"[""KPI-036""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+takt_time,"[""KPI-035""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+target,"[""KPI-238""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+target_run_rate,"[""KPI-019""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+target_source,"[""KPI-237""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+target_variance,"[""KPI-176""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+teep,"[""KPI-008"", ""KPI-258""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+throughput,"[""KPI-261""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+throughput_contribution,"[""KPI-150""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+top_loss,"[""KPI-319""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+top_loss_contribution,"[""KPI-051""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+total_downtime,"[""KPI-042"", ""KPI-157"", ""KPI-164""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+touch_time,"[""KPI-040""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+trend,"[""KPI-317""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+trend_slope,"[""KPI-179""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+trir,"[""KPI-151""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+unfavorable_gap_to_target,"[""KPI-173""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+units,"[""KPI-230""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+units_per_employee_hour,"[""KPI-122""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+unplanned_downtime,"[""KPI-043"", ""KPI-268""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+unused_capacity,"[""KPI-023""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+usl,"[""KPI-192""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+utilization,"[""KPI-259"", ""KPI-306""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+valid_entity_scopes,"[""KPI-234""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+valid_time_grains,"[""KPI-235""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+verification_window,"[""KPI-213""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+version,"[""KPI-249""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+volatility,"[""KPI-180""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+warning_threshold,"[""KPI-239""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+warranty_cost,"[""KPI-137""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+waste_per_unit,"[""KPI-144""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+water_per_unit,"[""KPI-145""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+wip,"[""KPI-298""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+wip_days,"[""KPI-108"", ""KPI-299""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+wip_units,"[""KPI-110""]",True,P05 exact definition choice/disposition/publication/negative/connected evidence
+within_subgroup_sigma,"[""KPI-195""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence
+yield,"[""KPI-274""]",False,P05 exact definition choice/disposition/publication/negative/connected evidence

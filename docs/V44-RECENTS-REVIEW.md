@@ -1,0 +1,7 @@
+# V44 provisional Recents responsive correction
+
+Independent V42-HOME-RECENTS-NARROW was P2; engineering triage is P1 without changing that independent verdict. At 320/390px four actions competed with the title in one flex row. V44 stacks title and actions below 1024px; actions wrap as whole buttons with a 44px minimum height. Desktop can place the groups beside one another. Titles may wrap; action labels do not split into letters. Existing Share, Favorite, Remove and Schedule handlers remain intact.
+
+Scope is three app files: screens.tsx, retained.css, v44Recents.test.tsx. All fixture, calculation and registry sources are byte-identical to V43. QA43 namespace and Northworks recovery remain inherited; V44 does not create a QA44 namespace. V43, separately frozen QA42/QA43, Main, storage and R5 are untouched. This package is undeployed pending parent safe-boundary authorization. Native 320/390px review is required before declaring the finding resolved.
+
+OpenAI is the required provider through a server-side key; no Ollama fallback. This static package remains deterministic and includes no key/server. Full live Tom integration requires his authenticated endpoint/OpenAPI, capabilities, tenant/role and identity mapping. No actual integration or live model acceptance is claimed. The separate R5 review and expired budget guard remain frozen; no live calls or budget extension are authorized here.

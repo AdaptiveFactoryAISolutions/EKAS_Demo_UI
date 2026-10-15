@@ -1,0 +1,28 @@
+{
+  "readyForPrivateReentry": true,
+  "url": "http://127.0.0.1:18329/?demonstration=ekas-normal-first-use-20261015",
+  "pid": 2418093,
+  "sourceSha256": "4520d319971680faf7d229c689e62cade199c053880fab5060014b7800c868ec",
+  "initialAiDisabled": true,
+  "ownerCodePath": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-demo-final-rc-working/evidence/normal-owner-first-use/private/owner-code",
+  "ownerCodeMode": "0600",
+  "ownerCodeRead": false,
+  "keyReadOrTransferred": false,
+  "actualRecoveryApplied": true,
+  "retainedUnknownMicroUsd": 189464,
+  "remainingGuardMicroUsd": 17444104,
+  "confirmedBilledSpendUsd": null,
+  "newProviderCallsAtLaunch": 0,
+  "pricingExpiresAt": "2026-10-16T00:00:00Z",
+  "steps": [
+    "Reload http://127.0.0.1:18329/?demonstration=ekas-normal-first-use-20261015 ; click Admin AI.",
+    "Privately close/reopen the owner-code file via file manager Ctrl+L at the unchanged path; it now contains a fresh one-time code. Paste into Private local owner code; Sign in as local owner. Do not share in chat.",
+    "Confirm Provider mode OpenAI \u00b7 server-held credential and model gpt-6.1-sol; Save settings.",
+    "Privately enter OpenAI API key; click Set server key. Initial save has no confirmation dialog.",
+    "Review retained unknown hold and remaining allowance; if choosing the new bounded test, tick I explicitly accept the potential cost of this bounded test.; Test connection once. This is another potential charge, with all prior holds retained.",
+    "After current test passes, click Enable AI separately.",
+    "Clear any key entry, close the private code file and return to chat; tell parent ready before captures resume. Use a new explicit conversation rather than replaying a held operation."
+  ],
+  "automationsAndCapturesMustRemainPaused": true,
+  "knownSeparateJourneyFinding": "JOURNEY-INVESTIGATE-01 still FIX; not final product acceptance."
+}

@@ -1,0 +1,9 @@
+# V18 captured formula drillthrough correction
+
+Independent screenshot and SAFE-SWAP-BOUNDARY.md confirm a captured9.7units/min Home tile opened Search30.4units/person-hours after global formula edit. Screenshot was actually viewed. Root cause: Home passed only its query, losing its captured formula; Search resolved a mutable global ID.
+
+Captured query now carries formulaSnapshot (definition or explicit null for missing metadata). runQuery resolves that snapshot before an optional global formula across Search, analysis, shares, board queries and exports using that query. Follow-up phrase compilation retains formula ID/snapshot when the formula measure is retained; an explicitly new measure starts its own query. Query patches/undo/redo, saved answers and JSON reload preserve the embedded snapshot. New KPI from this query captures its original definition. Explicitly selecting a new formula ID clears the previous snapshot; a regression checks that the new formula executes normally. Null prevents substituting a later global formula, with explicit metadata-unavailable status in Search. Snapshot shape is validated during workspace restore. Home reads query snapshot before any global fallback.
+
+Current access/site restriction and masking remain enforced at execution; a captured formula grants no new data access. Query filters and asOf remain preserved. Original shell/header/navigation and all controlled manufacturing gates remain unchanged.
+
+Three new regressions fail before correction and pass afterward: edited and deleted global definitions with actual Home click, JSON reload, follow-up grouping, exact filters/cutoff, name/units, masking and re-saving; explicit missing metadata refuses replacement. Independent visible followthrough acceptance remains pending; no browser or served route actions were performed.

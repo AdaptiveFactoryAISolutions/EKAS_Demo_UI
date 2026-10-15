@@ -1,0 +1,1677 @@
+{
+  "candidate": "V67 cumulative provisional; independent closure pending",
+  "behaviors": [
+    {
+      "id": "D1",
+      "behavior": "Sustain primary target versus recurrence alarm; latest eligible window; coverage/health/freshness qualification; legacy replay retained.",
+      "rows": [
+        14,
+        15,
+        26,
+        27,
+        28,
+        40,
+        49
+      ]
+    },
+    {
+      "id": "D2",
+      "behavior": "New natural inspection recording enters TESTED before separate disposition; cause stays unconfirmed.",
+      "rows": [
+        6,
+        7,
+        8,
+        18,
+        44,
+        45,
+        52
+      ]
+    },
+    {
+      "id": "D3",
+      "behavior": "Refreshed audit top-issue continuation creates discovery from its exact immutable refreshed snapshot.",
+      "rows": [
+        2,
+        3,
+        4,
+        5,
+        12,
+        18,
+        26,
+        27,
+        28,
+        29,
+        40,
+        48,
+        51
+      ]
+    },
+    {
+      "id": "D4",
+      "behavior": "Typed comparison creation/commands/results/client; scoped detached service metadata replaces direct UI fixture import.",
+      "rows": [
+        19,
+        20,
+        24,
+        40,
+        50,
+        51,
+        52,
+        53
+      ]
+    },
+    {
+      "id": "D5",
+      "behavior": "Empty Ask New control creates durable empty conversation with existing race guards retained.",
+      "rows": [
+        1,
+        9,
+        17,
+        20,
+        21,
+        22,
+        23,
+        40,
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "id": "D6",
+      "behavior": "Three reviewed claim kinds; exact supports/contradicts/negates/supersedes append-only records and review UI; immutable known-time conversational reads.",
+      "rows": [
+        6,
+        7,
+        8,
+        18,
+        44,
+        45,
+        48,
+        52
+      ]
+    },
+    {
+      "id": "D7",
+      "behavior": "Original governed claim IDs preserved through replay after unrelated global allocations; unsupported relative/offset/plain UTC claim cutoffs clarify; fractional exact UTC compares instants.",
+      "rows": [
+        6,
+        7,
+        8,
+        18,
+        44,
+        45,
+        48,
+        52
+      ]
+    },
+    {
+      "id": "D8",
+      "behavior": "Bounded multi-turn current final-good source correction collects known UTC and reason, explicit confirmation commits correction and conversation atomically.",
+      "rows": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        18,
+        26,
+        27,
+        28,
+        29,
+        40,
+        48,
+        51,
+        52
+      ]
+    },
+    {
+      "id": "D9",
+      "behavior": "Separate conversational comparison cursor with explicit simulation snapshots, existing fictional actors/work/safety prerequisites, immutable measured result and separate acceptance; return preserves original context/clock.",
+      "rows": [
+        19,
+        20,
+        24,
+        40,
+        50,
+        51,
+        52,
+        53
+      ]
+    },
+    {
+      "id": "D10",
+      "behavior": "Concurrent identical chat submission shares pending receipt; lost-response exact retry uses original version/key; progress/error feedback remains visible. Native first-click root cause unproven and retest required.",
+      "rows": [
+        1,
+        9,
+        17,
+        20,
+        21,
+        22,
+        23,
+        40,
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "id": "D11",
+      "behavior": "Complete unsigned whole-unit token/field semantics; explicit prior count match; invalid draft clears; versioned historical interpretation and old pending review restatement.",
+      "rows": [
+        1,
+        18,
+        40,
+        41,
+        42,
+        43,
+        50,
+        52
+      ]
+    },
+    {
+      "id": "D12",
+      "behavior": "Prompted bare reason/current-good wording and observed comparison aliases; existing typed operation/admission retained; return captures original workflow clock with legacy answers unchanged.",
+      "rows": [
+        19,
+        20,
+        40,
+        41,
+        42,
+        43,
+        49,
+        50,
+        51,
+        52
+      ]
+    },
+    {
+      "id": "D13",
+      "behavior": "Conversation-transition scoped progress/running/success; current success requires matching indexed turn; new transition not blocked by late old committed response; old completion cannot redirect/append/overwrite.",
+      "rows": [
+        1,
+        17,
+        20,
+        21,
+        40,
+        41,
+        42,
+        43,
+        50
+      ]
+    },
+    {
+      "id": "D14",
+      "behavior": "Quality source description and selected claim-type save label corrected; bounded cold import hook allowance30s preserves all20 functional assertions without changing performance acceptance.",
+      "rows": [
+        6,
+        20,
+        21,
+        22,
+        44,
+        45,
+        53
+      ]
+    }
+  ],
+  "changed_source_and_tests": [
+    "src/ComparisonFlow.test.tsx",
+    "src/investigation/ComparisonPanel.tsx",
+    "src/investigation/SourceEditor.tsx",
+    "src/investigation/conversationComparison.test.ts",
+    "src/investigation/conversationComparison.ts",
+    "src/investigation/conversationalReview.ts",
+    "src/investigation/correctionCountTokens.test.ts",
+    "src/investigation/manufacturingContract.ts",
+    "src/investigation/newReplyFeedback.test.tsx",
+    "src/investigation/service.ts",
+    "src/investigation/submissionRetry.test.ts",
+    "src/investigation/unified.ts",
+    "src/investigation/v66NativeWording.test.ts",
+    "src/retained/screens.tsx",
+    "src/retained/v51KeyboardTargets.test.tsx"
+  ],
+  "rows": [
+    {
+      "id": "MIW-01",
+      "requirement": "Deterministic complete journey",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D5"
+      ],
+      "ordinary_packages": [
+        "O1",
+        "O6"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-02",
+      "requirement": "Goal versus actual",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D3"
+      ],
+      "ordinary_packages": [
+        "O4"
+      ],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-03",
+      "requirement": "Loss reconciliation",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D3"
+      ],
+      "ordinary_packages": [
+        "O4"
+      ],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-04",
+      "requirement": "Overlap and double counting",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D3"
+      ],
+      "ordinary_packages": [
+        "O4"
+      ],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-05",
+      "requirement": "Scoped contributors",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D3"
+      ],
+      "ordinary_packages": [
+        "O4"
+      ],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-06",
+      "requirement": "Effective documents",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D2",
+        "D6"
+      ],
+      "ordinary_packages": [
+        "O3"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-07",
+      "requirement": "Traceable events",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D2",
+        "D6"
+      ],
+      "ordinary_packages": [
+        "O3"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-08",
+      "requirement": "Hypothesis versus cause",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D2",
+        "D6"
+      ],
+      "ordinary_packages": [
+        "O3"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-09",
+      "requirement": "Action plan",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D5"
+      ],
+      "ordinary_packages": [
+        "O6"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-10",
+      "requirement": "Rejected or failed action",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [],
+      "ordinary_packages": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-11",
+      "requirement": "Performed-work proof",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [],
+      "ordinary_packages": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-12",
+      "requirement": "Eligible before/after",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D3"
+      ],
+      "ordinary_packages": [
+        "O1",
+        "O4"
+      ],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-13",
+      "requirement": "No improvement / worse outcome",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [],
+      "ordinary_packages": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-14",
+      "requirement": "Sustainment",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D1"
+      ],
+      "ordinary_packages": [
+        "O2"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-15",
+      "requirement": "Missing/stale target or input",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D1"
+      ],
+      "ordinary_packages": [
+        "O2"
+      ],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-16",
+      "requirement": "Zero versus unavailable",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [],
+      "ordinary_packages": [],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-17",
+      "requirement": "Invalid / empty scope",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D5"
+      ],
+      "ordinary_packages": [
+        "O6"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-18",
+      "requirement": "Late evidence and reproducibility",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D2",
+        "D3",
+        "D6"
+      ],
+      "ordinary_packages": [
+        "O1",
+        "O3",
+        "O4"
+      ],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-19",
+      "requirement": "Persistence and working copy",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D4"
+      ],
+      "ordinary_packages": [
+        "O5"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-20",
+      "requirement": "Errors and recovery",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D4",
+        "D5"
+      ],
+      "ordinary_packages": [
+        "O5",
+        "O6"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-21",
+      "requirement": "Desktop comprehension",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D5"
+      ],
+      "ordinary_packages": [
+        "O6"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-22",
+      "requirement": "Mobile 390 / 320",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D5"
+      ],
+      "ordinary_packages": [
+        "O6"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-23",
+      "requirement": "Keyboard",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D5"
+      ],
+      "ordinary_packages": [
+        "O6"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-24",
+      "requirement": "Truthful summary/export",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D4"
+      ],
+      "ordinary_packages": [
+        "O5"
+      ],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-25",
+      "requirement": "Safe boundary",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [],
+      "ordinary_packages": [],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-26",
+      "requirement": "CASE A downtime unaided journey",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D1",
+        "D3"
+      ],
+      "ordinary_packages": [
+        "O1",
+        "O2",
+        "O4"
+      ],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-27",
+      "requirement": "CASE B speed unaided journey",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D1",
+        "D3"
+      ],
+      "ordinary_packages": [
+        "O1",
+        "O2",
+        "O4"
+      ],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-28",
+      "requirement": "CASE C quality unaided journey",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D1",
+        "D3"
+      ],
+      "ordinary_packages": [
+        "O1",
+        "O2",
+        "O4"
+      ],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-29",
+      "requirement": "Plant Head operating review front door",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D3"
+      ],
+      "ordinary_packages": [
+        "O4"
+      ],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-30",
+      "requirement": "Existing chat chain: What was OEE in January?",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [],
+      "ordinary_packages": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-31",
+      "requirement": "Existing chat chain: And March?",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [],
+      "ordinary_packages": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-32",
+      "requirement": "Existing chat chain: What about Machine 2?",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [],
+      "ordinary_packages": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-33",
+      "requirement": "Existing chat chain: No, I meant Machine 1.",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [],
+      "ordinary_packages": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-34",
+      "requirement": "Existing chat chain: Why?",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [],
+      "ordinary_packages": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-35",
+      "requirement": "Existing chat chain: Show me.",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [],
+      "ordinary_packages": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-36",
+      "requirement": "Existing chat chain: Compare that to last month.",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [],
+      "ordinary_packages": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-37",
+      "requirement": "Existing chat chain: Go back to the first machine.",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [],
+      "ordinary_packages": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-38",
+      "requirement": "Existing chat chain: Investigate the root cause.",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [],
+      "ordinary_packages": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-39",
+      "requirement": "Existing chat chain: What was FPY?",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [],
+      "ordinary_packages": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-40",
+      "requirement": "Full required investigation chat chain",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D1",
+        "D3",
+        "D4",
+        "D5"
+      ],
+      "ordinary_packages": [
+        "O1",
+        "O2",
+        "O4",
+        "O5",
+        "O6"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-41",
+      "requirement": "Free-form ambiguity and dimension retention",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D5"
+      ],
+      "ordinary_packages": [
+        "O1",
+        "O6"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-42",
+      "requirement": "Conversation response quality",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D5"
+      ],
+      "ordinary_packages": [
+        "O6"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-43",
+      "requirement": "Conversation/history lifecycle",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D5"
+      ],
+      "ordinary_packages": [
+        "O1",
+        "O6"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-44",
+      "requirement": "Controlled evidence, supersession and contradictions",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D2",
+        "D6"
+      ],
+      "ordinary_packages": [
+        "O3"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-45",
+      "requirement": "Claim and hypothesis state machine",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D2",
+        "D6"
+      ],
+      "ordinary_packages": [
+        "O3"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-46",
+      "requirement": "Assignment acceptance and owner change",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [],
+      "ordinary_packages": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-47",
+      "requirement": "Action state and performed-work evidence",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [],
+      "ordinary_packages": [],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-48",
+      "requirement": "Verification plan immutability and guardrails",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D3",
+        "D6"
+      ],
+      "ordinary_packages": [
+        "O1",
+        "O4"
+      ],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-49",
+      "requirement": "Explicit simulation clock and result acceptance",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D1"
+      ],
+      "ordinary_packages": [
+        "O1",
+        "O2"
+      ],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-50",
+      "requirement": "Versioning, duplicate commands and write failure",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D4"
+      ],
+      "ordinary_packages": [
+        "O5"
+      ],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-51",
+      "requirement": "Production-shaped contracts and mock adapter separation",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D3",
+        "D4"
+      ],
+      "ordinary_packages": [
+        "O4",
+        "O5"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-52",
+      "requirement": "Router and presenter boundary / LLM-disabled",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D2",
+        "D4",
+        "D6"
+      ],
+      "ordinary_packages": [
+        "O1",
+        "O3",
+        "O5"
+      ],
+      "independent_actions": [
+        "I1"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-53",
+      "requirement": "Existing product preservation",
+      "source_status_unchanged": "NOT_RUN",
+      "delta_ids": [
+        "D4"
+      ],
+      "ordinary_packages": [
+        "O5"
+      ],
+      "independent_actions": [
+        "I1",
+        "I2"
+      ],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-54",
+      "requirement": "R5 security/policy preservation external dependency",
+      "source_status_unchanged": "BLOCKED",
+      "delta_ids": [],
+      "ordinary_packages": [],
+      "independent_actions": [],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    },
+    {
+      "id": "MIW-55",
+      "requirement": "Held authorization/provider/external integration",
+      "source_status_unchanged": "BLOCKED",
+      "delta_ids": [],
+      "ordinary_packages": [],
+      "independent_actions": [],
+      "candidate_acceptance": "PENDING; no full-row pass inferred"
+    }
+  ],
+  "derived_master_criteria": [
+    {
+      "criterion": 1,
+      "text": "The UI is chat-first.",
+      "sourceLine": 1220,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-01",
+        "MIW-26",
+        "MIW-27",
+        "MIW-28",
+        "MIW-40"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 2,
+      "text": "Conversation feels natural.",
+      "sourceLine": 1221,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-42"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 3,
+      "text": "Context persists correctly.",
+      "sourceLine": 1222,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-19",
+        "MIW-30",
+        "MIW-31",
+        "MIW-32",
+        "MIW-33",
+        "MIW-36",
+        "MIW-37",
+        "MIW-41",
+        "MIW-43"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 4,
+      "text": "Metrics are deterministic and governed.",
+      "sourceLine": 1223,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-02",
+        "MIW-03",
+        "MIW-16",
+        "MIW-39",
+        "MIW-51",
+        "MIW-52"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 5,
+      "text": "The Plant Review works.",
+      "sourceLine": 1224,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-29"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 6,
+      "text": "Goal exceptions can become investigations.",
+      "sourceLine": 1225,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-26",
+        "MIW-29",
+        "MIW-38",
+        "MIW-40"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 7,
+      "text": "Investigations persist.",
+      "sourceLine": 1226,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-19",
+        "MIW-43",
+        "MIW-50"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 8,
+      "text": "Losses reconcile.",
+      "sourceLine": 1227,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-03",
+        "MIW-04",
+        "MIW-12"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 9,
+      "text": "Contributors are evidence-based.",
+      "sourceLine": 1228,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-05",
+        "MIW-07",
+        "MIW-26"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 10,
+      "text": "Documents are evidence-linked.",
+      "sourceLine": 1229,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-06",
+        "MIW-44"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 11,
+      "text": "Hypotheses remain distinct from causes.",
+      "sourceLine": 1230,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-08",
+        "MIW-45"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 12,
+      "text": "Ownership works.",
+      "sourceLine": 1231,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-09",
+        "MIW-46"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 13,
+      "text": "Authorization works.",
+      "sourceLine": 1232,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-47",
+        "MIW-55"
+      ],
+      "status": "BLOCKED",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions.",
+      "blocker": "Existing held authorization/security dependencies unresolved; cannot claim complete independent acceptance or no blockers."
+    },
+    {
+      "criterion": 14,
+      "text": "Performed work is distinct from authorization.",
+      "sourceLine": 1233,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-11",
+        "MIW-47",
+        "MIW-55"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 15,
+      "text": "Verification works.",
+      "sourceLine": 1234,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-12",
+        "MIW-13",
+        "MIW-48"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 16,
+      "text": "Temporal integrity works.",
+      "sourceLine": 1235,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-18",
+        "MIW-49"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 17,
+      "text": "Sustain works.",
+      "sourceLine": 1236,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-14",
+        "MIW-49"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 18,
+      "text": "Reopen works.",
+      "sourceLine": 1237,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-14",
+        "MIW-26",
+        "MIW-27",
+        "MIW-28",
+        "MIW-40",
+        "MIW-49"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 19,
+      "text": "Downtime case works.",
+      "sourceLine": 1238,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-26"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 20,
+      "text": "Performance case works.",
+      "sourceLine": 1239,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-27"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 21,
+      "text": "Quality case works.",
+      "sourceLine": 1240,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-28"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 22,
+      "text": "API contracts are production-shaped.",
+      "sourceLine": 1241,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-51"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 23,
+      "text": "Mock adapters can be replaced by real adapters.",
+      "sourceLine": 1242,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-51",
+        "MIW-55"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 24,
+      "text": "Security remains intact.",
+      "sourceLine": 1243,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-54",
+        "MIW-55"
+      ],
+      "status": "BLOCKED",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions.",
+      "blocker": "Existing held authorization/security dependencies unresolved; cannot claim complete independent acceptance or no blockers."
+    },
+    {
+      "criterion": 25,
+      "text": "Evidence is inspectable.",
+      "sourceLine": 1244,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-06",
+        "MIW-07",
+        "MIW-24",
+        "MIW-44"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 26,
+      "text": "History is immutable.",
+      "sourceLine": 1245,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-18",
+        "MIW-19",
+        "MIW-43",
+        "MIW-50",
+        "MIW-54"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 27,
+      "text": "Mobile works.",
+      "sourceLine": 1246,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-22"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 28,
+      "text": "Accessibility works.",
+      "sourceLine": 1247,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-23",
+        "MIW-42"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 29,
+      "text": "Existing accepted features remain available.",
+      "sourceLine": 1248,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-53"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 30,
+      "text": "No hidden manual manipulation is required.",
+      "sourceLine": 1249,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-01",
+        "MIW-26",
+        "MIW-27",
+        "MIW-28",
+        "MIW-40",
+        "MIW-51",
+        "MIW-52"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 31,
+      "text": "An unaided user completes the full journey.",
+      "sourceLine": 1250,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-26",
+        "MIW-27",
+        "MIW-28",
+        "MIW-40"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 32,
+      "text": "The system behaves like one product, not connected demos.",
+      "sourceLine": 1251,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-01",
+        "MIW-26",
+        "MIW-27",
+        "MIW-28",
+        "MIW-29",
+        "MIW-40",
+        "MIW-42"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 33,
+      "text": "Backend replacement requires adapter work, not product redesign.",
+      "sourceLine": 1252,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-51",
+        "MIW-55"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 34,
+      "text": "Independent acceptance confirms the end-to-end behavior.",
+      "sourceLine": 1253,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-01",
+        "MIW-02",
+        "MIW-03",
+        "MIW-04",
+        "MIW-05",
+        "MIW-06",
+        "MIW-07",
+        "MIW-08",
+        "MIW-09",
+        "MIW-10",
+        "MIW-11",
+        "MIW-12",
+        "MIW-13",
+        "MIW-14",
+        "MIW-15",
+        "MIW-16",
+        "MIW-17",
+        "MIW-18",
+        "MIW-19",
+        "MIW-20",
+        "MIW-21",
+        "MIW-22",
+        "MIW-23",
+        "MIW-24",
+        "MIW-25",
+        "MIW-26",
+        "MIW-27",
+        "MIW-28",
+        "MIW-29",
+        "MIW-30",
+        "MIW-31",
+        "MIW-32",
+        "MIW-33",
+        "MIW-34",
+        "MIW-35",
+        "MIW-36",
+        "MIW-37",
+        "MIW-38",
+        "MIW-39",
+        "MIW-40",
+        "MIW-41",
+        "MIW-42",
+        "MIW-43",
+        "MIW-44",
+        "MIW-45",
+        "MIW-46",
+        "MIW-47",
+        "MIW-48",
+        "MIW-49",
+        "MIW-50",
+        "MIW-51",
+        "MIW-52",
+        "MIW-53",
+        "MIW-54",
+        "MIW-55"
+      ],
+      "status": "BLOCKED",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions.",
+      "blocker": "Existing held authorization/security dependencies unresolved; cannot claim complete independent acceptance or no blockers."
+    },
+    {
+      "criterion": 35,
+      "text": "No unresolved current-scope blocker remains.",
+      "sourceLine": 1254,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-01",
+        "MIW-02",
+        "MIW-03",
+        "MIW-04",
+        "MIW-05",
+        "MIW-06",
+        "MIW-07",
+        "MIW-08",
+        "MIW-09",
+        "MIW-10",
+        "MIW-11",
+        "MIW-12",
+        "MIW-13",
+        "MIW-14",
+        "MIW-15",
+        "MIW-16",
+        "MIW-17",
+        "MIW-18",
+        "MIW-19",
+        "MIW-20",
+        "MIW-21",
+        "MIW-22",
+        "MIW-23",
+        "MIW-24",
+        "MIW-25",
+        "MIW-26",
+        "MIW-27",
+        "MIW-28",
+        "MIW-29",
+        "MIW-30",
+        "MIW-31",
+        "MIW-32",
+        "MIW-33",
+        "MIW-34",
+        "MIW-35",
+        "MIW-36",
+        "MIW-37",
+        "MIW-38",
+        "MIW-39",
+        "MIW-40",
+        "MIW-41",
+        "MIW-42",
+        "MIW-43",
+        "MIW-44",
+        "MIW-45",
+        "MIW-46",
+        "MIW-47",
+        "MIW-48",
+        "MIW-49",
+        "MIW-50",
+        "MIW-51",
+        "MIW-52",
+        "MIW-53",
+        "MIW-54",
+        "MIW-55"
+      ],
+      "status": "BLOCKED",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions.",
+      "blocker": "Existing held authorization/security dependencies unresolved; cannot claim complete independent acceptance or no blockers."
+    }
+  ],
+  "partial_or_unimplemented": [
+    "Bounded current final-good source correction collection is implemented. Full paraphrase scope and reviewed raw-unit/claim/link write collection remain incomplete; existing explicit forms remain required.",
+    "Separate comparison conversational lifecycle cursor is implemented with existing admission. Baseline/post raw-unit correction collection and full chat-only experiment setup remain partial; normal baseline gain680, reviewed baseline gain681, no forced substitution.",
+    "Refreshed audit discovery is implemented; broader exact-dependency lifecycle continuation after corrections remains partial. Current-row changes are never dated cohort membership.",
+    "Incremental typed comparison/service metadata boundaries are retained; alternate retained calculations/commands, monthly presenter/kernel migration and live transport/auth mapping remain partial.",
+    "Full unaided three master chains, all55 rows/original351, wider paraphrase/negative/keyboard/mobile/native/recovery/export/layout checks remain required. Native first-click observation unresolved until fresh review; unit assertions do not confer acceptance."
+  ],
+  "scope": "All original351 criteria, three complete masters,35derived criteria,55matrix rows and metric/conversation cohorts retained; no narrowing/removal/regrading",
+  "source_inputs": {
+    "prior85_byte_exact": true,
+    "prior84_and_original82_byte_exact": "Inherited original preservation records retained; full V65 tree hash comparison passes",
+    "new_in_V66": [],
+    "total": 85
+  },
+  "external": "Original frozen R5 has Patrick-supplied APPROVE verdict; separate merged Dot V54 review denied/unexecuted, no retry/reroute. No provider/key/spending/backend dispatch. Tom authenticated API mapping unverified; Library supported upload unavailable.",
+  "original351": {
+    "file": "V65-ORIGINAL-351-HISTORICAL-REGISTER.json",
+    "rows": 351,
+    "sha256": "b819ee22d6430f69244acf8a17d7a827eeb0189b980410c0e9843285717f6502",
+    "qualification": "Historical original scope inventory and evidence; not current V65 acceptance or status regrading"
+  },
+  "completed_independent_V66": {
+    "native": {
+      "path": "/home/pat/Documents/Codex/2026-10-11/task/V66-NATIVE-ORDINARY-UI-FINAL-REPORT.md",
+      "sha256": "b9a4a1ba70f15fa74192db82c04583601bee05056dba4a2b1db63b52ac0c43e5",
+      "scope": "Bounded52files/14screenshots, positives and open defects preserved"
+    },
+    "domain": {
+      "path": "/home/pat/Documents/Codex/2026-10-09/task/metric-oracle/v66-manufacturing-independent/REPORT.md",
+      "sha256": "d9119f7f395b358236c38f452b8b867eeef4a79c088dc4a468a2255798b0d610",
+      "pass": 2469,
+      "fail": 1,
+      "scope": "Both V65 failures close; fractional count defect confirmed; no full native/product acceptance"
+    }
+  },
+  "V67_independent": "PENDING; owner tests do not close native first-Run concern or full55/351/master scope"
+}

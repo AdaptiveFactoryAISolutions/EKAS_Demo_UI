@@ -1,0 +1,332 @@
+[
+  {
+    "id": 1,
+    "title": "OEE and equipment effectiveness",
+    "source_lines": "7–26",
+    "surface": "Loss bridge; A/P/Q decomposition; timeline",
+    "required_inputs": "PLC/MES counts, run-state intervals, governed ideal cycle and planned time",
+    "semantic_flags": [
+      "pooled_aggregation",
+      "ideal_cycle_product_mix",
+      "planned_time_policy"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Production and output",
+    "source_lines": "27–58",
+    "surface": "Plan versus actual by shift/product; output waterfall; constraint view",
+    "required_inputs": "MES actuals, approved plan version, capacity calendar",
+    "semantic_flags": [
+      "plan_not_capacity",
+      "capacity_units_and_period",
+      "mix_adjustment"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Schedule metrics",
+    "source_lines": "59–74",
+    "surface": "Schedule ribbon; exception queue; order drill-down",
+    "required_inputs": "Frozen schedule version, completion events, order/quantity basis",
+    "semantic_flags": [
+      "schedule_denominator",
+      "schedule_baseline_version"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Cycle time and takt",
+    "source_lines": "75–97",
+    "surface": "Cycle distribution; route flow map; queue/touch breakdown",
+    "required_inputs": "Timestamped unit/lot journeys, engineered standards, demand calendar",
+    "semantic_flags": [
+      "time_boundary",
+      "matched_demand_calendar"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Downtime and loss",
+    "source_lines": "98–120",
+    "surface": "Reason Pareto; event timeline; overlap-aware loss bridge",
+    "required_inputs": "Machine events, reason taxonomy, expected run rate",
+    "semantic_flags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Changeover and setup",
+    "source_lines": "121–134",
+    "surface": "Changeover comparison; internal/external setup timeline",
+    "required_inputs": "Last-good/first-good events, product transitions, setup standard",
+    "semantic_flags": [
+      "timestamp_boundaries",
+      "setup_loss_signed"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Quality",
+    "source_lines": "135–158",
+    "surface": "Quality funnel; defect Pareto; lot genealogy; dispositions",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Rolled yield",
+    "source_lines": "159–180",
+    "surface": "Route yield waterfall; operation FPY drill-down",
+    "required_inputs": "Aligned route cohorts and first-pass operation outcomes",
+    "semantic_flags": [
+      "route_cohort",
+      "unrounded_product",
+      "rty_example_rounding"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Process capability",
+    "source_lines": "181–202",
+    "surface": "Control chart plus distribution/spec limits; capability trust panel",
+    "required_inputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semantic_flags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "Maintenance and reliability",
+    "source_lines": "203–242",
+    "surface": "Failure/repair timeline; asset repeat-failure Pareto; PM backlog",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Delivery and customer service",
+    "source_lines": "243–259",
+    "surface": "Order risk queue; promise-to-delivery timeline; OTIF decomposition",
+    "required_inputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semantic_flags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "Inventory",
+    "source_lines": "260–275",
+    "surface": "Inventory composition; age distribution; stock-versus-flow detail",
+    "required_inputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semantic_flags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Little's Law / manufacturing flow",
+    "source_lines": "276–299",
+    "surface": "Explicit what-if panel; baseline/assumption/result comparison",
+    "required_inputs": "Matched time-average WIP, throughput and boundary-defined lead times",
+    "semantic_flags": [
+      "steady_state_boundary",
+      "scenario_not_causal_prediction"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Labor and workforce productivity",
+    "source_lines": "300–315",
+    "surface": "Product/mix-adjusted labor trends; hours composition",
+    "required_inputs": "Approved labor hours, standard time versions, good output",
+    "semantic_flags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Cost",
+    "source_lines": "316–333",
+    "surface": "Cost bridge; physical-loss to valuation detail; finance approval",
+    "required_inputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semantic_flags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Cost of quality",
+    "source_lines": "334–345",
+    "surface": "Cost-of-quality partition; linked failure ledger",
+    "required_inputs": "Finance-approved prevention/appraisal/internal/external cost categories",
+    "semantic_flags": [
+      "exclusive_cost_partition",
+      "double_counting"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Energy and sustainability",
+    "source_lines": "346–362",
+    "surface": "Energy-versus-output trend; idle load; demand profile",
+    "required_inputs": "Meter interval data, production denominator, emission factor versions",
+    "semantic_flags": [
+      "meter_coverage",
+      "factor_governance",
+      "energy_vs_power",
+      "mix_weather_normalization"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Constraint / Theory of Constraints measures",
+    "source_lines": "363–376",
+    "surface": "Constraint flow and starvation/blockage timeline",
+    "required_inputs": "Constraint calendar, throughput, yields, governed contribution model",
+    "semantic_flags": [
+      "run_vs_productive_time",
+      "local_vs_system_optimum",
+      "financial_throughput_vs_physical"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Safety",
+    "source_lines": "377–391",
+    "surface": "Restricted safety rate trend with exposure and case counts",
+    "required_inputs": "Permissioned EHS case classifications and employee exposure",
+    "semantic_flags": [
+      "restricted_access",
+      "jurisdiction_definition",
+      "exposure_denominator"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Plant Head Daily Operations Audit",
+    "source_lines": "392–421",
+    "surface": "Seven-metric daily audit; ranked exceptions and actions",
+    "required_inputs": "Governed primary metric bindings, target versions, status and coverage",
+    "semantic_flags": [
+      "governed_targets",
+      "no_universal_benchmarks"
+    ]
+  },
+  {
+    "id": 21,
+    "title": "Loss calculations EKAS should support",
+    "source_lines": "422–461",
+    "surface": "Non-overlapping loss bridge and opportunity ledger",
+    "required_inputs": "Underlying event/count/time inputs and governed expectation",
+    "semantic_flags": [
+      "mutually_exclusive_losses",
+      "governed_expected_output",
+      "negative_loss_validation"
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Comparison calculations",
+    "source_lines": "462–498",
+    "surface": "Baseline chips; absolute/relative toggle; target variance",
+    "required_inputs": "Matched definitions, comparable windows, baseline and target",
+    "semantic_flags": [
+      "percentage_points",
+      "zero_baseline",
+      "matched_comparators"
+    ]
+  },
+  {
+    "id": 23,
+    "title": "Trend metrics",
+    "source_lines": "499–524",
+    "surface": "Run/control chart with analytical overlay",
+    "required_inputs": "Ordered observations, time spacing, missing-data policy",
+    "semantic_flags": [
+      "pooled_vs_mean",
+      "cv_zero_mean",
+      "irregular_sampling"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "Pareto calculations",
+    "source_lines": "525–544",
+    "surface": "Sorted Pareto plus cumulative curve and Other category",
+    "required_inputs": "Exclusive loss categories with same unit and boundary",
+    "semantic_flags": [
+      "same_loss_unit",
+      "exclusive_categories",
+      "missing_reason_coverage"
+    ]
+  },
+  {
+    "id": 25,
+    "title": "Action / sustain metrics",
+    "source_lines": "545–582",
+    "surface": "Action board; baseline/post-action chart; verification window",
+    "required_inputs": "Action, owner, due date, completion proof, metric observations",
+    "semantic_flags": [
+      "closure_not_effectiveness",
+      "attribution_confounding",
+      "sustain_window"
+    ]
+  },
+  {
+    "id": 26,
+    "title": "Metric Registry fields I recommend",
+    "source_lines": "583–651",
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "required_inputs": "Registry metadata, approvals and evidence links",
+    "semantic_flags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": 27,
+    "title": "The critical distinction: metric vs derived insight",
+    "source_lines": "652–685",
+    "surface": "Fact/inference/hypothesis labels and evidence graph",
+    "required_inputs": "Measurement lineage, observation derivation and investigation evidence",
+    "semantic_flags": [
+      "no_causal_overclaim",
+      "evidence_vs_hypothesis"
+    ]
+  },
+  {
+    "id": 28,
+    "title": "What I would consider the core EKAS manufacturing KPI library",
+    "source_lines": "686–729",
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "required_inputs": "All catalog registrations with governed alias resolution",
+    "semantic_flags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  }
+]

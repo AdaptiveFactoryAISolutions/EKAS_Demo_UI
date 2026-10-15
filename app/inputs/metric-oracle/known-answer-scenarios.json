@@ -1,0 +1,1588 @@
+{
+  "schemaVersion": "1.0",
+  "cases": [
+    {
+      "id": "NW-L03",
+      "family": "D01",
+      "namespace": "northworks-v3",
+      "inputs": {
+        "planned_min": 480,
+        "run_min": 360,
+        "ideal_total_min": 324.0,
+        "ideal_good_min": 315.0,
+        "total_units": 648,
+        "good_units": 630,
+        "downtime_min": 120
+      },
+      "expected": {
+        "ekas.oee": {
+          "value": 65.625,
+          "unit": "%"
+        },
+        "ekas.availability": {
+          "value": 75.0,
+          "unit": "%"
+        },
+        "ekas.performance": {
+          "value": 90.0,
+          "unit": "%"
+        },
+        "ekas.quality": {
+          "value": 97.22222222222223,
+          "unit": "%"
+        },
+        "ekas.availability_loss_time": {
+          "value": 120,
+          "unit": "min"
+        },
+        "ekas.performance_loss_time": {
+          "value": 36.0,
+          "unit": "min"
+        },
+        "ekas.quality_loss_time": {
+          "value": 9.0,
+          "unit": "min"
+        },
+        "ekas.quality_loss_units": {
+          "value": 18,
+          "unit": "unit"
+        },
+        "ekas.run_time": {
+          "value": 360,
+          "unit": "min"
+        },
+        "ekas.downtime": {
+          "value": 25.0,
+          "unit": "%"
+        }
+      },
+      "authority": "frozen source records",
+      "notes": null,
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "NW-PLANT",
+      "family": "D01",
+      "namespace": "northworks-v3",
+      "inputs": {
+        "planned_min": 1440,
+        "run_min": 1200,
+        "ideal_total_min": 1101.0,
+        "ideal_good_min": 1077.0,
+        "good_units": 2154,
+        "total_units": 2202
+      },
+      "expected": {
+        "ekas.oee": {
+          "value": 74.79166666666667,
+          "unit": "%"
+        },
+        "ekas.availability": {
+          "value": 83.33333333333333,
+          "unit": "%"
+        },
+        "ekas.performance": {
+          "value": 91.75,
+          "unit": "%"
+        },
+        "ekas.quality": {
+          "value": 97.82016348773843,
+          "unit": "%"
+        }
+      },
+      "authority": "frozen pooled source records",
+      "notes": "Plant planned1440 asset-min, run1200, total2202, good2154; do not use2880 capacity as OEE time denominator",
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "NW-CAPACITY",
+      "family": "D01",
+      "namespace": "northworks-v3",
+      "inputs": {
+        "actual_output": 2154,
+        "plan_output": 2304,
+        "available_capacity": 2880,
+        "rated_capacity": 2880
+      },
+      "expected": {
+        "ekas.production_vs_plan": {
+          "value": 93.48958333333333,
+          "unit": "%"
+        },
+        "ekas.production_variance": {
+          "value": -150,
+          "unit": "good_unit"
+        },
+        "ekas.capacity_attainment": {
+          "value": 74.79166666666667,
+          "unit": "%"
+        },
+        "ekas.capacity_utilization": {
+          "value": 74.79166666666667,
+          "unit": "%"
+        },
+        "ekas.unused_capacity": {
+          "value": 726,
+          "unit": "good_unit"
+        }
+      },
+      "authority": "frozen bridge accepted convention",
+      "notes": "Capacity bridge2880-480-198-48=2154; capacity loss726; plan gap150; do not equate them",
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "NW-CASE-LATER",
+      "family": "D13",
+      "namespace": "northworks-v3",
+      "inputs": {
+        "pre_value": 60.0,
+        "post_value": 30.0
+      },
+      "expected": {
+        "ekas.improvement_absolute": {
+          "value": -30.0,
+          "unit": "metric_unit_or_percentage_point"
+        },
+        "ekas.improvement_relative": {
+          "value": -50.0,
+          "unit": "%"
+        }
+      },
+      "authority": "frozen comparable-period records",
+      "notes": "Only later completed10 eligible post shifts; 60->30 min/shift; reduction50%, signed improvement-50%; safety review separately gates acceptance",
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "POOL-UNEQUAL",
+      "family": "D01",
+      "namespace": "training-oracle-v1",
+      "inputs": {
+        "good_units": 55,
+        "total_units": 100
+      },
+      "expected": {
+        "ekas.quality": {
+          "value": 55.0,
+          "unit": "%"
+        }
+      },
+      "authority": "independent arithmetic",
+      "notes": "10/10 and45/90 pool55%, not75%",
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "MIX-OEE",
+      "family": "D01",
+      "namespace": "training-oracle-v1",
+      "inputs": {
+        "ideal_good_min": 100,
+        "planned_min": 200
+      },
+      "expected": {
+        "ekas.oee": {
+          "value": 50.0,
+          "unit": "%"
+        }
+      },
+      "authority": "proposed cycle-time-weighted extension",
+      "notes": "100good at0.5min +50good at1min; no count-quality decomposition implied",
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "TIME-RATE",
+      "family": "D01/D02",
+      "namespace": "training-oracle-v1",
+      "inputs": {
+        "planned_min": 200,
+        "calendar_min": 400,
+        "run_min": 160,
+        "operating_min": 160,
+        "available_asset_min": 300,
+        "good_units": 100,
+        "total_units": 120,
+        "elapsed_h": 3.3333333333333335,
+        "operating_h": 2.6666666666666665,
+        "ideal_cycle_min": 1,
+        "actual_rate": 45,
+        "target_rate": 60,
+        "constraint_run_min": 150,
+        "constraint_productive_min": 130,
+        "constraint_available_min": 200,
+        "constraint_good_units": 90,
+        "constraint_input_units": 100
+      },
+      "expected": {
+        "ekas.overall_utilization": {
+          "value": 40.0,
+          "unit": "%"
+        },
+        "ekas.asset_utilization": {
+          "value": 53.333333333333336,
+          "unit": "%"
+        },
+        "ekas.loading": {
+          "value": 50.0,
+          "unit": "%"
+        },
+        "ekas.target_run_rate": {
+          "value": 60.0,
+          "unit": "unit/h"
+        },
+        "ekas.net_throughput": {
+          "value": 30.0,
+          "unit": "good_unit/h"
+        },
+        "ekas.gross_throughput": {
+          "value": 36.0,
+          "unit": "unit/h"
+        },
+        "ekas.run_rate": {
+          "value": 45.0,
+          "unit": "unit/h"
+        },
+        "ekas.run_rate_attainment": {
+          "value": 75.0,
+          "unit": "%"
+        },
+        "ekas.actual_cycle_time": {
+          "value": 1.3333333333333333,
+          "unit": "min/unit"
+        },
+        "ekas.constraint_utilization": {
+          "value": 75.0,
+          "unit": "%"
+        },
+        "ekas.constraint_productive_utilization": {
+          "value": 65.0,
+          "unit": "%"
+        },
+        "ekas.constraint_throughput": {
+          "value": 27.0,
+          "unit": "good_unit/h"
+        },
+        "ekas.constraint_lost_time": {
+          "value": 70,
+          "unit": "min"
+        },
+        "ekas.constraint_yield": {
+          "value": 90.0,
+          "unit": "%"
+        }
+      },
+      "authority": "proposed deterministic training convention",
+      "notes": null,
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "TEEP",
+      "family": "D01",
+      "namespace": "training-oracle-v1",
+      "inputs": {
+        "ideal_good_min": 100,
+        "calendar_min": 400
+      },
+      "expected": {
+        "ekas.teep": {
+          "value": 25.0,
+          "unit": "%"
+        }
+      },
+      "authority": "proposed deterministic training convention",
+      "notes": null,
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "TARGETS",
+      "family": "D12",
+      "namespace": "training-oracle-v1",
+      "inputs": {
+        "target_pct": 80,
+        "actual_pct": 65.625,
+        "current_pct": 83.3,
+        "baseline_pct": 87.5,
+        "current_value": 83.3,
+        "previous_value": 87.5,
+        "actual_value": 83.3,
+        "target_value": 85,
+        "value_n_periods_ago": 87.5
+      },
+      "expected": {
+        "ekas.oee_gap_to_target": {
+          "value": 14.375,
+          "unit": "percentage_point"
+        },
+        "ekas.oee_improvement": {
+          "value": -4.200000000000003,
+          "unit": "percentage_point"
+        },
+        "ekas.absolute_change": {
+          "value": -4.200000000000003,
+          "unit": "metric_unit_or_percentage_point"
+        },
+        "ekas.relative_percentage_change": {
+          "value": -4.800000000000003,
+          "unit": "%"
+        },
+        "ekas.target_variance_absolute": {
+          "value": -1.7000000000000028,
+          "unit": "metric_unit"
+        },
+        "ekas.target_variance_relative": {
+          "value": -2.0000000000000036,
+          "unit": "%"
+        },
+        "ekas.unfavorable_gap_higher": {
+          "value": 1.7000000000000028,
+          "unit": "metric_unit"
+        },
+        "ekas.unfavorable_gap_lower": {
+          "value": -1.7000000000000028,
+          "unit": "metric_unit"
+        },
+        "ekas.rolling_change": {
+          "value": -4.200000000000003,
+          "unit": "metric_unit"
+        }
+      },
+      "authority": "proposed demo convention",
+      "notes": "83.3-87.5=-4.2pp; relative=-4.8%; lower-direction unfavorable sign differs",
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "SCHEDULE",
+      "family": "D01",
+      "namespace": "training-oracle-v1",
+      "inputs": {
+        "as_scheduled_qty": 80,
+        "scheduled_qty": 100,
+        "completed_qty": 90,
+        "orders_on_scheduled_date": 3,
+        "scheduled_orders": 4,
+        "actual_completion_epoch_min": 1005,
+        "planned_completion_epoch_min": 1000
+      },
+      "expected": {
+        "ekas.schedule_adherence": {
+          "value": 80.0,
+          "unit": "%"
+        },
+        "ekas.schedule_attainment": {
+          "value": 90.0,
+          "unit": "%"
+        },
+        "ekas.orders_completed_to_schedule": {
+          "value": 75.0,
+          "unit": "%"
+        },
+        "ekas.schedule_variance": {
+          "value": 5,
+          "unit": "min"
+        }
+      },
+      "authority": "proposed deterministic training convention",
+      "notes": null,
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "FLOW",
+      "family": "D02",
+      "namespace": "training-oracle-v1",
+      "inputs": {
+        "actual_cycle_min": 2,
+        "standard_cycle_min": 1.5,
+        "takt_min": 1.8,
+        "available_production_min": 180,
+        "demand_units": 100,
+        "ideal_cycle_min": 1.5,
+        "completion_epoch_min": 1120,
+        "release_epoch_min": 1000,
+        "queue_min": 40,
+        "setup_min": 10,
+        "process_min": 50,
+        "move_min": 5,
+        "wait_min": 15,
+        "touch_union_min": 50,
+        "value_added_min": 50,
+        "lead_min": 120
+      },
+      "expected": {
+        "ekas.ideal_cycle_time": {
+          "value": 1.5,
+          "unit": "min/unit"
+        },
+        "ekas.cycle_time_variance": {
+          "value": 0.5,
+          "unit": "min/unit"
+        },
+        "ekas.cycle_time_performance": {
+          "value": 75.0,
+          "unit": "%"
+        },
+        "ekas.takt_time": {
+          "value": 1.8,
+          "unit": "min/unit"
+        },
+        "ekas.takt_attainment": {
+          "value": 90.0,
+          "unit": "%"
+        },
+        "ekas.cycle_to_takt_ratio": {
+          "value": 1.1111111111111112,
+          "unit": "ratio"
+        },
+        "ekas.lead_time": {
+          "value": 120,
+          "unit": "min"
+        },
+        "ekas.manufacturing_lead_time": {
+          "value": 120,
+          "unit": "min"
+        },
+        "ekas.touch_time": {
+          "value": 50,
+          "unit": "min"
+        },
+        "ekas.flow_efficiency": {
+          "value": 41.666666666666664,
+          "unit": "%"
+        }
+      },
+      "authority": "proposed deterministic training convention",
+      "notes": null,
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "LOSS",
+      "family": "D01/D12",
+      "namespace": "training-oracle-v1",
+      "inputs": {
+        "downtime_union_min": 20,
+        "unplanned_union_min": 15,
+        "planned_union_min": 5,
+        "downtime_min": 20,
+        "downtime_events": 4,
+        "elapsed_h": 2,
+        "reason_union_min": 12,
+        "reason_min": 12,
+        "total_loss_min": 20,
+        "largest_category_min": 12,
+        "minor_stop_union_min": 3,
+        "run_min": 80,
+        "ideal_cycle_min": 0.5,
+        "total_units": 140,
+        "expected_units_per_min": 2,
+        "loss_cost_per_min": 3,
+        "category_loss": 12,
+        "total_loss": 20,
+        "ranked_cumulative_loss": 17,
+        "expected_units": 200,
+        "good_units": 135
+      },
+      "expected": {
+        "ekas.total_downtime": {
+          "value": 20,
+          "unit": "min"
+        },
+        "ekas.unplanned_downtime": {
+          "value": 15,
+          "unit": "min"
+        },
+        "ekas.planned_downtime": {
+          "value": 5,
+          "unit": "min"
+        },
+        "ekas.downtime_frequency": {
+          "value": 2.0,
+          "unit": "event/h"
+        },
+        "ekas.average_downtime_event": {
+          "value": 5.0,
+          "unit": "min/event"
+        },
+        "ekas.downtime_by_reason": {
+          "value": 12,
+          "unit": "min"
+        },
+        "ekas.downtime_contribution": {
+          "value": 60.0,
+          "unit": "%"
+        },
+        "ekas.top_loss_contribution": {
+          "value": 60.0,
+          "unit": "%"
+        },
+        "ekas.minor_stop_time": {
+          "value": 3,
+          "unit": "min"
+        },
+        "ekas.speed_loss": {
+          "value": 20.0,
+          "unit": "unit"
+        },
+        "ekas.lost_production_from_downtime": {
+          "value": 40,
+          "unit": "unit_estimate"
+        },
+        "ekas.downtime_cost": {
+          "value": 60,
+          "unit": "USD_estimate"
+        },
+        "ekas.category_contribution": {
+          "value": 60.0,
+          "unit": "%"
+        },
+        "ekas.cumulative_contribution": {
+          "value": 85.0,
+          "unit": "%"
+        },
+        "ekas.lost_units": {
+          "value": 65,
+          "unit": "unit_estimate"
+        }
+      },
+      "authority": "proposed deterministic training convention",
+      "notes": null,
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "CHANGEOVER",
+      "family": "D02",
+      "namespace": "training-oracle-v1",
+      "inputs": {
+        "first_good_new_epoch_min": 1030,
+        "last_good_old_epoch_min": 1000,
+        "changeover_total_min": 50,
+        "changeovers": 2,
+        "changeover_actual_min": 30,
+        "changeover_standard_min": 20,
+        "setup_actual_min": 18,
+        "setup_target_min": 15,
+        "internal_setup_union_min": 18,
+        "external_setup_union_min": 12
+      },
+      "expected": {
+        "ekas.changeover_time": {
+          "value": 30,
+          "unit": "min"
+        },
+        "ekas.average_changeover_time": {
+          "value": 25.0,
+          "unit": "min/changeover"
+        },
+        "ekas.changeover_variance": {
+          "value": 10,
+          "unit": "min"
+        },
+        "ekas.changeover_attainment": {
+          "value": 66.66666666666667,
+          "unit": "%"
+        },
+        "ekas.setup_loss": {
+          "value": 3,
+          "unit": "min"
+        },
+        "ekas.internal_setup_time": {
+          "value": 18,
+          "unit": "min"
+        },
+        "ekas.external_setup_time": {
+          "value": 12,
+          "unit": "min"
+        }
+      },
+      "authority": "proposed deterministic training convention",
+      "notes": null,
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "QUALITY",
+      "family": "D03",
+      "namespace": "training-oracle-v1",
+      "inputs": {
+        "entering_units": 100,
+        "first_pass_good_units": 90,
+        "produced_units": 100,
+        "scrap_units": 5,
+        "rejected_units": 8,
+        "inspected_units": 100,
+        "reworked_unique_units": 10,
+        "defective_unique_units": 8,
+        "defects": 12,
+        "opportunity_count": 500,
+        "customer_rejected_units": 2,
+        "customer_defective_units": 2,
+        "shipped_units": 1000,
+        "final_non_good_units": 5,
+        "total_units": 100,
+        "final_accepted_unique_units": 95,
+        "stage_first_pass_yields": [
+          0.9,
+          0.8888888888888888
+        ]
+      },
+      "expected": {
+        "ekas.first_pass_yield": {
+          "value": 90.0,
+          "unit": "%"
+        },
+        "ekas.first_time_through": {
+          "value": 90.0,
+          "unit": "%"
+        },
+        "ekas.scrap_rate": {
+          "value": 5.0,
+          "unit": "%"
+        },
+        "ekas.reject_rate": {
+          "value": 8.0,
+          "unit": "%"
+        },
+        "ekas.rework_rate": {
+          "value": 10.0,
+          "unit": "%"
+        },
+        "ekas.defect_rate": {
+          "value": 8.0,
+          "unit": "%"
+        },
+        "ekas.defects_per_unit_dpu": {
+          "value": 0.12,
+          "unit": "defect/unit"
+        },
+        "ekas.dpmo": {
+          "value": 24000.0,
+          "unit": "defect_per_million_opportunity"
+        },
+        "ekas.ppm_defective": {
+          "value": 80000.0,
+          "unit": "defective_per_million_unit"
+        },
+        "ekas.customer_reject_rate": {
+          "value": 0.2,
+          "unit": "%"
+        },
+        "ekas.customer_ppm": {
+          "value": 2000.0,
+          "unit": "defective_per_million_shipped_unit"
+        },
+        "ekas.quality_loss": {
+          "value": 5.0,
+          "unit": "%"
+        },
+        "ekas.good_count": {
+          "value": 95,
+          "unit": "good_unit"
+        },
+        "ekas.rolled_throughput_yield": {
+          "value": 80.0,
+          "unit": "%"
+        }
+      },
+      "authority": "proposed demo convention",
+      "notes": "Defective8units carry12defects;5scrap overlaps rejected8;10reworked accepted; finalgood95 distinct from firstpass90. RTY separate aligned route cohort",
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "CAPABILITY",
+      "family": "D04",
+      "namespace": "training-oracle-v1",
+      "inputs": {
+        "usl": 110,
+        "lsl": 90,
+        "process_mean": 100,
+        "sigma_within": 2,
+        "sigma_overall": 2.5,
+        "within_ss": 400,
+        "within_dof": 100
+      },
+      "expected": {
+        "ekas.cp": {
+          "value": 1.6666666666666667,
+          "unit": "dimensionless"
+        },
+        "ekas.cpk": {
+          "value": 1.6666666666666667,
+          "unit": "dimensionless"
+        },
+        "ekas.pp": {
+          "value": 1.3333333333333333,
+          "unit": "dimensionless"
+        },
+        "ekas.ppk": {
+          "value": 1.3333333333333333,
+          "unit": "dimensionless"
+        },
+        "ekas.within_subgroup_sigma": {
+          "value": 2.0,
+          "unit": "measurement_unit"
+        }
+      },
+      "authority": "acceptance algebra inputs; qualification separately required",
+      "notes": null,
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "MAINTENANCE",
+      "family": "D05",
+      "namespace": "training-oracle-v1",
+      "inputs": {
+        "operating_h": 1000,
+        "failures": 4,
+        "repairs": 4,
+        "active_repair_elapsed_h": 8,
+        "restoration_elapsed_h": 12,
+        "incidents": 4,
+        "failed_complete_lifetime_h": 1000,
+        "nonrepairable_failures": 4,
+        "failure_lambda_per_h": 0.004,
+        "horizon_h": 100,
+        "maintenance_union_min": 60,
+        "planned_min": 480,
+        "breakdowns": 4,
+        "elapsed_days": 10,
+        "reactive_labor_h": 8,
+        "maintenance_labor_h": 20,
+        "planned_labor_h": 12,
+        "pm_on_time": 3,
+        "pm_due": 4,
+        "maintenance_jobs_as_planned": 3,
+        "maintenance_jobs_scheduled": 4,
+        "backlog_labor_h": 80,
+        "available_weekly_labor_h": 40,
+        "repeat_failures": 1,
+        "emergency_labor_h": 4
+      },
+      "expected": {
+        "ekas.mtbf": {
+          "value": 250.0,
+          "unit": "h/failure"
+        },
+        "ekas.mttr_repair": {
+          "value": 2.0,
+          "unit": "h/repair"
+        },
+        "ekas.mttr_restore": {
+          "value": 3.0,
+          "unit": "h/incident"
+        },
+        "ekas.mttf": {
+          "value": 250.0,
+          "unit": "h/failure"
+        },
+        "ekas.failure_rate": {
+          "value": 0.004,
+          "unit": "failure/h"
+        },
+        "ekas.reliability": {
+          "value": 0.6703200460356393,
+          "unit": "probability"
+        },
+        "ekas.repair_rate": {
+          "value": 0.5,
+          "unit": "repair/h"
+        },
+        "ekas.maintenance_downtime": {
+          "value": 12.5,
+          "unit": "%"
+        },
+        "ekas.breakdown_frequency": {
+          "value": 0.4,
+          "unit": "breakdown/day"
+        },
+        "ekas.reactive_maintenance": {
+          "value": 40.0,
+          "unit": "%"
+        },
+        "ekas.planned_maintenance": {
+          "value": 60.0,
+          "unit": "%"
+        },
+        "ekas.pm_compliance": {
+          "value": 75.0,
+          "unit": "%"
+        },
+        "ekas.schedule_compliance_maintenance": {
+          "value": 75.0,
+          "unit": "%"
+        },
+        "ekas.maintenance_backlog": {
+          "value": 2.0,
+          "unit": "week"
+        },
+        "ekas.repeat_failure_rate": {
+          "value": 25.0,
+          "unit": "%"
+        },
+        "ekas.emergency_work": {
+          "value": 20.0,
+          "unit": "%"
+        }
+      },
+      "authority": "separate algebra cohorts; not population survival inference",
+      "notes": null,
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "DELIVERY",
+      "family": "D06",
+      "namespace": "training-oracle-v1",
+      "inputs": {
+        "orders_both_on_time_in_full": 2,
+        "eligible_orders": 4,
+        "delivered_on_time_orders": 3,
+        "delivered_orders": 4,
+        "complete_orders": 3,
+        "immediately_shipped_units": 350,
+        "ordered_units": 400,
+        "perfect_orders": 1,
+        "late_orders": 1,
+        "past_due_remaining_qty": 20,
+        "late_days_sum": 2,
+        "late_deliveries": 1
+      },
+      "expected": {
+        "ekas.otif": {
+          "value": 50.0,
+          "unit": "%"
+        },
+        "ekas.on_time_delivery_otd": {
+          "value": 75.0,
+          "unit": "%"
+        },
+        "ekas.in_full_delivery": {
+          "value": 75.0,
+          "unit": "%"
+        },
+        "ekas.fill_rate": {
+          "value": 87.5,
+          "unit": "%"
+        },
+        "ekas.perfect_order_rate": {
+          "value": 25.0,
+          "unit": "%"
+        },
+        "ekas.late_order_rate": {
+          "value": 25.0,
+          "unit": "%"
+        },
+        "ekas.past_due_quantity": {
+          "value": 20,
+          "unit": "unit"
+        },
+        "ekas.average_delivery_delay": {
+          "value": 2.0,
+          "unit": "day/delivery"
+        }
+      },
+      "authority": "proposed order-grain convention",
+      "notes": null,
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "INVENTORY",
+      "family": "D07",
+      "namespace": "training-oracle-v1",
+      "inputs": {
+        "annual_cogs": 3200,
+        "period_cogs": 800,
+        "average_inventory_value": 400,
+        "period_days": 90,
+        "average_rm_value": 100,
+        "period_material_usage_value": 500,
+        "average_wip_value": 100,
+        "period_manufacturing_cost": 1000,
+        "average_wip_units": 20,
+        "throughput_units_per_day": 10,
+        "average_fg_value": 200,
+        "snapshot_wip_units": 30,
+        "inventory_correct_records": 9,
+        "inventory_checked_records": 10,
+        "obsolete_value": 40,
+        "total_inventory_value": 400,
+        "excess_value": 80
+      },
+      "expected": {
+        "ekas.inventory_turns": {
+          "value": 8.0,
+          "unit": "turn/year"
+        },
+        "ekas.inventory_turns_period": {
+          "value": 2.0,
+          "unit": "turn/period"
+        },
+        "ekas.inventory_days_dio": {
+          "value": 45.0,
+          "unit": "day"
+        },
+        "ekas.raw_material_days": {
+          "value": 18.0,
+          "unit": "day"
+        },
+        "ekas.wip_days_value": {
+          "value": 9.0,
+          "unit": "day"
+        },
+        "ekas.wip_days_units": {
+          "value": 2.0,
+          "unit": "day"
+        },
+        "ekas.finished_goods_days": {
+          "value": 22.5,
+          "unit": "day"
+        },
+        "ekas.wip_units": {
+          "value": 30,
+          "unit": "unit"
+        },
+        "ekas.inventory_accuracy": {
+          "value": 90.0,
+          "unit": "%"
+        },
+        "ekas.obsolete_inventory": {
+          "value": 10.0,
+          "unit": "%"
+        },
+        "ekas.excess_inventory": {
+          "value": 20.0,
+          "unit": "%"
+        },
+        "ekas.little_s_law": {
+          "value": 2.0,
+          "unit": "day"
+        }
+      },
+      "authority": "annual COGS supplied independently; no automatic period annualization",
+      "notes": "Opening300/closing500 arithmetic average400 is proposed two-point convention; continuous balances use time weighted average",
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "LABOR",
+      "family": "D08",
+      "namespace": "training-oracle-v1",
+      "inputs": {
+        "good_units": 10,
+        "labor_h": 5,
+        "employee_h": 5,
+        "earned_standard_h": 4,
+        "standard_labor_h_per_unit": 0.4,
+        "productive_labor_h": 4,
+        "paid_labor_h": 5,
+        "direct_productive_h": 3,
+        "direct_available_h": 4,
+        "overtime_h": 1,
+        "absent_scheduled_h": 1,
+        "scheduled_labor_h": 6,
+        "direct_labor_cost": 100
+      },
+      "expected": {
+        "ekas.labor_productivity": {
+          "value": 2.0,
+          "unit": "good_unit/person_h"
+        },
+        "ekas.labor_efficiency": {
+          "value": 80.0,
+          "unit": "%"
+        },
+        "ekas.standard_hours_earned": {
+          "value": 4.0,
+          "unit": "person_h"
+        },
+        "ekas.labor_utilization": {
+          "value": 80.0,
+          "unit": "%"
+        },
+        "ekas.direct_labor_utilization": {
+          "value": 75.0,
+          "unit": "%"
+        },
+        "ekas.overtime": {
+          "value": 20.0,
+          "unit": "%"
+        },
+        "ekas.absenteeism_rate": {
+          "value": 16.666666666666668,
+          "unit": "%"
+        },
+        "ekas.units_per_employee_hour": {
+          "value": 2.0,
+          "unit": "good_unit/person_h"
+        },
+        "ekas.labor_cost_per_unit": {
+          "value": 10.0,
+          "unit": "USD/good_unit"
+        }
+      },
+      "authority": "proposed deterministic training convention",
+      "notes": null,
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "COST",
+      "family": "D09",
+      "namespace": "training-oracle-v1",
+      "inputs": {
+        "good_units": 100,
+        "manufacturing_cost": 1000,
+        "direct_labor_cost": 200,
+        "overhead_cost": 300,
+        "scrap_units": 5,
+        "scrap_unit_cost": 10,
+        "scrap_cost_amount": 50,
+        "rework_labor_cost": 20,
+        "rework_material_cost": 10,
+        "rework_overhead_cost": 5,
+        "actual_cost": 1000,
+        "standard_cost": 900,
+        "actual_material_qty": 110,
+        "standard_material_qty": 100,
+        "standard_material_price": 2,
+        "actual_labor_h": 50,
+        "standard_labor_h": 40,
+        "standard_labor_rate": 4,
+        "internal_failure_cost": 85,
+        "external_failure_cost": 15,
+        "prevention_cost": 20,
+        "appraisal_cost": 30,
+        "copq_amount": 100,
+        "sales": 2000,
+        "warranty_cost_amount": 10,
+        "totally_variable_cost": 1200
+      },
+      "expected": {
+        "ekas.manufacturing_cost_per_unit": {
+          "value": 10.0,
+          "unit": "USD/good_unit"
+        },
+        "ekas.conversion_cost_per_unit": {
+          "value": 5.0,
+          "unit": "USD/good_unit"
+        },
+        "ekas.scrap_cost": {
+          "value": 50,
+          "unit": "USD_estimate"
+        },
+        "ekas.scrap_cost_share": {
+          "value": 5.0,
+          "unit": "%"
+        },
+        "ekas.rework_cost": {
+          "value": 35,
+          "unit": "USD_estimate"
+        },
+        "ekas.cost_variance": {
+          "value": 100,
+          "unit": "USD"
+        },
+        "ekas.cost_variance_percent": {
+          "value": 11.11111111111111,
+          "unit": "%"
+        },
+        "ekas.material_usage_variance": {
+          "value": 20,
+          "unit": "USD"
+        },
+        "ekas.labor_efficiency_variance": {
+          "value": 40,
+          "unit": "USD"
+        },
+        "ekas.copq_cost_of_poor_quality": {
+          "value": 100,
+          "unit": "USD"
+        },
+        "ekas.cost_of_quality": {
+          "value": 150,
+          "unit": "USD"
+        },
+        "ekas.copq_sales": {
+          "value": 5.0,
+          "unit": "%"
+        },
+        "ekas.warranty_cost": {
+          "value": 0.5,
+          "unit": "%"
+        },
+        "ekas.throughput_contribution": {
+          "value": 800,
+          "unit": "USD"
+        }
+      },
+      "authority": "governed synthetic USD model; no realized savings",
+      "notes": "Scrap50+rework35 compose internalfailure85; do not double-count those ledger rows in COPQ",
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "ENERGY",
+      "family": "D10",
+      "namespace": "training-oracle-v1",
+      "inputs": {
+        "energy_kwh": 100,
+        "good_units": 50,
+        "governed_production_measure": 50,
+        "idle_kwh": 10,
+        "interval_kw": [
+          20,
+          40,
+          30
+        ],
+        "co2e_kg": 25,
+        "waste_kg": 5,
+        "water_m3": 2
+      },
+      "expected": {
+        "ekas.energy_consumption": {
+          "value": 100,
+          "unit": "kWh"
+        },
+        "ekas.energy_per_unit": {
+          "value": 2.0,
+          "unit": "kWh/good_unit"
+        },
+        "ekas.energy_intensity": {
+          "value": 2.0,
+          "unit": "kWh/governed_output_unit"
+        },
+        "ekas.idle_energy": {
+          "value": 10.0,
+          "unit": "%"
+        },
+        "ekas.peak_demand": {
+          "value": 40,
+          "unit": "kW"
+        },
+        "ekas.co_e_per_unit": {
+          "value": 0.5,
+          "unit": "kgCO2e/good_unit"
+        },
+        "ekas.waste_per_unit": {
+          "value": 0.1,
+          "unit": "kg/good_unit"
+        },
+        "ekas.water_per_unit": {
+          "value": 0.04,
+          "unit": "m3/good_unit"
+        }
+      },
+      "authority": "proposed meter/output boundary",
+      "notes": "CO2e100kWh*0.25kg/kWh factor; peak40kW independent from100kWh total",
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "SAFETY",
+      "family": "D11",
+      "namespace": "training-oracle-v1",
+      "inputs": {
+        "recordable_cases": 2,
+        "dart_cases": 1,
+        "lost_time_cases": 1,
+        "worked_h": 200000,
+        "near_misses": 3,
+        "exposure_multiplier": 200000,
+        "exposure_denominator": 200000
+      },
+      "expected": {
+        "ekas.trir": {
+          "value": 2.0,
+          "unit": "case_per_200000_person_h"
+        },
+        "ekas.dart_rate": {
+          "value": 1.0,
+          "unit": "case_per_200000_person_h"
+        },
+        "ekas.lost_time_incident_rate": {
+          "value": 1.0,
+          "unit": "case_per_200000_person_h"
+        },
+        "ekas.near_miss_rate": {
+          "value": 3.0,
+          "unit": "case_per_governed_exposure"
+        }
+      },
+      "authority": "near-miss exposure200000 personh explicitly proposed, not canonical policy",
+      "notes": null,
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "TREND",
+      "family": "D12",
+      "namespace": "training-oracle-v1",
+      "inputs": {
+        "last_n_values": [
+          10,
+          12,
+          14
+        ],
+        "values": [
+          10,
+          12,
+          14
+        ],
+        "time_offsets": [
+          0,
+          1,
+          2
+        ],
+        "ordered_values": [
+          10,
+          12,
+          14
+        ]
+      },
+      "expected": {
+        "ekas.moving_average": {
+          "value": 12,
+          "unit": "metric_unit"
+        },
+        "ekas.trend_slope": {
+          "value": 2.0,
+          "unit": "metric_unit/time_unit"
+        },
+        "ekas.volatility": {
+          "value": 16.666666666666668,
+          "unit": "%"
+        },
+        "ekas.standard_deviation": {
+          "value": 2.0,
+          "unit": "metric_unit"
+        },
+        "ekas.coefficient_of_variation": {
+          "value": 16.666666666666668,
+          "unit": "%"
+        },
+        "ekas.process_mean": {
+          "value": 12,
+          "unit": "measurement_unit"
+        },
+        "ekas.overall_sigma": {
+          "value": 2.0,
+          "unit": "measurement_unit"
+        }
+      },
+      "authority": "sample sigma; equal daily period convention",
+      "notes": "Mean12,sampleSD2,slope2units/day; process mean/sigma here math only, not capability",
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    },
+    {
+      "id": "ACTION-SUSTAIN",
+      "family": "D13",
+      "namespace": "training-oracle-v1",
+      "inputs": {
+        "last_n_values": [
+          28,
+          26,
+          30,
+          25,
+          27
+        ],
+        "threshold": 45,
+        "direction": "lower",
+        "repeated_events": 2,
+        "relevant_events": 10,
+        "closed_due_actions": 3,
+        "due_actions": 4,
+        "on_time_closed_due_actions": 2
+      },
+      "expected": {
+        "ekas.sustained_improvement": {
+          "value": true,
+          "unit": "boolean"
+        },
+        "ekas.recurrence_rate": {
+          "value": 20.0,
+          "unit": "%"
+        },
+        "ekas.action_closure_rate": {
+          "value": 75.0,
+          "unit": "%"
+        },
+        "ekas.on_time_action_closure": {
+          "value": 50.0,
+          "unit": "%"
+        }
+      },
+      "authority": "proposed due-cohort convention",
+      "notes": "5 eligible consecutive shifts; threshold on endpoint, not mere action completion",
+      "tolerance": {
+        "absolute": 1e-09,
+        "relative": 1e-09
+      }
+    }
+  ],
+  "boundaryCases": [
+    {
+      "id": "ZERO-DEN",
+      "metricID": "ekas.oee",
+      "inputs": {
+        "ideal_good_min": 0,
+        "planned_min": 0
+      },
+      "expectedAvailability": "zero_denominator",
+      "expectedValue": null
+    },
+    {
+      "id": "MISSING-PRIOR",
+      "metricID": "ekas.relative_percentage_change",
+      "inputs": {
+        "current_value": 10,
+        "previous_value": null
+      },
+      "expectedAvailability": "missing_input",
+      "expectedValue": null
+    },
+    {
+      "id": "P3-NORTHWORKS",
+      "metricID": "ekas.oee",
+      "namespace": "northworks-v3",
+      "scope": {
+        "revision": "P3"
+      },
+      "expectedAvailability": "unsupported",
+      "expectedValue": null
+    },
+    {
+      "id": "ZERO-SIGMA",
+      "metricID": "ekas.cp",
+      "inputs": {
+        "usl": 110,
+        "lsl": 90,
+        "sigma_within": 0
+      },
+      "expectedAvailability": "zero_denominator",
+      "expectedValue": null
+    },
+    {
+      "id": "INVALID-LIMITS",
+      "metricID": "ekas.cp",
+      "inputs": {
+        "usl": 90,
+        "lsl": 110,
+        "sigma_within": 2
+      },
+      "expectedAvailability": "invalid_formula",
+      "expectedValue": null,
+      "validation": "host must reject limits before arithmetic"
+    },
+    {
+      "id": "MASKED-DERIVED",
+      "metricID": "ekas.cost_variance",
+      "inputs": {
+        "actual_cost": {
+          "masked": true
+        },
+        "standard_cost": 900
+      },
+      "expectedAvailability": "masked",
+      "expectedValue": null
+    },
+    {
+      "id": "OVERLAP",
+      "operation": "interval_union",
+      "intervals": [
+        [
+          0,
+          10
+        ],
+        [
+          5,
+          15
+        ]
+      ],
+      "window": [
+        0,
+        20
+      ],
+      "expectedValue": 15,
+      "unit": "min"
+    },
+    {
+      "id": "SOURCE-RTY-ROUND",
+      "operation": "product",
+      "inputs": [
+        0.98,
+        0.97,
+        0.99
+      ],
+      "expectedValue": 94.1094,
+      "unit": "%"
+    },
+    {
+      "id": "MIX-QUALITY-CONFLICT",
+      "operation": "mixed_cycle_decomposition",
+      "inputs": {
+        "planned_min": 200,
+        "run_min": 150,
+        "segments": [
+          {
+            "cycle_min": 0.5,
+            "total": 100,
+            "good": 90
+          },
+          {
+            "cycle_min": 1,
+            "total": 50,
+            "good": 40
+          }
+        ]
+      },
+      "expected": {
+        "ideal_total_min": 100,
+        "ideal_good_min": 85,
+        "time_weighted_oee_pct": 42.5,
+        "count_quality_pct": 86.66666666666667,
+        "time_weighted_quality_pct": 85,
+        "count_APQ_pct": 43.333333333333336
+      },
+      "validation": "count APQ43.3333 differs from42.5; do not round away conflict"
+    },
+    {
+      "id": "FUTURE-LEAK",
+      "as_of": "2026-10-06T14:45:00Z",
+      "mustExclude": [
+        "DEMO-WO-003",
+        "NOTE-003",
+        "INSPECT-003",
+        "MC-06",
+        "MC-07",
+        "MC-08",
+        "NOTE-VERIFY-003",
+        "NOTE-RECUR-003",
+        "CONFLICT-003",
+        "PM-REVIEW-003@v2"
+      ],
+      "expectedAvailability": "future_record"
+    },
+    {
+      "id": "PARETO-NINE",
+      "categories": [
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "expected": {
+        "total": 45,
+        "eight_total": 44,
+        "other": 1,
+        "categoryCount": 9
+      }
+    },
+    {
+      "id": "GROUPS-81",
+      "operation": "untruncated_group_result",
+      "expected": {
+        "total_count": 81,
+        "returned_count": 81,
+        "truncated": false
+      },
+      "physicalEntities": false
+    },
+    {
+      "id": "OBSERVED-ZERO",
+      "metricID": "ekas.scrap_rate",
+      "inputs": {
+        "scrap_units": 0,
+        "produced_units": 100
+      },
+      "expectedValue": 0,
+      "expectedAvailability": "observed"
+    },
+    {
+      "id": "RECUR-STREAK",
+      "values": [
+        25,
+        30,
+        29,
+        55,
+        58
+      ],
+      "threshold": 45,
+      "requiredConsecutive": 2,
+      "expectedTriggerIndexZeroBased": 4,
+      "rule": "observed eligible chronological periods; missing breaks streak"
+    },
+    {
+      "id": "CAPABILITY-INELIGIBLE",
+      "metricID": "ekas.cpk",
+      "sigma_within": 2,
+      "sample_n": 5,
+      "msa_status": "unknown",
+      "expectedAvailability": "unsupported",
+      "expectedValue": null,
+      "rule": "valid algebra cannot override qualification"
+    }
+  ],
+  "note": "Independent expected values computed by this script; no imported template code; acceptance eligibility must be checked before scalar evaluator"
+}

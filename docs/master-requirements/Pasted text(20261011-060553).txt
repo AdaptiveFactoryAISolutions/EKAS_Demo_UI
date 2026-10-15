@@ -1,0 +1,384 @@
+==================================================
+FULLY CONVERSATIONAL CHAT IS A HARD PRODUCT REQUIREMENT
+==================================================
+
+The current in-process EKAS conversational chat capability is NOT optional,
+not a side feature, and not to be replaced by the investigation UI.
+
+It is the PRIMARY user interaction model for the completed demo.
+
+The investigation service, metric service, evidence service, action service,
+verification service and operating-review service must all be accessible
+through one continuous natural-language conversation.
+
+The user must not have to learn command syntax or manually navigate multiple
+screens to complete the workflow.
+
+Required conversational behavior includes:
+
+- free-form questions;
+- multi-turn context;
+- pronouns;
+- ellipsis;
+- corrections;
+- follow-ups;
+- changing machine;
+- changing period;
+- changing metric;
+- changing job;
+- changing part/revision;
+- changing investigation focus;
+- clarification when ambiguous;
+- retaining unrelated context dimensions;
+- natural comparison;
+- natural explanation;
+- natural chart/table request;
+- natural transition from metric → investigation → action → verification;
+- reload/history persistence.
+
+Examples:
+
+"What was OEE in January?"
+
+"And March?"
+
+"What about Machine 2?"
+
+"No, I meant Machine 1."
+
+"Why?"
+
+"Show me."
+
+"Compare that to last month."
+
+"Go back to the first machine."
+
+"We missed our production goal. What happened?"
+
+"Which line caused most of it?"
+
+"What job was running?"
+
+"What evidence do we have?"
+
+"What do you think happened?"
+
+"How do we prove that?"
+
+"What should we do next?"
+
+"Who owns it?"
+
+"Has maintenance accepted it?"
+
+"Was it approved?"
+
+"Was the work actually done?"
+
+"Did it improve?"
+
+"Did it hold?"
+
+"Why did it recur?"
+
+The conversation must retain the correct dimensional context throughout.
+
+A change to one dimension must not silently alter another.
+
+For example:
+
+machine = Machine 1
+primary_period = March
+comparison_period = February
+metric = OEE
+
+"Go back to Machine 1"
+
+must change only the machine focus and must not silently make February the
+primary period.
+
+An explicit metric request must always override inherited metric context.
+
+Example:
+
+"What was FPY?"
+
+must NEVER silently answer OEE.
+
+If FPY is unavailable, EKAS must recognize FPY and explain naturally what
+governed prerequisite is missing.
+
+==================================================
+CHAT MUST DRIVE THE INVESTIGATION
+==================================================
+
+The investigation panel/workspace is a supporting visual surface.
+
+Chat is the primary control surface.
+
+A user should be able to create and progress an investigation entirely from
+conversation.
+
+Examples:
+
+"We missed the goal."
+
+→ create/open investigation
+
+"Why?"
+
+→ summarize the governed loss bridge and strongest documented contributors
+
+"Show me."
+
+→ display the relevant evidence/chart
+
+"What should we investigate first?"
+
+→ return the ranked next investigation based on governed evidence
+
+"Assign that to maintenance."
+
+→ initiate assignment workflow subject to authorization
+
+"Maintenance accepted it."
+
+→ record the accepted assignment through the typed service
+
+"Approve the repair."
+
+→ invoke the authorization workflow, not a local UI toggle
+
+"Record that it was completed."
+
+→ invoke performed-work service with required evidence
+
+"Did it work?"
+
+→ evaluate the governed verification cohort
+
+"Did it hold?"
+
+→ evaluate sustain state
+
+"Reopen it."
+
+→ create the next investigation cycle without borrowing prior evidence
+
+No manual hidden manipulation is allowed.
+
+==================================================
+CHATGPT-PARITY RESPONSE QUALITY
+==================================================
+
+Correct backend behavior alone is insufficient.
+
+Every normal user-facing answer must sound like a highly experienced
+manufacturing expert.
+
+Required:
+
+- answer first;
+- proper English;
+- complete sentences;
+- natural paragraphs;
+- conversational transitions;
+- grounded manufacturing interpretation;
+- concise explanation of what matters;
+- explicit distinction between known and unknown;
+- no robotic raw field dumps;
+- no internal IDs unless genuinely useful;
+- no repetitive certification jargon;
+- no repetitive canned wording;
+- adaptive answer length;
+- charts/tables only when useful or requested.
+
+Example:
+
+BAD:
+
+"Metric: OEE
+Value: 83.3%
+Availability: 83.3%
+Performance: 104%
+Quality: 96.2%
+Cause not established."
+
+GOOD:
+
+"Machine 1's March OEE was 83.3%. Availability was the biggest constraint at
+83.3%, while performance ran above nominal at 104% and quality remained
+strong at 96.2%.
+
+The production record also shows one unplanned mechanical stop. That is the
+strongest documented contributor to the availability loss, although the
+current evidence does not yet establish the underlying mechanical failure
+mode."
+
+Correct values + stiff or report-like prose = FAIL.
+
+==================================================
+CONVERSATION PRESENTER
+==================================================
+
+Preserve and complete the current ConversationPresenter / response-composer
+layer.
+
+It may receive:
+
+- user question;
+- intent;
+- prior conversational context;
+- active investigation;
+- metric result;
+- comparison result;
+- evidence claims;
+- action state;
+- verification state;
+- sustain state;
+- chart/table availability.
+
+It may control:
+
+- wording;
+- paragraph structure;
+- emphasis;
+- response length;
+- optional chart/table;
+- optional next-step suggestion.
+
+It may NOT change:
+
+- manufacturing values;
+- metric identity;
+- evidence;
+- causal status;
+- authorization;
+- action status;
+- verification result;
+- certification.
+
+==================================================
+GLIDE-FIRST CHAT ROUTING
+==================================================
+
+Continue the current GLiDE-first architecture.
+
+Ordinary conversational turns should use the fast bounded route.
+
+GLiDE / ReferenceConversationRouter owns:
+
+- conversational intent;
+- reference resolution;
+- pronouns;
+- corrections;
+- follow-ups;
+- clarification.
+
+It does not own manufacturing truth.
+
+Complex requests may escalate to LangGraph only when genuinely necessary,
+such as:
+
+- multi-step investigation;
+- multiple services;
+- competing hypotheses;
+- planning;
+- evidence synthesis.
+
+Anthropic/model reasoning may improve wording or select among already governed
+facts.
+
+It may NEVER create:
+
+- metric values;
+- source evidence;
+- root causes;
+- authorization;
+- performed work;
+- verification results.
+
+==================================================
+CHAT PERSISTENCE
+==================================================
+
+Conversation state must survive:
+
+- reload;
+- route changes;
+- reopening history;
+- sign out/sign in where supported;
+- archive/restore;
+- browser restart where current persistence supports it.
+
+The active investigation must also be recoverable from conversation history.
+
+The user should be able to return later and ask:
+
+"What happened with the feeder-jam issue?"
+
+and EKAS should reopen the correct investigation context.
+
+==================================================
+CHAT ACCEPTANCE
+==================================================
+
+Run the entire current conversational regression chain in visible Chrome AND
+the new investigation journey.
+
+Required existing chain:
+
+"What was OEE in January?"
+"And March?"
+"What about Machine 2?"
+"No, I meant Machine 1."
+"Why?"
+"Show me."
+"Compare that to last month."
+"Go back to the first machine."
+"Investigate the root cause."
+"What was FPY?"
+
+Required investigation chain:
+
+"We missed our production goal."
+"Where was the biggest loss?"
+"Which machine?"
+"What job?"
+"What evidence do we have?"
+"What are the possible causes?"
+"What should we test?"
+"Who owns it?"
+"Assign it."
+"Was it accepted?"
+"Request approval."
+"Was it approved?"
+"Record the repair."
+"Did it work?"
+"Show me."
+"Did it hold?"
+"What happened when it came back?"
+"Reopen it."
+
+PASS requires:
+
+- correct context;
+- natural conversation;
+- correct service calls;
+- persistent state;
+- no wrong-metric fallback;
+- no invented evidence;
+- no invented cause;
+- no hidden UI manipulation;
+- no loss of current investigation;
+- ChatGPT-quality prose.
+
+If the service works only by manually navigating the UI, FAIL.
+
+If the chat works only for metrics but cannot drive investigation/action/
+verification, FAIL.
+
+If the workflow works but the conversational behavior regresses, FAIL.
+
+The final demo must be CHAT-FIRST and FULLY CONVERSATIONAL without compromise.

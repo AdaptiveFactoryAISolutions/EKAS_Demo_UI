@@ -1,0 +1,796 @@
+{
+  "specVersion": "canonical-gap-spec@1.0.1",
+  "gapContracts": 17,
+  "definitions": [
+    {
+      "metricId": "MET-011",
+      "title": "Gross OEE Loss Equivalent Hours",
+      "mockSpecVersion": "canonical-gap-spec@1.0.1",
+      "sourceDocumentVersion": "EKAS-MIK-001@1.0.2",
+      "sourceMetricPointerCandidate": "MET-011@0.2.0",
+      "pointerAuthority": "EKAS-MIK004@0.4.0 DRAFT pointer register; verify controlled active metricversion before product admission; no approval inferred",
+      "sourcePath": "/home/pat/EKAS_Platform_v2/EKAS_Platform_v2_Cleanroom_Build_Program/09-manufacturing-kernel/EKAS-MIK-001-metric-definition-standard.md",
+      "sourceLines": [
+        359,
+        374
+      ],
+      "sourceFields": {
+        "Canonical name": "Gross OEE Loss Equivalent Hours",
+        "Standard reference": "Derived from ISO 22400-2 OEE (MET-004); EKAS-defined composite",
+        "Formula": "`Gross loss equivalent hours_i = PBT_i \u00d7 (1 \u2212 OEE actual_i)`, where PBT = planned busy time",
+        "Unit": "h, by part number; never collapsed across unlike parts",
+        "Aggregation": "RATIO_OF_SUMS at detailed grain, then SUM in hours",
+        "Required inputs": "Planned busy time, good quantity, planned run time per item, actual OEE",
+        "Configure down": "Requires only actual OEE and PBT; no entitlement needed",
+        "Certification state": "Eligible for current-state certification once gates pass",
+        "Prohibited": "May not be labelled recoverable, opportunity, or savings",
+        "Oracle": "Independently calculated reference values required per B.11 (single part/period; mixed-product period; entitlement-exceeded zero case; unlike-parts non-aggregation)",
+        "Aliases / Chart compatibility / Explanation template / Test vectors": "not stated in the adopted ruling \u2014 TBC"
+      },
+      "family": "capacity",
+      "requiredDomainTables": [
+        "equipment_intervals",
+        "production_counts",
+        "planned_runtime_standards",
+        "oee_component_standards",
+        "oee_entitlements",
+        "improvement_proposals",
+        "cause_evidence",
+        "countermeasures",
+        "valuation_models"
+      ],
+      "grain": "workunit\u00d7operation\u00d7order\u00d7partrevision\u00d7tooling/rateconfiguration\u00d7closedperiod; hours grouped by part, units never unlikepart total",
+      "positiveCaseIds": [
+        "homogeneous-capacity"
+      ],
+      "publicationStates": [
+        "available_synthetic_arithmetic"
+      ],
+      "sourceInputRules": "Require effectivity/configuration/units/watermark/sourcepolicy gates and explicit authority; fictional fixture approval has no real customer/Finance force",
+      "APIContractRef": "api-result-contract.json",
+      "separation": "New canonical METidentity. No aliasing/overwriting178ekasdefinitions or frozenNorthworks. Existing178 arithmetic policies remain explicit."
+    },
+    {
+      "metricId": "MET-012",
+      "title": "Attainable Productive Capacity Opportunity (APCO), hours",
+      "mockSpecVersion": "canonical-gap-spec@1.0.1",
+      "sourceDocumentVersion": "EKAS-MIK-001@1.0.2",
+      "sourceMetricPointerCandidate": "MET-012@0.2.0",
+      "pointerAuthority": "EKAS-MIK004@0.4.0 DRAFT pointer register; verify controlled active metricversion before product admission; no approval inferred",
+      "sourcePath": "/home/pat/EKAS_Platform_v2/EKAS_Platform_v2_Cleanroom_Build_Program/09-manufacturing-kernel/EKAS-MIK-001-metric-definition-standard.md",
+      "sourceLines": [
+        375,
+        392
+      ],
+      "sourceFields": {
+        "Canonical name": "Attainable Productive Capacity Opportunity",
+        "Standard reference": "EKAS-defined; built on ISO 22400-2 OEE relationship `OEE = PRI \u00d7 GQ / PBT`",
+        "Formula": "`APCO hours_i = max(0, PBT_i \u00d7 entitlement_i \u2212 PRI_i \u00d7 GQ_i) = PBT_i \u00d7 max(0, entitlement_i \u2212 OEE actual_i)`",
+        "Unit": "h, by part number",
+        "Aggregation": "RATIO_OF_SUMS at detailed grain, summed in hours",
+        "Required inputs": "PBT, good quantity, planned run time per item, approved OEE entitlement with effective date",
+        "Reference value / source precedence": "The OEE entitlement is governed configuration, not computed: specific to work unit/operation/product/tooling/mix, version-controlled, effective-dated, approved. An entitlement derived from best-ever availability in one period multiplied by best-ever effectiveness/quality from unrelated periods is invalid",
+        "Eligibility": "A period is eligible only when an approved entitlement is effective for that period/configuration; otherwise excluded and reported with reason",
+        "Configure down": "No approved entitlement \u2192 APCO may not be published (MET-011 may). Statement: \"attainable opportunity unavailable, no approved OEE entitlement is effective for this work unit and configuration.\" No planned run time per item \u2192 hours may publish, units (MET-013) may not",
+        "Prohibited": "Not described as recoverable without an identified cause and countermeasure; never presented as MET-014 (Released Clock Hours) or the reverse",
+        "Certification state": "Eligible for current-state certification once gates pass",
+        "Oracle": "Per B.11",
+        "Aliases / Chart compatibility / Explanation template / Test vectors": "not stated in the adopted ruling \u2014 TBC"
+      },
+      "family": "capacity",
+      "requiredDomainTables": [
+        "equipment_intervals",
+        "production_counts",
+        "planned_runtime_standards",
+        "oee_component_standards",
+        "oee_entitlements",
+        "improvement_proposals",
+        "cause_evidence",
+        "countermeasures",
+        "valuation_models"
+      ],
+      "grain": "workunit\u00d7operation\u00d7order\u00d7partrevision\u00d7tooling/rateconfiguration\u00d7closedperiod; hours grouped by part, units never unlikepart total",
+      "positiveCaseIds": [
+        "homogeneous-capacity"
+      ],
+      "publicationStates": [
+        "available_synthetic_arithmetic"
+      ],
+      "sourceInputRules": "Require effectivity/configuration/units/watermark/sourcepolicy gates and explicit authority; fictional fixture approval has no real customer/Finance force",
+      "APIContractRef": "api-result-contract.json",
+      "separation": "New canonical METidentity. No aliasing/overwriting178ekasdefinitions or frozenNorthworks. Existing178 arithmetic policies remain explicit."
+    },
+    {
+      "metricId": "MET-013",
+      "title": "Attainable Output Opportunity, units",
+      "mockSpecVersion": "canonical-gap-spec@1.0.1",
+      "sourceDocumentVersion": "EKAS-MIK-001@1.0.2",
+      "sourceMetricPointerCandidate": "MET-013@0.2.0",
+      "pointerAuthority": "EKAS-MIK004@0.4.0 DRAFT pointer register; verify controlled active metricversion before product admission; no approval inferred",
+      "sourcePath": "/home/pat/EKAS_Platform_v2/EKAS_Platform_v2_Cleanroom_Build_Program/09-manufacturing-kernel/EKAS-MIK-001-metric-definition-standard.md",
+      "sourceLines": [
+        393,
+        406
+      ],
+      "sourceFields": {
+        "Canonical name": "Attainable Output Opportunity",
+        "Standard reference": "EKAS-defined; derived from MET-012",
+        "Formula": "`APCO units_i = APCO hours_i / PRI_i`",
+        "Unit": "units, by part number; never collapsed across unlike parts",
+        "Required inputs": "MET-012 plus planned run time per item at the applicable revision",
+        "Configure down": "Unavailable without planned run time per item at the required revision \u2014 statement: \"unit equivalent unavailable, planned run time per item is not available at the required revision\"",
+        "Certification state": "Eligible for current-state certification once gates pass",
+        "Oracle": "Per B.11",
+        "Aliases / Chart compatibility / Explanation template / Test vectors": "not stated in the adopted ruling \u2014 TBC"
+      },
+      "family": "capacity",
+      "requiredDomainTables": [
+        "equipment_intervals",
+        "production_counts",
+        "planned_runtime_standards",
+        "oee_component_standards",
+        "oee_entitlements",
+        "improvement_proposals",
+        "cause_evidence",
+        "countermeasures",
+        "valuation_models"
+      ],
+      "grain": "workunit\u00d7operation\u00d7order\u00d7partrevision\u00d7tooling/rateconfiguration\u00d7closedperiod; hours grouped by part, units never unlikepart total",
+      "positiveCaseIds": [
+        "homogeneous-capacity"
+      ],
+      "publicationStates": [
+        "available_synthetic_arithmetic"
+      ],
+      "sourceInputRules": "Require effectivity/configuration/units/watermark/sourcepolicy gates and explicit authority; fictional fixture approval has no real customer/Finance force",
+      "APIContractRef": "api-result-contract.json",
+      "separation": "New canonical METidentity. No aliasing/overwriting178ekasdefinitions or frozenNorthworks. Existing178 arithmetic policies remain explicit."
+    },
+    {
+      "metricId": "MET-014",
+      "title": "Released Clock Hours",
+      "mockSpecVersion": "canonical-gap-spec@1.0.1",
+      "sourceDocumentVersion": "EKAS-MIK-001@1.0.2",
+      "sourceMetricPointerCandidate": "MET-014@0.2.0",
+      "pointerAuthority": "EKAS-MIK004@0.4.0 DRAFT pointer register; verify controlled active metricversion before product admission; no approval inferred",
+      "sourcePath": "/home/pat/EKAS_Platform_v2/EKAS_Platform_v2_Cleanroom_Build_Program/09-manufacturing-kernel/EKAS-MIK-001-metric-definition-standard.md",
+      "sourceLines": [
+        407,
+        420
+      ],
+      "sourceFields": {
+        "Canonical name": "Released Clock Hours",
+        "Standard reference": "EKAS-defined",
+        "Formula": "`Released clock hours_i = PBT_i \u00d7 max(0, 1 \u2212 OEE actual_i / entitlement_i)`",
+        "Unit": "h",
+        "Claim": "Scheduled time releasable while holding current output constant \u2014 a distinct quantity from MET-012, never presented as one number with it (worked example: PBT=100h, OEE actual=0.60, entitlement=0.75 \u2192 MET-012=15h, MET-014=20h)",
+        "Prohibited": "Not presented as MET-012 or the reverse",
+        "Certification state": "Eligible for current-state certification once gates pass",
+        "Oracle": "Per B.11",
+        "Aliases / Chart compatibility / Explanation template / Test vectors": "not stated in the adopted ruling \u2014 TBC"
+      },
+      "family": "capacity",
+      "requiredDomainTables": [
+        "equipment_intervals",
+        "production_counts",
+        "planned_runtime_standards",
+        "oee_component_standards",
+        "oee_entitlements",
+        "improvement_proposals",
+        "cause_evidence",
+        "countermeasures",
+        "valuation_models"
+      ],
+      "grain": "workunit\u00d7operation\u00d7order\u00d7partrevision\u00d7tooling/rateconfiguration\u00d7closedperiod; hours grouped by part, units never unlikepart total",
+      "positiveCaseIds": [
+        "homogeneous-capacity"
+      ],
+      "publicationStates": [
+        "available_synthetic_arithmetic"
+      ],
+      "sourceInputRules": "Require effectivity/configuration/units/watermark/sourcepolicy gates and explicit authority; fictional fixture approval has no real customer/Finance force",
+      "APIContractRef": "api-result-contract.json",
+      "separation": "New canonical METidentity. No aliasing/overwriting178ekasdefinitions or frozenNorthworks. Existing178 arithmetic policies remain explicit."
+    },
+    {
+      "metricId": "MET-015",
+      "title": "Validated Recoverable Capacity",
+      "mockSpecVersion": "canonical-gap-spec@1.0.1",
+      "sourceDocumentVersion": "EKAS-MIK-001@1.0.2",
+      "sourceMetricPointerCandidate": "MET-015@0.2.0",
+      "pointerAuthority": "EKAS-MIK004@0.4.0 DRAFT pointer register; verify controlled active metricversion before product admission; no approval inferred",
+      "sourcePath": "/home/pat/EKAS_Platform_v2/EKAS_Platform_v2_Cleanroom_Build_Program/09-manufacturing-kernel/EKAS-MIK-001-metric-definition-standard.md",
+      "sourceLines": [
+        421,
+        432
+      ],
+      "sourceFields": {
+        "Canonical name": "Validated Recoverable Capacity",
+        "Standard reference": "EKAS-defined",
+        "Definition": "The action-backed subset of MET-012/MET-014 supported by an identified cause and countermeasure. Only this metric carries the unqualified word \"recoverable\"",
+        "Status progression": "gross loss exposure (MET-011) \u2192 attainable opportunity (MET-012) \u2192 validated recoverable (MET-015) \u2192 realised recovery \u2192 monetised value (MET-016); a provenance ladder for a business claim, not a measurement ladder",
+        "Certification state": "Eligible for current-state certification once gates pass, at the validated-recoverable stage only; downstream stages (realised recovery, monetised value) are governed scenario/business outputs",
+        "Formula / required inputs / configure down / oracle": "not stated in the adopted ruling \u2014 TBC; requires a follow-on definition slice binding \"identified cause and countermeasure\" to a source fact",
+        "Aliases / Chart compatibility / Explanation template / Test vectors": "not stated in the adopted ruling \u2014 TBC"
+      },
+      "family": "capacity",
+      "requiredDomainTables": [
+        "equipment_intervals",
+        "production_counts",
+        "planned_runtime_standards",
+        "oee_component_standards",
+        "oee_entitlements",
+        "improvement_proposals",
+        "cause_evidence",
+        "countermeasures",
+        "valuation_models"
+      ],
+      "grain": "workunit\u00d7operation\u00d7order\u00d7partrevision\u00d7tooling/rateconfiguration\u00d7closedperiod; hours grouped by part, units never unlikepart total",
+      "positiveCaseIds": [
+        "recovery-method-unresolved"
+      ],
+      "publicationStates": [
+        "definition_required"
+      ],
+      "sourceInputRules": "Require effectivity/configuration/units/watermark/sourcepolicy gates and explicit authority; fictional fixture approval has no real customer/Finance force",
+      "APIContractRef": "api-result-contract.json",
+      "separation": "New canonical METidentity. No aliasing/overwriting178ekasdefinitions or frozenNorthworks. Existing178 arithmetic policies remain explicit."
+    },
+    {
+      "metricId": "MET-016",
+      "title": "Finance Validated Economic Opportunity",
+      "mockSpecVersion": "canonical-gap-spec@1.0.1",
+      "sourceDocumentVersion": "EKAS-MIK-001@1.0.2",
+      "sourceMetricPointerCandidate": "MET-016@0.2.0",
+      "pointerAuthority": "EKAS-MIK004@0.4.0 DRAFT pointer register; verify controlled active metricversion before product admission; no approval inferred",
+      "sourcePath": "/home/pat/EKAS_Platform_v2/EKAS_Platform_v2_Cleanroom_Build_Program/09-manufacturing-kernel/EKAS-MIK-001-metric-definition-standard.md",
+      "sourceLines": [
+        433,
+        450
+      ],
+      "sourceFields": {
+        "Canonical name": "Finance Validated Economic Opportunity",
+        "Standard reference": "EKAS-defined",
+        "Definition": "Monetary value under a customer-approved valuation basis, applied to MET-015",
+        "Default state": "Not calculated. No approved valuation basis \u2192 statement: \"financial value not calculated, customer approved valuation basis required\"",
+        "Prohibited": "A machine-hour rate or standard cost may be displayed as allocated cost exposure or standard cost proxy; it may not be labelled savings, contribution, or recoverable economic value unless finance confirms the associated cost would actually be avoided. Contribution, standard cost, scrap savings, overtime avoidance, and capital deferral are not summed without a mutually exclusive valuation model",
+        "Access control": "Distinct access control from MET-011..015 (financial data)",
+        "Certification state": "Not eligible for a current-state certification treatment; governed scenario/business output",
+        "Formula / required inputs / oracle": "not stated in the adopted ruling \u2014 TBC",
+        "Aliases / Chart compatibility / Explanation template / Test vectors": "not stated in the adopted ruling \u2014 TBC"
+      },
+      "family": "capacity",
+      "requiredDomainTables": [
+        "equipment_intervals",
+        "production_counts",
+        "planned_runtime_standards",
+        "oee_component_standards",
+        "oee_entitlements",
+        "improvement_proposals",
+        "cause_evidence",
+        "countermeasures",
+        "valuation_models"
+      ],
+      "grain": "workunit\u00d7operation\u00d7order\u00d7partrevision\u00d7tooling/rateconfiguration\u00d7closedperiod; hours grouped by part, units never unlikepart total",
+      "positiveCaseIds": [
+        "finance-model-unresolved"
+      ],
+      "publicationStates": [
+        "valuation_basis_required"
+      ],
+      "sourceInputRules": "Require effectivity/configuration/units/watermark/sourcepolicy gates and explicit authority; fictional fixture approval has no real customer/Finance force",
+      "APIContractRef": "api-result-contract.json",
+      "separation": "New canonical METidentity. No aliasing/overwriting178ekasdefinitions or frozenNorthworks. Existing178 arithmetic policies remain explicit."
+    },
+    {
+      "metricId": "MET-018",
+      "title": "Changeover Overrun",
+      "mockSpecVersion": "canonical-gap-spec@1.0.1",
+      "sourceDocumentVersion": "EKAS-MIK-001@1.0.2",
+      "sourceMetricPointerCandidate": "MET-018@0.2.0",
+      "pointerAuthority": "EKAS-MIK004@0.4.0 DRAFT pointer register; verify controlled active metricversion before product admission; no approval inferred",
+      "sourcePath": "/home/pat/EKAS_Platform_v2/EKAS_Platform_v2_Cleanroom_Build_Program/09-manufacturing-kernel/EKAS-MIK-001-metric-definition-standard.md",
+      "sourceLines": [
+        464,
+        478
+      ],
+      "sourceFields": {
+        "Canonical name": "Changeover Overrun",
+        "Standard reference": "EKAS-defined",
+        "Formula": "`Changeover overrun = max(0, changeover elapsed \u2212 PUST)`; diagnostic identity: `overrun = (AUST \u2212 PUST) + changeover-related ADET`",
+        "Eligibility": "A changeover is eligible when its parent boundary is established and an effective PUST exists for the applicable configuration; events without an effective standard are eligible for elapsed reporting (MET-017) and excluded from overrun",
+        "Configure down": "No effective standard \u2192 elapsed may publish, overrun may not \u2014 statement: \"changeover overrun unavailable, no effective planned unit setup time exists for this configuration\"",
+        "Reference value / source precedence": "PUST is effective-dated and tied to press/press family, incoming/outgoing die or die family, transfer/progressive/line die configuration, material/coil setup, automation configuration, crew assumptions, first-piece/quality approval requirements. A single standard per die is insufficient where requirement depends on the from/to combination",
+        "Prohibited": "Where only start, end, standard, and a free-text comment exist, EKAS establishes the overrun and does not claim any portion was repair time",
+        "Certification state": "Eligible for current-state certification once gates pass",
+        "Oracle": "Per C.11",
+        "Aliases / Chart compatibility / Explanation template / Test vectors": "not stated in the adopted ruling \u2014 TBC"
+      },
+      "family": "changeover",
+      "requiredDomainTables": [
+        "changeovers",
+        "changeover_segments",
+        "planned_setup_standards",
+        "causal_assertions",
+        "tool_failures"
+      ],
+      "grain": "one parent changeover on one workunit; exclusive child intervals; effective from/to tooling standard",
+      "positiveCaseIds": [
+        "combined-setup-tool-delay"
+      ],
+      "publicationStates": [
+        "available_synthetic_arithmetic"
+      ],
+      "sourceInputRules": "Require effectivity/configuration/units/watermark/sourcepolicy gates and explicit authority; fictional fixture approval has no real customer/Finance force",
+      "APIContractRef": "api-result-contract.json",
+      "separation": "New canonical METidentity. No aliasing/overwriting178ekasdefinitions or frozenNorthworks. Existing178 arithmetic policies remain explicit."
+    },
+    {
+      "metricId": "MET-019",
+      "title": "Setup Work Variance",
+      "mockSpecVersion": "canonical-gap-spec@1.0.1",
+      "sourceDocumentVersion": "EKAS-MIK-001@1.0.2",
+      "sourceMetricPointerCandidate": "MET-019@0.2.0",
+      "pointerAuthority": "EKAS-MIK004@0.4.0 DRAFT pointer register; verify controlled active metricversion before product admission; no approval inferred",
+      "sourcePath": "/home/pat/EKAS_Platform_v2/EKAS_Platform_v2_Cleanroom_Build_Program/09-manufacturing-kernel/EKAS-MIK-001-metric-definition-standard.md",
+      "sourceLines": [
+        479,
+        490
+      ],
+      "sourceFields": {
+        "Canonical name": "Setup Work Variance",
+        "Standard reference": "EKAS-defined",
+        "Formula": "`Setup work variance = AUST \u2212 PUST`",
+        "Configure down": "Requires segment-level classification within the changeover; see MET-017 configure-down",
+        "Certification state": "Eligible for current-state certification once gates pass",
+        "Oracle": "Per C.11",
+        "Aliases / Chart compatibility / Explanation template / Test vectors": "not stated in the adopted ruling \u2014 TBC"
+      },
+      "family": "changeover",
+      "requiredDomainTables": [
+        "changeovers",
+        "changeover_segments",
+        "planned_setup_standards",
+        "causal_assertions",
+        "tool_failures"
+      ],
+      "grain": "one parent changeover on one workunit; exclusive child intervals; effective from/to tooling standard",
+      "positiveCaseIds": [
+        "combined-setup-tool-delay"
+      ],
+      "publicationStates": [
+        "available_synthetic_arithmetic"
+      ],
+      "sourceInputRules": "Require effectivity/configuration/units/watermark/sourcepolicy gates and explicit authority; fictional fixture approval has no real customer/Finance force",
+      "APIContractRef": "api-result-contract.json",
+      "separation": "New canonical METidentity. No aliasing/overwriting178ekasdefinitions or frozenNorthworks. Existing178 arithmetic policies remain explicit."
+    },
+    {
+      "metricId": "MET-020",
+      "title": "Failure Caused Changeover Delay",
+      "mockSpecVersion": "canonical-gap-spec@1.0.1",
+      "sourceDocumentVersion": "EKAS-MIK-001@1.0.2",
+      "sourceMetricPointerCandidate": "MET-020@0.2.0",
+      "pointerAuthority": "EKAS-MIK004@0.4.0 DRAFT pointer register; verify controlled active metricversion before product admission; no approval inferred",
+      "sourcePath": "/home/pat/EKAS_Platform_v2/EKAS_Platform_v2_Cleanroom_Build_Program/09-manufacturing-kernel/EKAS-MIK-001-metric-definition-standard.md",
+      "sourceLines": [
+        491,
+        503
+      ],
+      "sourceFields": {
+        "Canonical name": "Failure Caused Changeover Delay",
+        "Standard reference": "EKAS-defined",
+        "Formula": "`Failure caused changeover delay = SUM(ADET where causal asset is the tooling)`",
+        "Prohibited": "A delay is not attributed to a causal asset without evidence identifying that asset; press mechanical reliability does not record a failure when the press did not fail",
+        "Configure down": "Requires segment-level classification within the changeover; see MET-017 configure-down",
+        "Certification state": "Eligible for current-state certification once gates pass",
+        "Oracle": "Per C.11",
+        "Aliases / Chart compatibility / Explanation template / Test vectors": "not stated in the adopted ruling \u2014 TBC"
+      },
+      "family": "changeover",
+      "requiredDomainTables": [
+        "changeovers",
+        "changeover_segments",
+        "planned_setup_standards",
+        "causal_assertions",
+        "tool_failures"
+      ],
+      "grain": "one parent changeover on one workunit; exclusive child intervals; effective from/to tooling standard",
+      "positiveCaseIds": [
+        "combined-setup-tool-delay"
+      ],
+      "publicationStates": [
+        "available_synthetic_arithmetic"
+      ],
+      "sourceInputRules": "Require effectivity/configuration/units/watermark/sourcepolicy gates and explicit authority; fictional fixture approval has no real customer/Finance force",
+      "APIContractRef": "api-result-contract.json",
+      "separation": "New canonical METidentity. No aliasing/overwriting178ekasdefinitions or frozenNorthworks. Existing178 arithmetic policies remain explicit."
+    },
+    {
+      "metricId": "MET-021",
+      "title": "Net Equipment Effectiveness (NEE)",
+      "mockSpecVersion": "canonical-gap-spec@1.0.1",
+      "sourceDocumentVersion": "EKAS-MIK-001@1.0.2",
+      "sourceMetricPointerCandidate": "MET-021@0.2.0",
+      "pointerAuthority": "EKAS-MIK004@0.4.0 DRAFT pointer register; verify controlled active metricversion before product admission; no approval inferred",
+      "sourcePath": "/home/pat/EKAS_Platform_v2/EKAS_Platform_v2_Cleanroom_Build_Program/09-manufacturing-kernel/EKAS-MIK-001-metric-definition-standard.md",
+      "sourceLines": [
+        504,
+        522
+      ],
+      "sourceFields": {
+        "Canonical name": "Net Equipment Effectiveness",
+        "Standard reference": "EKAS-defined; distinct from MET-004 OEE",
+        "Formula": "`NEE = (AUPT / PBT) \u00d7 Effectiveness \u00d7 Quality`, where `AUPT = APT + AUST` (APT = actual production time)",
+        "Claim": "The governed answer where a setup-fair view is required",
+        "Prohibited": "Never displayed under the OEE (MET-004) name; any customer policy removing scheduled setup from planned busy time produces a different metric and is labelled customer-defined, not ISO OEE",
+        "Certification state": "Eligible for current-state certification once gates pass",
+        "Oracle": "Per C.11",
+        "Aliases / Chart compatibility / Explanation template / Test vectors": "not stated in the adopted ruling \u2014 TBC"
+      },
+      "family": "nee",
+      "requiredDomainTables": [
+        "equipment_intervals",
+        "production_counts",
+        "planned_runtime_standards"
+      ],
+      "grain": "sameworkunit\u00d7operation\u00d7productconfiguration\u00d7closedplannedbusywindow; explicit Effectiveness/Quality version binding",
+      "positiveCaseIds": [
+        "nee-formula-component-binding"
+      ],
+      "publicationStates": [
+        "component_definition_binding_required"
+      ],
+      "sourceInputRules": "Require effectivity/configuration/units/watermark/sourcepolicy gates and explicit authority; fictional fixture approval has no real customer/Finance force",
+      "APIContractRef": "api-result-contract.json",
+      "separation": "New canonical METidentity. No aliasing/overwriting178ekasdefinitions or frozenNorthworks. Existing178 arithmetic policies remain explicit."
+    },
+    {
+      "metricId": "MET-022",
+      "title": "Restoration Time (boundary-parameterized)",
+      "mockSpecVersion": "canonical-gap-spec@1.0.1",
+      "sourceDocumentVersion": "EKAS-MIK-001@1.0.2",
+      "sourceMetricPointerCandidate": "MET-022@0.2.0",
+      "pointerAuthority": "EKAS-MIK004@0.4.0 DRAFT pointer register; verify controlled active metricversion before product admission; no approval inferred",
+      "sourcePath": "/home/pat/EKAS_Platform_v2/EKAS_Platform_v2_Cleanroom_Build_Program/09-manufacturing-kernel/EKAS-MIK-001-metric-definition-standard.md",
+      "sourceLines": [
+        523,
+        540
+      ],
+      "sourceFields": {
+        "Canonical name": "Restoration Time",
+        "Standard reference": "EKAS-defined; bare \"MTTR\" is not a valid name \u2014 see family note",
+        "Required parameter": "Declared boundary, selected from named semantic anchors: t0 required-function-lost, t1 failure detected/alarmed, t2 maintenance notified, t3 request acknowledged/technician dispatched, t4 technician at asset, t5 diagnosis/active work begins, t6 physical repair complete, t7 test/restart complete (technically available), t8 operations/quality releases asset, t9 stable required rate and quality achieved. Not every source provides every anchor",
+        "Formula (per declared boundary)": "`Technical restoration = t7 \u2212 t0 or t7 \u2212 t1` (start basis named); `Production recovery = t8 \u2212 t0`; `Restart and release delay = t8 \u2212 t7`",
+        "Grain": "Failure event; a mean of monthly/asset/departmental means is invalid",
+        "Eligibility": "Eligible when start and end anchors for the declared boundary are present, semantically validated, and produce a non-contradictory sequence. Contradictory sequences are quarantined and reported, not silently dropped. Open events are reported with count and age, never excluded silently",
+        "Reference value / source precedence": "Where several sources can supply an anchor, precedence is declared per anchor and recorded per event. Equipment-state anchors take precedence over administrative anchors for restoration boundaries; a control-system run signal alone is not proof of restoration",
+        "Configure down": "Administrative timestamps only \u2192 publish MET-023 instead, statement: \"restoration time not computed, administrative proxy only.\" No response anchor \u2192 statement: \"response decomposition unavailable\" (total restoration elapsed remains available where supported). No reason-coded transitions \u2192 statement: \"delay decomposition unavailable,\" EKAS will not allocate unobserved elapsed time to a cause. Technical restoration only \u2192 statement: \"production recovery unverified.\" No qualifying events \u2192 statement: \"no qualifying repair events occurred in the selected period\" \u2014 this is not a restoration time of zero",
+        "Coverage": "Every result reports eligible-against-candidate event count, coverage percentage, excluded count with reasons, open-event count, source systems, semantic validation status. Distribution (median, an upper percentile, maximum, event count) is reported alongside the mean; a mean without distribution is not published",
+        "Prohibited": "Work-order lifecycle timestamps are not relabelled as restoration time; earliest-to-latest labour punch is not treated as active repair; overlapping states are not added; repair/replacement/reset/bypass/no-fault-found events are not pooled without stratification. A high restoration time does not support a claim that repair execution is slow, nor a recommendation for additional preventive maintenance without failure-mode, recurrence, condition, or causal evidence. A falling restoration time is not reported as improvement without checking repeat-failure behaviour, repair-action type, and first-time fix",
+        "Certification state": "Eligible for current-state certification once gates pass, at its declared boundary and decomposition; results at different boundaries are reported separately or normalised to a common validated boundary before aggregation",
+        "Oracle": "Per D.11 (clean event per boundary; concurrent technicians; pause/resume; technical-restoration-vs-production-recovery divergence; 1-failure/2-WO and 2-failure/1-WO; contradictory-sequence quarantine; open-at-period-end; mixed-boundary non-aggregation)",
+        "Aliases / Chart compatibility / Explanation template / Test vectors": "not stated in the adopted ruling \u2014 TBC"
+      },
+      "family": "restoration",
+      "requiredDomainTables": [
+        "failure_events",
+        "semantic_anchors",
+        "work_orders",
+        "person_work_intervals"
+      ],
+      "grain": "canonical failureevent\u00d7namedboundary/actiontype; administrative workorder distinct; human effort perperson sourceinterval and repair-eventpopulation",
+      "positiveCaseIds": [
+        "restoration-technical_from_function_loss",
+        "restoration-technical_from_detection",
+        "restoration-production_recovery",
+        "restoration-restart_release_delay"
+      ],
+      "publicationStates": [
+        "event_arithmetic_available_aggregate_distribution_policy_required"
+      ],
+      "sourceInputRules": "Require effectivity/configuration/units/watermark/sourcepolicy gates and explicit authority; fictional fixture approval has no real customer/Finance force",
+      "APIContractRef": "api-result-contract.json",
+      "separation": "New canonical METidentity. No aliasing/overwriting178ekasdefinitions or frozenNorthworks. Existing178 arithmetic policies remain explicit."
+    },
+    {
+      "metricId": "MET-023",
+      "title": "Corrective Work Order Cycle Time",
+      "mockSpecVersion": "canonical-gap-spec@1.0.1",
+      "sourceDocumentVersion": "EKAS-MIK-001@1.0.2",
+      "sourceMetricPointerCandidate": "MET-023@0.2.0",
+      "pointerAuthority": "EKAS-MIK004@0.4.0 DRAFT pointer register; verify controlled active metricversion before product admission; no approval inferred",
+      "sourcePath": "/home/pat/EKAS_Platform_v2/EKAS_Platform_v2_Cleanroom_Build_Program/09-manufacturing-kernel/EKAS-MIK-001-metric-definition-standard.md",
+      "sourceLines": [
+        541,
+        553
+      ],
+      "sourceFields": {
+        "Canonical name": "Corrective Work Order Cycle Time",
+        "Standard reference": "EKAS-defined; administrative proxy, not an equipment-state measure",
+        "Formula": "`Corrective work order cycle time = WO completed \u2212 WO reported`",
+        "Configure down role": "The MET-022 configure-down target when only administrative timestamps are available",
+        "Prohibited": "Not relabelled as restoration time",
+        "Certification state": "Eligible for current-state certification once gates pass",
+        "Oracle": "Per D.11",
+        "Aliases / Chart compatibility / Explanation template / Test vectors": "not stated in the adopted ruling \u2014 TBC"
+      },
+      "family": "restoration",
+      "requiredDomainTables": [
+        "failure_events",
+        "semantic_anchors",
+        "work_orders",
+        "person_work_intervals"
+      ],
+      "grain": "canonical failureevent\u00d7namedboundary/actiontype; administrative workorder distinct; human effort perperson sourceinterval and repair-eventpopulation",
+      "positiveCaseIds": [
+        "administrative-WO-1",
+        "administrative-WO-2"
+      ],
+      "publicationStates": [
+        "available_synthetic_arithmetic"
+      ],
+      "sourceInputRules": "Require effectivity/configuration/units/watermark/sourcepolicy gates and explicit authority; fictional fixture approval has no real customer/Finance force",
+      "APIContractRef": "api-result-contract.json",
+      "separation": "New canonical METidentity. No aliasing/overwriting178ekasdefinitions or frozenNorthworks. Existing178 arithmetic policies remain explicit."
+    },
+    {
+      "metricId": "MET-024",
+      "title": "Response Time",
+      "mockSpecVersion": "canonical-gap-spec@1.0.1",
+      "sourceDocumentVersion": "EKAS-MIK-001@1.0.2",
+      "sourceMetricPointerCandidate": "MET-024@0.2.0",
+      "pointerAuthority": "EKAS-MIK004@0.4.0 DRAFT pointer register; verify controlled active metricversion before product admission; no approval inferred",
+      "sourcePath": "/home/pat/EKAS_Platform_v2/EKAS_Platform_v2_Cleanroom_Build_Program/09-manufacturing-kernel/EKAS-MIK-001-metric-definition-standard.md",
+      "sourceLines": [
+        554,
+        565
+      ],
+      "sourceFields": {
+        "Canonical name": "Response Time, with its anchor named",
+        "Standard reference": "EKAS-defined",
+        "Formula": "`Response time = named response anchor \u2212 t2` (t2 = maintenance notified/request created)",
+        "Configure down": "No response anchor \u2192 statement: \"response decomposition unavailable. The source does not provide validated notification, acknowledgement, arrival, or first work start timestamps\"",
+        "Certification state": "Eligible for current-state certification once gates pass",
+        "Oracle": "Per D.11",
+        "Aliases / Chart compatibility / Explanation template / Test vectors": "not stated in the adopted ruling \u2014 TBC"
+      },
+      "family": "restoration",
+      "requiredDomainTables": [
+        "failure_events",
+        "semantic_anchors",
+        "work_orders",
+        "person_work_intervals"
+      ],
+      "grain": "canonical failureevent\u00d7namedboundary/actiontype; administrative workorder distinct; human effort perperson sourceinterval and repair-eventpopulation",
+      "positiveCaseIds": [
+        "response-t3",
+        "response-t4",
+        "response-t5"
+      ],
+      "publicationStates": [
+        "available_synthetic_arithmetic"
+      ],
+      "sourceInputRules": "Require effectivity/configuration/units/watermark/sourcepolicy gates and explicit authority; fictional fixture approval has no real customer/Finance force",
+      "APIContractRef": "api-result-contract.json",
+      "separation": "New canonical METidentity. No aliasing/overwriting178ekasdefinitions or frozenNorthworks. Existing178 arithmetic policies remain explicit."
+    },
+    {
+      "metricId": "MET-026",
+      "title": "Mean Labour Effort Per Repair",
+      "mockSpecVersion": "canonical-gap-spec@1.0.1",
+      "sourceDocumentVersion": "EKAS-MIK-001@1.0.2",
+      "sourceMetricPointerCandidate": "MET-026@0.2.0",
+      "pointerAuthority": "EKAS-MIK004@0.4.0 DRAFT pointer register; verify controlled active metricversion before product admission; no approval inferred",
+      "sourcePath": "/home/pat/EKAS_Platform_v2/EKAS_Platform_v2_Cleanroom_Build_Program/09-manufacturing-kernel/EKAS-MIK-001-metric-definition-standard.md",
+      "sourceLines": [
+        579,
+        593
+      ],
+      "sourceFields": {
+        "Canonical name": "Mean Labour Effort Per Repair",
+        "Standard reference": "EKAS-defined; human-effort model, \u00a73a.3",
+        "Formula": "`Labour effort = sum of deduplicated person-time intervals`",
+        "Claim": "Effort, never elapsed repair duration; concurrent work by different people is additive (unlike MET-025)",
+        "Prohibited": "Labour hours are not converted to elapsed repair duration",
+        "Certification state": "Eligible for current-state certification once gates pass",
+        "Oracle": "Per D.11",
+        "Aliases / Chart compatibility / Explanation template / Test vectors": "not stated in the adopted ruling \u2014 TBC"
+      },
+      "family": "restoration",
+      "requiredDomainTables": [
+        "failure_events",
+        "semantic_anchors",
+        "work_orders",
+        "person_work_intervals"
+      ],
+      "grain": "canonical failureevent\u00d7namedboundary/actiontype; administrative workorder distinct; human effort perperson sourceinterval and repair-eventpopulation",
+      "positiveCaseIds": [
+        "concurrent-person-effort"
+      ],
+      "publicationStates": [
+        "available_synthetic_arithmetic"
+      ],
+      "sourceInputRules": "Require effectivity/configuration/units/watermark/sourcepolicy gates and explicit authority; fictional fixture approval has no real customer/Finance force",
+      "APIContractRef": "api-result-contract.json",
+      "separation": "New canonical METidentity. No aliasing/overwriting178ekasdefinitions or frozenNorthworks. Existing178 arithmetic policies remain explicit."
+    },
+    {
+      "metricId": "MET-027",
+      "title": "Production Commitment Exposure",
+      "mockSpecVersion": "canonical-gap-spec@1.0.1",
+      "sourceDocumentVersion": "EKAS-MIK-001@1.0.2",
+      "sourceMetricPointerCandidate": "MET-027@0.2.0",
+      "pointerAuthority": "EKAS-MIK004@0.4.0 DRAFT pointer register; verify controlled active metricversion before product admission; no approval inferred",
+      "sourcePath": "/home/pat/EKAS_Platform_v2/EKAS_Platform_v2_Cleanroom_Build_Program/09-manufacturing-kernel/EKAS-MIK-001-metric-definition-standard.md",
+      "sourceLines": [
+        594,
+        617
+      ],
+      "sourceFields": {
+        "Canonical name": "Production Commitment Exposure",
+        "Standard reference": "EKAS-defined; new certified headline metric with its own reference answer",
+        "Claim": "That the current approved plan no longer satisfies a customer commitment unless something changes \u2014 a **current state claim**, not a forecast",
+        "Measures inside the result contract": "Exposed Commitment Count; Gross Open Quantity On Exposed Commitments",
+        "Formula": "Per eligible commitment line: `open_quantity = committed_quantity \u2212 accepted_shipped_quantity \u2212 approved_finished_goods_allocation`. `confirmed_exposure = true` when at least one governed deterministic condition applies: approved scheduled completion is after the required ship-ready cutoff; an unresolved quality hold prevents fulfilment; a required routing operation is blocked with no approved alternate/recovery plan; a production stop has invalidated the approved completion plan; required material, tooling, or qualified capacity is unavailable within the current plan. `gross_exposed_quantity = SUM(open_quantity where confirmed_exposure)` within compatible units of measure only",
+        "Commitment states": "ON_PLAN and CONFIRMED_EXPOSURE are current-state claims; PROJECTED_AT_RISK is a governed scenario output, not this metric; COMMITMENT_MISSED is a historical fact; STATUS_UNKNOWN is a refusal",
+        "Grain": "Customer order line, resolved through production order, routing operation, and current schedule state; the site-level result aggregates independently verified line-level outcomes. Quantities aggregate only within compatible units of measure",
+        "Required inputs": "Customer commitment quantity, required ship-ready/delivery cutoff, current approved schedule version, scheduled completion time, actual accepted completion quantity, production-order-to-customer-order linkage, routing/operation status, current hard-block status, approved alternate/recovery status",
+        "Reference value / source precedence": "Where an APS/ERP/MES owns the approved planned completion, EKAS consumes and certifies that source fact; EKAS does not become a scheduling engine",
+        "Eligibility": "A commitment line is eligible when linkable to production with a resolvable routing state and an effective cutoff. Unlinkable lines count as unknown, never as not-exposed; unknown commitment count is a required output field",
+        "Configure down": "No authoritative scheduled completion \u2192 may state commitments are linked to active production disruptions, may not state confirmed exposure \u2014 statement: \"customer commitment exposure cannot be verified. The current approved completion schedule is unavailable.\" No order-to-production linkage \u2192 the metric is not published, claim reduces to production-plan status",
+        "Coverage": "Required output: eligible commitment count, covered commitment count, unknown commitment count, coverage percentage, source freshness, exclusion reasons",
+        "Prohibited": "`gross_exposed_quantity` does not mean units will be late, permanently lost, must be additionally produced, are recoverable, or are the predicted shortfall \u2014 it means remaining units whose current approved fulfilment path requires intervention. Work in progress is not counted as completed finished product; quality-held units are not counted as available; customer due date is not substituted for the ship-ready cutoff; missing orders are not treated as not exposed; an active disruption is not linked to every order on a machine, only the affected routing window. The presentation layer does not compute this result from certified components; the language model does not derive it by reasoning over several metrics \u2014 it is produced by the governed calculation authority and rendered, never derived at presentation time",
+        "Certification state": "Eligible for current-state certification once gates pass. Projected shortfall and recoverable-units-before-cutoff are governed scenario outputs, never displayed under the same certification treatment as this result",
+        "Result contract minimum fields": "metric identifier and version, as-of timestamp, horizon start/end, ship-ready cutoff basis, site scope, commitment grain, exposure rule version, exposed commitment count, gross exposed quantity by unit of measure, unknown commitment count, eligible/covered commitment count, coverage percentage, schedule version, source freshness, lineage references, exclusion reasons, oracle version, certification status",
+        "Oracle": "A designed commitment ledger, independently calculated, frozen and content-hashed separately from any dataset generator, at customer-order-line grain, covering: full/partial completion; split orders and combined production jobs; finished-goods allocation; partial shipments; quality hold/release; rework/scrap; cross-midnight cutoffs; schedule revisions; alternate qualified assets; multiple routing operations; missing links; duplicate joins; stale source timestamps; incompatible units; one unknown order line in an otherwise complete population. Owned by WP-P4-18 (commitment exposure oracle)",
+        "Aliases / Chart compatibility / Explanation template / Test vectors": "not stated in the adopted ruling \u2014 TBC"
+      },
+      "family": "commitment",
+      "requiredDomainTables": [
+        "commitment_lines",
+        "accepted_completions",
+        "accepted_shipments",
+        "finished_goods_allocations",
+        "commitment_production_links",
+        "current_schedule_lines",
+        "routing_states",
+        "quality_holds",
+        "plan_snapshots"
+      ],
+      "grain": "customer-order-line currentplan snapshot linked toproductionorder/routing; compatible-unit aggregation only",
+      "positiveCaseIds": [
+        "commitment-current-plan"
+      ],
+      "publicationStates": [
+        "available_synthetic_with_unknown_coverage"
+      ],
+      "sourceInputRules": "Require effectivity/configuration/units/watermark/sourcepolicy gates and explicit authority; fictional fixture approval has no real customer/Finance force",
+      "APIContractRef": "api-result-contract.json",
+      "separation": "New canonical METidentity. No aliasing/overwriting178ekasdefinitions or frozenNorthworks. Existing178 arithmetic policies remain explicit.",
+      "approvedInputContractSupplement": {
+        "path": "/home/pat/EKAS_Platform_v2/docs/governance/contracts/WP-P4-16-met-011-027-input-contract.md",
+        "sourceLines": [
+          212,
+          234
+        ],
+        "requiredAdditionalField": "actual_accepted_completion_quantity",
+        "separateFrom": "accepted_shipped_quantity and approved_finished_goods_allocation",
+        "noSubstitution": true,
+        "reconciliationStatus": "TBC-P4-16-027-COMPLETION-SHIPMENT retained"
+      }
+    },
+    {
+      "metricId": "MET-028",
+      "title": "Quoted-versus-Demonstrated Rate Gap",
+      "mockSpecVersion": "canonical-gap-spec@1.0.1",
+      "sourceDocumentVersion": "EKAS-MIK-001@1.0.2",
+      "sourceMetricPointerCandidate": "MET-028@0.3.2",
+      "pointerAuthority": "EKAS-MIK004@0.4.0 DRAFT pointer register; verify controlled active metricversion before product admission; no approval inferred",
+      "sourcePath": "/home/pat/EKAS_Platform_v2/EKAS_Platform_v2_Cleanroom_Build_Program/09-manufacturing-kernel/EKAS-MIK-001-metric-definition-standard.md",
+      "sourceLines": [
+        618,
+        640
+      ],
+      "sourceFields": {
+        "Canonical name / aliases": "**Quoted-versus-Demonstrated Rate Gap**. Aliases: quoted-rate gap, demonstrated-rate gap, rate leakage. The alias \u201cmargin leakage\u201d is an operational shorthand only; it does not assert a margin-dollar value.",
+        "Claim being measured": "Whether the observed good-production rate for an eligible job is below the governed quoted/standard rate that priced that job, at the declared part \u00d7 operation \u00d7 asset grain. This is a rate-variance observation, not an adjudication or correction of any customer record.",
+        "Formula / state logic": "For eligible run population *i*: `demonstrated_rate_i = good_parts_i / qualified_machine_production_time_i`; `rate_gap_i = quoted_rate_i \u2212 demonstrated_rate_i`; `rate_gap_percent_i = rate_gap_i / quoted_rate_i`. A positive rate gap means the demonstrated rate is below the quote. `quoted_rate_i` must be greater than zero and use the same unit basis and effective configuration as the demonstrated rate. `rate_gap_percent` is not calculated when the quote is absent, zero, incompatible, or the run population is insufficient.",
+        "Grain and aggregation": "Native result grain is job \u00d7 part \u00d7 operation \u00d7 asset \u00d7 quoted-rate revision \u00d7 closed observation window. Demonstrated rate aggregates only as `\u03a3 good_parts / \u03a3 qualified_machine_production_time` over compatible native records; simple averages of job, asset, or rate-gap percentages are invalid. A package result contains its eligible component-job results and a package severity roll-up; it does not invent a single rate or rate-gap percentage across unlike parts, units, operations, assets, or quoted-rate revisions.",
+        "Scope and time basis": "Uses closed machine-production intervals and accepted good-part counts attributed to the job, part, operation, and asset. The time window, source watermark, quoted-rate effective date/revision, and package membership revision are mandatory output fields. Labour-reported hours are not a permissible time basis.",
+        "Required / optional inputs": "Required: job identity and package membership where applicable; part, operation, asset, and unit basis; accepted good-part counts; qualified machine-production time; governed customer-asserted quoted/standard rate with effective date/revision; and the run-population qualification record. Optional: customer-supplied cost-severity configuration and its effective revision; explanatory reason classifications; and a package decision label.",
+        "Reference values and source precedence": "The quoted/standard rate is customer-asserted governed configuration, not calculated, normalized, overridden, or \u201ccorrected\u201d by EKAS. The governed configuration record for the job/part/operation/asset and effective time takes precedence. Demonstrated rate uses count-based good-production signals and qualified machine time; labour clocking, generic `throughput_by_part`, nominal/rated speed, and an estimator's recollection are not substitutes.",
+        "Eligibility and exclusion": "A result is eligible only when all required identifiers join unambiguously, the count and machine-time population is qualified, the quoted-rate record is effective and unit-compatible, and the default qualification rule is **300 consecutive parts within a 1\u20138-hour production window, unless a customer-approved governed override is effective**. Trials, engineering/test production, rework re-entries, unassigned counts/time, and intervals outside the declared job boundary are excluded and reported. The default follows the AIAG PPAP Manual Significant Production Run definition; Ford/GM Run at Rate (`GM1927-35`) is corroborating capacity-verification precedent, not an alternate metric formula.",
+        "Configure-down / refusal behavior": "If the population does not meet the governed default or an effective customer-approved override, publish `INSUFFICIENT_RUNS` with candidate and qualified run counts, not a numeric gap. Missing or incompatible quoted rate yields `QUOTED_RATE_UNAVAILABLE`; missing qualified machine time or accepted-good counts yields `DEMONSTRATED_RATE_UNAVAILABLE`; ambiguous job/package linkage yields `SCOPE_UNRESOLVED`. None is coerced to zero or replaced by a generic throughput measure.",
+        "Coverage and quality treatment": "Every result reports candidate, qualified, included, excluded, and insufficient-run counts; coverage percentage; exclusions with reasons; count/time completeness; lineage; source freshness; and semantic-validation status. Package status preserves component-level coverage and never lets a fully covered component conceal an unknown or insufficient component.",
+        "Oracle / reference-answer requirements": "This derived metric requires its own independently calculated, frozen, content-hashed oracle and acceptance corpus; certification is not inherited from its inputs. The oracle must cover: below/equal/above quoted rate; rate-unit incompatibility; zero or missing quote; count/time mismatch; labour-hours substitution rejection; insufficient runs; mixed assets and quoted-rate revisions; package with unlike parts; partial package coverage; effective-date change; and severity states unavailable, below fully absorbed cost, and contribution-negative.",
+        "Prohibited substitutions and claims": "EKAS must not derive the quote, replace machine time with labour hours, use `throughput_by_part`, average component rates, treat missing data as zero, write back to customer systems, claim a lost dollar value, claim causation, or state that a job is \u201cunprofitable\u201d from the rate gap alone. A rate gap is not a capacity, OEE, scheduling, ERP, or pricing correction.",
+        "Output / certification state": "Numeric output: quoted rate, demonstrated rate, absolute gap, percentage gap, unit basis, and result evidence profile. Severity output is independently nullable: `CONTRIBUTION_NEGATIVE`, `BELOW_FULLY_ABSORBED_COST`, `NOT_BELOW_FULLY_ABSORBED_COST`, or `SEVERITY_UNAVAILABLE`. `CONTRIBUTION_NEGATIVE` and `BELOW_FULLY_ABSORBED_COST` are distinct customer-configured classifications; neither is inferred from rate variance or converted into dollars. A numeric result is certifiable only after the MET-028 oracle, lineage, coverage, and acceptance gates pass.",
+        "Evidence-surface requirements": "Per job: canonical ID/version, grain, window, quote revision, source lineage, eligibility/refusal state, coverage and quality profile, numeric fields when eligible, and severity state with configuration revision when available. Per package: membership revision, all component results and refusal states, compatible-unit groups, coverage summary, and the highest observed severity without suppressing component evidence. Generic hypothetical examples may use Part X and Machine Y only.",
+        "Versioning and recertification triggers": "Any change to formula, qualifying-machine-time definition, accepted-good-count treatment, grain, aggregation, quote precedence, eligibility, the 300-part/1\u20138-hour threshold or override rule, severity-state semantics, package roll-up, or oracle requires a new definition version and recertification. Changes to a customer quoted-rate or severity configuration revision change the affected result lineage and require recomputation, not a definition rewrite.",
+        "Open decisions": "`[TBC-417: governed customer configuration contract and data mapping for quoted rate and distinct cost-severity classifications]`. This gap blocks the affected claim rather than authorizing a default."
+      },
+      "family": "commercial",
+      "requiredDomainTables": [
+        "qualified_rate_runs",
+        "rate_machine_intervals",
+        "rate_piece_observations",
+        "quoted_rates",
+        "rate_packages",
+        "quote_assumptions",
+        "quote_actual_runs",
+        "quote_actual_intervals",
+        "quote_total_conversion_intervals",
+        "quote_productive_loss_intervals",
+        "qac_transform_methods"
+      ],
+      "grain": "job\u00d7part\u00d7operation\u00d7asset\u00d7quotedraterevision\u00d7closedqualifiedwindow; package keeps component results for unlike dimensions",
+      "positiveCaseIds": [
+        "RATE-BELOW",
+        "RATE-EQUAL",
+        "RATE-ABOVE"
+      ],
+      "publicationStates": [
+        "available_synthetic_arithmetic"
+      ],
+      "sourceInputRules": "Require effectivity/configuration/units/watermark/sourcepolicy gates and explicit authority; fictional fixture approval has no real customer/Finance force",
+      "APIContractRef": "api-result-contract.json",
+      "separation": "New canonical METidentity. No aliasing/overwriting178ekasdefinitions or frozenNorthworks. Existing178 arithmetic policies remain explicit."
+    },
+    {
+      "metricId": "MET-029",
+      "title": "Dollar Valuation Layer",
+      "mockSpecVersion": "canonical-gap-spec@1.0.1",
+      "sourceDocumentVersion": "EKAS-MIK-001@1.0.2",
+      "sourceMetricPointerCandidate": "MET-029@0.4.0",
+      "pointerAuthority": "EKAS-MIK004@0.4.0 DRAFT pointer register; verify controlled active metricversion before product admission; no approval inferred",
+      "sourcePath": "/home/pat/EKAS_Platform_v2/EKAS_Platform_v2_Cleanroom_Build_Program/09-manufacturing-kernel/EKAS-MIK-001-metric-definition-standard.md",
+      "sourceLines": [
+        641,
+        661
+      ],
+      "sourceFields": {
+        "Canonical name / aliases": "**Dollar Valuation Layer**. Aliases: standard-cost conversion variance; dollar-impact layer.",
+        "Claim being measured": "The governed standard-cost conversion variance for eligible reconciled conversion hours under the visible active valuation lens. It is a decision-support exposure, not proof of realized cash effect, contribution margin, profitability, quote correction, or price correction.",
+        "Formula / state logic": "Under the first governed lens, `dollar_impact = reconciled_conversion_hours \u00d7 standard_shop_rate` at the declared compatible scope and basis. The output requires a current approved `standard_shop_rate` and the reconciled hours result. Presence states remain explicit: `EXPLICIT_VALUE` and `EXPLICIT_ZERO` are numeric; `NOT_MODELED` and `UNKNOWN_SOURCE_UNAVAILABLE` are nonnumeric and never coerced to zero. The dollar figure is not governed as a binary show-or-suppress outcome: it carries a visible confidence band. `HIGH` requires rate and allowances explicit, approved, and current; `MEDIUM` permits current-standard substitutes for unavailable quote values or an estimated not-modeled allowance; `LOW` signals significant reliance on unknown or default inputs. Exact band thresholds and computation method are `[TBC-420]`; no numeric threshold is implied here.",
+        "Grain and aggregation": "Native result grain is the compatible reconciled job \u00d7 part \u00d7 operation \u00d7 asset \u00d7 quote/configuration revision \u00d7 closed observation window. Aggregate only by summing eligible native dollar-impact components with the same active valuation lens and compatible standard-shop-rate basis; never average dollar figures, rates, confidence bands, or incompatible components.",
+        "Scope and time basis": "Uses the closed reconciliation window and the approved rate effective for that result scope. The output retains the reconciled-hours window, active valuation lens, rate version, allowance/configuration versions, and source watermark.",
+        "Required / optional inputs": "Required: eligible reconciled conversion hours; active lens identifier; QAC-001 `standard_shop_rate` record with value, unit/basis, presence state, approval, effective date, and version; and required allowance presence states. Optional: approved explanatory reason classifications and the Package/Commercial decision label.",
+        "Reference values and source precedence": "The first and only governed lens is standard-cost conversion variance, using the QAC-001 `standard_shop_rate` record. An effective, approved, scope-matched record takes precedence; an explicit governed current-standard substitute is allowed only when recorded as such. No other valuation lens is configured by this ruling.",
+        "Eligibility and exclusion": "Eligible only when the hours result is reconciled at the declared scope, the rate record is unambiguous, applicable, approved, current, and basis-compatible, and all required lineage is retained. Exclude unresolved scope, incompatible bases, stale or unapproved rate records, unreconciled hours, and any input that cannot be attributed to the declared result.",
+        "Configure-down behavior": "If the first lens or required rate cannot support a numeric result, publish the governed refusal state and affected presence states; do not substitute a generic rate or claim a dollar value. If a numeric result is supported, show the confidence band adjacent to it; reduced confidence limits the claim but is not itself a suppression rule.",
+        "Coverage / quality treatment": "Report included and excluded components, input-presence states, reconciliation state, rate approval/currentness, configuration versions, coverage, quality, lineage, and confidence band. Unknown/default reliance must be visible in the band and supporting evidence.",
+        "Oracle / reference-answer requirements": "A separate, independently calculated, frozen, content-hashed oracle and acceptance corpus are required. They must cover explicit value, explicit zero, not-modeled, source-unavailable, approved current-standard substitute, incompatible basis, stale/unapproved rate, unreconciled hours, mixed compatible/incompatible aggregation, each visible confidence state, and refusal behavior. Certification is not inherited from MET-028, QAC-001, or the hours result.",
+        "Prohibited substitutions / claims": "Do not use labour hours, nominal rates, unapproved defaults, blended rates, missing-as-zero treatment, an undisclosed valuation lens, or an invisible confidence label. Do not claim incremental cash effect, contribution-margin exposure, full profitability, realized savings, bid correctness, price correctness, causation, or a recommendation to change price.",
+        "Output / certification state": "Output includes dollar-impact value when eligible, currency/unit basis, active valuation lens, visible `HIGH`/`MEDIUM`/`LOW` confidence band, reconciled-hours reference, rate and allowance/configuration versions, and evidence profile. The metric is uncertified until its own oracle, lineage, coverage, acceptance, and certification gates pass. CR-051 admits MET-029 to Phase 4 certification scope; it does not certify it.",
+        "Evidence-surface requirements": "At the same glance, render the dollar-impact figure as primary and its confidence band adjacent; render the active valuation lens visibly; render the existing governed hours figure directly beneath as secondary and unchanged under its existing reconciliation-or-suppress rule. Full methodology, evidence drawer, quote source, and time bridge remain one interaction deeper. The Package/Commercial surface must provide an estimator enough decision cover to act without presenting an aggressive price as proven.",
+        "Versioning / recertification triggers": "Any change to formula, active-lens semantics, rate/allowance presence-state meaning, source precedence, rate approval/currentness rule, grain, aggregation, eligibility, confidence-band method or thresholds, evidence surface, oracle, or prohibited claim requires a new definition version and recertification.",
+        "Open decisions": "`[TBC-420: exact HIGH/MEDIUM/LOW thresholds and whether confidence is computed per figure or per presence-state combination]`. Future valuation-lens configuration beyond standard-cost conversion variance, visual styling beyond the governed hierarchy, and connections to broader learning or autonomous capabilities are out of scope."
+      },
+      "family": "commercial",
+      "requiredDomainTables": [
+        "qualified_rate_runs",
+        "rate_machine_intervals",
+        "rate_piece_observations",
+        "quoted_rates",
+        "rate_packages",
+        "quote_assumptions",
+        "quote_actual_runs",
+        "quote_actual_intervals",
+        "quote_total_conversion_intervals",
+        "quote_productive_loss_intervals",
+        "qac_transform_methods"
+      ],
+      "grain": "job\u00d7part\u00d7operation\u00d7asset\u00d7quotedraterevision\u00d7closedqualifiedwindow; package keeps component results for unlike dimensions",
+      "positiveCaseIds": [
+        "standard-cost-conversion-arithmetic"
+      ],
+      "publicationStates": [
+        "policy_required_no_publishable_financial_result"
+      ],
+      "sourceInputRules": "Require effectivity/configuration/units/watermark/sourcepolicy gates and explicit authority; fictional fixture approval has no real customer/Finance force",
+      "APIContractRef": "api-result-contract.json",
+      "separation": "New canonical METidentity. No aliasing/overwriting178ekasdefinitions or frozenNorthworks. Existing178 arithmetic policies remain explicit."
+    }
+  ]
+}

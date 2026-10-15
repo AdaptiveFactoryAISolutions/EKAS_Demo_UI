@@ -1,0 +1,819 @@
+{
+  "fixtureVersion": "training-ui-acceptance-v1",
+  "tables": {
+    "sites": {
+      "recordCount": 1,
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "kind": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "timezone": [
+          "str"
+        ]
+      }
+    },
+    "lines": {
+      "recordCount": 1,
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "kind": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "site_id": [
+          "str"
+        ]
+      }
+    },
+    "assets": {
+      "recordCount": 1,
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "installed_at": [
+          "str"
+        ],
+        "kind": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "line_id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "repairable": [
+          "bool"
+        ]
+      }
+    },
+    "products": {
+      "recordCount": 1,
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "base_unit": [
+          "str"
+        ],
+        "id": [
+          "str"
+        ],
+        "kind": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ]
+      }
+    },
+    "revisions": {
+      "recordCount": 1,
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "kind": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "product_id": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "revision": [
+          "str"
+        ],
+        "valid_from": [
+          "str"
+        ],
+        "valid_to_exclusive": [
+          "str"
+        ]
+      }
+    },
+    "routes": {
+      "recordCount": 1,
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "kind": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "operation_ids": [
+          "list"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "revision_id": [
+          "str"
+        ]
+      }
+    },
+    "operations": {
+      "recordCount": 1,
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "kind": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "revision_id": [
+          "str"
+        ],
+        "route_order": [
+          "int"
+        ]
+      }
+    },
+    "standards": {
+      "recordCount": 1,
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "authority": [
+          "str"
+        ],
+        "id": [
+          "str"
+        ],
+        "ideal_cycle_min": [
+          "float"
+        ],
+        "kind": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "operation_id": [
+          "str"
+        ],
+        "policy_version": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "standard_labor_h_per_unit": [
+          "float"
+        ],
+        "valid_from": [
+          "str"
+        ],
+        "valid_to_exclusive": [
+          "str"
+        ]
+      }
+    },
+    "periods": {
+      "recordCount": 87,
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "end": [
+          "str"
+        ],
+        "id": [
+          "str"
+        ],
+        "kind": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "start": [
+          "str"
+        ]
+      }
+    },
+    "jobs": {
+      "recordCount": 87,
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "asset_id": [
+          "str"
+        ],
+        "coverage": [
+          "int"
+        ],
+        "down_min": [
+          "NoneType",
+          "int"
+        ],
+        "end": [
+          "str"
+        ],
+        "fixture_context": [
+          "str"
+        ],
+        "id": [
+          "str"
+        ],
+        "kind": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "line_id": [
+          "str"
+        ],
+        "lot_id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "operation_id": [
+          "str"
+        ],
+        "planned_min": [
+          "int"
+        ],
+        "quality_disposition_coverage": [
+          "int"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "revision_id": [
+          "str"
+        ],
+        "run_min": [
+          "NoneType",
+          "int"
+        ],
+        "start": [
+          "str"
+        ]
+      }
+    },
+    "lots": {
+      "recordCount": 87,
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "completion_at": [
+          "str"
+        ],
+        "id": [
+          "str"
+        ],
+        "job_id": [
+          "str"
+        ],
+        "kind": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "release_at": [
+          "str"
+        ],
+        "revision_id": [
+          "str"
+        ],
+        "route_id": [
+          "str"
+        ]
+      }
+    },
+    "run_intervals": {
+      "recordCount": 86,
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "asset_id": [
+          "str"
+        ],
+        "end": [
+          "str"
+        ],
+        "id": [
+          "str"
+        ],
+        "job_id": [
+          "str"
+        ],
+        "kind": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "primary_state": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "start": [
+          "str"
+        ]
+      }
+    },
+    "downtime_intervals": {
+      "recordCount": 85,
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "asset_id": [
+          "str"
+        ],
+        "end": [
+          "str"
+        ],
+        "id": [
+          "str"
+        ],
+        "included_in_oee_planned_time": [
+          "bool"
+        ],
+        "job_id": [
+          "str"
+        ],
+        "kind": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "planned": [
+          "bool"
+        ],
+        "primary_state": [
+          "str"
+        ],
+        "reason": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "start": [
+          "str"
+        ]
+      }
+    },
+    "unknown_equipment_intervals": {
+      "recordCount": 1,
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "asset_id": [
+          "str"
+        ],
+        "classification_presence": [
+          "str"
+        ],
+        "end": [
+          "str"
+        ],
+        "id": [
+          "str"
+        ],
+        "job_id": [
+          "str"
+        ],
+        "kind": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "primary_state": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "start": [
+          "str"
+        ]
+      }
+    },
+    "counts": {
+      "recordCount": 87,
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "accepted_presence": [
+          "str"
+        ],
+        "final_accepted_unique_units": [
+          "NoneType",
+          "int"
+        ],
+        "first_pass_good_units": [
+          "NoneType",
+          "int"
+        ],
+        "id": [
+          "str"
+        ],
+        "job_id": [
+          "str"
+        ],
+        "kind": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "lot_id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "operation_id": [
+          "str"
+        ],
+        "produced_unique_units": [
+          "int"
+        ],
+        "quality_disposition_coverage": [
+          "int"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "reworked_accepted_unique_units": [
+          "NoneType",
+          "int"
+        ],
+        "terminal_outcome_rule": [
+          "str"
+        ],
+        "terminal_scrap_unique_units": [
+          "NoneType",
+          "int"
+        ]
+      }
+    },
+    "schedules": {
+      "recordCount": 87,
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "actual_completion": [
+          "str"
+        ],
+        "approval": [
+          "str"
+        ],
+        "as_scheduled_qty": [
+          "int"
+        ],
+        "completed_qty": [
+          "int"
+        ],
+        "frozen_at": [
+          "str"
+        ],
+        "id": [
+          "str"
+        ],
+        "job_id": [
+          "str"
+        ],
+        "kind": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "plan_version": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "scheduled_end": [
+          "str"
+        ],
+        "scheduled_qty": [
+          "int"
+        ]
+      }
+    },
+    "labor_shifts": {
+      "recordCount": 87,
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "absent_scheduled_person_h": [
+          "int"
+        ],
+        "direct_available_person_h": [
+          "int"
+        ],
+        "direct_productive_person_h": [
+          "int"
+        ],
+        "employee_person_h": [
+          "int"
+        ],
+        "human_effort_basis": [
+          "str"
+        ],
+        "id": [
+          "str"
+        ],
+        "job_id": [
+          "str"
+        ],
+        "kind": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "overtime_person_h": [
+          "int"
+        ],
+        "paid_person_h": [
+          "int"
+        ],
+        "productive_person_h": [
+          "int"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "scheduled_person_h": [
+          "int"
+        ]
+      }
+    },
+    "equipment_observation_coverage": {
+      "recordCount": 87,
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "asset_id": [
+          "str"
+        ],
+        "classified_elapsed_min": [
+          "int"
+        ],
+        "complete_primary_state_partition": [
+          "bool"
+        ],
+        "id": [
+          "str"
+        ],
+        "job_id": [
+          "str"
+        ],
+        "kind": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "observed_selected_elapsed_min": [
+          "int"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "source_class": [
+          "str"
+        ],
+        "unclassified_elapsed_min": [
+          "int"
+        ],
+        "window_end": [
+          "str"
+        ],
+        "window_start": [
+          "str"
+        ],
+        "zero_evidence_basis": [
+          "NoneType",
+          "str"
+        ],
+        "zero_stop_assertion": [
+          "bool"
+        ]
+      }
+    },
+    "fixture_provenance": {
+      "recordCount": 1,
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "approval": [
+          "str"
+        ],
+        "counts": [
+          "str"
+        ],
+        "current_state_claim": [
+          "bool"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "fixture_version": [
+          "str"
+        ],
+        "human_clock": [
+          "str"
+        ],
+        "id": [
+          "str"
+        ],
+        "kind": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "observation_clock": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ]
+      }
+    }
+  },
+  "units": {
+    "planned_min/run_min/down_min": "equipment elapsed minutes, never person time",
+    "ideal_cycle_min": "min/piece",
+    "counts": "unique pieces",
+    "paid_person_h": "person-hours",
+    "oee": "fraction internally, percent display",
+    "missingMeasure": "null in JSON, typed unavailable; do not JS coerce null to0"
+  }
+}

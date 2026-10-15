@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EKAS V99 proposed synthetic diagnostic command envelope",
+  "description": "Editable proposed schema for Tom. Semantic source/version/actor/asset/cycle/knowledge/cutoff guards and durable idempotency require server enforcement; this schema is not an authentication grant or real backend conformance evidence. No external schema fetch is used at runtime.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "expectedVersion",
+    "command"
+  ],
+  "properties": {
+    "expectedVersion": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "command": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "hypothesisRef",
+            "checkType",
+            "outcome",
+            "evidenceIds",
+            "knownAt",
+            "reason",
+            "sourceVersion",
+            "confirmation"
+          ],
+          "properties": {
+            "kind": {
+              "const": "record-diagnostic-check"
+            },
+            "hypothesisRef": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "investigationId",
+                "cycleId",
+                "hypothesisId",
+                "hypothesisVersion"
+              ],
+              "properties": {
+                "investigationId": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "cycleId": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "hypothesisId": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "hypothesisVersion": {
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            },
+            "checkType": {
+              "enum": [
+                "controller-response",
+                "measurement-trust",
+                "upstream-disturbance",
+                "insufficient-evidence",
+                "cause-assessment"
+              ]
+            },
+            "outcome": {
+              "enum": [
+                "inconclusive",
+                "refuted",
+                "supported-by-inspection",
+                "consistent-with-symptom"
+              ]
+            },
+            "evidenceIds": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 8,
+              "uniqueItems": true,
+              "items": {
+                "type": "string"
+              }
+            },
+            "knownAt": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z$"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 10,
+              "maxLength": 1000
+            },
+            "sourceVersion": {
+              "const": 1
+            },
+            "confirmation": {
+              "const": "CONFIRM_UNVERIFIED_DIAGNOSTIC_CHECK"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "kind",
+            "snapshotId",
+            "confirmation"
+          ],
+          "properties": {
+            "kind": {
+              "const": "select-diagnostic-snapshot"
+            },
+            "snapshotId": {
+              "const": "diagnostic-cycle2-nov3-1500"
+            },
+            "confirmation": {
+              "const": "SELECT_SYNTHETIC_DIAGNOSTIC_SNAPSHOT"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

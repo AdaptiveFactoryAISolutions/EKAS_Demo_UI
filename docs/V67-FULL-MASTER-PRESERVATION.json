@@ -1,0 +1,21 @@
+{
+  "all_three_full_masters_byte_exact": true,
+  "masters": [
+    {
+      "path": "/home/pat/Documents/Codex/2026-10-08/task-4/master-requirements/Pasted text(20261011-060550).txt",
+      "sha256": "3a71c02f0bac352da8da2f4b8b17ebe1243e329f30e7d444ff254a8bb3088049",
+      "portable_path": "docs/master-requirements/M1.txt"
+    },
+    {
+      "path": "/home/pat/Documents/Codex/2026-10-08/task-4/master-requirements/Pasted text(20261011-060553).txt",
+      "sha256": "e4a00c2bd5f3b94c79d12f2409bf4bdbb07f863dcfee253f8e5fc7f687c93aaa",
+      "portable_path": "docs/master-requirements/M2.txt"
+    },
+    {
+      "path": "/home/pat/Documents/Codex/2026-10-08/task-4/master-requirements/Pasted text(20261011-062241).txt",
+      "sha256": "915cff63e0844c8d964100b75dbc0ec50e1b177ba91f0f8d2e8a99835aa256a3",
+      "portable_path": "docs/master-requirements/M3.txt"
+    }
+  ],
+  "rule": "Full text retained;35criteria are derived traceability, not a substitute for complete requirements."
+}

@@ -1,0 +1,1703 @@
+{
+  "cohortId": "MIW-NEW-01",
+  "title": "Connected manufacturing improvement journey acceptance",
+  "status": "PREPARED_NOT_RUN_WITH_HELD_DEPENDENCIES",
+  "countPolicy": "Separate MIW-NEW-01 expanded cohort; original351 untouched. NOT_RUN/BLOCKED preparation rows are not acceptance or padded historicalPASS.",
+  "candidateIdentity": null,
+  "fixtureIdentity": null,
+  "prerequisites": [
+    "Owner provides frozen deployed candidate identity and visible local route/control map.",
+    "Owner provides isolated synthetic case with declared canonical operands, raw overlapping events, effective documents, hypotheses/actions/work proof, compatible before/after and sustainment branches. No reviewer invents missing evidence.",
+    "Freeze independent expected-value oracle and definitions before execution; approve proposed plant semantics explicitly.",
+    "LLM disabled throughout full journey; no credentials/provider calls/external dispatch/security controls.",
+    "Native backups and restore procedure for every owned namespace."
+  ],
+  "rows": [
+    {
+      "id": "MIW-01",
+      "stage": "Deterministic complete journey",
+      "steps": "With LLM disabled and no provider credentials, start the named isolated synthetic case and traverse goal \u2192 losses \u2192 contributors \u2192 evidence \u2192 hypothesis \u2192 action \u2192 work proof \u2192 outcome \u2192 sustainment.",
+      "expected": "Every stage executes through visible controls; no provider call required, no chat-generated fact; source-backed outcome is reproducible after reload.",
+      "requiredEvidence": "Complete screen sequence, no-provider mode indicator, captured case export.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "1",
+        "30",
+        "32",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-02",
+      "stage": "Goal versus actual",
+      "steps": "Open the case goal and actual measurement for one explicit asset/job/part scope and period.",
+      "expected": "Goal has value, unit, approved/source status, effective date and same eligibility basis as actual. Gap arithmetic and direction reconcile. Illustrative threshold never masquerades as an approved target.",
+      "requiredEvidence": "Goal source, actual inputs, scope and arithmetic oracle.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "oracleAssertions": "Actual 2154 / plan 2304 = 93.4895833333%; net plan miss150 = positive child shortfalls176 \u2212 surplus26. Capacity loss726 differs by theoretical-minus-plan576; derived80% is not approved OEE target. Missing approval/effectivity remains explicit.",
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "4",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-03",
+      "stage": "Loss reconciliation",
+      "steps": "Open downtime, speed/performance and quality loss breakdown for the exact same cohort.",
+      "expected": "All terms use an explicit common basis or show why they cannot be summed. For a time-basis waterfall: planned time = good-equivalent time + eligible availability loss + performance loss + quality loss, within declared tolerance. Nonnegative and unclipped inputs; no causal claim from arithmetic.",
+      "requiredEvidence": "Raw operands, definition versions, rounding policy and independent sum.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "oracleAssertions": "Plant asset-minutes1440 = 240down + 99speed + 24quality +1077good-equivalent; units2880\u2212480\u2212198\u221248=2154; OEE74.7916666667%; quality denominator2202, not2154. Homogeneous ICT0.5. Mixed part revisions need segment-specific standards/exposure; never force original canonical definitions to this oracle.",
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "4",
+        "8",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-04",
+      "stage": "Overlap and double counting",
+      "steps": "Use approved overlapping stop intervals and duplicate event references in the fixture.",
+      "expected": "Downtime union counts each covered minute once; duplicate anchors do not add loss. Boundary touching, nested intervals and clips to the selected production window are explained. Quality/speed allocation does not also count downtime.",
+      "requiredEvidence": "Interval timeline, union oracle and record deduplication evidence.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "oracleAssertions": "Line03 has12 raw events; union120min, reason72jam+24changeover+24other. Plant and before/after raw unions not proved by aggregates. Challenge vector union35 vs raw78 is a probe only. Conflicting reasons need explicit exclusive attribution; no cross-asset union of asset exposure.",
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "8",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-05",
+      "stage": "Scoped contributors",
+      "steps": "Select the dominant loss, then navigate asset \u2192 job \u2192 part/revision/operation and back.",
+      "expected": "Contributor rows reconcile to parent total; denominator/context stay visible; deterministic ranking and tie rule. No neighboring asset, tuple or period silently substituted.",
+      "requiredEvidence": "Parent/child totals and visible breadcrumbs.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "oracleAssertions": "Downtime ranking JOB-8303, JOB-8402, JOB-8401; signed contributor net gaps retain surplus. Feeder jam subset never added to total downtime. Speed198units and quality48units remain residual/count attribution until evidence authored.",
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "9",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-06",
+      "stage": "Effective documents",
+      "steps": "Open supporting instruction/standard document from the selected contributor.",
+      "expected": "Document ID, revision, effective/expiry dates, applicable asset/part/operation and source anchor visible. As-of decision uses the applicable revision; stale/wrong-scope documents are flagged and excluded from validated evidence.",
+      "requiredEvidence": "Document lineage and applicability examples.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "10",
+        "25",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-07",
+      "stage": "Traceable events",
+      "steps": "Open a loss event and its linked production/job record.",
+      "expected": "Event start/end, reason, asset/job association, source identity and recorded/known-at times visible. Aggregate can be traced to relevant raw evidence; a metric/source anchor alone is not an event explanation.",
+      "requiredEvidence": "Event detail and aggregate-to-event trace.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "9",
+        "25",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-08",
+      "stage": "Hypothesis versus cause",
+      "steps": "Record/select a proposed explanation, then inspect evidence for and against.",
+      "expected": "Hypothesis stays proposed/unverified until explicit evidence-backed human disposition. Correlation, gap, scan and recommendation never automatically become confirmed cause. Contradictory evidence remains visible.",
+      "requiredEvidence": "Hypothesis status and evidence links; no unsupported promotion.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "oracleAssertions": "Guide wear/suggested causes not proven by bridge; observed505unit gain is association. Cause confirmation requires distinct evidence-backed human disposition and cannot follow automatically from completed action.",
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "11",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-09",
+      "stage": "Action plan",
+      "steps": "Open a local corrective-action plan tied to the selected hypothesis.",
+      "expected": "Exact case/scope, owner, status, due date and measurable expected benefit present; benefit labelled estimate with unit/basis, never realized savings. Changing action fields does not alter observed measurements.",
+      "requiredEvidence": "Action record and before/after measurement hashes.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "oracleAssertions": "Scenario baseline-rate estimate527.692307692units; assumed80% yields422.153846154 expected; assumed$12 gives$5065.846153846 gross opportunity; cost$900 separate. Arithmetic opportunity-minus-cost$4165.846153846 is not realized ROI/approved valuation. Never add estimates to505gain,600availability-equivalent or150planmiss.",
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "12",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-10",
+      "stage": "Rejected or failed action",
+      "steps": "Use fixture-provided rejected and failed actions; read detail/status and allowed local recovery.",
+      "expected": "No successful/executed status or benefit claim; reason and residual work visible; original evidence preserved. No external dispatch or authorization bypass. Held approval action is inspected only via allowed preseeded state.",
+      "requiredEvidence": "Rejected/failed status evidence and unchanged observations.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-11",
+      "stage": "Performed-work proof",
+      "steps": "Inspect fixture-provided completed work with timestamp, performer and supporting artifact.",
+      "expected": "Planned/approved/closed status alone is insufficient proof. Performance evidence is attributable, scope-matched, time-ordered and linked to the action; missing or conflicting proof blocks verified-performed claim.",
+      "requiredEvidence": "Work evidence lineage and missing-proof comparison.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "14",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-12",
+      "stage": "Eligible before/after",
+      "steps": "Open outcome comparison tied to the performed action.",
+      "expected": "Before/after windows, scope, measurement definition/version, exposure, sample counts and cutoff visible; compatible inputs required. Absolute and relative changes calculated deterministically; association remains distinct from causality.",
+      "requiredEvidence": "Matched cohorts and independent change oracle.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "oracleAssertions": "Each period10 eligible480min shifts, balanced5/5crew, same FEED03/NW-A P2/OP030/ICT0.5/definition. Jam600/10=60\u2192300/10=30min/shift,50% reduction. Mean\u226430 with minimum10 is not every-shift\u226430 (4 post exceed30). Good6860\u21927365, gain505=600 availability benefit\u2212100 speed deterioration+5quality reduction; OEE+5.2604166667pp. No automatic action attribution.",
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "8",
+        "15",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-13",
+      "stage": "No improvement / worse outcome",
+      "steps": "Use fixture-provided flat and worse outcome branches.",
+      "expected": "Zero change and deterioration reported honestly with correct favorable direction; no automatic successful action or realized benefit. Hypothesis/action remains assessable with negative evidence.",
+      "requiredEvidence": "Flat/worse calculations and outcome status.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "oracleAssertions": "Flat60\u219260 is0 improvement; worse60\u219270 is signed+10, favorable\u221210, relative\u221216.6666667%, not clamped. Zero baseline leaves relative change unavailable.",
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "15",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-14",
+      "stage": "Sustainment",
+      "steps": "Open repeated post-action windows and predeclared sustainment rule.",
+      "expected": "Enough eligible windows/exposure must meet a disclosed rule; short history, recurrence and regressions block sustained-success claim. No interpolation of missing windows or single-point sustainment.",
+      "requiredEvidence": "Window values, rule, eligibility and resulting status.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "oracleAssertions": "Separate primary mean\u226430/10shift protocol from sustain threshold45/five eligible observations; acceptance28,26,30,25,27 mean27.2. Recurrence strictly>45 in2 consecutive eligible shifts:55then58 onNov02/03 reopens. One high observation or45 does not trigger. Missing/stale observer/unknown safety blocks accepted sustainment.",
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "17",
+        "18",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-15",
+      "stage": "Missing/stale target or input",
+      "steps": "Use fixtures missing target, production operand, event feed or applicable document; use stale data.",
+      "expected": "Unavailable or provisional classification names missing/stale dependency and cutoff. No zero fill, alternate metric, invented date/target or stale-source endorsement. Valid unaffected stages remain usable.",
+      "requiredEvidence": "Each dependency warning with unchanged eligible values.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-16",
+      "stage": "Zero versus unavailable",
+      "steps": "Compare true zero downtime/no defects with missing event/quality inputs.",
+      "expected": "True zero retains numeric zero and eligibility evidence; missing remains Unavailable, including charts, tables, totals, exported case and conversation.",
+      "requiredEvidence": "Zero/missing side-by-side evidence.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "oracleAssertions": "Complete true0 losses eligible. P=0 produces unavailable OEE/no planned exposure. P>0,R=0,TC=GC=0 yields OEE0 with performance/quality not applicable, not quality100%. Missing quality can leave independent availability/speed usable but full bridge unavailable.",
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "4",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-17",
+      "stage": "Invalid / empty scope",
+      "steps": "Select no eligible records, impossible window or mismatched revision.",
+      "expected": "Explicit empty/invalid state; no fabricated loss, target gap or benefit. Correct scope can be restored without losing the case.",
+      "requiredEvidence": "Empty state and recovery.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-18",
+      "stage": "Late evidence and reproducibility",
+      "steps": "Inspect fixed known-at cutoff, then a fixture-approved later-cutoff branch.",
+      "expected": "Historical capture immutable; late-arriving correction excluded before known-at time and explicit afterward. Versioned totals and changed evidence explained; no silent rewriting.",
+      "requiredEvidence": "Two cutoff captures and source versions.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "oracleAssertions": "InitialOct06 14:00 cutoff excludes performed work15:10 and all post. Full post knownOct20 14:00; safety record15:00; acceptance15:15. Later simulated selectors explicit; partial post count never replaced with full later total; captures immutable.",
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "16",
+        "26",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-19",
+      "stage": "Persistence and working copy",
+      "steps": "Change a permitted owned synthetic draft, save, navigate away, reload, reopen case.",
+      "expected": "Same UUID, scope, documents, hypotheses/action links and captured outcomes persist; unsaved working-copy state clearly distinguished. Create-new never overwrites existing case.",
+      "requiredEvidence": "UI sequence plus native exported records/UUIDs.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "3",
+        "7",
+        "26",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-20",
+      "stage": "Errors and recovery",
+      "steps": "Use fixture-supported calculation/read/save failure without altering protected data.",
+      "expected": "Visible actionable error, no false saved/success state, retained draft and prior evidence; safe local recovery works. Do not simulate by weakening security or touching providers.",
+      "requiredEvidence": "Error, retained draft and recovery evidence.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-21",
+      "stage": "Desktop comprehension",
+      "steps": "Traverse full chat-led case at1366\u00d7768 desktop with preserved header/sidebar/dark shell.",
+      "expected": "Core case progression and evidence status understandable without navigating only chart galleries; labels explain next stage and blockers. Totals, scope, dates and status readable.",
+      "requiredEvidence": "Stage screenshots and observed journey notes.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-22",
+      "stage": "Mobile 390 / 320",
+      "steps": "Repeat complete chat-led lifecycle at390\u00d7844 and320\u00d7844 CSS px, including scrolledMenu, evidence dialogs, errors and status transitions; preserve shell.",
+      "expected": "No clipped decisive action/status; menu reachable after scroll; content/table has intentional overflow; dialogs close/back safely; no hidden evidence or misleading truncated identities.",
+      "requiredEvidence": "Both widths/screens and native interactions; reset viewport after.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "27",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-23",
+      "stage": "Keyboard",
+      "steps": "Traverse case, select contributor, open/close evidence, edit permitted draft and reach outcome using keyboard.",
+      "expected": "Logical focus order, visible focus, labels, operable disclosure/table/menu, Escape and return-focus behavior; no focus trap. No pointer-only essential stage.",
+      "requiredEvidence": "Native key sequence and focus screenshots.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "28",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-24",
+      "stage": "Truthful summary/export",
+      "steps": "Read final summary and export exact synthetic case through ordinary controls.",
+      "expected": "Same cohort totals, evidence IDs, document versions, estimates, failed states and uncertainty as visible screens. No verified cause/performed benefit/sustainment claims beyond evidence.",
+      "requiredEvidence": "Summary/export versus authoritative captured records.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "oracleAssertions": "Preserve scope/horizon distinction, uncertainty, net vs positive gaps, estimates vs observations and unavailable financial realization through summaries/exports; use exact unrounded calculations, tolerance1e\u22129 and display2 decimals.",
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "25",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-25",
+      "stage": "Safe boundary",
+      "steps": "After tests, restore each owned namespace using preserved native backup and re-export.",
+      "expected": "Incoming entries/legacy exact; all recovery archives retained. Patrick demo, Main, baseline/template, originals, unrelated tabs, QA roots and held paths untouched.",
+      "requiredEvidence": "Restoration comparison and scope log.",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "interactionRequirement": "Run relevant stage from primary free-form chat in active persistent investigation; visual evidence inspection may supplement. No hidden manipulation.",
+      "alignmentCriteria": [
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-26",
+      "stage": "CASE A downtime unaided journey",
+      "steps": "From free-form missed-goal chat run the full23-step Northworks journey through new-cycle reopen.",
+      "expected": "2154 vs2304, net150; Line03gap138, JOB8303/FEED03/NW-A/P2/OP030; raw event/doc evidence; hypotheses/tests; accepted ownership; distinct recommendation/request/authorization/performance; explicit time;10eligible shifts; guardrails; result; sustain/recurrence. One persistent versioned evidence trail. Held authorization transitions block whole-journey acceptance until separately cleared.",
+      "requiredEvidence": "Every turn, context snapshots, investigation UUID/version/events, oracle comparisons and all stage screens.",
+      "sourceReferences": "M1:142\u2013297,841\u2013856,1164\u20131198; M2:113\u2013170",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "1",
+        "6",
+        "9",
+        "18",
+        "19",
+        "30",
+        "31",
+        "32",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-27",
+      "stage": "CASE B speed unaided journey",
+      "steps": "Run separately declared speed/performance case from natural chat to verification/sustain/reopen.",
+      "expected": "Independent ideal cycle/actual cycle/output/run-time denominator, micro-stop/speed event/reason and coverage; own evidence, hypothesis, action/work/verification. No feeder-jam evidence borrowed to fabricate cause; full lifecycle with same service semantics.",
+      "requiredEvidence": "B fixture/source hash, independent numeric oracle, complete chat/event trace.",
+      "sourceReferences": "M1:858\u2013874,1200\u20131208",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "1",
+        "18",
+        "20",
+        "30",
+        "31",
+        "32",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-28",
+      "stage": "CASE C quality unaided journey",
+      "steps": "Run separately declared quality case from natural chat through complete lifecycle.",
+      "expected": "Total/good counts, exclusive terminal reject/scrap/rework disposition, FPY/quality definition, defect mode, part/revision, applicable PFMEA/control plan; testable hypotheses/action and verification. Metric alone is not cause; no A/B evidence borrowed.",
+      "requiredEvidence": "C fixture/source hash and count/FPY oracle, complete chat trace.",
+      "sourceReferences": "M1:876\u2013894,1200\u20131208",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "1",
+        "18",
+        "21",
+        "30",
+        "31",
+        "32",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-29",
+      "stage": "Plant Head operating review front door",
+      "steps": "Chat: Run my plant review. \u2192 What\u2019s off target? \u2192 Investigate the top issue. \u2192 What should we do? \u2192 Did it work? \u2192 Did it hold?",
+      "expected": "Governed metric bundle with readiness/target status; largest actionable gaps ranked with known exposure, no unavailable\u2192OEE fallback; creates/opens exact case through same action/verification/sustain services. Unavailable audit inputs visible.",
+      "requiredEvidence": "Six replies/service results, ranking oracle, linked investigation/context.",
+      "sourceReferences": "M1:896\u2013946",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "5",
+        "6",
+        "32",
+        "34",
+        "35"
+      ],
+      "additionalAssertions": [
+        "Review exact governed bundle: Production vs Plan, OEE, Downtime, Quality Loss, Schedule Adherence, Inventory Days, OTIF. Missing inputs remain unavailable; no substitution. Natural variants: What should I look at first? Investigate the top problem. Did yesterday\u2019s action work? Did it sustain?"
+      ]
+    },
+    {
+      "id": "MIW-30",
+      "stage": "Existing chat chain: What was OEE in January?",
+      "steps": "Run this exact turn in sequence, then a free-form paraphrase on a separate owned conversation; inspect context and natural reply.",
+      "expected": "Resolve year/machine/site if ambiguous; exact January OEE or missing-data explanation, never borrowed October case. Natural complete-sentence answer required.",
+      "requiredEvidence": "Native input/reply screenshot, resolved context dimensions, result/evidence identity.",
+      "sourceReferences": "M2:25\u2013111,324\u2013350",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "3",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-31",
+      "stage": "Existing chat chain: And March?",
+      "steps": "Run this exact turn in sequence, then a free-form paraphrase on a separate owned conversation; inspect context and natural reply.",
+      "expected": "Change primary period toMarch; retain metric, machine and unrelated context. Clarify year if needed. Natural complete-sentence answer required.",
+      "requiredEvidence": "Native input/reply screenshot, resolved context dimensions, result/evidence identity.",
+      "sourceReferences": "M2:25\u2013111,324\u2013350",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "3",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-32",
+      "stage": "Existing chat chain: What about Machine 2?",
+      "steps": "Run this exact turn in sequence, then a free-form paraphrase on a separate owned conversation; inspect context and natural reply.",
+      "expected": "Change machine only; March remains primary period, OEE remains metric. Natural complete-sentence answer required.",
+      "requiredEvidence": "Native input/reply screenshot, resolved context dimensions, result/evidence identity.",
+      "sourceReferences": "M2:25\u2013111,324\u2013350",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "3",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-33",
+      "stage": "Existing chat chain: No, I meant Machine 1.",
+      "steps": "Run this exact turn in sequence, then a free-form paraphrase on a separate owned conversation; inspect context and natural reply.",
+      "expected": "Correction changes machine only and acknowledges correction naturally; not creating duplicate context. Natural complete-sentence answer required.",
+      "requiredEvidence": "Native input/reply screenshot, resolved context dimensions, result/evidence identity.",
+      "sourceReferences": "M2:25\u2013111,324\u2013350",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "3",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-34",
+      "stage": "Existing chat chain: Why?",
+      "steps": "Run this exact turn in sequence, then a free-form paraphrase on a separate owned conversation; inspect context and natural reply.",
+      "expected": "Explain current Machine1/March OEE components and documented evidence; no invented mechanical failure mode. Natural complete-sentence answer required.",
+      "requiredEvidence": "Native input/reply screenshot, resolved context dimensions, result/evidence identity.",
+      "sourceReferences": "M2:25\u2013111,324\u2013350",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-35",
+      "stage": "Existing chat chain: Show me.",
+      "steps": "Run this exact turn in sequence, then a free-form paraphrase on a separate owned conversation; inspect context and natural reply.",
+      "expected": "Refer to last explanation with matching evidence/chart/table and scope, not generic ShowMe playback. Natural complete-sentence answer required.",
+      "requiredEvidence": "Native input/reply screenshot, resolved context dimensions, result/evidence identity.",
+      "sourceReferences": "M2:25\u2013111,324\u2013350",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-36",
+      "stage": "Existing chat chain: Compare that to last month.",
+      "steps": "Run this exact turn in sequence, then a free-form paraphrase on a separate owned conversation; inspect context and natural reply.",
+      "expected": "PrimaryMarch vs comparisonFebruary, same machine/metric/definitions; explain insufficient comparable inputs. Natural complete-sentence answer required.",
+      "requiredEvidence": "Native input/reply screenshot, resolved context dimensions, result/evidence identity.",
+      "sourceReferences": "M2:25\u2013111,324\u2013350",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "3",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-37",
+      "stage": "Existing chat chain: Go back to the first machine.",
+      "steps": "Run this exact turn in sequence, then a free-form paraphrase on a separate owned conversation; inspect context and natural reply.",
+      "expected": "Resolve Machine1, change only machine focus; never makeFebruary primary. Natural complete-sentence answer required.",
+      "requiredEvidence": "Native input/reply screenshot, resolved context dimensions, result/evidence identity.",
+      "sourceReferences": "M2:25\u2013111,324\u2013350",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "3",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-38",
+      "stage": "Existing chat chain: Investigate the root cause.",
+      "steps": "Run this exact turn in sequence, then a free-form paraphrase on a separate owned conversation; inspect context and natural reply.",
+      "expected": "Enter governed persistent investigation attached to current metric/scope, keep hypotheses separate; no unsupported confirmed cause. Natural complete-sentence answer required.",
+      "requiredEvidence": "Native input/reply screenshot, resolved context dimensions, result/evidence identity.",
+      "sourceReferences": "M2:25\u2013111,324\u2013350",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "6",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-39",
+      "stage": "Existing chat chain: What was FPY?",
+      "steps": "Run this exact turn in sequence, then a free-form paraphrase on a separate owned conversation; inspect context and natural reply.",
+      "expected": "ExplicitFPY overrides inheritedOEE; correct definition/value or governed unavailable reason; neverOEE fallback. Natural complete-sentence answer required.",
+      "requiredEvidence": "Native input/reply screenshot, resolved context dimensions, result/evidence identity.",
+      "sourceReferences": "M2:25\u2013111,324\u2013350",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "4",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-40",
+      "stage": "Full required investigation chat chain",
+      "steps": "Run exact sequence: We missed our production goal. \u2192 Where was the biggest loss? \u2192 Which machine? \u2192 What job? \u2192 What evidence do we have? \u2192 What are the possible causes? \u2192 What should we test? \u2192 Who owns it? \u2192 Assign it. \u2192 Was it accepted? \u2192 Request approval. \u2192 Was it approved? \u2192 Record the repair. \u2192 Did it work? \u2192 Show me. \u2192 Did it hold? \u2192 What happened when it came back? \u2192 Reopen it.",
+      "expected": "Each of18 turns resolves current context through typed services, records allowed actual transitions and requests missing evidence/clarification. Request\u2260approved\u2260performed\u2260verified. Stop held approval/action before execution and mark exact blocked segment; do not hide that blocker behind UI fixtures. Same investigation/cycle until explicitreopen.",
+      "requiredEvidence": "Per-turn status/actual/evidence, chronological commands and state; sequence cannot PASS from endpoint samples.",
+      "sourceReferences": "M2:352\u2013384; M1:105\u2013140",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "1",
+        "6",
+        "18",
+        "30",
+        "31",
+        "32",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-41",
+      "stage": "Free-form ambiguity and dimension retention",
+      "steps": "Ask ambiguous assign-it/which-machine/that-job/last-month and change part/revision/period/focus in natural language.",
+      "expected": "Clarify only ambiguous dimension; no state mutation until resolved. Preserve independent machine/primary/comparison/metric/job/part/revision/investigation dimensions and exact cutoff. Unsupported phrasing honest, no command-syntax requirement.",
+      "requiredEvidence": "Resolved-before/after context and pending clarification lifecycle.",
+      "sourceReferences": "M2:15\u2013111; M1:613\u2013655",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "3",
+        "34",
+        "35"
+      ],
+      "additionalAssertions": [
+        "active metric",
+        "plant",
+        "line",
+        "equipment",
+        "job",
+        "part",
+        "revision",
+        "operation",
+        "shift",
+        "primary period",
+        "comparison period",
+        "comparison entity",
+        "investigation",
+        "investigation stage",
+        "chart/table presentation",
+        "clarification"
+      ]
+    },
+    {
+      "id": "MIW-42",
+      "stage": "Conversation response quality",
+      "steps": "Read every normal reply across all3 journeys and regression chain; copy one answer and compare with screen.",
+      "expected": "Answer-first properEnglish/natural paragraphs, grounded expert interpretation, adaptive length, known/unknown/next/owner/action/resultstatus. No raw field dump, internal-ID noise, canned certification repetition. Correct values with stiff prose FAIL quality criterion.",
+      "requiredEvidence": "Per-reply reviewer notes, exact copied text and screenshots.",
+      "sourceReferences": "M2:172\u2013261; M1:657\u2013681,1146\u20131162,1270\u20131294",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "2",
+        "28",
+        "32",
+        "34",
+        "35"
+      ],
+      "additionalAssertions": [
+        "Quiet professional chat: answer \u2192 why it matters \u2192 optional useful visual \u2192 next action. No architecture exposure or forcing users to know modules/database/service/metric IDs."
+      ]
+    },
+    {
+      "id": "MIW-43",
+      "stage": "Conversation/history lifecycle",
+      "steps": "From chat leave route, reload, reopen history and return with What happened with the feeder-jam issue? Archive/restore via supported owned local flow; browser restart only supported/authorized owned environment.",
+      "expected": "Recover exact investigation, cycle, dimensions, prior replies and immutable captures. Sign-out/in where supported remains external/held if auth requires; no unrelatedChrome disruption. Missing capability markedNOT_RUN/BLOCKED.",
+      "requiredEvidence": "Before/after conversation/aggregate export and UI history; restart evidence separately.",
+      "sourceReferences": "M2:303\u2013322; M1:1034\u20131049",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "3",
+        "7",
+        "26",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-44",
+      "stage": "Controlled evidence, supersession and contradictions",
+      "steps": "Via chat request maintenance note/PFMEA/control plan/standard work/NCR/EC evidence; inspect approved wrongrevision/superseded/unreleased/negated contradictory fixture branches.",
+      "expected": "Controlled vs note distinguished; applicability/source/effectivity/cutoff/version/provenance preserved; citations real evidenceIDs. UnreleasedEC cannot become instruction; negation/contradictions retained. No futureevidence leak.",
+      "requiredEvidence": "Claim\u2192source chain and each document negative branch.",
+      "sourceReferences": "M1:299\u2013341,1009\u20131032,1068\u20131099",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "10",
+        "25",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-45",
+      "stage": "Claim and hypothesis state machine",
+      "steps": "Through chat propose competing guidewear/setup/material/crew hypotheses; plan tests and record fixture-backed results.",
+      "expected": "IDs/version/support/contradiction/test/result/timestamps persist; PROPOSED\u2192TESTPLANNED\u2192TESTED\u2192SUPPORTED/REFUTED/INCONCLUSIVE. Confirmedcause separate governed state; router/LLM cannot promote. Claim taxonomy retains observation/derived/recommendation/action/result/estimate distinctions.",
+      "requiredEvidence": "Typed hypothesis/event records and natural uncertainty wording.",
+      "sourceReferences": "M1:343\u2013410",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "11",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-46",
+      "stage": "Assignment acceptance and owner change",
+      "steps": "Through chat request assignment to synthetic maintenance persona, query acceptance, accept permitted assignment and reassign allowed owned case. Inspect notaccepted/ownerchanged branches.",
+      "expected": "Requested and accepted assignment separate with actor/time; ownership changes versioned, no stale UI overwrite authoritative owner. Missing accepted assignment blocks dependent step with reason and next requirement. No messages sent.",
+      "requiredEvidence": "Owner request/accept/reassign history and stale-owner negative result.",
+      "sourceReferences": "M1:683\u2013701,1068\u20131099",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "12",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-47",
+      "stage": "Action state and performed-work evidence",
+      "steps": "Through chat recommend bounded restoration vs engineering change and inquire status; supply authored performed-record evidence via allowed local service when authorized.",
+      "expected": "RECOMMENDED/REQUESTED/AUTHORIZED/PERFORMED/VERIFIED distinct, timestamps/source proof each transition; no direct approved/verified UI toggle, fakeCMMS or unauthorized state advancement. Like-for-like differs fromEC. Missing performedproof blocks verification claim.",
+      "requiredEvidence": "Action/work records and exact transition ledger; held segments blocked.",
+      "sourceReferences": "M1:703\u2013749,977\u20131007,1329\u20131347",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "13",
+        "14",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-48",
+      "stage": "Verification plan immutability and guardrails",
+      "steps": "Through chat define plan beforemeasurement; inspect changed-plan, absentpost, safetyfailed and qualityguardrailfailed synthetic states.",
+      "expected": "Baseline/post eligibility/endpoint/mincohort/guardrails/time pinned before result; changed plan explicitlyversioned invalidates incompatible acceptance. Missing/failed safety,quality or operational guardrail blocks accepted result. No inferred human safety approval.",
+      "requiredEvidence": "Plan version/hash, cohort exposure and guardrail/result disposition.",
+      "sourceReferences": "M1:751\u2013783,1068\u20131099",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "15",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-49",
+      "stage": "Explicit simulation clock and result acceptance",
+      "steps": "Via natural chat request explicit time advance to repair/post/sustain/recurrence, then accept/reject measured result if permitted.",
+      "expected": "Clock advance disclosed; no repair15:10 or post evidence at initial14:00cutoff. Pendingcount/minimumsample truthful. Accepted/rejected measured result versioned and separate from causal/financial proof; no hidden time jump.",
+      "requiredEvidence": "Clock timeline, known-at filtering, acceptance/rejection event and negative snapshots.",
+      "sourceReferences": "M1:785\u2013832,1164\u20131198",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "16",
+        "17",
+        "18",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-50",
+      "stage": "Versioning, duplicate commands and write failure",
+      "steps": "Repeat same permitted command with same idempotencykey through owner-supported safe visible flow; use same-namespace stale-version/savefailure fixture, no protected state.",
+      "expected": "expectedVersion and idempotencyKey carried; identical repeatedcommand no duplicate event/action; conflicting staleversion clearlyrefused, retaineddraft/history and recovery. Actual failure doesn\u2019t reportcompleted. No test by security weakening.",
+      "requiredEvidence": "UI refusal/recovery plus exported versions/eventIDs, owner contracttest evidence labelled separately.",
+      "sourceReferences": "M1:500\u2013575,1051\u20131099",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "7",
+        "26",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-51",
+      "stage": "Production-shaped contracts and mock adapter separation",
+      "steps": "Read owner-provided frozen schema/contracts and evidence of service routing alongside visible command outcomes; no source edits or provider execution.",
+      "expected": "Investigation aggregate fields/context/goals/bridge/evidence/hypotheses/owner/action/verification/sustain/history exist. UI\u2192router\u2192services\u2192typedcontracts\u2192mockadapter\u2192versionedsource; no componentdirectfixturewrites/formulacopies. Backend readiness document covers identity/entity/capability/version/read/action/error/timeout/idempotency without inventing actualTomAPI. API compatibility is not integration.",
+      "requiredEvidence": "Frozen contract/schema/report reference and independent read-only review required; UI tests alone cannot certify layering.",
+      "sourceReferences": "M1:412\u2013611,1296\u20131347,1438\u20131497",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "4",
+        "22",
+        "23",
+        "30",
+        "33",
+        "34",
+        "35"
+      ],
+      "additionalAssertions": [
+        "Typed Metric, OperatingReview, Investigation, Evidence, Action, Authorization, Verification, Sustain and Document services. Backend readiness covers SQL/Ignition/ERP/notifications as interfaces only, not actual integrations."
+      ]
+    },
+    {
+      "id": "MIW-52",
+      "stage": "Router and presenter boundary / LLM-disabled",
+      "steps": "Run ordinary chains and all3 completejourneys in declared provider-disabled mode; compare immutable metric/evidence/action values with sourceoracle. Read declared implementation identity.",
+      "expected": "Boundedrouter handles pronouns/corrections/clarification; deterministicservices owntruth. Presenter cannot alter value/metric/evidence/cause/authority/work/result/certification. No credentials/calls. GLiDE-compatible/reference router is not actualGLiDE integration; optional model phrasing is not liveLLM acceptance.",
+      "requiredEvidence": "Provider-disabled mode, exact routeridentity, result values and external integration NOT_RUN declaration.",
+      "sourceReferences": "M1:613\u2013681; M2:222\u2013301",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "4",
+        "30",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-53",
+      "stage": "Existing product preservation",
+      "steps": "At finalfreeze perform relevant fresh chat/Search/Answers/Boards/Collections/Catalog/MetricRegistry/evidence/chart/table/history/responsive/accessibility regression in owned namespace.",
+      "expected": "Accepted shell/layout remains; formula registry reused; metric recognition/execution/certification distinct; original351 evidence identities retained and separately retested whereaffected. V54 saved-answer pass inherited until fresh changedcandidate tests.",
+      "requiredEvidence": "Separate existing-feature regression log, hashes and restoration.",
+      "sourceReferences": "M1:948\u2013975,1389\u20131411",
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "defects": [],
+      "alignmentCriteria": [
+        "29",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-54",
+      "stage": "R5 security/policy preservation external dependency",
+      "steps": "Do not execute denied R5 retest, wrongtenant/isolation/policyrevision/evidencemasking/certificate/budget probes or rerouted substitutes.",
+      "expected": "Remain explicitlyblocked; no inference of securityPASS from syntheticdata or ordinaryUI. Existing approved corrections preserved by owner; fresh security acceptance requires authorized separate review.",
+      "requiredEvidence": "Exact prior denial/blocker reference and owner preservation evidence, not reviewersecurityPASS.",
+      "sourceReferences": "M1:948\u20131007,1068\u20131099,1413\u20131436",
+      "status": "BLOCKED",
+      "freshEvidence": [],
+      "defects": [],
+      "blocker": "R5 security retest previously declined; no approval to reproduce or substitute.",
+      "alignmentCriteria": [
+        "24",
+        "26",
+        "34",
+        "35"
+      ]
+    },
+    {
+      "id": "MIW-55",
+      "stage": "Held authorization/provider/external integration",
+      "steps": "Do not activate held policy/authorization controls, Links/Webhooks, liveprovider/realCMMS/PLM/QMS/MES/finance actions or realdispatch.",
+      "expected": "Represent synthetic notDispatched/notGranted and preseededstatuses honestly; no realproductionauthorization/work/financeclaim. Fulljourney heldsegments remainblocked, completeacceptance/VERDICTAPPROVE cannot be inferred.",
+      "requiredEvidence": "Named external/human gate, exact denial where observed; no liveintegration evidence claimed.",
+      "sourceReferences": "M1:977\u20131007,1101\u20131117,1296\u20131327; M2:113\u2013170",
+      "status": "BLOCKED",
+      "freshEvidence": [],
+      "defects": [],
+      "blocker": "Held authorization/security/provider paths remain excluded; compatibleinterfaces do not authorize integration tests.",
+      "alignmentCriteria": [
+        "13",
+        "14",
+        "23",
+        "24",
+        "33",
+        "34",
+        "35"
+      ]
+    }
+  ],
+  "oracle": {
+    "path": "/home/pat/Documents/Codex/2026-10-09/task/metric-oracle/manufacturing-journey-oracle-v1",
+    "expectedResultsSha256": "51e98fb9aca2b602d7fb9c4a3f25c5977d19307d16fe5f462ceb3ec6408a307b",
+    "rulesSha256": "186d40a3e111602ac1fe281a603577ff7341d5d2ffa4f166b41bc9c7959a9aed",
+    "status": "read in preparation; candidate NOT_RUN; supplied source verification 103 checks / 99 comparisons is not UI acceptance",
+    "sourceScope": "Northworks/assembly/NW-A P2/OP-030; production 2026-10-06 06:00\u201314:00 UTC; distinct FEED03 ten-shift before/after cohort",
+    "comparisonTolerance": 1e-09,
+    "displayDecimals": 2,
+    "fixtureGaps": [
+      "Approved/effective-dated controlled production goal absent",
+      "Raw intervals absent for Lines01/02 and complete before/after shift timelines",
+      "Terminal unique-unit disposition IDs absent; supplied count partition only",
+      "Speed/quality reason evidence absent; residuals do not prove suggested causes",
+      "Candidate-authored negative branches required; oracle probes are mathematical vectors, not observed records"
+    ]
+  },
+  "masterRequirements": [
+    {
+      "path": "/home/pat/Documents/Codex/2026-10-11/task/master-requirements/Pasted text(20261011-060550).txt",
+      "fileName": "Pasted text(20261011-060550).txt",
+      "libraryFileId": "libfile_f8ee6886ea9881918b02c47fcee9b074",
+      "version": 0,
+      "lines": 1521,
+      "bytes": 33031,
+      "sha256": "3a71c02f0bac352da8da2f4b8b17ebe1243e329f30e7d444ff254a8bb3088049",
+      "readCompletely": true
+    },
+    {
+      "path": "/home/pat/Documents/Codex/2026-10-11/task/master-requirements/Pasted text(20261011-060553).txt",
+      "fileName": "Pasted text(20261011-060553).txt",
+      "libraryFileId": "libfile_700ead3a12648191b6722ac3be1de641",
+      "version": 0,
+      "lines": 384,
+      "bytes": 8531,
+      "sha256": "e4a00c2bd5f3b94c79d12f2409bf4bdbb07f863dcfee253f8e5fc7f687c93aaa",
+      "readCompletely": true
+    },
+    {
+      "path": "/home/pat/Documents/Codex/2026-10-11/task/master-requirements/Pasted text(20261011-062241).txt",
+      "fileName": "Pasted text(20261011-062241).txt",
+      "libraryFileId": "libfile_d60151d30bc48191827dba5c043e8cc4",
+      "version": 0,
+      "lines": 1293,
+      "bytes": 26021,
+      "sha256": "915cff63e0844c8d964100b75dbc0ec50e1b177ba91f0f8d2e8a99835aa256a3",
+      "readCompletely": true,
+      "evidenceClassification": "User requirements/context only; capability claims not fresh tested evidence"
+    }
+  ],
+  "scopeVersion": 3,
+  "primaryInteraction": "Continuous natural-language chat. Manual navigation, suggestion-only clicks or scripted ShowMe cannot satisfy chat progression. Evidence panels may support inspection.",
+  "executionBoundary": "No browser mutation or implementation during preparation. Await frozen candidate. Previously declined security/policy/authorization review remains BLOCKED; no renamed/substitute tests. Ordinary permitted local commands only after scope authorization; held transitions remain external dependencies.",
+  "casePolicy": "Three separately declared/versioned evidence-complete downtime, speed and quality cases. Existing Northworks October CASE A retains oracle; July Training never substitutes. Cases B/C require independent source records and oracles.",
+  "rowCount": 55,
+  "alignmentCompletionCriteria": [
+    {
+      "criterion": 1,
+      "text": "The UI is chat-first.",
+      "sourceLine": 1220,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-01",
+        "MIW-26",
+        "MIW-27",
+        "MIW-28",
+        "MIW-40"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 2,
+      "text": "Conversation feels natural.",
+      "sourceLine": 1221,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-42"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 3,
+      "text": "Context persists correctly.",
+      "sourceLine": 1222,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-19",
+        "MIW-30",
+        "MIW-31",
+        "MIW-32",
+        "MIW-33",
+        "MIW-36",
+        "MIW-37",
+        "MIW-41",
+        "MIW-43"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 4,
+      "text": "Metrics are deterministic and governed.",
+      "sourceLine": 1223,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-02",
+        "MIW-03",
+        "MIW-16",
+        "MIW-39",
+        "MIW-51",
+        "MIW-52"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 5,
+      "text": "The Plant Review works.",
+      "sourceLine": 1224,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-29"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 6,
+      "text": "Goal exceptions can become investigations.",
+      "sourceLine": 1225,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-26",
+        "MIW-29",
+        "MIW-38",
+        "MIW-40"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 7,
+      "text": "Investigations persist.",
+      "sourceLine": 1226,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-19",
+        "MIW-43",
+        "MIW-50"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 8,
+      "text": "Losses reconcile.",
+      "sourceLine": 1227,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-03",
+        "MIW-04",
+        "MIW-12"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 9,
+      "text": "Contributors are evidence-based.",
+      "sourceLine": 1228,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-05",
+        "MIW-07",
+        "MIW-26"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 10,
+      "text": "Documents are evidence-linked.",
+      "sourceLine": 1229,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-06",
+        "MIW-44"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 11,
+      "text": "Hypotheses remain distinct from causes.",
+      "sourceLine": 1230,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-08",
+        "MIW-45"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 12,
+      "text": "Ownership works.",
+      "sourceLine": 1231,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-09",
+        "MIW-46"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 13,
+      "text": "Authorization works.",
+      "sourceLine": 1232,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-47",
+        "MIW-55"
+      ],
+      "status": "BLOCKED",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions.",
+      "blocker": "Existing held authorization/security dependencies unresolved; cannot claim complete independent acceptance or no blockers."
+    },
+    {
+      "criterion": 14,
+      "text": "Performed work is distinct from authorization.",
+      "sourceLine": 1233,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-11",
+        "MIW-47",
+        "MIW-55"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 15,
+      "text": "Verification works.",
+      "sourceLine": 1234,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-12",
+        "MIW-13",
+        "MIW-48"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 16,
+      "text": "Temporal integrity works.",
+      "sourceLine": 1235,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-18",
+        "MIW-49"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 17,
+      "text": "Sustain works.",
+      "sourceLine": 1236,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-14",
+        "MIW-49"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 18,
+      "text": "Reopen works.",
+      "sourceLine": 1237,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-14",
+        "MIW-26",
+        "MIW-27",
+        "MIW-28",
+        "MIW-40",
+        "MIW-49"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 19,
+      "text": "Downtime case works.",
+      "sourceLine": 1238,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-26"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 20,
+      "text": "Performance case works.",
+      "sourceLine": 1239,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-27"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 21,
+      "text": "Quality case works.",
+      "sourceLine": 1240,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-28"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 22,
+      "text": "API contracts are production-shaped.",
+      "sourceLine": 1241,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-51"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 23,
+      "text": "Mock adapters can be replaced by real adapters.",
+      "sourceLine": 1242,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-51",
+        "MIW-55"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 24,
+      "text": "Security remains intact.",
+      "sourceLine": 1243,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-54",
+        "MIW-55"
+      ],
+      "status": "BLOCKED",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions.",
+      "blocker": "Existing held authorization/security dependencies unresolved; cannot claim complete independent acceptance or no blockers."
+    },
+    {
+      "criterion": 25,
+      "text": "Evidence is inspectable.",
+      "sourceLine": 1244,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-06",
+        "MIW-07",
+        "MIW-24",
+        "MIW-44"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 26,
+      "text": "History is immutable.",
+      "sourceLine": 1245,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-18",
+        "MIW-19",
+        "MIW-43",
+        "MIW-50",
+        "MIW-54"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 27,
+      "text": "Mobile works.",
+      "sourceLine": 1246,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-22"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 28,
+      "text": "Accessibility works.",
+      "sourceLine": 1247,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-23",
+        "MIW-42"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 29,
+      "text": "Existing accepted features remain available.",
+      "sourceLine": 1248,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-53"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 30,
+      "text": "No hidden manual manipulation is required.",
+      "sourceLine": 1249,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-01",
+        "MIW-26",
+        "MIW-27",
+        "MIW-28",
+        "MIW-40",
+        "MIW-51",
+        "MIW-52"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 31,
+      "text": "An unaided user completes the full journey.",
+      "sourceLine": 1250,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-26",
+        "MIW-27",
+        "MIW-28",
+        "MIW-40"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 32,
+      "text": "The system behaves like one product, not connected demos.",
+      "sourceLine": 1251,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-01",
+        "MIW-26",
+        "MIW-27",
+        "MIW-28",
+        "MIW-29",
+        "MIW-40",
+        "MIW-42"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 33,
+      "text": "Backend replacement requires adapter work, not product redesign.",
+      "sourceLine": 1252,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-51",
+        "MIW-55"
+      ],
+      "status": "NOT_RUN",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions."
+    },
+    {
+      "criterion": 34,
+      "text": "Independent acceptance confirms the end-to-end behavior.",
+      "sourceLine": 1253,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-01",
+        "MIW-02",
+        "MIW-03",
+        "MIW-04",
+        "MIW-05",
+        "MIW-06",
+        "MIW-07",
+        "MIW-08",
+        "MIW-09",
+        "MIW-10",
+        "MIW-11",
+        "MIW-12",
+        "MIW-13",
+        "MIW-14",
+        "MIW-15",
+        "MIW-16",
+        "MIW-17",
+        "MIW-18",
+        "MIW-19",
+        "MIW-20",
+        "MIW-21",
+        "MIW-22",
+        "MIW-23",
+        "MIW-24",
+        "MIW-25",
+        "MIW-26",
+        "MIW-27",
+        "MIW-28",
+        "MIW-29",
+        "MIW-30",
+        "MIW-31",
+        "MIW-32",
+        "MIW-33",
+        "MIW-34",
+        "MIW-35",
+        "MIW-36",
+        "MIW-37",
+        "MIW-38",
+        "MIW-39",
+        "MIW-40",
+        "MIW-41",
+        "MIW-42",
+        "MIW-43",
+        "MIW-44",
+        "MIW-45",
+        "MIW-46",
+        "MIW-47",
+        "MIW-48",
+        "MIW-49",
+        "MIW-50",
+        "MIW-51",
+        "MIW-52",
+        "MIW-53",
+        "MIW-54",
+        "MIW-55"
+      ],
+      "status": "BLOCKED",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions.",
+      "blocker": "Existing held authorization/security dependencies unresolved; cannot claim complete independent acceptance or no blockers."
+    },
+    {
+      "criterion": 35,
+      "text": "No unresolved current-scope blocker remains.",
+      "sourceLine": 1254,
+      "source": "M3",
+      "mappedRows": [
+        "MIW-01",
+        "MIW-02",
+        "MIW-03",
+        "MIW-04",
+        "MIW-05",
+        "MIW-06",
+        "MIW-07",
+        "MIW-08",
+        "MIW-09",
+        "MIW-10",
+        "MIW-11",
+        "MIW-12",
+        "MIW-13",
+        "MIW-14",
+        "MIW-15",
+        "MIW-16",
+        "MIW-17",
+        "MIW-18",
+        "MIW-19",
+        "MIW-20",
+        "MIW-21",
+        "MIW-22",
+        "MIW-23",
+        "MIW-24",
+        "MIW-25",
+        "MIW-26",
+        "MIW-27",
+        "MIW-28",
+        "MIW-29",
+        "MIW-30",
+        "MIW-31",
+        "MIW-32",
+        "MIW-33",
+        "MIW-34",
+        "MIW-35",
+        "MIW-36",
+        "MIW-37",
+        "MIW-38",
+        "MIW-39",
+        "MIW-40",
+        "MIW-41",
+        "MIW-42",
+        "MIW-43",
+        "MIW-44",
+        "MIW-45",
+        "MIW-46",
+        "MIW-47",
+        "MIW-48",
+        "MIW-49",
+        "MIW-50",
+        "MIW-51",
+        "MIW-52",
+        "MIW-53",
+        "MIW-54",
+        "MIW-55"
+      ],
+      "status": "BLOCKED",
+      "freshEvidence": [],
+      "rule": "Derived traceability, not additional cohort rows or accepted assertions.",
+      "blocker": "Existing held authorization/security dependencies unresolved; cannot claim complete independent acceptance or no blockers."
+    }
+  ],
+  "alignmentAdditions": {
+    "plantReviewMetricBundle": [
+      "Production vs Plan",
+      "OEE",
+      "Downtime",
+      "Quality Loss",
+      "Schedule Adherence",
+      "Inventory Days",
+      "OTIF"
+    ],
+    "dimensionalContext": [
+      "active metric",
+      "plant",
+      "line",
+      "equipment",
+      "job",
+      "part",
+      "revision",
+      "operation",
+      "shift",
+      "primary period",
+      "comparison period",
+      "comparison entity",
+      "investigation",
+      "investigation stage",
+      "chart/table presentation",
+      "clarification"
+    ],
+    "productCoherence": "No new navigation or disconnected panels is inferred as solution. Natural chat is universal operating surface; optional panels support inspectable evidence. Technical internals remain behind Evidence.",
+    "capabilityEvidenceRule": "M3 current-capability statements are requirements/context. None changes fresh/inherited outcomes or promotes NOT_RUN/BLOCKED.",
+    "backendReadinessScope": [
+      "MES",
+      "ERP",
+      "CMMS",
+      "QMS",
+      "Historian",
+      "PLM",
+      "controlled documents",
+      "SQL",
+      "Ignition",
+      "Finance",
+      "Identity",
+      "Notifications"
+    ],
+    "metricGovernanceFields": [
+      "canonical identity",
+      "display name",
+      "aliases",
+      "definition",
+      "formula",
+      "numerator",
+      "denominator",
+      "units",
+      "aggregation",
+      "valid scope",
+      "source",
+      "time grain",
+      "target semantics",
+      "good direction",
+      "effectivity/version",
+      "evidence requirements",
+      "calculation owner",
+      "certification owner"
+    ]
+  }
+}

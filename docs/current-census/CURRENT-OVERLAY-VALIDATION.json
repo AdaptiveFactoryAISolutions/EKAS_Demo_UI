@@ -1,0 +1,12 @@
+{
+  "old_CENSUS_unchanged": true,
+  "nine_csvs_byte_exact": true,
+  "scope_counts_unchanged": true,
+  "all_original_ids_unchanged": true,
+  "sixth_is_existing_id": true,
+  "I01_superseding_closed": true,
+  "P11_local_not_waiting_for_live": true,
+  "all_exact_scope_arrays_preserved": true,
+  "current_CENSUS_sha256": "7ff3f0f8c63dca1555cf2ee5aaecc5b87120434c40f64d148a7ab681c6a42da4",
+  "current_task_text_superseded_with_historical_fields": true
+}

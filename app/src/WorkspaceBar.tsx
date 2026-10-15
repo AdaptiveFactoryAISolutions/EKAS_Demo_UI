@@ -1,0 +1,15 @@
+import {registerWorkspaceShortcut} from './workspaceShortcut';
+import {useEffect,useRef,useState} from 'react';
+import {workspaceAreas,workspaceMatches,type WorkspaceMatch} from './workspaceSearch';
+import type {ConversationBook} from './conversationBook';
+export function WorkspaceBar({page,book,onArea,onConversation,onJourney}:{page:string;book:ConversationBook;onArea:(s:string)=>void;onConversation:(id:string)=>void;onJourney:(id:string)=>void}){
+ const [open,setOpen]=useState(false),[query,setQuery]=useState('');const dialog=useRef<HTMLDialogElement>(null),input=useRef<HTMLInputElement>(null),trigger=useRef<HTMLButtonElement>(null);
+ const previous=useRef<HTMLElement|null>(null),wasOpen=useRef(false);
+ const openSearch=()=>{previous.current=document.activeElement as HTMLElement|null;setOpen(true)};
+ const close=()=>setOpen(false);
+ useEffect(()=>registerWorkspaceShortcut(20,()=>setOpen(current=>{if(!current)previous.current=document.activeElement as HTMLElement|null;return !current})),[]);
+ useEffect(()=>{if(open){if(dialog.current?.showModal)dialog.current.showModal();else dialog.current?.setAttribute('open','');input.current?.focus()}else {dialog.current?.close?.();dialog.current?.removeAttribute('open');if(wasOpen.current)(previous.current?.isConnected?previous.current:trigger.current)?.focus()}wasOpen.current=open},[open]);
+ function select(match:WorkspaceMatch){close();if(match.kind==='area')onArea(match.id);else if(match.kind==='conversation')onConversation(match.id);else onJourney(match.id)}
+ const matches=workspaceMatches(book,query);
+ return <div className="workspace-bar"><nav aria-label="Manufacturing areas">{workspaceAreas.map(area=><button key={area} aria-current={(page==='Home'?'Brief':page)===area?'page':undefined} onClick={()=>onArea(area)}>{area}</button>)}</nav><button ref={trigger} className="workspace-search-trigger" onClick={openSearch}><span>Search workspace</span><kbd>Ctrl K</kbd></button><dialog ref={dialog} className="workspace-search-dialog" onKeyDown={e=>{if(e.key==='Escape'){e.preventDefault();e.stopPropagation();close()}}} onCancel={e=>{e.preventDefault();close()}} aria-labelledby="workspace-search-title"><header><h2 id="workspace-search-title">Search manufacturing workspace</h2><button aria-label="Close workspace search" onClick={close}>×</button></header><label>Conversations and workspaces<input ref={input} value={query} onChange={e=>setQuery(e.target.value)} placeholder="Find a question, case or workspace"/></label><p className="workspace-search-count" role="status">{matches.length} results · local synthetic workspace</p><div className="workspace-search-results">{matches.map(m=><button key={m.kind+':'+m.id} onClick={()=>select(m)}><span>{m.label}<small>{m.detail}</small></span><span className="workspace-result-kind">{m.kind}</span></button>)}{!matches.length&&<p>No matching active conversation or workspace.</p>}</div><footer>Captured conversations retain their original context and timestamps.</footer></dialog></div>
+}

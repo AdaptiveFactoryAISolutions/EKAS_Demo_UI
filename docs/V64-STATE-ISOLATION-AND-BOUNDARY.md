@@ -1,0 +1,15 @@
+# V64 bounded state-isolation correction
+
+Provisional, undeployed. V63localhost18209/session30319 and all earlierfrozenruntimes remain unchanged. No service expansion/backendmigration/security/provider action.
+
+V63 independentnative report confirms source-save705notice leaked into newFEED03context during loading. Two new mountedregressions reproduced it: newconversation and sameconversationcase switch, each with delayed contextread. SourceEditor now binds loadedsource to conversation+thread token and generation; hides oldscope while loading, clears transientnotice/forms/status oncontexttransition, rejects lateoldcontext reads/saves/errors from the currentdisplay. Explicitly committed old-scope source records remainimmutable. Current same-scope rawfreshness still derives from dependencyview afterreconciliation.
+
+Downtime submission remains an unresolvednativeinteraction observation. No appdefect was reproduced with existing mountedfresh/reusedAsk or new generic/scoped downtime New/type/Run tests under delayed creation; these submitonce withoutretry. Submission behavior has not been changed. Independentnative first-attempt downtime check remains necessary; mountedresults are not nativeclosure.
+
+Only production sourcefile changed: app/src/investigation/SourceEditor.tsx. Newtests sourceNoticeIsolation.test.tsx and downtimeSubmitReproduction.test.tsx. No newdomain contract, persistence authority, route family or service subsystem. Original84V63inputs unchanged, including82originalinputs.
+
+The read-only boundaryaudit and finiteremaining-scope reconciliation are included. Additionalservice expansion and broadportmigration are held pending ownership review. Tom owns futureproduction source-of-truth/calculation/lifecycle/persistence/auth; any pure sharedkernels only byagreement. Demo services are in-process overfictionaldata, not a runningmanufacturingHTTPbackend. Existing Pythonloopbackserver servesstaticfiles only. Proposedtypedinterfaces do not establish actualHTTP/OpenAPIorGLiDE/Tomcompatibility.
+
+Ordinaryfictional lifecycle tests are authorized through normalprerequisites; they do not require the declinedDotreview. No disabledprerequisitebypass. Actualcredentials/provider/spending/productiondispatch/securityreview retries remainheld. OpenAIselected, noOllama; no keybundled orused. SupportedLibraryupload remainsblocked; no workaround.
+
+Reviewrecipe: preserveV63, use onlya newlyauthorizedisolatedstaticorigin/namespace; perform actualSpeedcorrection706→705 andrawreconciliation, New/history switch toFEED03 whileloading andsameconversationswitch. NoSpeednotice/source/form/error mayappear innewscope; source63currentoriginal630 orreviewed629mustcarryowncontext. Lateoldreads/savefailures mustnot alter newdisplay. Currentqualitycorrection/rawnotice andall3cases New/rapid/history/reload remain regressions. For downtime, generic/scoped semanticandnativeRun firstattempt withno priming/retry; captureexactinput/events/loading/toast/result beforeassigning defectorPASS. Fullreview/matrix/351criteria acceptance remainsseparate.

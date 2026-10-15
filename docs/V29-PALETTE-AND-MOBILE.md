@@ -1,0 +1,19 @@
+# V29 isolated review candidate
+
+Based on frozen V28. Parent reports native migration recovered after Chrome restart, state matched backup, and 178 definitions plus 87 fixture jobs passed independently. Those are inherited V28 observations, not fresh V29 native acceptance.
+
+Scope: native Dashboards sidebar DOM is moved, retaining identity/listeners, from nested analytic stacking to the retained workspace root (or presentation dialog root, preserving its keyboard boundary). It is fixed at the right edge below the visible header, bounded to the viewport and scrollable. Native show/hide, add/drag and editing callbacks remain Dashboards-owned. Cleanup restores original parent before board destruction. Header/sidebar navigation is not hidden or changed. Resize/scroll/header size update geometry. Close gains an accessible name and 44px target.
+
+Mobile presentation: optional scoped dialog shell keeps header Close at least64px wide and nowrap, narrows outer/body padding only under480px, permits footer controls wrapping. Only live presentation charts get Highcharts responsive options:320px height,12/14px fonts,44px export control, smaller axis-title margins. Governed units/ranges, source/series identities, values, controls and layouts are retained. Immutable canonical Grid tile presentation remains unchanged.
+
+129 protected input/platform/training-service files were checked byte-for-byte against frozen V28 and match. Existing source differs only in dialog.tsx, nativeEditor.ts, retained.css, screens.tsx and viz.tsx; added source is presentationSizing.ts and two regression files. Packaging script version/counts updated.
+
+No changes to IndexedDB, migration/recovery, service or workspace persistence, metrics engine/bindings, raw inputs, namespace or deployment. No browser or served route edits. Tests exercise presentation palette keyboard containment plus real installed Highcharts and Dashboards, portal handlers/cleanup and native HTML confirmation; jsdom cannot establish visible placement or pointer hit-testing.
+
+Coordinated independent retest required: desktop sidebar visible and mobile sidebar open/closed; native Add component palette visibly below header, close pointer/keyboard accessible; click/drag native HTML/Row/Highcharts/Grid/KPI items, native reorder/resize/save/reload/restore under explicit reviewer scope; 320px presentation Close/footer/units/labels and local export controls. Check no hidden navigation or changed chart/Grid scope; inspect repeated board mount/unmount for duplicate palettes. Preserve all storage and backups. Native acceptance pending.
+
+Validation chronology: initial full run888/889 because new test lacked app plugin registration; corrected test passes real registered native palette. Second concurrent build/test run888/889 hit existing schedule test5036ms timeout. Subsequent two-worker10-second-limit full run889/889 passed. Added dialog containment regression reproduced failure and passed after root selection correction; targeted final12/12 and rebuild passed. Final full suite command uses four workers and10-second limit after build completes; freeze requires all890 tests/120files. No assertions weakened or production persistence/metric changes.
+
+Short viewport regression: palette bounds now prioritize remaining below the visible header rather than reserving144px by overlapping navigation. Geometry checks cover widths320/768/1854 and heights300/600 with header bottoms0/170/260. All component choices remain inside a scrollable native palette. Extremely little remaining height still requires scrolling; native visual acceptance is pending. Historical screenshots remain local evidence and are excluded from the Library ZIP.
+
+Final validation: full suite890/890 across120files PASS with four workers and10-second timeout; build PASS; targeted12/12 PASS. Static and editable-source packaging requires manifest/CRC verification; native browser acceptance pending.

@@ -1,0 +1,8 @@
+{
+  "raw-domain-records.json": "117ee28c52c0aac828fc9ed8deaab4e661930bd8ff37c65877352ae5799d22b8",
+  "gap-contracts.json": "51ea5522518656575c9cfa068970edc20d4d27077721e670107169fc35ef6059",
+  "positive-oracles.json": "0877b46ce9ccf4ea597de17a260c32d5ab9f461ed451e45808b63f6f3d2de9e0",
+  "negative-boundary-fixtures.json": "085194b2c68ccaeffd6441ba6073ec088aa9222ce2fdfdb6c7b33455802927ed",
+  "qac-reconciliation-oracle.json": "9a08665015ead928a26a84d46ec2df54f2b477f5a5f35bb36cc05c6a4dff52af",
+  "DECISION-SUMMARY.md": "1fc752e73de69661adae9536d5102c09a044055d79358e3bdc7254b02e25bcc2"
+}

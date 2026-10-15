@@ -1,0 +1,5 @@
+# V84 provenance supplement
+
+The prepared notice files are included in this supplement and hash-verified: 53 package entries, 55 notice references. The inherited manifest status “not yet in built/static package” is historical and retained verbatim; this supplement does not alter frozen static assets. Package classifications describe the manifest dependency graph, not an exact browser bundle composition audit.
+
+Two optional native binding entries lack upstream notice files: @rolldown/binding-linux-x64-gnu1.2.3 and @rolldown/binding-linux-x64-musl1.2.3. They are not shipped in the product ZIP or this supplement. Their absent notice files are an inventory follow-up for optional build dependencies, not a shipped-runtime notice defect. Exact browser composition, fonts/icons attribution and licence entitlement require final review. No paid Highcharts entitlement, purchase or activation is claimed. Original packaged input preservation and synthetic source labels remain governed by V84 evidence; copying notices does not resolve legal/licence acceptance.

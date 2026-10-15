@@ -1,0 +1,28 @@
+# V84 engineering and API handoff draft
+
+> Historical V84 document. Its launch URL, activation state and acceptance statements apply to that earlier artifact. Use [CURRENT-DEVELOPER-HANDOFF.md](CURRENT-DEVELOPER-HANDOFF.md) for current711b/f2b/CF scope. This historical text is retained as evidence.
+
+Identity is in V84-FROZEN-IDENTITY.json. Keep the source, static, server and provisional ZIP hashes unchanged during independent review. Mutable synthetic state is separate from frozen assets. Runtime18231 uses the frozen server/static. The portable ZIP runs on Node built-ins without node_modules/private legacy repositories; editable source dependency installation is a separate operation. Offline runtime/export must not contact external services.
+
+Installed chart stack: Highcharts12.6.0, Dashboards4.2.0, GridLite3.2.0. Actual Board/DataPool/components/Grid are used. V84 rendering/export implementation matches V83; native source contracts use simulated geometry and mocked anchor delivery, not actual browser/file acceptance. No vendor-source changes or licence activation occurred.
+
+The client boundary is app/src/investigation/clientPort.ts:createManufacturingClient(transport,actor). ManufacturingService and versioned contracts own calculations, source eligibility, immutable captures, role/case/time/proof gates, expected-version and idempotency semantics, atomic persistence. The synthetic role controls are fictional demonstration actors, not production authentication. Review exact contract definitions and adapter source from the editable package rather than assuming proposed pilot names are Tom's API.
+
+OpenAI is the selected future provider. No OpenAI key is configured or activated. Any future key must remain server-side. No Ollama integration is planned. Send permission-filtered, versioned evidence for validated field proposals; do not let model prose compute truth, authorize work, select contradictory evidence, establish performed work or promote causal/financial claims. Preserve deterministic disabled-provider behavior. Actual key/model/budget activation and unrestricted conversation acceptance remain separate pending gates; never put keys in browser bundles, exports, logs or this package.
+
+Tom must confirm the exact API revision/base path and schemas before claiming integration. Required mapping: authenticated principal/tenant/capabilities; ISA95 asset/part/revision/job/operation identities; source/document/evidence versions and known-time cutoffs; read/command/error models; expectedVersion and conflict response; idempotency key and durable receipt; stream ordering/reconnect/cancellation; timeout/unknown-commit reconciliation; atomic write and restore behavior. A connection failure must not silently fall back to synthetic writes. Preserve jam/speed/FPY workflows and governed knowledge; a machine-month pilot must not narrow the full requirement set.
+
+Conformance matrix still required: permission-filtered reads; denied principal/tenant/cross-case commands; stale-version conflict; duplicate retry same receipt; unknown commit read-before-retry; durable failure rollback; old history unchanged; source correction invalidating dependent current results; governed document applicability; approval/performed/verified/cause/savings separation; full normal/adverse workflow parity; provider timeout/refusal/malformed field proposal/cost controls. Synthetic tests are reference evidence only, not authenticated Tom responses.
+
+Verification: full1631/1631 in293files across fixed serial groups, not monolithic;95focused/build/typecheck/SSR passed. Compiled effective43/43: initial42/43 with one timeout, whole unchanged9-case file recheck passed. Raw failures and exact identity maps remain in the package. Independent ordinary/native review is assigned; existing security, licence, unrestricted-model and Tom integration verdicts remain open. No credentials were accessed, no live provider/backend called, no Chrome actions performed in this documentation pass.
+
+## Integration review sequence
+
+1. Preserve frozen V84 and run the portable synthetic mode first; verify the documented source/static/server identities and disabled-provider behavior.
+2. Obtain Tom's confirmed contract separately: exact revision/base path, schema/error examples, authentication/principal/tenant/capability mapping and concurrency/receipt semantics. The reference client/service is a proposal boundary, not proof of his interface.
+3. Map each read/command and evidence capture explicitly. Keep current manufacturing writes on one authoritative adapter. Test unavailable/timeout/unknown-commit cases before enabling retries; never silently fall back to synthetic writes.
+4. Review server-side OpenAI configuration and authorized model/budget separately. No key exists in this reviewed runtime. Validate extracted fields and keep typed guards authoritative. Never treat a model's requested role or prose as permission.
+5. Run the conformance matrix above against authenticated backend responses and the complete three-case lifecycle, governed knowledge and correction/history behavior. Source tests and fake-provider compiled journeys cannot substitute.
+6. Obtain independent native, actual-model, security, licence and human usability verdicts before a final-ready claim. Documentation revision2 does not close those gates.
+
+User-facing procedures and known command limitations are in USER-GUIDE-V84-DRAFT.md. Its formal hypothesis test-results, broader Guide transitions, CSV OS delivery and exact-V84 native walkthroughs remain explicitly unaccepted. No credentials or browser actions were used to write it.

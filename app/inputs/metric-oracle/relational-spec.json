@@ -1,0 +1,1255 @@
+{
+  "schemaVersion": "independent-relational-spec-1.0",
+  "namespaceSeparation": {
+    "northworks-v3": "read-only frozen source fixture with exact original dataset IDs retained as provenance; no extension of missing scope/data",
+    "training-plant-v1": "separate deterministic finite fixture; demo policies identified",
+    "training-oracle-v1": "focused arithmetic cohorts; NOT claimed as one physical plant"
+  },
+  "timeContextRules": [
+    "UTC timestamps, site IANA timezone; shifts defined in local calendar then converted, DST may be7/9hour; do not assume480minutes outside fixed fixture",
+    "Intervals[start,end), definitions/effectivity[valid_from,valid_to_exclusive); record known_at<=as_of and all dependencies visible",
+    "Completed measures require observation end<=as_of; open windows Measuring, not completed",
+    "As-of clock is explicit immutable simulation snapshot; refresh creates version, no arbitrary stage changes",
+    "Join namespace+foreignID+record_version; part/revision/operation exact; no P3-to-P2 fallback",
+    "Standards unique by applicability/effectivity; zero/multiple applicable standards unavailable conflict",
+    "Split measurements at standards/scope changes or reject incomparable window; preserve exclusion counts",
+    "No joins multiply numerator/denominator; aggregate child events to parent before joining",
+    "Data cutoff separate from knowledge as_of; case/approval may known after production window but cannot expose future work",
+    "Policy-scope intersection on all query/derived/export surfaces; simulated roles not real authorization"
+  ],
+  "familyPolicies": {
+    "1": {
+      "familyID": "production_oee",
+      "grain": "job/operation/part-revision planned asset-time segment",
+      "recordBindings": "counts + jobs + standards + disjoint run/downtime intervals",
+      "validScopes": [
+        "site",
+        "line",
+        "asset",
+        "job",
+        "operation",
+        "part-revision",
+        "shift",
+        "day"
+      ],
+      "aggregation": "Pool planned/run/ideal-total/ideal-good times. Count-quality pools unique counts. Homogeneous A*P*countQ matches ideal-good/planned; mixed cycle scope requires declared time-weightedQ as separate definition."
+    },
+    "2": {
+      "familyID": "production_capacity",
+      "grain": "job output matched to frozen plan/capacity segment",
+      "recordBindings": "counts + jobs + schedules + governed capacity calendar",
+      "validScopes": [
+        "site",
+        "line",
+        "job",
+        "operation",
+        "part-revision",
+        "shift",
+        "day"
+      ],
+      "aggregation": "Sum nonduplicated compatible quantities; rates sum eligible output/exposure. Plant exposure is asset-time for operating rates; calendar throughput denominator must be explicitly plant elapsed vs asset-hour, not interchanged."
+    },
+    "3": {
+      "familyID": "schedule",
+      "grain": "frozen scheduled order/job/version",
+      "recordBindings": "schedules + job completion events",
+      "validScopes": [
+        "site",
+        "line",
+        "job",
+        "day"
+      ],
+      "aggregation": "Quantity-attainment and scheduled-date order count are separate. Scope due cohort at as_of; preserve original plan version and defined tolerance."
+    },
+    "4": {
+      "familyID": "flow",
+      "grain": "unique unit/lot route boundary and operation segment",
+      "recordBindings": "lots + quality_stages + standards + jobs + explicit queue/setup/move timestamps",
+      "validScopes": [
+        "lot",
+        "job",
+        "operation",
+        "part-revision"
+      ],
+      "aggregation": "Elapsed lead time as distribution; mean across completed eligible lots with stated weighting. Touch is interval union, not parallel person-hours."
+    },
+    "5": {
+      "familyID": "loss",
+      "grain": "asset stop interval clipped to included planned time",
+      "recordBindings": "downtime_intervals + jobs + standards + cost_rates",
+      "validScopes": [
+        "asset",
+        "line",
+        "job",
+        "reason",
+        "shift",
+        "day"
+      ],
+      "aggregation": "Union overlapping same-asset intervals; assign one governed reason per segment; simultaneous independent assets pool asset-minutes. Never sum line and machine copies."
+    },
+    "6": {
+      "familyID": "setup",
+      "grain": "old/new product transition last-good->first-good",
+      "recordBindings": "setup transitions and tasks + standards",
+      "validScopes": [
+        "asset",
+        "line",
+        "transition",
+        "shift"
+      ],
+      "aggregation": "Transition elapsed durations pooled by transition count; internal/external task union independently, no parallel labor double count."
+    },
+    "7": {
+      "familyID": "quality",
+      "grain": "unique inspected/produced/shipped unit cohort with terminal disposition",
+      "recordBindings": "counts + defects + quality_stages + shipments",
+      "validScopes": [
+        "lot",
+        "job",
+        "operation",
+        "part-revision",
+        "shift"
+      ],
+      "aggregation": "Defective unit once, defects can exceed units; final good and FPY distinct; rework remains excluded from firstpass numerator; source specimen/inspection sampling cannot silently become produced-unit denominator."
+    },
+    "8": {
+      "familyID": "rty",
+      "grain": "same initial route cohort and ordered stage",
+      "recordBindings": "quality_stages + lot genealogy",
+      "validScopes": [
+        "lot",
+        "route",
+        "part-revision"
+      ],
+      "aggregation": "Product eligible stage firstpass yields at full precision; pool stage numerators/denominators across eligible comparable lots before product, not average lot RTY."
+    },
+    "9": {
+      "familyID": "capability_spc",
+      "grain": "characteristic/spec revision rational subgroup and raw measurements",
+      "recordBindings": "measurements + subgroups + measurement_characteristics + MSA/stability records",
+      "validScopes": [
+        "characteristic",
+        "operation",
+        "part-revision",
+        "window"
+      ],
+      "aggregation": "Reestimate mean,within/overall sigma from raw data; no averaging Cp/Cpk. Approved estimator and rational subgroup required. Measurement units converted consistently before limit comparisons."
+    },
+    "10": {
+      "familyID": "maintenance_reliability",
+      "grain": "functional failure incident and operating exposure/repair segment",
+      "recordBindings": "failures + work_orders + reliability_observations + pm_tasks",
+      "validScopes": [
+        "asset",
+        "failure-mode",
+        "maintenance population",
+        "window"
+      ],
+      "aggregation": "Operating-hours/failures ratio for descriptive MTBF; active repair elapsed distinct from restore elapsed and person-hours. Include right-censored exposure. Inferential lifetime models need separate fit and uncertainty; no average asset MTBF."
+    },
+    "11": {
+      "familyID": "delivery",
+      "grain": "customer order, explicitly order-line if selected",
+      "recordBindings": "customer_orders + order_lines + shipments + promise version",
+      "validScopes": [
+        "customer",
+        "order",
+        "order-line",
+        "due period"
+      ],
+      "aggregation": "Order OTIF conjunct over ALL its eligible lines; join shipments aggregate quantities before counting each order. Due cohort includes open orders, OTD delivered cohort distinct."
+    },
+    "12": {
+      "familyID": "inventory",
+      "grain": "item-location balance interval and matching consumption ledger period",
+      "recordBindings": "inventory_transactions + inventory_items + consumption/COGS ledger",
+      "validScopes": [
+        "item",
+        "kind",
+        "site",
+        "period"
+      ],
+      "aggregation": "Balances snapshot or time-weighted integral; never sum day snapshots. Opening/closing average only named demo convention. Same currency/unit/window. Annual turns distinct from period turns."
+    },
+    "13": {
+      "familyID": "littles_law",
+      "grain": "stable flow-system boundary and window",
+      "recordBindings": "time-weighted WIP + throughput exit events + lead-time cohort",
+      "validScopes": [
+        "flow system",
+        "route",
+        "window"
+      ],
+      "aggregation": "A dimensional identity under stable boundary/steady state; not causal model. WIP units / units-per-day yields days. Do not divide inventory currency by throughput units."
+    },
+    "14": {
+      "familyID": "labor",
+      "grain": "person-job/time segment with payroll boundary",
+      "recordBindings": "labor_shifts + counts + effective labor standards/rates",
+      "validScopes": [
+        "site",
+        "line",
+        "job",
+        "shift"
+      ],
+      "aggregation": "Sum person-hours, not elapsed asset-hours; same good-output cohort. Product standards contribute sum(qty*standard hours), no averaging product standards."
+    },
+    "15": {
+      "familyID": "manufacturing_cost",
+      "grain": "exclusive cost transaction/version by period and accepted output",
+      "recordBindings": "cost_rates + cost ledger + counts + labor/material events",
+      "validScopes": [
+        "currency",
+        "site",
+        "job",
+        "part-revision",
+        "period"
+      ],
+      "aggregation": "Sum costs one currency and basis; per-unit pool cost/output. Absolute vs normalized variance separate. Downtime estimate not additive to ledger actuals without approved valuation."
+    },
+    "16": {
+      "familyID": "coq",
+      "grain": "exclusive prevention/appraisal/internal/external categories",
+      "recordBindings": "cost_ledger + governed sales/period",
+      "validScopes": [
+        "currency",
+        "site",
+        "period"
+      ],
+      "aggregation": "Scrap/rework detail included in internal failure total, not added twice; warranty subset external. Currency comparisons cannot infer realized savings."
+    },
+    "17": {
+      "familyID": "energy_environment",
+      "grain": "meter boundary and reading/interval duration",
+      "recordBindings": "meter_readings + daily_energy + demand_intervals + output + versioned factor",
+      "validScopes": [
+        "meter",
+        "site",
+        "period"
+      ],
+      "aggregation": "Energy from non-reset meter deltas. kW interval max distinct from kWh. Scope output to same meter boundary; idle classification defined, factor kgCO2e/kWh version. Gaps/resets withheld."
+    },
+    "18": {
+      "familyID": "constraint",
+      "grain": "effective dated actual constraint operation",
+      "recordBindings": "jobs + counts + constraint assignments + standards",
+      "validScopes": [
+        "constraint",
+        "line",
+        "operation",
+        "window"
+      ],
+      "aggregation": "Run utilization distinct from productive utilization. Units/time good output; throughput-contribution financial model not operational quantity."
+    },
+    "19": {
+      "familyID": "safety",
+      "grain": "classified incident and eligible worker exposure period",
+      "recordBindings": "safety_events + labor exposures",
+      "validScopes": [
+        "site",
+        "window"
+      ],
+      "aggregation": "Recordable/DART/lost-time case IDs deduplicated; multiplier200000 matches worked personhours; no inference zero risk from zero observed incidents."
+    },
+    "20": {
+      "familyID": "audit_targets",
+      "grain": "versioned metric/target policy for selected scope",
+      "recordBindings": "metric definitions + target versions + same result",
+      "validScopes": [
+        "metric",
+        "site",
+        "window"
+      ],
+      "aggregation": "Illustrative source thresholds85%OEE etc are reference examples, not Northworks80%target. Govern interval ranges and direction."
+    },
+    "21": {
+      "familyID": "loss_bridge",
+      "grain": "planned/run/ideal total/ideal good sufficient statistics",
+      "recordBindings": "production quantities and governed targets",
+      "validScopes": [
+        "site",
+        "line",
+        "job",
+        "window"
+      ],
+      "aggregation": "Additive time waterfall planned-run-(ideal total loss)-(ideal good loss)=ideal good; unit bridge separately uses compatible rates. Favorable signed gaps retained, positive-only ranking presentation."
+    },
+    "22": {
+      "familyID": "comparison",
+      "grain": "matched current/prior metric-definition/scope/window",
+      "recordBindings": "canonical results + eligibility",
+      "validScopes": [
+        "metric",
+        "scope",
+        "comparison"
+      ],
+      "aggregation": "Recompute both operands; percent ratios retain fraction internally and pp display; relative needs nonzero prior; target version frozen."
+    },
+    "23": {
+      "familyID": "trend",
+      "grain": "chronological equal-period canonical observations",
+      "recordBindings": "canonical results ordered by timestamp",
+      "validScopes": [
+        "metric",
+        "scope",
+        "window"
+      ],
+      "aggregation": "Moving-average length/grain explicit; OLS uses numeric time offsets, sample SD n>=2 proposed; missing/stale points not silently interpolated. Temporal leakage prohibited."
+    },
+    "24": {
+      "familyID": "pareto",
+      "grain": "exclusive eligible loss categories",
+      "recordBindings": "loss/cost facts in one unit",
+      "validScopes": [
+        "scope",
+        "category",
+        "window"
+      ],
+      "aggregation": "Rank by value descending then stable categoryID tie; cumulative numerator/uncapped total. Nine categories retained; topN plus Other explicit."
+    },
+    "25": {
+      "familyID": "improvement",
+      "grain": "case baseline/post eligible windows and due-action cohort",
+      "recordBindings": "improvement_cases + action_records + verification/guardrail evidence",
+      "validScopes": [
+        "case",
+        "measure",
+        "window"
+      ],
+      "aggregation": "Signed change not favorable direction; before/after matching and coverage; due-action numerator must be subset due denominator. Closure never proves performed/verified. Missing breaks sustain streak."
+    },
+    "26": {
+      "familyID": "registry",
+      "grain": "definition/version governance field",
+      "recordBindings": "versioned metric registry",
+      "validScopes": [
+        "definition",
+        "version"
+      ],
+      "aggregation": "Non-scalar fields require schema validation, owners/effectivity/provenance, not fake metrics."
+    },
+    "27": {
+      "familyID": "reasoning",
+      "grain": "typed observation/hypothesis/causal claim",
+      "recordBindings": "canonical results + attributed notes + knowledge + approval",
+      "validScopes": [
+        "claim",
+        "evidence",
+        "version"
+      ],
+      "aggregation": "Measured facts, derived observations and hypotheses distinct; no computational root-cause proof from similarity."
+    },
+    "28": {
+      "familyID": "library_aliases",
+      "grain": "alias string with context-sensitive resolution",
+      "recordBindings": "metric registry + alias guards",
+      "validScopes": [
+        "alias",
+        "context"
+      ],
+      "aggregation": "Clarify conflicting meanings; retain source occurrence trace; library listing is recognition not execution/certification."
+    }
+  },
+  "sourceTableSchemas": {
+    "sites": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "timezone": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "lines": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "site_id": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "assets": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "line_id": "str",
+        "installed_at": "str",
+        "repairable": "bool"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "products": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "base_unit": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "revisions": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "product_id": "str",
+        "revision": "str",
+        "valid_from": "str",
+        "valid_to_exclusive": "str",
+        "known_at": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "operations": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "revision_id": "str",
+        "route_order": "int"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "standards": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "operation_id": "str",
+        "valid_from": "str",
+        "valid_to_exclusive": "str",
+        "known_at": "str",
+        "ideal_cycle_min": "float",
+        "standard_labor_h_per_unit": "float",
+        "policy_version": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "periods": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "start": "str",
+        "end": "str",
+        "known_at": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "jobs": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "line_id": "str",
+        "asset_id": "str",
+        "revision_id": "str",
+        "operation_id": "str",
+        "lot_id": "str",
+        "start": "str",
+        "end": "str",
+        "known_at": "str",
+        "planned_min": "int",
+        "run_min": "int",
+        "down_min": "int",
+        "coverage": "int"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "lots": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "job_id": "str",
+        "revision_id": "str",
+        "route_id": "str",
+        "release_at": "str",
+        "completion_at": "str",
+        "known_at": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "run_intervals": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "job_id": "str",
+        "asset_id": "str",
+        "start": "str",
+        "end": "str",
+        "known_at": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "downtime_intervals": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "job_id": "str",
+        "asset_id": "str",
+        "start": "str",
+        "end": "str",
+        "reason": "str",
+        "planned": "bool",
+        "included_in_oee_planned_time": "bool",
+        "known_at": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "counts": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "job_id": "str",
+        "lot_id": "str",
+        "operation_id": "str",
+        "produced_unique_units": "int",
+        "final_accepted_unique_units": "int",
+        "first_pass_good_units": "int",
+        "reworked_accepted_unique_units": "int",
+        "terminal_scrap_unique_units": "int",
+        "known_at": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "quality_stages": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "lot_id": "str",
+        "operation_id": "str",
+        "entering_units": "int",
+        "first_pass_good_units": "int",
+        "final_accepted_units": "int",
+        "route_order": "int",
+        "known_at": "str",
+        "cohort_id": "str",
+        "note": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "schedules": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "job_id": "str",
+        "plan_version": "str",
+        "frozen_at": "str",
+        "scheduled_qty": "int",
+        "scheduled_end": "str",
+        "completed_qty": "int",
+        "as_scheduled_qty": "int",
+        "actual_completion": "str",
+        "known_at": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "labor_shifts": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "job_id": "str",
+        "scheduled_person_h": "int",
+        "paid_person_h": "int",
+        "productive_person_h": "int",
+        "employee_person_h": "int",
+        "overtime_person_h": "int",
+        "absent_scheduled_person_h": "int",
+        "direct_available_person_h": "int",
+        "direct_productive_person_h": "int",
+        "known_at": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "defects": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "lot_id": "str",
+        "operation_id": "str",
+        "inspected_unique_units": "int",
+        "defective_unique_units": "int",
+        "defect_count": "int",
+        "opportunities_per_unit": "int",
+        "known_at": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "failures": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "asset_id": "str",
+        "job_id": "str",
+        "downtime_interval_id": "str",
+        "failure_at": "str",
+        "restored_at": "str",
+        "known_at": "str",
+        "failure_mode": "str",
+        "repeat_of": "nullable",
+        "incident_id": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "work_orders": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "failure_id": "str",
+        "asset_id": "str",
+        "active_repair_elapsed_min": "int",
+        "restoration_elapsed_min": "int",
+        "technician_person_min": "int",
+        "completed_at": "str",
+        "known_at": "str",
+        "type": "str",
+        "note": "str",
+        "approved_document_id": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "reliability_observations": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "asset_id": "str",
+        "window_start": "str",
+        "window_end": "str",
+        "operating_h": "float",
+        "right_censored": "bool",
+        "observation_coverage": "str",
+        "observed_failure_ids": "list",
+        "known_at": "str",
+        "qualification": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "pm_tasks": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "asset_id": "str",
+        "due_at": "str",
+        "completed_at": "str",
+        "known_at": "str",
+        "plan_version": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "documents": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "document_id": "str",
+        "revision": "str",
+        "valid_from": "str",
+        "valid_to_exclusive": "str",
+        "known_at": "str",
+        "status": "str",
+        "operation_id": "str",
+        "content": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "improvement_cases": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "line_id": "str",
+        "revision_id": "str",
+        "operation_id": "str",
+        "owner": "str",
+        "baseline_window": "list",
+        "verification_window": "list",
+        "primary_measure": "str",
+        "guardrails": "list",
+        "status": "str",
+        "known_at": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "engineering_changes": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "case_id": "str",
+        "proposed_document_id": "str",
+        "status": "str",
+        "missing": "list",
+        "known_at": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "action_records": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "case_id": "str",
+        "event_type": "str",
+        "at": "str",
+        "known_at": "str",
+        "actor": "str",
+        "content_version": "int"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "customer_orders": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "promise_version": "int",
+        "promised_at": "str",
+        "ordered_at": "str",
+        "known_at": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "order_lines": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "order_id": "str",
+        "revision_id": "str",
+        "ordered_qty": "int",
+        "requested_at": "str",
+        "promised_at": "str",
+        "known_at": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "shipments": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "order_line_id": "str",
+        "quantity": "int",
+        "shipped_at": "str",
+        "delivered_at": "str",
+        "known_at": "str",
+        "documentation_correct": "bool",
+        "damage_free": "bool"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "inventory_items": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "unit": "str",
+        "currency": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "inventory_transactions": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "item_id": "str",
+        "at": "str",
+        "quantity_delta": "int",
+        "value_delta": "int",
+        "known_at": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "inventory_checks": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "item_id": "str",
+        "at": "str",
+        "matches": "bool",
+        "known_at": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "cost_rates": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "currency": "str",
+        "valid_from": "str",
+        "valid_to_exclusive": "str",
+        "known_at": "str",
+        "direct_labor_usd_per_h": "int",
+        "manufacturing_overhead_usd_per_h": "int",
+        "material_usd_per_unit": "int",
+        "loss_usd_per_min": "int",
+        "emissions_factor_kg_per_kwh": "float",
+        "cost_basis": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "cost_ledger": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "category": "str",
+        "amount_usd": "int",
+        "period_start": "str",
+        "period_end": "str",
+        "known_at": "str",
+        "basis": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "meters": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "site_id": "str",
+        "unit": "str",
+        "reset_policy": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "meter_readings": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "meter_id": "str",
+        "at": "str",
+        "cumulative_kwh": "int",
+        "known_at": "str",
+        "reset": "bool"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "daily_energy": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "meter_id": "str",
+        "start_reading_id": "str",
+        "end_reading_id": "str",
+        "kwh": "int",
+        "idle_kwh": "int",
+        "water_m3": "int",
+        "waste_kg": "int",
+        "start": "str",
+        "end": "str",
+        "known_at": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "demand_intervals": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "meter_id": "str",
+        "start": "str",
+        "end": "str",
+        "average_kw": "int",
+        "known_at": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "safety_events": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "site_id": "str",
+        "occurred_at": "str",
+        "known_at": "str",
+        "recordable": "bool",
+        "dart": "bool",
+        "lost_time": "bool"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "measurement_characteristics": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "operation_id": "str",
+        "measurement_unit": "str",
+        "lsl": "int",
+        "usl": "int",
+        "limit_version": "str",
+        "msa_status": "str",
+        "stability_status": "str",
+        "known_at": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "subgroups": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "characteristic_id": "str",
+        "at": "str",
+        "size": "int",
+        "known_at": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "measurements": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "subgroup_id": "str",
+        "characteristic_id": "str",
+        "value": "float",
+        "unit": "str",
+        "at": "str",
+        "known_at": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    },
+    "weekly_windows": {
+      "primaryKey": [
+        "namespace",
+        "id",
+        "record_version"
+      ],
+      "fields": {
+        "namespace": "str",
+        "record_version": "int",
+        "kind": "str",
+        "id": "str",
+        "start": "str",
+        "end": "str",
+        "known_at": "str"
+      },
+      "validation": "see source generation and relational-validation.json; source is synthetic"
+    }
+  },
+  "seedCoverage": {
+    "production": "24jobs across6days, not90days complete; inactive second asset per line has missing production exposure, not fictional zeroOEE",
+    "energy": "90days at site1 meter only; site2 missing; output denominators only on6 eligible same-boundary dates",
+    "maintenance": "20failures link existing stop intervals,12WO subset; no fabricated repair for missing WO",
+    "quality": "72stage outcomes +24terminal counts; same lot/op references, finalgood includes5accepted rework; source documentation qualification separate",
+    "capability": "125measurements25x5 exact algebra; stability not certified",
+    "inventory": "six opening300/mid45day200delta trajectories ->timeweighted400 over90days; COGS not materialized in seed, focused800COGS oracle separate",
+    "improvement": "4cases2blockedECs;1proposal; later complete lifecycle uses frozen Northworks, no training performed event invented",
+    "delivery": "12orders24lines shipments; orderandline aggregation distinct",
+    "labor": "24person-hour shift records; no payroll/security integration",
+    "cost": "1effective cost table4COQ category ledger; estimates, not financial ledger actuals",
+    "safety": "2classified events; worked exposure first6days only; population rate acceptance uses separate200000hfocused oracle",
+    "trend": "90date periods but only6production dates; missing periods remain missing;12weekly windows not invented measurements"
+  },
+  "remainingPrerequisites": {
+    "Weibull": [
+      "failure/repairable population",
+      "right-censored lifetimes",
+      "fit method",
+      "parameter uncertainty",
+      "model validation"
+    ],
+    "MSA": [
+      "gage study/calibration evidence"
+    ],
+    "processCapability": [
+      "approved estimators",
+      "stability",
+      "specification applicability",
+      "sample adequacy"
+    ],
+    "schedule": [
+      "frozen plan basis and tolerance"
+    ],
+    "constraint": [
+      "effective assignment and product-mix capacity"
+    ],
+    "flow": [
+      "queue/setup/run/move/wait raw timestamps"
+    ],
+    "financeRealization": [
+      "approved cost basis",
+      "actual attributable financial evidence"
+    ],
+    "SPC": [
+      "rational subgroup",
+      "stable reference phase",
+      "approved constants/runrules"
+    ],
+    "trainingUnknowns": "Focused arithmetic scenarios specify inputs; they do not pretend all these fields exist in the sparse relational seed"
+  },
+  "boardTwoHourSupport": [
+    "Use frozen Northworks to demonstrate initial-loss/knowledge/action/later-verification/sustain/recurrence",
+    "Use explicitly named training namespace for wider family cards; expose unavailable when sparse facts absent",
+    "Prepare24focused oracle cases as test inputs; never substitute their desired values into application",
+    "Boards share canonical result and context across chart/table/presentation/evidence/export",
+    "Retain322 source occurrence outcomes and42/85/191 feature acceptance separately; this contract is NOT feature acceptance"
+  ]
+}

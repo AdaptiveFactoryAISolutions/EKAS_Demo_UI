@@ -1,0 +1,1329 @@
+occurrenceId,inventoryId,name,kind,sourceLines,sourceText,inventoryFormula,originalUnit,retainedUnit,anchorCheck,disposition,metricIDs,definitionConflict
+OCC-001,KPI-001,OEE,metric,11–11,| **OEE**                 | `Availability × Performance × Quality`                                    | %                             |,Availability × Performance × Quality,%,,exact_table_name_and_formula,executable_definition,"[""ekas.oee""]","Source A*P*Q with count Quality cannot generally equal sum(ideal good time)/planned across different cycle times. Homogeneous definition accepted; mixed-product time-weighted OEE proposed, keep count-quality separate."
+OCC-002,KPI-002,Availability,metric,12–12,| **Availability**        | `Run Time / Planned Production Time`                                      | %                             |,Run Time / Planned Production Time,%,,exact_table_name_and_formula,executable_definition,"[""ekas.availability""]",
+OCC-003,KPI-003,Run Time,metric,13–13,| **Run Time**            | `Planned Production Time − Downtime`                                      | time                          |,Planned Production Time − Downtime,time,,exact_table_name_and_formula,executable_definition,"[""ekas.run_time""]",
+OCC-004,KPI-004,Performance,metric,14–14,| **Performance**         | `(Ideal Cycle Time × Total Count) / Run Time`                             | %                             |,(Ideal Cycle Time × Total Count) / Run Time,%,,exact_table_name_and_formula,executable_definition,"[""ekas.performance""]",
+OCC-005,KPI-005,Quality,metric,15–15,| **Quality**             | `Good Count / Total Count`                                                | %                             |,Good Count / Total Count,%,,exact_table_name_and_formula,executable_definition,"[""ekas.quality""]","Final accepted unique-unit ratio includes accepted rework under approved disposition; FPY excludes rework. For mixed cycles time-weighted OEE quality is a distinct metric, not this count ratio."
+OCC-006,KPI-006,Overall Utilization,metric,16–16,| **Overall Utilization** | `Run Time / Calendar Time`                                                | %                             |,Run Time / Calendar Time,%,,exact_table_name_and_formula,executable_definition,"[""ekas.overall_utilization""]",
+OCC-007,KPI-007,Asset Utilization,metric,17–17,| **Asset Utilization**   | `Actual Operating Time / Available Asset Time`                            | %                             |,Actual Operating Time / Available Asset Time,%,,exact_table_name_and_formula,executable_definition,"[""ekas.asset_utilization""]",
+OCC-008,KPI-008,TEEP,metric,18–18,| **TEEP**                | `OEE × Loading` where `Loading = Planned Production Time / Calendar Time` | %                             |,OEE × Loading where Loading = Planned Production Time / Calendar Time,%,,exact_table_name_and_formula,executable_definition,"[""ekas.teep""]",
+OCC-009,KPI-009,Loading,metric,19–19,| **Loading**             | `Planned Production Time / Calendar Time`                                 | %                             |,Planned Production Time / Calendar Time,%,,exact_table_name_and_formula,executable_definition,"[""ekas.loading""]",
+OCC-010,KPI-010,OEE Gap to Target,metric,20–20,| **OEE Gap to Target**   | `Target OEE − Actual OEE`                                                 | percentage points             |,Target OEE − Actual OEE,percentage points,,exact_table_name_and_formula,executable_definition,"[""ekas.oee_gap_to_target""]",
+OCC-011,KPI-011,OEE Improvement,metric,21–21,| **OEE Improvement**     | `Current OEE − Baseline OEE`                                              | percentage points             |,Current OEE − Baseline OEE,percentage points,,exact_table_name_and_formula,executable_definition,"[""ekas.oee_improvement""]",
+OCC-012,KPI-012,Production vs Plan,metric,31–31,| **Production vs Plan**     | `Actual Production / Planned Production × 100`          | %               |,Actual Production / Planned Production × 100,%,,exact_table_name_and_formula,executable_definition,"[""ekas.production_vs_plan""]",
+OCC-013,KPI-013,Production Attainment,metric,32–32,| **Production Attainment**  | `Actual Output / Target Output × 100`                   | %               |,Actual Output / Target Output × 100,%,,exact_table_name_and_formula,executable_definition,"[""ekas.production_vs_plan""]",
+OCC-014,KPI-014,Production Variance,metric,33–33,| **Production Variance**    | `Actual Output − Planned Output`                        | units           |,Actual Output − Planned Output,units,,exact_table_name_and_formula,executable_definition,"[""ekas.production_variance""]",
+OCC-015,KPI-015,Throughput,metric,34–34,| **Throughput**             | `Good Units Produced / Time Period`                     | units/hour      |,Good Units Produced / Time Period,units/hour,,exact_table_name_and_formula,executable_definition,"[""ekas.net_throughput""]",
+OCC-016,KPI-016,Gross Throughput,metric,35–35,| **Gross Throughput**       | `Total Units Produced / Time Period`                    | units/hour      |,Total Units Produced / Time Period,units/hour,,exact_table_name_and_formula,executable_definition,"[""ekas.gross_throughput""]",
+OCC-017,KPI-017,Net Throughput,metric,36–36,| **Net Throughput**         | `Good Units Produced / Time Period`                     | good units/hour |,Good Units Produced / Time Period,good units/hour,,exact_table_name_and_formula,executable_definition,"[""ekas.net_throughput""]",
+OCC-018,KPI-018,Run Rate,metric,37–37,| **Run Rate**               | `Units Produced / Operating Time`                       | units/hour      |,Units Produced / Operating Time,units/hour,,exact_table_name_and_formula,executable_definition,"[""ekas.run_rate""]",
+OCC-019,KPI-019,Target Run Rate,metric,38–38,| **Target Run Rate**        | `1 / Ideal Cycle Time`                                  | units/time      |,1 / Ideal Cycle Time,units/time,,exact_table_name_and_formula,executable_definition,"[""ekas.target_run_rate""]",
+OCC-020,KPI-020,Run Rate Attainment,metric,39–39,| **Run Rate Attainment**    | `Actual Run Rate / Target Run Rate × 100`               | %               |,Actual Run Rate / Target Run Rate × 100,%,,exact_table_name_and_formula,executable_definition,"[""ekas.run_rate_attainment""]",
+OCC-021,KPI-021,Capacity Utilization,metric,40–40,| **Capacity Utilization**   | `Actual Output / Rated Capacity × 100`                  | %               |,Actual Output / Rated Capacity × 100,%,,exact_table_name_and_formula,executable_definition,"[""ekas.capacity_utilization""]",
+OCC-022,KPI-022,Capacity Attainment,metric,41–41,| **Capacity Attainment**    | `Actual Output / Available Capacity × 100`              | %               |,Actual Output / Available Capacity × 100,%,,exact_table_name_and_formula,executable_definition,"[""ekas.capacity_attainment""]",
+OCC-023,KPI-023,Unused Capacity,metric,42–42,| **Unused Capacity**        | `Available Capacity − Actual Output`                    | units/time      |,Available Capacity − Actual Output,units/time,,exact_table_name_and_formula,executable_definition,"[""ekas.unused_capacity""]",
+OCC-024,KPI-024,Constraint Utilization,metric,43–43,| **Constraint Utilization** | `Constraint Run Time / Constraint Available Time × 100` | %               |,Constraint Run Time / Constraint Available Time × 100,%,,exact_table_name_and_formula,executable_definition,"[""ekas.constraint_utilization""]",KPI024 uses run time; KPI146 uses productive time. Preserve separate metric IDs unless plant defines them equal.
+OCC-025,KPI-025,Bottleneck Throughput,metric,44–44,| **Bottleneck Throughput**  | `Good Units through Constraint / Time`                  | units/time      |,Good Units through Constraint / Time,units/time,,exact_table_name_and_formula,executable_definition,"[""ekas.constraint_throughput""]",
+OCC-026,KPI-026,Schedule Adherence,metric,63–63,| **Schedule Adherence**           | `Production completed as scheduled / Scheduled production × 100`    | %             |,Production completed as scheduled / Scheduled production × 100,%,,exact_table_name_and_formula,executable_definition,"[""ekas.schedule_adherence""]","Source does not settle quantity/order/job grain or time tolerance. Proposed training convention: completed quantity by frozen scheduled deadline, no substitution for order-count compliance."
+OCC-027,KPI-027,Schedule Attainment,metric,64–64,| **Schedule Attainment**          | `Actual quantity completed / Scheduled quantity × 100`              | %             |,Actual quantity completed / Scheduled quantity × 100,%,,exact_table_name_and_formula,executable_definition,"[""ekas.schedule_attainment""]",
+OCC-028,KPI-028,Plan Attainment,metric,65–65,| **Plan Attainment**              | `Actual production / Planned production × 100`                      | %             |,Actual production / Planned production × 100,%,,exact_table_name_and_formula,executable_definition,"[""ekas.production_vs_plan""]",
+OCC-029,KPI-029,Schedule Variance,metric,66–66,| **Schedule Variance**            | `Actual Completion − Planned Completion`                            | time or units |,Actual Completion − Planned Completion,time or units,,exact_table_name_and_formula,executable_definition,"[""ekas.schedule_variance""]",
+OCC-030,KPI-030,Orders Completed to Schedule,metric,67–67,| **Orders Completed to Schedule** | `Orders completed on scheduled date / Total scheduled orders × 100` | %             |,Orders completed on scheduled date / Total scheduled orders × 100,%,,exact_table_name_and_formula,executable_definition,"[""ekas.orders_completed_to_schedule""]",
+OCC-031,KPI-031,Actual Cycle Time,metric,79–79,| **Actual Cycle Time**       | `Operating Time / Units Produced`                     | sec/unit  |,Operating Time / Units Produced,sec/unit,,exact_table_name_and_formula,executable_definition,"[""ekas.actual_cycle_time""]",
+OCC-032,KPI-032,Ideal Cycle Time,metric,80–80,| **Ideal Cycle Time**        | `Best demonstrated or engineered cycle time per unit` | sec/unit  |,Best demonstrated or engineered cycle time per unit,sec/unit,,exact_table_name_and_formula,executable_definition,"[""ekas.ideal_cycle_time""]",
+OCC-033,KPI-033,Cycle Time Variance,metric,81–81,| **Cycle Time Variance**     | `Actual Cycle Time − Standard Cycle Time`             | sec/unit  |,Actual Cycle Time − Standard Cycle Time,sec/unit,,exact_table_name_and_formula,executable_definition,"[""ekas.cycle_time_variance""]",
+OCC-034,KPI-034,Cycle Time Performance,metric,82–82,| **Cycle Time Performance**  | `Standard Cycle Time / Actual Cycle Time × 100`       | %         |,Standard Cycle Time / Actual Cycle Time × 100,%,,exact_table_name_and_formula,executable_definition,"[""ekas.cycle_time_performance""]",
+OCC-035,KPI-035,Takt Time,metric,83–83,| **Takt Time**               | `Available Production Time / Customer Demand`         | time/unit |,Available Production Time / Customer Demand,time/unit,,exact_table_name_and_formula,executable_definition,"[""ekas.takt_time""]",
+OCC-036,KPI-036,Takt Attainment,metric,84–84,| **Takt Attainment**         | `Takt Time / Actual Cycle Time × 100`                 | %         |,Takt Time / Actual Cycle Time × 100,%,,exact_table_name_and_formula,executable_definition,"[""ekas.takt_attainment""]",
+OCC-037,KPI-037,Cycle-to-Takt Ratio,metric,85–85,| **Cycle-to-Takt Ratio**     | `Actual Cycle Time / Takt Time`                       | ratio     |,Actual Cycle Time / Takt Time,ratio,,exact_table_name_and_formula,executable_definition,"[""ekas.cycle_to_takt_ratio""]",
+OCC-038,KPI-038,Lead Time,metric,86–86,| **Lead Time**               | `Completion Timestamp − Release/Order Timestamp`      | time      |,Completion Timestamp − Release/Order Timestamp,time,,exact_table_name_and_formula,executable_definition,"[""ekas.lead_time""]",
+OCC-039,KPI-039,Manufacturing Lead Time,metric,87–87,| **Manufacturing Lead Time** | `Queue + Setup + Run + Move + Wait Time`              | time      |,Queue + Setup + Run + Move + Wait Time,time,,exact_table_name_and_formula,executable_definition,"[""ekas.manufacturing_lead_time""]",
+OCC-040,KPI-040,Touch Time,metric,88–88,| **Touch Time**              | `Actual processing time spent on product`             | time      |,Actual processing time spent on product,time,,exact_table_name_and_formula,executable_definition,"[""ekas.touch_time""]",
+OCC-041,KPI-041,Flow Efficiency,metric,89–89,| **Flow Efficiency**         | `Value-Added Time / Total Lead Time × 100`            | %         |,Value-Added Time / Total Lead Time × 100,%,,exact_table_name_and_formula,executable_definition,"[""ekas.flow_efficiency""]",
+OCC-042,KPI-042,Total Downtime,metric,102–102,| **Total Downtime**                | `Σ downtime event durations`                                    | min/hr      |,Σ downtime event durations,min/hr,,exact_table_name_and_formula,executable_definition,"[""ekas.total_downtime""]",
+OCC-043,KPI-043,Unplanned Downtime,metric,103–103,| **Unplanned Downtime**            | `Σ unplanned downtime event durations`                          | min/hr      |,Σ unplanned downtime event durations,min/hr,,exact_table_name_and_formula,executable_definition,"[""ekas.unplanned_downtime""]",
+OCC-044,KPI-044,Planned Downtime,metric,104–104,| **Planned Downtime**              | `Σ planned downtime durations`                                  | min/hr      |,Σ planned downtime durations,min/hr,,exact_table_name_and_formula,executable_definition,"[""ekas.planned_downtime""]",
+OCC-045,KPI-045,Downtime %,metric,105–105,| **Downtime %**                    | `Downtime / Planned Production Time × 100`                      | %           |,Downtime / Planned Production Time × 100,%,,exact_table_name_and_formula,executable_definition,"[""ekas.downtime""]",
+OCC-046,KPI-046,Uptime %,metric,106–106,| **Uptime %**                      | `Run Time / Planned Production Time × 100`                      | %           |,Run Time / Planned Production Time × 100,%,,exact_table_name_and_formula,executable_definition,"[""ekas.availability""]",
+OCC-047,KPI-047,Downtime Frequency,metric,107–107,| **Downtime Frequency**            | `Number of downtime events / Period`                            | events/time |,Number of downtime events / Period,events/time,events/time,exact_table_name_and_formula,executable_definition,"[""ekas.downtime_frequency""]",
+OCC-048,KPI-048,Average Downtime Event,metric,108–108,| **Average Downtime Event**        | `Total Downtime / Number of Downtime Events`                    | time/event  |,Total Downtime / Number of Downtime Events,time/event,time/event,exact_table_name_and_formula,executable_definition,"[""ekas.average_downtime_event""]",
+OCC-049,KPI-049,Downtime by Reason,metric,109–109,| **Downtime by Reason**            | `Σ duration for reason code`                                    | time        |,Σ duration for reason code,time,time,exact_table_name_and_formula,executable_definition,"[""ekas.downtime_by_reason""]",
+OCC-050,KPI-050,Downtime Contribution,metric,110–110,| **Downtime Contribution**         | `Reason Downtime / Total Downtime × 100`                        | %           |,Reason Downtime / Total Downtime × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.downtime_contribution""]",
+OCC-051,KPI-051,Top Loss Contribution,metric,111–111,| **Top Loss Contribution**         | `Largest Loss / Total Loss × 100`                               | %           |,Largest Loss / Total Loss × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.top_loss_contribution""]",
+OCC-052,KPI-052,Minor Stop Time,metric,112–112,| **Minor Stop Time**               | `Σ qualifying short-stop durations`                             | time        |,Σ qualifying short-stop durations,time,time,exact_table_name_and_formula,executable_definition,"[""ekas.minor_stop_time""]",
+OCC-053,KPI-053,Speed Loss,metric,113–113,| **Speed Loss**                    | `Potential Output at Ideal Rate − Actual Output during runtime` | units/time  |,Potential Output at Ideal Rate − Actual Output during runtime,units/time,units/time,exact_table_name_and_formula,executable_definition,"[""ekas.speed_loss""]","Source quantity formula conflicts with missing-rows unit units/time. Formula yields units, not rate; do not alias performance loss minutes."
+OCC-054,KPI-054,Lost Production from Downtime,metric,114–114,| **Lost Production from Downtime** | `Downtime × Expected Run Rate`                                  | units       |,Downtime × Expected Run Rate,units,units,exact_table_name_and_formula,executable_definition,"[""ekas.lost_production_from_downtime""]",
+OCC-055,KPI-055,Downtime Cost,metric,115–115,| **Downtime Cost**                 | `Downtime × Governed Cost Rate`                                 | currency    |,Downtime × Governed Cost Rate,currency,currency,exact_table_name_and_formula,executable_definition,"[""ekas.downtime_cost""]",
+OCC-056,KPI-056,Changeover Time,metric,125–125,| **Changeover Time**         | `First Good Unit New Product − Last Good Unit Previous Product` | time |,First Good Unit New Product − Last Good Unit Previous Product,time,time,exact_table_name_and_formula,executable_definition,"[""ekas.changeover_time""]","Last good old to first good new includes waiting; setup-task duration is distinct. Aggregate average weighted by number of changes, not line averages."
+OCC-057,KPI-057,Average Changeover Time,metric,126–126,| **Average Changeover Time** | `Σ Changeover Time / Number of Changeovers`                     | time |,Σ Changeover Time / Number of Changeovers,time,time,exact_table_name_and_formula,executable_definition,"[""ekas.average_changeover_time""]",
+OCC-058,KPI-058,Changeover Variance,metric,127–127,| **Changeover Variance**     | `Actual Changeover − Standard Changeover`                       | time |,Actual Changeover − Standard Changeover,time,time,exact_table_name_and_formula,executable_definition,"[""ekas.changeover_variance""]",
+OCC-059,KPI-059,Changeover Attainment,metric,128–128,| **Changeover Attainment**   | `Standard Changeover / Actual Changeover × 100`                 | %    |,Standard Changeover / Actual Changeover × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.changeover_attainment""]",
+OCC-060,KPI-060,Setup Loss,metric,129–129,| **Setup Loss**              | `Actual Setup Time − Target Setup Time`                         | time |,Actual Setup Time − Target Setup Time,time,time,exact_table_name_and_formula,executable_definition,"[""ekas.setup_loss""]",
+OCC-061,KPI-061,Quality Rate,metric,139–139,| **Quality Rate**           | `Good Units / Total Units × 100`                              | %                             |,Good Units / Total Units × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.quality""]","Final accepted unique-unit ratio includes accepted rework under approved disposition; FPY excludes rework. For mixed cycles time-weighted OEE quality is a distinct metric, not this count ratio."
+OCC-062,KPI-062,Yield,metric,140–140,| **Yield**                  | `Good Units / Total Units × 100`                              | %                             |,Good Units / Total Units × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.quality""]","Final accepted unique-unit ratio includes accepted rework under approved disposition; FPY excludes rework. For mixed cycles time-weighted OEE quality is a distinct metric, not this count ratio."
+OCC-063,KPI-063,FPY — First Pass Yield,metric,141–141,| **FPY — First Pass Yield** | `Units passing without rework / Units entering process × 100` | %                             |,Units passing without rework / Units entering process × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.first_pass_yield""]",
+OCC-064,KPI-064,First Time Through,metric,142–142,| **First Time Through**     | `Good units requiring no repair/rework / Total units × 100`   | %                             |,Good units requiring no repair/rework / Total units × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.first_time_through""]",
+OCC-065,KPI-065,Scrap Rate,metric,143–143,| **Scrap Rate**             | `Scrap Units / Total Units Produced × 100`                    | %                             |,Scrap Units / Total Units Produced × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.scrap_rate""]",
+OCC-066,KPI-066,Reject Rate,metric,144–144,| **Reject Rate**            | `Rejected Units / Total Units Inspected × 100`                | %                             |,Rejected Units / Total Units Inspected × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.reject_rate""]",
+OCC-067,KPI-067,Rework Rate,metric,145–145,| **Rework Rate**            | `Reworked Units / Total Units Produced × 100`                 | %                             |,Reworked Units / Total Units Produced × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.rework_rate""]",
+OCC-068,KPI-068,Defect Rate,metric,146–146,| **Defect Rate**            | `Defective Units / Units Inspected × 100`                     | %                             |,Defective Units / Units Inspected × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.defect_rate""]",
+OCC-069,KPI-069,Defects per Unit (DPU),metric,147–147,| **Defects per Unit (DPU)** | `Total Defects / Units Inspected`                             | defects/unit                  |,Total Defects / Units Inspected,defects/unit,defects/unit,exact_table_name_and_formula,executable_definition,"[""ekas.defects_per_unit_dpu""]",
+OCC-070,KPI-070,DPMO,metric,148–148,"| **DPMO**                   | `Defects / (Units × Opportunities per Unit) × 1,000,000`      | defects/million opportunities |","Defects / (Units × Opportunities per Unit) × 1,000,000",defects/million opportunities,defects/million opportunities,exact_table_name_and_formula,executable_definition,"[""ekas.dpmo""]",
+OCC-071,KPI-071,PPM Defective,metric,149–149,"| **PPM Defective**          | `Defective Units / Total Units × 1,000,000`                   | ppm                           |","Defective Units / Total Units × 1,000,000",ppm,ppm,exact_table_name_and_formula,executable_definition,"[""ekas.ppm_defective""]",
+OCC-072,KPI-072,Customer Reject Rate,metric,150–150,| **Customer Reject Rate**   | `Customer-Rejected Units / Units Shipped × 100`               | %                             |,Customer-Rejected Units / Units Shipped × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.customer_reject_rate""]",
+OCC-073,KPI-073,Customer PPM,metric,151–151,"| **Customer PPM**           | `Customer Defective Units / Units Shipped × 1,000,000`        | ppm                           |","Customer Defective Units / Units Shipped × 1,000,000",ppm,ppm,exact_table_name_and_formula,executable_definition,"[""ekas.customer_ppm""]",
+OCC-074,KPI-074,Quality Loss,metric,152–152,| **Quality Loss**           | `Nonconforming Units / Total Units × 100`                     | %                             |,Nonconforming Units / Total Units × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.quality_loss""]",
+OCC-075,KPI-075,Good Count,metric,153–153,| **Good Count**             | `Total Count − Scrap − rejected/rework as governed`           | units                         |,Total Count − Scrap − rejected/rework as governed,units,units,exact_table_name_and_formula,executable_definition,"[""ekas.good_count""]",Total-minus-scrap-minus-reject-minus-rework can double count overlapping dispositions. Use terminal unique accepted units; source policy must approve handling of recovered units.
+OCC-076,KPI-076,Rolled Throughput Yield,analytical_measure,163–178,"### Rolled Throughput Yield
+
+`RTY = FPY₁ × FPY₂ × FPY₃ × ... × FPYₙ`
+
+Example:
+
+- Op 10 FPY = 98%
+- Op 20 FPY = 97%
+- Op 30 FPY = 99%
+
+Then:
+
+`RTY = 0.98 × 0.97 × 0.99 = 94.1%`
+
+This is much more revealing than looking only at final inspection yield.
+",RTY = FPY₁ × FPY₂ × FPY₃ × ... × FPYₙ ; RTY = 0.98 × 0.97 × 0.99 = 94.1%,,,literal_formula_in_anchor,executable_definition,"[""ekas.rolled_throughput_yield""]","0.98*0.97*0.99=0.941094=94.1094%, rounds94.1%; no defect or rework double counting."
+OCC-077,KPI-077,Cp,metric,187–187,| **Cp**  | `(USL − LSL) / (6σ)`                                |,(USL − LSL) / (6σ),,,exact_table_name_and_formula,executable_definition,"[""ekas.cp""]",
+OCC-078,KPI-078,Cpk,metric,188–188,"| **Cpk** | `min[(USL − μ)/(3σ), (μ − LSL)/(3σ)]`               |","min[(USL − μ)/(3σ), (μ − LSL)/(3σ)]",,,exact_table_name_and_formula,executable_definition,"[""ekas.cpk""]",
+OCC-079,KPI-079,Pp,metric,189–189,| **Pp**  | `(USL − LSL) / (6σoverall)`                         |,(USL − LSL) / (6σoverall),,,exact_table_name_and_formula,executable_definition,"[""ekas.pp""]",
+OCC-080,KPI-080,Ppk,metric,190–190,"| **Ppk** | `min[(USL − μ)/(3σoverall), (μ − LSL)/(3σoverall)]` |","min[(USL − μ)/(3σoverall), (μ − LSL)/(3σoverall)]",,,exact_table_name_and_formula,executable_definition,"[""ekas.ppk""]",
+OCC-081,KPI-081,MTBF,metric,207–207,| **MTBF**                              | `Total Operating Time / Number of Failures`                                      | hours/failure |,Total Operating Time / Number of Failures,hours/failure,hours/failure,exact_table_name_and_formula,executable_definition,"[""ekas.mtbf""]",
+OCC-082,KPI-082,MTTR — Mean Time to Repair,metric,208–208,| **MTTR — Mean Time to Repair**        | `Total Active Repair Time / Number of Repairs`                                   | time          |,Total Active Repair Time / Number of Repairs,time,time,exact_table_name_and_formula,executable_definition,"[""ekas.mttr_repair""]",
+OCC-083,KPI-083,MTTR — Mean Time to Restore,metric,209–209,| **MTTR — Mean Time to Restore**       | `Total Restoration Downtime / Number of Incidents`                               | time          |,Total Restoration Downtime / Number of Incidents,time,time,exact_table_name_and_formula,executable_definition,"[""ekas.mttr_restore""]",
+OCC-084,KPI-084,MTTF,metric,210–210,| **MTTF**                              | `Total Operating Life / Number of Nonrepairable Failures`                        | time          |,Total Operating Life / Number of Nonrepairable Failures,time,time,exact_table_name_and_formula,executable_definition,"[""ekas.mttf""]",Complete failed-life average excludes right censoring; cannot infer population MTTF from repairable WOs. Survival model and observation age required for inferential MTTF.
+OCC-085,KPI-085,Failure Rate,metric,211–211,| **Failure Rate**                      | `Number of Failures / Operating Time`                                            | failures/hour |,Number of Failures / Operating Time,failures/hour,failures/hour,exact_table_name_and_formula,executable_definition,"[""ekas.failure_rate""]",
+OCC-086,KPI-086,Reliability,metric,212–212,| **Reliability**                       | commonly `e^(−λt)` for constant failure rate                                     | probability   |,commonly e^(−λt) for constant failure rate,probability,probability,exact_table_name_and_formula,executable_definition,"[""ekas.reliability""]","Source commonly exp(-lambda*t) is a conditional constant-hazard model, not empirical universal reliability; Weibull requires fit, censoring and uncertainty."
+OCC-087,KPI-087,Repair Rate,metric,213–213,| **Repair Rate**                       | `Repairs Completed / Repair Time`                                                | repairs/time  |,Repairs Completed / Repair Time,repairs/time,repairs/time,exact_table_name_and_formula,executable_definition,"[""ekas.repair_rate""]",
+OCC-088,KPI-088,Maintenance Downtime %,metric,214–214,| **Maintenance Downtime %**            | `Maintenance Downtime / Planned Production Time × 100`                           | %             |,Maintenance Downtime / Planned Production Time × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.maintenance_downtime""]",
+OCC-089,KPI-089,Breakdown Frequency,metric,215–215,| **Breakdown Frequency**               | `Breakdowns / Period`                                                            | count/time    |,Breakdowns / Period,count/time,count/time,exact_table_name_and_formula,executable_definition,"[""ekas.breakdown_frequency""]",
+OCC-090,KPI-090,Reactive Maintenance %,metric,216–216,| **Reactive Maintenance %**            | `Reactive Maintenance Hours / Total Maintenance Hours × 100`                     | %             |,Reactive Maintenance Hours / Total Maintenance Hours × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.reactive_maintenance""]",
+OCC-091,KPI-091,Planned Maintenance %,metric,217–217,| **Planned Maintenance %**             | `Planned Maintenance Hours / Total Maintenance Hours × 100`                      | %             |,Planned Maintenance Hours / Total Maintenance Hours × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.planned_maintenance""]",
+OCC-092,KPI-092,PM Compliance,metric,218–218,| **PM Compliance**                     | `PMs completed on time / PMs scheduled × 100`                                    | %             |,PMs completed on time / PMs scheduled × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.pm_compliance""]",
+OCC-093,KPI-093,Schedule Compliance — Maintenance,metric,219–219,| **Schedule Compliance — Maintenance** | `Scheduled jobs completed as planned / Scheduled jobs × 100`                     | %             |,Scheduled jobs completed as planned / Scheduled jobs × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.schedule_compliance_maintenance""]",
+OCC-094,KPI-094,Maintenance Backlog,metric,220–220,| **Maintenance Backlog**               | `Outstanding Maintenance Labor Hours / Available Weekly Maintenance Labor Hours` | weeks         |,Outstanding Maintenance Labor Hours / Available Weekly Maintenance Labor Hours,weeks,weeks,exact_table_name_and_formula,executable_definition,"[""ekas.maintenance_backlog""]",
+OCC-095,KPI-095,Repeat Failure Rate,metric,221–221,| **Repeat Failure Rate**               | `Repeated failures / Total failures × 100`                                       | %             |,Repeated failures / Total failures × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.repeat_failure_rate""]",
+OCC-096,KPI-096,Emergency Work %,metric,222–222,| **Emergency Work %**                  | `Emergency work hours / Total maintenance hours × 100`                           | %             |,Emergency work hours / Total maintenance hours × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.emergency_work""]",
+OCC-097,KPI-097,OTIF,metric,247–247,| **OTIF**                   | `Orders delivered On Time AND In Full / Total Orders × 100`              | %     |,Orders delivered On Time AND In Full / Total Orders × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.otif""]",
+OCC-098,KPI-098,On-Time Delivery (OTD),metric,248–248,| **On-Time Delivery (OTD)** | `Orders delivered on/before promise date / Total Delivered Orders × 100` | %     |,Orders delivered on/before promise date / Total Delivered Orders × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.on_time_delivery_otd""]",
+OCC-099,KPI-099,In-Full Delivery,metric,249–249,| **In-Full Delivery**       | `Orders delivered complete / Total Orders × 100`                         | %     |,Orders delivered complete / Total Orders × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.in_full_delivery""]",
+OCC-100,KPI-100,Fill Rate,metric,250–250,| **Fill Rate**              | `Units shipped immediately / Units ordered × 100`                        | %     |,Units shipped immediately / Units ordered × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.fill_rate""]",
+OCC-101,KPI-101,Perfect Order Rate,metric,251–251,| **Perfect Order Rate**     | `Perfect Orders / Total Orders × 100`                                    | %     |,Perfect Orders / Total Orders × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.perfect_order_rate""]",
+OCC-102,KPI-102,Late Order Rate,metric,252–252,| **Late Order Rate**        | `Late Orders / Total Orders × 100`                                       | %     |,Late Orders / Total Orders × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.late_order_rate""]",
+OCC-103,KPI-103,Past-Due Quantity,metric,253–253,| **Past-Due Quantity**      | `Σ outstanding quantity past promised date`                              | units |,Σ outstanding quantity past promised date,units,units,exact_table_name_and_formula,executable_definition,"[""ekas.past_due_quantity""]",
+OCC-104,KPI-104,Average Delivery Delay,metric,254–254,| **Average Delivery Delay** | `Σ late days / Late Deliveries`                                          | days  |,Σ late days / Late Deliveries,days,days,exact_table_name_and_formula,executable_definition,"[""ekas.average_delivery_delay""]",
+OCC-105,KPI-105,Inventory Turns,metric,264–264,| **Inventory Turns**      | `Annual COGS / Average Inventory Value`                    | turns/year |,Annual COGS / Average Inventory Value,turns/year,turns/year,exact_table_name_and_formula,executable_definition,"[""ekas.inventory_turns""]","Source annual COGS; acceptance D07 uses period COGS. Keep annual and period turns separate, with explicit annualization policy."
+OCC-106,KPI-106,Inventory Days / DIO,metric,265–265,| **Inventory Days / DIO** | `Average Inventory / COGS × Days in Period`                | days       |,Average Inventory / COGS × Days in Period,days,days,exact_table_name_and_formula,executable_definition,"[""ekas.inventory_days_dio""]",
+OCC-107,KPI-107,Raw Material Days,metric,266–266,| **Raw Material Days**    | `Average Raw Material Inventory / Material Usage × Days`   | days       |,Average Raw Material Inventory / Material Usage × Days,days,days,exact_table_name_and_formula,executable_definition,"[""ekas.raw_material_days""]",
+OCC-108,KPI-108,WIP Days,metric,267–267,| **WIP Days**             | `Average WIP / Manufacturing Cost or Throughput × Days`    | days       |,Average WIP / Manufacturing Cost or Throughput × Days,days,days,exact_table_name_and_formula,unresolved_choice_required,"[""ekas.wip_days_value"", ""ekas.wip_days_units""]",Source combines cost valuation and physical throughput denominator. Split value-based days and unit-based residence time; never divide money by units/day.
+OCC-109,KPI-109,Finished Goods Days,metric,268–268,| **Finished Goods Days**  | `Average FG Inventory / COGS × Days`                       | days       |,Average FG Inventory / COGS × Days,days,days,exact_table_name_and_formula,executable_definition,"[""ekas.finished_goods_days""]",
+OCC-110,KPI-110,WIP Units,metric,269–269,| **WIP Units**            | `Σ units currently inside production process`              | units      |,Σ units currently inside production process,units,units,exact_table_name_and_formula,executable_definition,"[""ekas.wip_units""]",
+OCC-111,KPI-111,Inventory Accuracy,metric,270–270,| **Inventory Accuracy**   | `Correct inventory records / Records checked × 100`        | %          |,Correct inventory records / Records checked × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.inventory_accuracy""]",
+OCC-112,KPI-112,Obsolete Inventory %,metric,271–271,| **Obsolete Inventory %** | `Obsolete Inventory Value / Total Inventory Value × 100`   | %          |,Obsolete Inventory Value / Total Inventory Value × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.obsolete_inventory""]",
+OCC-113,KPI-113,Excess Inventory %,metric,272–272,| **Excess Inventory %**   | `Inventory Above Governed Maximum / Total Inventory × 100` | %          |,Inventory Above Governed Maximum / Total Inventory × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.excess_inventory""]",
+OCC-114,KPI-114,Little's Law,model,280–297,"### Little's Law
+
+`WIP = Throughput × Lead Time`
+
+Therefore:
+
+`Lead Time = WIP / Throughput`
+
+and:
+
+`Throughput = WIP / Lead Time`
+
+This lets EKAS answer questions such as:
+
+> “If we cut WIP by 25% but maintain throughput, what happens to lead time?”
+
+provided the assumptions are valid.
+",WIP = Throughput × Lead Time ; Lead Time = WIP / Throughput ; Throughput = WIP / Lead Time,,,literal_formula_in_anchor,conditional_alias_or_concept_binding,"[""ekas.little_s_law""]",
+OCC-115,KPI-115,Labor Productivity,metric,304–304,| **Labor Productivity**       | `Good Units / Labor Hours`                               | units/labor-hour |,Good Units / Labor Hours,units/labor-hour,units/labor-hour,exact_table_name_and_formula,executable_definition,"[""ekas.labor_productivity""]",
+OCC-116,KPI-116,Labor Efficiency,metric,305–305,| **Labor Efficiency**         | `Standard Hours Earned / Actual Labor Hours × 100`       | %                |,Standard Hours Earned / Actual Labor Hours × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.labor_efficiency""]",
+OCC-117,KPI-117,Standard Hours Earned,metric,306–306,| **Standard Hours Earned**    | `Good Quantity × Standard Labor Time per Unit`           | hours            |,Good Quantity × Standard Labor Time per Unit,hours,hours,exact_table_name_and_formula,executable_definition,"[""ekas.standard_hours_earned""]",
+OCC-118,KPI-118,Labor Utilization,metric,307–307,| **Labor Utilization**        | `Productive Labor Hours / Paid Labor Hours × 100`        | %                |,Productive Labor Hours / Paid Labor Hours × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.labor_utilization""]",
+OCC-119,KPI-119,Direct Labor Utilization,metric,308–308,| **Direct Labor Utilization** | `Direct Productive Hours / Direct Available Hours × 100` | %                |,Direct Productive Hours / Direct Available Hours × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.direct_labor_utilization""]",
+OCC-120,KPI-120,Overtime %,metric,309–309,| **Overtime %**               | `Overtime Hours / Total Labor Hours × 100`               | %                |,Overtime Hours / Total Labor Hours × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.overtime""]",
+OCC-121,KPI-121,Absenteeism Rate,metric,310–310,| **Absenteeism Rate**         | `Absent Scheduled Hours / Total Scheduled Hours × 100`   | %                |,Absent Scheduled Hours / Total Scheduled Hours × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.absenteeism_rate""]",
+OCC-122,KPI-122,Units per Employee Hour,metric,311–311,| **Units per Employee Hour**  | `Good Units / Employee Hours`                            | units/hour       |,Good Units / Employee Hours,units/hour,units/hour,exact_table_name_and_formula,executable_definition,"[""ekas.units_per_employee_hour""]",
+OCC-123,KPI-123,Labor Cost per Unit,metric,312–312,| **Labor Cost per Unit**      | `Direct Labor Cost / Good Units`                         | currency/unit    |,Direct Labor Cost / Good Units,currency/unit,currency/unit,exact_table_name_and_formula,executable_definition,"[""ekas.labor_cost_per_unit""]",
+OCC-124,KPI-124,Manufacturing Cost per Unit,metric,322–322,| **Manufacturing Cost per Unit** | `Total Manufacturing Cost / Good Units Produced`         |,Total Manufacturing Cost / Good Units Produced,,,exact_table_name_and_formula,executable_definition,"[""ekas.manufacturing_cost_per_unit""]",
+OCC-125,KPI-125,Conversion Cost per Unit,metric,323–323,| **Conversion Cost per Unit**    | `(Direct Labor + Manufacturing Overhead) / Good Units`   |,(Direct Labor + Manufacturing Overhead) / Good Units,,,exact_table_name_and_formula,executable_definition,"[""ekas.conversion_cost_per_unit""]",
+OCC-126,KPI-126,Scrap Cost,metric,324–324,| **Scrap Cost**                  | `Scrap Quantity × Governed Unit Cost`                    |,Scrap Quantity × Governed Unit Cost,,,exact_table_name_and_formula,executable_definition,"[""ekas.scrap_cost""]",Cost amount and share of manufacturing cost source occurrences require separate IDs.
+OCC-127,KPI-127,Rework Cost,metric,325–325,| **Rework Cost**                 | `Rework Labor + Material + Overhead`                     |,Rework Labor + Material + Overhead,,,exact_table_name_and_formula,executable_definition,"[""ekas.rework_cost""]",
+OCC-128,KPI-128,Downtime Cost,metric,326–326,| **Downtime Cost**               | `Downtime Duration × Governed Loss/Cost Rate`            |,Downtime Duration × Governed Loss/Cost Rate,,,exact_table_name_and_formula,executable_definition,"[""ekas.downtime_cost""]",
+OCC-129,KPI-129,Cost Variance,metric,327–327,| **Cost Variance**               | `Actual Cost − Standard/Budget Cost`                     |,Actual Cost − Standard/Budget Cost,,,exact_table_name_and_formula,executable_definition,"[""ekas.cost_variance""]",Absolute currency and normalized percent source occurrences require separate IDs.
+OCC-130,KPI-130,Cost Variance %,metric,328–328,| **Cost Variance %**             | `(Actual − Standard) / Standard × 100`                   |,(Actual − Standard) / Standard × 100,,,exact_table_name_and_formula,executable_definition,"[""ekas.cost_variance_percent""]",Absolute currency and normalized percent source occurrences require separate IDs.
+OCC-131,KPI-131,Material Usage Variance,metric,329–329,| **Material Usage Variance**     | `(Actual Quantity − Standard Quantity) × Standard Price` |,(Actual Quantity − Standard Quantity) × Standard Price,,,exact_table_name_and_formula,executable_definition,"[""ekas.material_usage_variance""]",
+OCC-132,KPI-132,Labor Efficiency Variance,metric,330–330,| **Labor Efficiency Variance**   | `(Actual Hours − Standard Hours) × Standard Labor Rate`  |,(Actual Hours − Standard Hours) × Standard Labor Rate,,,exact_table_name_and_formula,executable_definition,"[""ekas.labor_efficiency_variance""]",
+OCC-133,KPI-133,COPQ — Cost of Poor Quality,metric,338–338,| **COPQ — Cost of Poor Quality** | `Internal Failure Cost + External Failure Cost`                |,Internal Failure Cost + External Failure Cost,,,exact_table_name_and_formula,executable_definition,"[""ekas.copq_cost_of_poor_quality""]",
+OCC-134,KPI-134,Cost of Quality,metric,339–339,| **Cost of Quality**             | `Prevention + Appraisal + Internal Failure + External Failure` |,Prevention + Appraisal + Internal Failure + External Failure,,,exact_table_name_and_formula,executable_definition,"[""ekas.cost_of_quality""]",
+OCC-135,KPI-135,COPQ % Sales,metric,340–340,| **COPQ % Sales**                | `COPQ / Sales × 100`                                           |,COPQ / Sales × 100,,,exact_table_name_and_formula,executable_definition,"[""ekas.copq_sales""]",
+OCC-136,KPI-136,Scrap Cost %,metric,341–341,| **Scrap Cost %**                | `Scrap Cost / Manufacturing Cost × 100`                        |,Scrap Cost / Manufacturing Cost × 100,,,exact_table_name_and_formula,executable_definition,"[""ekas.scrap_cost_share""]",Cost amount and share of manufacturing cost source occurrences require separate IDs.
+OCC-137,KPI-137,Warranty Cost %,metric,342–342,| **Warranty Cost %**             | `Warranty Cost / Sales × 100`                                  |,Warranty Cost / Sales × 100,,,exact_table_name_and_formula,executable_definition,"[""ekas.warranty_cost""]",
+OCC-138,KPI-138,Energy Consumption,metric,350–350,| **Energy Consumption** | `Σ energy used`                                         | kWh                    |,Σ energy used,kWh,kWh,exact_table_name_and_formula,executable_definition,"[""ekas.energy_consumption""]",
+OCC-139,KPI-139,Energy per Unit,metric,351–351,| **Energy per Unit**    | `Total Energy / Good Units`                             | kWh/unit               |,Total Energy / Good Units,kWh/unit,kWh/unit,exact_table_name_and_formula,executable_definition,"[""ekas.energy_per_unit""]",
+OCC-140,KPI-140,Energy Intensity,metric,352–352,"| **Energy Intensity**   | `Energy / Production Measure`                           | kWh/unit, kWh/lb, etc. |",Energy / Production Measure,"kWh/unit, kWh/lb, etc.","kWh/unit, kWh/lb, etc.",exact_table_name_and_formula,executable_definition,"[""ekas.energy_intensity""]",
+OCC-141,KPI-141,Idle Energy %,metric,353–353,| **Idle Energy %**      | `Energy During Nonproductive Time / Total Energy × 100` | %                      |,Energy During Nonproductive Time / Total Energy × 100,%,%,exact_table_name_and_formula,executable_definition,"[""ekas.idle_energy""]",
+OCC-142,KPI-142,Peak Demand,metric,354–354,| **Peak Demand**        | `Maximum demand during period`                          | kW                     |,Maximum demand during period,kW,kW,exact_table_name_and_formula,executable_definition,"[""ekas.peak_demand""]",
+OCC-143,KPI-143,CO₂e per Unit,metric,355–355,| **CO₂e per Unit**      | `Total CO₂e / Good Units`                               | kg CO₂e/unit           |,Total CO₂e / Good Units,kg CO₂e/unit,kg CO₂e/unit,exact_table_name_and_formula,executable_definition,"[""ekas.co_e_per_unit""]",
+OCC-144,KPI-144,Waste per Unit,metric,356–356,| **Waste per Unit**     | `Waste Generated / Good Units`                          | mass/unit              |,Waste Generated / Good Units,mass/unit,mass/unit,exact_table_name_and_formula,executable_definition,"[""ekas.waste_per_unit""]",
+OCC-145,KPI-145,Water per Unit,metric,357–357,| **Water per Unit**     | `Water Consumption / Good Units`                        | volume/unit            |,Water Consumption / Good Units,volume/unit,volume/unit,exact_table_name_and_formula,executable_definition,"[""ekas.water_per_unit""]",
+OCC-146,KPI-146,Constraint Utilization,metric,369–369,| **Constraint Utilization**  | `Constraint Productive Time / Constraint Available Time × 100`             |,Constraint Productive Time / Constraint Available Time × 100,,,exact_table_name_and_formula,source_definition_split,"[""ekas.constraint_productive_utilization""]",KPI024 uses run time; KPI146 uses productive time. Preserve separate metric IDs unless plant defines them equal.
+OCC-147,KPI-147,Constraint Throughput,metric,370–370,| **Constraint Throughput**   | `Good Units Through Constraint / Time`                                     |,Good Units Through Constraint / Time,,,exact_table_name_and_formula,executable_definition,"[""ekas.constraint_throughput""]",
+OCC-148,KPI-148,Constraint Lost Time,metric,371–371,| **Constraint Lost Time**    | `Available Constraint Time − Productive Constraint Time`                   |,Available Constraint Time − Productive Constraint Time,,,exact_table_name_and_formula,executable_definition,"[""ekas.constraint_lost_time""]",
+OCC-149,KPI-149,Constraint Yield,metric,372–372,| **Constraint Yield**        | `Good Constraint Output / Constraint Input × 100`                          |,Good Constraint Output / Constraint Input × 100,,,exact_table_name_and_formula,executable_definition,"[""ekas.constraint_yield""]",
+OCC-150,KPI-150,Throughput Contribution,metric,373–373,| **Throughput Contribution** | `Sales − Totally Variable Cost` where governed financial model supports it |,Sales − Totally Variable Cost where governed financial model supports it,,,exact_table_name_and_formula,executable_definition,"[""ekas.throughput_contribution""]",
+OCC-151,KPI-151,TRIR,metric,383–383,"| **TRIR**                    | `(Recordable Cases × 200,000) / Hours Worked` |","(Recordable Cases × 200,000) / Hours Worked",,,exact_table_name_and_formula,executable_definition,"[""ekas.trir""]",
+OCC-152,KPI-152,DART Rate,metric,384–384,"| **DART Rate**               | `(DART Cases × 200,000) / Hours Worked`       |","(DART Cases × 200,000) / Hours Worked",,,exact_table_name_and_formula,executable_definition,"[""ekas.dart_rate""]",
+OCC-153,KPI-153,Lost-Time Incident Rate,metric,385–385,"| **Lost-Time Incident Rate** | `(Lost-Time Cases × 200,000) / Hours Worked`  |","(Lost-Time Cases × 200,000) / Hours Worked",,,exact_table_name_and_formula,executable_definition,"[""ekas.lost_time_incident_rate""]",
+OCC-154,KPI-154,Near-Miss Rate,metric,386–386,| **Near-Miss Rate**          | `Near Misses / Governed exposure denominator` |,Near Misses / Governed exposure denominator,,,exact_table_name_and_formula,executable_definition,"[""ekas.near_miss_rate""]",Exposure denominator and multiplier unspecified. No canonical numeric rate without supplied versioned policy.
+OCC-155,KPI-155,Production vs Plan,metric,398–398,| **Production vs Plan** | `Actual Production / Planned Production × 100`                            |,Actual Production / Planned Production × 100,,,exact_table_name_and_formula,executable_definition,"[""ekas.production_vs_plan""]",
+OCC-156,KPI-156,OEE,metric,399–399,| **OEE**                | `Availability × Performance × Quality`                                    |,Availability × Performance × Quality,,,exact_table_name_and_formula,executable_definition,"[""ekas.oee""]","Source A*P*Q with count Quality cannot generally equal sum(ideal good time)/planned across different cycle times. Homogeneous definition accepted; mixed-product time-weighted OEE proposed, keep count-quality separate."
+OCC-157,KPI-157,Downtime,metric,400–400,| **Downtime**           | `Σ governed downtime duration`                                            |,Σ governed downtime duration,,,exact_table_name_and_formula,executable_definition,"[""ekas.total_downtime""]",
+OCC-158,KPI-158,Quality Loss,metric,401–401,| **Quality Loss**       | `Nonconforming Output / Total Output × 100`                               |,Nonconforming Output / Total Output × 100,,,exact_table_name_and_formula,executable_definition,"[""ekas.quality_loss""]",
+OCC-159,KPI-159,Schedule Adherence,metric,402–402,| **Schedule Adherence** | `Production completed according to schedule / Scheduled production × 100` |,Production completed according to schedule / Scheduled production × 100,,,exact_table_name_and_formula,executable_definition,"[""ekas.schedule_adherence""]","Source does not settle quantity/order/job grain or time tolerance. Proposed training convention: completed quantity by frozen scheduled deadline, no substitution for order-count compliance."
+OCC-160,KPI-160,Inventory Days,metric,403–403,| **Inventory Days**     | `Average Inventory / Consumption or COGS × Days`                          |,Average Inventory / Consumption or COGS × Days,,,exact_table_name_and_formula,executable_definition,"[""ekas.inventory_days_dio""]",
+OCC-161,KPI-161,OTIF,metric,404–404,| **OTIF**               | `Orders on-time AND in-full / Total applicable orders × 100`              |,Orders on-time AND in-full / Total applicable orders × 100,,,exact_table_name_and_formula,executable_definition,"[""ekas.otif""]",
+OCC-162,KPI-162,Production vs Plan,reference_target,410–410,| Production vs Plan | ≥ 100%                   |,≥ 100%,,,exact_table_name_and_formula,illustrative_reference_target_not_metric,"[""ekas.production_vs_plan""]",
+OCC-163,KPI-163,OEE,reference_target,411–411,| OEE                | ≥ 85%                    |,≥ 85%,,,exact_table_name_and_formula,illustrative_reference_target_not_metric,"[""ekas.oee""]","Source A*P*Q with count Quality cannot generally equal sum(ideal good time)/planned across different cycle times. Homogeneous definition accepted; mixed-product time-weighted OEE proposed, keep count-quality separate."
+OCC-164,KPI-164,Downtime,reference_target,412–412,| Downtime           | Minimize / plant target  |,Minimize / plant target,,,exact_table_name_and_formula,illustrative_reference_target_not_metric,"[""ekas.total_downtime""]",
+OCC-165,KPI-165,Quality Loss,reference_target,413–413,| Quality Loss       | ≤ 2%                     |,≤ 2%,,,exact_table_name_and_formula,illustrative_reference_target_not_metric,"[""ekas.quality_loss""]",
+OCC-166,KPI-166,Schedule Adherence,reference_target,414–414,| Schedule Adherence | ≥ 95%                    |,≥ 95%,,,exact_table_name_and_formula,illustrative_reference_target_not_metric,"[""ekas.schedule_adherence""]","Source does not settle quantity/order/job grain or time tolerance. Proposed training convention: completed quantity by frozen scheduled deadline, no substitution for order-count compliance."
+OCC-167,KPI-167,Inventory Days,reference_target,415–415,| Inventory Days     | Governed operating range |,Governed operating range,,,exact_table_name_and_formula,illustrative_reference_target_not_metric,"[""ekas.inventory_days_dio""]",
+OCC-168,KPI-168,OTIF,reference_target,416–416,| OTIF               | ≥ 95%                    |,≥ 95%,,,exact_table_name_and_formula,illustrative_reference_target_not_metric,"[""ekas.otif""]",
+OCC-169,KPI-169,Availability Loss Time,analytical_measure,426–429,"### Availability loss
+
+`Availability Loss Time = Planned Production Time − Run Time`
+",Availability Loss Time = Planned Production Time − Run Time,,,literal_formula_in_anchor,executable_definition,"[""ekas.availability_loss_time""]",
+OCC-170,KPI-170,Performance Loss Time,analytical_measure,430–435,"### Performance loss
+
+One useful representation:
+
+`Performance Loss Time = Run Time − (Ideal Cycle Time × Total Count)`
+",Performance Loss Time = Run Time − (Ideal Cycle Time × Total Count),,,literal_formula_in_anchor,executable_definition,"[""ekas.performance_loss_time""]",
+OCC-171,KPI-171,Quality Loss Units and Quality Loss Time,analytical_measure,436–443,"### Quality loss
+
+`Quality Loss Units = Total Count − Good Count`
+
+Equivalent productive-time representation:
+
+`Quality Loss Time = Defective Count × Ideal Cycle Time`
+",Quality Loss Units = Total Count − Good Count ; Quality Loss Time = Defective Count × Ideal Cycle Time,,,literal_formula_in_anchor,multi_quantity_bundle,"[""ekas.quality_loss_units"", ""ekas.quality_loss_time""]","One occurrence contains two quantities with different units; bind a bundle, not scalar."
+OCC-172,KPI-172,Lost Units,analytical_measure,444–447,"### Production opportunity
+
+`Lost Units = Expected Units − Actual Good Units`
+",Lost Units = Expected Units − Actual Good Units,,,literal_formula_in_anchor,executable_definition,"[""ekas.lost_units""]",
+OCC-173,KPI-173,Unfavorable Gap to Target,analytical_measure,448–459,"### Gap to target
+
+For higher-is-better KPI:
+
+`Gap = Target − Actual`
+
+For lower-is-better KPI:
+
+`Gap = Actual − Target`
+
+Only positive unfavorable gaps should generally rank as problems.
+",Gap = Target − Actual ; Gap = Actual − Target,,,literal_formula_in_anchor,multi_quantity_bundle,"[""ekas.unfavorable_gap_higher"", ""ekas.unfavorable_gap_lower""]","Higher/lower direction mandatory. Positive-only ranking uses max(0,gap) for ranking only, retains signed gap."
+OCC-174,KPI-174,Absolute change,analytical_measure,466–473,"### Absolute change
+
+`Current − Previous`
+
+Example:
+
+`83.3% − 87.5% = −4.2 percentage points`
+",Current − Previous ; 83.3% − 87.5% = −4.2 percentage points,,,literal_formula_in_anchor,executable_definition,"[""ekas.absolute_change""]",
+OCC-175,KPI-175,Relative percentage change,analytical_measure,474–486,"### Relative percentage change
+
+`(Current − Previous) / Previous × 100`
+
+These are different.
+
+Going from 87.5% to 83.3% is:
+
+- **−4.2 percentage points**
+- approximately **−4.8% relative change**
+
+EKAS should use **percentage points** when comparing percentages unless the user explicitly asks for relative percent change.
+",(Current − Previous) / Previous × 100,,,literal_formula_in_anchor,executable_definition,"[""ekas.relative_percentage_change""]",
+OCC-176,KPI-176,Target variance,analytical_measure,487–496,"### Target variance
+
+`Actual − Target`
+
+or normalized:
+
+`(Actual − Target) / Target × 100`
+
+with direction interpreted according to the metric.
+",Actual − Target ; (Actual − Target) / Target × 100,,,literal_formula_in_anchor,multi_quantity_bundle,"[""ekas.target_variance_absolute"", ""ekas.target_variance_relative""]",Source provides absolute and relative variants in one occurrence. Preserve both.
+OCC-177,KPI-177,Moving average,analytical_measure,503–506,"### Moving average
+
+`MAₙ = Σ(last n values) / n`
+",MAₙ = Σ(last n values) / n,,,literal_formula_in_anchor,executable_definition,"[""ekas.moving_average""]",
+OCC-178,KPI-178,Rolling change,analytical_measure,507–510,"### Rolling change
+
+`Current − Value N periods ago`
+",Current − Value N periods ago,,,literal_formula_in_anchor,executable_definition,"[""ekas.rolling_change""]",
+OCC-179,KPI-179,Trend slope,analytical_measure,511–514,"### Trend slope
+
+Regression slope across ordered period/value observations.
+",Regression slope across ordered period/value observations.,,,literal_formula_in_anchor,executable_definition,"[""ekas.trend_slope""]",
+OCC-180,KPI-180,Volatility,analytical_measure,515–522,"### Volatility
+
+Standard deviation or coefficient of variation:
+
+`CV = σ / μ × 100`
+
+These should be considered derived analytical measures, not raw plant KPIs.
+",CV = σ / μ × 100,,,literal_formula_in_anchor,executable_definition,"[""ekas.volatility""]","Sigma estimator/population vs sample not settled; sample SD proposed training convention, n>=2 and positive mean required."
+OCC-181,KPI-181,Category contribution,analytical_measure,529–532,"### Category contribution
+
+`Category Loss / Total Loss × 100`
+",Category Loss / Total Loss × 100,,,literal_formula_in_anchor,executable_definition,"[""ekas.category_contribution""]",
+OCC-182,KPI-182,Cumulative contribution,analytical_measure,533–542,"### Cumulative contribution
+
+`Σ ranked category contributions`
+
+EKAS can then naturally say:
+
+> “The top three downtime reasons account for 71% of total downtime.”
+
+provided the data supports it.
+",Σ ranked category contributions,,,literal_formula_in_anchor,executable_definition,"[""ekas.cumulative_contribution""]",
+OCC-183,KPI-183,Improvement,analytical_measure,549–554,"### Improvement
+
+`Post-Action KPI − Pre-Action KPI`
+
+with direction interpreted according to KPI.
+",Post-Action KPI − Pre-Action KPI,,,literal_formula_in_anchor,executable_definition,"[""ekas.improvement_absolute""]",Absolute and relative changes require separate IDs. Positive signed post-minus-pre is not automatically favorable for lower-is-better losses.
+OCC-184,KPI-184,Improvement %,analytical_measure,555–558,"### Improvement %
+
+`(Post − Pre) / Pre × 100`
+",(Post − Pre) / Pre × 100,,,literal_formula_in_anchor,executable_definition,"[""ekas.improvement_relative""]",Absolute and relative changes require separate IDs. Positive signed post-minus-pre is not automatically favorable for lower-is-better losses.
+OCC-185,KPI-185,Sustained Improvement,analytical_measure,559–564,"### Sustained Improvement
+
+Configurable rule such as:
+
+`KPI meets improvement threshold for N consecutive periods`
+",KPI meets improvement threshold for N consecutive periods,,,literal_formula_in_anchor,executable_definition,"[""ekas.sustained_improvement""]",
+OCC-186,KPI-186,Recurrence Rate,analytical_measure,565–568,"### Recurrence Rate
+
+`Repeated Events / Total Relevant Events × 100`
+",Repeated Events / Total Relevant Events × 100,,,literal_formula_in_anchor,executable_definition,"[""ekas.recurrence_rate""]",
+OCC-187,KPI-187,Action Closure Rate,analytical_measure,569–572,"### Action Closure Rate
+
+`Completed Actions / Actions Due × 100`
+",Completed Actions / Actions Due × 100,,,literal_formula_in_anchor,executable_definition,"[""ekas.action_closure_rate""]",
+OCC-188,KPI-188,On-Time Action Closure,analytical_measure,573–580,"### On-Time Action Closure
+
+`Actions Closed by Due Date / Actions Due × 100`
+
+These are critical if EKAS is eventually going to answer:
+
+> “Did the improvement hold?”
+",Actions Closed by Due Date / Actions Due × 100,,,literal_formula_in_anchor,executable_definition,"[""ekas.on_time_action_closure""]",
+OCC-189,KPI-189,Internal Setup Time,concept,121–134,"# 6. Changeover and setup
+
+| Metric                      | Formula                                                         | Unit |
+| --------------------------- | --------------------------------------------------------------- | ---- |
+| **Changeover Time**         | `First Good Unit New Product − Last Good Unit Previous Product` | time |
+| **Average Changeover Time** | `Σ Changeover Time / Number of Changeovers`                     | time |
+| **Changeover Variance**     | `Actual Changeover − Standard Changeover`                       | time |
+| **Changeover Attainment**   | `Standard Changeover / Actual Changeover × 100`                 | %    |
+| **Setup Loss**              | `Actual Setup Time − Target Setup Time`                         | time |
+
+For SMED-style analysis, EKAS could later distinguish internal and external setup time.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,conditional_alias_or_concept_binding,"[""ekas.internal_setup_time""]",
+OCC-190,KPI-190,External Setup Time,concept,121–134,"# 6. Changeover and setup
+
+| Metric                      | Formula                                                         | Unit |
+| --------------------------- | --------------------------------------------------------------- | ---- |
+| **Changeover Time**         | `First Good Unit New Product − Last Good Unit Previous Product` | time |
+| **Average Changeover Time** | `Σ Changeover Time / Number of Changeovers`                     | time |
+| **Changeover Variance**     | `Actual Changeover − Standard Changeover`                       | time |
+| **Changeover Attainment**   | `Standard Changeover / Actual Changeover × 100`                 | %    |
+| **Setup Loss**              | `Actual Setup Time − Target Setup Time`                         | time |
+
+For SMED-style analysis, EKAS could later distinguish internal and external setup time.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,conditional_alias_or_concept_binding,"[""ekas.external_setup_time""]",
+OCC-191,KPI-191,SMED,concept,121–134,"# 6. Changeover and setup
+
+| Metric                      | Formula                                                         | Unit |
+| --------------------------- | --------------------------------------------------------------- | ---- |
+| **Changeover Time**         | `First Good Unit New Product − Last Good Unit Previous Product` | time |
+| **Average Changeover Time** | `Σ Changeover Time / Number of Changeovers`                     | time |
+| **Changeover Variance**     | `Actual Changeover − Standard Changeover`                       | time |
+| **Changeover Attainment**   | `Standard Changeover / Actual Changeover × 100`                 | %    |
+| **Setup Loss**              | `Actual Setup Time − Target Setup Time`                         | time |
+
+For SMED-style analysis, EKAS could later distinguish internal and external setup time.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,non_scalar_governed_concept,"[""unresolved.smed""]",
+OCC-192,KPI-192,USL,concept,181–202,"# 9. Process capability
+
+These belong in EKAS when valid statistical data exists.
+
+| Metric  | Formula                                             |
+| ------- | --------------------------------------------------- |
+| **Cp**  | `(USL − LSL) / (6σ)`                                |
+| **Cpk** | `min[(USL − μ)/(3σ), (μ − LSL)/(3σ)]`               |
+| **Pp**  | `(USL − LSL) / (6σoverall)`                         |
+| **Ppk** | `min[(USL − μ)/(3σoverall), (μ − LSL)/(3σoverall)]` |
+
+Where:
+
+- `USL` = upper specification limit
+- `LSL` = lower specification limit
+- `μ` = process mean
+- `σ` = standard deviation
+
+EKAS should never compute these without adequate sample and measurement-system integrity.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,non_scalar_governed_concept,"[""unresolved.usl""]",
+OCC-193,KPI-193,LSL,concept,181–202,"# 9. Process capability
+
+These belong in EKAS when valid statistical data exists.
+
+| Metric  | Formula                                             |
+| ------- | --------------------------------------------------- |
+| **Cp**  | `(USL − LSL) / (6σ)`                                |
+| **Cpk** | `min[(USL − μ)/(3σ), (μ − LSL)/(3σ)]`               |
+| **Pp**  | `(USL − LSL) / (6σoverall)`                         |
+| **Ppk** | `min[(USL − μ)/(3σoverall), (μ − LSL)/(3σoverall)]` |
+
+Where:
+
+- `USL` = upper specification limit
+- `LSL` = lower specification limit
+- `μ` = process mean
+- `σ` = standard deviation
+
+EKAS should never compute these without adequate sample and measurement-system integrity.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,non_scalar_governed_concept,"[""unresolved.lsl""]",
+OCC-194,KPI-194,Process Mean,concept,181–202,"# 9. Process capability
+
+These belong in EKAS when valid statistical data exists.
+
+| Metric  | Formula                                             |
+| ------- | --------------------------------------------------- |
+| **Cp**  | `(USL − LSL) / (6σ)`                                |
+| **Cpk** | `min[(USL − μ)/(3σ), (μ − LSL)/(3σ)]`               |
+| **Pp**  | `(USL − LSL) / (6σoverall)`                         |
+| **Ppk** | `min[(USL − μ)/(3σoverall), (μ − LSL)/(3σoverall)]` |
+
+Where:
+
+- `USL` = upper specification limit
+- `LSL` = lower specification limit
+- `μ` = process mean
+- `σ` = standard deviation
+
+EKAS should never compute these without adequate sample and measurement-system integrity.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,conditional_alias_or_concept_binding,"[""ekas.process_mean""]",
+OCC-195,KPI-195,Within-subgroup Sigma,concept,181–202,"# 9. Process capability
+
+These belong in EKAS when valid statistical data exists.
+
+| Metric  | Formula                                             |
+| ------- | --------------------------------------------------- |
+| **Cp**  | `(USL − LSL) / (6σ)`                                |
+| **Cpk** | `min[(USL − μ)/(3σ), (μ − LSL)/(3σ)]`               |
+| **Pp**  | `(USL − LSL) / (6σoverall)`                         |
+| **Ppk** | `min[(USL − μ)/(3σoverall), (μ − LSL)/(3σoverall)]` |
+
+Where:
+
+- `USL` = upper specification limit
+- `LSL` = lower specification limit
+- `μ` = process mean
+- `σ` = standard deviation
+
+EKAS should never compute these without adequate sample and measurement-system integrity.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,conditional_alias_or_concept_binding,"[""ekas.within_subgroup_sigma""]",Estimator not provided. Proposed pooled within sample variance with degrees-of-freedom weighting; not interchangeable with Rbar/d2.
+OCC-196,KPI-196,Overall Sigma,concept,181–202,"# 9. Process capability
+
+These belong in EKAS when valid statistical data exists.
+
+| Metric  | Formula                                             |
+| ------- | --------------------------------------------------- |
+| **Cp**  | `(USL − LSL) / (6σ)`                                |
+| **Cpk** | `min[(USL − μ)/(3σ), (μ − LSL)/(3σ)]`               |
+| **Pp**  | `(USL − LSL) / (6σoverall)`                         |
+| **Ppk** | `min[(USL − μ)/(3σoverall), (μ − LSL)/(3σoverall)]` |
+
+Where:
+
+- `USL` = upper specification limit
+- `LSL` = lower specification limit
+- `μ` = process mean
+- `σ` = standard deviation
+
+EKAS should never compute these without adequate sample and measurement-system integrity.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,conditional_alias_or_concept_binding,"[""ekas.overall_sigma""]",
+OCC-197,KPI-197,Sample Adequacy,concept,181–202,"# 9. Process capability
+
+These belong in EKAS when valid statistical data exists.
+
+| Metric  | Formula                                             |
+| ------- | --------------------------------------------------- |
+| **Cp**  | `(USL − LSL) / (6σ)`                                |
+| **Cpk** | `min[(USL − μ)/(3σ), (μ − LSL)/(3σ)]`               |
+| **Pp**  | `(USL − LSL) / (6σoverall)`                         |
+| **Ppk** | `min[(USL − μ)/(3σoverall), (μ − LSL)/(3σoverall)]` |
+
+Where:
+
+- `USL` = upper specification limit
+- `LSL` = lower specification limit
+- `μ` = process mean
+- `σ` = standard deviation
+
+EKAS should never compute these without adequate sample and measurement-system integrity.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,non_scalar_governed_concept,"[""unresolved.sample_adequacy""]",
+OCC-198,KPI-198,Measurement-System Integrity,concept,181–202,"# 9. Process capability
+
+These belong in EKAS when valid statistical data exists.
+
+| Metric  | Formula                                             |
+| ------- | --------------------------------------------------- |
+| **Cp**  | `(USL − LSL) / (6σ)`                                |
+| **Cpk** | `min[(USL − μ)/(3σ), (μ − LSL)/(3σ)]`               |
+| **Pp**  | `(USL − LSL) / (6σoverall)`                         |
+| **Ppk** | `min[(USL − μ)/(3σoverall), (μ − LSL)/(3σoverall)]` |
+
+Where:
+
+- `USL` = upper specification limit
+- `LSL` = lower specification limit
+- `μ` = process mean
+- `σ` = standard deviation
+
+EKAS should never compute these without adequate sample and measurement-system integrity.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,non_scalar_governed_concept,"[""unresolved.measurement_system_integrity""]",
+OCC-199,KPI-199,MTTR clarification,concept,203–242,"# 10. Maintenance and reliability
+
+| Metric                                | Formula                                                                          | Unit          |
+| ------------------------------------- | -------------------------------------------------------------------------------- | ------------- |
+| **MTBF**                              | `Total Operating Time / Number of Failures`                                      | hours/failure |
+| **MTTR — Mean Time to Repair**        | `Total Active Repair Time / Number of Repairs`                                   | time          |
+| **MTTR — Mean Time to Restore**       | `Total Restoration Downtime / Number of Incidents`                               | time          |
+| **MTTF**                              | `Total Operating Life / Number of Nonrepairable Failures`                        | time          |
+| **Failure Rate**                      | `Number of Failures / Operating Time`                                            | failures/hour |
+| **Reliability**                       | commonly `e^(−λt)` for constant failure rate                                     | probability   |
+| **Repair Rate**                       | `Repairs Completed / Repair Time`                                                | repairs/time  |
+| **Maintenance Downtime %**            | `Maintenance Downtime / Planned Production Time × 100`                           | %             |
+| **Breakdown Frequency**               | `Breakdowns / Period`                                                            | count/time    |
+| **Reactive Maintenance %**            | `Reactive Maintenance Hours / Total Maintenance Hours × 100`                     | %             |
+| **Planned Maintenance %**             | `Planned Maintenance Hours / Total Maintenance Hours × 100`                      | %             |
+| **PM Compliance**                     | `PMs completed on time / PMs scheduled × 100`                                    | %             |
+| **Schedule Compliance — Maintenance** | `Scheduled jobs completed as planned / Scheduled jobs × 100`                     | %             |
+| **Maintenance Backlog**               | `Outstanding Maintenance Labor Hours / Available Weekly Maintenance Labor Hours` | weeks         |
+| **Repeat Failure Rate**               | `Repeated failures / Total failures × 100`                                       | %             |
+| **Emergency Work %**                  | `Emergency work hours / Total maintenance hours × 100`                           | %             |
+
+### Critical EKAS requirement
+
+The catalog has already exposed this issue: **MTTR is ambiguous**.
+
+It may mean:
+
+- Mean Time to Repair
+- Mean Time to Restore/Restoration
+
+Those must be **separate governed metrics**.
+
+A bare:
+
+> “What was MTTR?”
+
+should trigger clarification where the plant has both definitions.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,non_scalar_governed_concept,"[""unresolved.mttr_clarification""]",
+OCC-200,KPI-200,Plant Head Daily Operations Audit,concept,392–421,"# 20. Plant Head Daily Operations Audit
+
+For the specific feature we discussed, I would make these the **seven primary operating metrics**:
+
+| KPI                    | Formula / rule                                                            |
+| ---------------------- | ------------------------------------------------------------------------- |
+| **Production vs Plan** | `Actual Production / Planned Production × 100`                            |
+| **OEE**                | `Availability × Performance × Quality`                                    |
+| **Downtime**           | `Σ governed downtime duration`                                            |
+| **Quality Loss**       | `Nonconforming Output / Total Output × 100`                               |
+| **Schedule Adherence** | `Production completed according to schedule / Scheduled production × 100` |
+| **Inventory Days**     | `Average Inventory / Consumption or COGS × Days`                          |
+| **OTIF**               | `Orders on-time AND in-full / Total applicable orders × 100`              |
+
+Recommended initial reference targets:
+
+| KPI                | Reference target         |
+| ------------------ | ------------------------ |
+| Production vs Plan | ≥ 100%                   |
+| OEE                | ≥ 85%                    |
+| Downtime           | Minimize / plant target  |
+| Quality Loss       | ≤ 2%                     |
+| Schedule Adherence | ≥ 95%                    |
+| Inventory Days     | Governed operating range |
+| OTIF               | ≥ 95%                    |
+
+But plant-specific governed targets must override these references.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,non_scalar_governed_concept,"[""unresolved.plant_head_daily_operations_audit""]",
+OCC-201,KPI-201,Governed operating range,concept,392–421,"# 20. Plant Head Daily Operations Audit
+
+For the specific feature we discussed, I would make these the **seven primary operating metrics**:
+
+| KPI                    | Formula / rule                                                            |
+| ---------------------- | ------------------------------------------------------------------------- |
+| **Production vs Plan** | `Actual Production / Planned Production × 100`                            |
+| **OEE**                | `Availability × Performance × Quality`                                    |
+| **Downtime**           | `Σ governed downtime duration`                                            |
+| **Quality Loss**       | `Nonconforming Output / Total Output × 100`                               |
+| **Schedule Adherence** | `Production completed according to schedule / Scheduled production × 100` |
+| **Inventory Days**     | `Average Inventory / Consumption or COGS × Days`                          |
+| **OTIF**               | `Orders on-time AND in-full / Total applicable orders × 100`              |
+
+Recommended initial reference targets:
+
+| KPI                | Reference target         |
+| ------------------ | ------------------------ |
+| Production vs Plan | ≥ 100%                   |
+| OEE                | ≥ 85%                    |
+| Downtime           | Minimize / plant target  |
+| Quality Loss       | ≤ 2%                     |
+| Schedule Adherence | ≥ 95%                    |
+| Inventory Days     | Governed operating range |
+| OTIF               | ≥ 95%                    |
+
+But plant-specific governed targets must override these references.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,non_scalar_governed_concept,"[""unresolved.governed_operating_range""]",
+OCC-202,KPI-202,Higher-is-better gap,concept,422–461,"# 21. Loss calculations EKAS should support
+
+These are particularly valuable because they move EKAS beyond merely reporting KPIs.
+
+### Availability loss
+
+`Availability Loss Time = Planned Production Time − Run Time`
+
+### Performance loss
+
+One useful representation:
+
+`Performance Loss Time = Run Time − (Ideal Cycle Time × Total Count)`
+
+### Quality loss
+
+`Quality Loss Units = Total Count − Good Count`
+
+Equivalent productive-time representation:
+
+`Quality Loss Time = Defective Count × Ideal Cycle Time`
+
+### Production opportunity
+
+`Lost Units = Expected Units − Actual Good Units`
+
+### Gap to target
+
+For higher-is-better KPI:
+
+`Gap = Target − Actual`
+
+For lower-is-better KPI:
+
+`Gap = Actual − Target`
+
+Only positive unfavorable gaps should generally rank as problems.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,conditional_alias_or_concept_binding,"[""ekas.unfavorable_gap_higher""]",
+OCC-203,KPI-203,Lower-is-better gap,concept,422–461,"# 21. Loss calculations EKAS should support
+
+These are particularly valuable because they move EKAS beyond merely reporting KPIs.
+
+### Availability loss
+
+`Availability Loss Time = Planned Production Time − Run Time`
+
+### Performance loss
+
+One useful representation:
+
+`Performance Loss Time = Run Time − (Ideal Cycle Time × Total Count)`
+
+### Quality loss
+
+`Quality Loss Units = Total Count − Good Count`
+
+Equivalent productive-time representation:
+
+`Quality Loss Time = Defective Count × Ideal Cycle Time`
+
+### Production opportunity
+
+`Lost Units = Expected Units − Actual Good Units`
+
+### Gap to target
+
+For higher-is-better KPI:
+
+`Gap = Target − Actual`
+
+For lower-is-better KPI:
+
+`Gap = Actual − Target`
+
+Only positive unfavorable gaps should generally rank as problems.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,conditional_alias_or_concept_binding,"[""ekas.unfavorable_gap_lower""]",
+OCC-204,KPI-204,Positive unfavorable gap ranking,concept,422–461,"# 21. Loss calculations EKAS should support
+
+These are particularly valuable because they move EKAS beyond merely reporting KPIs.
+
+### Availability loss
+
+`Availability Loss Time = Planned Production Time − Run Time`
+
+### Performance loss
+
+One useful representation:
+
+`Performance Loss Time = Run Time − (Ideal Cycle Time × Total Count)`
+
+### Quality loss
+
+`Quality Loss Units = Total Count − Good Count`
+
+Equivalent productive-time representation:
+
+`Quality Loss Time = Defective Count × Ideal Cycle Time`
+
+### Production opportunity
+
+`Lost Units = Expected Units − Actual Good Units`
+
+### Gap to target
+
+For higher-is-better KPI:
+
+`Gap = Target − Actual`
+
+For lower-is-better KPI:
+
+`Gap = Actual − Target`
+
+Only positive unfavorable gaps should generally rank as problems.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,non_scalar_governed_concept,"[""unresolved.positive_unfavorable_gap_ranking""]",
+OCC-205,KPI-205,Percentage Points,concept,462–498,"# 22. Comparison calculations
+
+Every EKAS metric should share generic comparison semantics.
+
+### Absolute change
+
+`Current − Previous`
+
+Example:
+
+`83.3% − 87.5% = −4.2 percentage points`
+
+### Relative percentage change
+
+`(Current − Previous) / Previous × 100`
+
+These are different.
+
+Going from 87.5% to 83.3% is:
+
+- **−4.2 percentage points**
+- approximately **−4.8% relative change**
+
+EKAS should use **percentage points** when comparing percentages unless the user explicitly asks for relative percent change.
+
+### Target variance
+
+`Actual − Target`
+
+or normalized:
+
+`(Actual − Target) / Target × 100`
+
+with direction interpreted according to the metric.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,conditional_alias_or_concept_binding,"[""ekas.absolute_change""]",
+OCC-206,KPI-206,Relative Percent Change,concept,462–498,"# 22. Comparison calculations
+
+Every EKAS metric should share generic comparison semantics.
+
+### Absolute change
+
+`Current − Previous`
+
+Example:
+
+`83.3% − 87.5% = −4.2 percentage points`
+
+### Relative percentage change
+
+`(Current − Previous) / Previous × 100`
+
+These are different.
+
+Going from 87.5% to 83.3% is:
+
+- **−4.2 percentage points**
+- approximately **−4.8% relative change**
+
+EKAS should use **percentage points** when comparing percentages unless the user explicitly asks for relative percent change.
+
+### Target variance
+
+`Actual − Target`
+
+or normalized:
+
+`(Actual − Target) / Target × 100`
+
+with direction interpreted according to the metric.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,conditional_alias_or_concept_binding,"[""ekas.relative_percentage_change""]",
+OCC-207,KPI-207,Normalized Target Variance,concept,462–498,"# 22. Comparison calculations
+
+Every EKAS metric should share generic comparison semantics.
+
+### Absolute change
+
+`Current − Previous`
+
+Example:
+
+`83.3% − 87.5% = −4.2 percentage points`
+
+### Relative percentage change
+
+`(Current − Previous) / Previous × 100`
+
+These are different.
+
+Going from 87.5% to 83.3% is:
+
+- **−4.2 percentage points**
+- approximately **−4.8% relative change**
+
+EKAS should use **percentage points** when comparing percentages unless the user explicitly asks for relative percent change.
+
+### Target variance
+
+`Actual − Target`
+
+or normalized:
+
+`(Actual − Target) / Target × 100`
+
+with direction interpreted according to the metric.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,conditional_alias_or_concept_binding,"[""ekas.target_variance_relative""]",
+OCC-208,KPI-208,Standard Deviation,concept,499–524,"# 23. Trend metrics
+
+Useful generic calculations:
+
+### Moving average
+
+`MAₙ = Σ(last n values) / n`
+
+### Rolling change
+
+`Current − Value N periods ago`
+
+### Trend slope
+
+Regression slope across ordered period/value observations.
+
+### Volatility
+
+Standard deviation or coefficient of variation:
+
+`CV = σ / μ × 100`
+
+These should be considered derived analytical measures, not raw plant KPIs.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,conditional_alias_or_concept_binding,"[""ekas.standard_deviation""]",
+OCC-209,KPI-209,Coefficient of Variation,concept,499–524,"# 23. Trend metrics
+
+Useful generic calculations:
+
+### Moving average
+
+`MAₙ = Σ(last n values) / n`
+
+### Rolling change
+
+`Current − Value N periods ago`
+
+### Trend slope
+
+Regression slope across ordered period/value observations.
+
+### Volatility
+
+Standard deviation or coefficient of variation:
+
+`CV = σ / μ × 100`
+
+These should be considered derived analytical measures, not raw plant KPIs.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,conditional_alias_or_concept_binding,"[""ekas.coefficient_of_variation""]",
+OCC-210,KPI-210,Loss Pareto,concept,525–544,"# 24. Pareto calculations
+
+For downtime, scrap, defect and other loss analysis:
+
+### Category contribution
+
+`Category Loss / Total Loss × 100`
+
+### Cumulative contribution
+
+`Σ ranked category contributions`
+
+EKAS can then naturally say:
+
+> “The top three downtime reasons account for 71% of total downtime.”
+
+provided the data supports it.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,conditional_alias_or_concept_binding,"[""ekas.category_contribution""]",
+OCC-211,KPI-211,Find → Quantify → Act → Sustain,concept,545–582,"# 25. Action / sustain metrics
+
+For the **Find → Quantify → Act → Sustain** architecture:
+
+### Improvement
+
+`Post-Action KPI − Pre-Action KPI`
+
+with direction interpreted according to KPI.
+
+### Improvement %
+
+`(Post − Pre) / Pre × 100`
+
+### Sustained Improvement
+
+Configurable rule such as:
+
+`KPI meets improvement threshold for N consecutive periods`
+
+### Recurrence Rate
+
+`Repeated Events / Total Relevant Events × 100`
+
+### Action Closure Rate
+
+`Completed Actions / Actions Due × 100`
+
+### On-Time Action Closure
+
+`Actions Closed by Due Date / Actions Due × 100`
+
+These are critical if EKAS is eventually going to answer:
+
+> “Did the improvement hold?”
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,non_scalar_governed_concept,"[""unresolved.find_quantify_act_sustain""]",
+OCC-212,KPI-212,Action completion evidence,concept,545–582,"# 25. Action / sustain metrics
+
+For the **Find → Quantify → Act → Sustain** architecture:
+
+### Improvement
+
+`Post-Action KPI − Pre-Action KPI`
+
+with direction interpreted according to KPI.
+
+### Improvement %
+
+`(Post − Pre) / Pre × 100`
+
+### Sustained Improvement
+
+Configurable rule such as:
+
+`KPI meets improvement threshold for N consecutive periods`
+
+### Recurrence Rate
+
+`Repeated Events / Total Relevant Events × 100`
+
+### Action Closure Rate
+
+`Completed Actions / Actions Due × 100`
+
+### On-Time Action Closure
+
+`Actions Closed by Due Date / Actions Due × 100`
+
+These are critical if EKAS is eventually going to answer:
+
+> “Did the improvement hold?”
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,non_scalar_governed_concept,"[""unresolved.action_completion_evidence""]",
+OCC-213,KPI-213,Verification window,concept,545–582,"# 25. Action / sustain metrics
+
+For the **Find → Quantify → Act → Sustain** architecture:
+
+### Improvement
+
+`Post-Action KPI − Pre-Action KPI`
+
+with direction interpreted according to KPI.
+
+### Improvement %
+
+`(Post − Pre) / Pre × 100`
+
+### Sustained Improvement
+
+Configurable rule such as:
+
+`KPI meets improvement threshold for N consecutive periods`
+
+### Recurrence Rate
+
+`Repeated Events / Total Relevant Events × 100`
+
+### Action Closure Rate
+
+`Completed Actions / Actions Due × 100`
+
+### On-Time Action Closure
+
+`Actions Closed by Due Date / Actions Due × 100`
+
+These are critical if EKAS is eventually going to answer:
+
+> “Did the improvement hold?”
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,non_scalar_governed_concept,"[""unresolved.verification_window""]",
+OCC-214,KPI-214,Deterministic Metric,concept,652–685,"# 27. The critical distinction: metric vs derived insight
+
+I would keep these separate in EKAS.
+
+**Metrics** are deterministic measurements:
+
+- OEE
+- FPY
+- MTBF
+- downtime
+- throughput
+- scrap
+- OTIF
+
+**Derived observations** are deterministic interpretations of those measurements:
+
+> “Availability is the largest OEE loss.”
+
+> “Machine 2 has the lowest OEE.”
+
+> “Mechanical stops account for 63% of downtime.”
+
+**Reasoning/investigation** goes another level:
+
+> “The strongest evidence points to the recurring mechanical stop as the documented contributor.”
+
+And **root cause** is stronger still:
+
+> “The bearing failed because lubrication pressure fell below specification.”
+
+EKAS should only make that final statement when actual evidence establishes it.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,non_scalar_governed_concept,"[""unresolved.deterministic_metric""]",
+OCC-215,KPI-215,Derived Observation,concept,652–685,"# 27. The critical distinction: metric vs derived insight
+
+I would keep these separate in EKAS.
+
+**Metrics** are deterministic measurements:
+
+- OEE
+- FPY
+- MTBF
+- downtime
+- throughput
+- scrap
+- OTIF
+
+**Derived observations** are deterministic interpretations of those measurements:
+
+> “Availability is the largest OEE loss.”
+
+> “Machine 2 has the lowest OEE.”
+
+> “Mechanical stops account for 63% of downtime.”
+
+**Reasoning/investigation** goes another level:
+
+> “The strongest evidence points to the recurring mechanical stop as the documented contributor.”
+
+And **root cause** is stronger still:
+
+> “The bearing failed because lubrication pressure fell below specification.”
+
+EKAS should only make that final statement when actual evidence establishes it.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,non_scalar_governed_concept,"[""unresolved.derived_observation""]",
+OCC-216,KPI-216,Reasoning / Investigation,concept,652–685,"# 27. The critical distinction: metric vs derived insight
+
+I would keep these separate in EKAS.
+
+**Metrics** are deterministic measurements:
+
+- OEE
+- FPY
+- MTBF
+- downtime
+- throughput
+- scrap
+- OTIF
+
+**Derived observations** are deterministic interpretations of those measurements:
+
+> “Availability is the largest OEE loss.”
+
+> “Machine 2 has the lowest OEE.”
+
+> “Mechanical stops account for 63% of downtime.”
+
+**Reasoning/investigation** goes another level:
+
+> “The strongest evidence points to the recurring mechanical stop as the documented contributor.”
+
+And **root cause** is stronger still:
+
+> “The bearing failed because lubrication pressure fell below specification.”
+
+EKAS should only make that final statement when actual evidence establishes it.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,non_scalar_governed_concept,"[""unresolved.reasoning_investigation""]",
+OCC-217,KPI-217,Root Cause,concept,652–685,"# 27. The critical distinction: metric vs derived insight
+
+I would keep these separate in EKAS.
+
+**Metrics** are deterministic measurements:
+
+- OEE
+- FPY
+- MTBF
+- downtime
+- throughput
+- scrap
+- OTIF
+
+**Derived observations** are deterministic interpretations of those measurements:
+
+> “Availability is the largest OEE loss.”
+
+> “Machine 2 has the lowest OEE.”
+
+> “Mechanical stops account for 63% of downtime.”
+
+**Reasoning/investigation** goes another level:
+
+> “The strongest evidence points to the recurring mechanical stop as the documented contributor.”
+
+And **root cause** is stronger still:
+
+> “The bearing failed because lubrication pressure fell below specification.”
+
+EKAS should only make that final statement when actual evidence establishes it.
+
+---
+",See source concept / governance requirement,,,semantic_anchor_review,non_scalar_governed_concept,"[""unresolved.root_cause""]",
+OCC-218,KPI-218,Governed metric identity,concept,686–729,"# 28. What I would consider the core EKAS manufacturing KPI library
+
+If I were defining the commercial product today, I would make these the primary library:
+
+**Equipment**\
+OEE, Availability, Performance, Quality, TEEP, utilization.
+
+**Production**\
+production vs plan, throughput, attainment, run rate, capacity utilization, cycle time, takt.
+
+**Loss**\
+downtime, unplanned downtime, planned downtime, minor stops, speed loss, changeover.
+
+**Quality**\
+FPY, yield, RTY, scrap, rejects, rework, PPM, DPMO, quality loss, Cp/Cpk where appropriate.
+
+**Maintenance**\
+MTBF, MTTR-Repair, MTTR-Restore, failure rate, breakdown frequency, PM compliance, reactive maintenance %, maintenance backlog.
+
+**Delivery**\
+schedule adherence, OTIF, OTD, fill rate, late orders.
+
+**Inventory/flow**\
+inventory days, inventory turns, WIP, WIP days, RM days, FG days, flow efficiency, lead time.
+
+**People**\
+labor productivity, labor efficiency, utilization, overtime.
+
+**Cost**\
+cost/unit, scrap cost, rework cost, downtime cost, COPQ.
+
+**Energy**\
+energy/unit, idle-energy %, peak demand.
+
+**Operations intelligence**\
+gap to target, trend, Pareto contribution, top loss, improvement, recurrence, action closure and sustain metrics.
+
+That is broad enough for EKAS to become a true **manufacturing intelligence platform**, rather than an OEE application.
+
+The design rule I would lock into the architecture is:
+
+> **A metric is never just a number. It has a governed definition, formula, scope, source, unit, target semantics, evidence requirement and certification authority.**
+
+That is what prevents “OEE,” “yield,” “availability,” “MTTR,” or any other KPI from quietly changing meaning from one plant or conversation to another.",See source concept / governance requirement,,,semantic_anchor_review,non_scalar_governed_concept,"[""unresolved.governed_metric_identity""]",
+OCC-219,KPI-219,metric_id,registry_field,588–588,metric_id,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.metric_id""]",
+OCC-220,KPI-220,canonical_name,registry_field,589–589,canonical_name,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.canonical_name""]",
+OCC-221,KPI-221,display_name,registry_field,590–590,display_name,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.display_name""]",
+OCC-222,KPI-222,aliases,registry_field,591–591,aliases,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.aliases""]",
+OCC-223,KPI-223,domain,registry_field,592–592,domain,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.domain""]",
+OCC-224,KPI-224,definition,registry_field,593–593,definition,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.definition""]",
+OCC-225,KPI-225,formula,registry_field,594–594,formula,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.formula""]",
+OCC-226,KPI-226,formula_version,registry_field,595–595,formula_version,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.formula_version""]",
+OCC-227,KPI-227,calculation_owner,registry_field,596–596,calculation_owner,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.calculation_owner""]",
+OCC-228,KPI-228,numerator,registry_field,597–597,numerator,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.numerator""]",
+OCC-229,KPI-229,denominator,registry_field,598–598,denominator,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.denominator""]",
+OCC-230,KPI-230,units,registry_field,599–599,units,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.units""]",
+OCC-231,KPI-231,display_units,registry_field,600–600,display_units,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.display_units""]",
+OCC-232,KPI-232,precision,registry_field,601–601,precision,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.precision""]",
+OCC-233,KPI-233,aggregation_method,registry_field,602–602,aggregation_method,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.aggregation_method""]",
+OCC-234,KPI-234,valid_entity_scopes,registry_field,603–603,valid_entity_scopes,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.valid_entity_scopes""]",
+OCC-235,KPI-235,valid_time_grains,registry_field,604–604,valid_time_grains,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.valid_time_grains""]",
+OCC-236,KPI-236,good_direction,registry_field,605–605,good_direction,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.good_direction""]",
+OCC-237,KPI-237,target_source,registry_field,606–606,target_source,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.target_source""]",
+OCC-238,KPI-238,target,registry_field,607–607,target,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.target""]",
+OCC-239,KPI-239,warning_threshold,registry_field,608–608,warning_threshold,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.warning_threshold""]",
+OCC-240,KPI-240,critical_threshold,registry_field,609–609,critical_threshold,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.critical_threshold""]",
+OCC-241,KPI-241,required_sources,registry_field,610–610,required_sources,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.required_sources""]",
+OCC-242,KPI-242,required_data_coverage,registry_field,611–611,required_data_coverage,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.required_data_coverage""]",
+OCC-243,KPI-243,evidence_requirements,registry_field,612–612,evidence_requirements,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.evidence_requirements""]",
+OCC-244,KPI-244,certification_owner,registry_field,613–613,certification_owner,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.certification_owner""]",
+OCC-245,KPI-245,comparison_semantics,registry_field,614–614,comparison_semantics,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.comparison_semantics""]",
+OCC-246,KPI-246,chart_semantics,registry_field,615–615,chart_semantics,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.chart_semantics""]",
+OCC-247,KPI-247,clarification_rules,registry_field,616–616,clarification_rules,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.clarification_rules""]",
+OCC-248,KPI-248,effectivity,registry_field,617–617,effectivity,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.effectivity""]",
+OCC-249,KPI-249,version,registry_field,618–618,version,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.version""]",
+OCC-250,KPI-250,status,registry_field,619–619,status,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.status""]",
+OCC-251,KPI-251,recognition_status,registry_field,625–625,recognition_status,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.recognition_status""]",
+OCC-252,KPI-252,execution_status,registry_field,626–626,execution_status,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.execution_status""]",
+OCC-253,KPI-253,certification_status,registry_field,627–627,certification_status,See source concept / governance requirement,,,literal_name_in_anchor,registry_field,"[""registry.certification_status""]",
+OCC-254,KPI-254,OEE,library_alias,691–691,"OEE, Availability, Performance, Quality, TEEP, utilization.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.oee""]","Source A*P*Q with count Quality cannot generally equal sum(ideal good time)/planned across different cycle times. Homogeneous definition accepted; mixed-product time-weighted OEE proposed, keep count-quality separate."
+OCC-255,KPI-255,Availability,library_alias,691–691,"OEE, Availability, Performance, Quality, TEEP, utilization.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.availability""]",
+OCC-256,KPI-256,Performance,library_alias,691–691,"OEE, Availability, Performance, Quality, TEEP, utilization.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.performance""]",
+OCC-257,KPI-257,Quality,library_alias,691–691,"OEE, Availability, Performance, Quality, TEEP, utilization.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.quality""]","Final accepted unique-unit ratio includes accepted rework under approved disposition; FPY excludes rework. For mixed cycles time-weighted OEE quality is a distinct metric, not this count ratio."
+OCC-258,KPI-258,TEEP,library_alias,691–691,"OEE, Availability, Performance, Quality, TEEP, utilization.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.teep""]",
+OCC-259,KPI-259,utilization,library_alias,691–691,"OEE, Availability, Performance, Quality, TEEP, utilization.",See source concept / governance requirement,,,literal_name_in_anchor,unresolved_choice_required,"[""ekas.overall_utilization"", ""ekas.asset_utilization"", ""ekas.capacity_utilization"", ""ekas.labor_utilization"", ""ekas.direct_labor_utilization"", ""ekas.constraint_utilization""]",
+OCC-260,KPI-260,production vs plan,library_alias,694–694,"production vs plan, throughput, attainment, run rate, capacity utilization, cycle time, takt.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.production_vs_plan""]",
+OCC-261,KPI-261,throughput,library_alias,694–694,"production vs plan, throughput, attainment, run rate, capacity utilization, cycle time, takt.",See source concept / governance requirement,,,literal_name_in_anchor,unresolved_choice_required,"[""ekas.net_throughput"", ""ekas.gross_throughput"", ""ekas.run_rate"", ""ekas.constraint_throughput""]",
+OCC-262,KPI-262,attainment,library_alias,694–694,"production vs plan, throughput, attainment, run rate, capacity utilization, cycle time, takt.",See source concept / governance requirement,,,literal_name_in_anchor,unresolved_choice_required,"[""ekas.production_vs_plan"", ""ekas.schedule_attainment"", ""ekas.capacity_attainment"", ""ekas.run_rate_attainment"", ""ekas.takt_attainment""]",
+OCC-263,KPI-263,run rate,library_alias,694–694,"production vs plan, throughput, attainment, run rate, capacity utilization, cycle time, takt.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.run_rate""]",
+OCC-264,KPI-264,capacity utilization,library_alias,694–694,"production vs plan, throughput, attainment, run rate, capacity utilization, cycle time, takt.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.capacity_utilization""]",
+OCC-265,KPI-265,cycle time,library_alias,694–694,"production vs plan, throughput, attainment, run rate, capacity utilization, cycle time, takt.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.actual_cycle_time""]",
+OCC-266,KPI-266,takt,library_alias,694–694,"production vs plan, throughput, attainment, run rate, capacity utilization, cycle time, takt.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.takt_time""]",
+OCC-267,KPI-267,downtime,library_alias,697–697,"downtime, unplanned downtime, planned downtime, minor stops, speed loss, changeover.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.downtime""]",
+OCC-268,KPI-268,unplanned downtime,library_alias,697–697,"downtime, unplanned downtime, planned downtime, minor stops, speed loss, changeover.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.unplanned_downtime""]",
+OCC-269,KPI-269,planned downtime,library_alias,697–697,"downtime, unplanned downtime, planned downtime, minor stops, speed loss, changeover.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.planned_downtime""]",
+OCC-270,KPI-270,minor stops,library_alias,697–697,"downtime, unplanned downtime, planned downtime, minor stops, speed loss, changeover.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.minor_stop_time""]",
+OCC-271,KPI-271,speed loss,library_alias,697–697,"downtime, unplanned downtime, planned downtime, minor stops, speed loss, changeover.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.speed_loss""]","Source quantity formula conflicts with missing-rows unit units/time. Formula yields units, not rate; do not alias performance loss minutes."
+OCC-272,KPI-272,changeover,library_alias,697–697,"downtime, unplanned downtime, planned downtime, minor stops, speed loss, changeover.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.changeover_time""]",
+OCC-273,KPI-273,FPY,library_alias,700–700,"FPY, yield, RTY, scrap, rejects, rework, PPM, DPMO, quality loss, Cp/Cpk where appropriate.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.first_pass_yield""]",
+OCC-274,KPI-274,yield,library_alias,700–700,"FPY, yield, RTY, scrap, rejects, rework, PPM, DPMO, quality loss, Cp/Cpk where appropriate.",See source concept / governance requirement,,,literal_name_in_anchor,unresolved_choice_required,"[""ekas.quality"", ""ekas.first_pass_yield"", ""ekas.rolled_throughput_yield""]",
+OCC-275,KPI-275,RTY,library_alias,700–700,"FPY, yield, RTY, scrap, rejects, rework, PPM, DPMO, quality loss, Cp/Cpk where appropriate.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.rolled_throughput_yield""]",
+OCC-276,KPI-276,scrap,library_alias,700–700,"FPY, yield, RTY, scrap, rejects, rework, PPM, DPMO, quality loss, Cp/Cpk where appropriate.",See source concept / governance requirement,,,literal_name_in_anchor,unresolved_choice_required,"[""ekas.scrap_rate"", ""ekas.scrap_cost"", ""ekas.scrap_cost_share""]",
+OCC-277,KPI-277,rejects,library_alias,700–700,"FPY, yield, RTY, scrap, rejects, rework, PPM, DPMO, quality loss, Cp/Cpk where appropriate.",See source concept / governance requirement,,,literal_name_in_anchor,unresolved_choice_required,"[""ekas.reject_rate""]",
+OCC-278,KPI-278,rework,library_alias,700–700,"FPY, yield, RTY, scrap, rejects, rework, PPM, DPMO, quality loss, Cp/Cpk where appropriate.",See source concept / governance requirement,,,literal_name_in_anchor,unresolved_choice_required,"[""ekas.rework_rate"", ""ekas.rework_cost""]",
+OCC-279,KPI-279,PPM,library_alias,700–700,"FPY, yield, RTY, scrap, rejects, rework, PPM, DPMO, quality loss, Cp/Cpk where appropriate.",See source concept / governance requirement,,,literal_name_in_anchor,unresolved_choice_required,"[""ekas.ppm_defective"", ""ekas.customer_ppm""]",
+OCC-280,KPI-280,DPMO,library_alias,700–700,"FPY, yield, RTY, scrap, rejects, rework, PPM, DPMO, quality loss, Cp/Cpk where appropriate.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.dpmo""]",
+OCC-281,KPI-281,quality loss,library_alias,700–700,"FPY, yield, RTY, scrap, rejects, rework, PPM, DPMO, quality loss, Cp/Cpk where appropriate.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.quality_loss""]",
+OCC-282,KPI-282,Cp/Cpk where appropriate,library_alias,700–700,"FPY, yield, RTY, scrap, rejects, rework, PPM, DPMO, quality loss, Cp/Cpk where appropriate.",See source concept / governance requirement,,,literal_name_in_anchor,unresolved_choice_required,"[""ekas.cp"", ""ekas.cpk""]",
+OCC-283,KPI-283,MTBF,library_alias,703–703,"MTBF, MTTR-Repair, MTTR-Restore, failure rate, breakdown frequency, PM compliance, reactive maintenance %, maintenance backlog.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.mtbf""]",
+OCC-284,KPI-284,MTTR-Repair,library_alias,703–703,"MTBF, MTTR-Repair, MTTR-Restore, failure rate, breakdown frequency, PM compliance, reactive maintenance %, maintenance backlog.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.mttr_repair""]",
+OCC-285,KPI-285,MTTR-Restore,library_alias,703–703,"MTBF, MTTR-Repair, MTTR-Restore, failure rate, breakdown frequency, PM compliance, reactive maintenance %, maintenance backlog.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.mttr_restore""]",
+OCC-286,KPI-286,failure rate,library_alias,703–703,"MTBF, MTTR-Repair, MTTR-Restore, failure rate, breakdown frequency, PM compliance, reactive maintenance %, maintenance backlog.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.failure_rate""]",
+OCC-287,KPI-287,breakdown frequency,library_alias,703–703,"MTBF, MTTR-Repair, MTTR-Restore, failure rate, breakdown frequency, PM compliance, reactive maintenance %, maintenance backlog.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.breakdown_frequency""]",
+OCC-288,KPI-288,PM compliance,library_alias,703–703,"MTBF, MTTR-Repair, MTTR-Restore, failure rate, breakdown frequency, PM compliance, reactive maintenance %, maintenance backlog.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.pm_compliance""]",
+OCC-289,KPI-289,reactive maintenance %,library_alias,703–703,"MTBF, MTTR-Repair, MTTR-Restore, failure rate, breakdown frequency, PM compliance, reactive maintenance %, maintenance backlog.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.reactive_maintenance""]",
+OCC-290,KPI-290,maintenance backlog,library_alias,703–703,"MTBF, MTTR-Repair, MTTR-Restore, failure rate, breakdown frequency, PM compliance, reactive maintenance %, maintenance backlog.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.maintenance_backlog""]",
+OCC-291,KPI-291,schedule adherence,library_alias,706–706,"schedule adherence, OTIF, OTD, fill rate, late orders.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.schedule_adherence""]","Source does not settle quantity/order/job grain or time tolerance. Proposed training convention: completed quantity by frozen scheduled deadline, no substitution for order-count compliance."
+OCC-292,KPI-292,OTIF,library_alias,706–706,"schedule adherence, OTIF, OTD, fill rate, late orders.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.otif""]",
+OCC-293,KPI-293,OTD,library_alias,706–706,"schedule adherence, OTIF, OTD, fill rate, late orders.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.on_time_delivery_otd""]",
+OCC-294,KPI-294,fill rate,library_alias,706–706,"schedule adherence, OTIF, OTD, fill rate, late orders.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.fill_rate""]",
+OCC-295,KPI-295,late orders,library_alias,706–706,"schedule adherence, OTIF, OTD, fill rate, late orders.",See source concept / governance requirement,,,literal_name_in_anchor,explicit_unresolved_item,"[""unresolved.late_orders""]",
+OCC-296,KPI-296,inventory days,library_alias,709–709,"inventory days, inventory turns, WIP, WIP days, RM days, FG days, flow efficiency, lead time.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.inventory_days_dio""]",
+OCC-297,KPI-297,inventory turns,library_alias,709–709,"inventory days, inventory turns, WIP, WIP days, RM days, FG days, flow efficiency, lead time.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.inventory_turns""]","Source annual COGS; acceptance D07 uses period COGS. Keep annual and period turns separate, with explicit annualization policy."
+OCC-298,KPI-298,WIP,library_alias,709–709,"inventory days, inventory turns, WIP, WIP days, RM days, FG days, flow efficiency, lead time.",See source concept / governance requirement,,,literal_name_in_anchor,unresolved_choice_required,"[""ekas.wip_units"", ""ekas.wip_days_value"", ""ekas.wip_days_units""]",
+OCC-299,KPI-299,WIP days,library_alias,709–709,"inventory days, inventory turns, WIP, WIP days, RM days, FG days, flow efficiency, lead time.",See source concept / governance requirement,,,literal_name_in_anchor,unresolved_choice_required,"[""ekas.wip_days_value"", ""ekas.wip_days_units""]",Source combines cost valuation and physical throughput denominator. Split value-based days and unit-based residence time; never divide money by units/day.
+OCC-300,KPI-300,RM days,library_alias,709–709,"inventory days, inventory turns, WIP, WIP days, RM days, FG days, flow efficiency, lead time.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.raw_material_days""]",
+OCC-301,KPI-301,FG days,library_alias,709–709,"inventory days, inventory turns, WIP, WIP days, RM days, FG days, flow efficiency, lead time.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.finished_goods_days""]",
+OCC-302,KPI-302,flow efficiency,library_alias,709–709,"inventory days, inventory turns, WIP, WIP days, RM days, FG days, flow efficiency, lead time.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.flow_efficiency""]",
+OCC-303,KPI-303,lead time,library_alias,709–709,"inventory days, inventory turns, WIP, WIP days, RM days, FG days, flow efficiency, lead time.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.lead_time""]",
+OCC-304,KPI-304,labor productivity,library_alias,712–712,"labor productivity, labor efficiency, utilization, overtime.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.labor_productivity""]",
+OCC-305,KPI-305,labor efficiency,library_alias,712–712,"labor productivity, labor efficiency, utilization, overtime.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.labor_efficiency""]",
+OCC-306,KPI-306,utilization,library_alias,712–712,"labor productivity, labor efficiency, utilization, overtime.",See source concept / governance requirement,,,literal_name_in_anchor,unresolved_choice_required,"[""ekas.overall_utilization"", ""ekas.asset_utilization"", ""ekas.capacity_utilization"", ""ekas.labor_utilization"", ""ekas.direct_labor_utilization"", ""ekas.constraint_utilization""]",
+OCC-307,KPI-307,overtime,library_alias,712–712,"labor productivity, labor efficiency, utilization, overtime.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.overtime""]",
+OCC-308,KPI-308,cost/unit,library_alias,715–715,"cost/unit, scrap cost, rework cost, downtime cost, COPQ.",See source concept / governance requirement,,,literal_name_in_anchor,unresolved_choice_required,"[""ekas.manufacturing_cost_per_unit"", ""ekas.conversion_cost_per_unit"", ""ekas.labor_cost_per_unit""]",
+OCC-309,KPI-309,scrap cost,library_alias,715–715,"cost/unit, scrap cost, rework cost, downtime cost, COPQ.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.scrap_cost""]",Cost amount and share of manufacturing cost source occurrences require separate IDs.
+OCC-310,KPI-310,rework cost,library_alias,715–715,"cost/unit, scrap cost, rework cost, downtime cost, COPQ.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.rework_cost""]",
+OCC-311,KPI-311,downtime cost,library_alias,715–715,"cost/unit, scrap cost, rework cost, downtime cost, COPQ.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.downtime_cost""]",
+OCC-312,KPI-312,COPQ,library_alias,715–715,"cost/unit, scrap cost, rework cost, downtime cost, COPQ.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.copq_cost_of_poor_quality""]",
+OCC-313,KPI-313,energy/unit,library_alias,718–718,"energy/unit, idle-energy %, peak demand.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.energy_per_unit""]",
+OCC-314,KPI-314,idle-energy %,library_alias,718–718,"energy/unit, idle-energy %, peak demand.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.idle_energy""]",
+OCC-315,KPI-315,peak demand,library_alias,718–718,"energy/unit, idle-energy %, peak demand.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.peak_demand""]",
+OCC-316,KPI-316,gap to target,library_alias,721–721,"gap to target, trend, Pareto contribution, top loss, improvement, recurrence, action closure and sustain metrics.",See source concept / governance requirement,,,literal_name_in_anchor,unresolved_choice_required,"[""ekas.unfavorable_gap_higher"", ""ekas.unfavorable_gap_lower""]",
+OCC-317,KPI-317,trend,library_alias,721–721,"gap to target, trend, Pareto contribution, top loss, improvement, recurrence, action closure and sustain metrics.",See source concept / governance requirement,,,literal_name_in_anchor,unresolved_choice_required,"[""ekas.moving_average"", ""ekas.rolling_change"", ""ekas.trend_slope"", ""ekas.volatility""]",
+OCC-318,KPI-318,Pareto contribution,library_alias,721–721,"gap to target, trend, Pareto contribution, top loss, improvement, recurrence, action closure and sustain metrics.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.category_contribution""]",
+OCC-319,KPI-319,top loss,library_alias,721–721,"gap to target, trend, Pareto contribution, top loss, improvement, recurrence, action closure and sustain metrics.",See source concept / governance requirement,,,literal_name_in_anchor,unresolved_choice_required,"[""ekas.top_loss_contribution"", ""ekas.downtime_by_reason""]",
+OCC-320,KPI-320,improvement,library_alias,721–721,"gap to target, trend, Pareto contribution, top loss, improvement, recurrence, action closure and sustain metrics.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.improvement_absolute""]",Absolute and relative changes require separate IDs. Positive signed post-minus-pre is not automatically favorable for lower-is-better losses.
+OCC-321,KPI-321,recurrence,library_alias,721–721,"gap to target, trend, Pareto contribution, top loss, improvement, recurrence, action closure and sustain metrics.",See source concept / governance requirement,,,literal_name_in_anchor,conditional_alias_or_concept_binding,"[""ekas.recurrence_rate""]",
+OCC-322,KPI-322,action closure and sustain metrics,library_alias,721–721,"gap to target, trend, Pareto contribution, top loss, improvement, recurrence, action closure and sustain metrics.",See source concept / governance requirement,,,literal_name_in_anchor,unresolved_choice_required,"[""ekas.action_closure_rate"", ""ekas.on_time_action_closure"", ""ekas.sustained_improvement""]",

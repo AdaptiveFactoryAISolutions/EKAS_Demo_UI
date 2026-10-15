@@ -1,0 +1,6 @@
+import {DOT_VERSION} from './gateway.mjs';
+/** Future Tom-owned transport must negotiate this port. Existing /v1 DTOs are not this port. */
+export function createTomProvider({capabilities,transport}){
+ if(!capabilities||capabilities.version!==DOT_VERSION||capabilities.provider!=='tom'||capabilities.synthetic!==true||capabilities.streaming!==true||capabilities.toolCalling!==true||capabilities.cancellation!==true||typeof transport!=='function')throw new Error('TOM_CONFORMANCE_REQUIRED');
+ return {id:'tom',async *respond({history,tools,signal}){let completed=false;for await(const event of transport({version:DOT_VERSION,history,tools,signal})){signal?.throwIfAborted();if(completed||!event||!['text.delta','model.completed'].includes(event.type))throw new Error('TOM_PROTOCOL_ERROR');if(event.type==='text.delta'){if(typeof event.text!=='string')throw new Error('TOM_PROTOCOL_ERROR');yield {type:'text.delta',text:event.text};}else{if(!Array.isArray(event.calls)||!Array.isArray(event.continuation)||event.calls.some(c=>typeof c.id!=='string'||typeof c.name!=='string'||typeof c.arguments!=='string'))throw new Error('TOM_PROTOCOL_ERROR');completed=true;yield {type:'model.completed',calls:event.calls,continuation:event.continuation};}}if(!completed)throw new Error('TOM_PROTOCOL_ERROR');}};
+}

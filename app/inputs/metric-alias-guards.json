@@ -1,0 +1,28 @@
+{
+  "provenance":"Exact alias guards and ambiguous shorthand supplied by the design owner; conditional naming is not approved plant semantic equivalence.",
+  "alias_groups":[
+    {"aliases":["Production vs Plan","Production Attainment","Plan Attainment"],"canonical_id":"production_vs_plan","guardrail":"Same approved plan, numerator and window; not Capacity Utilization or Schedule Adherence.","resolution":"conditional"},
+    {"aliases":["Throughput","Net Throughput"],"canonical_id":"net_throughput","guardrail":"Good output per matched elapsed period. Gross Throughput and Run Rate differ.","resolution":"conditional"},
+    {"aliases":["Quality","Quality Rate","Yield"],"canonical_id":"quality","guardrail":"Same final-good disposition and unique-unit denominator; not FPY.","resolution":"conditional"},
+    {"aliases":["FPY","FPY — First Pass Yield","First Time Through"],"canonical_id":"first_pass_yield","guardrail":"No rework/repair; identical entry cohort.","resolution":"conditional"},
+    {"aliases":["Availability","Uptime %"],"canonical_id":"availability","guardrail":"Same planned-production-time boundary; not overall utilization.","resolution":"conditional"},
+    {"aliases":["Downtime","Total Downtime","downtime"],"canonical_id":"total_downtime","guardrail":"Same included stops and clipped, non-overlapping scope.","resolution":"conditional"},
+    {"aliases":["Constraint Throughput","Bottleneck Throughput"],"canonical_id":"constraint_throughput","guardrail":"Same actual constraint, good-count boundary and time basis.","resolution":"conditional"},
+    {"aliases":["Inventory Days / DIO","Inventory Days","DIO","inventory days"],"canonical_id":"inventory_days_dio","guardrail":"Same valuation, consumption/COGS basis and period.","resolution":"conditional"},
+    {"aliases":["RTY","Rolled Throughput Yield"],"canonical_id":"rolled_throughput_yield","guardrail":"Defined route and matched cohort.","resolution":"naming"},
+    {"aliases":["MTTR-Repair","MTTR — Mean Time to Repair"],"canonical_id":"mttr_repair","guardrail":"Active repair time divided by repairs.","resolution":"naming"},
+    {"aliases":["MTTR-Restore","MTTR — Mean Time to Restore"],"canonical_id":"mttr_restore","guardrail":"Restoration downtime divided by incidents.","resolution":"naming"},
+    {"aliases":["OTD","On-Time Delivery (OTD)"],"canonical_id":"on_time_delivery_otd","guardrail":"Govern promise version, delivered/due cohort and order/line basis.","resolution":"naming"},
+    {"aliases":["COPQ","COPQ — Cost of Poor Quality"],"canonical_id":"copq_cost_of_poor_quality","guardrail":"Exclusive internal plus external failure costs.","resolution":"naming"},
+    {"aliases":["RM days","Raw Material Days"],"canonical_id":"raw_material_days","guardrail":"Consistent material valuation and usage.","resolution":"naming"},
+    {"aliases":["FG days","Finished Goods Days"],"canonical_id":"finished_goods_days","guardrail":"Consistent FG valuation and COGS period.","resolution":"naming"},
+    {"aliases":["energy/unit","Energy per Unit"],"canonical_id":"energy_per_unit","guardrail":"Same energy boundary and good-output basis.","resolution":"conditional"}
+  ],
+  "ambiguous_shorthand":{
+    "MTTR":["mttr_repair","mttr_restore"],"PPM":["ppm_defective","customer_ppm"],"WIP":["wip_units","wip_days","WIP value (input)"],
+    "attainment":["production_vs_plan","schedule_attainment","capacity_attainment","run_rate_attainment","takt_attainment"],
+    "cost/unit":["manufacturing_cost_per_unit","conversion_cost_per_unit","labor_cost_per_unit"],
+    "scrap":["scrap_rate","scrap_cost","scrap_quantity (input)"],"trend":["moving_average","rolling_change","trend_slope","volatility"],
+    "utilization":["overall_utilization","asset_utilization","capacity_utilization","labor_utilization","direct_labor_utilization","constraint_utilization"]
+  }
+}

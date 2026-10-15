@@ -1,0 +1,17 @@
+{
+  "path": "/home/pat/Documents/Codex/2026-10-09/task/metric-oracle/reattached-source-audit/source/Pasted text(4).md",
+  "sha256": "85d4602f63c2fbb432a43d2dbe1482839830f57a6805246090e45e2de8f2100e",
+  "sizeBytes": 33179,
+  "splitlines": 729,
+  "newlineCount": 728,
+  "newlineTypes": {
+    "CRLF": 0,
+    "LF": 728
+  },
+  "libraryFileId": "libfile_7339ee5c81ac8191b5e8d303994a1f71",
+  "libraryVersion": 0,
+  "libraryId": "libfile_7339ee5c81ac8191b5e8d303994a1f71",
+  "fileId": "file_0000000042d881fd8bb5353314baf842",
+  "materializedFilename": "Pasted text(4).md",
+  "identityConclusion": "Content and exact anchors match all retained occurrences; no historical source-byte hash available."
+}

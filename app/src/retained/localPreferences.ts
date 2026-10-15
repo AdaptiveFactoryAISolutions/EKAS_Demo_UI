@@ -1,0 +1,2 @@
+import {useEkas} from './store';
+export function saveLocalPreference(key:'compact'|'displayName'|'welcome'|'onboarding'|'feedback',value:any){const s=useEkas.getState();if(JSON.stringify(s[key])===JSON.stringify(value))return false;if((key==='displayName'||key==='welcome')&&(typeof value!=='string'||value.length>2000))return false;if(!useEkas.setState({[key]:value}))return false;useEkas.getState().log('Saved local preference '+key+' '+JSON.stringify(value));return true;}

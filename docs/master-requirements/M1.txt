@@ -1,0 +1,1521 @@
+MASTER GOAL — COMPLETE FULLY FUNCTIONING EKAS DEMO SERVICE WITH MOCK DATA AND PRODUCTION-SHAPED API CONTRACTS
+
+MISSION
+
+Complete the current EKAS UI/demo as a FULLY FUNCTIONING implementation of the EKAS service using governed synthetic/mock manufacturing data.
+
+This is NOT a UI prototype.
+This is NOT a collection of charts.
+This is NOT a scripted walkthrough.
+This is NOT a fake demo with buttons that merely change screens.
+
+The demo must execute the actual EKAS product behavior end to end using:
+
+- the canonical EKAS chat-first UI;
+- GLiDE-compatible conversational routing;
+- ContextContract;
+- manufacturing ontology;
+- Governor/security boundaries;
+- deterministic metric/calculation services;
+- investigation services;
+- evidence/provenance;
+- authorization lifecycle;
+- action lifecycle;
+- verification/sustain lifecycle;
+- persistence/history;
+- typed API contracts;
+- mock backend adapters;
+- versioned synthetic manufacturing data.
+
+The future real backend must be able to replace the mock adapters without redesigning:
+
+- the UI;
+- the conversation model;
+- the investigation lifecycle;
+- the metric model;
+- evidence;
+- authorization;
+- persistence;
+- workflow semantics.
+
+CORE PRINCIPLE:
+
+MOCK THE DATA SOURCE AND TRANSPORT.
+DO NOT MOCK THE EKAS SERVICE.
+
+==================================================
+GOVERNING INPUT
+==================================================
+
+Use:
+
+MANUFACTURING-JOURNEY-GAP-ASSESSMENT
+
+as the governing assessment for this work.
+
+The assessment establishes that the current demonstrated Training Ask/Search journey is primarily chart/query/library work and does NOT yet supply the connected EKAS outcome:
+
+"We missed our goal → investigate downtime, speed and quality → take owned action → verify outcome → sustain/reopen."
+
+The existing Northworks implementation contains many of the required ingredients, but they are distributed across separate canvases, panels, stores and workflows.
+
+The goal is to turn those existing capabilities into ONE coherent EKAS investigation service and user journey.
+
+Do not claim the gap is closed merely because individual screens, calculations or tests exist.
+
+==================================================
+FINAL PRODUCT EXPERIENCE
+==================================================
+
+A user must be able to start naturally from chat:
+
+"We missed our production goal. What happened?"
+
+and continue without changing mental models:
+
+"Where did we lose the most?"
+
+"What machine caused it?"
+
+"What job was running?"
+
+"What evidence do we have?"
+
+"Why did it happen?"
+
+"What are the competing hypotheses?"
+
+"What should we do?"
+
+"Who owns it?"
+
+"Has the action been approved?"
+
+"Was it actually performed?"
+
+"Did it work?"
+
+"Did the improvement hold?"
+
+"What happened when it recurred?"
+
+The conversation must remain attached to ONE persistent investigation context.
+
+==================================================
+CANONICAL END-TO-END JOURNEY
+==================================================
+
+Implement the complete journey:
+
+GOAL EXCEPTION
+→ TARGET VS ACTUAL
+→ LOSS RECONCILIATION
+→ CONTRIBUTOR PRIORITIZATION
+→ JOB / PART / OPERATION / EQUIPMENT
+→ EVENT DETAIL
+→ CONTROLLED SOURCE / DOCUMENT EVIDENCE
+→ FACTS
+→ UNCERTAINTY
+→ COMPETING HYPOTHESES
+→ TEST PLAN
+→ OWNER
+→ OWNER ACCEPTANCE
+→ RECOMMENDED ACTION
+→ AUTHORIZATION
+→ PERFORMED WORK
+→ VERIFICATION PLAN
+→ EXPLICIT TIME ADVANCE
+→ BEFORE / AFTER MEASUREMENT
+→ SAFETY / QUALITY / OPERATIONAL GUARDRAILS
+→ RESULT ACCEPTANCE
+→ SUSTAIN MONITORING
+→ RECURRENCE
+→ REOPEN
+
+This is the EKAS operating journey.
+
+Charts and tables are evidence views inside this journey.
+
+They are not the journey itself.
+
+==================================================
+CURRENT SYNTHETIC REFERENCE CASE
+==================================================
+
+Use the existing Northworks bounded case as the first complete implementation.
+
+Preserve the existing governed synthetic values and identities where already defined.
+
+Reference case includes:
+
+Plant plan:
+2304 units
+
+Actual good production:
+2154 units
+
+Plant gap:
+150 units
+
+Line 03 gap:
+138 units
+
+Line 02 gap:
+38 units
+
+Line 01:
+26-unit surplus
+
+Canonical bounded scope includes:
+
+- Northworks
+- Line 03
+- FEED03
+- JOB8303
+- part NW-A
+- revision P2
+- operation OP030
+- explicit shift/window/cutoff
+- existing nonoverlapping stop events
+
+Do not silently combine this October Northworks case with the July Training dataset.
+
+Every result must preserve its own:
+
+- fixture;
+- site;
+- line;
+- equipment;
+- job;
+- part;
+- revision;
+- operation;
+- period;
+- cutoff;
+- result ID;
+- evidence IDs;
+- version.
+
+==================================================
+PLAN GAP VS CAPACITY LOSS
+==================================================
+
+Preserve the distinction identified in the assessment.
+
+The plan-gap story is:
+
+2304 planned
+2154 actual
+150-unit miss
+
+The capacity-loss bridge uses a different baseline:
+
+2880 theoretical
+- 480 downtime-equivalent units
+- 198 speed residual units
+- 48 non-good units
+= 2154 actual good output
+
+These are NOT the same baseline.
+
+The UI and conversation must explain this clearly.
+
+Do not present the 726-unit theoretical-capacity loss as though it were the 150-unit plan miss.
+
+The user must be able to understand:
+
+1. How far did we miss the approved production plan?
+2. What losses explain the gap between theoretical capacity and actual production?
+3. Which losses are relevant to the plan miss?
+4. Which losses remain unattributed?
+
+==================================================
+EXCLUSIVE LOSS ACCOUNTING
+==================================================
+
+Implement deterministic loss reconciliation.
+
+The system must distinguish at minimum:
+
+- downtime loss;
+- performance/speed loss;
+- quality loss.
+
+No double counting.
+
+No overlapping subtraction.
+
+All values must preserve:
+
+- units;
+- denominator;
+- time basis;
+- scope;
+- source.
+
+Speed residual must remain:
+
+UNATTRIBUTED / UNEXPLAINED
+
+until specific speed-loss source data exists.
+
+Do not invent:
+- micro-stop causes;
+- operator causes;
+- material causes;
+- tooling causes;
+- maintenance causes.
+
+==================================================
+CONTRIBUTOR ANALYSIS
+==================================================
+
+The user must be able to move from plant loss to contributor.
+
+For the bounded case:
+
+Identify:
+- Line 03 as primary plan-gap contributor;
+- JOB8303;
+- FEED03;
+- NW-A / P2;
+- OP030;
+- downtime burden;
+- event distribution.
+
+Existing Line 03 events include:
+
+- feeder jam;
+- changeover;
+- other.
+
+Preserve existing event durations and identities.
+
+Do not fabricate exposure rankings where exposure data does not exist.
+
+If historical jobs cannot be ranked because required exposure is missing, say so.
+
+==================================================
+EVIDENCE SERVICE
+==================================================
+
+Evidence must be a first-class service.
+
+Evidence may include:
+
+- event records;
+- work orders;
+- maintenance notes;
+- PFMEA;
+- control plan;
+- standard work;
+- NCR;
+- production records;
+- job records;
+- inspection;
+- operator confirmation;
+- controlled engineering change records.
+
+Every important claim must be linked to actual evidence IDs.
+
+Evidence must preserve:
+
+- source;
+- version;
+- effectivity;
+- timestamp;
+- cutoff;
+- controlled/uncontrolled status;
+- superseded state;
+- contradictions;
+- negation;
+- provenance.
+
+Do not collapse:
+
+CONTROLLED DOCUMENT
+and
+UNCONTROLLED NOTE.
+
+Do not treat unreleased EC content as approved production instruction.
+
+==================================================
+CLAIM CLASSIFICATION
+==================================================
+
+Every investigation statement must be classified internally as one of:
+
+OBSERVATION
+MEASURED RESULT
+DERIVED RESULT
+HYPOTHESIS
+SUPPORTED HYPOTHESIS
+REFUTED HYPOTHESIS
+CONFIRMED CAUSE
+RECOMMENDATION
+AUTHORIZED ACTION
+PERFORMED ACTION
+VERIFIED RESULT
+FINANCIAL ESTIMATE
+
+The UI does not need to show these labels mechanically everywhere.
+
+But the service must preserve the distinction.
+
+A hypothesis is NOT a root cause.
+
+An observed improvement is NOT automatically causal proof.
+
+A projected financial benefit is NOT verified savings.
+
+==================================================
+HYPOTHESIS SERVICE
+==================================================
+
+Join the existing hypothesis functionality into the persistent investigation.
+
+Support multiple competing hypotheses.
+
+Examples from the current bounded case may include:
+
+- guide wear;
+- setup;
+- material;
+- crew-related conditions.
+
+Each hypothesis must support:
+
+- hypothesis ID;
+- description;
+- status;
+- supporting evidence IDs;
+- contradicting evidence IDs;
+- test required;
+- test result;
+- confidence/uncertainty where governed;
+- created timestamp;
+- version;
+- disposition.
+
+Lifecycle:
+
+PROPOSED
+→ TEST PLANNED
+→ TESTED
+→ SUPPORTED / REFUTED / INCONCLUSIVE
+
+CONFIRMED CAUSE must remain a separate governed state.
+
+Do not allow a language model to promote a hypothesis to confirmed cause.
+
+==================================================
+INVESTIGATION AGGREGATE
+==================================================
+
+Implement one persistent versioned Investigation aggregate.
+
+At minimum it must reference:
+
+investigation_id
+version
+status
+created_at
+updated_at
+
+context:
+- tenant/site
+- plant
+- line
+- asset
+- job
+- part
+- revision
+- operation
+- shift
+- period
+- cutoff
+
+goal:
+- goal_id
+- metric
+- target
+- actual
+- unit
+- window
+- source
+
+loss_bridge:
+- input IDs
+- raw values
+- units
+- denominators
+- accounting identities
+- unresolved attribution
+
+contributors
+
+evidence_links
+
+hypotheses
+
+owner:
+- owner role
+- requested assignment
+- accepted assignment
+- timestamp
+
+action:
+- recommendation
+- expected benefit
+- benefit unit
+- horizon
+- authorization status
+- performed status
+- performed record
+- operator/technician confirmation
+
+verification_plan:
+- baseline cohort
+- post cohort
+- eligibility
+- primary endpoint
+- guardrails
+- planned measurement time
+
+verification_result
+
+sustain:
+- observations
+- target threshold
+- recurrence threshold
+- current state
+- reopen status
+
+history:
+- immutable commands/events
+- versions
+- evidence IDs
+
+==================================================
+API-FIRST ARCHITECTURE
+==================================================
+
+The UI must NOT write directly into fixture state.
+
+Define typed production-shaped service contracts now.
+
+Implement them through a local mock adapter.
+
+Recommended API shape:
+
+POST /api/v1/investigations/from-result
+
+Input:
+- resultID
+- goalID
+- context
+- cutoff
+- idempotencyKey
+
+Output:
+- investigation aggregate
+- version
+- readiness
+- missing prerequisites
+
+GET /api/v1/investigations/:id
+
+PATCH /api/v1/investigations/:id
+
+Require:
+- expectedVersion
+- validated patch
+- authorization semantics
+
+POST /api/v1/investigations/:id/commands
+
+Input:
+- command
+- expectedVersion
+- idempotencyKey
+- evidenceIDs
+- command payload
+
+Commands may include:
+
+ACCEPT_ASSIGNMENT
+REASSIGN
+ADD_HYPOTHESIS
+PLAN_HYPOTHESIS_TEST
+RECORD_HYPOTHESIS_RESULT
+RECOMMEND_ACTION
+REQUEST_AUTHORIZATION
+AUTHORIZE_ACTION
+REJECT_ACTION
+RECORD_PERFORMED_WORK
+DEFINE_VERIFICATION_PLAN
+ADVANCE_SIMULATION_TIME
+RECORD_VERIFICATION
+ACCEPT_RESULT
+REJECT_RESULT
+RECORD_SUSTAIN_OBSERVATION
+REOPEN_INVESTIGATION
+
+Also provide a typed loss-bridge read operation.
+
+It must return:
+
+- source-bound raw inputs;
+- units;
+- denominators;
+- accounting identities;
+- readiness;
+- unresolved attribution;
+- evidence IDs.
+
+==================================================
+MOCK ADAPTER TODAY — REAL ADAPTER LATER
+==================================================
+
+Required layering:
+
+EKAS UI
+↓
+Conversation / GLiDE-compatible router
+↓
+EKAS application services
+↓
+typed API/service contracts
+↓
+MockInvestigationAdapter
+↓
+versioned synthetic data
+
+Later:
+
+EKAS UI
+↓
+GLiDE
+↓
+SAME EKAS application services
+↓
+SAME typed API/service contracts
+↓
+TomBackendAdapter
+↓
+real systems
+
+The UI must not know whether the adapter is mock or real.
+
+Do not create mock-only UI code paths.
+
+==================================================
+GLIDE / CONVERSATIONAL ROUTING
+==================================================
+
+Use GLiDE-compatible routing for ordinary conversational interpretation.
+
+Examples:
+
+"We missed our goal."
+
+"Why?"
+
+"Show me."
+
+"Which machine?"
+
+"What job?"
+
+"What evidence?"
+
+"What should we do?"
+
+"Did it work?"
+
+"Did it hold?"
+
+GLiDE/router determines intent and contextual references.
+
+It does NOT determine manufacturing truth.
+
+The router calls typed EKAS services.
+
+LangGraph is used only when actual multi-step orchestration is required.
+
+Anthropic/provider reasoning may phrase/synthesize governed evidence.
+
+No model may fabricate:
+- missing events;
+- missing root causes;
+- missing metric values;
+- authorization;
+- performed work;
+- financial validation.
+
+==================================================
+CONVERSATION PRESENTER
+==================================================
+
+Responses must meet the existing ChatGPT-parity standard.
+
+Example:
+
+User:
+"We missed our production goal. What happened?"
+
+Expected style:
+
+"Production finished 150 units below plan.
+
+Line 03 accounted for most of the shortfall, with a 138-unit gap. Within the current Line 03 evidence, JOB8303 on FEED03 carried the largest documented downtime burden.
+
+The loss accounting also shows a sizeable speed loss, but the current data does not yet identify what caused that portion. I would start with the feeder-jam evidence on JOB8303 because that is the strongest documented contributor."
+
+This answer must come from governed facts.
+
+No internal IDs unless useful.
+
+Evidence available through:
+✓ Certified / Evidence
+
+==================================================
+OWNERSHIP
+==================================================
+
+Assignment is a real workflow state.
+
+Support:
+
+ASSIGNMENT REQUESTED
+→ ACCEPTED
+→ REASSIGNED if necessary.
+
+Owner must be explicit.
+
+For mock data, use synthetic roles/personas.
+
+Do not let a local UI draft silently overwrite an authoritative case owner.
+
+Later backend adapter will connect this to real user/role identity.
+
+==================================================
+ACTION LIFECYCLE
+==================================================
+
+Keep these states separate:
+
+RECOMMENDED
+REQUESTED
+AUTHORIZED
+PERFORMED
+VERIFIED
+
+Do not combine approval and performance.
+
+Example:
+
+"Replace worn guide"
+
+is not the same as:
+
+"Maintenance authorized guide replacement"
+
+which is not the same as:
+
+"Guide replaced at 15:10 by technician"
+
+which is not the same as:
+
+"Post-action measurement met the target."
+
+Preserve timestamps and evidence for every transition.
+
+==================================================
+LIKE-FOR-LIKE VS ENGINEERING CHANGE
+==================================================
+
+Preserve distinction between:
+
+LIKE-FOR-LIKE RESTORATION
+
+and
+
+ENGINEERING CHANGE.
+
+Do not allow unreleased EC content to become executable production instruction.
+
+Existing EC proposal/release state must remain governed.
+
+==================================================
+VERIFICATION
+==================================================
+
+Implement an explicit verification plan before claiming an improvement.
+
+For the reference feeder-jam case, preserve the existing governed measurement semantics where valid.
+
+The assessment identifies an existing example with:
+
+- 10 eligible same-product 480-minute shifts;
+- feeder jam primary endpoint;
+- 60 → 30 min/shift;
+- total downtime 900 → 600 min;
+- good units 6860 → 7365;
+- supporting OEE 71.46 → 76.72%.
+
+Do not automatically claim causation.
+
+State:
+
+"Performance improved after the action"
+
+unless causal evidence supports stronger wording.
+
+Preserve:
+- baseline cohort;
+- post cohort;
+- eligibility;
+- product comparability;
+- source;
+- cutoff;
+- measurement time.
+
+==================================================
+SIMULATION CLOCK
+==================================================
+
+Future evidence must NEVER appear before its effective time.
+
+Use explicit demo controls such as:
+
+ADVANCE SIMULATION TO:
+- repair completed;
+- post-action observation period;
+- sustain period;
+- recurrence period.
+
+Do not silently jump time.
+
+The conversation should explain when future information is not yet available.
+
+==================================================
+SUSTAIN
+==================================================
+
+Implement the existing sustain logic as a real service state.
+
+Preserve distinction between:
+
+primary target:
+jam <= 30 minutes
+
+and
+
+recurrence alarm:
+> 45 minutes for required consecutive observations
+
+Do not merge these thresholds.
+
+Support:
+
+VERIFIED
+→ SUSTAINING
+→ SUSTAINED
+
+and
+
+RECURRENCE DETECTED
+→ REOPENED
+
+Do not borrow evidence from a prior closed cycle into a new unmeasured cycle.
+
+==================================================
+DOWNTIME / SPEED / QUALITY CASE COVERAGE
+==================================================
+
+The final demo must not demonstrate only one availability case and then claim full EKAS loss investigation.
+
+Implement at least THREE bounded evidence-complete synthetic cases.
+
+CASE A — DOWNTIME / AVAILABILITY
+
+Use existing Northworks feeder-jam case where appropriate.
+
+Must demonstrate:
+
+- target miss;
+- downtime event;
+- maintenance/document evidence;
+- hypothesis;
+- owner;
+- action;
+- approval;
+- performance;
+- verification;
+- sustain/reopen.
+
+CASE B — PERFORMANCE / SPEED LOSS
+
+Create a separately declared synthetic fixture.
+
+Must include:
+
+- ideal cycle;
+- actual cycle/output;
+- appropriate operating-time denominator;
+- speed/micro-stop evidence;
+- reason/event evidence;
+- source coverage;
+- hypothesis;
+- corrective action;
+- verification.
+
+Do not reuse feeder-jam evidence to fabricate the speed cause.
+
+CASE C — QUALITY LOSS
+
+Create a separately declared synthetic fixture.
+
+Must include:
+
+- total count;
+- good count;
+- reject/scrap/rework disposition as appropriate;
+- FPY or quality metric;
+- defect mode;
+- part/revision;
+- PFMEA/control-plan evidence;
+- hypothesis;
+- corrective action;
+- verification.
+
+Do not fabricate Quality/FPY causality merely from the metric result.
+
+==================================================
+PLANT HEAD DAILY OPERATIONS AUDIT
+==================================================
+
+Connect the existing Plant Head Daily Operations Audit to the investigation service.
+
+A user must be able to ask:
+
+"Run my plant review."
+
+EKAS evaluates the governed metric bundle.
+
+Then:
+
+"What's off target?"
+
+EKAS ranks the largest actionable gaps.
+
+Then:
+
+"Investigate the top issue."
+
+EKAS creates/opens an Investigation aggregate.
+
+Then:
+
+"What should we do?"
+
+EKAS uses the same action lifecycle.
+
+Then:
+
+"Did it work?"
+
+EKAS uses Verification.
+
+Then:
+
+"Did it hold?"
+
+EKAS uses Sustain.
+
+The operating review becomes the front door to investigation.
+
+==================================================
+METRICS
+==================================================
+
+Reuse the canonical Metric Registry.
+
+Do not create investigation-specific duplicate formulas.
+
+The investigation service references metric/result IDs produced by the normal metric service.
+
+Recognition, execution and certification remain separate.
+
+No unavailable metric may silently fall back to OEE.
+
+==================================================
+SECURITY
+==================================================
+
+Preserve all approved R5 security/policy corrections.
+
+Do not weaken:
+
+- tenant isolation;
+- namespace controls;
+- metric-minimal disclosure;
+- authorization;
+- immutable history;
+- policy revision binding;
+- current-policy projection;
+- evidence masking;
+- certificate integrity;
+- budget controls.
+
+Mock data does NOT mean security can be removed.
+
+The demo must exercise the same trust boundaries.
+
+==================================================
+AUTHORIZATION
+==================================================
+
+Mock authorization may use synthetic users/roles.
+
+But the service semantics must be real.
+
+Examples:
+
+Production Supervisor:
+may propose action.
+
+Maintenance:
+may accept assigned maintenance action.
+
+Authorized Manager:
+may approve bounded work where configured.
+
+Unapproved user:
+must not execute protected transition.
+
+Represent mock states as:
+
+synthetic
+notDispatched
+notGranted
+
+where appropriate.
+
+Do not pretend a real CMMS work order or real production authorization occurred.
+
+==================================================
+CONTROLLED DOCUMENTS
+==================================================
+
+Model controlled documents through the same service semantics expected from the future backend:
+
+PFMEA
+Control Plan
+Standard Work
+Engineering Change
+NCR
+
+Preserve:
+
+- document identity;
+- version;
+- revision;
+- effectivity;
+- controlled status;
+- superseded status;
+- source;
+- citations.
+
+Later adapter can replace synthetic documents with PLM/QMS/document APIs.
+
+==================================================
+PERSISTENCE
+==================================================
+
+Investigations must persist across:
+
+- reload;
+- navigation;
+- history;
+- browser restart where current demo persistence supports it.
+
+Do not store important investigation state only in React component memory.
+
+Use the DurableRepository/service boundary.
+
+Maintain optimistic versioning.
+
+==================================================
+IDEMPOTENCY
+==================================================
+
+Every state-changing command must use:
+
+expectedVersion
+idempotencyKey
+
+Repeated command with same idempotency key:
+
+must not create duplicate action/event/state.
+
+Conflicting stale expectedVersion:
+
+must fail clearly.
+
+==================================================
+NEGATIVE CASES
+==================================================
+
+Required blocking tests:
+
+- missing goal;
+- missing target;
+- missing source;
+- unreconciled loss intervals;
+- overlapping downtime events;
+- missing job exposure;
+- stale input;
+- wrong part revision;
+- wrong scope;
+- wrong tenant;
+- future evidence;
+- superseded PFMEA;
+- unreleased EC;
+- owner changed;
+- assignment not accepted;
+- action not authorized;
+- failed write;
+- duplicate command;
+- stale version;
+- changed verification plan;
+- missing eligible post cohort;
+- failed safety review;
+- failed quality guardrail;
+- recurrence.
+
+The UI must show WHY progression stopped and WHAT is needed next.
+
+==================================================
+FINANCIAL CLAIMS
+==================================================
+
+Expected benefit may be shown if supported by configured synthetic cost assumptions.
+
+Keep separate:
+
+EXPECTED OPPORTUNITY
+OBSERVED PRODUCTION GAIN
+VERIFIED CASH SAVINGS
+
+Do not call expected contribution "savings."
+
+Do not call measured production improvement "financial realization."
+
+Finance authorization remains a separate service boundary.
+
+==================================================
+UI REQUIREMENTS
+==================================================
+
+Add one coherent evidence-linked Investigation surface inside the accepted Insights/chat shell.
+
+Recommended sequence:
+
+GOAL EXCEPTION
+LOSS RECONCILIATION
+CONTRIBUTORS
+EVIDENCE
+HYPOTHESES
+ACTION
+VERIFICATION
+SUSTAIN
+
+But remain chat-first.
+
+The user should not need to navigate manually across five disconnected workspaces to finish an investigation.
+
+Existing Search / Answers / Boards / Collections remain available.
+
+They may save/present investigation results.
+
+Do not break them.
+
+==================================================
+USER VISIBILITY
+==================================================
+
+At every investigation stage show clearly:
+
+WHAT WE KNOW
+WHAT WE DO NOT KNOW
+WHAT IS NEXT
+WHO OWNS IT
+WHAT EVIDENCE SUPPORTS IT
+WHAT STATE THE ACTION IS IN
+WHETHER THE RESULT IS OBSERVED OR PROVEN
+
+Avoid technical jargon.
+
+Detailed provenance belongs behind Evidence.
+
+==================================================
+END-TO-END ACCEPTANCE JOURNEY
+==================================================
+
+Create one independent unaided acceptance task using the existing bounded Northworks case.
+
+The user must complete:
+
+1. identify 150-unit plan miss;
+2. prioritize 138-unit Line 03 gap;
+3. reconcile downtime/speed/quality losses;
+4. select JOB8303;
+5. inspect FEED03;
+6. inspect event evidence;
+7. inspect maintenance note;
+8. inspect PFMEA;
+9. inspect control plan / standard work;
+10. identify uncertainty;
+11. record testable hypothesis;
+12. assign owner;
+13. accept owner assignment;
+14. recommend action;
+15. distinguish requested authorization from approved action;
+16. record performed work separately;
+17. explicitly advance simulation time;
+18. evaluate 10-shift post cohort;
+19. evaluate safety/quality guardrails;
+20. accept or reject measured result;
+21. enter sustain;
+22. detect recurrence;
+23. reopen new investigation cycle without borrowing prior evidence.
+
+PASS requires one coherent persistent evidence trail.
+
+A scripted ShowMe playback is not sufficient.
+
+==================================================
+ADDITIONAL UNAIDED CASES
+==================================================
+
+Also run unaided end-to-end journeys for:
+
+- speed/performance loss;
+- quality loss.
+
+Each must have independently authored evidence sufficient for that domain.
+
+==================================================
+TESTING
+==================================================
+
+Required layers:
+
+1. arithmetic/unit tests;
+2. schema validation;
+3. repository/version tests;
+4. idempotency tests;
+5. temporal/cutoff tests;
+6. authorization tests;
+7. evidence-effectivity tests;
+8. API contract tests;
+9. persistence/reload tests;
+10. integration tests;
+11. real mock-data transitions;
+12. component tests;
+13. visible Chrome end-to-end acceptance.
+
+Do not claim completion because calculators pass.
+
+==================================================
+VISIBLE CHROME ACCEPTANCE
+==================================================
+
+Physically test through the real demo UI.
+
+At minimum:
+
+Desktop
+1366 × 768
+
+Mobile
+390 × 844
+320 × 844
+
+Test:
+
+- chat;
+- investigation journey;
+- evidence;
+- owner changes;
+- authorization;
+- performed work;
+- time advance;
+- verification;
+- sustain;
+- recurrence;
+- history;
+- reload;
+- keyboard;
+- accessibility;
+- copy answer;
+- chart/table;
+- error/recovery.
+
+No API-only acceptance.
+
+==================================================
+CONVERSATIONAL QUALITY
+==================================================
+
+Read every response as a user.
+
+The experience must sound like:
+
+a world-class manufacturing expert.
+
+Not:
+
+a workflow engine
+a database
+a metric card
+a rules engine
+a technical prototype
+
+Answers should use:
+
+- natural paragraphs;
+- complete sentences;
+- grounded manufacturing commentary;
+- concise explanation;
+- clear next steps.
+
+==================================================
+BACKEND READINESS
+==================================================
+
+Document the eventual real adapter requirements.
+
+Tom/backend integration will eventually need:
+
+- OpenAPI / schema;
+- authentication;
+- tenant mapping;
+- role mapping;
+- entity mapping;
+- capability negotiation;
+- version negotiation;
+- ingestion;
+- read APIs;
+- action APIs;
+- authorization APIs;
+- controlled document APIs;
+- CMMS APIs;
+- QMS APIs;
+- MES APIs;
+- historian APIs;
+- finance APIs;
+- error semantics;
+- timeout semantics;
+- idempotency semantics.
+
+Do not invent Tom's actual API.
+
+Create stable adapter interfaces that he can implement against.
+
+==================================================
+NO DEMO-ONLY SHORTCUTS
+==================================================
+
+PROHIBITED:
+
+- hard-coded UI state changes pretending to be service results;
+- hidden React fixture branching;
+- manually toggled "approved" status;
+- manually toggled "verified" status;
+- fake CMMS completion;
+- LLM-generated evidence;
+- LLM-generated metric values;
+- LLM-generated root cause;
+- one-off Northworks-only architecture;
+- bypassed API/service contract;
+- duplicating metric formulas in UI;
+- direct component access to fixture internals;
+- skipping version/idempotency rules because data is mock.
+
+==================================================
+IMPLEMENTATION SEQUENCE
+==================================================
+
+Proceed autonomously in this order:
+
+1. inventory existing Northworks capabilities;
+2. identify reusable implementation;
+3. define Investigation aggregate;
+4. define typed service/API contracts;
+5. implement DurableRepository;
+6. implement MockInvestigationAdapter;
+7. author/version canonical Northworks investigation fixture;
+8. connect goal exception;
+9. connect loss bridge;
+10. connect contributor analysis;
+11. connect evidence;
+12. connect hypothesis lifecycle;
+13. connect ownership;
+14. connect authorization;
+15. connect performed-work lifecycle;
+16. connect verification;
+17. connect simulation time;
+18. connect sustain/reopen;
+19. connect chat routing;
+20. connect ConversationPresenter;
+21. connect Plant Head Audit;
+22. create speed-loss case;
+23. create quality-loss case;
+24. implement negative cases;
+25. run focused tests;
+26. visible Chrome test;
+27. fix;
+28. repeat;
+29. full regression at final freeze;
+30. fresh independent review;
+31. merge normally.
+
+Do not repeatedly stop for ordinary engineering decisions.
+
+==================================================
+PRESERVE EXISTING PRODUCT
+==================================================
+
+Do not regress:
+
+- current accepted shell;
+- chat;
+- Search;
+- Answers;
+- Boards;
+- Collections;
+- Catalog;
+- Metric Registry;
+- evidence;
+- charts;
+- tables;
+- history;
+- accessibility;
+- responsive behavior;
+- R5 security controls.
+
+No unrelated redesign.
+
+==================================================
+INDEPENDENT REVIEW
+==================================================
+
+Freeze exact final candidate.
+
+Fresh reviewer must independently test:
+
+- investigation lifecycle;
+- metric/evidence integrity;
+- authorization transitions;
+- temporal integrity;
+- persistence;
+- idempotency;
+- negative cases;
+- UI coherence;
+- security preservation;
+- API/mock adapter separation.
+
+Required verdict:
+
+VERDICT: APPROVE
+
+Fix all blocking/major findings and repeat review on new frozen candidate.
+
+==================================================
+DEFINITION OF DONE
+==================================================
+
+Do NOT declare this goal complete until:
+
+1. Demo is a real functioning EKAS service using synthetic data.
+2. UI does not directly depend on fixture internals.
+3. Production-shaped typed API contracts exist.
+4. Mock adapters implement those contracts.
+5. Real backend can later replace adapters without UI redesign.
+6. Goal exception creates/opens a persistent investigation.
+7. Plan vs actual works.
+8. Capacity loss bridge works.
+9. Baselines are not confused.
+10. Loss accounting is mutually exclusive.
+11. Contributors work.
+12. Machine/job/part/revision/operation context persists.
+13. Evidence is source-linked.
+14. Controlled/uncontrolled evidence remains distinct.
+15. Hypotheses are not causes.
+16. Hypothesis lifecycle works.
+17. Ownership works.
+18. Assignment acceptance works.
+19. Recommended action works.
+20. Authorization works.
+21. Performed work is separate from authorization.
+22. Verification plan works.
+23. Explicit simulation time works.
+24. Future evidence cannot leak.
+25. Before/after measurement works.
+26. Safety/quality guardrails work.
+27. Result acceptance works.
+28. Sustain works.
+29. Recurrence works.
+30. Reopen works.
+31. Prior-cycle evidence is not improperly reused.
+32. Downtime case works end to end.
+33. Speed/performance case works end to end.
+34. Quality case works end to end.
+35. Plant Head Audit can open investigations.
+36. Chat can drive the entire lifecycle.
+37. Conversation remains natural and ChatGPT-quality.
+38. Deterministic services own manufacturing truth.
+39. LLM cannot invent metrics/evidence/root cause/authority.
+40. R5 security protections remain intact.
+41. Persistence/reload works.
+42. Versioning works.
+43. Idempotency works.
+44. Negative cases fail closed.
+45. Visible Chrome acceptance passes.
+46. Desktop passes.
+47. 390 px passes.
+48. 320 px passes.
+49. Keyboard/accessibility passes.
+50. Existing EKAS features remain intact.
+51. Final full regression passes.
+52. Exact final artifact is frozen.
+53. Fresh independent review returns VERDICT: APPROVE.
+54. Normal integration completes.
+55. No current-scope product blocker remains.
+
+FINAL STANDARD
+
+The demo must make a prospective user believe they are using the complete EKAS service today.
+
+The only artificial element should be that the manufacturing records and external-system adapters are synthetic.
+
+The product behavior itself must be real.
+
+A user should be able to:
+
+detect a missed goal,
+understand the loss,
+find the contributor,
+inspect the evidence,
+form and test hypotheses,
+assign accountability,
+take a governed action,
+verify the result,
+and determine whether the improvement sustained,
+
+without leaving the EKAS experience and without any hidden manual manipulation.
+
+Continue autonomously until this standard is achieved without compromise.

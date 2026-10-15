@@ -1,0 +1,1293 @@
+EKAS TRUE NORTH — MASTER PRODUCT ALIGNMENT AND COMPLETION DIRECTIVE
+
+PURPOSE
+
+This prompt defines the single canonical True North for EKAS.
+
+Its purpose is to eliminate fragmentation, conflicting interpretations,
+partial implementations, UI-only demonstrations, and local optimization.
+
+Every current and future EKAS implementation decision must be evaluated
+against this True North.
+
+The objective is NOT to build a collection of screens.
+
+The objective is NOT to build an OEE dashboard.
+
+The objective is NOT to build a chatbot that retrieves metrics.
+
+The objective is NOT to build a workflow tool sitting beside a chatbot.
+
+The objective is to build one cohesive industrial manufacturing intelligence
+system in which a user interacts naturally with EKAS as if they were speaking
+to a world-class manufacturing expert who can:
+
+- understand the operating context;
+- calculate trusted manufacturing facts;
+- explain what happened;
+- identify where performance was lost;
+- inspect governed evidence;
+- distinguish facts from hypotheses;
+- guide an investigation;
+- assign and govern corrective action;
+- verify whether the action worked;
+- determine whether the improvement sustained;
+- preserve evidence and history;
+- and connect later to real plant systems through stable APIs.
+
+THIS IS THE TRUE NORTH.
+
+==================================================
+THE EKAS PRODUCT VISION
+==================================================
+
+EKAS is a CHAT-FIRST MANUFACTURING INTELLIGENCE AND OPERATING SYSTEM.
+
+The primary experience is a natural conversation.
+
+The user should feel like they are speaking to:
+
+"a world expert in manufacturing who knows my plant, my process, my data,
+my standards, my history, and my operating priorities."
+
+The user should NOT need to know:
+
+- which database contains the data;
+- which service performs the calculation;
+- which screen contains a particular workflow;
+- which metric ID is being used;
+- which document repository contains a PFMEA;
+- which backend adapter is currently synthetic or live.
+
+EKAS hides system complexity while preserving evidence, governance and
+traceability underneath.
+
+==================================================
+THE CORE USER PROMISE
+==================================================
+
+A user must be able to say:
+
+"We missed our production goal yesterday. What happened?"
+
+and EKAS must be capable of taking that user through one coherent journey:
+
+GOAL
+→ GAP
+→ LOSS
+→ CONTRIBUTOR
+→ EVIDENCE
+→ HYPOTHESIS
+→ ACTION
+→ OWNER
+→ AUTHORIZATION
+→ PERFORMANCE
+→ VERIFICATION
+→ SUSTAIN
+→ REOPEN IF REQUIRED
+
+without forcing the user to leave the EKAS experience.
+
+The user may choose to inspect charts, tables, documents, work orders,
+investigation details or evidence, but those are supporting views.
+
+The conversation remains the primary control surface.
+
+==================================================
+WHAT THE CURRENT BUILD IS TODAY
+==================================================
+
+The current build contains substantial working capability.
+
+It is NOT an empty prototype.
+
+Existing capabilities include significant portions of:
+
+- Chat / Ask;
+- Search;
+- metric calculations;
+- Catalog;
+- governed metric/source-unit presentation;
+- charts;
+- tables;
+- Answers;
+- Boards;
+- Collections;
+- evidence/provenance;
+- synthetic Northworks manufacturing scenarios;
+- Brief;
+- Explore;
+- Knowledge;
+- Improvements;
+- Metrics;
+- job and event detail;
+- maintenance evidence;
+- controlled-document evidence;
+- hypotheses;
+- decision support;
+- local ownership/action lifecycle;
+- before/after measurement;
+- sustain/reopen logic;
+- versioned synthetic fixtures;
+- persistence;
+- responsive UI;
+- security/policy controls;
+- extensive unit/integration coverage.
+
+These capabilities are valuable and MUST NOT be discarded.
+
+==================================================
+WHY THE CURRENT BUILD FEELS CONFUSING
+==================================================
+
+The problem is NOT primarily that the functionality does not exist.
+
+The major problem is that the functionality is fragmented.
+
+Today the user can encounter:
+
+- Training Ask;
+- Search;
+- Workbench;
+- Northworks Brief;
+- Explore;
+- Knowledge;
+- Improvements;
+- Metrics;
+- Decision Support;
+- Boards;
+- saved Answers;
+- separate supporting panels.
+
+These areas contain important pieces of EKAS.
+
+But they do not yet behave as one product.
+
+The current system often asks the user to understand the architecture
+instead of allowing EKAS to understand the user's intent.
+
+This is the central problem to solve.
+
+==================================================
+CURRENT MAJOR PRODUCT GAP
+==================================================
+
+The current product does NOT yet deliver this seamlessly:
+
+"We missed our goal."
+
+→ quantify the miss
+
+→ determine what line caused the miss
+
+→ determine what machine/job/part/operation contributed
+
+→ reconcile downtime, speed and quality loss
+
+→ inspect events
+
+→ inspect maintenance evidence
+
+→ inspect PFMEA/control plan/standard work
+
+→ identify what is known and unknown
+
+→ create competing hypotheses
+
+→ determine what evidence is required
+
+→ assign responsibility
+
+→ accept ownership
+
+→ recommend corrective action
+
+→ request authorization
+
+→ record approval
+
+→ record performed work
+
+→ measure before versus after
+
+→ verify safety/quality/operational acceptance
+
+→ determine if the improvement sustained
+
+→ detect recurrence
+
+→ reopen the investigation
+
+as ONE continuous EKAS journey.
+
+This is the primary gap that must be closed.
+
+==================================================
+THE CURRENT NORTHWORKS CASE
+==================================================
+
+The existing Northworks case already contains many of the components required
+to prove this architecture.
+
+Current governed synthetic facts include:
+
+Plant plan:
+2304 good units
+
+Actual:
+2154 good units
+
+Plan miss:
+150 units
+
+Line 03:
+138-unit gap
+
+Line 02:
+38-unit gap
+
+Line 01:
+26-unit surplus
+
+Current bounded investigation context includes:
+
+- Northworks;
+- Line 03;
+- FEED03;
+- JOB8303;
+- part NW-A;
+- revision P2;
+- OP030;
+- shift/window/cutoff;
+- nonoverlapping downtime events;
+- maintenance evidence;
+- controlled documents;
+- feeder-jam case;
+- action lifecycle;
+- before/after measurement;
+- sustain/reopen behavior.
+
+This should become the FIRST complete end-to-end EKAS investigation case.
+
+Do not throw this work away.
+
+CONNECT IT.
+
+==================================================
+IMPORTANT CURRENT LIMITATIONS
+==================================================
+
+The current system must NOT overclaim.
+
+Current limitations include:
+
+1. Training Ask is not yet the universal investigation dispatcher.
+
+2. Training/workbench calculations and Northworks investigation fixtures
+   currently represent separate data horizons and must not be silently mixed.
+
+3. The plan gap and theoretical-capacity loss bridge use different baselines.
+
+4. The current speed-loss residual is calculable but not fully attributed
+   to governed event/cause evidence.
+
+5. The current feeder-jam case does not prove a speed-loss cause.
+
+6. The current feeder-jam case does not prove a quality-loss cause.
+
+7. Broad speed and quality investigation journeys require their own
+   evidence-complete synthetic cases.
+
+8. Hypotheses, ownership, action, evidence and verification currently exist
+   across multiple local stores/panels instead of one persistent case record.
+
+9. Before/after association is not automatically causal proof.
+
+10. Financial opportunity is not automatically verified cash savings.
+
+11. Real MES / ERP / CMMS / QMS / historian / document / identity systems
+    are not yet the source.
+
+12. Future backend integration contracts are not fully available from Tom.
+
+13. UI acceptance of individual screens does not prove the complete user
+    outcome.
+
+14. Passing unit tests does not prove the product journey.
+
+15. Scripted ShowMe playback does not prove an unaided user can operate EKAS.
+
+==================================================
+TARGET PRODUCT ARCHITECTURE
+==================================================
+
+The target architecture is:
+
+USER
+↓
+CHAT-FIRST EKAS EXPERIENCE
+↓
+GLiDE-COMPATIBLE CONVERSATIONAL ROUTER
+↓
+CONTEXT CONTRACT
+↓
+EKAS APPLICATION SERVICES
+↓
+DETERMINISTIC MANUFACTURING SERVICES
+↓
+EVIDENCE / GOVERNOR / AUTHORIZATION
+↓
+TYPED API CONTRACTS
+↓
+ADAPTER LAYER
+↓
+EXTERNAL SYSTEMS
+
+TODAY:
+
+Adapter layer
+→ mock adapters
+→ governed synthetic manufacturing data
+
+LATER:
+
+Adapter layer
+→ Tom/backend adapters
+→ MES
+→ ERP
+→ CMMS
+→ QMS
+→ historian
+→ PLM/documents
+→ finance
+→ identity systems
+
+THE UI AND APPLICATION SERVICES MUST NOT REQUIRE REDESIGN WHEN THE BACKEND
+CHANGES.
+
+==================================================
+CRITICAL ARCHITECTURAL PRINCIPLE
+==================================================
+
+MOCK THE DATA SOURCE AND TRANSPORT.
+
+DO NOT MOCK THE EKAS SERVICE.
+
+Synthetic/demo mode must still use:
+
+- real service boundaries;
+- real workflow semantics;
+- real context behavior;
+- real API contracts;
+- real versioning;
+- real idempotency;
+- real evidence linking;
+- real authorization states;
+- real persistence;
+- real failure states;
+- real verification lifecycle.
+
+The only artificial element should be the underlying manufacturing records
+and external-system adapters.
+
+==================================================
+CHAT IS THE PRIMARY OPERATING SURFACE
+==================================================
+
+The fully conversational chat capability currently being built is a
+NON-NEGOTIABLE part of the final product.
+
+Do not replace it with workflow screens.
+
+Do not turn EKAS into a dashboard-first application.
+
+Do not require users to manually traverse multiple modules to complete an
+investigation.
+
+Chat should drive the entire experience.
+
+Examples:
+
+"What was OEE in January?"
+
+"And March?"
+
+"What about Machine 2?"
+
+"No, I meant Machine 1."
+
+"Why?"
+
+"Show me."
+
+"Compare it to last month."
+
+"We missed our production goal."
+
+"Where did we lose it?"
+
+"Which line?"
+
+"Which machine?"
+
+"What job?"
+
+"What evidence do we have?"
+
+"What are the possible causes?"
+
+"What would prove that?"
+
+"What should we do?"
+
+"Who owns it?"
+
+"Has maintenance accepted it?"
+
+"Was it approved?"
+
+"Was the repair actually completed?"
+
+"Did it work?"
+
+"Did it hold?"
+
+"Why did it happen again?"
+
+"Reopen the investigation."
+
+This should feel like ONE conversation.
+
+==================================================
+CONVERSATIONAL CONTEXT
+==================================================
+
+Context must be dimensional.
+
+The system must track independently:
+
+- active metric;
+- active plant;
+- active line;
+- active equipment;
+- active job;
+- active part;
+- part revision;
+- operation;
+- shift;
+- primary period;
+- comparison period;
+- comparison entity;
+- active investigation;
+- current investigation stage;
+- chart/table presentation state;
+- clarification state.
+
+Changing one dimension must not corrupt another.
+
+Example:
+
+primary period = March
+comparison period = February
+machine = Machine 1
+
+"Go back to Machine 1"
+
+must not accidentally make February the primary period.
+
+Explicit metric requests override inherited metric context.
+
+"What was FPY?"
+
+must never answer OEE.
+
+==================================================
+GLIDE ROLE
+==================================================
+
+GLiDE / ReferenceConversationRouter is the fast conversational routing layer.
+
+It handles:
+
+- intent;
+- reference resolution;
+- follow-ups;
+- pronouns;
+- corrections;
+- clarification;
+- contextual routing.
+
+It DOES NOT own:
+
+- manufacturing calculations;
+- facts;
+- metric definitions;
+- root cause;
+- evidence;
+- authorization;
+- certification.
+
+==================================================
+LANGGRAPH ROLE
+==================================================
+
+LangGraph is used for complex multi-step orchestration where necessary.
+
+Examples:
+
+- multi-service investigation;
+- competing hypotheses;
+- evidence collection;
+- complex planning;
+- action/verification orchestration.
+
+Ordinary metric and conversational questions should not unnecessarily enter
+a heavy graph.
+
+==================================================
+LLM ROLE
+==================================================
+
+The LLM may:
+
+- phrase responses;
+- summarize evidence;
+- synthesize governed facts;
+- explain;
+- help organize competing hypotheses;
+- improve conversational quality.
+
+The LLM may NOT invent:
+
+- manufacturing values;
+- missing metric inputs;
+- evidence;
+- root cause;
+- action completion;
+- authorization;
+- verification;
+- financial realization.
+
+==================================================
+MANUFACTURING TRUTH
+==================================================
+
+Deterministic services own manufacturing truth.
+
+Required governed domains include:
+
+- production;
+- output;
+- plan attainment;
+- OEE;
+- availability;
+- performance;
+- quality;
+- downtime;
+- speed loss;
+- quality loss;
+- throughput;
+- cycle time;
+- takt;
+- maintenance;
+- MTBF;
+- MTTR;
+- FPY;
+- yield;
+- scrap;
+- delivery;
+- schedule adherence;
+- OTIF;
+- inventory;
+- flow;
+- labor;
+- cost;
+- energy;
+- targets;
+- comparisons;
+- trends;
+- Pareto;
+- action effectiveness;
+- sustain.
+
+Metric definitions come from the governed Metric Registry.
+
+==================================================
+METRIC SERVICE
+==================================================
+
+Every metric must have governed:
+
+- canonical identity;
+- display name;
+- aliases;
+- definition;
+- formula;
+- numerator;
+- denominator;
+- units;
+- aggregation;
+- valid scope;
+- source;
+- time grain;
+- target semantics;
+- good direction;
+- effectivity/version;
+- evidence requirements;
+- calculation owner;
+- certification owner.
+
+Recognition does not equal execution.
+
+Execution does not equal certification.
+
+Unavailable metrics must remain unavailable.
+
+No fallback to OEE.
+
+==================================================
+PLANT HEAD DAILY OPERATIONS REVIEW
+==================================================
+
+The Plant Head Daily Operations Audit must become a first-class EKAS entry
+point.
+
+Core metrics:
+
+- Production vs Plan;
+- OEE;
+- Downtime;
+- Quality Loss;
+- Schedule Adherence;
+- Inventory Days;
+- OTIF.
+
+The user should be able to ask:
+
+"Run my plant review."
+
+"What's off target?"
+
+"What should I look at first?"
+
+"Investigate the top problem."
+
+"Who owns it?"
+
+"Did yesterday's action work?"
+
+"Did it sustain?"
+
+The review should feed directly into the same Investigation Service.
+
+==================================================
+INVESTIGATION SERVICE
+==================================================
+
+Introduce one persistent versioned Investigation aggregate.
+
+It should hold/refer to:
+
+CONTEXT
+GOAL
+LOSS BRIDGE
+CONTRIBUTORS
+EVIDENCE
+HYPOTHESES
+OWNER
+ACTION
+AUTHORIZATION
+PERFORMED WORK
+VERIFICATION PLAN
+VERIFICATION RESULT
+SUSTAIN
+RECURRENCE
+HISTORY
+
+The investigation must survive:
+
+- navigation;
+- reload;
+- history;
+- return to conversation;
+- continuation later.
+
+==================================================
+LOSS RECONCILIATION
+==================================================
+
+The user must be able to understand:
+
+WHY DID WE MISS THE GOAL?
+
+Separate:
+
+PLAN GAP
+
+from
+
+THEORETICAL CAPACITY LOSS.
+
+Never confuse them.
+
+Reconcile mutually exclusive:
+
+- downtime;
+- speed/performance;
+- quality.
+
+No double counting.
+
+No invented attribution.
+
+==================================================
+CONTRIBUTOR ANALYSIS
+==================================================
+
+EKAS must traverse:
+
+Plant
+→ Area/Line
+→ Equipment
+→ Job
+→ Part/Revision
+→ Operation
+→ Event
+
+where evidence allows it.
+
+It must not rank contributors without adequate denominators/exposure.
+
+Missing exposure must be explicit.
+
+==================================================
+EVIDENCE
+==================================================
+
+Evidence is first-class.
+
+Potential evidence includes:
+
+- machine events;
+- historian values;
+- production records;
+- jobs;
+- maintenance WO;
+- technician notes;
+- PFMEA;
+- Control Plan;
+- Standard Work;
+- engineering changes;
+- NCR;
+- quality records;
+- inspection records;
+- operator confirmation.
+
+Every important claim must be traceable.
+
+==================================================
+FACT VS HYPOTHESIS VS CAUSE
+==================================================
+
+Preserve:
+
+OBSERVATION
+DERIVED RESULT
+HYPOTHESIS
+SUPPORTED HYPOTHESIS
+REFUTED HYPOTHESIS
+CONFIRMED CAUSE
+
+Do not collapse these states.
+
+A metric correlation is not root cause.
+
+A model opinion is not root cause.
+
+==================================================
+ACTION LIFECYCLE
+==================================================
+
+Preserve distinct:
+
+RECOMMENDED
+ASSIGNMENT REQUESTED
+ASSIGNMENT ACCEPTED
+AUTHORIZATION REQUESTED
+AUTHORIZED
+PERFORMED
+VERIFIED
+SUSTAINED
+
+These are not interchangeable.
+
+==================================================
+CONTROLLED CHANGE
+==================================================
+
+Preserve distinction between:
+
+LIKE-FOR-LIKE RESTORATION
+
+and
+
+ENGINEERING CHANGE.
+
+Unreleased EC content must not become executable production instruction.
+
+==================================================
+VERIFICATION
+==================================================
+
+Before claiming success, create a verification plan.
+
+Lock:
+
+- baseline;
+- post cohort;
+- eligibility;
+- primary endpoint;
+- safety guardrails;
+- quality guardrails;
+- operational guardrails;
+- measurement horizon.
+
+Then measure.
+
+Do not retroactively choose the metric that looks best.
+
+==================================================
+TEMPORAL TRUTH
+==================================================
+
+Evidence must respect cutoff time.
+
+Future events must not leak into earlier conversation state.
+
+For demo purposes, use explicit:
+
+ADVANCE SIMULATION TIME
+
+when moving forward.
+
+==================================================
+SUSTAIN
+==================================================
+
+Verified improvement is not the end.
+
+EKAS must ask:
+
+DID IT HOLD?
+
+Track:
+
+- sustain observations;
+- target threshold;
+- recurrence threshold;
+- observer health;
+- stale data;
+- recurrence.
+
+Then:
+
+SUSTAINED
+
+or
+
+REOPEN.
+
+==================================================
+DEMO CASE COVERAGE
+==================================================
+
+At least THREE fully governed synthetic cases are required.
+
+CASE 1:
+Downtime / Availability
+
+Existing Northworks feeder-jam case.
+
+CASE 2:
+Performance / Speed loss
+
+Independent evidence-complete synthetic scenario.
+
+CASE 3:
+Quality loss
+
+Independent evidence-complete synthetic scenario.
+
+Do not stretch Case 1 evidence to pretend it proves Cases 2 and 3.
+
+==================================================
+API-FIRST REQUIREMENT
+==================================================
+
+The UI must communicate through typed service/API contracts.
+
+No direct fixture manipulation from UI components.
+
+Target services include:
+
+MetricService
+OperatingReviewService
+InvestigationService
+EvidenceService
+ActionService
+AuthorizationService
+VerificationService
+SustainService
+DocumentService
+
+Today:
+
+Mock adapters implement them.
+
+Later:
+
+backend adapters implement the same contracts.
+
+==================================================
+BACKEND INTEGRATION TARGET
+==================================================
+
+Future real integrations include:
+
+MES
+ERP
+CMMS
+QMS
+Historian
+PLM
+Controlled documents
+SQL
+Ignition
+Finance
+Identity
+Notifications
+
+The current demo must be architected so connecting these does not require
+rewriting the product.
+
+==================================================
+SECURITY
+==================================================
+
+Preserve EKAS security model.
+
+Security must remain real even in synthetic demo mode.
+
+Required principles:
+
+- fail closed;
+- tenant isolation;
+- current authorization;
+- immutable history;
+- policy revision binding;
+- masked disclosure;
+- evidence integrity;
+- no secret leakage;
+- no silent privilege widening.
+
+==================================================
+WHAT THE UI SHOULD FEEL LIKE
+==================================================
+
+The main UI should feel:
+
+- simple;
+- quiet;
+- professional;
+- conversational;
+- evidence-backed;
+- manufacturing-focused.
+
+The user should see:
+
+ANSWER
+→ WHY IT MATTERS
+→ OPTIONAL VISUAL
+→ NEXT ACTION
+
+Technical internals belong behind Evidence.
+
+==================================================
+RIGHT-SIDE / SUPPORTING SURFACES
+==================================================
+
+Supporting panels may show:
+
+- evidence;
+- context;
+- investigation;
+- owner/action;
+- charts;
+- documents;
+- verification;
+- history.
+
+They support the conversation.
+
+They do not replace it.
+
+==================================================
+WHAT WE MUST STOP DOING
+==================================================
+
+Do NOT optimize isolated screens without considering the end-to-end journey.
+
+Do NOT add navigation because functionality exists.
+
+Do NOT expose architecture to the user.
+
+Do NOT duplicate capabilities simply because another screen can host them.
+
+Do NOT create demo-only manual toggles.
+
+Do NOT create fake backend behavior.
+
+Do NOT call a chart a workflow.
+
+Do NOT call a script an end-to-end product.
+
+Do NOT call a unit-test pass user acceptance.
+
+==================================================
+CURRENT HIGH-PRIORITY GAPS
+==================================================
+
+Close these in this order:
+
+1. Unified conversational context.
+
+2. Chat as universal front door.
+
+3. Persistent Investigation aggregate.
+
+4. Goal → loss → contributor bridge.
+
+5. Evidence joined into investigation.
+
+6. Hypothesis lifecycle joined into investigation.
+
+7. Owner/action lifecycle joined into investigation.
+
+8. Authorization vs performed work separation.
+
+9. Verification joined into investigation.
+
+10. Sustain/reopen joined into investigation.
+
+11. Plant Head Audit → Investigation integration.
+
+12. Production-shaped typed APIs.
+
+13. Mock adapters behind those APIs.
+
+14. Dedicated speed-loss case.
+
+15. Dedicated quality-loss case.
+
+16. Negative/failure paths.
+
+17. Full conversational UI quality.
+
+18. Unaided end-to-end Chrome acceptance.
+
+19. Backend adapter readiness.
+
+==================================================
+ACCEPTANCE JOURNEY
+==================================================
+
+An unaided manufacturing user must be able to complete:
+
+"We missed our goal."
+
+→ see 150-unit miss
+
+→ identify Line 03 as 138-unit contributor
+
+→ reconcile losses
+
+→ identify JOB8303 / FEED03 / NW-A P2 / OP030
+
+→ inspect events
+
+→ inspect maintenance evidence
+
+→ inspect PFMEA / control plan / standard work
+
+→ understand uncertainty
+
+→ record/test hypothesis
+
+→ assign owner
+
+→ owner accepts
+
+→ recommend corrective action
+
+→ request authorization
+
+→ approve/reject
+
+→ record performed work
+
+→ explicitly advance time
+
+→ evaluate post-action cohort
+
+→ verify guardrails
+
+→ accept/reject result
+
+→ sustain
+
+→ detect recurrence
+
+→ reopen
+
+All through the same EKAS experience.
+
+==================================================
+CONVERSATIONAL ACCEPTANCE
+==================================================
+
+Also preserve and complete normal conversation:
+
+"What was OEE in January?"
+
+"And March?"
+
+"What about Machine 2?"
+
+"No, Machine 1."
+
+"Why?"
+
+"Show me."
+
+"Compare it with last month."
+
+"Go back to the first machine."
+
+"What was FPY?"
+
+Then seamlessly transition:
+
+"We missed our production goal."
+
+"Investigate it."
+
+"What caused it?"
+
+"What evidence supports that?"
+
+"What should we do?"
+
+"Did it work?"
+
+"Did it hold?"
+
+==================================================
+CURRENT DATA RULE
+==================================================
+
+Do not silently mix:
+
+Training dataset
+
+and
+
+Northworks dataset.
+
+Every result carries:
+
+- source;
+- scope;
+- time;
+- cutoff;
+- fixture/version.
+
+==================================================
+DEFINITION OF COMPLETE EKAS DEMO
+==================================================
+
+We have achieved the True North only when:
+
+1. The UI is chat-first.
+2. Conversation feels natural.
+3. Context persists correctly.
+4. Metrics are deterministic and governed.
+5. The Plant Review works.
+6. Goal exceptions can become investigations.
+7. Investigations persist.
+8. Losses reconcile.
+9. Contributors are evidence-based.
+10. Documents are evidence-linked.
+11. Hypotheses remain distinct from causes.
+12. Ownership works.
+13. Authorization works.
+14. Performed work is distinct from authorization.
+15. Verification works.
+16. Temporal integrity works.
+17. Sustain works.
+18. Reopen works.
+19. Downtime case works.
+20. Performance case works.
+21. Quality case works.
+22. API contracts are production-shaped.
+23. Mock adapters can be replaced by real adapters.
+24. Security remains intact.
+25. Evidence is inspectable.
+26. History is immutable.
+27. Mobile works.
+28. Accessibility works.
+29. Existing accepted features remain available.
+30. No hidden manual manipulation is required.
+31. An unaided user completes the full journey.
+32. The system behaves like one product, not connected demos.
+33. Backend replacement requires adapter work, not product redesign.
+34. Independent acceptance confirms the end-to-end behavior.
+35. No unresolved current-scope blocker remains.
+
+==================================================
+THE TRUE NORTH TEST
+==================================================
+
+For every implementation decision ask:
+
+Does this make EKAS feel more like ONE manufacturing expert and less like
+a collection of software modules?
+
+If YES:
+continue.
+
+If NO:
+reconsider.
+
+The product must ultimately allow a manufacturing leader to:
+
+SEE THE PROBLEM
+UNDERSTAND THE LOSS
+FIND THE CONTRIBUTOR
+VERIFY THE EVIDENCE
+DECIDE WHAT TO DO
+ASSIGN ACCOUNTABILITY
+TAKE GOVERNED ACTION
+MEASURE THE RESULT
+SUSTAIN THE IMPROVEMENT
+
+through one cohesive conversational EKAS experience.
+
+That is the product.
+
+That is the architecture.
+
+That is the acceptance standard.
+
+That is the True North.
+
+Do not declare success until it is achieved without compromise.

@@ -1,0 +1,27 @@
+{
+  "revision": "canonical-gap-spec@1.0.1",
+  "supersedes": "canonical-gap-spec@1.0.0",
+  "priorPackageHashes": {
+    "domain-schema.json": "8309dd5c1796e2c275c0943b842391fd7d8e28abe4fd95e7cee9a3c3ef23abd4",
+    "verification-report.json": "1287973de3e4cbeb55184ddb4e1735ea256741e2b43587be6d1ea1f5c3846338",
+    "raw-domain-records.json": "2c6d7b3a6996b9c6acaaff45391da9a381a9e432d61d670873c1f2adb080ce65",
+    "negative_fixture_checks.py": "cef52a202a1937a0b58e5483881a7b0191d3f747a35719d2acee90af5c8fafc8",
+    "build_records.py": "af179a5e6624312742e1fd9156d55adb41075e054fe6691476eaf25ee4698f9a",
+    "positive-oracles.json": "e9828b2384730a78d32f43eb9f049a1d6ed2671098b172c8bd579a6bb494c56d",
+    "api-result-contract.json": "018a3fc2aa56336b004ef9a11f4b114b8b233e2e0231dcf2551e5ae7e626c23f",
+    "gap-contracts.json": "b3ddcb0e844ae90754ee49b5a04238d6a27cd97d3808f5d3887af83fd4781be3",
+    "README.md": "412f04fcee22eafa0d942e570592e6cc0ee0e46e729f8f0af3be110af3f1fe5b",
+    "source-and-protection-binding.json": "5c544ff073d3cd73e180dcf3fee48cac2406022b960ac9a0446333a60c6f17c3",
+    "decisions-required.json": "747f47af61fd84fc5da03097f15933d56c6b297afca80f108edf496f73000d4e",
+    "verify_package.py": "bced0a77032fa01962da8dc71094aab7c9e5f6749015974f87874e5739c9cb44",
+    "build_oracles.py": "8c08fea0f2fa2a2518bd112691b87b65c468a7894cb6647444f45b62689f075e",
+    "qac-reconciliation-oracle.json": "9a08665015ead928a26a84d46ec2df54f2b477f5a5f35bb36cc05c6a4dff52af",
+    "negative-boundary-fixtures.json": "43a40bd806284eef00374fc3749342a3fd9ef74e0fd078f112cb2cc51eb0fa12",
+    "build_spec.py": "75b3d66308829e2ecd97c1bc281acc06348ea320b1fa789725bb9fc1cadd705f"
+  },
+  "changes": [
+    "Separate accepted completion facts required by approved WP-P4-16 contract; no shipment substitution",
+    "CR-051 later TBC-417 resolution recorded; absent customer severity retained",
+    "Decision categories and source provenance refined; no authority/product edits"
+  ]
+}

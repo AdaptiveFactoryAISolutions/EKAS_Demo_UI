@@ -1,0 +1,15 @@
+# Independent V56 source/math re-test request
+
+Review V56 only after its final freeze identity is provided. V55 ZIP/source/build and runtime 18201 remain unchanged; the original V55 independent PARTIAL report remains valid for V55. Do not edit the original 351-row ledger or promote these local tests to independent PASS.
+
+Five corrections are in app/src/investigation/cases.ts and workflow.ts; source-level regression probes are mathReview.test.ts. New additive fixture app/inputs/negative-outcomes-v56.json SHA256 cf4110a2fc2dac432c1ff359ac1f00278b3da15cb236ae9a053451502dbe842e. All 79 V55 inputs (74 original + 5 prior synthetic additions) remain byte-exact.
+
+1. Plant parent versus selected child: parent planned1440/good2154, goal2304/gap150, raw union48/72/120=240 and bridge2880−480−198−48=2154. Selected JOB8303 planned480/good630/OEE65.625. Check complete plant operands/IDs and honest selected energy absence. Existing source records, no new plant observation.
+2. Northworks absolute guardrails map source threshold0.025 fraction to2.5%, source energy1.2kWh/good. Probe2.3% and1.195kWh/good must pass even though wrong prior relative limits failed;2.6% and1.201must fail. B/C retain their independent own relative policy. Check UI labels and captured JSON.
+3. Speed counterfactual: no-improvement720total/706good/R450 gives90speed-lossmin; worse700/686/R450 gives100. Each branch owns ten post IDs and complete cycle records. Sum recovery delay matchesR−TC×0.5; current/baseline originals retained.
+4. Quality counterfactual: no-improvement880total/792good/748first; worse880/782/738 with44acceptedrework and98scrap. Each postshift owns880unique own-shift unit dispositions. Downtime flat copies original baseline operands with new own IDs; worse adds10jam/down minutes, subtracts10run and20total/good, preserving other exclusive residuals. Check raw interval unions and full coherent counts. All counterfactual values are explicit fictional test scenarios, not factual observations or causal proof. Their hypothetical preregistration known/effective14:30 precedes work; no real permission or intervention is created.
+5. Current Northworks Line03 energy null; no plant or ten-shift meter substituted. Original comparison baseline8000/6860 and post8000/7365 remain source-backed.
+
+Additional checks: comparison IDs exactly match the locked plan and job identity; wrong job rejected. Stale/missing new answers suppress goal/bridge and qualify historical operands. V56 does not rewrite V55 historical captures. Monthly discovery uses only the existing monthly source and leaves unavailable operational evidence null; no additional monthly target or outcome authored. Audit exposes all seven existing metrics and missing governed targets, without fabricating target readiness.
+
+Independent native scope/guardrail/export and case-specific natural interaction tests remain required. Full formal claim extraction/taxonomy, plan revision, completed Plant Head target governance and actual OpenAI/Tom integration remain partial or blocked as documented in V56-DEFECT-CLOSURE.md.

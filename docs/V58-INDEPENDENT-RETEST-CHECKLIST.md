@@ -1,0 +1,12 @@
+# V58 independent retest request
+
+Candidate is separately frozen and undeployed; a new isolated loopback launch requires parent authorization. Preserve all prior origins, histories and Chrome state. No security/provider/Library gate retry.
+
+1. Recheck V57-MATH-TEMP-01 immediately before14:00, at14:00 and after. Seven metric observations, three case actuals/gaps, rankings and opening eligibility must be consistent; known fictional targets do not imply observations. Test a later-known own case beside ready siblings and target-effectivity boundaries. Original numeric operands/scopes/horizons remain unchanged.
+2. Use the exact native plan request: Create a verification plan for feeder jams with a target of25 minutes per eligible shift and10 comparable shifts, retaining the existing quality and energy limits. Also use the simpler target-of/per-shift/and10shifts request. Inspect actual committed draft/version/unit/sample and unchanged active plan. Guardrail mention must not change primarymetric. Missing target/sample must ask for prerequisites, with no committed success. Later adoption/work remains subject to existing held boundaries.
+3. After Show the plant operating review, ask Investigate the top issue. Resolve the normalized metric ranking to distinct quality-loss discovery, retaining audit origin and missing evidence qualification. Original active-case focus and typed review focus must be separate. The unambiguous suggested phrase is top audit gap; case-gap ranking outside review context retains its declared meaning.
+4. Confirm OEE74.79% vs80% absolute gap5.21percentagepoints, separately normalized6.51%of target. Other percentage differences use pp; min/day differences retain min/day. Fictional approval metadata remains fiction, not customer approval.
+5. Inspect custom hypothesis support: none supplied, conversation proposal provenance only, no source-backed factual support or confirmed cause implied.
+6. Recheck previously closed native Record/Plan/Test, Events desktop390320actualvisibility, Close/focus, draft/history/monthly continuity. Verify oldV57failed-plan and audit captures retain original statuses/text while new requests use corrected behavior. Local portable legacy fixture checks support but do not replace actual reload/history review.
+
+Fresh native/source verdicts remain independent. No original55matrix or351ledger status was promoted by local corrections/tests. Full unscripted lifecycle, exhaustive native/error/empty branches and actual OpenAI/Tom execution remain separate pending scopes.

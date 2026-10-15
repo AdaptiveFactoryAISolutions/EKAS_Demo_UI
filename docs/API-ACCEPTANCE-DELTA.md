@@ -1,0 +1,20 @@
+# Proposed API inspection v2
+
+Baseline v2 source identity remains fe2635cef64cf99eccad6c84df82bff466cb46df. No live transport/auth/certification integration is asserted. Exact proposed DTOs are in app/src/platform/contract.ts; admission in validation.ts. Local API_VERSION ekas-proposed-v1 is distinct from pilot /v1 endpoints.
+
+## Operations and limits
+
+- GET /api/v1/status and /api/v1/capabilities: presentation authority only; machine-readable178-definition exact positive context/prerequisites. Arbitrary grouping/filters/independent shift are unavailable, explicitly refused, not silently aggregated. Base eligibility is evaluated separately.
+- POST /api/v1/query, GET exact /api/v1/results/:id: immutable captured query/result/time; single exact cohort result with explicit total/page/truncation. No81-group support is advertised through this cohort endpoint; retained workspace grouping is a separate documented extension over24 finite jobs.
+- Owned generic resource CRUD: version/conflict/idempotency/scope protections; arbitrary unsigned captures, not controlled revision/EC/PM/financial transition authority. Production governed operations are not implemented or advertised.
+- Bounded conversation create/messages: local server-owned context and finite semantic vocabulary, not broad NL interpretation. Arithmetic extension: explicit edited/cohort assumptions, distinct from observed raw records.
+
+Positive per-value semanticVersions contains metric numeric1 mapped to independent-metric-contract-1.0, aggregation positive-raw-v2.3 (historical v2.1/v2.2 snapshots retain their original version), proposed-demo-policy-v2, fixture identity and three source SHA256s. operandContexts retain effective source aggregation/horizon/cohort metadata for each required operand. Evidence IDs use namespace/table/record@version. Missing, future, partial, masked and unsupported context refusals retain query; positive refusals expose reasonCode. Zero exposure remains distinct from missing input. Fifteen policy decisions remain proposed; change of protocol/version requires re-evaluation, not inheritance.
+
+Client IDs include session+random client lifetime+sequence; at most1000 traces/client and2000 training observer traces. Failed transports become traceable typed errors. Read calculations use generation suppression on metric/namespace/scope/cutoff/operand/unmount changes; writes are not cancelled or duplicated by read suppression. Delayed A/new B owner component test passes. Saved results replay original snapshot, not current recomputation. Static fixtures do not mutate between pages; unsupported grouping is refused rather than mixing pages. Native browser performance/pagination/UI acceptance remains pending.
+
+Tests: integrationRecheck, clientMetadata, negativeGates, positiveCoverage, staleResponse, negativeUi, positiveUi. Twelve negative contexts pass actual client/React controls; chart/table/export/evidence/cache/role/reload acceptance still requires independent permitted browser inspection. No new demo reason is claimed as existing v2 enum. Source tests do not establish production authentication, signed evidence validation or compatibility.
+
+## V4 provenance and V5 amendment
+
+V4 provenance is retained below. V5 adds the captured-view correction and this supplemental handoff; its authoritative source/build hashes are in the packaged freeze-manifest.json. ZIP SHA256 `894eb7bebbafeb2c2bd05b108ae375497192b4c9d147630267aa0e6380806212`; source `e2f8ba4583288d22c50a50f2317bc87451efd31de9ea7d0ddb11e23649343786`; build `4eabfe43ab7c41023095e1b68b4b9e731546b3e924fe272f0208cba5789cd284`. Library `libfile_813fc8fc1dd88191b5d6c3e62d179b14`, version0. These edits leave the immutable V4 archive unchanged and are included in the new V5 package. Owner validation:270tests/60files,111 supplied integrity cases and178 positive baselines pass; independent V4 source review passed these checks and identified the captured-view defect corrected in V5. V5 owner validation is275tests/62files; independent V5 acceptance remains pending. Browser/native, offline exports, performance and two-hour rehearsal remain unaccepted.

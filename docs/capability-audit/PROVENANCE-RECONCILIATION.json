@@ -1,0 +1,685 @@
+{
+  "packageCount": 53,
+  "noticeReferences": 55,
+  "allDocumentHashesMatch": true,
+  "allStaticCopiesPresent": true,
+  "allServerCopiesPresent": true,
+  "unresolvedStandaloneNotices": [
+    "@rolldown/binding-linux-x64-gnu",
+    "@rolldown/binding-linux-x64-musl"
+  ],
+  "frozenNoticeManifestStatus": "Prepared, not yet in built/static package",
+  "rows": [
+    {
+      "package": "@babel/runtime",
+      "notice": "babel_runtime-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/babel_runtime-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/babel_runtime-LICENSE"
+      ]
+    },
+    {
+      "package": "@highcharts/dashboards",
+      "notice": "highcharts_dashboards-LICENSE.txt",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/highcharts_dashboards-LICENSE.txt"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/highcharts_dashboards-LICENSE.txt"
+      ]
+    },
+    {
+      "package": "@highcharts/grid-lite",
+      "notice": "highcharts_grid-lite-LICENSE.txt",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/highcharts_grid-lite-LICENSE.txt"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/highcharts_grid-lite-LICENSE.txt"
+      ]
+    },
+    {
+      "package": "@oxc-project/types",
+      "notice": "oxc-project_types-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/oxc-project_types-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/oxc-project_types-LICENSE"
+      ]
+    },
+    {
+      "package": "@rolldown/pluginutils",
+      "notice": "rolldown_pluginutils-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/rolldown_pluginutils-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/rolldown_pluginutils-LICENSE"
+      ]
+    },
+    {
+      "package": "@types/pako",
+      "notice": "types_pako-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/types_pako-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/types_pako-LICENSE"
+      ]
+    },
+    {
+      "package": "@types/raf",
+      "notice": "types_raf-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/types_raf-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/types_raf-LICENSE"
+      ]
+    },
+    {
+      "package": "@types/trusted-types",
+      "notice": "types_trusted-types-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/types_trusted-types-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/types_trusted-types-LICENSE"
+      ]
+    },
+    {
+      "package": "base64-arraybuffer",
+      "notice": "base64-arraybuffer-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/base64-arraybuffer-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/base64-arraybuffer-LICENSE"
+      ]
+    },
+    {
+      "package": "canvg",
+      "notice": "canvg-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/canvg-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/canvg-LICENSE"
+      ]
+    },
+    {
+      "package": "core-js",
+      "notice": "core-js-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/core-js-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/core-js-LICENSE"
+      ]
+    },
+    {
+      "package": "css-line-break",
+      "notice": "css-line-break-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/css-line-break-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/css-line-break-LICENSE"
+      ]
+    },
+    {
+      "package": "cssesc",
+      "notice": "cssesc-LICENSE-MIT.txt",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/cssesc-LICENSE-MIT.txt"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/cssesc-LICENSE-MIT.txt"
+      ]
+    },
+    {
+      "package": "detect-libc",
+      "notice": "detect-libc-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/detect-libc-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/detect-libc-LICENSE"
+      ]
+    },
+    {
+      "package": "dompurify",
+      "notice": "dompurify-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/dompurify-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/dompurify-LICENSE"
+      ]
+    },
+    {
+      "package": "dompurify",
+      "notice": "dompurify-LICENSE-MPL",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/dompurify-LICENSE-MPL"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/dompurify-LICENSE-MPL"
+      ]
+    },
+    {
+      "package": "fast-png",
+      "notice": "fast-png-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/fast-png-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/fast-png-LICENSE"
+      ]
+    },
+    {
+      "package": "fdir",
+      "notice": "fdir-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/fdir-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/fdir-LICENSE"
+      ]
+    },
+    {
+      "package": "fflate",
+      "notice": "fflate-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/fflate-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/fflate-LICENSE"
+      ]
+    },
+    {
+      "package": "font-family-papandreou",
+      "notice": "font-family-papandreou-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/font-family-papandreou-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/font-family-papandreou-LICENSE"
+      ]
+    },
+    {
+      "package": "highcharts",
+      "notice": "highcharts-LICENSE.txt",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/highcharts-LICENSE.txt"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/highcharts-LICENSE.txt"
+      ]
+    },
+    {
+      "package": "html2canvas",
+      "notice": "html2canvas-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/html2canvas-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/html2canvas-LICENSE"
+      ]
+    },
+    {
+      "package": "iobuffer",
+      "notice": "iobuffer-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/iobuffer-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/iobuffer-LICENSE"
+      ]
+    },
+    {
+      "package": "jspdf",
+      "notice": "jspdf-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/jspdf-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/jspdf-LICENSE"
+      ]
+    },
+    {
+      "package": "lightningcss",
+      "notice": "lightningcss-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/lightningcss-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/lightningcss-LICENSE"
+      ]
+    },
+    {
+      "package": "lightningcss-linux-x64-gnu",
+      "notice": "lightningcss-linux-x64-gnu-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/lightningcss-linux-x64-gnu-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/lightningcss-linux-x64-gnu-LICENSE"
+      ]
+    },
+    {
+      "package": "lightningcss-linux-x64-musl",
+      "notice": "lightningcss-linux-x64-musl-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/lightningcss-linux-x64-musl-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/lightningcss-linux-x64-musl-LICENSE"
+      ]
+    },
+    {
+      "package": "nanoid",
+      "notice": "nanoid-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/nanoid-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/nanoid-LICENSE"
+      ]
+    },
+    {
+      "package": "pako",
+      "notice": "pako-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/pako-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/pako-LICENSE"
+      ]
+    },
+    {
+      "package": "performance-now",
+      "notice": "performance-now-license.txt",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/performance-now-license.txt"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/performance-now-license.txt"
+      ]
+    },
+    {
+      "package": "picocolors",
+      "notice": "picocolors-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/picocolors-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/picocolors-LICENSE"
+      ]
+    },
+    {
+      "package": "picomatch",
+      "notice": "picomatch-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/picomatch-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/picomatch-LICENSE"
+      ]
+    },
+    {
+      "package": "postcss",
+      "notice": "postcss-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/postcss-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/postcss-LICENSE"
+      ]
+    },
+    {
+      "package": "raf",
+      "notice": "raf-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/raf-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/raf-LICENSE"
+      ]
+    },
+    {
+      "package": "react",
+      "notice": "react-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/react-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/react-LICENSE"
+      ]
+    },
+    {
+      "package": "react-dom",
+      "notice": "react-dom-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/react-dom-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/react-dom-LICENSE"
+      ]
+    },
+    {
+      "package": "regenerator-runtime",
+      "notice": "regenerator-runtime-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/regenerator-runtime-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/regenerator-runtime-LICENSE"
+      ]
+    },
+    {
+      "package": "rgbcolor",
+      "notice": "rgbcolor-LICENSE.md",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/rgbcolor-LICENSE.md"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/rgbcolor-LICENSE.md"
+      ]
+    },
+    {
+      "package": "rgbcolor",
+      "notice": "rgbcolor-FEEL-FREE.md",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/rgbcolor-FEEL-FREE.md"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/rgbcolor-FEEL-FREE.md"
+      ]
+    },
+    {
+      "package": "rolldown",
+      "notice": "rolldown-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/rolldown-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/rolldown-LICENSE"
+      ]
+    },
+    {
+      "package": "rolldown",
+      "notice": "rolldown-THIRD-PARTY-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/rolldown-THIRD-PARTY-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/rolldown-THIRD-PARTY-LICENSE"
+      ]
+    },
+    {
+      "package": "scheduler",
+      "notice": "scheduler-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/scheduler-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/scheduler-LICENSE"
+      ]
+    },
+    {
+      "package": "source-map-js",
+      "notice": "source-map-js-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/source-map-js-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/source-map-js-LICENSE"
+      ]
+    },
+    {
+      "package": "specificity",
+      "notice": "specificity-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/specificity-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/specificity-LICENSE"
+      ]
+    },
+    {
+      "package": "stackblur-canvas",
+      "notice": "stackblur-canvas-LICENSE-MIT.txt",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/stackblur-canvas-LICENSE-MIT.txt"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/stackblur-canvas-LICENSE-MIT.txt"
+      ]
+    },
+    {
+      "package": "svg-pathdata",
+      "notice": "svg-pathdata-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/svg-pathdata-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/svg-pathdata-LICENSE"
+      ]
+    },
+    {
+      "package": "svg2pdf.js",
+      "notice": "svg2pdf.js-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/svg2pdf.js-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/svg2pdf.js-LICENSE"
+      ]
+    },
+    {
+      "package": "svgpath",
+      "notice": "svgpath-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/svgpath-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/svgpath-LICENSE"
+      ]
+    },
+    {
+      "package": "text-segmentation",
+      "notice": "text-segmentation-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/text-segmentation-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/text-segmentation-LICENSE"
+      ]
+    },
+    {
+      "package": "tinyglobby",
+      "notice": "tinyglobby-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/tinyglobby-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/tinyglobby-LICENSE"
+      ]
+    },
+    {
+      "package": "typescript",
+      "notice": "typescript-LICENSE.txt",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/typescript-LICENSE.txt"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/typescript-LICENSE.txt"
+      ]
+    },
+    {
+      "package": "typescript",
+      "notice": "typescript-ThirdPartyNoticeText.txt",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/typescript-ThirdPartyNoticeText.txt"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/typescript-ThirdPartyNoticeText.txt"
+      ]
+    },
+    {
+      "package": "utrie",
+      "notice": "utrie-LICENSE",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/utrie-LICENSE"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/utrie-LICENSE"
+      ]
+    },
+    {
+      "package": "vite",
+      "notice": "vite-LICENSE.md",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/third-party/vite-LICENSE.md"
+      ],
+      "serverCopies": [
+        "server/licenses/third-party/vite-LICENSE.md"
+      ]
+    },
+    {
+      "package": "retained Tailwind stylesheet",
+      "notice": "tailwindcss-MIT.txt",
+      "docHashMatches": true,
+      "staticCopies": [
+        "static/licenses/tailwindcss-MIT.txt",
+        "static/licenses/third-party/tailwindcss-MIT.txt"
+      ],
+      "serverCopies": [
+        "server/licenses/tailwindcss-MIT.txt",
+        "server/licenses/third-party/tailwindcss-MIT.txt"
+      ]
+    }
+  ],
+  "licenceEntitlementAsserted": false,
+  "fontSourceFiles": [
+    {
+      "file": "IBMPlexSans-Regular.ttf",
+      "sha256Matches": true
+    },
+    {
+      "file": "IBMPlexSans-SemiBold.ttf",
+      "sha256Matches": true
+    },
+    {
+      "file": "IBMPlexSans-Bold.ttf",
+      "sha256Matches": true
+    },
+    {
+      "file": "IBMPlexMono-Regular.ttf",
+      "sha256Matches": true
+    },
+    {
+      "file": "LICENSE.txt",
+      "sha256Matches": true
+    }
+  ],
+  "iconAuthorship": [
+    {
+      "file": "settings.svg",
+      "replacementSha256Matches": true
+    },
+    {
+      "file": "resize-handle.svg",
+      "replacementSha256Matches": true
+    },
+    {
+      "file": "close.svg",
+      "replacementSha256Matches": true
+    },
+    {
+      "file": "dropdown-pointer.svg",
+      "replacementSha256Matches": true
+    },
+    {
+      "file": "fullscreen.svg",
+      "replacementSha256Matches": true
+    },
+    {
+      "file": "menu.svg",
+      "replacementSha256Matches": true
+    },
+    {
+      "file": "add.svg",
+      "replacementSha256Matches": true
+    },
+    {
+      "file": "drag.svg",
+      "replacementSha256Matches": true
+    },
+    {
+      "file": "destroy.svg",
+      "replacementSha256Matches": true
+    }
+  ],
+  "runtimeOptionalBindingsPresent": [],
+  "reconciledStatus": "All prepared notices are present with exact hashes in docs/static/server; frozen prepared-not-built label is stale",
+  "exactBundledModuleComposition": "NOT_INDEPENDENTLY_ESTABLISHED_BY_NOTICE_COPY_MANIFEST"
+}

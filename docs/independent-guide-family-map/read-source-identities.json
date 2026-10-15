@@ -1,0 +1,70 @@
+[
+  {
+    "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v95-substantive-guide-working/V95-GUIDE-MILESTONE-01.md",
+    "sha256": "e9a3a19d775fa4a027be71033425cb3dae98253dbb7a41ed68e80cdb884ed950"
+  },
+  {
+    "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v95-substantive-guide-working/V95-GUIDE-ACCEPTANCE-SCOPE.md",
+    "sha256": "15f6043b79f7143a06de2d542a256fabfd9c47eea4532a2d94273bf53d1763ec"
+  },
+  {
+    "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v95-substantive-guide-working/evidence/v95-normal-audit-callback-inventory.json",
+    "sha256": "5ae58fb38ec20085526ecaf757233972a55c96d528a03677a488ede9366d9030"
+  },
+  {
+    "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v95-substantive-guide-working/app/inputs/current-guide-action-bindings-v90.json",
+    "sha256": "952550fda799c1ee852ffbff3bf65d9636838b1643a71a13ea154cf8b659f46c"
+  },
+  {
+    "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v95-substantive-guide-working/app/src/guideProcedures.ts",
+    "sha256": "b65442bbb178e195b2af84a8d1f3218f7503950f99a15b1aca7ba8297effe40b"
+  },
+  {
+    "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v95-substantive-guide-working/app/src/guideModel.ts",
+    "sha256": "8d913c36234d4b118ae9ffd436875bde4c39fdcd2cf6ddd92eef43bfff33163a"
+  },
+  {
+    "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v95-substantive-guide-working/app/src/Guide.tsx",
+    "sha256": "04610706f7e1682745f203255e288497e08441fc544de108d93e92161170ff78"
+  },
+  {
+    "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v95-substantive-guide-working/app/src/retained/screens.tsx",
+    "sha256": "71b9d8f70ee4262d1ee8804151e7e34edecc2f89b1d1747d12e51dd1c763f20c"
+  },
+  {
+    "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v95-substantive-guide-working/app/src/retained/store.ts",
+    "sha256": "7ec2e6a33a4f2a3b5fd4b1189cc9f6511402f863e7b84388630fa982144b29f7"
+  },
+  {
+    "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v95-substantive-guide-working/app/src/workflowRecipesV95.ts",
+    "sha256": "0357b434b3d6b6324a31fbebf0b1f248e5a27b75ee092524ea293df370ebe3c9"
+  },
+  {
+    "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v95-substantive-guide-working/app/src/guideControlRecipes.ts",
+    "sha256": "ba75b9667be6494aed46411ee8ed1fec619e795be49a62a16f6fabfe352e190b"
+  },
+  {
+    "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v95-substantive-guide-working/app/src/guidePublicTargets.ts",
+    "sha256": "5c4168a9bbe1a1f407dc6ad2f3aa68e5f6e6173ec38335a56d28446adc791ee3"
+  },
+  {
+    "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v95-substantive-guide-working/app/src/retained/workflowRuntime.ts",
+    "sha256": "e707b827f001161045b161feb5ac75f6929fd02de5bfc4090d043f1f161183d6"
+  },
+  {
+    "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v95-substantive-guide-working/app/src/retained/boardReview.ts",
+    "sha256": "b5223f600374ee7c17009a567866f569434237f0e37187d1c44d37099d43d0d9"
+  },
+  {
+    "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v95-substantive-guide-working/app/src/retained/synonyms.ts",
+    "sha256": "36c4a5e091e24b98227a50c70c5f4e297f1147efed9d11e7c1a1ff88f4316715"
+  },
+  {
+    "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v95-substantive-guide-working/app/src/retained/developerSurfaces.tsx",
+    "sha256": "cd940384744e046cf01e502290171bd071a77b68993a8c19da7186e5aa287a3a"
+  },
+  {
+    "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v95-substantive-guide-working/app/src/retained/ApiPlayground.tsx",
+    "sha256": "32605191b91def19e124e894e877c5cba9fd8bf6beb271024389a48b08abb3b4"
+  }
+]

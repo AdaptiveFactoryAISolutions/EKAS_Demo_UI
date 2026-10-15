@@ -1,0 +1,1371 @@
+{
+  "schemaVersion": "canonical-gap-negative-fixtures@1.0.0",
+  "cases": [
+    {
+      "caseId": "capacity-no-entitlement",
+      "metricId": "MET-012",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "remove",
+          "table": "oee_entitlements",
+          "id": "CAP-ENTITLEMENT"
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "ENTITLEMENT_UNAVAILABLE",
+        "fallbackMetric": "MET-011"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "released-no-entitlement",
+      "metricId": "MET-014",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "remove",
+          "table": "oee_entitlements",
+          "id": "CAP-ENTITLEMENT"
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "ENTITLEMENT_UNAVAILABLE",
+        "fallbackMetric": "MET-011"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "gross-does-not-need-entitlement",
+      "metricId": "MET-011",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "remove",
+          "table": "oee_entitlements",
+          "id": "CAP-ENTITLEMENT"
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": 40.0,
+        "fixtureState": "AVAILABLE_SYNTHETIC_ARITHMETIC"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "expired-entitlement",
+      "metricId": "MET-012",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "oee_entitlements",
+          "id": "CAP-ENTITLEMENT",
+          "fields": {
+            "valid_to_exclusive": "2026-08-31T00:00:00Z"
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "ENTITLEMENT_UNAVAILABLE",
+        "fallbackMetric": "MET-011"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "wrong-tool-entitlement",
+      "metricId": "MET-012",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "oee_entitlements",
+          "id": "CAP-ENTITLEMENT",
+          "fields": {
+            "tool_id": "ToolPrevious"
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "ENTITLEMENT_UNAVAILABLE",
+        "fallbackMetric": "MET-011"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "units-no-PRI-hours-remain",
+      "metricId": "MET-013",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "remove",
+          "table": "planned_runtime_standards",
+          "id": "CAP-PRI"
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "PLANNED_RUNTIME_PER_ITEM_UNAVAILABLE",
+        "fallbackMetric": "MET-012",
+        "availableHours": 15.000000000000002
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "zero-PRI",
+      "metricId": "MET-013",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "planned_runtime_standards",
+          "id": "CAP-PRI",
+          "fields": {
+            "value": 0
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "PLANNED_RUNTIME_PER_ITEM_UNAVAILABLE",
+        "fallbackMetric": "MET-012",
+        "availableHours": 15.000000000000002
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "zero-entitlement-denominator",
+      "metricId": "MET-014",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "oee_entitlements",
+          "id": "CAP-ENTITLEMENT",
+          "fields": {
+            "value": 0
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "INVALID_ENTITLEMENT_DENOMINATOR"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "entitlement-exceeded-APCO",
+      "metricId": "MET-012",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "oee_entitlements",
+          "id": "CAP-ENTITLEMENT",
+          "fields": {
+            "value": 0.5
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": 0.0,
+        "fixtureState": "AVAILABLE_SYNTHETIC_ARITHMETIC"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "entitlement-exceeded-released",
+      "metricId": "MET-014",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "oee_entitlements",
+          "id": "CAP-ENTITLEMENT",
+          "fields": {
+            "value": 0.5
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": 0.0,
+        "fixtureState": "AVAILABLE_SYNTHETIC_ARITHMETIC"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "zero-planned-time",
+      "metricId": "MET-011",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "removeWhere",
+          "table": "equipment_intervals",
+          "field": "primary_state",
+          "value": "planned_busy"
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "NO_PLANNED_BUSY_TIME"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "recovery-method-missing",
+      "metricId": "MET-015",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "DEFINITION_REQUIRED"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "finance-model-missing",
+      "metricId": "MET-016",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "VALUATION_BASIS_REQUIRED"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "changeover-no-standard",
+      "metricId": "MET-018",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "remove",
+          "table": "planned_setup_standards",
+          "id": "PUST-1"
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "EFFECTIVE_PUST_UNAVAILABLE",
+        "fallbackMetric": "MET-017",
+        "elapsed_min": 85.0
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "setup-no-segments",
+      "metricId": "MET-019",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "removeWhere",
+          "table": "changeover_segments",
+          "field": "changeover_id",
+          "value": "CHANGE-1"
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "SEGMENT_CLASSIFICATION_UNAVAILABLE"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "delay-no-causal-evidence",
+      "metricId": "MET-020",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "changeover_segments",
+          "id": "CHANGE-1-DELAY",
+          "fields": {
+            "causal_evidence_id": null
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "CAUSAL_ASSET_EVIDENCE_UNAVAILABLE"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "overlapping-primary-states",
+      "metricId": "MET-019",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "changeover_segments",
+          "id": "CHANGE-1-DELAY",
+          "fields": {
+            "start": "2026-09-15T08:10:00Z"
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "CONTRADICTORY_PRIMARY_STATES"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "inside-standard-overrun",
+      "metricId": "MET-018",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "changeovers",
+          "id": "CHANGE-1",
+          "fields": {
+            "end": "2026-09-15T08:35:00Z"
+          }
+        },
+        {
+          "operation": "remove",
+          "table": "changeover_segments",
+          "id": "CHANGE-1-DELAY"
+        },
+        {
+          "operation": "remove",
+          "table": "changeover_segments",
+          "id": "CHANGE-1-SETUP-B"
+        },
+        {
+          "operation": "patch",
+          "table": "changeover_segments",
+          "id": "CHANGE-1-SETUP-A",
+          "fields": {
+            "end": "2026-09-15T08:35:00Z"
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": 0,
+        "fixtureState": "AVAILABLE_SYNTHETIC_ARITHMETIC"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "inside-standard-signed-setup",
+      "metricId": "MET-019",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "changeovers",
+          "id": "CHANGE-1",
+          "fields": {
+            "end": "2026-09-15T08:35:00Z"
+          }
+        },
+        {
+          "operation": "remove",
+          "table": "changeover_segments",
+          "id": "CHANGE-1-DELAY"
+        },
+        {
+          "operation": "remove",
+          "table": "changeover_segments",
+          "id": "CHANGE-1-SETUP-B"
+        },
+        {
+          "operation": "patch",
+          "table": "changeover_segments",
+          "id": "CHANGE-1-SETUP-A",
+          "fields": {
+            "end": "2026-09-15T08:35:00Z"
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": -5.0,
+        "fixtureState": "AVAILABLE_SYNTHETIC_ARITHMETIC"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "NEE-component-binding",
+      "metricId": "MET-021",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "COMPONENT_DEFINITION_BINDING_REQUIRED"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "restoration-missing-end",
+      "metricId": "MET-022",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "remove",
+          "table": "semantic_anchors",
+          "id": "FAIL-1-t7"
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "RESTORATION_ANCHOR_UNAVAILABLE",
+        "openEvents": 0
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "restoration-contradictory",
+      "metricId": "MET-022",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "semantic_anchors",
+          "id": "FAIL-1-t7",
+          "fields": {
+            "at": "2026-09-17T07:00:00Z"
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "CONTRADICTORY_ANCHORS_QUARANTINE"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "response-missing-arrival",
+      "metricId": "MET-024",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "remove",
+          "table": "semantic_anchors",
+          "id": "FAIL-1-t4"
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "RESPONSE_ANCHOR_UNAVAILABLE",
+        "openEvents": 0
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "admin-only-proxy",
+      "metricId": "MET-023",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "removeWhere",
+          "table": "semantic_anchors",
+          "field": "failure_event_id",
+          "value": "FAIL-1"
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": 240.0,
+        "fixtureState": "AVAILABLE_SYNTHETIC_ARITHMETIC",
+        "administrativeProxy": true
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "open-administrative",
+      "metricId": "MET-023",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "work_orders",
+          "id": "WO-1",
+          "fields": {
+            "completed_at": null
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "OPEN_ADMINISTRATIVE_WORK_ORDER"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "no-person-time",
+      "metricId": "MET-026",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "removeWhere",
+          "table": "person_work_intervals",
+          "field": "failure_event_id",
+          "value": "FAIL-1"
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "PERSON_TIME_UNAVAILABLE"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "dedup-concurrent-effort",
+      "metricId": "MET-026",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [],
+      "requestParameters": {},
+      "expected": {
+        "value": 1.5,
+        "fixtureState": "AVAILABLE_SYNTHETIC_ARITHMETIC",
+        "unit": "person_h/repair"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "conflicting-punch-id",
+      "metricId": "MET-026",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "person_work_intervals",
+          "id": "A1-INGEST-DUP",
+          "fields": {
+            "end": "2026-09-17T09:20:00Z"
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "CONFLICTING_PERSON_TIME_SOURCE_IDENTITY"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "unresolved-person-event",
+      "metricId": "MET-026",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "person_work_intervals",
+          "id": "B1",
+          "fields": {
+            "allocation": "two possible failureevents"
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "EVENT_ALLOCATION_UNRESOLVED"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "commitment-all-links-missing",
+      "metricId": "MET-027",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "removeWhere",
+          "table": "commitment_production_links",
+          "field": "unit",
+          "value": "piece"
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "ORDER_TO_PRODUCTION_LINKAGE_UNAVAILABLE",
+        "unknownCommitments": 6
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "commitment-one-unknown",
+      "metricId": "MET-027",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [],
+      "requestParameters": {},
+      "expected": {
+        "value": 100,
+        "fixtureState": "AVAILABLE_SYNTHETIC_ARITHMETIC",
+        "exposedCommitments": 2,
+        "unknownCommitments": 1,
+        "coveredCommitments": 5
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "commitment-held-FG-not-available",
+      "metricId": "MET-027",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "finished_goods_allocations",
+          "id": "CL-1-FG",
+          "fields": {
+            "stock_state": "quality_held"
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": 130,
+        "fixtureState": "AVAILABLE_SYNTHETIC_ARITHMETIC",
+        "exposedCommitments": 2,
+        "unknownCommitments": 1,
+        "coveredCommitments": 5
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "commitment-approved-alternate",
+      "metricId": "MET-027",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [],
+      "requestParameters": {},
+      "expected": {
+        "value": 100,
+        "fixtureState": "AVAILABLE_SYNTHETIC_ARITHMETIC",
+        "exposedCommitments": 2,
+        "unknownCommitments": 1,
+        "coveredCommitments": 5
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "commitment-overallocated",
+      "metricId": "MET-027",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "finished_goods_allocations",
+          "id": "CL-1-FG",
+          "fields": {
+            "quantity": 200
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "OVERALLOCATION_POLICY_UNRESOLVED"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "commitment-completion-missing-not-shipment-substitute",
+      "metricId": "MET-027",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "remove",
+          "table": "accepted_completions",
+          "id": "CL-1-COMPLETE"
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": 50,
+        "fixtureState": "AVAILABLE_SYNTHETIC_ARITHMETIC",
+        "exposedCommitments": 1,
+        "unknownCommitments": 2,
+        "coveredCommitments": 4
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "commitment-completion-distinct-not-formula-operand",
+      "metricId": "MET-027",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "accepted_completions",
+          "id": "CL-1-COMPLETE",
+          "fields": {
+            "quantity": 70
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": 100,
+        "fixtureState": "AVAILABLE_SYNTHETIC_ARITHMETIC",
+        "exposedCommitments": 2,
+        "unknownCommitments": 1,
+        "coveredCommitments": 5
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "commitment-completion-incompatible-unit",
+      "metricId": "MET-027",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "accepted_completions",
+          "id": "CL-1-COMPLETE",
+          "fields": {
+            "unit": "kg"
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": 50,
+        "fixtureState": "AVAILABLE_SYNTHETIC_ARITHMETIC",
+        "exposedCommitments": 1,
+        "unknownCommitments": 2,
+        "coveredCommitments": 4
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "commitment-watermark-missing",
+      "metricId": "MET-027",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "plan_snapshots",
+          "id": "PLAN-SNAPSHOT",
+          "fields": {
+            "source_watermark": null
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "CURRENT_PLAN_SOURCE_UNAVAILABLE"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "rate299pieces",
+      "metricId": "MET-028",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "remove",
+          "table": "rate_piece_observations",
+          "id": "RATE-BELOW-PIECE0300"
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "INSUFFICIENT_RUNS",
+        "candidateParts": 299,
+        "qualifiedParts": 299
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "rate-zero-quote",
+      "metricId": "MET-028",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "quoted_rates",
+          "id": "RATE-BELOW-QUOTE-RATE",
+          "fields": {
+            "value": 0
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "QUOTED_RATE_UNAVAILABLE"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "rate-absent-quote",
+      "metricId": "MET-028",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "remove",
+          "table": "quoted_rates",
+          "id": "RATE-BELOW-QUOTE-RATE"
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "QUOTED_RATE_UNAVAILABLE"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "rate-unit-incompatible",
+      "metricId": "MET-028",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "quoted_rates",
+          "id": "RATE-BELOW-QUOTE-RATE",
+          "fields": {
+            "unit": "kg/h"
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "QUOTED_RATE_UNAVAILABLE"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "rate-labour-substitution",
+      "metricId": "MET-028",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "rate_machine_intervals",
+          "id": "RATE-BELOW-MACHINE",
+          "fields": {
+            "clock": "human_effort"
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "DEMONSTRATED_RATE_UNAVAILABLE"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "rate-short-window",
+      "metricId": "MET-028",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "qualified_rate_runs",
+          "id": "RATE-BELOW",
+          "fields": {
+            "end": "2026-09-20T08:30:00Z"
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "INSUFFICIENT_RUNS",
+        "candidateParts": 300,
+        "qualifiedParts": 37
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "rate-too-long-window",
+      "metricId": "MET-028",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "qualified_rate_runs",
+          "id": "RATE-BELOW",
+          "fields": {
+            "end": "2026-09-20T17:00:00Z"
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "INSUFFICIENT_RUNS",
+        "candidateParts": 300,
+        "qualifiedParts": 300
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "rate-trial-excluded",
+      "metricId": "MET-028",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "rate_piece_observations",
+          "id": "RATE-BELOW-PIECE0300",
+          "fields": {
+            "trial": true
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "INSUFFICIENT_RUNS",
+        "candidateParts": 300,
+        "qualifiedParts": 299
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "qac-not-modeled",
+      "metricId": "QAC-001",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "quote_assumptions",
+          "id": "QAC-downtime",
+          "fields": {
+            "presence_state": "NOT_MODELED",
+            "value": null
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "DECOMPOSITION_NOT_YET_AVAILABLE",
+        "totalOnlyIfSeparateApprovedSameRevisionTotalExists": true
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "qac-source-unavailable",
+      "metricId": "QAC-001",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "quote_assumptions",
+          "id": "QAC-setup",
+          "fields": {
+            "presence_state": "UNKNOWN_SOURCE_UNAVAILABLE",
+            "value": null
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "DECOMPOSITION_NOT_YET_AVAILABLE",
+        "totalOnlyIfSeparateApprovedSameRevisionTotalExists": true
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "qac-explicit-zero-distinct",
+      "metricId": "QAC-001",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [],
+      "requestParameters": {},
+      "expected": {
+        "value": 24.0,
+        "fixtureState": "AVAILABLE_SYNTHETIC_ARITHMETIC",
+        "bridgeAResidual": 0.0,
+        "bridgeBResidual": 0.0
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "qac-duplicate-effective-rate",
+      "metricId": "QAC-001",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "copy",
+          "table": "quote_assumptions",
+          "id": "QAC-rate",
+          "newId": "QAC-rate-duplicate"
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "ASSUMPTION_SCOPE_AMBIGUOUS_OR_MISSING"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "qac-unapproved-rate",
+      "metricId": "QAC-001",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "quote_assumptions",
+          "id": "QAC-rate",
+          "fields": {
+            "approval_state": "draft"
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "ASSUMPTION_APPROVAL_OR_EFFECTIVITY_UNAVAILABLE"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "qac-unit-mismatch",
+      "metricId": "QAC-001",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "quote_assumptions",
+          "id": "QAC-setup",
+          "fields": {
+            "unit": "person_h/setup"
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "ASSUMPTION_UNIT_BASIS_INCOMPATIBLE"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "qac-doublecount-transform",
+      "metricId": "QAC-001",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "qac_transform_methods",
+          "id": "QAC-METHOD",
+          "fields": {
+            "no_double_count": false
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "BUCKET_DOUBLE_COUNTING"
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "qac-bridgeB-unclassified-hour",
+      "metricId": "QAC-001",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "quote_total_conversion_intervals",
+          "id": "QAC-RUN1-TOTAL",
+          "fields": {
+            "end": "2026-09-01T17:10:00Z"
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "DECOMPOSITION_NOT_YET_AVAILABLE",
+        "bridgeAResidual": 0.0,
+        "bridgeBResidual": -1.0,
+        "totalOnlyIfSeparateApprovedSameRevisionTotalExists": true
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "qac-bridgeA-unclassified-tenminutes",
+      "metricId": "QAC-001",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "quote_productive_loss_intervals",
+          "id": "QAC-RUN1-quality_yield",
+          "fields": {
+            "end": "2026-09-01T16:00:00Z"
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "DECOMPOSITION_NOT_YET_AVAILABLE",
+        "bridgeAResidual": -0.16666666666666785,
+        "bridgeBResidual": 0.0,
+        "totalOnlyIfSeparateApprovedSameRevisionTotalExists": true
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "dollar-confidence-unresolved",
+      "metricId": "MET-029",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "CONFIDENCE_AND_RATE_BASIS_POLICY_UNRESOLVED",
+        "arithmeticCandidateUsd": 2400.0
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "dollar-explicitzero-candidate",
+      "metricId": "MET-029",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "quote_assumptions",
+          "id": "QAC-standard_shop_rate",
+          "fields": {
+            "presence_state": "EXPLICIT_ZERO",
+            "value": 0
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "CONFIDENCE_AND_RATE_BASIS_POLICY_UNRESOLVED",
+        "arithmeticCandidateUsd": 0.0
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "dollar-not-modeled",
+      "metricId": "MET-029",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "quote_assumptions",
+          "id": "QAC-standard_shop_rate",
+          "fields": {
+            "presence_state": "NOT_MODELED",
+            "value": null
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "DECOMPOSITION_NOT_YET_AVAILABLE",
+        "totalOnlyIfSeparateApprovedSameRevisionTotalExists": true
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "dollar-unknown-rate",
+      "metricId": "MET-029",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "quote_assumptions",
+          "id": "QAC-standard_shop_rate",
+          "fields": {
+            "presence_state": "UNKNOWN_SOURCE_UNAVAILABLE",
+            "value": null
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "DECOMPOSITION_NOT_YET_AVAILABLE",
+        "totalOnlyIfSeparateApprovedSameRevisionTotalExists": true
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    },
+    {
+      "caseId": "dollar-unreconciled-hours",
+      "metricId": "MET-029",
+      "baseFixture": "ekas-canonical-gap-synthetic-v1",
+      "mutations": [
+        {
+          "operation": "patch",
+          "table": "quote_total_conversion_intervals",
+          "id": "QAC-RUN1-TOTAL",
+          "fields": {
+            "end": "2026-09-01T17:10:00Z"
+          }
+        }
+      ],
+      "requestParameters": {},
+      "expected": {
+        "value": null,
+        "fixtureState": "DECOMPOSITION_NOT_YET_AVAILABLE",
+        "bridgeAResidual": 0.0,
+        "bridgeBResidual": -1.0,
+        "totalOnlyIfSeparateApprovedSameRevisionTotalExists": true
+      },
+      "diagnosticCodeAuthority": "fixture-only names unless explicitlysource code INSufficientRuns/QuotedRateUnavailable/DemonstratedRateUnavailable/ScopeUnresolved/DecompositionNotYetAvailable; no new approvedproductionenum",
+      "sourceContract": "EKAS-MIK-001@1.0.2",
+      "execution": "independent fixture oracle only, no owner/backend/UI execution"
+    }
+  ],
+  "note": "Mutations apply to an isolated deep copy of newrawfixture only. Never mutate savedinvestigations or old178fixtures. These tests validate fixture/refusal expectations, not owner integration."
+}

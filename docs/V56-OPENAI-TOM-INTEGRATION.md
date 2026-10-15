@@ -1,0 +1,11 @@
+# OpenAI and Tom integration boundary
+
+OpenAI is the selected demo provider. There is no Ollama fallback. The API key belongs exclusively in the authenticated server configuration and must never enter browser assets, fixtures, chat, export or ZIP. This ordinary static candidate contains no key and makes no provider requests.
+
+The browser transport is `Transport.send(Request): Promise<Response<T>>` in app/src/platform/contract.ts, with expected-version concurrency, idempotency and typed failures. Tom's API must map durable conversations, source results, investigation commands/read models, operating review and controlled evidence through the server adapter documented in V55-SERVICE-ADAPTER-CONTRACT.md. Required actual contract: OpenAPI/base URL, authentication/tenant and ISA95 identities, job/revision/operation mapping, source timestamps/effectivity, endpoint response/error shapes, command permissions and dispatch semantics. These details are still pending; no guessed endpoint is represented as integrated.
+
+V56 adds the `monthly-investigation-v1` discriminated discovery resource under the same investigation route family. It stores the exact monthly row/context, immutable captures, versioned hypothetical/test/owner commands and history. Its goal, verification plan, acceptance and performed-work evidence are unavailable; operational commands are refused. It cannot borrow the Northworks work order or controlled documents. The server adapter must preserve this subtype rather than replace absent fields with defaults.
+
+Future OpenAI tool calls must invoke authenticated service operations through the separately reviewed Dot/provider boundary. Model prose, claimed role, a proposed cause, or a user statement that work happened cannot create source evidence, authorization or verification. Existing R5 approval and held merged review, priceguard expiry and cumulative spending controls remain separate. This package starts none of those services and changes none of those controls.
+
+Offline static runtime and local CSV/SVG/JSON export remain supported after local assets load. Enabling OpenAI intentionally adds a server-side external provider dependency; no offline-provider claim is made. Tom contract is necessary for actual Tom conformance, not for local synthetic regression or source review.

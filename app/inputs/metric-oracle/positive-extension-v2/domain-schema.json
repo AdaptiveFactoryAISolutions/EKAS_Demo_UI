@@ -1,0 +1,2126 @@
+{
+  "schemaVersion": "2.0",
+  "tables": {
+    "asset_calendar": {
+      "recordCount": 24,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "job_ref": [
+          "dict"
+        ],
+        "asset_ref": [
+          "dict"
+        ],
+        "start": [
+          "str"
+        ],
+        "end": [
+          "str"
+        ],
+        "available_start": [
+          "str"
+        ],
+        "available_end": [
+          "str"
+        ],
+        "coverage": [
+          "str"
+        ]
+      },
+      "units": "UTC intervals; elapsed minutes derived",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "demand_commitments": {
+      "recordCount": 24,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "job_ref": [
+          "dict"
+        ],
+        "revision_ref": [
+          "dict"
+        ],
+        "quantity": [
+          "int"
+        ],
+        "unit": [
+          "str"
+        ],
+        "frozen_at": [
+          "str"
+        ]
+      },
+      "units": "quantity pieces; frozen timestampUTC",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "capacity_standards": {
+      "recordCount": 24,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "job_ref": [
+          "dict"
+        ],
+        "operation_ref": [
+          "dict"
+        ],
+        "rated_cycle_min": [
+          "float",
+          "int"
+        ],
+        "available_start": [
+          "str"
+        ],
+        "available_end": [
+          "str"
+        ],
+        "effective_from": [
+          "str"
+        ],
+        "effective_to_exclusive": [
+          "str"
+        ],
+        "capacity_basis": [
+          "str"
+        ]
+      },
+      "units": "rated_cycle_min min/piece; available UTC intervals",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "constraint_designations": {
+      "recordCount": 24,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "job_ref": [
+          "dict"
+        ],
+        "asset_ref": [
+          "dict"
+        ],
+        "operation_ref": [
+          "dict"
+        ],
+        "designation": [
+          "str"
+        ],
+        "valid_from": [
+          "str"
+        ],
+        "valid_to_exclusive": [
+          "str"
+        ],
+        "productive_basis": [
+          "str"
+        ]
+      },
+      "units": "effectiveUTC intervals; productive idealprocessing basis",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "lot_journey_intervals": {
+      "recordCount": 120,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "job_ref": [
+          "dict"
+        ],
+        "lot_ref": [
+          "dict"
+        ],
+        "start": [
+          "str"
+        ],
+        "end": [
+          "str"
+        ],
+        "phase": [
+          "str"
+        ],
+        "touch": [
+          "bool"
+        ],
+        "value_added": [
+          "bool"
+        ],
+        "clock": [
+          "str"
+        ]
+      },
+      "units": "UTC elapsed intervals; categorical lotphase",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "changeovers": {
+      "recordCount": 12,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "job_ref": [
+          "dict"
+        ],
+        "stop_ref": [
+          "dict"
+        ],
+        "last_good_old_at": [
+          "str"
+        ],
+        "first_good_new_at": [
+          "str"
+        ],
+        "standard_elapsed_min": [
+          "int"
+        ],
+        "target_elapsed_min": [
+          "int"
+        ]
+      },
+      "units": "UTC timestamps; standards/targets min",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "setup_tasks": {
+      "recordCount": 24,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "changeover_id": [
+          "str"
+        ],
+        "start": [
+          "str"
+        ],
+        "end": [
+          "str"
+        ],
+        "mode": [
+          "str"
+        ]
+      },
+      "units": "UTC intervals; internal/external",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "inspection_dispositions": {
+      "recordCount": 228,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "job_ref": [
+          "dict"
+        ],
+        "lot_ref": [
+          "dict"
+        ],
+        "unit_token": [
+          "str"
+        ],
+        "disposition": [
+          "str"
+        ]
+      },
+      "units": "distinct piece token; disposition",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "material_issues": {
+      "recordCount": 24,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "job_ref": [
+          "dict"
+        ],
+        "quantity": [
+          "float"
+        ],
+        "unit": [
+          "str"
+        ],
+        "material_code": [
+          "str"
+        ],
+        "standard_qty_per_produced_piece": [
+          "int"
+        ],
+        "standard_usd_per_kg": [
+          "int"
+        ]
+      },
+      "units": "kg; USD/kg",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "job_cost_postings": {
+      "recordCount": 72,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "job_ref": [
+          "dict"
+        ],
+        "category": [
+          "str"
+        ],
+        "quantity": [
+          "float",
+          "int"
+        ],
+        "rate_usd": [
+          "int"
+        ],
+        "unit": [
+          "str"
+        ],
+        "currency": [
+          "str"
+        ],
+        "basis": [
+          "str"
+        ]
+      },
+      "units": "quantity in unit field \u00d7USD perthatunit",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "job_cost_standards": {
+      "recordCount": 24,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "job_ref": [
+          "dict"
+        ],
+        "material_kg_per_piece": [
+          "int"
+        ],
+        "material_usd_per_kg": [
+          "int"
+        ],
+        "labor_h_per_good_piece": [
+          "float"
+        ],
+        "labor_usd_per_h": [
+          "int"
+        ],
+        "overhead_usd_per_labor_h": [
+          "int"
+        ],
+        "scrap_material_usd_per_piece": [
+          "int"
+        ]
+      },
+      "units": "kg/piece; USD/kg; personh/goodpiece; USD/personh; USD/scrappiece",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "rework_tasks": {
+      "recordCount": 24,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "job_ref": [
+          "dict"
+        ],
+        "recovered_piece_count": [
+          "int"
+        ],
+        "labor_person_h": [
+          "float"
+        ],
+        "material_kg": [
+          "float"
+        ],
+        "labor_usd_per_h": [
+          "int"
+        ],
+        "material_usd_per_kg": [
+          "int"
+        ],
+        "overhead_usd_per_h": [
+          "int"
+        ]
+      },
+      "units": "personh;kg;USD/personh;USD/kg",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "loss_reason_policy": {
+      "recordCount": 1,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "version": [
+          "str"
+        ],
+        "minor_stop_max_min": [
+          "int"
+        ],
+        "maintenance_reasons": [
+          "list"
+        ],
+        "total_loss_basis": [
+          "str"
+        ]
+      },
+      "units": "min; categorical reasons",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "target_policies": {
+      "recordCount": 2,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "metric": [
+          "str"
+        ],
+        "target": [
+          "int"
+        ],
+        "unit": [
+          "str"
+        ],
+        "scope": [
+          "dict"
+        ],
+        "direction": [
+          "str"
+        ],
+        "valid_from": [
+          "str"
+        ]
+      },
+      "units": "unit field, percent target not fraction",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "maintenance_assignments": {
+      "recordCount": 12,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "work_order_ref": [
+          "dict"
+        ],
+        "planned_completion": [
+          "str"
+        ],
+        "scheduled": [
+          "bool"
+        ],
+        "completed_as_planned": [
+          "bool"
+        ],
+        "emergency": [
+          "bool"
+        ]
+      },
+      "units": "categorical design/coverage/classification metadata; linked IDs and UTC timestamps",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "maintenance_labor_entries": {
+      "recordCount": 16,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "work_order_ref": [
+          "dict"
+        ],
+        "person_min": [
+          "int"
+        ],
+        "work_type": [
+          "str"
+        ],
+        "emergency": [
+          "bool"
+        ],
+        "pm_ref": [
+          "dict"
+        ]
+      },
+      "units": "personmin",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "maintenance_backlog_tasks": {
+      "recordCount": 3,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "asset_ref": [
+          "dict"
+        ],
+        "snapshot_at": [
+          "str"
+        ],
+        "remaining_person_h": [
+          "int"
+        ],
+        "status": [
+          "str"
+        ],
+        "estimate_basis": [
+          "str"
+        ]
+      },
+      "units": "remainingpersonh; snapshotUTC",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "maintenance_roster": {
+      "recordCount": 2,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "team": [
+          "str"
+        ],
+        "week_start": [
+          "str"
+        ],
+        "week_end": [
+          "str"
+        ],
+        "available_person_h": [
+          "int"
+        ]
+      },
+      "units": "availablepersonh/week",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "failure_classifications": {
+      "recordCount": 20,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "failure_ref": [
+          "dict"
+        ],
+        "repeat_of_ref": [
+          "NoneType",
+          "dict"
+        ],
+        "breakdown": [
+          "bool"
+        ],
+        "classification_method": [
+          "str"
+        ]
+      },
+      "units": "categorical design/coverage/classification metadata; linked IDs and UTC timestamps",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "reliability_model_policy": {
+      "recordCount": 1,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "model": [
+          "str"
+        ],
+        "horizon_h": [
+          "int"
+        ],
+        "estimate": [
+          "str"
+        ],
+        "limitation": [
+          "str"
+        ]
+      },
+      "units": "horizonh; exposureoperatingh",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "nonrepairable_components": {
+      "recordCount": 4,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "asset_ref": [
+          "dict"
+        ],
+        "component_type": [
+          "str"
+        ],
+        "commissioned_at": [
+          "str"
+        ],
+        "failure_at": [
+          "str"
+        ],
+        "operating_exposure_h": [
+          "int"
+        ],
+        "censored": [
+          "bool"
+        ],
+        "replaced_not_repaired": [
+          "bool"
+        ]
+      },
+      "units": "operatingh and UTC lifetimetimestamps",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "shipment_quality": {
+      "recordCount": 24,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "shipment_ref": [
+          "dict"
+        ],
+        "inspected_unique_units": [
+          "int"
+        ],
+        "rejected_unique_unit_tokens": [
+          "list"
+        ],
+        "defective_unique_unit_tokens": [
+          "list"
+        ]
+      },
+      "units": "unique inspected/rejected pieces",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "fulfillment_allocations": {
+      "recordCount": 24,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "shipment_ref": [
+          "dict"
+        ],
+        "order_line_ref": [
+          "dict"
+        ],
+        "quantity": [
+          "int"
+        ],
+        "allocation_at": [
+          "str"
+        ],
+        "immediate_at_order_entry": [
+          "bool"
+        ],
+        "policy": [
+          "str"
+        ]
+      },
+      "units": "pieces reserved, explicitly NOT shipped",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "immediate_orders": {
+      "recordCount": 4,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "revision_ref": [
+          "dict"
+        ],
+        "ordered_at": [
+          "str"
+        ],
+        "ordered_qty": [
+          "int"
+        ],
+        "promised_at": [
+          "str"
+        ],
+        "unit": [
+          "str"
+        ],
+        "immediate_window_min": [
+          "int"
+        ]
+      },
+      "units": "pieces;UTC;immediate-windowmin",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "immediate_fulfillment_receipts": {
+      "recordCount": 4,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "order_id": [
+          "str"
+        ],
+        "received_at": [
+          "str"
+        ],
+        "quantity": [
+          "int"
+        ],
+        "source": [
+          "str"
+        ]
+      },
+      "units": "pieces;UTC",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "immediate_shipments": {
+      "recordCount": 8,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "order_id": [
+          "str"
+        ],
+        "quantity": [
+          "int"
+        ],
+        "shipped_at": [
+          "str"
+        ],
+        "delivered_at": [
+          "str"
+        ]
+      },
+      "units": "pieces;UTC",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "financial_postings": {
+      "recordCount": 72,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "category": [
+          "str"
+        ],
+        "amount_usd": [
+          "float",
+          "int"
+        ],
+        "currency": [
+          "str"
+        ],
+        "period_start": [
+          "str"
+        ],
+        "period_end": [
+          "str"
+        ],
+        "ledger_cohort": [
+          "str"
+        ],
+        "basis": [
+          "str"
+        ]
+      },
+      "units": "USD; periodUTC; ledgercohort",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "inventory_classifications": {
+      "recordCount": 6,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "item_ref": [
+          "dict"
+        ],
+        "snapshot_at": [
+          "str"
+        ],
+        "obsolete": [
+          "bool"
+        ],
+        "excess": [
+          "bool"
+        ],
+        "policy": [
+          "str"
+        ]
+      },
+      "units": "categorical design/coverage/classification metadata; linked IDs and UTC timestamps",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "inventory_counts": {
+      "recordCount": 6,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "item_ref": [
+          "dict"
+        ],
+        "at": [
+          "str"
+        ],
+        "book_quantity": [
+          "int"
+        ],
+        "counted_quantity": [
+          "int"
+        ],
+        "tolerance_quantity": [
+          "int"
+        ]
+      },
+      "units": "pieces; exact zero tolerancematch",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "annual_inventory_transactions": {
+      "recordCount": 742,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "item_ref": [
+          "dict"
+        ],
+        "ledger_cohort": [
+          "str"
+        ],
+        "at": [
+          "str"
+        ],
+        "quantity_delta": [
+          "int"
+        ],
+        "value_delta_usd": [
+          "int"
+        ],
+        "transaction_kind": [
+          "str"
+        ],
+        "external_source": [
+          "NoneType",
+          "str"
+        ]
+      },
+      "units": "pieces and USD signed deltas; UTC; annualledgercohort",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "annual_inventory_coverage": {
+      "recordCount": 1,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "start": [
+          "str"
+        ],
+        "end": [
+          "str"
+        ],
+        "ledger_cohort": [
+          "str"
+        ],
+        "closed_register": [
+          "bool"
+        ],
+        "opening_register_complete": [
+          "bool"
+        ]
+      },
+      "units": "categorical design/coverage/classification metadata; linked IDs and UTC timestamps",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "inventory_coverage": {
+      "recordCount": 1,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "window_start": [
+          "str"
+        ],
+        "window_end": [
+          "str"
+        ],
+        "closed_transaction_register": [
+          "bool"
+        ],
+        "negative_balance_allowed": [
+          "bool"
+        ],
+        "flow_cohort": [
+          "str"
+        ]
+      },
+      "units": "categorical design/coverage/classification metadata; linked IDs and UTC timestamps",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "warehouse_dispatches": {
+      "recordCount": 90,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "item_ref": [
+          "dict"
+        ],
+        "at": [
+          "str"
+        ],
+        "quantity": [
+          "int"
+        ],
+        "unit": [
+          "str"
+        ],
+        "register": [
+          "str"
+        ]
+      },
+      "units": "pieces;UTC",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "warehouse_stock_movements": {
+      "recordCount": 180,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "item_ref": [
+          "dict"
+        ],
+        "at": [
+          "str"
+        ],
+        "quantity_delta": [
+          "int"
+        ],
+        "value_delta_usd": [
+          "int"
+        ],
+        "external_source": [
+          "str"
+        ],
+        "dispatch_id": [
+          "str"
+        ]
+      },
+      "units": "pieces and USD signed deltas;UTC",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "wip_unit_journeys": {
+      "recordCount": 470,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "cohort": [
+          "str"
+        ],
+        "unit_token": [
+          "str"
+        ],
+        "entered_at": [
+          "str"
+        ],
+        "completed_at": [
+          "str"
+        ],
+        "unit": [
+          "str"
+        ],
+        "route_basis": [
+          "str"
+        ]
+      },
+      "units": "onepiece pertoken;UTC",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "resource_scope_policy": {
+      "recordCount": 1,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "site_ref": [
+          "dict"
+        ],
+        "start": [
+          "str"
+        ],
+        "end": [
+          "str"
+        ],
+        "production_measure": [
+          "str"
+        ],
+        "emissions_factor_kg_per_kwh": [
+          "float"
+        ],
+        "emissions_boundary": [
+          "str"
+        ],
+        "meter_boundary": [
+          "str"
+        ]
+      },
+      "units": "kgCO2e/kWh; piecesproduction",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "demand_coverage": {
+      "recordCount": 1,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "meter_ref": [
+          "dict"
+        ],
+        "start": [
+          "str"
+        ],
+        "end": [
+          "str"
+        ],
+        "interval_min": [
+          "int"
+        ],
+        "expected_intervals": [
+          "int"
+        ]
+      },
+      "units": "15min intervals; count",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "safety_coverage": {
+      "recordCount": 1,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "site_ref": [
+          "dict"
+        ],
+        "start": [
+          "str"
+        ],
+        "end": [
+          "str"
+        ],
+        "event_register_complete": [
+          "bool"
+        ],
+        "labor_exposure_register_complete": [
+          "bool"
+        ],
+        "near_miss_multiplier": [
+          "int"
+        ],
+        "near_miss_denominator": [
+          "str"
+        ]
+      },
+      "units": "personh exposure;1000 multiplier",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "near_miss_events": {
+      "recordCount": 3,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "site_ref": [
+          "dict"
+        ],
+        "occurred_at": [
+          "str"
+        ]
+      },
+      "units": "categorical design/coverage/classification metadata; linked IDs and UTC timestamps",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "verified_case_design": {
+      "recordCount": 1,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "asset_ref": [
+          "dict"
+        ],
+        "revision_ref": [
+          "dict"
+        ],
+        "operation_ref": [
+          "dict"
+        ],
+        "metric": [
+          "str"
+        ],
+        "threshold_min_per_shift": [
+          "int"
+        ],
+        "benefit_direction": [
+          "str"
+        ],
+        "eligible_shift_min": [
+          "int"
+        ],
+        "phase_shifts": [
+          "dict"
+        ],
+        "baseline_start": [
+          "str"
+        ],
+        "intervention_at": [
+          "str"
+        ],
+        "approval": [
+          "str"
+        ],
+        "guardrails": [
+          "list"
+        ]
+      },
+      "units": "jammin/eligible480minshift;lowerdirection",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "verification_shifts": {
+      "recordCount": 25,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "case_id": [
+          "str"
+        ],
+        "asset_ref": [
+          "dict"
+        ],
+        "revision_ref": [
+          "dict"
+        ],
+        "start": [
+          "str"
+        ],
+        "end": [
+          "str"
+        ],
+        "phase": [
+          "str"
+        ],
+        "eligible": [
+          "bool"
+        ],
+        "eligibility_checks": [
+          "dict"
+        ],
+        "quality_inspected_units": [
+          "int"
+        ],
+        "quality_rejected_units": [
+          "int"
+        ],
+        "safety_review": [
+          "str"
+        ]
+      },
+      "units": "UTC;piecesforquality",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "verification_stop_events": {
+      "recordCount": 25,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "shift_id": [
+          "str"
+        ],
+        "start": [
+          "str"
+        ],
+        "end": [
+          "str"
+        ],
+        "reason": [
+          "str"
+        ],
+        "same_mode_recurrence": [
+          "bool"
+        ]
+      },
+      "units": "UTC interval;jammin derived",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "improvement_actions": {
+      "recordCount": 4,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "case_id": [
+          "str"
+        ],
+        "owner_role": [
+          "str"
+        ],
+        "due_at": [
+          "str"
+        ],
+        "closed_at": [
+          "NoneType",
+          "str"
+        ],
+        "status": [
+          "str"
+        ],
+        "verification_required": [
+          "bool"
+        ]
+      },
+      "units": "UTC dates; categorical actionstate",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "capability_policy": {
+      "recordCount": 1,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "minimum_subgroups": [
+          "int"
+        ],
+        "subgroup_size": [
+          "int"
+        ],
+        "sigma_estimator": [
+          "str"
+        ],
+        "stability_rules": [
+          "list"
+        ],
+        "implemented_rules": [
+          "list"
+        ],
+        "S_B3": [
+          "int"
+        ],
+        "S_B4": [
+          "float"
+        ],
+        "run_rules": [
+          "str"
+        ],
+        "msa_repeatability_max_percent_spec": [
+          "int"
+        ],
+        "msa_bias_max_mm": [
+          "float"
+        ],
+        "calibration_required": [
+          "bool"
+        ],
+        "subgroup_rationale": [
+          "str"
+        ],
+        "distribution": [
+          "str"
+        ],
+        "independence": [
+          "str"
+        ]
+      },
+      "units": "unitless chart constants;mm bias;percentspec repeatability",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "gauges": {
+      "recordCount": 1,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "unit": [
+          "str"
+        ],
+        "resolution_mm": [
+          "float"
+        ],
+        "calibration_reference": [
+          "str"
+        ],
+        "valid_from": [
+          "str"
+        ],
+        "valid_to_exclusive": [
+          "str"
+        ]
+      },
+      "units": "mm;resolutionmm",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "calibrations": {
+      "recordCount": 1,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "gauge_id": [
+          "str"
+        ],
+        "reference_values_mm": [
+          "list"
+        ],
+        "read_values_mm": [
+          "list"
+        ],
+        "tolerance_mm": [
+          "float"
+        ],
+        "performed_at": [
+          "str"
+        ]
+      },
+      "units": "mm arrays",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "qualified_characteristics": {
+      "recordCount": 1,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "operation_ref": [
+          "dict"
+        ],
+        "revision_ref": [
+          "dict"
+        ],
+        "gauge_id": [
+          "str"
+        ],
+        "policy_id": [
+          "str"
+        ],
+        "unit": [
+          "str"
+        ],
+        "lsl": [
+          "int"
+        ],
+        "usl": [
+          "int"
+        ],
+        "spec_effective_from": [
+          "str"
+        ],
+        "spec_effective_to_exclusive": [
+          "str"
+        ]
+      },
+      "units": "mm LSL/USL; effectiveUTCspec",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "gauge_study_readings": {
+      "recordCount": 90,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "gauge_id": [
+          "str"
+        ],
+        "part_token": [
+          "str"
+        ],
+        "operator_token": [
+          "str"
+        ],
+        "reference_mm": [
+          "int"
+        ],
+        "reading_mm": [
+          "float",
+          "int"
+        ],
+        "trial": [
+          "int"
+        ],
+        "unit": [
+          "str"
+        ],
+        "at": [
+          "str"
+        ]
+      },
+      "units": "mm raw readings/reference",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "qualified_subgroups": {
+      "recordCount": 55,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "characteristic_id": [
+          "str"
+        ],
+        "cohort": [
+          "str"
+        ],
+        "sample_size": [
+          "int"
+        ],
+        "at": [
+          "str"
+        ]
+      },
+      "units": "samplecount;UTC",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    },
+    "qualified_measurements": {
+      "recordCount": 275,
+      "primaryKey": "namespace,id,record_version",
+      "fields": {
+        "id": [
+          "str"
+        ],
+        "namespace": [
+          "str"
+        ],
+        "record_version": [
+          "int"
+        ],
+        "data_origin": [
+          "str"
+        ],
+        "known_at": [
+          "str"
+        ],
+        "subgroup_id": [
+          "str"
+        ],
+        "characteristic_id": [
+          "str"
+        ],
+        "gauge_id": [
+          "str"
+        ],
+        "piece_token": [
+          "str"
+        ],
+        "value": [
+          "float"
+        ],
+        "unit": [
+          "str"
+        ],
+        "at": [
+          "str"
+        ]
+      },
+      "units": "mm distinct piece;UTC",
+      "grain": "one domain entity/event/interval as field names indicate; see positive-context operandSources for exact metric grain",
+      "references": "*_ref base namespace-qualified; selected *_id sidecar foreignkeys"
+    }
+  },
+  "scopeRules": [
+    "half-open windows; known_at and observation_end <= asOf",
+    "Do not collapse15contexts into one global operand bag",
+    "join namespace,id and effective recordversion; deduplicate unit/event/order identities",
+    "do not average ratios; pool source sufficient statistics",
+    "production job totals unchanged; other cohorts added with explicit sources",
+    "support minimum requested scope; unsupported grouping remains unsupported until aggregation implemented"
+  ]
+}

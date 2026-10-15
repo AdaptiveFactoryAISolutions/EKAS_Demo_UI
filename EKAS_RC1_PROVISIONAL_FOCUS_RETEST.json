@@ -1,0 +1,48 @@
+{
+  "title": "EKAS RC1 provisional focus-retest handoff",
+  "status": "PROVISIONAL_NOT_FINAL_READY",
+  "at": "2026-10-15T01:57:17.088437+00:00",
+  "previewUrl": "http://127.0.0.1:18326/?demonstration=ekas-admin-focus-preview-20261015",
+  "identity": {
+    "status": "WORKING_ADMIN_FOCUS_CORRECTION_NOT_FINAL",
+    "sourceSha256": "b462c68c5393d14b7a4fd6f2d7c91fe3923377d79c7affc7536a48e49254a6ae",
+    "staticSha256": "9dac4d7dea554086e937cdf12856e9adde17c2c2dd7473d5150d4103c85b12b2",
+    "serverSha256": "8767c76036df2bb362852ae6b45da6036c2a14f92a155359fb11b93ee2a10a7e",
+    "staticFiles": 81,
+    "typecheckExitCode": 0,
+    "targetedPassed": 54,
+    "wholeSourcePassed": false,
+    "nativeAccepted": false,
+    "qualification": "Freshdummyonly; prior1b394569nativeCRUDpassesqualified; currentnativeconfirmedactionfocuspending. Lateststickyheadercorrectionalsoincluded. No releasefreeze or final acceptance."
+  },
+  "completed": [
+    "Accessible explicit in-app key confirmation; Cancel/Escape and key-entry clearing retained.",
+    "Confirmed async key actions now restore focus after status commit; removal targets Set server key.",
+    "Sticky-header correction restores first settling frame and observes header resizing; deliberate reading input stops following.",
+    "Current source TypeScript exit0,54targeted checks pass, browser and local-server working builds pass.",
+    "Independent prior1b394569 fake replacement/removal/set/blankrefusal/TestEnableDisable/signoutreloadrelogin passed; confirmed-action focus was the remaining observed defect.",
+    "Read-only accounting search inspected authorized project artifacts,207ZIPindexes,50unique relevant metadata contents; no complete real journal or authoritative usage history recovered."
+  ],
+  "requiredNativeRetest": [
+    "Current18326 source: settled focus after confirmed replacement, removal, blank refusal and initial set from empty. Expected enabledcurrentReplace/Set action, not BODY.",
+    "Preserve Cancel/Escape keyboard containment; no realkey. Earlier18322UNKNOWN remains separate."
+  ],
+  "otherRemaining": [
+    "Full exact-source/type/compiled/portable verification after native correction stabilizes; unrelated full-suite restart paused per parent.",
+    "Parent-held RC1 freeze, fresh extraction/runtime/source rebuild and LibraryZIP delivery are not completed.",
+    "Real-model quality, actual200%zoom/exports, unaidedhuman evaluation and independent product approval remain unclaimed.",
+    "Tom production API endpoint/authentication conformance remains engineer integration work."
+  ],
+  "accounting": {
+    "ceilingUsd": 20,
+    "originalUsableGuardUsd": 18,
+    "verifiedRemainingUsd": null,
+    "journalInitialized": false,
+    "providerCallsByThisWork": 0,
+    "userDecision": "Authoritatively confirm whether any paid, pending or uncertain OpenAI call ever occurred for this demo. If none acrossallpriorprofiles/testers, explicitly authorize recording that first-use fact under existingUSD20; never inferzero frommissingfile. If any or unsure, recoverusage/reservationhistory and retainuncertainexposure; paidAI staysdisabled untilconservativeremainingallowance established."
+  },
+  "realKeyEntryReady": false,
+  "paidTestReady": false,
+  "normal18323": "PriorworkingUI/AI disabled; notthecurrentkey-entrytarget. Privatebootstrapvaluewasnotread.",
+  "preservation": "Old profiles, source archives, legacy repositories, paused backend and unknown outcomes preserved. No realkey read/configured/transmitted, no actualbackend/CMMS/QMS mutation or paid inference."
+}

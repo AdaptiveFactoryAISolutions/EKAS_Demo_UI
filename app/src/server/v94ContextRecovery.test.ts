@@ -1,0 +1,11 @@
+import {it,expect} from 'vitest';
+import {MockRepository} from '../platform/mockRepository';import {ManufacturingService} from '../investigation/service';import {createManufacturingClient} from '../investigation/clientPort';import {createManufacturingModelTransport} from './manufacturingBoundary';
+it.each([0,1])('durably classifies context refusal after %s completed rounds as no commit, retains history and never repeats the same operation',async(completed)=>{
+ let raw:string|null=null;const storage={read:()=>raw,write:(x:string)=>{raw=x}},repo=new MockRepository(storage),canonical=new ManufacturingService(repo),local=createManufacturingClient(canonical);let c=await local.createConversation('create');c=await local.turn(c.id,c.version,'Investigate quality.','seed');const before=structuredClone(c),business=structuredClone(repo.state.resources.filter(r=>r.kind!=='conversation'));let calls=0;
+ const provider={id:'mock',async respond(){if(calls++<completed)return {calls:[{id:'read1',name:'context_read',arguments:{}}]};throw Error('MODEL_CONTEXT_LIMIT')}};
+ const client=createManufacturingClient(createManufacturingModelTransport({canonical,provider,policyRevision:()=> 'p1'}));
+ await expect(client.turn(c.id,c.version,'Please help review this observation.','limit')).rejects.toThrow('MODEL_CONTEXT_LIMIT');expect(await local.readConversation(c.id)).toEqual(before);expect(repo.state.resources.filter(r=>r.kind!=='conversation'&&r.content.domain!=='manufacturing-model-operation-v1')).toEqual(business);
+ const status=await client.readModelOperation('limit');expect(status.status).toBe('FAILED_NO_COMMIT');expect(status.completedProviderRounds).toBe(completed);expect(status.errorCode).toBe('MODEL_CONTEXT_LIMIT');const n=calls;
+ await expect(client.turn(c.id,c.version,'Please help review this observation.','limit')).rejects.toThrow('OPERATION_FAILED_NO_COMMIT');expect(calls).toBe(n);
+ const restarted=new ManufacturingService(new MockRepository(storage)),restartClient=createManufacturingClient(createManufacturingModelTransport({canonical:restarted,provider,policyRevision:()=> 'p1'}));expect(await restartClient.readModelOperation('limit')).toEqual(status);expect(await createManufacturingClient(restarted).readConversation(c.id)).toEqual(before);
+});

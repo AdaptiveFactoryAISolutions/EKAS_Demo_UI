@@ -1,0 +1,24 @@
+{
+  "revision": "canonical-gap-spec@1.0.1",
+  "files": {
+    "DECISION-SUMMARY.md": "1fc752e73de69661adae9536d5102c09a044055d79358e3bdc7254b02e25bcc2",
+    "README.md": "843d82af265c48c6c7557d3f5df0113f691487a62976a33adc889e722562054b",
+    "api-result-contract.json": "964edc91a56658658c6d05deb24bf6943d9146a966731f340b453b05c9d84cc3",
+    "build_oracles.py": "8fe4ff1ac12f95cb06c7564ebb304d9965d1dce27dce2c04c7c0aea2bfe1d4cf",
+    "build_records.py": "3b4da5b988ee817879eef79c4b5aaa64869619ca8feb7edce10a8b022d9ad347",
+    "build_spec.py": "58588af0fb0f5229783add05804a7a6421b7ac25b3f52bb785db5477fa3fc9b4",
+    "decisions-required.json": "a2126726c45381ed2417ababe2a3dbe15312cbfc81a6273c04b537ee9a733cd9",
+    "domain-schema.json": "d80bc77abfe964346fb0b517fa302625cd7c613175b5dbb6322b04eff99bd9b8",
+    "gap-contracts.json": "51ea5522518656575c9cfa068970edc20d4d27077721e670107169fc35ef6059",
+    "negative-boundary-fixtures.json": "085194b2c68ccaeffd6441ba6073ec088aa9222ce2fdfdb6c7b33455802927ed",
+    "negative_fixture_checks.py": "637a6c8edb84e209ec4bedf43d9dcb9c4e09359fcf48695a82a227f90d2e48e7",
+    "positive-oracles.json": "0877b46ce9ccf4ea597de17a260c32d5ab9f461ed451e45808b63f6f3d2de9e0",
+    "qac-reconciliation-oracle.json": "9a08665015ead928a26a84d46ec2df54f2b477f5a5f35bb36cc05c6a4dff52af",
+    "raw-domain-records.json": "117ee28c52c0aac828fc9ed8deaab4e661930bd8ff37c65877352ae5799d22b8",
+    "refresh_decision_dispositions.py": "32eb2c0a19f29811f1684c482ad67d50653b7c8933fe35f69221710e494d1bc7",
+    "revision-provenance.json": "7c9931b717dd0ace32d37cedec83d3cdbef03ca1e7bfc1517d4fefad387f2ee9",
+    "source-and-protection-binding.json": "c4c346860b0dcb7032bd489abbc08a476ef69d36207ea9463f9e99f0ccc45a07",
+    "verification-report.json": "a57abb9863b8d88f5cd12ff6cd95aed202a3be94f17e919ac7384ed7d5605278",
+    "verify_package.py": "186406b5000a94cf47f9eec97b715f7ee086dd2cc0d314b83b8487124c97e39f"
+  }
+}

@@ -1,0 +1,2323 @@
+[
+  {
+    "requirement_id": "KPI-047",
+    "source_name": "Downtime Frequency",
+    "canonical_id": "downtime_frequency",
+    "kind": "metric",
+    "source_section": 5,
+    "source_section_title": "Downtime and loss",
+    "family": "loss",
+    "required_inputs": "Machine events, reason taxonomy, expected run rate",
+    "semantic_flags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ],
+    "source_lines": [
+      107,
+      107
+    ],
+    "source_formula": "Number of downtime events / Period",
+    "source_unit": "events/time"
+  },
+  {
+    "requirement_id": "KPI-048",
+    "source_name": "Average Downtime Event",
+    "canonical_id": "average_downtime_event",
+    "kind": "metric",
+    "source_section": 5,
+    "source_section_title": "Downtime and loss",
+    "family": "loss",
+    "required_inputs": "Machine events, reason taxonomy, expected run rate",
+    "semantic_flags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ],
+    "source_lines": [
+      108,
+      108
+    ],
+    "source_formula": "Total Downtime / Number of Downtime Events",
+    "source_unit": "time/event"
+  },
+  {
+    "requirement_id": "KPI-049",
+    "source_name": "Downtime by Reason",
+    "canonical_id": "downtime_by_reason",
+    "kind": "metric",
+    "source_section": 5,
+    "source_section_title": "Downtime and loss",
+    "family": "loss",
+    "required_inputs": "Machine events, reason taxonomy, expected run rate",
+    "semantic_flags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ],
+    "source_lines": [
+      109,
+      109
+    ],
+    "source_formula": "Σ duration for reason code",
+    "source_unit": "time"
+  },
+  {
+    "requirement_id": "KPI-050",
+    "source_name": "Downtime Contribution",
+    "canonical_id": "downtime_contribution",
+    "kind": "metric",
+    "source_section": 5,
+    "source_section_title": "Downtime and loss",
+    "family": "loss",
+    "required_inputs": "Machine events, reason taxonomy, expected run rate",
+    "semantic_flags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ],
+    "source_lines": [
+      110,
+      110
+    ],
+    "source_formula": "Reason Downtime / Total Downtime × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-051",
+    "source_name": "Top Loss Contribution",
+    "canonical_id": "top_loss_contribution",
+    "kind": "metric",
+    "source_section": 5,
+    "source_section_title": "Downtime and loss",
+    "family": "loss",
+    "required_inputs": "Machine events, reason taxonomy, expected run rate",
+    "semantic_flags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ],
+    "source_lines": [
+      111,
+      111
+    ],
+    "source_formula": "Largest Loss / Total Loss × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-052",
+    "source_name": "Minor Stop Time",
+    "canonical_id": "minor_stop_time",
+    "kind": "metric",
+    "source_section": 5,
+    "source_section_title": "Downtime and loss",
+    "family": "loss",
+    "required_inputs": "Machine events, reason taxonomy, expected run rate",
+    "semantic_flags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ],
+    "source_lines": [
+      112,
+      112
+    ],
+    "source_formula": "Σ qualifying short-stop durations",
+    "source_unit": "time"
+  },
+  {
+    "requirement_id": "KPI-053",
+    "source_name": "Speed Loss",
+    "canonical_id": "speed_loss",
+    "kind": "metric",
+    "source_section": 5,
+    "source_section_title": "Downtime and loss",
+    "family": "loss",
+    "required_inputs": "Machine events, reason taxonomy, expected run rate",
+    "semantic_flags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ],
+    "source_lines": [
+      113,
+      113
+    ],
+    "source_formula": "Potential Output at Ideal Rate − Actual Output during runtime",
+    "source_unit": "units/time"
+  },
+  {
+    "requirement_id": "KPI-054",
+    "source_name": "Lost Production from Downtime",
+    "canonical_id": "lost_production_from_downtime",
+    "kind": "metric",
+    "source_section": 5,
+    "source_section_title": "Downtime and loss",
+    "family": "loss",
+    "required_inputs": "Machine events, reason taxonomy, expected run rate",
+    "semantic_flags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ],
+    "source_lines": [
+      114,
+      114
+    ],
+    "source_formula": "Downtime × Expected Run Rate",
+    "source_unit": "units"
+  },
+  {
+    "requirement_id": "KPI-055",
+    "source_name": "Downtime Cost",
+    "canonical_id": "downtime_cost",
+    "kind": "metric",
+    "source_section": 5,
+    "source_section_title": "Downtime and loss",
+    "family": "loss",
+    "required_inputs": "Machine events, reason taxonomy, expected run rate",
+    "semantic_flags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ],
+    "source_lines": [
+      115,
+      115
+    ],
+    "source_formula": "Downtime × Governed Cost Rate",
+    "source_unit": "currency"
+  },
+  {
+    "requirement_id": "KPI-056",
+    "source_name": "Changeover Time",
+    "canonical_id": "changeover_time",
+    "kind": "metric",
+    "source_section": 6,
+    "source_section_title": "Changeover and setup",
+    "family": "changeover",
+    "required_inputs": "Last-good/first-good events, product transitions, setup standard",
+    "semantic_flags": [
+      "timestamp_boundaries",
+      "setup_loss_signed"
+    ],
+    "source_lines": [
+      125,
+      125
+    ],
+    "source_formula": "First Good Unit New Product − Last Good Unit Previous Product",
+    "source_unit": "time"
+  },
+  {
+    "requirement_id": "KPI-057",
+    "source_name": "Average Changeover Time",
+    "canonical_id": "average_changeover_time",
+    "kind": "metric",
+    "source_section": 6,
+    "source_section_title": "Changeover and setup",
+    "family": "changeover",
+    "required_inputs": "Last-good/first-good events, product transitions, setup standard",
+    "semantic_flags": [
+      "timestamp_boundaries",
+      "setup_loss_signed"
+    ],
+    "source_lines": [
+      126,
+      126
+    ],
+    "source_formula": "Σ Changeover Time / Number of Changeovers",
+    "source_unit": "time"
+  },
+  {
+    "requirement_id": "KPI-058",
+    "source_name": "Changeover Variance",
+    "canonical_id": "changeover_variance",
+    "kind": "metric",
+    "source_section": 6,
+    "source_section_title": "Changeover and setup",
+    "family": "changeover",
+    "required_inputs": "Last-good/first-good events, product transitions, setup standard",
+    "semantic_flags": [
+      "timestamp_boundaries",
+      "setup_loss_signed"
+    ],
+    "source_lines": [
+      127,
+      127
+    ],
+    "source_formula": "Actual Changeover − Standard Changeover",
+    "source_unit": "time"
+  },
+  {
+    "requirement_id": "KPI-059",
+    "source_name": "Changeover Attainment",
+    "canonical_id": "changeover_attainment",
+    "kind": "metric",
+    "source_section": 6,
+    "source_section_title": "Changeover and setup",
+    "family": "changeover",
+    "required_inputs": "Last-good/first-good events, product transitions, setup standard",
+    "semantic_flags": [
+      "timestamp_boundaries",
+      "setup_loss_signed"
+    ],
+    "source_lines": [
+      128,
+      128
+    ],
+    "source_formula": "Standard Changeover / Actual Changeover × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-060",
+    "source_name": "Setup Loss",
+    "canonical_id": "setup_loss",
+    "kind": "metric",
+    "source_section": 6,
+    "source_section_title": "Changeover and setup",
+    "family": "changeover",
+    "required_inputs": "Last-good/first-good events, product transitions, setup standard",
+    "semantic_flags": [
+      "timestamp_boundaries",
+      "setup_loss_signed"
+    ],
+    "source_lines": [
+      129,
+      129
+    ],
+    "source_formula": "Actual Setup Time − Target Setup Time",
+    "source_unit": "time"
+  },
+  {
+    "requirement_id": "KPI-189",
+    "source_name": "Internal Setup Time",
+    "canonical_id": "internal_setup_time",
+    "kind": "concept",
+    "source_section": 6,
+    "source_section_title": "Changeover and setup",
+    "family": "changeover",
+    "required_inputs": "Last-good/first-good events, product transitions, setup standard",
+    "semantic_flags": [
+      "timestamp_boundaries",
+      "setup_loss_signed"
+    ],
+    "source_lines": [
+      121,
+      134
+    ],
+    "source_formula": null,
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-190",
+    "source_name": "External Setup Time",
+    "canonical_id": "external_setup_time",
+    "kind": "concept",
+    "source_section": 6,
+    "source_section_title": "Changeover and setup",
+    "family": "changeover",
+    "required_inputs": "Last-good/first-good events, product transitions, setup standard",
+    "semantic_flags": [
+      "timestamp_boundaries",
+      "setup_loss_signed"
+    ],
+    "source_lines": [
+      121,
+      134
+    ],
+    "source_formula": null,
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-191",
+    "source_name": "SMED",
+    "canonical_id": "smed",
+    "kind": "concept",
+    "source_section": 6,
+    "source_section_title": "Changeover and setup",
+    "family": "changeover",
+    "required_inputs": "Last-good/first-good events, product transitions, setup standard",
+    "semantic_flags": [
+      "timestamp_boundaries",
+      "setup_loss_signed"
+    ],
+    "source_lines": [
+      121,
+      134
+    ],
+    "source_formula": null,
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-061",
+    "source_name": "Quality Rate",
+    "canonical_id": "quality",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      139,
+      139
+    ],
+    "source_formula": "Good Units / Total Units × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-062",
+    "source_name": "Yield",
+    "canonical_id": "quality",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      140,
+      140
+    ],
+    "source_formula": "Good Units / Total Units × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-063",
+    "source_name": "FPY — First Pass Yield",
+    "canonical_id": "first_pass_yield",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      141,
+      141
+    ],
+    "source_formula": "Units passing without rework / Units entering process × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-064",
+    "source_name": "First Time Through",
+    "canonical_id": "first_time_through",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      142,
+      142
+    ],
+    "source_formula": "Good units requiring no repair/rework / Total units × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-065",
+    "source_name": "Scrap Rate",
+    "canonical_id": "scrap_rate",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      143,
+      143
+    ],
+    "source_formula": "Scrap Units / Total Units Produced × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-066",
+    "source_name": "Reject Rate",
+    "canonical_id": "reject_rate",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      144,
+      144
+    ],
+    "source_formula": "Rejected Units / Total Units Inspected × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-067",
+    "source_name": "Rework Rate",
+    "canonical_id": "rework_rate",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      145,
+      145
+    ],
+    "source_formula": "Reworked Units / Total Units Produced × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-068",
+    "source_name": "Defect Rate",
+    "canonical_id": "defect_rate",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      146,
+      146
+    ],
+    "source_formula": "Defective Units / Units Inspected × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-069",
+    "source_name": "Defects per Unit (DPU)",
+    "canonical_id": "defects_per_unit_dpu",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      147,
+      147
+    ],
+    "source_formula": "Total Defects / Units Inspected",
+    "source_unit": "defects/unit"
+  },
+  {
+    "requirement_id": "KPI-070",
+    "source_name": "DPMO",
+    "canonical_id": "dpmo",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      148,
+      148
+    ],
+    "source_formula": "Defects / (Units × Opportunities per Unit) × 1,000,000",
+    "source_unit": "defects/million opportunities"
+  },
+  {
+    "requirement_id": "KPI-071",
+    "source_name": "PPM Defective",
+    "canonical_id": "ppm_defective",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      149,
+      149
+    ],
+    "source_formula": "Defective Units / Total Units × 1,000,000",
+    "source_unit": "ppm"
+  },
+  {
+    "requirement_id": "KPI-072",
+    "source_name": "Customer Reject Rate",
+    "canonical_id": "customer_reject_rate",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      150,
+      150
+    ],
+    "source_formula": "Customer-Rejected Units / Units Shipped × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-073",
+    "source_name": "Customer PPM",
+    "canonical_id": "customer_ppm",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      151,
+      151
+    ],
+    "source_formula": "Customer Defective Units / Units Shipped × 1,000,000",
+    "source_unit": "ppm"
+  },
+  {
+    "requirement_id": "KPI-074",
+    "source_name": "Quality Loss",
+    "canonical_id": "quality_loss",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      152,
+      152
+    ],
+    "source_formula": "Nonconforming Units / Total Units × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-075",
+    "source_name": "Good Count",
+    "canonical_id": "good_count",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      153,
+      153
+    ],
+    "source_formula": "Total Count − Scrap − rejected/rework as governed",
+    "source_unit": "units"
+  },
+  {
+    "requirement_id": "KPI-076",
+    "source_name": "Rolled Throughput Yield",
+    "canonical_id": "rolled_throughput_yield",
+    "kind": "analytical_measure",
+    "source_section": 8,
+    "source_section_title": "Rolled yield",
+    "family": "quality",
+    "required_inputs": "Aligned route cohorts and first-pass operation outcomes",
+    "semantic_flags": [
+      "route_cohort",
+      "unrounded_product",
+      "rty_example_rounding"
+    ],
+    "source_lines": [
+      163,
+      178
+    ],
+    "source_formula": "RTY = FPY₁ × FPY₂ × FPY₃ × ... × FPYₙ ; RTY = 0.98 × 0.97 × 0.99 = 94.1%",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-077",
+    "source_name": "Cp",
+    "canonical_id": "cp",
+    "kind": "metric",
+    "source_section": 9,
+    "source_section_title": "Process capability",
+    "family": "capability",
+    "required_inputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semantic_flags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ],
+    "source_lines": [
+      187,
+      187
+    ],
+    "source_formula": "(USL − LSL) / (6σ)",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-078",
+    "source_name": "Cpk",
+    "canonical_id": "cpk",
+    "kind": "metric",
+    "source_section": 9,
+    "source_section_title": "Process capability",
+    "family": "capability",
+    "required_inputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semantic_flags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ],
+    "source_lines": [
+      188,
+      188
+    ],
+    "source_formula": "min[(USL − μ)/(3σ), (μ − LSL)/(3σ)]",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-079",
+    "source_name": "Pp",
+    "canonical_id": "pp",
+    "kind": "metric",
+    "source_section": 9,
+    "source_section_title": "Process capability",
+    "family": "capability",
+    "required_inputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semantic_flags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ],
+    "source_lines": [
+      189,
+      189
+    ],
+    "source_formula": "(USL − LSL) / (6σoverall)",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-080",
+    "source_name": "Ppk",
+    "canonical_id": "ppk",
+    "kind": "metric",
+    "source_section": 9,
+    "source_section_title": "Process capability",
+    "family": "capability",
+    "required_inputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semantic_flags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ],
+    "source_lines": [
+      190,
+      190
+    ],
+    "source_formula": "min[(USL − μ)/(3σoverall), (μ − LSL)/(3σoverall)]",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-192",
+    "source_name": "USL",
+    "canonical_id": "usl",
+    "kind": "concept",
+    "source_section": 9,
+    "source_section_title": "Process capability",
+    "family": "capability",
+    "required_inputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semantic_flags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ],
+    "source_lines": [
+      181,
+      202
+    ],
+    "source_formula": null,
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-193",
+    "source_name": "LSL",
+    "canonical_id": "lsl",
+    "kind": "concept",
+    "source_section": 9,
+    "source_section_title": "Process capability",
+    "family": "capability",
+    "required_inputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semantic_flags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ],
+    "source_lines": [
+      181,
+      202
+    ],
+    "source_formula": null,
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-194",
+    "source_name": "Process Mean",
+    "canonical_id": "process_mean",
+    "kind": "concept",
+    "source_section": 9,
+    "source_section_title": "Process capability",
+    "family": "capability",
+    "required_inputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semantic_flags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ],
+    "source_lines": [
+      181,
+      202
+    ],
+    "source_formula": null,
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-195",
+    "source_name": "Within-subgroup Sigma",
+    "canonical_id": "within_subgroup_sigma",
+    "kind": "concept",
+    "source_section": 9,
+    "source_section_title": "Process capability",
+    "family": "capability",
+    "required_inputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semantic_flags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ],
+    "source_lines": [
+      181,
+      202
+    ],
+    "source_formula": null,
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-196",
+    "source_name": "Overall Sigma",
+    "canonical_id": "overall_sigma",
+    "kind": "concept",
+    "source_section": 9,
+    "source_section_title": "Process capability",
+    "family": "capability",
+    "required_inputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semantic_flags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ],
+    "source_lines": [
+      181,
+      202
+    ],
+    "source_formula": null,
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-197",
+    "source_name": "Sample Adequacy",
+    "canonical_id": "sample_adequacy",
+    "kind": "concept",
+    "source_section": 9,
+    "source_section_title": "Process capability",
+    "family": "capability",
+    "required_inputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semantic_flags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ],
+    "source_lines": [
+      181,
+      202
+    ],
+    "source_formula": null,
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-198",
+    "source_name": "Measurement-System Integrity",
+    "canonical_id": "measurement_system_integrity",
+    "kind": "concept",
+    "source_section": 9,
+    "source_section_title": "Process capability",
+    "family": "capability",
+    "required_inputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semantic_flags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ],
+    "source_lines": [
+      181,
+      202
+    ],
+    "source_formula": null,
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-081",
+    "source_name": "MTBF",
+    "canonical_id": "mtbf",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      207,
+      207
+    ],
+    "source_formula": "Total Operating Time / Number of Failures",
+    "source_unit": "hours/failure"
+  },
+  {
+    "requirement_id": "KPI-082",
+    "source_name": "MTTR — Mean Time to Repair",
+    "canonical_id": "mttr_repair",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      208,
+      208
+    ],
+    "source_formula": "Total Active Repair Time / Number of Repairs",
+    "source_unit": "time"
+  },
+  {
+    "requirement_id": "KPI-083",
+    "source_name": "MTTR — Mean Time to Restore",
+    "canonical_id": "mttr_restore",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      209,
+      209
+    ],
+    "source_formula": "Total Restoration Downtime / Number of Incidents",
+    "source_unit": "time"
+  },
+  {
+    "requirement_id": "KPI-084",
+    "source_name": "MTTF",
+    "canonical_id": "mttf",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      210,
+      210
+    ],
+    "source_formula": "Total Operating Life / Number of Nonrepairable Failures",
+    "source_unit": "time"
+  },
+  {
+    "requirement_id": "KPI-085",
+    "source_name": "Failure Rate",
+    "canonical_id": "failure_rate",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      211,
+      211
+    ],
+    "source_formula": "Number of Failures / Operating Time",
+    "source_unit": "failures/hour"
+  },
+  {
+    "requirement_id": "KPI-086",
+    "source_name": "Reliability",
+    "canonical_id": "reliability",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      212,
+      212
+    ],
+    "source_formula": "commonly e^(−λt) for constant failure rate",
+    "source_unit": "probability"
+  },
+  {
+    "requirement_id": "KPI-087",
+    "source_name": "Repair Rate",
+    "canonical_id": "repair_rate",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      213,
+      213
+    ],
+    "source_formula": "Repairs Completed / Repair Time",
+    "source_unit": "repairs/time"
+  },
+  {
+    "requirement_id": "KPI-088",
+    "source_name": "Maintenance Downtime %",
+    "canonical_id": "maintenance_downtime",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      214,
+      214
+    ],
+    "source_formula": "Maintenance Downtime / Planned Production Time × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-089",
+    "source_name": "Breakdown Frequency",
+    "canonical_id": "breakdown_frequency",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      215,
+      215
+    ],
+    "source_formula": "Breakdowns / Period",
+    "source_unit": "count/time"
+  },
+  {
+    "requirement_id": "KPI-090",
+    "source_name": "Reactive Maintenance %",
+    "canonical_id": "reactive_maintenance",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      216,
+      216
+    ],
+    "source_formula": "Reactive Maintenance Hours / Total Maintenance Hours × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-091",
+    "source_name": "Planned Maintenance %",
+    "canonical_id": "planned_maintenance",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      217,
+      217
+    ],
+    "source_formula": "Planned Maintenance Hours / Total Maintenance Hours × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-092",
+    "source_name": "PM Compliance",
+    "canonical_id": "pm_compliance",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      218,
+      218
+    ],
+    "source_formula": "PMs completed on time / PMs scheduled × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-093",
+    "source_name": "Schedule Compliance — Maintenance",
+    "canonical_id": "schedule_compliance_maintenance",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      219,
+      219
+    ],
+    "source_formula": "Scheduled jobs completed as planned / Scheduled jobs × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-094",
+    "source_name": "Maintenance Backlog",
+    "canonical_id": "maintenance_backlog",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      220,
+      220
+    ],
+    "source_formula": "Outstanding Maintenance Labor Hours / Available Weekly Maintenance Labor Hours",
+    "source_unit": "weeks"
+  },
+  {
+    "requirement_id": "KPI-095",
+    "source_name": "Repeat Failure Rate",
+    "canonical_id": "repeat_failure_rate",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      221,
+      221
+    ],
+    "source_formula": "Repeated failures / Total failures × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-096",
+    "source_name": "Emergency Work %",
+    "canonical_id": "emergency_work",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      222,
+      222
+    ],
+    "source_formula": "Emergency work hours / Total maintenance hours × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-199",
+    "source_name": "MTTR clarification",
+    "canonical_id": "mttr_clarification",
+    "kind": "concept",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      203,
+      242
+    ],
+    "source_formula": null,
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-097",
+    "source_name": "OTIF",
+    "canonical_id": "otif",
+    "kind": "metric",
+    "source_section": 11,
+    "source_section_title": "Delivery and customer service",
+    "family": "delivery",
+    "required_inputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semantic_flags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ],
+    "source_lines": [
+      247,
+      247
+    ],
+    "source_formula": "Orders delivered On Time AND In Full / Total Orders × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-098",
+    "source_name": "On-Time Delivery (OTD)",
+    "canonical_id": "on_time_delivery_otd",
+    "kind": "metric",
+    "source_section": 11,
+    "source_section_title": "Delivery and customer service",
+    "family": "delivery",
+    "required_inputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semantic_flags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ],
+    "source_lines": [
+      248,
+      248
+    ],
+    "source_formula": "Orders delivered on/before promise date / Total Delivered Orders × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-099",
+    "source_name": "In-Full Delivery",
+    "canonical_id": "in_full_delivery",
+    "kind": "metric",
+    "source_section": 11,
+    "source_section_title": "Delivery and customer service",
+    "family": "delivery",
+    "required_inputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semantic_flags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ],
+    "source_lines": [
+      249,
+      249
+    ],
+    "source_formula": "Orders delivered complete / Total Orders × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-100",
+    "source_name": "Fill Rate",
+    "canonical_id": "fill_rate",
+    "kind": "metric",
+    "source_section": 11,
+    "source_section_title": "Delivery and customer service",
+    "family": "delivery",
+    "required_inputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semantic_flags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ],
+    "source_lines": [
+      250,
+      250
+    ],
+    "source_formula": "Units shipped immediately / Units ordered × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-101",
+    "source_name": "Perfect Order Rate",
+    "canonical_id": "perfect_order_rate",
+    "kind": "metric",
+    "source_section": 11,
+    "source_section_title": "Delivery and customer service",
+    "family": "delivery",
+    "required_inputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semantic_flags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ],
+    "source_lines": [
+      251,
+      251
+    ],
+    "source_formula": "Perfect Orders / Total Orders × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-102",
+    "source_name": "Late Order Rate",
+    "canonical_id": "late_order_rate",
+    "kind": "metric",
+    "source_section": 11,
+    "source_section_title": "Delivery and customer service",
+    "family": "delivery",
+    "required_inputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semantic_flags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ],
+    "source_lines": [
+      252,
+      252
+    ],
+    "source_formula": "Late Orders / Total Orders × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-103",
+    "source_name": "Past-Due Quantity",
+    "canonical_id": "past_due_quantity",
+    "kind": "metric",
+    "source_section": 11,
+    "source_section_title": "Delivery and customer service",
+    "family": "delivery",
+    "required_inputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semantic_flags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ],
+    "source_lines": [
+      253,
+      253
+    ],
+    "source_formula": "Σ outstanding quantity past promised date",
+    "source_unit": "units"
+  },
+  {
+    "requirement_id": "KPI-104",
+    "source_name": "Average Delivery Delay",
+    "canonical_id": "average_delivery_delay",
+    "kind": "metric",
+    "source_section": 11,
+    "source_section_title": "Delivery and customer service",
+    "family": "delivery",
+    "required_inputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semantic_flags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ],
+    "source_lines": [
+      254,
+      254
+    ],
+    "source_formula": "Σ late days / Late Deliveries",
+    "source_unit": "days"
+  },
+  {
+    "requirement_id": "KPI-105",
+    "source_name": "Inventory Turns",
+    "canonical_id": "inventory_turns",
+    "kind": "metric",
+    "source_section": 12,
+    "source_section_title": "Inventory",
+    "family": "inventory",
+    "required_inputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semantic_flags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ],
+    "source_lines": [
+      264,
+      264
+    ],
+    "source_formula": "Annual COGS / Average Inventory Value",
+    "source_unit": "turns/year"
+  },
+  {
+    "requirement_id": "KPI-106",
+    "source_name": "Inventory Days / DIO",
+    "canonical_id": "inventory_days_dio",
+    "kind": "metric",
+    "source_section": 12,
+    "source_section_title": "Inventory",
+    "family": "inventory",
+    "required_inputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semantic_flags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ],
+    "source_lines": [
+      265,
+      265
+    ],
+    "source_formula": "Average Inventory / COGS × Days in Period",
+    "source_unit": "days"
+  },
+  {
+    "requirement_id": "KPI-107",
+    "source_name": "Raw Material Days",
+    "canonical_id": "raw_material_days",
+    "kind": "metric",
+    "source_section": 12,
+    "source_section_title": "Inventory",
+    "family": "inventory",
+    "required_inputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semantic_flags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ],
+    "source_lines": [
+      266,
+      266
+    ],
+    "source_formula": "Average Raw Material Inventory / Material Usage × Days",
+    "source_unit": "days"
+  },
+  {
+    "requirement_id": "KPI-108",
+    "source_name": "WIP Days",
+    "canonical_id": "wip_days",
+    "kind": "metric",
+    "source_section": 12,
+    "source_section_title": "Inventory",
+    "family": "inventory",
+    "required_inputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semantic_flags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ],
+    "source_lines": [
+      267,
+      267
+    ],
+    "source_formula": "Average WIP / Manufacturing Cost or Throughput × Days",
+    "source_unit": "days"
+  },
+  {
+    "requirement_id": "KPI-109",
+    "source_name": "Finished Goods Days",
+    "canonical_id": "finished_goods_days",
+    "kind": "metric",
+    "source_section": 12,
+    "source_section_title": "Inventory",
+    "family": "inventory",
+    "required_inputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semantic_flags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ],
+    "source_lines": [
+      268,
+      268
+    ],
+    "source_formula": "Average FG Inventory / COGS × Days",
+    "source_unit": "days"
+  },
+  {
+    "requirement_id": "KPI-110",
+    "source_name": "WIP Units",
+    "canonical_id": "wip_units",
+    "kind": "metric",
+    "source_section": 12,
+    "source_section_title": "Inventory",
+    "family": "inventory",
+    "required_inputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semantic_flags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ],
+    "source_lines": [
+      269,
+      269
+    ],
+    "source_formula": "Σ units currently inside production process",
+    "source_unit": "units"
+  },
+  {
+    "requirement_id": "KPI-111",
+    "source_name": "Inventory Accuracy",
+    "canonical_id": "inventory_accuracy",
+    "kind": "metric",
+    "source_section": 12,
+    "source_section_title": "Inventory",
+    "family": "inventory",
+    "required_inputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semantic_flags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ],
+    "source_lines": [
+      270,
+      270
+    ],
+    "source_formula": "Correct inventory records / Records checked × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-112",
+    "source_name": "Obsolete Inventory %",
+    "canonical_id": "obsolete_inventory",
+    "kind": "metric",
+    "source_section": 12,
+    "source_section_title": "Inventory",
+    "family": "inventory",
+    "required_inputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semantic_flags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ],
+    "source_lines": [
+      271,
+      271
+    ],
+    "source_formula": "Obsolete Inventory Value / Total Inventory Value × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-113",
+    "source_name": "Excess Inventory %",
+    "canonical_id": "excess_inventory",
+    "kind": "metric",
+    "source_section": 12,
+    "source_section_title": "Inventory",
+    "family": "inventory",
+    "required_inputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semantic_flags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ],
+    "source_lines": [
+      272,
+      272
+    ],
+    "source_formula": "Inventory Above Governed Maximum / Total Inventory × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-114",
+    "source_name": "Little's Law",
+    "canonical_id": "little_s_law",
+    "kind": "model",
+    "source_section": 13,
+    "source_section_title": "Little's Law / manufacturing flow",
+    "family": "flow_model",
+    "required_inputs": "Matched time-average WIP, throughput and boundary-defined lead times",
+    "semantic_flags": [
+      "steady_state_boundary",
+      "scenario_not_causal_prediction"
+    ],
+    "source_lines": [
+      280,
+      297
+    ],
+    "source_formula": "WIP = Throughput × Lead Time ; Lead Time = WIP / Throughput ; Throughput = WIP / Lead Time",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-115",
+    "source_name": "Labor Productivity",
+    "canonical_id": "labor_productivity",
+    "kind": "metric",
+    "source_section": 14,
+    "source_section_title": "Labor and workforce productivity",
+    "family": "workforce",
+    "required_inputs": "Approved labor hours, standard time versions, good output",
+    "semantic_flags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ],
+    "source_lines": [
+      304,
+      304
+    ],
+    "source_formula": "Good Units / Labor Hours",
+    "source_unit": "units/labor-hour"
+  },
+  {
+    "requirement_id": "KPI-116",
+    "source_name": "Labor Efficiency",
+    "canonical_id": "labor_efficiency",
+    "kind": "metric",
+    "source_section": 14,
+    "source_section_title": "Labor and workforce productivity",
+    "family": "workforce",
+    "required_inputs": "Approved labor hours, standard time versions, good output",
+    "semantic_flags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ],
+    "source_lines": [
+      305,
+      305
+    ],
+    "source_formula": "Standard Hours Earned / Actual Labor Hours × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-117",
+    "source_name": "Standard Hours Earned",
+    "canonical_id": "standard_hours_earned",
+    "kind": "metric",
+    "source_section": 14,
+    "source_section_title": "Labor and workforce productivity",
+    "family": "workforce",
+    "required_inputs": "Approved labor hours, standard time versions, good output",
+    "semantic_flags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ],
+    "source_lines": [
+      306,
+      306
+    ],
+    "source_formula": "Good Quantity × Standard Labor Time per Unit",
+    "source_unit": "hours"
+  },
+  {
+    "requirement_id": "KPI-118",
+    "source_name": "Labor Utilization",
+    "canonical_id": "labor_utilization",
+    "kind": "metric",
+    "source_section": 14,
+    "source_section_title": "Labor and workforce productivity",
+    "family": "workforce",
+    "required_inputs": "Approved labor hours, standard time versions, good output",
+    "semantic_flags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ],
+    "source_lines": [
+      307,
+      307
+    ],
+    "source_formula": "Productive Labor Hours / Paid Labor Hours × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-119",
+    "source_name": "Direct Labor Utilization",
+    "canonical_id": "direct_labor_utilization",
+    "kind": "metric",
+    "source_section": 14,
+    "source_section_title": "Labor and workforce productivity",
+    "family": "workforce",
+    "required_inputs": "Approved labor hours, standard time versions, good output",
+    "semantic_flags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ],
+    "source_lines": [
+      308,
+      308
+    ],
+    "source_formula": "Direct Productive Hours / Direct Available Hours × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-120",
+    "source_name": "Overtime %",
+    "canonical_id": "overtime",
+    "kind": "metric",
+    "source_section": 14,
+    "source_section_title": "Labor and workforce productivity",
+    "family": "workforce",
+    "required_inputs": "Approved labor hours, standard time versions, good output",
+    "semantic_flags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ],
+    "source_lines": [
+      309,
+      309
+    ],
+    "source_formula": "Overtime Hours / Total Labor Hours × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-121",
+    "source_name": "Absenteeism Rate",
+    "canonical_id": "absenteeism_rate",
+    "kind": "metric",
+    "source_section": 14,
+    "source_section_title": "Labor and workforce productivity",
+    "family": "workforce",
+    "required_inputs": "Approved labor hours, standard time versions, good output",
+    "semantic_flags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ],
+    "source_lines": [
+      310,
+      310
+    ],
+    "source_formula": "Absent Scheduled Hours / Total Scheduled Hours × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-122",
+    "source_name": "Units per Employee Hour",
+    "canonical_id": "units_per_employee_hour",
+    "kind": "metric",
+    "source_section": 14,
+    "source_section_title": "Labor and workforce productivity",
+    "family": "workforce",
+    "required_inputs": "Approved labor hours, standard time versions, good output",
+    "semantic_flags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ],
+    "source_lines": [
+      311,
+      311
+    ],
+    "source_formula": "Good Units / Employee Hours",
+    "source_unit": "units/hour"
+  },
+  {
+    "requirement_id": "KPI-123",
+    "source_name": "Labor Cost per Unit",
+    "canonical_id": "labor_cost_per_unit",
+    "kind": "metric",
+    "source_section": 14,
+    "source_section_title": "Labor and workforce productivity",
+    "family": "workforce",
+    "required_inputs": "Approved labor hours, standard time versions, good output",
+    "semantic_flags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ],
+    "source_lines": [
+      312,
+      312
+    ],
+    "source_formula": "Direct Labor Cost / Good Units",
+    "source_unit": "currency/unit"
+  },
+  {
+    "requirement_id": "KPI-124",
+    "source_name": "Manufacturing Cost per Unit",
+    "canonical_id": "manufacturing_cost_per_unit",
+    "kind": "metric",
+    "source_section": 15,
+    "source_section_title": "Cost",
+    "family": "cost",
+    "required_inputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semantic_flags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ],
+    "source_lines": [
+      322,
+      322
+    ],
+    "source_formula": "Total Manufacturing Cost / Good Units Produced",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-125",
+    "source_name": "Conversion Cost per Unit",
+    "canonical_id": "conversion_cost_per_unit",
+    "kind": "metric",
+    "source_section": 15,
+    "source_section_title": "Cost",
+    "family": "cost",
+    "required_inputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semantic_flags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ],
+    "source_lines": [
+      323,
+      323
+    ],
+    "source_formula": "(Direct Labor + Manufacturing Overhead) / Good Units",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-126",
+    "source_name": "Scrap Cost",
+    "canonical_id": "scrap_cost",
+    "kind": "metric",
+    "source_section": 15,
+    "source_section_title": "Cost",
+    "family": "cost",
+    "required_inputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semantic_flags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ],
+    "source_lines": [
+      324,
+      324
+    ],
+    "source_formula": "Scrap Quantity × Governed Unit Cost",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-127",
+    "source_name": "Rework Cost",
+    "canonical_id": "rework_cost",
+    "kind": "metric",
+    "source_section": 15,
+    "source_section_title": "Cost",
+    "family": "cost",
+    "required_inputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semantic_flags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ],
+    "source_lines": [
+      325,
+      325
+    ],
+    "source_formula": "Rework Labor + Material + Overhead",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-128",
+    "source_name": "Downtime Cost",
+    "canonical_id": "downtime_cost",
+    "kind": "metric",
+    "source_section": 15,
+    "source_section_title": "Cost",
+    "family": "cost",
+    "required_inputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semantic_flags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ],
+    "source_lines": [
+      326,
+      326
+    ],
+    "source_formula": "Downtime Duration × Governed Loss/Cost Rate",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-129",
+    "source_name": "Cost Variance",
+    "canonical_id": "cost_variance",
+    "kind": "metric",
+    "source_section": 15,
+    "source_section_title": "Cost",
+    "family": "cost",
+    "required_inputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semantic_flags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ],
+    "source_lines": [
+      327,
+      327
+    ],
+    "source_formula": "Actual Cost − Standard/Budget Cost",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-130",
+    "source_name": "Cost Variance %",
+    "canonical_id": "cost_variance",
+    "kind": "metric",
+    "source_section": 15,
+    "source_section_title": "Cost",
+    "family": "cost",
+    "required_inputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semantic_flags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ],
+    "source_lines": [
+      328,
+      328
+    ],
+    "source_formula": "(Actual − Standard) / Standard × 100",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-131",
+    "source_name": "Material Usage Variance",
+    "canonical_id": "material_usage_variance",
+    "kind": "metric",
+    "source_section": 15,
+    "source_section_title": "Cost",
+    "family": "cost",
+    "required_inputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semantic_flags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ],
+    "source_lines": [
+      329,
+      329
+    ],
+    "source_formula": "(Actual Quantity − Standard Quantity) × Standard Price",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-132",
+    "source_name": "Labor Efficiency Variance",
+    "canonical_id": "labor_efficiency_variance",
+    "kind": "metric",
+    "source_section": 15,
+    "source_section_title": "Cost",
+    "family": "cost",
+    "required_inputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semantic_flags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ],
+    "source_lines": [
+      330,
+      330
+    ],
+    "source_formula": "(Actual Hours − Standard Hours) × Standard Labor Rate",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-133",
+    "source_name": "COPQ — Cost of Poor Quality",
+    "canonical_id": "copq_cost_of_poor_quality",
+    "kind": "metric",
+    "source_section": 16,
+    "source_section_title": "Cost of quality",
+    "family": "cost_of_quality",
+    "required_inputs": "Finance-approved prevention/appraisal/internal/external cost categories",
+    "semantic_flags": [
+      "exclusive_cost_partition",
+      "double_counting"
+    ],
+    "source_lines": [
+      338,
+      338
+    ],
+    "source_formula": "Internal Failure Cost + External Failure Cost",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-134",
+    "source_name": "Cost of Quality",
+    "canonical_id": "cost_of_quality",
+    "kind": "metric",
+    "source_section": 16,
+    "source_section_title": "Cost of quality",
+    "family": "cost_of_quality",
+    "required_inputs": "Finance-approved prevention/appraisal/internal/external cost categories",
+    "semantic_flags": [
+      "exclusive_cost_partition",
+      "double_counting"
+    ],
+    "source_lines": [
+      339,
+      339
+    ],
+    "source_formula": "Prevention + Appraisal + Internal Failure + External Failure",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-135",
+    "source_name": "COPQ % Sales",
+    "canonical_id": "copq_sales",
+    "kind": "metric",
+    "source_section": 16,
+    "source_section_title": "Cost of quality",
+    "family": "cost_of_quality",
+    "required_inputs": "Finance-approved prevention/appraisal/internal/external cost categories",
+    "semantic_flags": [
+      "exclusive_cost_partition",
+      "double_counting"
+    ],
+    "source_lines": [
+      340,
+      340
+    ],
+    "source_formula": "COPQ / Sales × 100",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-136",
+    "source_name": "Scrap Cost %",
+    "canonical_id": "scrap_cost",
+    "kind": "metric",
+    "source_section": 16,
+    "source_section_title": "Cost of quality",
+    "family": "cost_of_quality",
+    "required_inputs": "Finance-approved prevention/appraisal/internal/external cost categories",
+    "semantic_flags": [
+      "exclusive_cost_partition",
+      "double_counting"
+    ],
+    "source_lines": [
+      341,
+      341
+    ],
+    "source_formula": "Scrap Cost / Manufacturing Cost × 100",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-137",
+    "source_name": "Warranty Cost %",
+    "canonical_id": "warranty_cost",
+    "kind": "metric",
+    "source_section": 16,
+    "source_section_title": "Cost of quality",
+    "family": "cost_of_quality",
+    "required_inputs": "Finance-approved prevention/appraisal/internal/external cost categories",
+    "semantic_flags": [
+      "exclusive_cost_partition",
+      "double_counting"
+    ],
+    "source_lines": [
+      342,
+      342
+    ],
+    "source_formula": "Warranty Cost / Sales × 100",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-138",
+    "source_name": "Energy Consumption",
+    "canonical_id": "energy_consumption",
+    "kind": "metric",
+    "source_section": 17,
+    "source_section_title": "Energy and sustainability",
+    "family": "energy_sustainability",
+    "required_inputs": "Meter interval data, production denominator, emission factor versions",
+    "semantic_flags": [
+      "meter_coverage",
+      "factor_governance",
+      "energy_vs_power",
+      "mix_weather_normalization"
+    ],
+    "source_lines": [
+      350,
+      350
+    ],
+    "source_formula": "Σ energy used",
+    "source_unit": "kWh"
+  },
+  {
+    "requirement_id": "KPI-139",
+    "source_name": "Energy per Unit",
+    "canonical_id": "energy_per_unit",
+    "kind": "metric",
+    "source_section": 17,
+    "source_section_title": "Energy and sustainability",
+    "family": "energy_sustainability",
+    "required_inputs": "Meter interval data, production denominator, emission factor versions",
+    "semantic_flags": [
+      "meter_coverage",
+      "factor_governance",
+      "energy_vs_power",
+      "mix_weather_normalization"
+    ],
+    "source_lines": [
+      351,
+      351
+    ],
+    "source_formula": "Total Energy / Good Units",
+    "source_unit": "kWh/unit"
+  },
+  {
+    "requirement_id": "KPI-140",
+    "source_name": "Energy Intensity",
+    "canonical_id": "energy_intensity",
+    "kind": "metric",
+    "source_section": 17,
+    "source_section_title": "Energy and sustainability",
+    "family": "energy_sustainability",
+    "required_inputs": "Meter interval data, production denominator, emission factor versions",
+    "semantic_flags": [
+      "meter_coverage",
+      "factor_governance",
+      "energy_vs_power",
+      "mix_weather_normalization"
+    ],
+    "source_lines": [
+      352,
+      352
+    ],
+    "source_formula": "Energy / Production Measure",
+    "source_unit": "kWh/unit, kWh/lb, etc."
+  },
+  {
+    "requirement_id": "KPI-141",
+    "source_name": "Idle Energy %",
+    "canonical_id": "idle_energy",
+    "kind": "metric",
+    "source_section": 17,
+    "source_section_title": "Energy and sustainability",
+    "family": "energy_sustainability",
+    "required_inputs": "Meter interval data, production denominator, emission factor versions",
+    "semantic_flags": [
+      "meter_coverage",
+      "factor_governance",
+      "energy_vs_power",
+      "mix_weather_normalization"
+    ],
+    "source_lines": [
+      353,
+      353
+    ],
+    "source_formula": "Energy During Nonproductive Time / Total Energy × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-142",
+    "source_name": "Peak Demand",
+    "canonical_id": "peak_demand",
+    "kind": "metric",
+    "source_section": 17,
+    "source_section_title": "Energy and sustainability",
+    "family": "energy_sustainability",
+    "required_inputs": "Meter interval data, production denominator, emission factor versions",
+    "semantic_flags": [
+      "meter_coverage",
+      "factor_governance",
+      "energy_vs_power",
+      "mix_weather_normalization"
+    ],
+    "source_lines": [
+      354,
+      354
+    ],
+    "source_formula": "Maximum demand during period",
+    "source_unit": "kW"
+  },
+  {
+    "requirement_id": "KPI-143",
+    "source_name": "CO₂e per Unit",
+    "canonical_id": "co_e_per_unit",
+    "kind": "metric",
+    "source_section": 17,
+    "source_section_title": "Energy and sustainability",
+    "family": "energy_sustainability",
+    "required_inputs": "Meter interval data, production denominator, emission factor versions",
+    "semantic_flags": [
+      "meter_coverage",
+      "factor_governance",
+      "energy_vs_power",
+      "mix_weather_normalization"
+    ],
+    "source_lines": [
+      355,
+      355
+    ],
+    "source_formula": "Total CO₂e / Good Units",
+    "source_unit": "kg CO₂e/unit"
+  },
+  {
+    "requirement_id": "KPI-144",
+    "source_name": "Waste per Unit",
+    "canonical_id": "waste_per_unit",
+    "kind": "metric",
+    "source_section": 17,
+    "source_section_title": "Energy and sustainability",
+    "family": "energy_sustainability",
+    "required_inputs": "Meter interval data, production denominator, emission factor versions",
+    "semantic_flags": [
+      "meter_coverage",
+      "factor_governance",
+      "energy_vs_power",
+      "mix_weather_normalization"
+    ],
+    "source_lines": [
+      356,
+      356
+    ],
+    "source_formula": "Waste Generated / Good Units",
+    "source_unit": "mass/unit"
+  },
+  {
+    "requirement_id": "KPI-145",
+    "source_name": "Water per Unit",
+    "canonical_id": "water_per_unit",
+    "kind": "metric",
+    "source_section": 17,
+    "source_section_title": "Energy and sustainability",
+    "family": "energy_sustainability",
+    "required_inputs": "Meter interval data, production denominator, emission factor versions",
+    "semantic_flags": [
+      "meter_coverage",
+      "factor_governance",
+      "energy_vs_power",
+      "mix_weather_normalization"
+    ],
+    "source_lines": [
+      357,
+      357
+    ],
+    "source_formula": "Water Consumption / Good Units",
+    "source_unit": "volume/unit"
+  }
+]

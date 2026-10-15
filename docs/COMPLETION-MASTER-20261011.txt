@@ -1,0 +1,1003 @@
+EKAS FINAL COMPLETION MASTER PROMPT
+TRUE NORTH → ONE COHESIVE, FULLY FUNCTIONING DEMO
+
+PURPOSE
+
+This is the canonical completion directive for the current EKAS UI/demo build.
+
+Do not treat this as another feature request.
+
+This prompt defines:
+
+- what EKAS is;
+- what the current build already contains;
+- what remains incomplete;
+- how all capabilities must come together;
+- what must be preserved;
+- what must be fixed;
+- what must be proven;
+- and the exact standard for calling the demo complete.
+
+The goal is NOT to increase pass counts.
+
+The goal is NOT to reach another version number.
+
+The goal is NOT to add more screens.
+
+The goal is to produce ONE exact final candidate that behaves like ONE coherent EKAS product.
+
+==================================================
+SOURCE OF TRUTH
+==================================================
+
+Use the current build-status explanation as the governing status baseline.
+
+Current established facts include:
+
+- substantial EKAS functionality already exists;
+- the full end-to-end product has not yet been proven on one final build;
+- V71 is the latest frozen review candidate;
+- V71 still has a known guidance defect;
+- V72 contains additional work but its latest inspected full run had:
+  1,396 PASS
+  9 FAIL
+- those failures are comparison-related and must be diagnosed;
+- V72 is not accepted;
+- prior frozen versions remain preserved;
+- version numbers are engineering checkpoints, not completion percentages.
+
+Do not describe EKAS as complete merely because many component tests pass.
+
+==================================================
+TRUE NORTH
+==================================================
+
+EKAS is a CHAT-FIRST MANUFACTURING INTELLIGENCE AND OPERATING SYSTEM.
+
+A real user should experience it as if they are speaking to a world-class manufacturing expert who understands:
+
+- plant context;
+- production;
+- OEE;
+- downtime;
+- speed loss;
+- quality loss;
+- jobs;
+- parts/revisions;
+- maintenance;
+- documents;
+- evidence;
+- hypotheses;
+- corrective action;
+- ownership;
+- authorization;
+- verification;
+- sustain;
+- business value.
+
+The user should not need to understand the underlying software architecture.
+
+==================================================
+PRIMARY USER OUTCOME
+==================================================
+
+The canonical product journey is:
+
+USER:
+"We missed our production goal. What happened?"
+
+EKAS should support:
+
+GOAL
+→ GAP
+→ LOSS
+→ CONTRIBUTOR
+→ EVIDENCE
+→ HYPOTHESIS
+→ ACTION
+→ OWNER
+→ AUTHORIZATION
+→ PERFORMED WORK
+→ VERIFICATION
+→ SUSTAIN
+→ REOPEN IF NEEDED
+
+All as one connected experience.
+
+==================================================
+CURRENT PRODUCT REALITY
+==================================================
+
+The system already contains meaningful working capability in areas including:
+
+- Ask/chat;
+- Search;
+- metric calculations;
+- Catalog;
+- charts;
+- tables;
+- Answers;
+- Boards;
+- Collections;
+- evidence/provenance;
+- Northworks synthetic manufacturing scenarios;
+- Brief;
+- Explore;
+- Knowledge;
+- Improvements;
+- Metrics;
+- jobs/events;
+- maintenance evidence;
+- controlled-document evidence;
+- hypotheses;
+- decision support;
+- local ownership/action workflows;
+- before/after measurement;
+- sustain/reopen;
+- saved state;
+- correction handling;
+- responsive UI;
+- security/policy controls.
+
+PRESERVE ALL WORKING CAPABILITY.
+
+Do not throw away current implementation simply because the product journey is fragmented.
+
+==================================================
+WHY THE PRODUCT STILL FEELS UNFINISHED
+==================================================
+
+The main problem is fragmentation.
+
+Users still encounter pieces of EKAS across different surfaces and workflows.
+
+The system can make the user think in terms of:
+
+- Ask;
+- Search;
+- Workbench;
+- Brief;
+- Explore;
+- Knowledge;
+- Improvements;
+- Metrics;
+- Boards;
+- saved answers;
+- evidence panels.
+
+The finished product must instead think in terms of USER INTENT.
+
+The user should not need to ask:
+
+"Which page do I need?"
+
+EKAS should determine the correct service and supporting surface.
+
+==================================================
+MAJOR CURRENT GAPS
+==================================================
+
+The current build still needs closure in these areas:
+
+1. FULLY CONVERSATIONAL CHAT
+2. GUIDANCE ACROSS ALL IMPORTANT STATES
+3. END-TO-END INVESTIGATION COHERENCE
+4. BACKEND/SERVICE BOUNDARY CLEANUP
+5. COMPARISON FLOW FAILURES
+6. UNAIDED USER ACCEPTANCE
+7. API/ADAPTER READINESS
+8. FINAL EXACT-BUILD ACCEPTANCE
+
+These are not optional polish items.
+
+==================================================
+FULLY CONVERSATIONAL CHAT
+==================================================
+
+The current conversational feature is a CORE PRODUCT REQUIREMENT.
+
+It is not a side feature.
+
+It must remain the primary interaction model.
+
+Required behavior:
+
+- free-form phrasing;
+- follow-ups;
+- corrections;
+- pronouns;
+- ellipsis;
+- metric switching;
+- machine switching;
+- period switching;
+- comparison context;
+- clarification;
+- natural explanation;
+- chart/table requests;
+- investigation transitions;
+- action transitions;
+- verification transitions;
+- reload/history persistence.
+
+Required conversation chain:
+
+"What was OEE in January?"
+
+"And March?"
+
+"What about Machine 2?"
+
+"No, I meant Machine 1."
+
+"Why?"
+
+"Show me."
+
+"Compare it with last month."
+
+"Go back to the first machine."
+
+"What was FPY?"
+
+Then:
+
+"We missed our production goal."
+
+"Investigate it."
+
+"Where did we lose it?"
+
+"Which machine?"
+
+"What job?"
+
+"What evidence?"
+
+"What are the possible causes?"
+
+"What should we do?"
+
+"Who owns it?"
+
+"Was it approved?"
+
+"Was it performed?"
+
+"Did it work?"
+
+"Did it hold?"
+
+"Reopen it."
+
+The whole sequence must remain coherent.
+
+==================================================
+CONVERSATIONAL CONTEXT
+==================================================
+
+Track independently:
+
+- active metric;
+- plant;
+- line;
+- asset;
+- job;
+- part;
+- revision;
+- operation;
+- shift;
+- primary period;
+- comparison period;
+- comparison entity;
+- active investigation;
+- clarification state;
+- presentation state.
+
+Changing one dimension must not corrupt another.
+
+Explicit metric request overrides inherited metric context.
+
+Never silently fall back to OEE.
+
+==================================================
+GUIDANCE / EKAS GUIDE
+==================================================
+
+The Guide must support the user across the product.
+
+For each significant screen/state it should answer:
+
+- What is this page for?
+- What has already been completed?
+- What is missing?
+- What is blocking progress?
+- What can I do next?
+- What happens if I do it?
+- How do I recover from a mistake?
+- How do I resume later?
+
+Important:
+
+The Guide must support a clear UI.
+
+It must NOT become a manual required to understand a confusing product.
+
+==================================================
+KNOWN GUIDE DEFECT
+==================================================
+
+Correct the V71 guidance issue where training help recommends a return command that does not work as described and may imply an earlier investigation exists when none does.
+
+Treat this as a real usability defect.
+
+After correction, test:
+- no prior investigation;
+- active investigation;
+- completed investigation;
+- resumed investigation;
+- alternate route;
+- reload.
+
+==================================================
+COMPARISON FLOW
+==================================================
+
+The nine V72 comparison-related failures must be fully diagnosed.
+
+Do not assume they are environmental.
+
+For every failure:
+
+- preserve logs;
+- identify exact failing assertion;
+- distinguish:
+  - product defect;
+  - test defect;
+  - timing/setup issue;
+  - fixture mismatch;
+  - stale assumption.
+- fix root cause;
+- rerun targeted tests;
+- rerun cumulative suite.
+
+No PASS claim until all nine are resolved or proven non-product defects with evidence.
+
+==================================================
+INVESTIGATION SERVICE
+==================================================
+
+Create/complete one coherent Investigation lifecycle.
+
+Required persistent aggregate:
+
+CONTEXT
+GOAL
+LOSS BRIDGE
+CONTRIBUTORS
+EVIDENCE
+HYPOTHESES
+OWNER
+ACTION
+AUTHORIZATION
+PERFORMED WORK
+VERIFICATION PLAN
+VERIFICATION RESULT
+SUSTAIN
+RECURRENCE
+HISTORY
+
+The user should be able to move through this by chat.
+
+Supporting screens may expose detail.
+
+==================================================
+GOAL → LOSS → CONTRIBUTOR
+==================================================
+
+The user must be able to understand:
+
+- what target was missed;
+- by how much;
+- which line contributed most;
+- which machine/job/part/operation contributed;
+- downtime loss;
+- speed loss;
+- quality loss.
+
+No double counting.
+
+Do not confuse:
+- approved production-plan gap
+with
+- theoretical capacity loss.
+
+==================================================
+EVIDENCE
+==================================================
+
+Every important claim must be traceable to governed synthetic evidence.
+
+Potential evidence includes:
+
+- events;
+- production records;
+- jobs;
+- maintenance notes;
+- work orders;
+- PFMEA;
+- control plan;
+- standard work;
+- NCR;
+- inspection;
+- operator confirmation;
+- engineering change records.
+
+Preserve:
+- source;
+- version;
+- effectivity;
+- timestamp;
+- controlled/uncontrolled status;
+- superseded state;
+- cutoff.
+
+==================================================
+FACT VS HYPOTHESIS
+==================================================
+
+Maintain distinct states:
+
+OBSERVATION
+DERIVED RESULT
+HYPOTHESIS
+SUPPORTED HYPOTHESIS
+REFUTED HYPOTHESIS
+CONFIRMED CAUSE
+
+Do not turn a plausible explanation into proven root cause.
+
+==================================================
+ACTION LIFECYCLE
+==================================================
+
+Keep separate:
+
+RECOMMENDATION
+ASSIGNMENT REQUESTED
+ASSIGNMENT ACCEPTED
+AUTHORIZATION REQUESTED
+AUTHORIZED
+PERFORMED
+VERIFIED
+SUSTAINED
+
+No local UI shortcut may skip states.
+
+==================================================
+VERIFICATION
+==================================================
+
+Before claiming success, require a defined verification plan.
+
+Lock:
+
+- baseline;
+- post cohort;
+- eligibility;
+- primary endpoint;
+- safety guardrails;
+- quality guardrails;
+- operational guardrails;
+- measurement horizon.
+
+Then measure.
+
+Do not retroactively select the most favorable metric.
+
+==================================================
+SUSTAIN
+==================================================
+
+After verification, ask:
+
+"Did it hold?"
+
+Support:
+
+SUSTAINING
+SUSTAINED
+REGRESSED
+RECURRENCE
+INSUFFICIENT
+INTERRUPTED
+
+If recurrence occurs:
+- reopen correctly;
+- preserve prior history;
+- do not borrow prior evidence improperly.
+
+==================================================
+SYNTHETIC DATA STANDARD
+==================================================
+
+The data may be mock/synthetic.
+
+The product behavior may NOT be fake.
+
+Required:
+
+- real calculations;
+- real state transitions;
+- real persistence;
+- real validation;
+- real service contracts;
+- real versioning;
+- real idempotency;
+- real evidence relationships;
+- real authorization semantics;
+- real failure paths.
+
+MOCK THE DATA SOURCE AND TRANSPORT.
+
+DO NOT MOCK THE EKAS SERVICE.
+
+==================================================
+API / BACKEND READINESS
+==================================================
+
+The UI must increasingly depend on typed application/service contracts rather than direct fixture manipulation.
+
+Target services include:
+
+MetricService
+OperatingReviewService
+InvestigationService
+EvidenceService
+ActionService
+AuthorizationService
+VerificationService
+SustainService
+DocumentService
+
+Today:
+- mock adapters.
+
+Later:
+- Tom/backend adapters.
+
+The UI and application behavior should remain unchanged.
+
+==================================================
+TOM BACKEND READINESS
+==================================================
+
+Document the external contract needed for eventual backend connection:
+
+- authentication;
+- tenant mapping;
+- role mapping;
+- entity mapping;
+- capability negotiation;
+- version negotiation;
+- read APIs;
+- write APIs;
+- error behavior;
+- retry/idempotency behavior;
+- document versioning;
+- CMMS/QMS/MES integration;
+- historian integration;
+- finance integration;
+- notifications.
+
+Do not invent an unavailable Tom API.
+
+Define stable adapter boundaries.
+
+==================================================
+SECURITY
+==================================================
+
+Preserve the approved security architecture.
+
+Do not weaken:
+- authorization;
+- tenant isolation;
+- policy revision;
+- evidence masking;
+- immutable history;
+- namespace controls;
+- fail-closed behavior.
+
+Synthetic mode still uses real trust boundaries.
+
+==================================================
+METRICS
+==================================================
+
+Use the governed Metric Registry.
+
+Every active metric must preserve:
+
+- identity;
+- definition;
+- formula;
+- numerator;
+- denominator;
+- units;
+- valid scope;
+- time grain;
+- aggregation;
+- target semantics;
+- source;
+- evidence requirements;
+- version/effectivity.
+
+Recognition ≠ execution.
+
+Execution ≠ certification.
+
+==================================================
+PLANT HEAD OPERATING REVIEW
+==================================================
+
+Support a coherent daily plant-leader entry point.
+
+Core measures:
+
+- Production vs Plan;
+- OEE;
+- Downtime;
+- Quality Loss;
+- Schedule Adherence;
+- Inventory Days;
+- OTIF.
+
+Example:
+
+"Run my plant review."
+
+"What is off target?"
+
+"What should I look at first?"
+
+"Investigate the top issue."
+
+This should create/open the same Investigation Service.
+
+==================================================
+USER EXPERIENCE STANDARD
+==================================================
+
+Normal answer shape:
+
+ANSWER
+→ WHY IT MATTERS
+→ OPTIONAL VISUAL
+→ NEXT STEP
+
+Avoid:
+
+- internal IDs;
+- technical jargon;
+- raw field dumps;
+- excessive disclaimers;
+- duplicate explanations.
+
+Technical proof belongs behind Evidence.
+
+==================================================
+INEXPERIENCED USER STANDARD
+==================================================
+
+The demo is not ready for live users until a relatively inexperienced user can:
+
+- understand where to begin;
+- understand what the page means;
+- know what to do next;
+- recover from mistakes;
+- understand unavailable states;
+- distinguish fact from hypothesis;
+- understand ownership/action states;
+- complete representative journeys without coaching.
+
+==================================================
+CLAUDE COWORK END-USER REVIEW
+==================================================
+
+Before live pilot testing, run the independent plant-leader usability review.
+
+Claude Cowork should:
+- use Chrome physically;
+- role-play a plant leader;
+- avoid developer knowledge;
+- test natural conversation;
+- test daily review;
+- test investigation;
+- test evidence;
+- test action;
+- test verification;
+- test sustain;
+- test navigation;
+- test learning curve;
+- test recovery;
+- test mobile;
+- test keyboard/accessibility.
+
+Require an explicit:
+
+READY FOR LIVE USER TESTING
+
+or
+
+NOT READY FOR LIVE USER TESTING
+
+This is distinct from code acceptance.
+
+==================================================
+NATIVE UI ACCEPTANCE
+==================================================
+
+Required real browser acceptance includes:
+
+Desktop:
+1366×768
+
+Mobile:
+390×844
+320×844
+
+Where applicable:
+200% zoom
+
+Test:
+
+- chat;
+- composer;
+- navigation;
+- Guide;
+- charts;
+- tables;
+- evidence;
+- dialogs;
+- forms;
+- actions;
+- investigation;
+- reload;
+- persistence;
+- error recovery;
+- keyboard;
+- accessibility.
+
+==================================================
+PERSISTENCE AND RECOVERY
+==================================================
+
+Test:
+
+- reload;
+- reopen;
+- history;
+- correction;
+- invalid entry;
+- stale state;
+- navigation away/back;
+- archive/restore where supported;
+- duplicate command;
+- changed record version.
+
+The user must not lose important work unexpectedly.
+
+==================================================
+EXPORT / COPY / PRINT
+==================================================
+
+Verify:
+
+- Copy;
+- export/download where present;
+- print preview where required.
+
+Check:
+
+- correct units;
+- correct context;
+- correct evidence;
+- no leakage;
+- no confusing technical IDs;
+- readable output.
+
+==================================================
+PERFORMANCE
+==================================================
+
+Measure perceived responsiveness.
+
+A technically correct feature that feels frozen is not acceptable.
+
+Ensure:
+- clear loading state;
+- no accidental duplicate execution;
+- no stale response overwriting a newer turn;
+- no blocked unrelated interaction without reason.
+
+==================================================
+DOCUMENTATION
+==================================================
+
+Final documentation must match the exact final build.
+
+Required:
+
+1. END-USER GUIDE
+2. DEVELOPER / API GUIDE
+3. ACCEPTANCE REPORT
+4. KNOWN LIMITATIONS / EXTERNAL DEPENDENCIES
+
+Do not document functionality that the final build does not actually provide.
+
+==================================================
+TEST STRATEGY
+==================================================
+
+Use:
+
+BUILD
+→ TARGETED TEST
+→ REAL CHROME
+→ FIX
+→ REPEAT
+
+Do not run a giant full suite after every trivial edit.
+
+At candidate freeze:
+- full automated suite;
+- domain/oracle checks;
+- fresh extraction;
+- native acceptance;
+- usability acceptance;
+- independent review.
+
+==================================================
+FINAL CANDIDATE
+==================================================
+
+Only one exact final candidate may be called complete.
+
+Before freeze:
+
+- all known defects closed;
+- all comparison failures resolved;
+- Guide defect closed;
+- conversational master chain passes;
+- investigation journey passes;
+- persistence/recovery passes;
+- responsive/accessibility passes;
+- docs updated.
+
+Freeze exact:
+
+- ZIP;
+- source SHA;
+- build SHA;
+- member hashes;
+- size;
+- path.
+
+==================================================
+FRESH EXTRACTION
+==================================================
+
+From the frozen artifact:
+
+- verify every member;
+- typecheck/build where applicable;
+- run focused tests;
+- run required full tests;
+- confirm no dependency on hidden local state.
+
+==================================================
+INDEPENDENT REVIEW
+==================================================
+
+Use a fresh reviewer context.
+
+Provide:
+- final artifact;
+- current requirements;
+- previous open findings;
+- exact acceptance evidence.
+
+Require:
+
+VERDICT: APPROVE
+
+No self-approval.
+
+==================================================
+LIVE-TESTING GATE
+==================================================
+
+Do not put EKAS in front of live pilot users until:
+
+- no unresolved P0;
+- no unresolved P1;
+- critical P2 usability problems closed;
+- Cowork plant-leader review says READY FOR LIVE USER TESTING;
+- code/domain/native acceptance passes;
+- Guide works;
+- conversational workflow works;
+- known limitations are explicit.
+
+==================================================
+DEFINITION OF DONE
+==================================================
+
+The EKAS demo is complete only when:
+
+1. One exact final build exists.
+2. All known current defects are closed.
+3. V72 comparison failures are resolved.
+4. V71 Guide defect is closed.
+5. Full conversational chat works naturally.
+6. Context survives follow-ups/corrections.
+7. Metric switching works.
+8. No wrong-metric fallback.
+9. Daily plant review works.
+10. Goal exceptions lead into investigation.
+11. Investigation persists.
+12. Loss bridge works.
+13. Contributors work.
+14. Evidence is traceable.
+15. Facts/hypotheses/causes remain distinct.
+16. Ownership works.
+17. Assignment acceptance works.
+18. Authorization works.
+19. Performed work is distinct.
+20. Verification works.
+21. Sustain works.
+22. Reopen works.
+23. Downtime case works.
+24. Speed-loss case works.
+25. Quality-loss case works.
+26. Guide works across required states.
+27. Mock data drives real service behavior.
+28. UI does not require direct fixture manipulation.
+29. Typed service/API boundaries are stable.
+30. Backend adapter path is documented.
+31. Security remains intact.
+32. Persistence/reload works.
+33. Recovery works.
+34. Copy/export/print work where required.
+35. Desktop passes.
+36. 390 px passes.
+37. 320 px passes.
+38. Keyboard passes.
+39. Accessibility passes.
+40. Perceived performance is acceptable.
+41. Existing accepted functionality remains intact.
+42. End-user documentation matches the build.
+43. Developer/API documentation matches the build.
+44. Cowork plant-leader usability review passes.
+45. Fresh independent review returns APPROVE.
+46. No current-scope blocker remains.
+
+==================================================
+TRUE NORTH FINAL TEST
+==================================================
+
+Ask:
+
+"If I hand this to a plant manager who has never seen EKAS before, can that
+person naturally use it to understand a manufacturing problem, investigate it,
+take a governed action, verify the outcome and determine whether it sustained,
+without needing a developer to explain the product?"
+
+If the answer is NO:
+
+EKAS is not finished.
+
+If the answer is YES, backed by independent browser and usability evidence:
+
+the demo is ready for live user testing.
+
+Continue autonomously until that standard is met.

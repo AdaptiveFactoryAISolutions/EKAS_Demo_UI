@@ -1,0 +1,5703 @@
+[
+  {
+    "id": "KPI-001",
+    "name": "OEE",
+    "kind": "metric",
+    "key": "oee",
+    "sourceLines": "11–11",
+    "formula": "Availability × Performance × Quality",
+    "unit": null,
+    "family": "OEE and equipment effectiveness",
+    "section": 1,
+    "surface": "Loss bridge; A/P/Q decomposition; timeline",
+    "requiredInputs": "PLC/MES counts, run-state intervals, governed ideal cycle and planned time",
+    "semanticFlags": [
+      "pooled_aggregation",
+      "ideal_cycle_product_mix",
+      "planned_time_policy"
+    ]
+  },
+  {
+    "id": "KPI-002",
+    "name": "Availability",
+    "kind": "metric",
+    "key": "availability",
+    "sourceLines": "12–12",
+    "formula": "Run Time / Planned Production Time",
+    "unit": null,
+    "family": "OEE and equipment effectiveness",
+    "section": 1,
+    "surface": "Loss bridge; A/P/Q decomposition; timeline",
+    "requiredInputs": "PLC/MES counts, run-state intervals, governed ideal cycle and planned time",
+    "semanticFlags": [
+      "pooled_aggregation",
+      "ideal_cycle_product_mix",
+      "planned_time_policy"
+    ]
+  },
+  {
+    "id": "KPI-003",
+    "name": "Run Time",
+    "kind": "metric",
+    "key": "run_time",
+    "sourceLines": "13–13",
+    "formula": "Planned Production Time − Downtime",
+    "unit": null,
+    "family": "OEE and equipment effectiveness",
+    "section": 1,
+    "surface": "Loss bridge; A/P/Q decomposition; timeline",
+    "requiredInputs": "PLC/MES counts, run-state intervals, governed ideal cycle and planned time",
+    "semanticFlags": [
+      "pooled_aggregation",
+      "ideal_cycle_product_mix",
+      "planned_time_policy"
+    ]
+  },
+  {
+    "id": "KPI-004",
+    "name": "Performance",
+    "kind": "metric",
+    "key": "performance",
+    "sourceLines": "14–14",
+    "formula": "(Ideal Cycle Time × Total Count) / Run Time",
+    "unit": null,
+    "family": "OEE and equipment effectiveness",
+    "section": 1,
+    "surface": "Loss bridge; A/P/Q decomposition; timeline",
+    "requiredInputs": "PLC/MES counts, run-state intervals, governed ideal cycle and planned time",
+    "semanticFlags": [
+      "pooled_aggregation",
+      "ideal_cycle_product_mix",
+      "planned_time_policy"
+    ]
+  },
+  {
+    "id": "KPI-005",
+    "name": "Quality",
+    "kind": "metric",
+    "key": "quality",
+    "sourceLines": "15–15",
+    "formula": "Good Count / Total Count",
+    "unit": null,
+    "family": "OEE and equipment effectiveness",
+    "section": 1,
+    "surface": "Loss bridge; A/P/Q decomposition; timeline",
+    "requiredInputs": "PLC/MES counts, run-state intervals, governed ideal cycle and planned time",
+    "semanticFlags": [
+      "pooled_aggregation",
+      "ideal_cycle_product_mix",
+      "planned_time_policy"
+    ]
+  },
+  {
+    "id": "KPI-006",
+    "name": "Overall Utilization",
+    "kind": "metric",
+    "key": "overall_utilization",
+    "sourceLines": "16–16",
+    "formula": "Run Time / Calendar Time",
+    "unit": null,
+    "family": "OEE and equipment effectiveness",
+    "section": 1,
+    "surface": "Loss bridge; A/P/Q decomposition; timeline",
+    "requiredInputs": "PLC/MES counts, run-state intervals, governed ideal cycle and planned time",
+    "semanticFlags": [
+      "pooled_aggregation",
+      "ideal_cycle_product_mix",
+      "planned_time_policy"
+    ]
+  },
+  {
+    "id": "KPI-007",
+    "name": "Asset Utilization",
+    "kind": "metric",
+    "key": "asset_utilization",
+    "sourceLines": "17–17",
+    "formula": "Actual Operating Time / Available Asset Time",
+    "unit": null,
+    "family": "OEE and equipment effectiveness",
+    "section": 1,
+    "surface": "Loss bridge; A/P/Q decomposition; timeline",
+    "requiredInputs": "PLC/MES counts, run-state intervals, governed ideal cycle and planned time",
+    "semanticFlags": [
+      "pooled_aggregation",
+      "ideal_cycle_product_mix",
+      "planned_time_policy"
+    ]
+  },
+  {
+    "id": "KPI-008",
+    "name": "TEEP",
+    "kind": "metric",
+    "key": "teep",
+    "sourceLines": "18–18",
+    "formula": "OEE × Loading where Loading = Planned Production Time / Calendar Time",
+    "unit": null,
+    "family": "OEE and equipment effectiveness",
+    "section": 1,
+    "surface": "Loss bridge; A/P/Q decomposition; timeline",
+    "requiredInputs": "PLC/MES counts, run-state intervals, governed ideal cycle and planned time",
+    "semanticFlags": [
+      "pooled_aggregation",
+      "ideal_cycle_product_mix",
+      "planned_time_policy"
+    ]
+  },
+  {
+    "id": "KPI-009",
+    "name": "Loading",
+    "kind": "metric",
+    "key": "loading",
+    "sourceLines": "19–19",
+    "formula": "Planned Production Time / Calendar Time",
+    "unit": null,
+    "family": "OEE and equipment effectiveness",
+    "section": 1,
+    "surface": "Loss bridge; A/P/Q decomposition; timeline",
+    "requiredInputs": "PLC/MES counts, run-state intervals, governed ideal cycle and planned time",
+    "semanticFlags": [
+      "pooled_aggregation",
+      "ideal_cycle_product_mix",
+      "planned_time_policy"
+    ]
+  },
+  {
+    "id": "KPI-010",
+    "name": "OEE Gap to Target",
+    "kind": "metric",
+    "key": "oee_gap_to_target",
+    "sourceLines": "20–20",
+    "formula": "Target OEE − Actual OEE",
+    "unit": null,
+    "family": "OEE and equipment effectiveness",
+    "section": 1,
+    "surface": "Loss bridge; A/P/Q decomposition; timeline",
+    "requiredInputs": "PLC/MES counts, run-state intervals, governed ideal cycle and planned time",
+    "semanticFlags": [
+      "pooled_aggregation",
+      "ideal_cycle_product_mix",
+      "planned_time_policy"
+    ]
+  },
+  {
+    "id": "KPI-011",
+    "name": "OEE Improvement",
+    "kind": "metric",
+    "key": "oee_improvement",
+    "sourceLines": "21–21",
+    "formula": "Current OEE − Baseline OEE",
+    "unit": null,
+    "family": "OEE and equipment effectiveness",
+    "section": 1,
+    "surface": "Loss bridge; A/P/Q decomposition; timeline",
+    "requiredInputs": "PLC/MES counts, run-state intervals, governed ideal cycle and planned time",
+    "semanticFlags": [
+      "pooled_aggregation",
+      "ideal_cycle_product_mix",
+      "planned_time_policy"
+    ]
+  },
+  {
+    "id": "KPI-012",
+    "name": "Production vs Plan",
+    "kind": "metric",
+    "key": "production_vs_plan",
+    "sourceLines": "31–31",
+    "formula": "Actual Production / Planned Production × 100",
+    "unit": null,
+    "family": "Production and output",
+    "section": 2,
+    "surface": "Plan versus actual by shift/product; output waterfall; constraint view",
+    "requiredInputs": "MES actuals, approved plan version, capacity calendar",
+    "semanticFlags": [
+      "plan_not_capacity",
+      "capacity_units_and_period",
+      "mix_adjustment"
+    ]
+  },
+  {
+    "id": "KPI-013",
+    "name": "Production Attainment",
+    "kind": "metric",
+    "key": "production_vs_plan",
+    "sourceLines": "32–32",
+    "formula": "Actual Output / Target Output × 100",
+    "unit": null,
+    "family": "Production and output",
+    "section": 2,
+    "surface": "Plan versus actual by shift/product; output waterfall; constraint view",
+    "requiredInputs": "MES actuals, approved plan version, capacity calendar",
+    "semanticFlags": [
+      "plan_not_capacity",
+      "capacity_units_and_period",
+      "mix_adjustment"
+    ]
+  },
+  {
+    "id": "KPI-014",
+    "name": "Production Variance",
+    "kind": "metric",
+    "key": "production_variance",
+    "sourceLines": "33–33",
+    "formula": "Actual Output − Planned Output",
+    "unit": null,
+    "family": "Production and output",
+    "section": 2,
+    "surface": "Plan versus actual by shift/product; output waterfall; constraint view",
+    "requiredInputs": "MES actuals, approved plan version, capacity calendar",
+    "semanticFlags": [
+      "plan_not_capacity",
+      "capacity_units_and_period",
+      "mix_adjustment"
+    ]
+  },
+  {
+    "id": "KPI-015",
+    "name": "Throughput",
+    "kind": "metric",
+    "key": "net_throughput",
+    "sourceLines": "34–34",
+    "formula": "Good Units Produced / Time Period",
+    "unit": null,
+    "family": "Production and output",
+    "section": 2,
+    "surface": "Plan versus actual by shift/product; output waterfall; constraint view",
+    "requiredInputs": "MES actuals, approved plan version, capacity calendar",
+    "semanticFlags": [
+      "plan_not_capacity",
+      "capacity_units_and_period",
+      "mix_adjustment"
+    ]
+  },
+  {
+    "id": "KPI-016",
+    "name": "Gross Throughput",
+    "kind": "metric",
+    "key": "gross_throughput",
+    "sourceLines": "35–35",
+    "formula": "Total Units Produced / Time Period",
+    "unit": null,
+    "family": "Production and output",
+    "section": 2,
+    "surface": "Plan versus actual by shift/product; output waterfall; constraint view",
+    "requiredInputs": "MES actuals, approved plan version, capacity calendar",
+    "semanticFlags": [
+      "plan_not_capacity",
+      "capacity_units_and_period",
+      "mix_adjustment"
+    ]
+  },
+  {
+    "id": "KPI-017",
+    "name": "Net Throughput",
+    "kind": "metric",
+    "key": "net_throughput",
+    "sourceLines": "36–36",
+    "formula": "Good Units Produced / Time Period",
+    "unit": null,
+    "family": "Production and output",
+    "section": 2,
+    "surface": "Plan versus actual by shift/product; output waterfall; constraint view",
+    "requiredInputs": "MES actuals, approved plan version, capacity calendar",
+    "semanticFlags": [
+      "plan_not_capacity",
+      "capacity_units_and_period",
+      "mix_adjustment"
+    ]
+  },
+  {
+    "id": "KPI-018",
+    "name": "Run Rate",
+    "kind": "metric",
+    "key": "run_rate",
+    "sourceLines": "37–37",
+    "formula": "Units Produced / Operating Time",
+    "unit": null,
+    "family": "Production and output",
+    "section": 2,
+    "surface": "Plan versus actual by shift/product; output waterfall; constraint view",
+    "requiredInputs": "MES actuals, approved plan version, capacity calendar",
+    "semanticFlags": [
+      "plan_not_capacity",
+      "capacity_units_and_period",
+      "mix_adjustment"
+    ]
+  },
+  {
+    "id": "KPI-019",
+    "name": "Target Run Rate",
+    "kind": "metric",
+    "key": "target_run_rate",
+    "sourceLines": "38–38",
+    "formula": "1 / Ideal Cycle Time",
+    "unit": null,
+    "family": "Production and output",
+    "section": 2,
+    "surface": "Plan versus actual by shift/product; output waterfall; constraint view",
+    "requiredInputs": "MES actuals, approved plan version, capacity calendar",
+    "semanticFlags": [
+      "plan_not_capacity",
+      "capacity_units_and_period",
+      "mix_adjustment"
+    ]
+  },
+  {
+    "id": "KPI-020",
+    "name": "Run Rate Attainment",
+    "kind": "metric",
+    "key": "run_rate_attainment",
+    "sourceLines": "39–39",
+    "formula": "Actual Run Rate / Target Run Rate × 100",
+    "unit": null,
+    "family": "Production and output",
+    "section": 2,
+    "surface": "Plan versus actual by shift/product; output waterfall; constraint view",
+    "requiredInputs": "MES actuals, approved plan version, capacity calendar",
+    "semanticFlags": [
+      "plan_not_capacity",
+      "capacity_units_and_period",
+      "mix_adjustment"
+    ]
+  },
+  {
+    "id": "KPI-021",
+    "name": "Capacity Utilization",
+    "kind": "metric",
+    "key": "capacity_utilization",
+    "sourceLines": "40–40",
+    "formula": "Actual Output / Rated Capacity × 100",
+    "unit": null,
+    "family": "Production and output",
+    "section": 2,
+    "surface": "Plan versus actual by shift/product; output waterfall; constraint view",
+    "requiredInputs": "MES actuals, approved plan version, capacity calendar",
+    "semanticFlags": [
+      "plan_not_capacity",
+      "capacity_units_and_period",
+      "mix_adjustment"
+    ]
+  },
+  {
+    "id": "KPI-022",
+    "name": "Capacity Attainment",
+    "kind": "metric",
+    "key": "capacity_attainment",
+    "sourceLines": "41–41",
+    "formula": "Actual Output / Available Capacity × 100",
+    "unit": null,
+    "family": "Production and output",
+    "section": 2,
+    "surface": "Plan versus actual by shift/product; output waterfall; constraint view",
+    "requiredInputs": "MES actuals, approved plan version, capacity calendar",
+    "semanticFlags": [
+      "plan_not_capacity",
+      "capacity_units_and_period",
+      "mix_adjustment"
+    ]
+  },
+  {
+    "id": "KPI-023",
+    "name": "Unused Capacity",
+    "kind": "metric",
+    "key": "unused_capacity",
+    "sourceLines": "42–42",
+    "formula": "Available Capacity − Actual Output",
+    "unit": null,
+    "family": "Production and output",
+    "section": 2,
+    "surface": "Plan versus actual by shift/product; output waterfall; constraint view",
+    "requiredInputs": "MES actuals, approved plan version, capacity calendar",
+    "semanticFlags": [
+      "plan_not_capacity",
+      "capacity_units_and_period",
+      "mix_adjustment"
+    ]
+  },
+  {
+    "id": "KPI-024",
+    "name": "Constraint Utilization",
+    "kind": "metric",
+    "key": "constraint_utilization",
+    "sourceLines": "43–43",
+    "formula": "Constraint Run Time / Constraint Available Time × 100",
+    "unit": null,
+    "family": "Production and output",
+    "section": 2,
+    "surface": "Plan versus actual by shift/product; output waterfall; constraint view",
+    "requiredInputs": "MES actuals, approved plan version, capacity calendar",
+    "semanticFlags": [
+      "plan_not_capacity",
+      "capacity_units_and_period",
+      "mix_adjustment"
+    ]
+  },
+  {
+    "id": "KPI-025",
+    "name": "Bottleneck Throughput",
+    "kind": "metric",
+    "key": "constraint_throughput",
+    "sourceLines": "44–44",
+    "formula": "Good Units through Constraint / Time",
+    "unit": null,
+    "family": "Production and output",
+    "section": 2,
+    "surface": "Plan versus actual by shift/product; output waterfall; constraint view",
+    "requiredInputs": "MES actuals, approved plan version, capacity calendar",
+    "semanticFlags": [
+      "plan_not_capacity",
+      "capacity_units_and_period",
+      "mix_adjustment"
+    ]
+  },
+  {
+    "id": "KPI-026",
+    "name": "Schedule Adherence",
+    "kind": "metric",
+    "key": "schedule_adherence",
+    "sourceLines": "63–63",
+    "formula": "Production completed as scheduled / Scheduled production × 100",
+    "unit": null,
+    "family": "Schedule metrics",
+    "section": 3,
+    "surface": "Schedule ribbon; exception queue; order drill-down",
+    "requiredInputs": "Frozen schedule version, completion events, order/quantity basis",
+    "semanticFlags": [
+      "schedule_denominator",
+      "schedule_baseline_version"
+    ]
+  },
+  {
+    "id": "KPI-027",
+    "name": "Schedule Attainment",
+    "kind": "metric",
+    "key": "schedule_attainment",
+    "sourceLines": "64–64",
+    "formula": "Actual quantity completed / Scheduled quantity × 100",
+    "unit": null,
+    "family": "Schedule metrics",
+    "section": 3,
+    "surface": "Schedule ribbon; exception queue; order drill-down",
+    "requiredInputs": "Frozen schedule version, completion events, order/quantity basis",
+    "semanticFlags": [
+      "schedule_denominator",
+      "schedule_baseline_version"
+    ]
+  },
+  {
+    "id": "KPI-028",
+    "name": "Plan Attainment",
+    "kind": "metric",
+    "key": "production_vs_plan",
+    "sourceLines": "65–65",
+    "formula": "Actual production / Planned production × 100",
+    "unit": null,
+    "family": "Schedule metrics",
+    "section": 3,
+    "surface": "Schedule ribbon; exception queue; order drill-down",
+    "requiredInputs": "Frozen schedule version, completion events, order/quantity basis",
+    "semanticFlags": [
+      "schedule_denominator",
+      "schedule_baseline_version"
+    ]
+  },
+  {
+    "id": "KPI-029",
+    "name": "Schedule Variance",
+    "kind": "metric",
+    "key": "schedule_variance",
+    "sourceLines": "66–66",
+    "formula": "Actual Completion − Planned Completion",
+    "unit": null,
+    "family": "Schedule metrics",
+    "section": 3,
+    "surface": "Schedule ribbon; exception queue; order drill-down",
+    "requiredInputs": "Frozen schedule version, completion events, order/quantity basis",
+    "semanticFlags": [
+      "schedule_denominator",
+      "schedule_baseline_version"
+    ]
+  },
+  {
+    "id": "KPI-030",
+    "name": "Orders Completed to Schedule",
+    "kind": "metric",
+    "key": "orders_completed_to_schedule",
+    "sourceLines": "67–67",
+    "formula": "Orders completed on scheduled date / Total scheduled orders × 100",
+    "unit": null,
+    "family": "Schedule metrics",
+    "section": 3,
+    "surface": "Schedule ribbon; exception queue; order drill-down",
+    "requiredInputs": "Frozen schedule version, completion events, order/quantity basis",
+    "semanticFlags": [
+      "schedule_denominator",
+      "schedule_baseline_version"
+    ]
+  },
+  {
+    "id": "KPI-031",
+    "name": "Actual Cycle Time",
+    "kind": "metric",
+    "key": "actual_cycle_time",
+    "sourceLines": "79–79",
+    "formula": "Operating Time / Units Produced",
+    "unit": null,
+    "family": "Cycle time and takt",
+    "section": 4,
+    "surface": "Cycle distribution; route flow map; queue/touch breakdown",
+    "requiredInputs": "Timestamped unit/lot journeys, engineered standards, demand calendar",
+    "semanticFlags": [
+      "time_boundary",
+      "matched_demand_calendar"
+    ]
+  },
+  {
+    "id": "KPI-032",
+    "name": "Ideal Cycle Time",
+    "kind": "metric",
+    "key": "ideal_cycle_time",
+    "sourceLines": "80–80",
+    "formula": "Best demonstrated or engineered cycle time per unit",
+    "unit": null,
+    "family": "Cycle time and takt",
+    "section": 4,
+    "surface": "Cycle distribution; route flow map; queue/touch breakdown",
+    "requiredInputs": "Timestamped unit/lot journeys, engineered standards, demand calendar",
+    "semanticFlags": [
+      "time_boundary",
+      "matched_demand_calendar"
+    ]
+  },
+  {
+    "id": "KPI-033",
+    "name": "Cycle Time Variance",
+    "kind": "metric",
+    "key": "cycle_time_variance",
+    "sourceLines": "81–81",
+    "formula": "Actual Cycle Time − Standard Cycle Time",
+    "unit": null,
+    "family": "Cycle time and takt",
+    "section": 4,
+    "surface": "Cycle distribution; route flow map; queue/touch breakdown",
+    "requiredInputs": "Timestamped unit/lot journeys, engineered standards, demand calendar",
+    "semanticFlags": [
+      "time_boundary",
+      "matched_demand_calendar"
+    ]
+  },
+  {
+    "id": "KPI-034",
+    "name": "Cycle Time Performance",
+    "kind": "metric",
+    "key": "cycle_time_performance",
+    "sourceLines": "82–82",
+    "formula": "Standard Cycle Time / Actual Cycle Time × 100",
+    "unit": null,
+    "family": "Cycle time and takt",
+    "section": 4,
+    "surface": "Cycle distribution; route flow map; queue/touch breakdown",
+    "requiredInputs": "Timestamped unit/lot journeys, engineered standards, demand calendar",
+    "semanticFlags": [
+      "time_boundary",
+      "matched_demand_calendar"
+    ]
+  },
+  {
+    "id": "KPI-035",
+    "name": "Takt Time",
+    "kind": "metric",
+    "key": "takt_time",
+    "sourceLines": "83–83",
+    "formula": "Available Production Time / Customer Demand",
+    "unit": null,
+    "family": "Cycle time and takt",
+    "section": 4,
+    "surface": "Cycle distribution; route flow map; queue/touch breakdown",
+    "requiredInputs": "Timestamped unit/lot journeys, engineered standards, demand calendar",
+    "semanticFlags": [
+      "time_boundary",
+      "matched_demand_calendar"
+    ]
+  },
+  {
+    "id": "KPI-036",
+    "name": "Takt Attainment",
+    "kind": "metric",
+    "key": "takt_attainment",
+    "sourceLines": "84–84",
+    "formula": "Takt Time / Actual Cycle Time × 100",
+    "unit": null,
+    "family": "Cycle time and takt",
+    "section": 4,
+    "surface": "Cycle distribution; route flow map; queue/touch breakdown",
+    "requiredInputs": "Timestamped unit/lot journeys, engineered standards, demand calendar",
+    "semanticFlags": [
+      "time_boundary",
+      "matched_demand_calendar"
+    ]
+  },
+  {
+    "id": "KPI-037",
+    "name": "Cycle-to-Takt Ratio",
+    "kind": "metric",
+    "key": "cycle_to_takt_ratio",
+    "sourceLines": "85–85",
+    "formula": "Actual Cycle Time / Takt Time",
+    "unit": null,
+    "family": "Cycle time and takt",
+    "section": 4,
+    "surface": "Cycle distribution; route flow map; queue/touch breakdown",
+    "requiredInputs": "Timestamped unit/lot journeys, engineered standards, demand calendar",
+    "semanticFlags": [
+      "time_boundary",
+      "matched_demand_calendar"
+    ]
+  },
+  {
+    "id": "KPI-038",
+    "name": "Lead Time",
+    "kind": "metric",
+    "key": "lead_time",
+    "sourceLines": "86–86",
+    "formula": "Completion Timestamp − Release/Order Timestamp",
+    "unit": null,
+    "family": "Cycle time and takt",
+    "section": 4,
+    "surface": "Cycle distribution; route flow map; queue/touch breakdown",
+    "requiredInputs": "Timestamped unit/lot journeys, engineered standards, demand calendar",
+    "semanticFlags": [
+      "time_boundary",
+      "matched_demand_calendar"
+    ]
+  },
+  {
+    "id": "KPI-039",
+    "name": "Manufacturing Lead Time",
+    "kind": "metric",
+    "key": "manufacturing_lead_time",
+    "sourceLines": "87–87",
+    "formula": "Queue + Setup + Run + Move + Wait Time",
+    "unit": null,
+    "family": "Cycle time and takt",
+    "section": 4,
+    "surface": "Cycle distribution; route flow map; queue/touch breakdown",
+    "requiredInputs": "Timestamped unit/lot journeys, engineered standards, demand calendar",
+    "semanticFlags": [
+      "time_boundary",
+      "matched_demand_calendar"
+    ]
+  },
+  {
+    "id": "KPI-040",
+    "name": "Touch Time",
+    "kind": "metric",
+    "key": "touch_time",
+    "sourceLines": "88–88",
+    "formula": "Actual processing time spent on product",
+    "unit": null,
+    "family": "Cycle time and takt",
+    "section": 4,
+    "surface": "Cycle distribution; route flow map; queue/touch breakdown",
+    "requiredInputs": "Timestamped unit/lot journeys, engineered standards, demand calendar",
+    "semanticFlags": [
+      "time_boundary",
+      "matched_demand_calendar"
+    ]
+  },
+  {
+    "id": "KPI-041",
+    "name": "Flow Efficiency",
+    "kind": "metric",
+    "key": "flow_efficiency",
+    "sourceLines": "89–89",
+    "formula": "Value-Added Time / Total Lead Time × 100",
+    "unit": null,
+    "family": "Cycle time and takt",
+    "section": 4,
+    "surface": "Cycle distribution; route flow map; queue/touch breakdown",
+    "requiredInputs": "Timestamped unit/lot journeys, engineered standards, demand calendar",
+    "semanticFlags": [
+      "time_boundary",
+      "matched_demand_calendar"
+    ]
+  },
+  {
+    "id": "KPI-042",
+    "name": "Total Downtime",
+    "kind": "metric",
+    "key": "total_downtime",
+    "sourceLines": "102–102",
+    "formula": "Σ downtime event durations",
+    "unit": null,
+    "family": "Downtime and loss",
+    "section": 5,
+    "surface": "Reason Pareto; event timeline; overlap-aware loss bridge",
+    "requiredInputs": "Machine events, reason taxonomy, expected run rate",
+    "semanticFlags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ]
+  },
+  {
+    "id": "KPI-043",
+    "name": "Unplanned Downtime",
+    "kind": "metric",
+    "key": "unplanned_downtime",
+    "sourceLines": "103–103",
+    "formula": "Σ unplanned downtime event durations",
+    "unit": null,
+    "family": "Downtime and loss",
+    "section": 5,
+    "surface": "Reason Pareto; event timeline; overlap-aware loss bridge",
+    "requiredInputs": "Machine events, reason taxonomy, expected run rate",
+    "semanticFlags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ]
+  },
+  {
+    "id": "KPI-044",
+    "name": "Planned Downtime",
+    "kind": "metric",
+    "key": "planned_downtime",
+    "sourceLines": "104–104",
+    "formula": "Σ planned downtime durations",
+    "unit": null,
+    "family": "Downtime and loss",
+    "section": 5,
+    "surface": "Reason Pareto; event timeline; overlap-aware loss bridge",
+    "requiredInputs": "Machine events, reason taxonomy, expected run rate",
+    "semanticFlags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ]
+  },
+  {
+    "id": "KPI-045",
+    "name": "Downtime %",
+    "kind": "metric",
+    "key": "downtime",
+    "sourceLines": "105–105",
+    "formula": "Downtime / Planned Production Time × 100",
+    "unit": null,
+    "family": "Downtime and loss",
+    "section": 5,
+    "surface": "Reason Pareto; event timeline; overlap-aware loss bridge",
+    "requiredInputs": "Machine events, reason taxonomy, expected run rate",
+    "semanticFlags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ]
+  },
+  {
+    "id": "KPI-046",
+    "name": "Uptime %",
+    "kind": "metric",
+    "key": "availability",
+    "sourceLines": "106–106",
+    "formula": "Run Time / Planned Production Time × 100",
+    "unit": null,
+    "family": "Downtime and loss",
+    "section": 5,
+    "surface": "Reason Pareto; event timeline; overlap-aware loss bridge",
+    "requiredInputs": "Machine events, reason taxonomy, expected run rate",
+    "semanticFlags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ]
+  },
+  {
+    "id": "KPI-047",
+    "name": "Downtime Frequency",
+    "kind": "metric",
+    "key": "downtime_frequency",
+    "sourceLines": "107–107",
+    "formula": "Number of downtime events / Period",
+    "unit": "events/time",
+    "family": "Downtime and loss",
+    "section": 5,
+    "surface": "Reason Pareto; event timeline; overlap-aware loss bridge",
+    "requiredInputs": "Machine events, reason taxonomy, expected run rate",
+    "semanticFlags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ]
+  },
+  {
+    "id": "KPI-048",
+    "name": "Average Downtime Event",
+    "kind": "metric",
+    "key": "average_downtime_event",
+    "sourceLines": "108–108",
+    "formula": "Total Downtime / Number of Downtime Events",
+    "unit": "time/event",
+    "family": "Downtime and loss",
+    "section": 5,
+    "surface": "Reason Pareto; event timeline; overlap-aware loss bridge",
+    "requiredInputs": "Machine events, reason taxonomy, expected run rate",
+    "semanticFlags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ]
+  },
+  {
+    "id": "KPI-049",
+    "name": "Downtime by Reason",
+    "kind": "metric",
+    "key": "downtime_by_reason",
+    "sourceLines": "109–109",
+    "formula": "Σ duration for reason code",
+    "unit": "time",
+    "family": "Downtime and loss",
+    "section": 5,
+    "surface": "Reason Pareto; event timeline; overlap-aware loss bridge",
+    "requiredInputs": "Machine events, reason taxonomy, expected run rate",
+    "semanticFlags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ]
+  },
+  {
+    "id": "KPI-050",
+    "name": "Downtime Contribution",
+    "kind": "metric",
+    "key": "downtime_contribution",
+    "sourceLines": "110–110",
+    "formula": "Reason Downtime / Total Downtime × 100",
+    "unit": "%",
+    "family": "Downtime and loss",
+    "section": 5,
+    "surface": "Reason Pareto; event timeline; overlap-aware loss bridge",
+    "requiredInputs": "Machine events, reason taxonomy, expected run rate",
+    "semanticFlags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ]
+  },
+  {
+    "id": "KPI-051",
+    "name": "Top Loss Contribution",
+    "kind": "metric",
+    "key": "top_loss_contribution",
+    "sourceLines": "111–111",
+    "formula": "Largest Loss / Total Loss × 100",
+    "unit": "%",
+    "family": "Downtime and loss",
+    "section": 5,
+    "surface": "Reason Pareto; event timeline; overlap-aware loss bridge",
+    "requiredInputs": "Machine events, reason taxonomy, expected run rate",
+    "semanticFlags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ]
+  },
+  {
+    "id": "KPI-052",
+    "name": "Minor Stop Time",
+    "kind": "metric",
+    "key": "minor_stop_time",
+    "sourceLines": "112–112",
+    "formula": "Σ qualifying short-stop durations",
+    "unit": "time",
+    "family": "Downtime and loss",
+    "section": 5,
+    "surface": "Reason Pareto; event timeline; overlap-aware loss bridge",
+    "requiredInputs": "Machine events, reason taxonomy, expected run rate",
+    "semanticFlags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ]
+  },
+  {
+    "id": "KPI-053",
+    "name": "Speed Loss",
+    "kind": "metric",
+    "key": "speed_loss",
+    "sourceLines": "113–113",
+    "formula": "Potential Output at Ideal Rate − Actual Output during runtime",
+    "unit": "units/time",
+    "family": "Downtime and loss",
+    "section": 5,
+    "surface": "Reason Pareto; event timeline; overlap-aware loss bridge",
+    "requiredInputs": "Machine events, reason taxonomy, expected run rate",
+    "semanticFlags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ]
+  },
+  {
+    "id": "KPI-054",
+    "name": "Lost Production from Downtime",
+    "kind": "metric",
+    "key": "lost_production_from_downtime",
+    "sourceLines": "114–114",
+    "formula": "Downtime × Expected Run Rate",
+    "unit": "units",
+    "family": "Downtime and loss",
+    "section": 5,
+    "surface": "Reason Pareto; event timeline; overlap-aware loss bridge",
+    "requiredInputs": "Machine events, reason taxonomy, expected run rate",
+    "semanticFlags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ]
+  },
+  {
+    "id": "KPI-055",
+    "name": "Downtime Cost",
+    "kind": "metric",
+    "key": "downtime_cost",
+    "sourceLines": "115–115",
+    "formula": "Downtime × Governed Cost Rate",
+    "unit": "currency",
+    "family": "Downtime and loss",
+    "section": 5,
+    "surface": "Reason Pareto; event timeline; overlap-aware loss bridge",
+    "requiredInputs": "Machine events, reason taxonomy, expected run rate",
+    "semanticFlags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ]
+  },
+  {
+    "id": "KPI-056",
+    "name": "Changeover Time",
+    "kind": "metric",
+    "key": "changeover_time",
+    "sourceLines": "125–125",
+    "formula": "First Good Unit New Product − Last Good Unit Previous Product",
+    "unit": "time",
+    "family": "Changeover and setup",
+    "section": 6,
+    "surface": "Changeover comparison; internal/external setup timeline",
+    "requiredInputs": "Last-good/first-good events, product transitions, setup standard",
+    "semanticFlags": [
+      "timestamp_boundaries",
+      "setup_loss_signed"
+    ]
+  },
+  {
+    "id": "KPI-057",
+    "name": "Average Changeover Time",
+    "kind": "metric",
+    "key": "average_changeover_time",
+    "sourceLines": "126–126",
+    "formula": "Σ Changeover Time / Number of Changeovers",
+    "unit": "time",
+    "family": "Changeover and setup",
+    "section": 6,
+    "surface": "Changeover comparison; internal/external setup timeline",
+    "requiredInputs": "Last-good/first-good events, product transitions, setup standard",
+    "semanticFlags": [
+      "timestamp_boundaries",
+      "setup_loss_signed"
+    ]
+  },
+  {
+    "id": "KPI-058",
+    "name": "Changeover Variance",
+    "kind": "metric",
+    "key": "changeover_variance",
+    "sourceLines": "127–127",
+    "formula": "Actual Changeover − Standard Changeover",
+    "unit": "time",
+    "family": "Changeover and setup",
+    "section": 6,
+    "surface": "Changeover comparison; internal/external setup timeline",
+    "requiredInputs": "Last-good/first-good events, product transitions, setup standard",
+    "semanticFlags": [
+      "timestamp_boundaries",
+      "setup_loss_signed"
+    ]
+  },
+  {
+    "id": "KPI-059",
+    "name": "Changeover Attainment",
+    "kind": "metric",
+    "key": "changeover_attainment",
+    "sourceLines": "128–128",
+    "formula": "Standard Changeover / Actual Changeover × 100",
+    "unit": "%",
+    "family": "Changeover and setup",
+    "section": 6,
+    "surface": "Changeover comparison; internal/external setup timeline",
+    "requiredInputs": "Last-good/first-good events, product transitions, setup standard",
+    "semanticFlags": [
+      "timestamp_boundaries",
+      "setup_loss_signed"
+    ]
+  },
+  {
+    "id": "KPI-060",
+    "name": "Setup Loss",
+    "kind": "metric",
+    "key": "setup_loss",
+    "sourceLines": "129–129",
+    "formula": "Actual Setup Time − Target Setup Time",
+    "unit": "time",
+    "family": "Changeover and setup",
+    "section": 6,
+    "surface": "Changeover comparison; internal/external setup timeline",
+    "requiredInputs": "Last-good/first-good events, product transitions, setup standard",
+    "semanticFlags": [
+      "timestamp_boundaries",
+      "setup_loss_signed"
+    ]
+  },
+  {
+    "id": "KPI-061",
+    "name": "Quality Rate",
+    "kind": "metric",
+    "key": "quality",
+    "sourceLines": "139–139",
+    "formula": "Good Units / Total Units × 100",
+    "unit": "%",
+    "family": "Quality",
+    "section": 7,
+    "surface": "Quality funnel; defect Pareto; lot genealogy; dispositions",
+    "requiredInputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semanticFlags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ]
+  },
+  {
+    "id": "KPI-062",
+    "name": "Yield",
+    "kind": "metric",
+    "key": "quality",
+    "sourceLines": "140–140",
+    "formula": "Good Units / Total Units × 100",
+    "unit": "%",
+    "family": "Quality",
+    "section": 7,
+    "surface": "Quality funnel; defect Pareto; lot genealogy; dispositions",
+    "requiredInputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semanticFlags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ]
+  },
+  {
+    "id": "KPI-063",
+    "name": "FPY — First Pass Yield",
+    "kind": "metric",
+    "key": "first_pass_yield",
+    "sourceLines": "141–141",
+    "formula": "Units passing without rework / Units entering process × 100",
+    "unit": "%",
+    "family": "Quality",
+    "section": 7,
+    "surface": "Quality funnel; defect Pareto; lot genealogy; dispositions",
+    "requiredInputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semanticFlags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ]
+  },
+  {
+    "id": "KPI-064",
+    "name": "First Time Through",
+    "kind": "metric",
+    "key": "first_time_through",
+    "sourceLines": "142–142",
+    "formula": "Good units requiring no repair/rework / Total units × 100",
+    "unit": "%",
+    "family": "Quality",
+    "section": 7,
+    "surface": "Quality funnel; defect Pareto; lot genealogy; dispositions",
+    "requiredInputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semanticFlags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ]
+  },
+  {
+    "id": "KPI-065",
+    "name": "Scrap Rate",
+    "kind": "metric",
+    "key": "scrap_rate",
+    "sourceLines": "143–143",
+    "formula": "Scrap Units / Total Units Produced × 100",
+    "unit": "%",
+    "family": "Quality",
+    "section": 7,
+    "surface": "Quality funnel; defect Pareto; lot genealogy; dispositions",
+    "requiredInputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semanticFlags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ]
+  },
+  {
+    "id": "KPI-066",
+    "name": "Reject Rate",
+    "kind": "metric",
+    "key": "reject_rate",
+    "sourceLines": "144–144",
+    "formula": "Rejected Units / Total Units Inspected × 100",
+    "unit": "%",
+    "family": "Quality",
+    "section": 7,
+    "surface": "Quality funnel; defect Pareto; lot genealogy; dispositions",
+    "requiredInputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semanticFlags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ]
+  },
+  {
+    "id": "KPI-067",
+    "name": "Rework Rate",
+    "kind": "metric",
+    "key": "rework_rate",
+    "sourceLines": "145–145",
+    "formula": "Reworked Units / Total Units Produced × 100",
+    "unit": "%",
+    "family": "Quality",
+    "section": 7,
+    "surface": "Quality funnel; defect Pareto; lot genealogy; dispositions",
+    "requiredInputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semanticFlags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ]
+  },
+  {
+    "id": "KPI-068",
+    "name": "Defect Rate",
+    "kind": "metric",
+    "key": "defect_rate",
+    "sourceLines": "146–146",
+    "formula": "Defective Units / Units Inspected × 100",
+    "unit": "%",
+    "family": "Quality",
+    "section": 7,
+    "surface": "Quality funnel; defect Pareto; lot genealogy; dispositions",
+    "requiredInputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semanticFlags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ]
+  },
+  {
+    "id": "KPI-069",
+    "name": "Defects per Unit (DPU)",
+    "kind": "metric",
+    "key": "defects_per_unit_dpu",
+    "sourceLines": "147–147",
+    "formula": "Total Defects / Units Inspected",
+    "unit": "defects/unit",
+    "family": "Quality",
+    "section": 7,
+    "surface": "Quality funnel; defect Pareto; lot genealogy; dispositions",
+    "requiredInputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semanticFlags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ]
+  },
+  {
+    "id": "KPI-070",
+    "name": "DPMO",
+    "kind": "metric",
+    "key": "dpmo",
+    "sourceLines": "148–148",
+    "formula": "Defects / (Units × Opportunities per Unit) × 1,000,000",
+    "unit": "defects/million opportunities",
+    "family": "Quality",
+    "section": 7,
+    "surface": "Quality funnel; defect Pareto; lot genealogy; dispositions",
+    "requiredInputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semanticFlags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ]
+  },
+  {
+    "id": "KPI-071",
+    "name": "PPM Defective",
+    "kind": "metric",
+    "key": "ppm_defective",
+    "sourceLines": "149–149",
+    "formula": "Defective Units / Total Units × 1,000,000",
+    "unit": "ppm",
+    "family": "Quality",
+    "section": 7,
+    "surface": "Quality funnel; defect Pareto; lot genealogy; dispositions",
+    "requiredInputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semanticFlags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ]
+  },
+  {
+    "id": "KPI-072",
+    "name": "Customer Reject Rate",
+    "kind": "metric",
+    "key": "customer_reject_rate",
+    "sourceLines": "150–150",
+    "formula": "Customer-Rejected Units / Units Shipped × 100",
+    "unit": "%",
+    "family": "Quality",
+    "section": 7,
+    "surface": "Quality funnel; defect Pareto; lot genealogy; dispositions",
+    "requiredInputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semanticFlags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ]
+  },
+  {
+    "id": "KPI-073",
+    "name": "Customer PPM",
+    "kind": "metric",
+    "key": "customer_ppm",
+    "sourceLines": "151–151",
+    "formula": "Customer Defective Units / Units Shipped × 1,000,000",
+    "unit": "ppm",
+    "family": "Quality",
+    "section": 7,
+    "surface": "Quality funnel; defect Pareto; lot genealogy; dispositions",
+    "requiredInputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semanticFlags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ]
+  },
+  {
+    "id": "KPI-074",
+    "name": "Quality Loss",
+    "kind": "metric",
+    "key": "quality_loss",
+    "sourceLines": "152–152",
+    "formula": "Nonconforming Units / Total Units × 100",
+    "unit": "%",
+    "family": "Quality",
+    "section": 7,
+    "surface": "Quality funnel; defect Pareto; lot genealogy; dispositions",
+    "requiredInputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semanticFlags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ]
+  },
+  {
+    "id": "KPI-075",
+    "name": "Good Count",
+    "kind": "metric",
+    "key": "good_count",
+    "sourceLines": "153–153",
+    "formula": "Total Count − Scrap − rejected/rework as governed",
+    "unit": "units",
+    "family": "Quality",
+    "section": 7,
+    "surface": "Quality funnel; defect Pareto; lot genealogy; dispositions",
+    "requiredInputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semanticFlags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ]
+  },
+  {
+    "id": "KPI-076",
+    "name": "Rolled Throughput Yield",
+    "kind": "analytical_measure",
+    "key": "rolled_throughput_yield",
+    "sourceLines": "163–178",
+    "formula": "RTY = FPY₁ × FPY₂ × FPY₃ × ... × FPYₙ ; RTY = 0.98 × 0.97 × 0.99 = 94.1%",
+    "unit": null,
+    "family": "Rolled yield",
+    "section": 8,
+    "surface": "Route yield waterfall; operation FPY drill-down",
+    "requiredInputs": "Aligned route cohorts and first-pass operation outcomes",
+    "semanticFlags": [
+      "route_cohort",
+      "unrounded_product",
+      "rty_example_rounding"
+    ]
+  },
+  {
+    "id": "KPI-077",
+    "name": "Cp",
+    "kind": "metric",
+    "key": "cp",
+    "sourceLines": "187–187",
+    "formula": "(USL − LSL) / (6σ)",
+    "unit": null,
+    "family": "Process capability",
+    "section": 9,
+    "surface": "Control chart plus distribution/spec limits; capability trust panel",
+    "requiredInputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semanticFlags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ]
+  },
+  {
+    "id": "KPI-078",
+    "name": "Cpk",
+    "kind": "metric",
+    "key": "cpk",
+    "sourceLines": "188–188",
+    "formula": "min[(USL − μ)/(3σ), (μ − LSL)/(3σ)]",
+    "unit": null,
+    "family": "Process capability",
+    "section": 9,
+    "surface": "Control chart plus distribution/spec limits; capability trust panel",
+    "requiredInputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semanticFlags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ]
+  },
+  {
+    "id": "KPI-079",
+    "name": "Pp",
+    "kind": "metric",
+    "key": "pp",
+    "sourceLines": "189–189",
+    "formula": "(USL − LSL) / (6σoverall)",
+    "unit": null,
+    "family": "Process capability",
+    "section": 9,
+    "surface": "Control chart plus distribution/spec limits; capability trust panel",
+    "requiredInputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semanticFlags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ]
+  },
+  {
+    "id": "KPI-080",
+    "name": "Ppk",
+    "kind": "metric",
+    "key": "ppk",
+    "sourceLines": "190–190",
+    "formula": "min[(USL − μ)/(3σoverall), (μ − LSL)/(3σoverall)]",
+    "unit": null,
+    "family": "Process capability",
+    "section": 9,
+    "surface": "Control chart plus distribution/spec limits; capability trust panel",
+    "requiredInputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semanticFlags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ]
+  },
+  {
+    "id": "KPI-081",
+    "name": "MTBF",
+    "kind": "metric",
+    "key": "mtbf",
+    "sourceLines": "207–207",
+    "formula": "Total Operating Time / Number of Failures",
+    "unit": "hours/failure",
+    "family": "Maintenance and reliability",
+    "section": 10,
+    "surface": "Failure/repair timeline; asset repeat-failure Pareto; PM backlog",
+    "requiredInputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semanticFlags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ]
+  },
+  {
+    "id": "KPI-082",
+    "name": "MTTR — Mean Time to Repair",
+    "kind": "metric",
+    "key": "mttr_repair",
+    "sourceLines": "208–208",
+    "formula": "Total Active Repair Time / Number of Repairs",
+    "unit": "time",
+    "family": "Maintenance and reliability",
+    "section": 10,
+    "surface": "Failure/repair timeline; asset repeat-failure Pareto; PM backlog",
+    "requiredInputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semanticFlags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ]
+  },
+  {
+    "id": "KPI-083",
+    "name": "MTTR — Mean Time to Restore",
+    "kind": "metric",
+    "key": "mttr_restore",
+    "sourceLines": "209–209",
+    "formula": "Total Restoration Downtime / Number of Incidents",
+    "unit": "time",
+    "family": "Maintenance and reliability",
+    "section": 10,
+    "surface": "Failure/repair timeline; asset repeat-failure Pareto; PM backlog",
+    "requiredInputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semanticFlags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ]
+  },
+  {
+    "id": "KPI-084",
+    "name": "MTTF",
+    "kind": "metric",
+    "key": "mttf",
+    "sourceLines": "210–210",
+    "formula": "Total Operating Life / Number of Nonrepairable Failures",
+    "unit": "time",
+    "family": "Maintenance and reliability",
+    "section": 10,
+    "surface": "Failure/repair timeline; asset repeat-failure Pareto; PM backlog",
+    "requiredInputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semanticFlags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ]
+  },
+  {
+    "id": "KPI-085",
+    "name": "Failure Rate",
+    "kind": "metric",
+    "key": "failure_rate",
+    "sourceLines": "211–211",
+    "formula": "Number of Failures / Operating Time",
+    "unit": "failures/hour",
+    "family": "Maintenance and reliability",
+    "section": 10,
+    "surface": "Failure/repair timeline; asset repeat-failure Pareto; PM backlog",
+    "requiredInputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semanticFlags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ]
+  },
+  {
+    "id": "KPI-086",
+    "name": "Reliability",
+    "kind": "metric",
+    "key": "reliability",
+    "sourceLines": "212–212",
+    "formula": "commonly e^(−λt) for constant failure rate",
+    "unit": "probability",
+    "family": "Maintenance and reliability",
+    "section": 10,
+    "surface": "Failure/repair timeline; asset repeat-failure Pareto; PM backlog",
+    "requiredInputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semanticFlags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ]
+  },
+  {
+    "id": "KPI-087",
+    "name": "Repair Rate",
+    "kind": "metric",
+    "key": "repair_rate",
+    "sourceLines": "213–213",
+    "formula": "Repairs Completed / Repair Time",
+    "unit": "repairs/time",
+    "family": "Maintenance and reliability",
+    "section": 10,
+    "surface": "Failure/repair timeline; asset repeat-failure Pareto; PM backlog",
+    "requiredInputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semanticFlags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ]
+  },
+  {
+    "id": "KPI-088",
+    "name": "Maintenance Downtime %",
+    "kind": "metric",
+    "key": "maintenance_downtime",
+    "sourceLines": "214–214",
+    "formula": "Maintenance Downtime / Planned Production Time × 100",
+    "unit": "%",
+    "family": "Maintenance and reliability",
+    "section": 10,
+    "surface": "Failure/repair timeline; asset repeat-failure Pareto; PM backlog",
+    "requiredInputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semanticFlags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ]
+  },
+  {
+    "id": "KPI-089",
+    "name": "Breakdown Frequency",
+    "kind": "metric",
+    "key": "breakdown_frequency",
+    "sourceLines": "215–215",
+    "formula": "Breakdowns / Period",
+    "unit": "count/time",
+    "family": "Maintenance and reliability",
+    "section": 10,
+    "surface": "Failure/repair timeline; asset repeat-failure Pareto; PM backlog",
+    "requiredInputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semanticFlags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ]
+  },
+  {
+    "id": "KPI-090",
+    "name": "Reactive Maintenance %",
+    "kind": "metric",
+    "key": "reactive_maintenance",
+    "sourceLines": "216–216",
+    "formula": "Reactive Maintenance Hours / Total Maintenance Hours × 100",
+    "unit": "%",
+    "family": "Maintenance and reliability",
+    "section": 10,
+    "surface": "Failure/repair timeline; asset repeat-failure Pareto; PM backlog",
+    "requiredInputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semanticFlags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ]
+  },
+  {
+    "id": "KPI-091",
+    "name": "Planned Maintenance %",
+    "kind": "metric",
+    "key": "planned_maintenance",
+    "sourceLines": "217–217",
+    "formula": "Planned Maintenance Hours / Total Maintenance Hours × 100",
+    "unit": "%",
+    "family": "Maintenance and reliability",
+    "section": 10,
+    "surface": "Failure/repair timeline; asset repeat-failure Pareto; PM backlog",
+    "requiredInputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semanticFlags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ]
+  },
+  {
+    "id": "KPI-092",
+    "name": "PM Compliance",
+    "kind": "metric",
+    "key": "pm_compliance",
+    "sourceLines": "218–218",
+    "formula": "PMs completed on time / PMs scheduled × 100",
+    "unit": "%",
+    "family": "Maintenance and reliability",
+    "section": 10,
+    "surface": "Failure/repair timeline; asset repeat-failure Pareto; PM backlog",
+    "requiredInputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semanticFlags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ]
+  },
+  {
+    "id": "KPI-093",
+    "name": "Schedule Compliance — Maintenance",
+    "kind": "metric",
+    "key": "schedule_compliance_maintenance",
+    "sourceLines": "219–219",
+    "formula": "Scheduled jobs completed as planned / Scheduled jobs × 100",
+    "unit": "%",
+    "family": "Maintenance and reliability",
+    "section": 10,
+    "surface": "Failure/repair timeline; asset repeat-failure Pareto; PM backlog",
+    "requiredInputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semanticFlags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ]
+  },
+  {
+    "id": "KPI-094",
+    "name": "Maintenance Backlog",
+    "kind": "metric",
+    "key": "maintenance_backlog",
+    "sourceLines": "220–220",
+    "formula": "Outstanding Maintenance Labor Hours / Available Weekly Maintenance Labor Hours",
+    "unit": "weeks",
+    "family": "Maintenance and reliability",
+    "section": 10,
+    "surface": "Failure/repair timeline; asset repeat-failure Pareto; PM backlog",
+    "requiredInputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semanticFlags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ]
+  },
+  {
+    "id": "KPI-095",
+    "name": "Repeat Failure Rate",
+    "kind": "metric",
+    "key": "repeat_failure_rate",
+    "sourceLines": "221–221",
+    "formula": "Repeated failures / Total failures × 100",
+    "unit": "%",
+    "family": "Maintenance and reliability",
+    "section": 10,
+    "surface": "Failure/repair timeline; asset repeat-failure Pareto; PM backlog",
+    "requiredInputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semanticFlags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ]
+  },
+  {
+    "id": "KPI-096",
+    "name": "Emergency Work %",
+    "kind": "metric",
+    "key": "emergency_work",
+    "sourceLines": "222–222",
+    "formula": "Emergency work hours / Total maintenance hours × 100",
+    "unit": "%",
+    "family": "Maintenance and reliability",
+    "section": 10,
+    "surface": "Failure/repair timeline; asset repeat-failure Pareto; PM backlog",
+    "requiredInputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semanticFlags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ]
+  },
+  {
+    "id": "KPI-097",
+    "name": "OTIF",
+    "kind": "metric",
+    "key": "otif",
+    "sourceLines": "247–247",
+    "formula": "Orders delivered On Time AND In Full / Total Orders × 100",
+    "unit": "%",
+    "family": "Delivery and customer service",
+    "section": 11,
+    "surface": "Order risk queue; promise-to-delivery timeline; OTIF decomposition",
+    "requiredInputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semanticFlags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ]
+  },
+  {
+    "id": "KPI-098",
+    "name": "On-Time Delivery (OTD)",
+    "kind": "metric",
+    "key": "on_time_delivery_otd",
+    "sourceLines": "248–248",
+    "formula": "Orders delivered on/before promise date / Total Delivered Orders × 100",
+    "unit": "%",
+    "family": "Delivery and customer service",
+    "section": 11,
+    "surface": "Order risk queue; promise-to-delivery timeline; OTIF decomposition",
+    "requiredInputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semanticFlags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ]
+  },
+  {
+    "id": "KPI-099",
+    "name": "In-Full Delivery",
+    "kind": "metric",
+    "key": "in_full_delivery",
+    "sourceLines": "249–249",
+    "formula": "Orders delivered complete / Total Orders × 100",
+    "unit": "%",
+    "family": "Delivery and customer service",
+    "section": 11,
+    "surface": "Order risk queue; promise-to-delivery timeline; OTIF decomposition",
+    "requiredInputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semanticFlags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ]
+  },
+  {
+    "id": "KPI-100",
+    "name": "Fill Rate",
+    "kind": "metric",
+    "key": "fill_rate",
+    "sourceLines": "250–250",
+    "formula": "Units shipped immediately / Units ordered × 100",
+    "unit": "%",
+    "family": "Delivery and customer service",
+    "section": 11,
+    "surface": "Order risk queue; promise-to-delivery timeline; OTIF decomposition",
+    "requiredInputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semanticFlags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ]
+  },
+  {
+    "id": "KPI-101",
+    "name": "Perfect Order Rate",
+    "kind": "metric",
+    "key": "perfect_order_rate",
+    "sourceLines": "251–251",
+    "formula": "Perfect Orders / Total Orders × 100",
+    "unit": "%",
+    "family": "Delivery and customer service",
+    "section": 11,
+    "surface": "Order risk queue; promise-to-delivery timeline; OTIF decomposition",
+    "requiredInputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semanticFlags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ]
+  },
+  {
+    "id": "KPI-102",
+    "name": "Late Order Rate",
+    "kind": "metric",
+    "key": "late_order_rate",
+    "sourceLines": "252–252",
+    "formula": "Late Orders / Total Orders × 100",
+    "unit": "%",
+    "family": "Delivery and customer service",
+    "section": 11,
+    "surface": "Order risk queue; promise-to-delivery timeline; OTIF decomposition",
+    "requiredInputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semanticFlags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ]
+  },
+  {
+    "id": "KPI-103",
+    "name": "Past-Due Quantity",
+    "kind": "metric",
+    "key": "past_due_quantity",
+    "sourceLines": "253–253",
+    "formula": "Σ outstanding quantity past promised date",
+    "unit": "units",
+    "family": "Delivery and customer service",
+    "section": 11,
+    "surface": "Order risk queue; promise-to-delivery timeline; OTIF decomposition",
+    "requiredInputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semanticFlags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ]
+  },
+  {
+    "id": "KPI-104",
+    "name": "Average Delivery Delay",
+    "kind": "metric",
+    "key": "average_delivery_delay",
+    "sourceLines": "254–254",
+    "formula": "Σ late days / Late Deliveries",
+    "unit": "days",
+    "family": "Delivery and customer service",
+    "section": 11,
+    "surface": "Order risk queue; promise-to-delivery timeline; OTIF decomposition",
+    "requiredInputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semanticFlags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ]
+  },
+  {
+    "id": "KPI-105",
+    "name": "Inventory Turns",
+    "kind": "metric",
+    "key": "inventory_turns",
+    "sourceLines": "264–264",
+    "formula": "Annual COGS / Average Inventory Value",
+    "unit": "turns/year",
+    "family": "Inventory",
+    "section": 12,
+    "surface": "Inventory composition; age distribution; stock-versus-flow detail",
+    "requiredInputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semanticFlags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ]
+  },
+  {
+    "id": "KPI-106",
+    "name": "Inventory Days / DIO",
+    "kind": "metric",
+    "key": "inventory_days_dio",
+    "sourceLines": "265–265",
+    "formula": "Average Inventory / COGS × Days in Period",
+    "unit": "days",
+    "family": "Inventory",
+    "section": 12,
+    "surface": "Inventory composition; age distribution; stock-versus-flow detail",
+    "requiredInputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semanticFlags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ]
+  },
+  {
+    "id": "KPI-107",
+    "name": "Raw Material Days",
+    "kind": "metric",
+    "key": "raw_material_days",
+    "sourceLines": "266–266",
+    "formula": "Average Raw Material Inventory / Material Usage × Days",
+    "unit": "days",
+    "family": "Inventory",
+    "section": 12,
+    "surface": "Inventory composition; age distribution; stock-versus-flow detail",
+    "requiredInputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semanticFlags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ]
+  },
+  {
+    "id": "KPI-108",
+    "name": "WIP Days",
+    "kind": "metric",
+    "key": "wip_days",
+    "sourceLines": "267–267",
+    "formula": "Average WIP / Manufacturing Cost or Throughput × Days",
+    "unit": "days",
+    "family": "Inventory",
+    "section": 12,
+    "surface": "Inventory composition; age distribution; stock-versus-flow detail",
+    "requiredInputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semanticFlags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ]
+  },
+  {
+    "id": "KPI-109",
+    "name": "Finished Goods Days",
+    "kind": "metric",
+    "key": "finished_goods_days",
+    "sourceLines": "268–268",
+    "formula": "Average FG Inventory / COGS × Days",
+    "unit": "days",
+    "family": "Inventory",
+    "section": 12,
+    "surface": "Inventory composition; age distribution; stock-versus-flow detail",
+    "requiredInputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semanticFlags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ]
+  },
+  {
+    "id": "KPI-110",
+    "name": "WIP Units",
+    "kind": "metric",
+    "key": "wip_units",
+    "sourceLines": "269–269",
+    "formula": "Σ units currently inside production process",
+    "unit": "units",
+    "family": "Inventory",
+    "section": 12,
+    "surface": "Inventory composition; age distribution; stock-versus-flow detail",
+    "requiredInputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semanticFlags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ]
+  },
+  {
+    "id": "KPI-111",
+    "name": "Inventory Accuracy",
+    "kind": "metric",
+    "key": "inventory_accuracy",
+    "sourceLines": "270–270",
+    "formula": "Correct inventory records / Records checked × 100",
+    "unit": "%",
+    "family": "Inventory",
+    "section": 12,
+    "surface": "Inventory composition; age distribution; stock-versus-flow detail",
+    "requiredInputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semanticFlags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ]
+  },
+  {
+    "id": "KPI-112",
+    "name": "Obsolete Inventory %",
+    "kind": "metric",
+    "key": "obsolete_inventory",
+    "sourceLines": "271–271",
+    "formula": "Obsolete Inventory Value / Total Inventory Value × 100",
+    "unit": "%",
+    "family": "Inventory",
+    "section": 12,
+    "surface": "Inventory composition; age distribution; stock-versus-flow detail",
+    "requiredInputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semanticFlags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ]
+  },
+  {
+    "id": "KPI-113",
+    "name": "Excess Inventory %",
+    "kind": "metric",
+    "key": "excess_inventory",
+    "sourceLines": "272–272",
+    "formula": "Inventory Above Governed Maximum / Total Inventory × 100",
+    "unit": "%",
+    "family": "Inventory",
+    "section": 12,
+    "surface": "Inventory composition; age distribution; stock-versus-flow detail",
+    "requiredInputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semanticFlags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ]
+  },
+  {
+    "id": "KPI-114",
+    "name": "Little's Law",
+    "kind": "model",
+    "key": "little_s_law",
+    "sourceLines": "280–297",
+    "formula": "WIP = Throughput × Lead Time ; Lead Time = WIP / Throughput ; Throughput = WIP / Lead Time",
+    "unit": null,
+    "family": "Little's Law / manufacturing flow",
+    "section": 13,
+    "surface": "Explicit what-if panel; baseline/assumption/result comparison",
+    "requiredInputs": "Matched time-average WIP, throughput and boundary-defined lead times",
+    "semanticFlags": [
+      "steady_state_boundary",
+      "scenario_not_causal_prediction"
+    ]
+  },
+  {
+    "id": "KPI-115",
+    "name": "Labor Productivity",
+    "kind": "metric",
+    "key": "labor_productivity",
+    "sourceLines": "304–304",
+    "formula": "Good Units / Labor Hours",
+    "unit": "units/labor-hour",
+    "family": "Labor and workforce productivity",
+    "section": 14,
+    "surface": "Product/mix-adjusted labor trends; hours composition",
+    "requiredInputs": "Approved labor hours, standard time versions, good output",
+    "semanticFlags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ]
+  },
+  {
+    "id": "KPI-116",
+    "name": "Labor Efficiency",
+    "kind": "metric",
+    "key": "labor_efficiency",
+    "sourceLines": "305–305",
+    "formula": "Standard Hours Earned / Actual Labor Hours × 100",
+    "unit": "%",
+    "family": "Labor and workforce productivity",
+    "section": 14,
+    "surface": "Product/mix-adjusted labor trends; hours composition",
+    "requiredInputs": "Approved labor hours, standard time versions, good output",
+    "semanticFlags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ]
+  },
+  {
+    "id": "KPI-117",
+    "name": "Standard Hours Earned",
+    "kind": "metric",
+    "key": "standard_hours_earned",
+    "sourceLines": "306–306",
+    "formula": "Good Quantity × Standard Labor Time per Unit",
+    "unit": "hours",
+    "family": "Labor and workforce productivity",
+    "section": 14,
+    "surface": "Product/mix-adjusted labor trends; hours composition",
+    "requiredInputs": "Approved labor hours, standard time versions, good output",
+    "semanticFlags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ]
+  },
+  {
+    "id": "KPI-118",
+    "name": "Labor Utilization",
+    "kind": "metric",
+    "key": "labor_utilization",
+    "sourceLines": "307–307",
+    "formula": "Productive Labor Hours / Paid Labor Hours × 100",
+    "unit": "%",
+    "family": "Labor and workforce productivity",
+    "section": 14,
+    "surface": "Product/mix-adjusted labor trends; hours composition",
+    "requiredInputs": "Approved labor hours, standard time versions, good output",
+    "semanticFlags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ]
+  },
+  {
+    "id": "KPI-119",
+    "name": "Direct Labor Utilization",
+    "kind": "metric",
+    "key": "direct_labor_utilization",
+    "sourceLines": "308–308",
+    "formula": "Direct Productive Hours / Direct Available Hours × 100",
+    "unit": "%",
+    "family": "Labor and workforce productivity",
+    "section": 14,
+    "surface": "Product/mix-adjusted labor trends; hours composition",
+    "requiredInputs": "Approved labor hours, standard time versions, good output",
+    "semanticFlags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ]
+  },
+  {
+    "id": "KPI-120",
+    "name": "Overtime %",
+    "kind": "metric",
+    "key": "overtime",
+    "sourceLines": "309–309",
+    "formula": "Overtime Hours / Total Labor Hours × 100",
+    "unit": "%",
+    "family": "Labor and workforce productivity",
+    "section": 14,
+    "surface": "Product/mix-adjusted labor trends; hours composition",
+    "requiredInputs": "Approved labor hours, standard time versions, good output",
+    "semanticFlags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ]
+  },
+  {
+    "id": "KPI-121",
+    "name": "Absenteeism Rate",
+    "kind": "metric",
+    "key": "absenteeism_rate",
+    "sourceLines": "310–310",
+    "formula": "Absent Scheduled Hours / Total Scheduled Hours × 100",
+    "unit": "%",
+    "family": "Labor and workforce productivity",
+    "section": 14,
+    "surface": "Product/mix-adjusted labor trends; hours composition",
+    "requiredInputs": "Approved labor hours, standard time versions, good output",
+    "semanticFlags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ]
+  },
+  {
+    "id": "KPI-122",
+    "name": "Units per Employee Hour",
+    "kind": "metric",
+    "key": "units_per_employee_hour",
+    "sourceLines": "311–311",
+    "formula": "Good Units / Employee Hours",
+    "unit": "units/hour",
+    "family": "Labor and workforce productivity",
+    "section": 14,
+    "surface": "Product/mix-adjusted labor trends; hours composition",
+    "requiredInputs": "Approved labor hours, standard time versions, good output",
+    "semanticFlags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ]
+  },
+  {
+    "id": "KPI-123",
+    "name": "Labor Cost per Unit",
+    "kind": "metric",
+    "key": "labor_cost_per_unit",
+    "sourceLines": "312–312",
+    "formula": "Direct Labor Cost / Good Units",
+    "unit": "currency/unit",
+    "family": "Labor and workforce productivity",
+    "section": 14,
+    "surface": "Product/mix-adjusted labor trends; hours composition",
+    "requiredInputs": "Approved labor hours, standard time versions, good output",
+    "semanticFlags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ]
+  },
+  {
+    "id": "KPI-124",
+    "name": "Manufacturing Cost per Unit",
+    "kind": "metric",
+    "key": "manufacturing_cost_per_unit",
+    "sourceLines": "322–322",
+    "formula": "Total Manufacturing Cost / Good Units Produced",
+    "unit": null,
+    "family": "Cost",
+    "section": 15,
+    "surface": "Cost bridge; physical-loss to valuation detail; finance approval",
+    "requiredInputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semanticFlags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ]
+  },
+  {
+    "id": "KPI-125",
+    "name": "Conversion Cost per Unit",
+    "kind": "metric",
+    "key": "conversion_cost_per_unit",
+    "sourceLines": "323–323",
+    "formula": "(Direct Labor + Manufacturing Overhead) / Good Units",
+    "unit": null,
+    "family": "Cost",
+    "section": 15,
+    "surface": "Cost bridge; physical-loss to valuation detail; finance approval",
+    "requiredInputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semanticFlags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ]
+  },
+  {
+    "id": "KPI-126",
+    "name": "Scrap Cost",
+    "kind": "metric",
+    "key": "scrap_cost",
+    "sourceLines": "324–324",
+    "formula": "Scrap Quantity × Governed Unit Cost",
+    "unit": null,
+    "family": "Cost",
+    "section": 15,
+    "surface": "Cost bridge; physical-loss to valuation detail; finance approval",
+    "requiredInputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semanticFlags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ]
+  },
+  {
+    "id": "KPI-127",
+    "name": "Rework Cost",
+    "kind": "metric",
+    "key": "rework_cost",
+    "sourceLines": "325–325",
+    "formula": "Rework Labor + Material + Overhead",
+    "unit": null,
+    "family": "Cost",
+    "section": 15,
+    "surface": "Cost bridge; physical-loss to valuation detail; finance approval",
+    "requiredInputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semanticFlags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ]
+  },
+  {
+    "id": "KPI-128",
+    "name": "Downtime Cost",
+    "kind": "metric",
+    "key": "downtime_cost",
+    "sourceLines": "326–326",
+    "formula": "Downtime Duration × Governed Loss/Cost Rate",
+    "unit": null,
+    "family": "Cost",
+    "section": 15,
+    "surface": "Cost bridge; physical-loss to valuation detail; finance approval",
+    "requiredInputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semanticFlags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ]
+  },
+  {
+    "id": "KPI-129",
+    "name": "Cost Variance",
+    "kind": "metric",
+    "key": "cost_variance",
+    "sourceLines": "327–327",
+    "formula": "Actual Cost − Standard/Budget Cost",
+    "unit": null,
+    "family": "Cost",
+    "section": 15,
+    "surface": "Cost bridge; physical-loss to valuation detail; finance approval",
+    "requiredInputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semanticFlags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ]
+  },
+  {
+    "id": "KPI-130",
+    "name": "Cost Variance %",
+    "kind": "metric",
+    "key": "cost_variance",
+    "sourceLines": "328–328",
+    "formula": "(Actual − Standard) / Standard × 100",
+    "unit": null,
+    "family": "Cost",
+    "section": 15,
+    "surface": "Cost bridge; physical-loss to valuation detail; finance approval",
+    "requiredInputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semanticFlags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ]
+  },
+  {
+    "id": "KPI-131",
+    "name": "Material Usage Variance",
+    "kind": "metric",
+    "key": "material_usage_variance",
+    "sourceLines": "329–329",
+    "formula": "(Actual Quantity − Standard Quantity) × Standard Price",
+    "unit": null,
+    "family": "Cost",
+    "section": 15,
+    "surface": "Cost bridge; physical-loss to valuation detail; finance approval",
+    "requiredInputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semanticFlags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ]
+  },
+  {
+    "id": "KPI-132",
+    "name": "Labor Efficiency Variance",
+    "kind": "metric",
+    "key": "labor_efficiency_variance",
+    "sourceLines": "330–330",
+    "formula": "(Actual Hours − Standard Hours) × Standard Labor Rate",
+    "unit": null,
+    "family": "Cost",
+    "section": 15,
+    "surface": "Cost bridge; physical-loss to valuation detail; finance approval",
+    "requiredInputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semanticFlags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ]
+  },
+  {
+    "id": "KPI-133",
+    "name": "COPQ — Cost of Poor Quality",
+    "kind": "metric",
+    "key": "copq_cost_of_poor_quality",
+    "sourceLines": "338–338",
+    "formula": "Internal Failure Cost + External Failure Cost",
+    "unit": null,
+    "family": "Cost of quality",
+    "section": 16,
+    "surface": "Cost-of-quality partition; linked failure ledger",
+    "requiredInputs": "Finance-approved prevention/appraisal/internal/external cost categories",
+    "semanticFlags": [
+      "exclusive_cost_partition",
+      "double_counting"
+    ]
+  },
+  {
+    "id": "KPI-134",
+    "name": "Cost of Quality",
+    "kind": "metric",
+    "key": "cost_of_quality",
+    "sourceLines": "339–339",
+    "formula": "Prevention + Appraisal + Internal Failure + External Failure",
+    "unit": null,
+    "family": "Cost of quality",
+    "section": 16,
+    "surface": "Cost-of-quality partition; linked failure ledger",
+    "requiredInputs": "Finance-approved prevention/appraisal/internal/external cost categories",
+    "semanticFlags": [
+      "exclusive_cost_partition",
+      "double_counting"
+    ]
+  },
+  {
+    "id": "KPI-135",
+    "name": "COPQ % Sales",
+    "kind": "metric",
+    "key": "copq_sales",
+    "sourceLines": "340–340",
+    "formula": "COPQ / Sales × 100",
+    "unit": null,
+    "family": "Cost of quality",
+    "section": 16,
+    "surface": "Cost-of-quality partition; linked failure ledger",
+    "requiredInputs": "Finance-approved prevention/appraisal/internal/external cost categories",
+    "semanticFlags": [
+      "exclusive_cost_partition",
+      "double_counting"
+    ]
+  },
+  {
+    "id": "KPI-136",
+    "name": "Scrap Cost %",
+    "kind": "metric",
+    "key": "scrap_cost",
+    "sourceLines": "341–341",
+    "formula": "Scrap Cost / Manufacturing Cost × 100",
+    "unit": null,
+    "family": "Cost of quality",
+    "section": 16,
+    "surface": "Cost-of-quality partition; linked failure ledger",
+    "requiredInputs": "Finance-approved prevention/appraisal/internal/external cost categories",
+    "semanticFlags": [
+      "exclusive_cost_partition",
+      "double_counting"
+    ]
+  },
+  {
+    "id": "KPI-137",
+    "name": "Warranty Cost %",
+    "kind": "metric",
+    "key": "warranty_cost",
+    "sourceLines": "342–342",
+    "formula": "Warranty Cost / Sales × 100",
+    "unit": null,
+    "family": "Cost of quality",
+    "section": 16,
+    "surface": "Cost-of-quality partition; linked failure ledger",
+    "requiredInputs": "Finance-approved prevention/appraisal/internal/external cost categories",
+    "semanticFlags": [
+      "exclusive_cost_partition",
+      "double_counting"
+    ]
+  },
+  {
+    "id": "KPI-138",
+    "name": "Energy Consumption",
+    "kind": "metric",
+    "key": "energy_consumption",
+    "sourceLines": "350–350",
+    "formula": "Σ energy used",
+    "unit": "kWh",
+    "family": "Energy and sustainability",
+    "section": 17,
+    "surface": "Energy-versus-output trend; idle load; demand profile",
+    "requiredInputs": "Meter interval data, production denominator, emission factor versions",
+    "semanticFlags": [
+      "meter_coverage",
+      "factor_governance",
+      "energy_vs_power",
+      "mix_weather_normalization"
+    ]
+  },
+  {
+    "id": "KPI-139",
+    "name": "Energy per Unit",
+    "kind": "metric",
+    "key": "energy_per_unit",
+    "sourceLines": "351–351",
+    "formula": "Total Energy / Good Units",
+    "unit": "kWh/unit",
+    "family": "Energy and sustainability",
+    "section": 17,
+    "surface": "Energy-versus-output trend; idle load; demand profile",
+    "requiredInputs": "Meter interval data, production denominator, emission factor versions",
+    "semanticFlags": [
+      "meter_coverage",
+      "factor_governance",
+      "energy_vs_power",
+      "mix_weather_normalization"
+    ]
+  },
+  {
+    "id": "KPI-140",
+    "name": "Energy Intensity",
+    "kind": "metric",
+    "key": "energy_intensity",
+    "sourceLines": "352–352",
+    "formula": "Energy / Production Measure",
+    "unit": "kWh/unit, kWh/lb, etc.",
+    "family": "Energy and sustainability",
+    "section": 17,
+    "surface": "Energy-versus-output trend; idle load; demand profile",
+    "requiredInputs": "Meter interval data, production denominator, emission factor versions",
+    "semanticFlags": [
+      "meter_coverage",
+      "factor_governance",
+      "energy_vs_power",
+      "mix_weather_normalization"
+    ]
+  },
+  {
+    "id": "KPI-141",
+    "name": "Idle Energy %",
+    "kind": "metric",
+    "key": "idle_energy",
+    "sourceLines": "353–353",
+    "formula": "Energy During Nonproductive Time / Total Energy × 100",
+    "unit": "%",
+    "family": "Energy and sustainability",
+    "section": 17,
+    "surface": "Energy-versus-output trend; idle load; demand profile",
+    "requiredInputs": "Meter interval data, production denominator, emission factor versions",
+    "semanticFlags": [
+      "meter_coverage",
+      "factor_governance",
+      "energy_vs_power",
+      "mix_weather_normalization"
+    ]
+  },
+  {
+    "id": "KPI-142",
+    "name": "Peak Demand",
+    "kind": "metric",
+    "key": "peak_demand",
+    "sourceLines": "354–354",
+    "formula": "Maximum demand during period",
+    "unit": "kW",
+    "family": "Energy and sustainability",
+    "section": 17,
+    "surface": "Energy-versus-output trend; idle load; demand profile",
+    "requiredInputs": "Meter interval data, production denominator, emission factor versions",
+    "semanticFlags": [
+      "meter_coverage",
+      "factor_governance",
+      "energy_vs_power",
+      "mix_weather_normalization"
+    ]
+  },
+  {
+    "id": "KPI-143",
+    "name": "CO₂e per Unit",
+    "kind": "metric",
+    "key": "co_e_per_unit",
+    "sourceLines": "355–355",
+    "formula": "Total CO₂e / Good Units",
+    "unit": "kg CO₂e/unit",
+    "family": "Energy and sustainability",
+    "section": 17,
+    "surface": "Energy-versus-output trend; idle load; demand profile",
+    "requiredInputs": "Meter interval data, production denominator, emission factor versions",
+    "semanticFlags": [
+      "meter_coverage",
+      "factor_governance",
+      "energy_vs_power",
+      "mix_weather_normalization"
+    ]
+  },
+  {
+    "id": "KPI-144",
+    "name": "Waste per Unit",
+    "kind": "metric",
+    "key": "waste_per_unit",
+    "sourceLines": "356–356",
+    "formula": "Waste Generated / Good Units",
+    "unit": "mass/unit",
+    "family": "Energy and sustainability",
+    "section": 17,
+    "surface": "Energy-versus-output trend; idle load; demand profile",
+    "requiredInputs": "Meter interval data, production denominator, emission factor versions",
+    "semanticFlags": [
+      "meter_coverage",
+      "factor_governance",
+      "energy_vs_power",
+      "mix_weather_normalization"
+    ]
+  },
+  {
+    "id": "KPI-145",
+    "name": "Water per Unit",
+    "kind": "metric",
+    "key": "water_per_unit",
+    "sourceLines": "357–357",
+    "formula": "Water Consumption / Good Units",
+    "unit": "volume/unit",
+    "family": "Energy and sustainability",
+    "section": 17,
+    "surface": "Energy-versus-output trend; idle load; demand profile",
+    "requiredInputs": "Meter interval data, production denominator, emission factor versions",
+    "semanticFlags": [
+      "meter_coverage",
+      "factor_governance",
+      "energy_vs_power",
+      "mix_weather_normalization"
+    ]
+  },
+  {
+    "id": "KPI-146",
+    "name": "Constraint Utilization",
+    "kind": "metric",
+    "key": "constraint_utilization",
+    "sourceLines": "369–369",
+    "formula": "Constraint Productive Time / Constraint Available Time × 100",
+    "unit": null,
+    "family": "Constraint / Theory of Constraints measures",
+    "section": 18,
+    "surface": "Constraint flow and starvation/blockage timeline",
+    "requiredInputs": "Constraint calendar, throughput, yields, governed contribution model",
+    "semanticFlags": [
+      "run_vs_productive_time",
+      "local_vs_system_optimum",
+      "financial_throughput_vs_physical"
+    ]
+  },
+  {
+    "id": "KPI-147",
+    "name": "Constraint Throughput",
+    "kind": "metric",
+    "key": "constraint_throughput",
+    "sourceLines": "370–370",
+    "formula": "Good Units Through Constraint / Time",
+    "unit": null,
+    "family": "Constraint / Theory of Constraints measures",
+    "section": 18,
+    "surface": "Constraint flow and starvation/blockage timeline",
+    "requiredInputs": "Constraint calendar, throughput, yields, governed contribution model",
+    "semanticFlags": [
+      "run_vs_productive_time",
+      "local_vs_system_optimum",
+      "financial_throughput_vs_physical"
+    ]
+  },
+  {
+    "id": "KPI-148",
+    "name": "Constraint Lost Time",
+    "kind": "metric",
+    "key": "constraint_lost_time",
+    "sourceLines": "371–371",
+    "formula": "Available Constraint Time − Productive Constraint Time",
+    "unit": null,
+    "family": "Constraint / Theory of Constraints measures",
+    "section": 18,
+    "surface": "Constraint flow and starvation/blockage timeline",
+    "requiredInputs": "Constraint calendar, throughput, yields, governed contribution model",
+    "semanticFlags": [
+      "run_vs_productive_time",
+      "local_vs_system_optimum",
+      "financial_throughput_vs_physical"
+    ]
+  },
+  {
+    "id": "KPI-149",
+    "name": "Constraint Yield",
+    "kind": "metric",
+    "key": "constraint_yield",
+    "sourceLines": "372–372",
+    "formula": "Good Constraint Output / Constraint Input × 100",
+    "unit": null,
+    "family": "Constraint / Theory of Constraints measures",
+    "section": 18,
+    "surface": "Constraint flow and starvation/blockage timeline",
+    "requiredInputs": "Constraint calendar, throughput, yields, governed contribution model",
+    "semanticFlags": [
+      "run_vs_productive_time",
+      "local_vs_system_optimum",
+      "financial_throughput_vs_physical"
+    ]
+  },
+  {
+    "id": "KPI-150",
+    "name": "Throughput Contribution",
+    "kind": "metric",
+    "key": "throughput_contribution",
+    "sourceLines": "373–373",
+    "formula": "Sales − Totally Variable Cost where governed financial model supports it",
+    "unit": null,
+    "family": "Constraint / Theory of Constraints measures",
+    "section": 18,
+    "surface": "Constraint flow and starvation/blockage timeline",
+    "requiredInputs": "Constraint calendar, throughput, yields, governed contribution model",
+    "semanticFlags": [
+      "run_vs_productive_time",
+      "local_vs_system_optimum",
+      "financial_throughput_vs_physical"
+    ]
+  },
+  {
+    "id": "KPI-151",
+    "name": "TRIR",
+    "kind": "metric",
+    "key": "trir",
+    "sourceLines": "383–383",
+    "formula": "(Recordable Cases × 200,000) / Hours Worked",
+    "unit": null,
+    "family": "Safety",
+    "section": 19,
+    "surface": "Restricted safety rate trend with exposure and case counts",
+    "requiredInputs": "Permissioned EHS case classifications and employee exposure",
+    "semanticFlags": [
+      "restricted_access",
+      "jurisdiction_definition",
+      "exposure_denominator"
+    ]
+  },
+  {
+    "id": "KPI-152",
+    "name": "DART Rate",
+    "kind": "metric",
+    "key": "dart_rate",
+    "sourceLines": "384–384",
+    "formula": "(DART Cases × 200,000) / Hours Worked",
+    "unit": null,
+    "family": "Safety",
+    "section": 19,
+    "surface": "Restricted safety rate trend with exposure and case counts",
+    "requiredInputs": "Permissioned EHS case classifications and employee exposure",
+    "semanticFlags": [
+      "restricted_access",
+      "jurisdiction_definition",
+      "exposure_denominator"
+    ]
+  },
+  {
+    "id": "KPI-153",
+    "name": "Lost-Time Incident Rate",
+    "kind": "metric",
+    "key": "lost_time_incident_rate",
+    "sourceLines": "385–385",
+    "formula": "(Lost-Time Cases × 200,000) / Hours Worked",
+    "unit": null,
+    "family": "Safety",
+    "section": 19,
+    "surface": "Restricted safety rate trend with exposure and case counts",
+    "requiredInputs": "Permissioned EHS case classifications and employee exposure",
+    "semanticFlags": [
+      "restricted_access",
+      "jurisdiction_definition",
+      "exposure_denominator"
+    ]
+  },
+  {
+    "id": "KPI-154",
+    "name": "Near-Miss Rate",
+    "kind": "metric",
+    "key": "near_miss_rate",
+    "sourceLines": "386–386",
+    "formula": "Near Misses / Governed exposure denominator",
+    "unit": null,
+    "family": "Safety",
+    "section": 19,
+    "surface": "Restricted safety rate trend with exposure and case counts",
+    "requiredInputs": "Permissioned EHS case classifications and employee exposure",
+    "semanticFlags": [
+      "restricted_access",
+      "jurisdiction_definition",
+      "exposure_denominator"
+    ]
+  },
+  {
+    "id": "KPI-155",
+    "name": "Production vs Plan",
+    "kind": "metric",
+    "key": "production_vs_plan",
+    "sourceLines": "398–398",
+    "formula": "Actual Production / Planned Production × 100",
+    "unit": null,
+    "family": "Plant Head Daily Operations Audit",
+    "section": 20,
+    "surface": "Seven-metric daily audit; ranked exceptions and actions",
+    "requiredInputs": "Governed primary metric bindings, target versions, status and coverage",
+    "semanticFlags": [
+      "governed_targets",
+      "no_universal_benchmarks"
+    ]
+  },
+  {
+    "id": "KPI-156",
+    "name": "OEE",
+    "kind": "metric",
+    "key": "oee",
+    "sourceLines": "399–399",
+    "formula": "Availability × Performance × Quality",
+    "unit": null,
+    "family": "Plant Head Daily Operations Audit",
+    "section": 20,
+    "surface": "Seven-metric daily audit; ranked exceptions and actions",
+    "requiredInputs": "Governed primary metric bindings, target versions, status and coverage",
+    "semanticFlags": [
+      "governed_targets",
+      "no_universal_benchmarks"
+    ]
+  },
+  {
+    "id": "KPI-157",
+    "name": "Downtime",
+    "kind": "metric",
+    "key": "total_downtime",
+    "sourceLines": "400–400",
+    "formula": "Σ governed downtime duration",
+    "unit": null,
+    "family": "Plant Head Daily Operations Audit",
+    "section": 20,
+    "surface": "Seven-metric daily audit; ranked exceptions and actions",
+    "requiredInputs": "Governed primary metric bindings, target versions, status and coverage",
+    "semanticFlags": [
+      "governed_targets",
+      "no_universal_benchmarks"
+    ]
+  },
+  {
+    "id": "KPI-158",
+    "name": "Quality Loss",
+    "kind": "metric",
+    "key": "quality_loss",
+    "sourceLines": "401–401",
+    "formula": "Nonconforming Output / Total Output × 100",
+    "unit": null,
+    "family": "Plant Head Daily Operations Audit",
+    "section": 20,
+    "surface": "Seven-metric daily audit; ranked exceptions and actions",
+    "requiredInputs": "Governed primary metric bindings, target versions, status and coverage",
+    "semanticFlags": [
+      "governed_targets",
+      "no_universal_benchmarks"
+    ]
+  },
+  {
+    "id": "KPI-159",
+    "name": "Schedule Adherence",
+    "kind": "metric",
+    "key": "schedule_adherence",
+    "sourceLines": "402–402",
+    "formula": "Production completed according to schedule / Scheduled production × 100",
+    "unit": null,
+    "family": "Plant Head Daily Operations Audit",
+    "section": 20,
+    "surface": "Seven-metric daily audit; ranked exceptions and actions",
+    "requiredInputs": "Governed primary metric bindings, target versions, status and coverage",
+    "semanticFlags": [
+      "governed_targets",
+      "no_universal_benchmarks"
+    ]
+  },
+  {
+    "id": "KPI-160",
+    "name": "Inventory Days",
+    "kind": "metric",
+    "key": "inventory_days_dio",
+    "sourceLines": "403–403",
+    "formula": "Average Inventory / Consumption or COGS × Days",
+    "unit": null,
+    "family": "Plant Head Daily Operations Audit",
+    "section": 20,
+    "surface": "Seven-metric daily audit; ranked exceptions and actions",
+    "requiredInputs": "Governed primary metric bindings, target versions, status and coverage",
+    "semanticFlags": [
+      "governed_targets",
+      "no_universal_benchmarks"
+    ]
+  },
+  {
+    "id": "KPI-161",
+    "name": "OTIF",
+    "kind": "metric",
+    "key": "otif",
+    "sourceLines": "404–404",
+    "formula": "Orders on-time AND in-full / Total applicable orders × 100",
+    "unit": null,
+    "family": "Plant Head Daily Operations Audit",
+    "section": 20,
+    "surface": "Seven-metric daily audit; ranked exceptions and actions",
+    "requiredInputs": "Governed primary metric bindings, target versions, status and coverage",
+    "semanticFlags": [
+      "governed_targets",
+      "no_universal_benchmarks"
+    ]
+  },
+  {
+    "id": "KPI-162",
+    "name": "Production vs Plan",
+    "kind": "reference_target",
+    "key": "production_vs_plan",
+    "sourceLines": "410–410",
+    "formula": "≥ 100%",
+    "unit": null,
+    "family": "Plant Head Daily Operations Audit",
+    "section": 20,
+    "surface": "Seven-metric daily audit; ranked exceptions and actions",
+    "requiredInputs": "Governed primary metric bindings, target versions, status and coverage",
+    "semanticFlags": [
+      "governed_targets",
+      "no_universal_benchmarks"
+    ]
+  },
+  {
+    "id": "KPI-163",
+    "name": "OEE",
+    "kind": "reference_target",
+    "key": "oee",
+    "sourceLines": "411–411",
+    "formula": "≥ 85%",
+    "unit": null,
+    "family": "Plant Head Daily Operations Audit",
+    "section": 20,
+    "surface": "Seven-metric daily audit; ranked exceptions and actions",
+    "requiredInputs": "Governed primary metric bindings, target versions, status and coverage",
+    "semanticFlags": [
+      "governed_targets",
+      "no_universal_benchmarks"
+    ]
+  },
+  {
+    "id": "KPI-164",
+    "name": "Downtime",
+    "kind": "reference_target",
+    "key": "total_downtime",
+    "sourceLines": "412–412",
+    "formula": "Minimize / plant target",
+    "unit": null,
+    "family": "Plant Head Daily Operations Audit",
+    "section": 20,
+    "surface": "Seven-metric daily audit; ranked exceptions and actions",
+    "requiredInputs": "Governed primary metric bindings, target versions, status and coverage",
+    "semanticFlags": [
+      "governed_targets",
+      "no_universal_benchmarks"
+    ]
+  },
+  {
+    "id": "KPI-165",
+    "name": "Quality Loss",
+    "kind": "reference_target",
+    "key": "quality_loss",
+    "sourceLines": "413–413",
+    "formula": "≤ 2%",
+    "unit": null,
+    "family": "Plant Head Daily Operations Audit",
+    "section": 20,
+    "surface": "Seven-metric daily audit; ranked exceptions and actions",
+    "requiredInputs": "Governed primary metric bindings, target versions, status and coverage",
+    "semanticFlags": [
+      "governed_targets",
+      "no_universal_benchmarks"
+    ]
+  },
+  {
+    "id": "KPI-166",
+    "name": "Schedule Adherence",
+    "kind": "reference_target",
+    "key": "schedule_adherence",
+    "sourceLines": "414–414",
+    "formula": "≥ 95%",
+    "unit": null,
+    "family": "Plant Head Daily Operations Audit",
+    "section": 20,
+    "surface": "Seven-metric daily audit; ranked exceptions and actions",
+    "requiredInputs": "Governed primary metric bindings, target versions, status and coverage",
+    "semanticFlags": [
+      "governed_targets",
+      "no_universal_benchmarks"
+    ]
+  },
+  {
+    "id": "KPI-167",
+    "name": "Inventory Days",
+    "kind": "reference_target",
+    "key": "inventory_days_dio",
+    "sourceLines": "415–415",
+    "formula": "Governed operating range",
+    "unit": null,
+    "family": "Plant Head Daily Operations Audit",
+    "section": 20,
+    "surface": "Seven-metric daily audit; ranked exceptions and actions",
+    "requiredInputs": "Governed primary metric bindings, target versions, status and coverage",
+    "semanticFlags": [
+      "governed_targets",
+      "no_universal_benchmarks"
+    ]
+  },
+  {
+    "id": "KPI-168",
+    "name": "OTIF",
+    "kind": "reference_target",
+    "key": "otif",
+    "sourceLines": "416–416",
+    "formula": "≥ 95%",
+    "unit": null,
+    "family": "Plant Head Daily Operations Audit",
+    "section": 20,
+    "surface": "Seven-metric daily audit; ranked exceptions and actions",
+    "requiredInputs": "Governed primary metric bindings, target versions, status and coverage",
+    "semanticFlags": [
+      "governed_targets",
+      "no_universal_benchmarks"
+    ]
+  },
+  {
+    "id": "KPI-169",
+    "name": "Availability Loss Time",
+    "kind": "analytical_measure",
+    "key": "availability_loss_time",
+    "sourceLines": "426–429",
+    "formula": "Availability Loss Time = Planned Production Time − Run Time",
+    "unit": null,
+    "family": "Loss calculations EKAS should support",
+    "section": 21,
+    "surface": "Non-overlapping loss bridge and opportunity ledger",
+    "requiredInputs": "Underlying event/count/time inputs and governed expectation",
+    "semanticFlags": [
+      "mutually_exclusive_losses",
+      "governed_expected_output",
+      "negative_loss_validation"
+    ]
+  },
+  {
+    "id": "KPI-170",
+    "name": "Performance Loss Time",
+    "kind": "analytical_measure",
+    "key": "performance_loss_time",
+    "sourceLines": "430–435",
+    "formula": "Performance Loss Time = Run Time − (Ideal Cycle Time × Total Count)",
+    "unit": null,
+    "family": "Loss calculations EKAS should support",
+    "section": 21,
+    "surface": "Non-overlapping loss bridge and opportunity ledger",
+    "requiredInputs": "Underlying event/count/time inputs and governed expectation",
+    "semanticFlags": [
+      "mutually_exclusive_losses",
+      "governed_expected_output",
+      "negative_loss_validation"
+    ]
+  },
+  {
+    "id": "KPI-171",
+    "name": "Quality Loss Units and Quality Loss Time",
+    "kind": "analytical_measure",
+    "key": "quality_loss_units_and_quality_loss_time",
+    "sourceLines": "436–443",
+    "formula": "Quality Loss Units = Total Count − Good Count ; Quality Loss Time = Defective Count × Ideal Cycle Time",
+    "unit": null,
+    "family": "Loss calculations EKAS should support",
+    "section": 21,
+    "surface": "Non-overlapping loss bridge and opportunity ledger",
+    "requiredInputs": "Underlying event/count/time inputs and governed expectation",
+    "semanticFlags": [
+      "mutually_exclusive_losses",
+      "governed_expected_output",
+      "negative_loss_validation"
+    ]
+  },
+  {
+    "id": "KPI-172",
+    "name": "Lost Units",
+    "kind": "analytical_measure",
+    "key": "lost_units",
+    "sourceLines": "444–447",
+    "formula": "Lost Units = Expected Units − Actual Good Units",
+    "unit": null,
+    "family": "Loss calculations EKAS should support",
+    "section": 21,
+    "surface": "Non-overlapping loss bridge and opportunity ledger",
+    "requiredInputs": "Underlying event/count/time inputs and governed expectation",
+    "semanticFlags": [
+      "mutually_exclusive_losses",
+      "governed_expected_output",
+      "negative_loss_validation"
+    ]
+  },
+  {
+    "id": "KPI-173",
+    "name": "Unfavorable Gap to Target",
+    "kind": "analytical_measure",
+    "key": "unfavorable_gap_to_target",
+    "sourceLines": "448–459",
+    "formula": "Gap = Target − Actual ; Gap = Actual − Target",
+    "unit": null,
+    "family": "Loss calculations EKAS should support",
+    "section": 21,
+    "surface": "Non-overlapping loss bridge and opportunity ledger",
+    "requiredInputs": "Underlying event/count/time inputs and governed expectation",
+    "semanticFlags": [
+      "mutually_exclusive_losses",
+      "governed_expected_output",
+      "negative_loss_validation"
+    ]
+  },
+  {
+    "id": "KPI-174",
+    "name": "Absolute change",
+    "kind": "analytical_measure",
+    "key": "absolute_change",
+    "sourceLines": "466–473",
+    "formula": "Current − Previous ; 83.3% − 87.5% = −4.2 percentage points",
+    "unit": null,
+    "family": "Comparison calculations",
+    "section": 22,
+    "surface": "Baseline chips; absolute/relative toggle; target variance",
+    "requiredInputs": "Matched definitions, comparable windows, baseline and target",
+    "semanticFlags": [
+      "percentage_points",
+      "zero_baseline",
+      "matched_comparators"
+    ]
+  },
+  {
+    "id": "KPI-175",
+    "name": "Relative percentage change",
+    "kind": "analytical_measure",
+    "key": "relative_percentage_change",
+    "sourceLines": "474–486",
+    "formula": "(Current − Previous) / Previous × 100",
+    "unit": null,
+    "family": "Comparison calculations",
+    "section": 22,
+    "surface": "Baseline chips; absolute/relative toggle; target variance",
+    "requiredInputs": "Matched definitions, comparable windows, baseline and target",
+    "semanticFlags": [
+      "percentage_points",
+      "zero_baseline",
+      "matched_comparators"
+    ]
+  },
+  {
+    "id": "KPI-176",
+    "name": "Target variance",
+    "kind": "analytical_measure",
+    "key": "target_variance",
+    "sourceLines": "487–496",
+    "formula": "Actual − Target ; (Actual − Target) / Target × 100",
+    "unit": null,
+    "family": "Comparison calculations",
+    "section": 22,
+    "surface": "Baseline chips; absolute/relative toggle; target variance",
+    "requiredInputs": "Matched definitions, comparable windows, baseline and target",
+    "semanticFlags": [
+      "percentage_points",
+      "zero_baseline",
+      "matched_comparators"
+    ]
+  },
+  {
+    "id": "KPI-177",
+    "name": "Moving average",
+    "kind": "analytical_measure",
+    "key": "moving_average",
+    "sourceLines": "503–506",
+    "formula": "MAₙ = Σ(last n values) / n",
+    "unit": null,
+    "family": "Trend metrics",
+    "section": 23,
+    "surface": "Run/control chart with analytical overlay",
+    "requiredInputs": "Ordered observations, time spacing, missing-data policy",
+    "semanticFlags": [
+      "pooled_vs_mean",
+      "cv_zero_mean",
+      "irregular_sampling"
+    ]
+  },
+  {
+    "id": "KPI-178",
+    "name": "Rolling change",
+    "kind": "analytical_measure",
+    "key": "rolling_change",
+    "sourceLines": "507–510",
+    "formula": "Current − Value N periods ago",
+    "unit": null,
+    "family": "Trend metrics",
+    "section": 23,
+    "surface": "Run/control chart with analytical overlay",
+    "requiredInputs": "Ordered observations, time spacing, missing-data policy",
+    "semanticFlags": [
+      "pooled_vs_mean",
+      "cv_zero_mean",
+      "irregular_sampling"
+    ]
+  },
+  {
+    "id": "KPI-179",
+    "name": "Trend slope",
+    "kind": "analytical_measure",
+    "key": "trend_slope",
+    "sourceLines": "511–514",
+    "formula": "Regression slope across ordered period/value observations.",
+    "unit": null,
+    "family": "Trend metrics",
+    "section": 23,
+    "surface": "Run/control chart with analytical overlay",
+    "requiredInputs": "Ordered observations, time spacing, missing-data policy",
+    "semanticFlags": [
+      "pooled_vs_mean",
+      "cv_zero_mean",
+      "irregular_sampling"
+    ]
+  },
+  {
+    "id": "KPI-180",
+    "name": "Volatility",
+    "kind": "analytical_measure",
+    "key": "volatility",
+    "sourceLines": "515–522",
+    "formula": "CV = σ / μ × 100",
+    "unit": null,
+    "family": "Trend metrics",
+    "section": 23,
+    "surface": "Run/control chart with analytical overlay",
+    "requiredInputs": "Ordered observations, time spacing, missing-data policy",
+    "semanticFlags": [
+      "pooled_vs_mean",
+      "cv_zero_mean",
+      "irregular_sampling"
+    ]
+  },
+  {
+    "id": "KPI-181",
+    "name": "Category contribution",
+    "kind": "analytical_measure",
+    "key": "category_contribution",
+    "sourceLines": "529–532",
+    "formula": "Category Loss / Total Loss × 100",
+    "unit": null,
+    "family": "Pareto calculations",
+    "section": 24,
+    "surface": "Sorted Pareto plus cumulative curve and Other category",
+    "requiredInputs": "Exclusive loss categories with same unit and boundary",
+    "semanticFlags": [
+      "same_loss_unit",
+      "exclusive_categories",
+      "missing_reason_coverage"
+    ]
+  },
+  {
+    "id": "KPI-182",
+    "name": "Cumulative contribution",
+    "kind": "analytical_measure",
+    "key": "cumulative_contribution",
+    "sourceLines": "533–542",
+    "formula": "Σ ranked category contributions",
+    "unit": null,
+    "family": "Pareto calculations",
+    "section": 24,
+    "surface": "Sorted Pareto plus cumulative curve and Other category",
+    "requiredInputs": "Exclusive loss categories with same unit and boundary",
+    "semanticFlags": [
+      "same_loss_unit",
+      "exclusive_categories",
+      "missing_reason_coverage"
+    ]
+  },
+  {
+    "id": "KPI-183",
+    "name": "Improvement",
+    "kind": "analytical_measure",
+    "key": "improvement",
+    "sourceLines": "549–554",
+    "formula": "Post-Action KPI − Pre-Action KPI",
+    "unit": null,
+    "family": "Action / sustain metrics",
+    "section": 25,
+    "surface": "Action board; baseline/post-action chart; verification window",
+    "requiredInputs": "Action, owner, due date, completion proof, metric observations",
+    "semanticFlags": [
+      "closure_not_effectiveness",
+      "attribution_confounding",
+      "sustain_window"
+    ]
+  },
+  {
+    "id": "KPI-184",
+    "name": "Improvement %",
+    "kind": "analytical_measure",
+    "key": "improvement",
+    "sourceLines": "555–558",
+    "formula": "(Post − Pre) / Pre × 100",
+    "unit": null,
+    "family": "Action / sustain metrics",
+    "section": 25,
+    "surface": "Action board; baseline/post-action chart; verification window",
+    "requiredInputs": "Action, owner, due date, completion proof, metric observations",
+    "semanticFlags": [
+      "closure_not_effectiveness",
+      "attribution_confounding",
+      "sustain_window"
+    ]
+  },
+  {
+    "id": "KPI-185",
+    "name": "Sustained Improvement",
+    "kind": "analytical_measure",
+    "key": "sustained_improvement",
+    "sourceLines": "559–564",
+    "formula": "KPI meets improvement threshold for N consecutive periods",
+    "unit": null,
+    "family": "Action / sustain metrics",
+    "section": 25,
+    "surface": "Action board; baseline/post-action chart; verification window",
+    "requiredInputs": "Action, owner, due date, completion proof, metric observations",
+    "semanticFlags": [
+      "closure_not_effectiveness",
+      "attribution_confounding",
+      "sustain_window"
+    ]
+  },
+  {
+    "id": "KPI-186",
+    "name": "Recurrence Rate",
+    "kind": "analytical_measure",
+    "key": "recurrence_rate",
+    "sourceLines": "565–568",
+    "formula": "Repeated Events / Total Relevant Events × 100",
+    "unit": null,
+    "family": "Action / sustain metrics",
+    "section": 25,
+    "surface": "Action board; baseline/post-action chart; verification window",
+    "requiredInputs": "Action, owner, due date, completion proof, metric observations",
+    "semanticFlags": [
+      "closure_not_effectiveness",
+      "attribution_confounding",
+      "sustain_window"
+    ]
+  },
+  {
+    "id": "KPI-187",
+    "name": "Action Closure Rate",
+    "kind": "analytical_measure",
+    "key": "action_closure_rate",
+    "sourceLines": "569–572",
+    "formula": "Completed Actions / Actions Due × 100",
+    "unit": null,
+    "family": "Action / sustain metrics",
+    "section": 25,
+    "surface": "Action board; baseline/post-action chart; verification window",
+    "requiredInputs": "Action, owner, due date, completion proof, metric observations",
+    "semanticFlags": [
+      "closure_not_effectiveness",
+      "attribution_confounding",
+      "sustain_window"
+    ]
+  },
+  {
+    "id": "KPI-188",
+    "name": "On-Time Action Closure",
+    "kind": "analytical_measure",
+    "key": "on_time_action_closure",
+    "sourceLines": "573–580",
+    "formula": "Actions Closed by Due Date / Actions Due × 100",
+    "unit": null,
+    "family": "Action / sustain metrics",
+    "section": 25,
+    "surface": "Action board; baseline/post-action chart; verification window",
+    "requiredInputs": "Action, owner, due date, completion proof, metric observations",
+    "semanticFlags": [
+      "closure_not_effectiveness",
+      "attribution_confounding",
+      "sustain_window"
+    ]
+  },
+  {
+    "id": "KPI-189",
+    "name": "Internal Setup Time",
+    "kind": "concept",
+    "key": "internal_setup_time",
+    "sourceLines": "121–134",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Changeover and setup",
+    "section": 6,
+    "surface": "Changeover comparison; internal/external setup timeline",
+    "requiredInputs": "Last-good/first-good events, product transitions, setup standard",
+    "semanticFlags": [
+      "timestamp_boundaries",
+      "setup_loss_signed"
+    ]
+  },
+  {
+    "id": "KPI-190",
+    "name": "External Setup Time",
+    "kind": "concept",
+    "key": "external_setup_time",
+    "sourceLines": "121–134",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Changeover and setup",
+    "section": 6,
+    "surface": "Changeover comparison; internal/external setup timeline",
+    "requiredInputs": "Last-good/first-good events, product transitions, setup standard",
+    "semanticFlags": [
+      "timestamp_boundaries",
+      "setup_loss_signed"
+    ]
+  },
+  {
+    "id": "KPI-191",
+    "name": "SMED",
+    "kind": "concept",
+    "key": "smed",
+    "sourceLines": "121–134",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Changeover and setup",
+    "section": 6,
+    "surface": "Changeover comparison; internal/external setup timeline",
+    "requiredInputs": "Last-good/first-good events, product transitions, setup standard",
+    "semanticFlags": [
+      "timestamp_boundaries",
+      "setup_loss_signed"
+    ]
+  },
+  {
+    "id": "KPI-192",
+    "name": "USL",
+    "kind": "concept",
+    "key": "usl",
+    "sourceLines": "181–202",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Process capability",
+    "section": 9,
+    "surface": "Control chart plus distribution/spec limits; capability trust panel",
+    "requiredInputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semanticFlags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ]
+  },
+  {
+    "id": "KPI-193",
+    "name": "LSL",
+    "kind": "concept",
+    "key": "lsl",
+    "sourceLines": "181–202",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Process capability",
+    "section": 9,
+    "surface": "Control chart plus distribution/spec limits; capability trust panel",
+    "requiredInputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semanticFlags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ]
+  },
+  {
+    "id": "KPI-194",
+    "name": "Process Mean",
+    "kind": "concept",
+    "key": "process_mean",
+    "sourceLines": "181–202",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Process capability",
+    "section": 9,
+    "surface": "Control chart plus distribution/spec limits; capability trust panel",
+    "requiredInputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semanticFlags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ]
+  },
+  {
+    "id": "KPI-195",
+    "name": "Within-subgroup Sigma",
+    "kind": "concept",
+    "key": "within_subgroup_sigma",
+    "sourceLines": "181–202",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Process capability",
+    "section": 9,
+    "surface": "Control chart plus distribution/spec limits; capability trust panel",
+    "requiredInputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semanticFlags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ]
+  },
+  {
+    "id": "KPI-196",
+    "name": "Overall Sigma",
+    "kind": "concept",
+    "key": "overall_sigma",
+    "sourceLines": "181–202",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Process capability",
+    "section": 9,
+    "surface": "Control chart plus distribution/spec limits; capability trust panel",
+    "requiredInputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semanticFlags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ]
+  },
+  {
+    "id": "KPI-197",
+    "name": "Sample Adequacy",
+    "kind": "concept",
+    "key": "sample_adequacy",
+    "sourceLines": "181–202",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Process capability",
+    "section": 9,
+    "surface": "Control chart plus distribution/spec limits; capability trust panel",
+    "requiredInputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semanticFlags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ]
+  },
+  {
+    "id": "KPI-198",
+    "name": "Measurement-System Integrity",
+    "kind": "concept",
+    "key": "measurement_system_integrity",
+    "sourceLines": "181–202",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Process capability",
+    "section": 9,
+    "surface": "Control chart plus distribution/spec limits; capability trust panel",
+    "requiredInputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semanticFlags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ]
+  },
+  {
+    "id": "KPI-199",
+    "name": "MTTR clarification",
+    "kind": "concept",
+    "key": "mttr_clarification",
+    "sourceLines": "203–242",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Maintenance and reliability",
+    "section": 10,
+    "surface": "Failure/repair timeline; asset repeat-failure Pareto; PM backlog",
+    "requiredInputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semanticFlags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ]
+  },
+  {
+    "id": "KPI-200",
+    "name": "Plant Head Daily Operations Audit",
+    "kind": "concept",
+    "key": "plant_head_daily_operations_audit",
+    "sourceLines": "392–421",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Plant Head Daily Operations Audit",
+    "section": 20,
+    "surface": "Seven-metric daily audit; ranked exceptions and actions",
+    "requiredInputs": "Governed primary metric bindings, target versions, status and coverage",
+    "semanticFlags": [
+      "governed_targets",
+      "no_universal_benchmarks"
+    ]
+  },
+  {
+    "id": "KPI-201",
+    "name": "Governed operating range",
+    "kind": "concept",
+    "key": "governed_operating_range",
+    "sourceLines": "392–421",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Plant Head Daily Operations Audit",
+    "section": 20,
+    "surface": "Seven-metric daily audit; ranked exceptions and actions",
+    "requiredInputs": "Governed primary metric bindings, target versions, status and coverage",
+    "semanticFlags": [
+      "governed_targets",
+      "no_universal_benchmarks"
+    ]
+  },
+  {
+    "id": "KPI-202",
+    "name": "Higher-is-better gap",
+    "kind": "concept",
+    "key": "higher_is_better_gap",
+    "sourceLines": "422–461",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Loss calculations EKAS should support",
+    "section": 21,
+    "surface": "Non-overlapping loss bridge and opportunity ledger",
+    "requiredInputs": "Underlying event/count/time inputs and governed expectation",
+    "semanticFlags": [
+      "mutually_exclusive_losses",
+      "governed_expected_output",
+      "negative_loss_validation"
+    ]
+  },
+  {
+    "id": "KPI-203",
+    "name": "Lower-is-better gap",
+    "kind": "concept",
+    "key": "lower_is_better_gap",
+    "sourceLines": "422–461",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Loss calculations EKAS should support",
+    "section": 21,
+    "surface": "Non-overlapping loss bridge and opportunity ledger",
+    "requiredInputs": "Underlying event/count/time inputs and governed expectation",
+    "semanticFlags": [
+      "mutually_exclusive_losses",
+      "governed_expected_output",
+      "negative_loss_validation"
+    ]
+  },
+  {
+    "id": "KPI-204",
+    "name": "Positive unfavorable gap ranking",
+    "kind": "concept",
+    "key": "positive_unfavorable_gap_ranking",
+    "sourceLines": "422–461",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Loss calculations EKAS should support",
+    "section": 21,
+    "surface": "Non-overlapping loss bridge and opportunity ledger",
+    "requiredInputs": "Underlying event/count/time inputs and governed expectation",
+    "semanticFlags": [
+      "mutually_exclusive_losses",
+      "governed_expected_output",
+      "negative_loss_validation"
+    ]
+  },
+  {
+    "id": "KPI-205",
+    "name": "Percentage Points",
+    "kind": "concept",
+    "key": "percentage_points",
+    "sourceLines": "462–498",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Comparison calculations",
+    "section": 22,
+    "surface": "Baseline chips; absolute/relative toggle; target variance",
+    "requiredInputs": "Matched definitions, comparable windows, baseline and target",
+    "semanticFlags": [
+      "percentage_points",
+      "zero_baseline",
+      "matched_comparators"
+    ]
+  },
+  {
+    "id": "KPI-206",
+    "name": "Relative Percent Change",
+    "kind": "concept",
+    "key": "relative_percent_change",
+    "sourceLines": "462–498",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Comparison calculations",
+    "section": 22,
+    "surface": "Baseline chips; absolute/relative toggle; target variance",
+    "requiredInputs": "Matched definitions, comparable windows, baseline and target",
+    "semanticFlags": [
+      "percentage_points",
+      "zero_baseline",
+      "matched_comparators"
+    ]
+  },
+  {
+    "id": "KPI-207",
+    "name": "Normalized Target Variance",
+    "kind": "concept",
+    "key": "normalized_target_variance",
+    "sourceLines": "462–498",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Comparison calculations",
+    "section": 22,
+    "surface": "Baseline chips; absolute/relative toggle; target variance",
+    "requiredInputs": "Matched definitions, comparable windows, baseline and target",
+    "semanticFlags": [
+      "percentage_points",
+      "zero_baseline",
+      "matched_comparators"
+    ]
+  },
+  {
+    "id": "KPI-208",
+    "name": "Standard Deviation",
+    "kind": "concept",
+    "key": "standard_deviation",
+    "sourceLines": "499–524",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Trend metrics",
+    "section": 23,
+    "surface": "Run/control chart with analytical overlay",
+    "requiredInputs": "Ordered observations, time spacing, missing-data policy",
+    "semanticFlags": [
+      "pooled_vs_mean",
+      "cv_zero_mean",
+      "irregular_sampling"
+    ]
+  },
+  {
+    "id": "KPI-209",
+    "name": "Coefficient of Variation",
+    "kind": "concept",
+    "key": "coefficient_of_variation",
+    "sourceLines": "499–524",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Trend metrics",
+    "section": 23,
+    "surface": "Run/control chart with analytical overlay",
+    "requiredInputs": "Ordered observations, time spacing, missing-data policy",
+    "semanticFlags": [
+      "pooled_vs_mean",
+      "cv_zero_mean",
+      "irregular_sampling"
+    ]
+  },
+  {
+    "id": "KPI-210",
+    "name": "Loss Pareto",
+    "kind": "concept",
+    "key": "loss_pareto",
+    "sourceLines": "525–544",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Pareto calculations",
+    "section": 24,
+    "surface": "Sorted Pareto plus cumulative curve and Other category",
+    "requiredInputs": "Exclusive loss categories with same unit and boundary",
+    "semanticFlags": [
+      "same_loss_unit",
+      "exclusive_categories",
+      "missing_reason_coverage"
+    ]
+  },
+  {
+    "id": "KPI-211",
+    "name": "Find → Quantify → Act → Sustain",
+    "kind": "concept",
+    "key": "find_quantify_act_sustain",
+    "sourceLines": "545–582",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Action / sustain metrics",
+    "section": 25,
+    "surface": "Action board; baseline/post-action chart; verification window",
+    "requiredInputs": "Action, owner, due date, completion proof, metric observations",
+    "semanticFlags": [
+      "closure_not_effectiveness",
+      "attribution_confounding",
+      "sustain_window"
+    ]
+  },
+  {
+    "id": "KPI-212",
+    "name": "Action completion evidence",
+    "kind": "concept",
+    "key": "action_completion_evidence",
+    "sourceLines": "545–582",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Action / sustain metrics",
+    "section": 25,
+    "surface": "Action board; baseline/post-action chart; verification window",
+    "requiredInputs": "Action, owner, due date, completion proof, metric observations",
+    "semanticFlags": [
+      "closure_not_effectiveness",
+      "attribution_confounding",
+      "sustain_window"
+    ]
+  },
+  {
+    "id": "KPI-213",
+    "name": "Verification window",
+    "kind": "concept",
+    "key": "verification_window",
+    "sourceLines": "545–582",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Action / sustain metrics",
+    "section": 25,
+    "surface": "Action board; baseline/post-action chart; verification window",
+    "requiredInputs": "Action, owner, due date, completion proof, metric observations",
+    "semanticFlags": [
+      "closure_not_effectiveness",
+      "attribution_confounding",
+      "sustain_window"
+    ]
+  },
+  {
+    "id": "KPI-214",
+    "name": "Deterministic Metric",
+    "kind": "concept",
+    "key": "deterministic_metric",
+    "sourceLines": "652–685",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "The critical distinction: metric vs derived insight",
+    "section": 27,
+    "surface": "Fact/inference/hypothesis labels and evidence graph",
+    "requiredInputs": "Measurement lineage, observation derivation and investigation evidence",
+    "semanticFlags": [
+      "no_causal_overclaim",
+      "evidence_vs_hypothesis"
+    ]
+  },
+  {
+    "id": "KPI-215",
+    "name": "Derived Observation",
+    "kind": "concept",
+    "key": "derived_observation",
+    "sourceLines": "652–685",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "The critical distinction: metric vs derived insight",
+    "section": 27,
+    "surface": "Fact/inference/hypothesis labels and evidence graph",
+    "requiredInputs": "Measurement lineage, observation derivation and investigation evidence",
+    "semanticFlags": [
+      "no_causal_overclaim",
+      "evidence_vs_hypothesis"
+    ]
+  },
+  {
+    "id": "KPI-216",
+    "name": "Reasoning / Investigation",
+    "kind": "concept",
+    "key": "reasoning_investigation",
+    "sourceLines": "652–685",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "The critical distinction: metric vs derived insight",
+    "section": 27,
+    "surface": "Fact/inference/hypothesis labels and evidence graph",
+    "requiredInputs": "Measurement lineage, observation derivation and investigation evidence",
+    "semanticFlags": [
+      "no_causal_overclaim",
+      "evidence_vs_hypothesis"
+    ]
+  },
+  {
+    "id": "KPI-217",
+    "name": "Root Cause",
+    "kind": "concept",
+    "key": "root_cause",
+    "sourceLines": "652–685",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "The critical distinction: metric vs derived insight",
+    "section": 27,
+    "surface": "Fact/inference/hypothesis labels and evidence graph",
+    "requiredInputs": "Measurement lineage, observation derivation and investigation evidence",
+    "semanticFlags": [
+      "no_causal_overclaim",
+      "evidence_vs_hypothesis"
+    ]
+  },
+  {
+    "id": "KPI-218",
+    "name": "Governed metric identity",
+    "kind": "concept",
+    "key": "governed_metric_identity",
+    "sourceLines": "686–729",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-219",
+    "name": "metric_id",
+    "kind": "registry_field",
+    "key": "metric_id",
+    "sourceLines": "588–588",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-220",
+    "name": "canonical_name",
+    "kind": "registry_field",
+    "key": "canonical_name",
+    "sourceLines": "589–589",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-221",
+    "name": "display_name",
+    "kind": "registry_field",
+    "key": "display_name",
+    "sourceLines": "590–590",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-222",
+    "name": "aliases",
+    "kind": "registry_field",
+    "key": "aliases",
+    "sourceLines": "591–591",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-223",
+    "name": "domain",
+    "kind": "registry_field",
+    "key": "domain",
+    "sourceLines": "592–592",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-224",
+    "name": "definition",
+    "kind": "registry_field",
+    "key": "definition",
+    "sourceLines": "593–593",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-225",
+    "name": "formula",
+    "kind": "registry_field",
+    "key": "formula",
+    "sourceLines": "594–594",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-226",
+    "name": "formula_version",
+    "kind": "registry_field",
+    "key": "formula_version",
+    "sourceLines": "595–595",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-227",
+    "name": "calculation_owner",
+    "kind": "registry_field",
+    "key": "calculation_owner",
+    "sourceLines": "596–596",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-228",
+    "name": "numerator",
+    "kind": "registry_field",
+    "key": "numerator",
+    "sourceLines": "597–597",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-229",
+    "name": "denominator",
+    "kind": "registry_field",
+    "key": "denominator",
+    "sourceLines": "598–598",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-230",
+    "name": "units",
+    "kind": "registry_field",
+    "key": "units",
+    "sourceLines": "599–599",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-231",
+    "name": "display_units",
+    "kind": "registry_field",
+    "key": "display_units",
+    "sourceLines": "600–600",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-232",
+    "name": "precision",
+    "kind": "registry_field",
+    "key": "precision",
+    "sourceLines": "601–601",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-233",
+    "name": "aggregation_method",
+    "kind": "registry_field",
+    "key": "aggregation_method",
+    "sourceLines": "602–602",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-234",
+    "name": "valid_entity_scopes",
+    "kind": "registry_field",
+    "key": "valid_entity_scopes",
+    "sourceLines": "603–603",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-235",
+    "name": "valid_time_grains",
+    "kind": "registry_field",
+    "key": "valid_time_grains",
+    "sourceLines": "604–604",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-236",
+    "name": "good_direction",
+    "kind": "registry_field",
+    "key": "good_direction",
+    "sourceLines": "605–605",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-237",
+    "name": "target_source",
+    "kind": "registry_field",
+    "key": "target_source",
+    "sourceLines": "606–606",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-238",
+    "name": "target",
+    "kind": "registry_field",
+    "key": "target",
+    "sourceLines": "607–607",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-239",
+    "name": "warning_threshold",
+    "kind": "registry_field",
+    "key": "warning_threshold",
+    "sourceLines": "608–608",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-240",
+    "name": "critical_threshold",
+    "kind": "registry_field",
+    "key": "critical_threshold",
+    "sourceLines": "609–609",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-241",
+    "name": "required_sources",
+    "kind": "registry_field",
+    "key": "required_sources",
+    "sourceLines": "610–610",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-242",
+    "name": "required_data_coverage",
+    "kind": "registry_field",
+    "key": "required_data_coverage",
+    "sourceLines": "611–611",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-243",
+    "name": "evidence_requirements",
+    "kind": "registry_field",
+    "key": "evidence_requirements",
+    "sourceLines": "612–612",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-244",
+    "name": "certification_owner",
+    "kind": "registry_field",
+    "key": "certification_owner",
+    "sourceLines": "613–613",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-245",
+    "name": "comparison_semantics",
+    "kind": "registry_field",
+    "key": "comparison_semantics",
+    "sourceLines": "614–614",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-246",
+    "name": "chart_semantics",
+    "kind": "registry_field",
+    "key": "chart_semantics",
+    "sourceLines": "615–615",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-247",
+    "name": "clarification_rules",
+    "kind": "registry_field",
+    "key": "clarification_rules",
+    "sourceLines": "616–616",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-248",
+    "name": "effectivity",
+    "kind": "registry_field",
+    "key": "effectivity",
+    "sourceLines": "617–617",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-249",
+    "name": "version",
+    "kind": "registry_field",
+    "key": "version",
+    "sourceLines": "618–618",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-250",
+    "name": "status",
+    "kind": "registry_field",
+    "key": "status",
+    "sourceLines": "619–619",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-251",
+    "name": "recognition_status",
+    "kind": "registry_field",
+    "key": "recognition_status",
+    "sourceLines": "625–625",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-252",
+    "name": "execution_status",
+    "kind": "registry_field",
+    "key": "execution_status",
+    "sourceLines": "626–626",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-253",
+    "name": "certification_status",
+    "kind": "registry_field",
+    "key": "certification_status",
+    "sourceLines": "627–627",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "Metric Registry fields I recommend",
+    "section": 26,
+    "surface": "Metric definition drawer; catalog readiness matrix; version history",
+    "requiredInputs": "Registry metadata, approvals and evidence links",
+    "semanticFlags": [
+      "three_status_axes",
+      "effectivity",
+      "owner_authority"
+    ]
+  },
+  {
+    "id": "KPI-254",
+    "name": "OEE",
+    "kind": "library_alias",
+    "key": "oee",
+    "sourceLines": "691–691",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-255",
+    "name": "Availability",
+    "kind": "library_alias",
+    "key": "availability",
+    "sourceLines": "691–691",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-256",
+    "name": "Performance",
+    "kind": "library_alias",
+    "key": "performance",
+    "sourceLines": "691–691",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-257",
+    "name": "Quality",
+    "kind": "library_alias",
+    "key": "quality",
+    "sourceLines": "691–691",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-258",
+    "name": "TEEP",
+    "kind": "library_alias",
+    "key": "teep",
+    "sourceLines": "691–691",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-259",
+    "name": "utilization",
+    "kind": "library_alias",
+    "key": "utilization",
+    "sourceLines": "691–691",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-260",
+    "name": "production vs plan",
+    "kind": "library_alias",
+    "key": "production_vs_plan",
+    "sourceLines": "694–694",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-261",
+    "name": "throughput",
+    "kind": "library_alias",
+    "key": "throughput",
+    "sourceLines": "694–694",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-262",
+    "name": "attainment",
+    "kind": "library_alias",
+    "key": "attainment",
+    "sourceLines": "694–694",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-263",
+    "name": "run rate",
+    "kind": "library_alias",
+    "key": "run_rate",
+    "sourceLines": "694–694",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-264",
+    "name": "capacity utilization",
+    "kind": "library_alias",
+    "key": "capacity_utilization",
+    "sourceLines": "694–694",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-265",
+    "name": "cycle time",
+    "kind": "library_alias",
+    "key": "cycle_time",
+    "sourceLines": "694–694",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-266",
+    "name": "takt",
+    "kind": "library_alias",
+    "key": "takt",
+    "sourceLines": "694–694",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-267",
+    "name": "downtime",
+    "kind": "library_alias",
+    "key": "downtime",
+    "sourceLines": "697–697",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-268",
+    "name": "unplanned downtime",
+    "kind": "library_alias",
+    "key": "unplanned_downtime",
+    "sourceLines": "697–697",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-269",
+    "name": "planned downtime",
+    "kind": "library_alias",
+    "key": "planned_downtime",
+    "sourceLines": "697–697",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-270",
+    "name": "minor stops",
+    "kind": "library_alias",
+    "key": "minor_stops",
+    "sourceLines": "697–697",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-271",
+    "name": "speed loss",
+    "kind": "library_alias",
+    "key": "speed_loss",
+    "sourceLines": "697–697",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-272",
+    "name": "changeover",
+    "kind": "library_alias",
+    "key": "changeover",
+    "sourceLines": "697–697",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-273",
+    "name": "FPY",
+    "kind": "library_alias",
+    "key": "fpy",
+    "sourceLines": "700–700",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-274",
+    "name": "yield",
+    "kind": "library_alias",
+    "key": "yield",
+    "sourceLines": "700–700",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-275",
+    "name": "RTY",
+    "kind": "library_alias",
+    "key": "rty",
+    "sourceLines": "700–700",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-276",
+    "name": "scrap",
+    "kind": "library_alias",
+    "key": "scrap",
+    "sourceLines": "700–700",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-277",
+    "name": "rejects",
+    "kind": "library_alias",
+    "key": "rejects",
+    "sourceLines": "700–700",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-278",
+    "name": "rework",
+    "kind": "library_alias",
+    "key": "rework",
+    "sourceLines": "700–700",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-279",
+    "name": "PPM",
+    "kind": "library_alias",
+    "key": "ppm",
+    "sourceLines": "700–700",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-280",
+    "name": "DPMO",
+    "kind": "library_alias",
+    "key": "dpmo",
+    "sourceLines": "700–700",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-281",
+    "name": "quality loss",
+    "kind": "library_alias",
+    "key": "quality_loss",
+    "sourceLines": "700–700",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-282",
+    "name": "Cp/Cpk where appropriate",
+    "kind": "library_alias",
+    "key": "cp_cpk_where_appropriate",
+    "sourceLines": "700–700",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-283",
+    "name": "MTBF",
+    "kind": "library_alias",
+    "key": "mtbf",
+    "sourceLines": "703–703",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-284",
+    "name": "MTTR-Repair",
+    "kind": "library_alias",
+    "key": "mttr_repair",
+    "sourceLines": "703–703",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-285",
+    "name": "MTTR-Restore",
+    "kind": "library_alias",
+    "key": "mttr_restore",
+    "sourceLines": "703–703",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-286",
+    "name": "failure rate",
+    "kind": "library_alias",
+    "key": "failure_rate",
+    "sourceLines": "703–703",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-287",
+    "name": "breakdown frequency",
+    "kind": "library_alias",
+    "key": "breakdown_frequency",
+    "sourceLines": "703–703",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-288",
+    "name": "PM compliance",
+    "kind": "library_alias",
+    "key": "pm_compliance",
+    "sourceLines": "703–703",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-289",
+    "name": "reactive maintenance %",
+    "kind": "library_alias",
+    "key": "reactive_maintenance",
+    "sourceLines": "703–703",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-290",
+    "name": "maintenance backlog",
+    "kind": "library_alias",
+    "key": "maintenance_backlog",
+    "sourceLines": "703–703",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-291",
+    "name": "schedule adherence",
+    "kind": "library_alias",
+    "key": "schedule_adherence",
+    "sourceLines": "706–706",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-292",
+    "name": "OTIF",
+    "kind": "library_alias",
+    "key": "otif",
+    "sourceLines": "706–706",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-293",
+    "name": "OTD",
+    "kind": "library_alias",
+    "key": "otd",
+    "sourceLines": "706–706",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-294",
+    "name": "fill rate",
+    "kind": "library_alias",
+    "key": "fill_rate",
+    "sourceLines": "706–706",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-295",
+    "name": "late orders",
+    "kind": "library_alias",
+    "key": "late_orders",
+    "sourceLines": "706–706",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-296",
+    "name": "inventory days",
+    "kind": "library_alias",
+    "key": "inventory_days",
+    "sourceLines": "709–709",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-297",
+    "name": "inventory turns",
+    "kind": "library_alias",
+    "key": "inventory_turns",
+    "sourceLines": "709–709",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-298",
+    "name": "WIP",
+    "kind": "library_alias",
+    "key": "wip",
+    "sourceLines": "709–709",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-299",
+    "name": "WIP days",
+    "kind": "library_alias",
+    "key": "wip_days",
+    "sourceLines": "709–709",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-300",
+    "name": "RM days",
+    "kind": "library_alias",
+    "key": "rm_days",
+    "sourceLines": "709–709",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-301",
+    "name": "FG days",
+    "kind": "library_alias",
+    "key": "fg_days",
+    "sourceLines": "709–709",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-302",
+    "name": "flow efficiency",
+    "kind": "library_alias",
+    "key": "flow_efficiency",
+    "sourceLines": "709–709",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-303",
+    "name": "lead time",
+    "kind": "library_alias",
+    "key": "lead_time",
+    "sourceLines": "709–709",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-304",
+    "name": "labor productivity",
+    "kind": "library_alias",
+    "key": "labor_productivity",
+    "sourceLines": "712–712",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-305",
+    "name": "labor efficiency",
+    "kind": "library_alias",
+    "key": "labor_efficiency",
+    "sourceLines": "712–712",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-306",
+    "name": "utilization",
+    "kind": "library_alias",
+    "key": "utilization",
+    "sourceLines": "712–712",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-307",
+    "name": "overtime",
+    "kind": "library_alias",
+    "key": "overtime",
+    "sourceLines": "712–712",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-308",
+    "name": "cost/unit",
+    "kind": "library_alias",
+    "key": "cost_unit",
+    "sourceLines": "715–715",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-309",
+    "name": "scrap cost",
+    "kind": "library_alias",
+    "key": "scrap_cost",
+    "sourceLines": "715–715",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-310",
+    "name": "rework cost",
+    "kind": "library_alias",
+    "key": "rework_cost",
+    "sourceLines": "715–715",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-311",
+    "name": "downtime cost",
+    "kind": "library_alias",
+    "key": "downtime_cost",
+    "sourceLines": "715–715",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-312",
+    "name": "COPQ",
+    "kind": "library_alias",
+    "key": "copq",
+    "sourceLines": "715–715",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-313",
+    "name": "energy/unit",
+    "kind": "library_alias",
+    "key": "energy_unit",
+    "sourceLines": "718–718",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-314",
+    "name": "idle-energy %",
+    "kind": "library_alias",
+    "key": "idle_energy",
+    "sourceLines": "718–718",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-315",
+    "name": "peak demand",
+    "kind": "library_alias",
+    "key": "peak_demand",
+    "sourceLines": "718–718",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-316",
+    "name": "gap to target",
+    "kind": "library_alias",
+    "key": "gap_to_target",
+    "sourceLines": "721–721",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-317",
+    "name": "trend",
+    "kind": "library_alias",
+    "key": "trend",
+    "sourceLines": "721–721",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-318",
+    "name": "Pareto contribution",
+    "kind": "library_alias",
+    "key": "pareto_contribution",
+    "sourceLines": "721–721",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-319",
+    "name": "top loss",
+    "kind": "library_alias",
+    "key": "top_loss",
+    "sourceLines": "721–721",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-320",
+    "name": "improvement",
+    "kind": "library_alias",
+    "key": "improvement",
+    "sourceLines": "721–721",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-321",
+    "name": "recurrence",
+    "kind": "library_alias",
+    "key": "recurrence",
+    "sourceLines": "721–721",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  },
+  {
+    "id": "KPI-322",
+    "name": "action closure and sustain metrics",
+    "kind": "library_alias",
+    "key": "action_closure_and_sustain_metrics",
+    "sourceLines": "721–721",
+    "formula": "See source concept / governance requirement",
+    "unit": null,
+    "family": "What I would consider the core EKAS manufacturing KPI library",
+    "section": 28,
+    "surface": "Searchable cross-domain library with aliases and availability",
+    "requiredInputs": "All catalog registrations with governed alias resolution",
+    "semanticFlags": [
+      "alias_clarification",
+      "full_library_scope"
+    ]
+  }
+]

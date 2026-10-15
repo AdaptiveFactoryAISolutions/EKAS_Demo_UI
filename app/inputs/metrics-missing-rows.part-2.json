@@ -1,0 +1,606 @@
+[
+  {
+    "requirement_id": "KPI-075",
+    "source_name": "Good Count",
+    "canonical_id": "good_count",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      153,
+      153
+    ],
+    "source_formula": "Total Count − Scrap − rejected/rework as governed",
+    "source_unit": "units"
+  },
+  {
+    "requirement_id": "KPI-076",
+    "source_name": "Rolled Throughput Yield",
+    "canonical_id": "rolled_throughput_yield",
+    "kind": "analytical_measure",
+    "source_section": 8,
+    "source_section_title": "Rolled yield",
+    "family": "quality",
+    "required_inputs": "Aligned route cohorts and first-pass operation outcomes",
+    "semantic_flags": [
+      "route_cohort",
+      "unrounded_product",
+      "rty_example_rounding"
+    ],
+    "source_lines": [
+      163,
+      178
+    ],
+    "source_formula": "RTY = FPY₁ × FPY₂ × FPY₃ × ... × FPYₙ ; RTY = 0.98 × 0.97 × 0.99 = 94.1%",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-077",
+    "source_name": "Cp",
+    "canonical_id": "cp",
+    "kind": "metric",
+    "source_section": 9,
+    "source_section_title": "Process capability",
+    "family": "capability",
+    "required_inputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semantic_flags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ],
+    "source_lines": [
+      187,
+      187
+    ],
+    "source_formula": "(USL − LSL) / (6σ)",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-078",
+    "source_name": "Cpk",
+    "canonical_id": "cpk",
+    "kind": "metric",
+    "source_section": 9,
+    "source_section_title": "Process capability",
+    "family": "capability",
+    "required_inputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semantic_flags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ],
+    "source_lines": [
+      188,
+      188
+    ],
+    "source_formula": "min[(USL − μ)/(3σ), (μ − LSL)/(3σ)]",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-079",
+    "source_name": "Pp",
+    "canonical_id": "pp",
+    "kind": "metric",
+    "source_section": 9,
+    "source_section_title": "Process capability",
+    "family": "capability",
+    "required_inputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semantic_flags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ],
+    "source_lines": [
+      189,
+      189
+    ],
+    "source_formula": "(USL − LSL) / (6σoverall)",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-080",
+    "source_name": "Ppk",
+    "canonical_id": "ppk",
+    "kind": "metric",
+    "source_section": 9,
+    "source_section_title": "Process capability",
+    "family": "capability",
+    "required_inputs": "Raw measurements, rational subgroups, specification versions, measurement-system study",
+    "semantic_flags": [
+      "sigma_estimator",
+      "stability_distribution_msa",
+      "no_naive_pooling"
+    ],
+    "source_lines": [
+      190,
+      190
+    ],
+    "source_formula": "min[(USL − μ)/(3σoverall), (μ − LSL)/(3σoverall)]",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-081",
+    "source_name": "MTBF",
+    "canonical_id": "mtbf",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      207,
+      207
+    ],
+    "source_formula": "Total Operating Time / Number of Failures",
+    "source_unit": "hours/failure"
+  },
+  {
+    "requirement_id": "KPI-082",
+    "source_name": "MTTR — Mean Time to Repair",
+    "canonical_id": "mttr_repair",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      208,
+      208
+    ],
+    "source_formula": "Total Active Repair Time / Number of Repairs",
+    "source_unit": "time"
+  },
+  {
+    "requirement_id": "KPI-083",
+    "source_name": "MTTR — Mean Time to Restore",
+    "canonical_id": "mttr_restore",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      209,
+      209
+    ],
+    "source_formula": "Total Restoration Downtime / Number of Incidents",
+    "source_unit": "time"
+  },
+  {
+    "requirement_id": "KPI-084",
+    "source_name": "MTTF",
+    "canonical_id": "mttf",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      210,
+      210
+    ],
+    "source_formula": "Total Operating Life / Number of Nonrepairable Failures",
+    "source_unit": "time"
+  },
+  {
+    "requirement_id": "KPI-085",
+    "source_name": "Failure Rate",
+    "canonical_id": "failure_rate",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      211,
+      211
+    ],
+    "source_formula": "Number of Failures / Operating Time",
+    "source_unit": "failures/hour"
+  },
+  {
+    "requirement_id": "KPI-086",
+    "source_name": "Reliability",
+    "canonical_id": "reliability",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      212,
+      212
+    ],
+    "source_formula": "commonly e^(−λt) for constant failure rate",
+    "source_unit": "probability"
+  },
+  {
+    "requirement_id": "KPI-087",
+    "source_name": "Repair Rate",
+    "canonical_id": "repair_rate",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      213,
+      213
+    ],
+    "source_formula": "Repairs Completed / Repair Time",
+    "source_unit": "repairs/time"
+  },
+  {
+    "requirement_id": "KPI-088",
+    "source_name": "Maintenance Downtime %",
+    "canonical_id": "maintenance_downtime",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      214,
+      214
+    ],
+    "source_formula": "Maintenance Downtime / Planned Production Time × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-089",
+    "source_name": "Breakdown Frequency",
+    "canonical_id": "breakdown_frequency",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      215,
+      215
+    ],
+    "source_formula": "Breakdowns / Period",
+    "source_unit": "count/time"
+  },
+  {
+    "requirement_id": "KPI-090",
+    "source_name": "Reactive Maintenance %",
+    "canonical_id": "reactive_maintenance",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      216,
+      216
+    ],
+    "source_formula": "Reactive Maintenance Hours / Total Maintenance Hours × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-091",
+    "source_name": "Planned Maintenance %",
+    "canonical_id": "planned_maintenance",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      217,
+      217
+    ],
+    "source_formula": "Planned Maintenance Hours / Total Maintenance Hours × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-092",
+    "source_name": "PM Compliance",
+    "canonical_id": "pm_compliance",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      218,
+      218
+    ],
+    "source_formula": "PMs completed on time / PMs scheduled × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-093",
+    "source_name": "Schedule Compliance — Maintenance",
+    "canonical_id": "schedule_compliance_maintenance",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      219,
+      219
+    ],
+    "source_formula": "Scheduled jobs completed as planned / Scheduled jobs × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-094",
+    "source_name": "Maintenance Backlog",
+    "canonical_id": "maintenance_backlog",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      220,
+      220
+    ],
+    "source_formula": "Outstanding Maintenance Labor Hours / Available Weekly Maintenance Labor Hours",
+    "source_unit": "weeks"
+  },
+  {
+    "requirement_id": "KPI-095",
+    "source_name": "Repeat Failure Rate",
+    "canonical_id": "repeat_failure_rate",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      221,
+      221
+    ],
+    "source_formula": "Repeated failures / Total failures × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-096",
+    "source_name": "Emergency Work %",
+    "canonical_id": "emergency_work",
+    "kind": "metric",
+    "source_section": 10,
+    "source_section_title": "Maintenance and reliability",
+    "family": "maintenance",
+    "required_inputs": "CMMS work orders, repair/restore events, exposure, failure taxonomy",
+    "semantic_flags": [
+      "repair_vs_restore",
+      "zero_failures",
+      "censoring",
+      "constant_hazard"
+    ],
+    "source_lines": [
+      222,
+      222
+    ],
+    "source_formula": "Emergency work hours / Total maintenance hours × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-097",
+    "source_name": "OTIF",
+    "canonical_id": "otif",
+    "kind": "metric",
+    "source_section": 11,
+    "source_section_title": "Delivery and customer service",
+    "family": "delivery",
+    "required_inputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semantic_flags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ],
+    "source_lines": [
+      247,
+      247
+    ],
+    "source_formula": "Orders delivered On Time AND In Full / Total Orders × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-098",
+    "source_name": "On-Time Delivery (OTD)",
+    "canonical_id": "on_time_delivery_otd",
+    "kind": "metric",
+    "source_section": 11,
+    "source_section_title": "Delivery and customer service",
+    "family": "delivery",
+    "required_inputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semantic_flags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ],
+    "source_lines": [
+      248,
+      248
+    ],
+    "source_formula": "Orders delivered on/before promise date / Total Delivered Orders × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-099",
+    "source_name": "In-Full Delivery",
+    "canonical_id": "in_full_delivery",
+    "kind": "metric",
+    "source_section": 11,
+    "source_section_title": "Delivery and customer service",
+    "family": "delivery",
+    "required_inputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semantic_flags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ],
+    "source_lines": [
+      249,
+      249
+    ],
+    "source_formula": "Orders delivered complete / Total Orders × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-100",
+    "source_name": "Fill Rate",
+    "canonical_id": "fill_rate",
+    "kind": "metric",
+    "source_section": 11,
+    "source_section_title": "Delivery and customer service",
+    "family": "delivery",
+    "required_inputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semantic_flags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ],
+    "source_lines": [
+      250,
+      250
+    ],
+    "source_formula": "Units shipped immediately / Units ordered × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-101",
+    "source_name": "Perfect Order Rate",
+    "canonical_id": "perfect_order_rate",
+    "kind": "metric",
+    "source_section": 11,
+    "source_section_title": "Delivery and customer service",
+    "family": "delivery",
+    "required_inputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semantic_flags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ],
+    "source_lines": [
+      251,
+      251
+    ],
+    "source_formula": "Perfect Orders / Total Orders × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-102",
+    "source_name": "Late Order Rate",
+    "canonical_id": "late_order_rate",
+    "kind": "metric",
+    "source_section": 11,
+    "source_section_title": "Delivery and customer service",
+    "family": "delivery",
+    "required_inputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semantic_flags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ],
+    "source_lines": [
+      252,
+      252
+    ],
+    "source_formula": "Late Orders / Total Orders × 100",
+    "source_unit": "%"
+  }
+]

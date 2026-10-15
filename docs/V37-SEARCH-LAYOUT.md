@@ -1,0 +1,7 @@
+# V37 narrow Search layout correction
+
+Provisional undeployed non-Dot candidate based on frozen V36. When missing-formula or multi-formula diagnostics exist, they share a dedicated full-width CSS Grid row. The picker and query/results stay consecutive siblings below it, preserving the intended280px picker/right results desktop placement. Mobile keeps the same stacked order. No diagnostic wrapper is rendered for normal queries; normal placement remains unchanged.
+
+Existing diagnostic wording/resolver, provenance wrapping/labels/details, Catalog feedback, source-unit overlay, numeric calculations and evidence are unchanged. Only screens.tsx changes in runtime source. No Dot server, policy changes, independent security review, browser/storage/route/key/provider/backend action occurred. Served V36 and frozen R5 remain untouched.
+
+Test-first evidence reproduces the unspanned status layout. DOM/CSS placement regressions cover table/headline,1854/390/320widths, normal/absent/null/multi-formula states. A deterministic fixture regression preserves43.20units/min for UIA-HIGH-OEE and unavailable zero/missing scopes, with null/absent definition withholding. These tests establish structure/grid-span contracts rather than real browser pixel geometry. Full regression/build/typecheck and fresh extraction precede freeze; independent desktop/mobile screenshot re-test remains pending. Read the preserved independent V36 report for motivation and current310pass/41partial cumulative acceptance limit.

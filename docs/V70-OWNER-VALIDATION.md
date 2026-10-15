@@ -1,0 +1,7 @@
+# V70 owner validation
+
+Final current full suite:1382/1382PASS across233files (evidence/v70-full-results.json). All228previous test files and85fixture files are byte-exact; test identity reconciliation runs during freeze to prove all1368V69assertions retained. Existing assertions/timeouts unchanged. New regressions cover all3collectors across temporal edits, exact dimensional scope, cancellation/field retention/reload/history, help before slots/mutations, actual guard parity, exact0/10rootstate, allpage/workflow registration and mounted visible controls/rootsubmit.
+
+Genuine scope/help red reproductions are retained. The first help harness reused an idempotency key and was corrected before the genuine baseline red. Mounted harness required jsdom-only geometry/scroll mocks; unhandled jsdom scrollIntoView error was fixed in the harness, not counted as a product defect. Initial unbounded suite/build resource exhaustion was interrupted; the final bounded2worker suite completed with original assertions and time limits.
+
+Owner checks do not close independent V70 scope P2 review, nativeHighcharts/all351/fullmaster lifecycles, firstRun timing, fullallpage/role/state procedures or uncoached novice usability. Exact originalV66 page stayed unchanged; the mounted synthetic example is supporting evidence only. Final build/ZIP/source/build hashes follow in freeze artifacts. No liveOpenAI/Tom/backend/security/hosting/Library write occurred.

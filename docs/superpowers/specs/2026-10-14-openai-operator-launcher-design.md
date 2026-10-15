@@ -1,0 +1,13 @@
+# OpenAI operator launch design — explicit successor scope
+
+User and parent authorize secure preparation and fake-credential/mock transport tests, not actual activation or a security-review workaround. Reuse approved server Responses architecture; default disabled. Keep Tom production integration independent.
+
+Compose a launcher from the actual synthetic application server, current provider, durable exclusive budget store and activation authority. Live authority must verify an independently issued artifact-bound acceptance using an externally provisioned immutable trust anchor; no anchor or receipt is included in the demo. No operator-supplied public-key override or boolean acceptance. The default authority refuses. Authorized reviewer delivery/trust provisioning is an external unresolved gate, recorded in LIVE-OPENAI-ACCEPTANCE-HANDOFF.md.
+
+Before reading a key, verify exact candidate and reviewed policy, receipt expiry and original budget journal authority/history. Existing legacy authorization and reservations must carry forward under an explicitly reviewed migration; do not make a new budget or change the expired guard. Refuse unknown usage. Implement crash-safe exclusive store over an existing current-schema journal only; legacy conversion remains held without reviewed receipt. This is an intentional refusal, not permission to reset.
+
+Read the user key only via a supplied private operator credential callback after eligibility; actual terminal callback implementation must suppress echo and restore terminal state on errors. No environment/key file/argv reader. Mock callbacks contain fictitious credentials and cannot use global fetch. Server holds key only in provider closure. Fixed Responses endpoint, redirects/error/timeout and strict local tools retained.
+
+Enforce real wire UTF8 input bytes before reservation; include explicit framing allowance and reviewed input token bound. Output max includes reasoning. Tier selection must be explicit and reviewed; reserve maximum applicable cache-write/input rates without discounts. Existing policy equality/expiry and cumulative <=20 million microUSD unchanged. Durable reservations are not refundable.
+
+Tests first: disabled does not touch key/store/fetch; absent/expired/wrong-artifact acceptance refuses before credential; policy/journal mismatch and >USD20 refuse; process lock/atomic store/restart unknown remain held; oversized wire input refuses before network; approved test-only authority +fakekey/mocktransport reaches the existing conversation path. No mock acceptance can be used by installed live CLI. Final candidate remains provisional until full regressions and independent ordinary review.

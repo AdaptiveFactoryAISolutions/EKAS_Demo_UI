@@ -1,0 +1,585 @@
+[
+  {
+    "requirement_id": "KPI-047",
+    "source_name": "Downtime Frequency",
+    "canonical_id": "downtime_frequency",
+    "kind": "metric",
+    "source_section": 5,
+    "source_section_title": "Downtime and loss",
+    "family": "loss",
+    "required_inputs": "Machine events, reason taxonomy, expected run rate",
+    "semantic_flags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ],
+    "source_lines": [
+      107,
+      107
+    ],
+    "source_formula": "Number of downtime events / Period",
+    "source_unit": "events/time"
+  },
+  {
+    "requirement_id": "KPI-048",
+    "source_name": "Average Downtime Event",
+    "canonical_id": "average_downtime_event",
+    "kind": "metric",
+    "source_section": 5,
+    "source_section_title": "Downtime and loss",
+    "family": "loss",
+    "required_inputs": "Machine events, reason taxonomy, expected run rate",
+    "semantic_flags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ],
+    "source_lines": [
+      108,
+      108
+    ],
+    "source_formula": "Total Downtime / Number of Downtime Events",
+    "source_unit": "time/event"
+  },
+  {
+    "requirement_id": "KPI-049",
+    "source_name": "Downtime by Reason",
+    "canonical_id": "downtime_by_reason",
+    "kind": "metric",
+    "source_section": 5,
+    "source_section_title": "Downtime and loss",
+    "family": "loss",
+    "required_inputs": "Machine events, reason taxonomy, expected run rate",
+    "semantic_flags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ],
+    "source_lines": [
+      109,
+      109
+    ],
+    "source_formula": "Σ duration for reason code",
+    "source_unit": "time"
+  },
+  {
+    "requirement_id": "KPI-050",
+    "source_name": "Downtime Contribution",
+    "canonical_id": "downtime_contribution",
+    "kind": "metric",
+    "source_section": 5,
+    "source_section_title": "Downtime and loss",
+    "family": "loss",
+    "required_inputs": "Machine events, reason taxonomy, expected run rate",
+    "semantic_flags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ],
+    "source_lines": [
+      110,
+      110
+    ],
+    "source_formula": "Reason Downtime / Total Downtime × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-051",
+    "source_name": "Top Loss Contribution",
+    "canonical_id": "top_loss_contribution",
+    "kind": "metric",
+    "source_section": 5,
+    "source_section_title": "Downtime and loss",
+    "family": "loss",
+    "required_inputs": "Machine events, reason taxonomy, expected run rate",
+    "semantic_flags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ],
+    "source_lines": [
+      111,
+      111
+    ],
+    "source_formula": "Largest Loss / Total Loss × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-052",
+    "source_name": "Minor Stop Time",
+    "canonical_id": "minor_stop_time",
+    "kind": "metric",
+    "source_section": 5,
+    "source_section_title": "Downtime and loss",
+    "family": "loss",
+    "required_inputs": "Machine events, reason taxonomy, expected run rate",
+    "semantic_flags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ],
+    "source_lines": [
+      112,
+      112
+    ],
+    "source_formula": "Σ qualifying short-stop durations",
+    "source_unit": "time"
+  },
+  {
+    "requirement_id": "KPI-053",
+    "source_name": "Speed Loss",
+    "canonical_id": "speed_loss",
+    "kind": "metric",
+    "source_section": 5,
+    "source_section_title": "Downtime and loss",
+    "family": "loss",
+    "required_inputs": "Machine events, reason taxonomy, expected run rate",
+    "semantic_flags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ],
+    "source_lines": [
+      113,
+      113
+    ],
+    "source_formula": "Potential Output at Ideal Rate − Actual Output during runtime",
+    "source_unit": "units/time"
+  },
+  {
+    "requirement_id": "KPI-054",
+    "source_name": "Lost Production from Downtime",
+    "canonical_id": "lost_production_from_downtime",
+    "kind": "metric",
+    "source_section": 5,
+    "source_section_title": "Downtime and loss",
+    "family": "loss",
+    "required_inputs": "Machine events, reason taxonomy, expected run rate",
+    "semantic_flags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ],
+    "source_lines": [
+      114,
+      114
+    ],
+    "source_formula": "Downtime × Expected Run Rate",
+    "source_unit": "units"
+  },
+  {
+    "requirement_id": "KPI-055",
+    "source_name": "Downtime Cost",
+    "canonical_id": "downtime_cost",
+    "kind": "metric",
+    "source_section": 5,
+    "source_section_title": "Downtime and loss",
+    "family": "loss",
+    "required_inputs": "Machine events, reason taxonomy, expected run rate",
+    "semantic_flags": [
+      "event_overlap",
+      "speed_loss_units",
+      "cost_governance"
+    ],
+    "source_lines": [
+      115,
+      115
+    ],
+    "source_formula": "Downtime × Governed Cost Rate",
+    "source_unit": "currency"
+  },
+  {
+    "requirement_id": "KPI-056",
+    "source_name": "Changeover Time",
+    "canonical_id": "changeover_time",
+    "kind": "metric",
+    "source_section": 6,
+    "source_section_title": "Changeover and setup",
+    "family": "changeover",
+    "required_inputs": "Last-good/first-good events, product transitions, setup standard",
+    "semantic_flags": [
+      "timestamp_boundaries",
+      "setup_loss_signed"
+    ],
+    "source_lines": [
+      125,
+      125
+    ],
+    "source_formula": "First Good Unit New Product − Last Good Unit Previous Product",
+    "source_unit": "time"
+  },
+  {
+    "requirement_id": "KPI-057",
+    "source_name": "Average Changeover Time",
+    "canonical_id": "average_changeover_time",
+    "kind": "metric",
+    "source_section": 6,
+    "source_section_title": "Changeover and setup",
+    "family": "changeover",
+    "required_inputs": "Last-good/first-good events, product transitions, setup standard",
+    "semantic_flags": [
+      "timestamp_boundaries",
+      "setup_loss_signed"
+    ],
+    "source_lines": [
+      126,
+      126
+    ],
+    "source_formula": "Σ Changeover Time / Number of Changeovers",
+    "source_unit": "time"
+  },
+  {
+    "requirement_id": "KPI-058",
+    "source_name": "Changeover Variance",
+    "canonical_id": "changeover_variance",
+    "kind": "metric",
+    "source_section": 6,
+    "source_section_title": "Changeover and setup",
+    "family": "changeover",
+    "required_inputs": "Last-good/first-good events, product transitions, setup standard",
+    "semantic_flags": [
+      "timestamp_boundaries",
+      "setup_loss_signed"
+    ],
+    "source_lines": [
+      127,
+      127
+    ],
+    "source_formula": "Actual Changeover − Standard Changeover",
+    "source_unit": "time"
+  },
+  {
+    "requirement_id": "KPI-059",
+    "source_name": "Changeover Attainment",
+    "canonical_id": "changeover_attainment",
+    "kind": "metric",
+    "source_section": 6,
+    "source_section_title": "Changeover and setup",
+    "family": "changeover",
+    "required_inputs": "Last-good/first-good events, product transitions, setup standard",
+    "semantic_flags": [
+      "timestamp_boundaries",
+      "setup_loss_signed"
+    ],
+    "source_lines": [
+      128,
+      128
+    ],
+    "source_formula": "Standard Changeover / Actual Changeover × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-060",
+    "source_name": "Setup Loss",
+    "canonical_id": "setup_loss",
+    "kind": "metric",
+    "source_section": 6,
+    "source_section_title": "Changeover and setup",
+    "family": "changeover",
+    "required_inputs": "Last-good/first-good events, product transitions, setup standard",
+    "semantic_flags": [
+      "timestamp_boundaries",
+      "setup_loss_signed"
+    ],
+    "source_lines": [
+      129,
+      129
+    ],
+    "source_formula": "Actual Setup Time − Target Setup Time",
+    "source_unit": "time"
+  },
+  {
+    "requirement_id": "KPI-061",
+    "source_name": "Quality Rate",
+    "canonical_id": "quality",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      139,
+      139
+    ],
+    "source_formula": "Good Units / Total Units × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-062",
+    "source_name": "Yield",
+    "canonical_id": "quality",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      140,
+      140
+    ],
+    "source_formula": "Good Units / Total Units × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-063",
+    "source_name": "FPY — First Pass Yield",
+    "canonical_id": "first_pass_yield",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      141,
+      141
+    ],
+    "source_formula": "Units passing without rework / Units entering process × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-064",
+    "source_name": "First Time Through",
+    "canonical_id": "first_time_through",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      142,
+      142
+    ],
+    "source_formula": "Good units requiring no repair/rework / Total units × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-065",
+    "source_name": "Scrap Rate",
+    "canonical_id": "scrap_rate",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      143,
+      143
+    ],
+    "source_formula": "Scrap Units / Total Units Produced × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-066",
+    "source_name": "Reject Rate",
+    "canonical_id": "reject_rate",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      144,
+      144
+    ],
+    "source_formula": "Rejected Units / Total Units Inspected × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-067",
+    "source_name": "Rework Rate",
+    "canonical_id": "rework_rate",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      145,
+      145
+    ],
+    "source_formula": "Reworked Units / Total Units Produced × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-068",
+    "source_name": "Defect Rate",
+    "canonical_id": "defect_rate",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      146,
+      146
+    ],
+    "source_formula": "Defective Units / Units Inspected × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-069",
+    "source_name": "Defects per Unit (DPU)",
+    "canonical_id": "defects_per_unit_dpu",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      147,
+      147
+    ],
+    "source_formula": "Total Defects / Units Inspected",
+    "source_unit": "defects/unit"
+  },
+  {
+    "requirement_id": "KPI-070",
+    "source_name": "DPMO",
+    "canonical_id": "dpmo",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      148,
+      148
+    ],
+    "source_formula": "Defects / (Units × Opportunities per Unit) × 1,000,000",
+    "source_unit": "defects/million opportunities"
+  },
+  {
+    "requirement_id": "KPI-071",
+    "source_name": "PPM Defective",
+    "canonical_id": "ppm_defective",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      149,
+      149
+    ],
+    "source_formula": "Defective Units / Total Units × 1,000,000",
+    "source_unit": "ppm"
+  },
+  {
+    "requirement_id": "KPI-072",
+    "source_name": "Customer Reject Rate",
+    "canonical_id": "customer_reject_rate",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      150,
+      150
+    ],
+    "source_formula": "Customer-Rejected Units / Units Shipped × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-073",
+    "source_name": "Customer PPM",
+    "canonical_id": "customer_ppm",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      151,
+      151
+    ],
+    "source_formula": "Customer Defective Units / Units Shipped × 1,000,000",
+    "source_unit": "ppm"
+  },
+  {
+    "requirement_id": "KPI-074",
+    "source_name": "Quality Loss",
+    "canonical_id": "quality_loss",
+    "kind": "metric",
+    "source_section": 7,
+    "source_section_title": "Quality",
+    "family": "quality",
+    "required_inputs": "Inspection, unique units, defect opportunities, scrap/rework dispositions",
+    "semantic_flags": [
+      "disposition_overlap",
+      "unique_units_vs_defects",
+      "cohort_alignment"
+    ],
+    "source_lines": [
+      152,
+      152
+    ],
+    "source_formula": "Nonconforming Units / Total Units × 100",
+    "source_unit": "%"
+  }
+]

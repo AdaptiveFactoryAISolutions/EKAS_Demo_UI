@@ -1,0 +1,2761 @@
+{
+  "sourceReportSha256": "e84c7004c40dd1fcf830a1a914829df9f0157ce92c302b5bf508e9d5f297cee6",
+  "sourceExtractorSha256": "7995f4ef083caddbfb5091d1724ad16255bda33dddad0ee079221584d215b313",
+  "initialCounts": {
+    "observed": 49,
+    "unsupported": 129
+  },
+  "mapping": [
+    {
+      "metricId": "ekas.oee",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.availability",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.run_time",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.performance",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.quality",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.overall_utilization",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: calendar_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "asset_calendar",
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards",
+        "capacity_standards",
+        "constraint_designations",
+        "demand_commitments"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.asset_utilization",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: available_asset_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "asset_calendar",
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards",
+        "capacity_standards",
+        "constraint_designations",
+        "demand_commitments"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.teep",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: calendar_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "asset_calendar",
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards",
+        "capacity_standards",
+        "constraint_designations",
+        "demand_commitments"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.loading",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: calendar_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "asset_calendar",
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards",
+        "capacity_standards",
+        "constraint_designations",
+        "demand_commitments"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.oee_gap_to_target",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: target_pct",
+      "positiveContextId": "production_comparison",
+      "sourceTables": [
+        "base.counts",
+        "base.jobs",
+        "base.standards",
+        "target_policies"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.oee_improvement",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: current_pct",
+      "positiveContextId": "production_comparison",
+      "sourceTables": [
+        "base.counts",
+        "base.jobs",
+        "base.standards",
+        "target_policies"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.production_vs_plan",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.schedules",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.production_variance",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.schedules",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.net_throughput",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: elapsed_h",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.gross_throughput",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: elapsed_h",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.run_rate",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: operating_h",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.target_run_rate",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: ideal_cycle_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.run_rate_attainment",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: actual_rate",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.capacity_utilization",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: rated_capacity",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "asset_calendar",
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards",
+        "capacity_standards",
+        "constraint_designations",
+        "demand_commitments"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.capacity_attainment",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: available_capacity",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "asset_calendar",
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards",
+        "capacity_standards",
+        "constraint_designations",
+        "demand_commitments"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.unused_capacity",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: available_capacity",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "asset_calendar",
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards",
+        "capacity_standards",
+        "constraint_designations",
+        "demand_commitments"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.constraint_utilization",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: constraint_run_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "asset_calendar",
+        "base.counts",
+        "capacity_standards",
+        "constraint_designations",
+        "demand_commitments"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.constraint_productive_utilization",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: constraint_productive_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "asset_calendar",
+        "base.counts",
+        "capacity_standards",
+        "constraint_designations",
+        "demand_commitments"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.constraint_throughput",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: constraint_good_units",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "asset_calendar",
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards",
+        "capacity_standards",
+        "constraint_designations",
+        "demand_commitments"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.schedule_adherence",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.schedules"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.schedule_attainment",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.schedules"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.schedule_variance",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: actual_completion_epoch_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.schedules"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.orders_completed_to_schedule",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: orders_on_scheduled_date",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.schedules"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.actual_cycle_time",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.ideal_cycle_time",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: ideal_cycle_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.cycle_time_variance",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: actual_cycle_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.cycle_time_performance",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: standard_cycle_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.takt_time",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: available_production_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "asset_calendar",
+        "base.counts",
+        "capacity_standards",
+        "constraint_designations",
+        "demand_commitments"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.takt_attainment",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: takt_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "asset_calendar",
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards",
+        "capacity_standards",
+        "constraint_designations",
+        "demand_commitments"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.cycle_to_takt_ratio",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: actual_cycle_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "asset_calendar",
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards",
+        "capacity_standards",
+        "constraint_designations",
+        "demand_commitments"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.lead_time",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: completion_epoch_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "lot_journey_intervals"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.manufacturing_lead_time",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: queue_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "lot_journey_intervals"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.touch_time",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: touch_union_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "lot_journey_intervals"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.flow_efficiency",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: value_added_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "lot_journey_intervals"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.total_downtime",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: downtime_union_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.cost_rates",
+        "base.downtime_intervals",
+        "loss_reason_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.unplanned_downtime",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: unplanned_union_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.cost_rates",
+        "base.downtime_intervals",
+        "loss_reason_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.planned_downtime",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: planned_union_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.cost_rates",
+        "base.downtime_intervals",
+        "loss_reason_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.downtime",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.downtime_frequency",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: downtime_events",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.cost_rates",
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards",
+        "loss_reason_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.average_downtime_event",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: downtime_events",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.cost_rates",
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards",
+        "loss_reason_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.downtime_by_reason",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: reason_union_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.cost_rates",
+        "base.downtime_intervals",
+        "loss_reason_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.downtime_contribution",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: reason_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.cost_rates",
+        "base.downtime_intervals",
+        "loss_reason_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.top_loss_contribution",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: largest_category_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.cost_rates",
+        "base.downtime_intervals",
+        "loss_reason_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.minor_stop_time",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: minor_stop_union_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.cost_rates",
+        "base.downtime_intervals",
+        "loss_reason_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.speed_loss",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: ideal_cycle_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.lost_production_from_downtime",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: expected_units_per_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.downtime_cost",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: loss_cost_per_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.cost_rates",
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards",
+        "loss_reason_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.changeover_time",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: first_good_new_epoch_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "changeovers",
+        "setup_tasks"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.average_changeover_time",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: changeover_total_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "changeovers",
+        "setup_tasks"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.changeover_variance",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: changeover_actual_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "changeovers",
+        "setup_tasks"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.changeover_attainment",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: changeover_standard_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "changeovers",
+        "setup_tasks"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.setup_loss",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: setup_actual_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "changeovers",
+        "setup_tasks"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.first_pass_yield",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.first_time_through",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.scrap_rate",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.reject_rate",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: rejected_units",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.defects",
+        "base.quality_stages",
+        "inspection_dispositions"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.rework_rate",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.defect_rate",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.defects",
+        "base.quality_stages",
+        "inspection_dispositions"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.defects_per_unit_dpu",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.defects",
+        "base.quality_stages",
+        "inspection_dispositions"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.dpmo",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.defects",
+        "base.quality_stages",
+        "inspection_dispositions"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.ppm_defective",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.defects",
+        "base.quality_stages",
+        "inspection_dispositions"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.customer_reject_rate",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: customer_rejected_units",
+      "positiveContextId": "delivery",
+      "sourceTables": [
+        "base.customer_orders",
+        "base.order_lines",
+        "base.shipments",
+        "fulfillment_allocations",
+        "shipment_quality"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.customer_ppm",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: customer_defective_units",
+      "positiveContextId": "delivery",
+      "sourceTables": [
+        "base.customer_orders",
+        "base.order_lines",
+        "base.shipments",
+        "fulfillment_allocations",
+        "shipment_quality"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.quality_loss",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.good_count",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.rolled_throughput_yield",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: stage_first_pass_yields",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.defects",
+        "base.quality_stages",
+        "inspection_dispositions"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.cp",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Capability qualification incomplete: sample adequacy, MSA, stability and subgroup policy are required.",
+      "positiveContextId": "qualified_capability",
+      "sourceTables": [
+        "calibrations",
+        "capability_policy",
+        "gauge_study_readings",
+        "gauges",
+        "qualified_characteristics",
+        "qualified_measurements",
+        "qualified_subgroups"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.cpk",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Capability qualification incomplete: sample adequacy, MSA, stability and subgroup policy are required.",
+      "positiveContextId": "qualified_capability",
+      "sourceTables": [
+        "calibrations",
+        "capability_policy",
+        "gauge_study_readings",
+        "gauges",
+        "qualified_characteristics",
+        "qualified_measurements",
+        "qualified_subgroups"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.pp",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Capability qualification incomplete: sample adequacy, MSA, stability and subgroup policy are required.",
+      "positiveContextId": "qualified_capability",
+      "sourceTables": [
+        "calibrations",
+        "capability_policy",
+        "gauge_study_readings",
+        "gauges",
+        "qualified_characteristics",
+        "qualified_measurements",
+        "qualified_subgroups"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.ppk",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Capability qualification incomplete: sample adequacy, MSA, stability and subgroup policy are required.",
+      "positiveContextId": "qualified_capability",
+      "sourceTables": [
+        "calibrations",
+        "capability_policy",
+        "gauge_study_readings",
+        "gauges",
+        "qualified_characteristics",
+        "qualified_measurements",
+        "qualified_subgroups"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.mtbf",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: operating_h",
+      "positiveContextId": "maintenance",
+      "sourceTables": [
+        "base.failures",
+        "base.jobs",
+        "base.pm_tasks",
+        "base.work_orders",
+        "failure_classifications",
+        "maintenance_assignments",
+        "maintenance_backlog_tasks",
+        "maintenance_labor_entries",
+        "maintenance_roster",
+        "reliability_model_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.mttr_repair",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Active repair elapsed, restoration elapsed and technician person-time are separate. Failure exposure/censoring is not inferred from work orders.",
+      "positiveContextId": "maintenance",
+      "sourceTables": [
+        "base.failures",
+        "base.jobs",
+        "base.pm_tasks",
+        "base.work_orders",
+        "failure_classifications",
+        "maintenance_assignments",
+        "maintenance_backlog_tasks",
+        "maintenance_labor_entries",
+        "maintenance_roster",
+        "reliability_model_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.mttr_restore",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Active repair elapsed, restoration elapsed and technician person-time are separate. Failure exposure/censoring is not inferred from work orders.",
+      "positiveContextId": "maintenance",
+      "sourceTables": [
+        "base.failures",
+        "base.jobs",
+        "base.pm_tasks",
+        "base.work_orders",
+        "failure_classifications",
+        "maintenance_assignments",
+        "maintenance_backlog_tasks",
+        "maintenance_labor_entries",
+        "maintenance_roster",
+        "reliability_model_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.mttf",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: failed_complete_lifetime_h",
+      "positiveContextId": "nonrepairable_lifetime",
+      "sourceTables": [
+        "nonrepairable_components"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.failure_rate",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: failures",
+      "positiveContextId": "maintenance",
+      "sourceTables": [
+        "base.failures",
+        "base.jobs",
+        "base.pm_tasks",
+        "base.work_orders",
+        "failure_classifications",
+        "maintenance_assignments",
+        "maintenance_backlog_tasks",
+        "maintenance_labor_entries",
+        "maintenance_roster",
+        "reliability_model_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.reliability",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: failure_lambda_per_h",
+      "positiveContextId": "maintenance",
+      "sourceTables": [
+        "base.failures",
+        "base.jobs",
+        "base.pm_tasks",
+        "base.work_orders",
+        "failure_classifications",
+        "maintenance_assignments",
+        "maintenance_backlog_tasks",
+        "maintenance_labor_entries",
+        "maintenance_roster",
+        "reliability_model_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.repair_rate",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Active repair elapsed, restoration elapsed and technician person-time are separate. Failure exposure/censoring is not inferred from work orders.",
+      "positiveContextId": "maintenance",
+      "sourceTables": [
+        "base.failures",
+        "base.jobs",
+        "base.pm_tasks",
+        "base.work_orders",
+        "failure_classifications",
+        "maintenance_assignments",
+        "maintenance_backlog_tasks",
+        "maintenance_labor_entries",
+        "maintenance_roster",
+        "reliability_model_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.maintenance_downtime",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: maintenance_union_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.cost_rates",
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards",
+        "loss_reason_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.breakdown_frequency",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: breakdowns",
+      "positiveContextId": "maintenance",
+      "sourceTables": [
+        "base.failures",
+        "base.jobs",
+        "base.pm_tasks",
+        "base.work_orders",
+        "failure_classifications",
+        "maintenance_assignments",
+        "maintenance_backlog_tasks",
+        "maintenance_labor_entries",
+        "maintenance_roster",
+        "reliability_model_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.reactive_maintenance",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: reactive_labor_h",
+      "positiveContextId": "maintenance",
+      "sourceTables": [
+        "base.failures",
+        "base.jobs",
+        "base.pm_tasks",
+        "base.work_orders",
+        "failure_classifications",
+        "maintenance_assignments",
+        "maintenance_backlog_tasks",
+        "maintenance_labor_entries",
+        "maintenance_roster",
+        "reliability_model_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.planned_maintenance",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: planned_labor_h",
+      "positiveContextId": "maintenance",
+      "sourceTables": [
+        "base.failures",
+        "base.jobs",
+        "base.pm_tasks",
+        "base.work_orders",
+        "failure_classifications",
+        "maintenance_assignments",
+        "maintenance_backlog_tasks",
+        "maintenance_labor_entries",
+        "maintenance_roster",
+        "reliability_model_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.pm_compliance",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "",
+      "positiveContextId": "maintenance",
+      "sourceTables": [
+        "base.failures",
+        "base.jobs",
+        "base.pm_tasks",
+        "base.work_orders",
+        "failure_classifications",
+        "maintenance_assignments",
+        "maintenance_backlog_tasks",
+        "maintenance_labor_entries",
+        "maintenance_roster",
+        "reliability_model_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.schedule_compliance_maintenance",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: maintenance_jobs_as_planned",
+      "positiveContextId": "maintenance",
+      "sourceTables": [
+        "base.failures",
+        "base.jobs",
+        "base.pm_tasks",
+        "base.work_orders",
+        "failure_classifications",
+        "maintenance_assignments",
+        "maintenance_backlog_tasks",
+        "maintenance_labor_entries",
+        "maintenance_roster",
+        "reliability_model_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.maintenance_backlog",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: backlog_labor_h",
+      "positiveContextId": "maintenance",
+      "sourceTables": [
+        "base.failures",
+        "base.jobs",
+        "base.pm_tasks",
+        "base.work_orders",
+        "failure_classifications",
+        "maintenance_assignments",
+        "maintenance_backlog_tasks",
+        "maintenance_labor_entries",
+        "maintenance_roster",
+        "reliability_model_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.repeat_failure_rate",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: repeat_failures",
+      "positiveContextId": "maintenance",
+      "sourceTables": [
+        "base.failures",
+        "base.jobs",
+        "base.pm_tasks",
+        "base.work_orders",
+        "failure_classifications",
+        "maintenance_assignments",
+        "maintenance_backlog_tasks",
+        "maintenance_labor_entries",
+        "maintenance_roster",
+        "reliability_model_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.emergency_work",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: emergency_labor_h",
+      "positiveContextId": "maintenance",
+      "sourceTables": [
+        "base.failures",
+        "base.jobs",
+        "base.pm_tasks",
+        "base.work_orders",
+        "failure_classifications",
+        "maintenance_assignments",
+        "maintenance_backlog_tasks",
+        "maintenance_labor_entries",
+        "maintenance_roster",
+        "reliability_model_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.otif",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "OTIF uses due-order conjunction across all lines. Order grain differs from line grain.",
+      "positiveContextId": "delivery",
+      "sourceTables": [
+        "base.customer_orders",
+        "base.order_lines",
+        "base.shipments",
+        "fulfillment_allocations",
+        "shipment_quality"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.on_time_delivery_otd",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "OTIF uses due-order conjunction across all lines. Order grain differs from line grain.",
+      "positiveContextId": "delivery",
+      "sourceTables": [
+        "base.customer_orders",
+        "base.order_lines",
+        "base.shipments",
+        "fulfillment_allocations",
+        "shipment_quality"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.in_full_delivery",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "OTIF uses due-order conjunction across all lines. Order grain differs from line grain.",
+      "positiveContextId": "delivery",
+      "sourceTables": [
+        "base.customer_orders",
+        "base.order_lines",
+        "base.shipments",
+        "fulfillment_allocations",
+        "shipment_quality"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.fill_rate",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: immediately_shipped_units",
+      "positiveContextId": "immediate_fill",
+      "sourceTables": [
+        "immediate_fulfillment_receipts",
+        "immediate_orders",
+        "immediate_shipments"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.perfect_order_rate",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "OTIF uses due-order conjunction across all lines. Order grain differs from line grain.",
+      "positiveContextId": "delivery",
+      "sourceTables": [
+        "base.customer_orders",
+        "base.order_lines",
+        "base.shipments",
+        "fulfillment_allocations",
+        "shipment_quality"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.late_order_rate",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "OTIF uses due-order conjunction across all lines. Order grain differs from line grain.",
+      "positiveContextId": "delivery",
+      "sourceTables": [
+        "base.customer_orders",
+        "base.order_lines",
+        "base.shipments",
+        "fulfillment_allocations",
+        "shipment_quality"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.past_due_quantity",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: past_due_remaining_qty",
+      "positiveContextId": "delivery",
+      "sourceTables": [
+        "base.customer_orders",
+        "base.order_lines",
+        "base.shipments",
+        "fulfillment_allocations",
+        "shipment_quality"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.average_delivery_delay",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: late_days_sum",
+      "positiveContextId": "delivery",
+      "sourceTables": [
+        "base.customer_orders",
+        "base.order_lines",
+        "base.shipments",
+        "fulfillment_allocations",
+        "shipment_quality"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.inventory_turns",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: annual_cogs",
+      "positiveContextId": "annual_inventory_turns",
+      "sourceTables": [
+        "annual_inventory_coverage",
+        "annual_inventory_transactions",
+        "financial_postings"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.inventory_turns_period",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: period_cogs",
+      "positiveContextId": "inventory_finance",
+      "sourceTables": [
+        "base.cost_ledger",
+        "base.inventory_items",
+        "base.inventory_transactions",
+        "financial_postings",
+        "inventory_classifications",
+        "inventory_counts",
+        "inventory_coverage",
+        "warehouse_dispatches",
+        "warehouse_stock_movements"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.inventory_days_dio",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: average_inventory_value",
+      "positiveContextId": "inventory_finance",
+      "sourceTables": [
+        "base.cost_ledger",
+        "base.inventory_items",
+        "base.inventory_transactions",
+        "financial_postings",
+        "inventory_classifications",
+        "inventory_counts",
+        "inventory_coverage",
+        "warehouse_dispatches",
+        "warehouse_stock_movements"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.raw_material_days",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: average_rm_value",
+      "positiveContextId": "inventory_finance",
+      "sourceTables": [
+        "base.cost_ledger",
+        "base.inventory_items",
+        "base.inventory_transactions",
+        "financial_postings",
+        "inventory_classifications",
+        "inventory_counts",
+        "inventory_coverage",
+        "warehouse_dispatches",
+        "warehouse_stock_movements"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.wip_days_value",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: average_wip_value",
+      "positiveContextId": "inventory_finance",
+      "sourceTables": [
+        "base.cost_ledger",
+        "base.inventory_items",
+        "base.inventory_transactions",
+        "financial_postings",
+        "inventory_classifications",
+        "inventory_counts",
+        "inventory_coverage",
+        "warehouse_dispatches",
+        "warehouse_stock_movements"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.wip_days_units",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: average_wip_units",
+      "positiveContextId": "steady_wip_flow",
+      "sourceTables": [
+        "wip_unit_journeys"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.finished_goods_days",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: average_fg_value",
+      "positiveContextId": "inventory_finance",
+      "sourceTables": [
+        "base.cost_ledger",
+        "base.inventory_items",
+        "base.inventory_transactions",
+        "financial_postings",
+        "inventory_classifications",
+        "inventory_counts",
+        "inventory_coverage",
+        "warehouse_dispatches",
+        "warehouse_stock_movements"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.wip_units",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: snapshot_wip_units",
+      "positiveContextId": "inventory_finance",
+      "sourceTables": [
+        "base.cost_ledger",
+        "base.inventory_items",
+        "base.inventory_transactions",
+        "financial_postings",
+        "inventory_classifications",
+        "inventory_counts",
+        "inventory_coverage",
+        "warehouse_dispatches",
+        "warehouse_stock_movements"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.inventory_accuracy",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: inventory_correct_records",
+      "positiveContextId": "inventory_finance",
+      "sourceTables": [
+        "base.cost_ledger",
+        "base.inventory_items",
+        "base.inventory_transactions",
+        "financial_postings",
+        "inventory_classifications",
+        "inventory_counts",
+        "inventory_coverage",
+        "warehouse_dispatches",
+        "warehouse_stock_movements"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.obsolete_inventory",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: obsolete_value",
+      "positiveContextId": "inventory_finance",
+      "sourceTables": [
+        "base.cost_ledger",
+        "base.inventory_items",
+        "base.inventory_transactions",
+        "financial_postings",
+        "inventory_classifications",
+        "inventory_counts",
+        "inventory_coverage",
+        "warehouse_dispatches",
+        "warehouse_stock_movements"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.excess_inventory",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: excess_value",
+      "positiveContextId": "inventory_finance",
+      "sourceTables": [
+        "base.cost_ledger",
+        "base.inventory_items",
+        "base.inventory_transactions",
+        "financial_postings",
+        "inventory_classifications",
+        "inventory_counts",
+        "inventory_coverage",
+        "warehouse_dispatches",
+        "warehouse_stock_movements"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.little_s_law",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: average_wip_units",
+      "positiveContextId": "steady_wip_flow",
+      "sourceTables": [
+        "wip_unit_journeys"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.labor_productivity",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.labor_shifts",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.labor_efficiency",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.labor_shifts",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.standard_hours_earned",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: standard_labor_h_per_unit",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.labor_shifts",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.labor_utilization",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.labor_shifts",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.direct_labor_utilization",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.labor_shifts",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.overtime",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.labor_shifts",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.absenteeism_rate",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.labor_shifts",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.units_per_employee_hour",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.labor_shifts",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.labor_cost_per_unit",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: direct_labor_cost",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.labor_shifts",
+        "base.run_intervals",
+        "base.standards",
+        "job_cost_postings",
+        "job_cost_standards",
+        "material_issues",
+        "rework_tasks"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.manufacturing_cost_per_unit",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: manufacturing_cost",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.labor_shifts",
+        "base.run_intervals",
+        "base.standards",
+        "job_cost_postings",
+        "job_cost_standards",
+        "material_issues",
+        "rework_tasks"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.conversion_cost_per_unit",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: direct_labor_cost",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.labor_shifts",
+        "base.run_intervals",
+        "base.standards",
+        "job_cost_postings",
+        "job_cost_standards",
+        "material_issues",
+        "rework_tasks"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.scrap_cost",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: scrap_unit_cost",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.labor_shifts",
+        "base.run_intervals",
+        "base.standards",
+        "job_cost_postings",
+        "job_cost_standards",
+        "material_issues",
+        "rework_tasks"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.scrap_cost_share",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: scrap_cost_amount",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.labor_shifts",
+        "job_cost_postings",
+        "job_cost_standards",
+        "material_issues",
+        "rework_tasks"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.rework_cost",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: rework_labor_cost",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.labor_shifts",
+        "job_cost_postings",
+        "job_cost_standards",
+        "material_issues",
+        "rework_tasks"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.cost_variance",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: actual_cost",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.labor_shifts",
+        "job_cost_postings",
+        "job_cost_standards",
+        "material_issues",
+        "rework_tasks"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.cost_variance_percent",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: actual_cost",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.labor_shifts",
+        "job_cost_postings",
+        "job_cost_standards",
+        "material_issues",
+        "rework_tasks"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.material_usage_variance",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: actual_material_qty",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.labor_shifts",
+        "job_cost_postings",
+        "job_cost_standards",
+        "material_issues",
+        "rework_tasks"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.labor_efficiency_variance",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: actual_labor_h",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.labor_shifts",
+        "job_cost_postings",
+        "job_cost_standards",
+        "material_issues",
+        "rework_tasks"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.copq_cost_of_poor_quality",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Cost ledger amounts are synthetic estimates, never realized savings. Inventory COGS is absent; turns and DIO remain unavailable.",
+      "positiveContextId": "inventory_finance",
+      "sourceTables": [
+        "base.cost_ledger",
+        "base.inventory_items",
+        "base.inventory_transactions",
+        "financial_postings",
+        "inventory_classifications",
+        "inventory_counts",
+        "inventory_coverage",
+        "warehouse_dispatches",
+        "warehouse_stock_movements"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.cost_of_quality",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Cost ledger amounts are synthetic estimates, never realized savings. Inventory COGS is absent; turns and DIO remain unavailable.",
+      "positiveContextId": "inventory_finance",
+      "sourceTables": [
+        "base.cost_ledger",
+        "base.inventory_items",
+        "base.inventory_transactions",
+        "financial_postings",
+        "inventory_classifications",
+        "inventory_counts",
+        "inventory_coverage",
+        "warehouse_dispatches",
+        "warehouse_stock_movements"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.copq_sales",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: copq_amount",
+      "positiveContextId": "inventory_finance",
+      "sourceTables": [
+        "base.cost_ledger",
+        "base.inventory_items",
+        "base.inventory_transactions",
+        "financial_postings",
+        "inventory_classifications",
+        "inventory_counts",
+        "inventory_coverage",
+        "warehouse_dispatches",
+        "warehouse_stock_movements"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.warranty_cost",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: warranty_cost_amount",
+      "positiveContextId": "inventory_finance",
+      "sourceTables": [
+        "base.cost_ledger",
+        "base.inventory_items",
+        "base.inventory_transactions",
+        "financial_postings",
+        "inventory_classifications",
+        "inventory_counts",
+        "inventory_coverage",
+        "warehouse_dispatches",
+        "warehouse_stock_movements"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.energy_consumption",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "",
+      "positiveContextId": "resource_aligned_site1",
+      "sourceTables": [
+        "base.counts",
+        "base.daily_energy",
+        "base.jobs",
+        "resource_scope_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.energy_per_unit",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: good_units",
+      "positiveContextId": "resource_aligned_site1",
+      "sourceTables": [
+        "base.counts",
+        "base.daily_energy",
+        "base.jobs",
+        "resource_scope_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.energy_intensity",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: governed_production_measure",
+      "positiveContextId": "resource_aligned_site1",
+      "sourceTables": [
+        "base.counts",
+        "base.daily_energy",
+        "base.jobs",
+        "resource_scope_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.idle_energy",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "",
+      "positiveContextId": "resource_aligned_site1",
+      "sourceTables": [
+        "base.counts",
+        "base.daily_energy",
+        "base.jobs",
+        "resource_scope_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.peak_demand",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: interval_kw",
+      "positiveContextId": "peak_45min",
+      "sourceTables": [
+        "base.demand_intervals",
+        "demand_coverage"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.co_e_per_unit",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: co2e_kg",
+      "positiveContextId": "resource_aligned_site1",
+      "sourceTables": [
+        "base.counts",
+        "base.daily_energy",
+        "base.jobs",
+        "resource_scope_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.waste_per_unit",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: good_units",
+      "positiveContextId": "resource_aligned_site1",
+      "sourceTables": [
+        "base.counts",
+        "base.daily_energy",
+        "base.jobs",
+        "resource_scope_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.water_per_unit",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: good_units",
+      "positiveContextId": "resource_aligned_site1",
+      "sourceTables": [
+        "base.counts",
+        "base.daily_energy",
+        "base.jobs",
+        "resource_scope_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.constraint_lost_time",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: constraint_available_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "asset_calendar",
+        "base.counts",
+        "capacity_standards",
+        "constraint_designations",
+        "demand_commitments"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.constraint_yield",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: constraint_good_units",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "asset_calendar",
+        "base.counts",
+        "capacity_standards",
+        "constraint_designations",
+        "demand_commitments"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.throughput_contribution",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: sales",
+      "positiveContextId": "inventory_finance",
+      "sourceTables": [
+        "base.cost_ledger",
+        "base.inventory_items",
+        "base.inventory_transactions",
+        "financial_postings",
+        "inventory_classifications",
+        "inventory_counts",
+        "inventory_coverage",
+        "warehouse_dispatches",
+        "warehouse_stock_movements"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.trir",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: recordable_cases",
+      "positiveContextId": "safety_site1",
+      "sourceTables": [
+        "base.labor_shifts",
+        "base.safety_events",
+        "near_miss_events",
+        "safety_coverage"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.dart_rate",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: dart_cases",
+      "positiveContextId": "safety_site1",
+      "sourceTables": [
+        "base.labor_shifts",
+        "base.safety_events",
+        "near_miss_events",
+        "safety_coverage"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.lost_time_incident_rate",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: lost_time_cases",
+      "positiveContextId": "safety_site1",
+      "sourceTables": [
+        "base.labor_shifts",
+        "base.safety_events",
+        "near_miss_events",
+        "safety_coverage"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.near_miss_rate",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: near_misses",
+      "positiveContextId": "safety_site1",
+      "sourceTables": [
+        "base.labor_shifts",
+        "base.safety_events",
+        "near_miss_events",
+        "safety_coverage"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.availability_loss_time",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.performance_loss_time",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.quality_loss_units",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.quality_loss_time",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Production is the recorded eligible job cohort; unobserved assets/days are excluded, never filled with zero. Mixed-cycle time-weighted OEE is a proposed demo convention; count quality remains a separate definition.",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.lost_units",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: expected_units",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.counts",
+        "base.downtime_intervals",
+        "base.jobs",
+        "base.run_intervals",
+        "base.standards"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.unfavorable_gap_higher",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: target_value",
+      "positiveContextId": "production_comparison",
+      "sourceTables": [
+        "base.counts",
+        "base.jobs",
+        "base.standards",
+        "target_policies"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.unfavorable_gap_lower",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: actual_value",
+      "positiveContextId": "lower_benefit_gap",
+      "sourceTables": [
+        "base.downtime_intervals",
+        "base.jobs",
+        "target_policies"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.absolute_change",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: current_value",
+      "positiveContextId": "production_comparison",
+      "sourceTables": [
+        "base.counts",
+        "base.jobs",
+        "base.standards",
+        "target_policies"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.relative_percentage_change",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: current_value",
+      "positiveContextId": "production_comparison",
+      "sourceTables": [
+        "base.counts",
+        "base.jobs",
+        "base.standards",
+        "target_policies"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.target_variance_absolute",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: actual_value",
+      "positiveContextId": "production_comparison",
+      "sourceTables": [
+        "base.counts",
+        "base.jobs",
+        "base.standards",
+        "target_policies"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.target_variance_relative",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: actual_value",
+      "positiveContextId": "production_comparison",
+      "sourceTables": [
+        "base.counts",
+        "base.jobs",
+        "base.standards",
+        "target_policies"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.moving_average",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: last_n_values",
+      "positiveContextId": "production_comparison",
+      "sourceTables": [
+        "base.counts",
+        "base.jobs",
+        "base.standards",
+        "target_policies"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.rolling_change",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: current_value",
+      "positiveContextId": "production_comparison",
+      "sourceTables": [
+        "base.counts",
+        "base.jobs",
+        "base.standards",
+        "target_policies"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.trend_slope",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: time_offsets",
+      "positiveContextId": "production_comparison",
+      "sourceTables": [
+        "base.counts",
+        "base.jobs",
+        "base.standards",
+        "target_policies"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.volatility",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: values",
+      "positiveContextId": "production_comparison",
+      "sourceTables": [
+        "base.counts",
+        "base.jobs",
+        "base.standards",
+        "target_policies"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.category_contribution",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: category_loss",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.cost_rates",
+        "base.downtime_intervals",
+        "loss_reason_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.cumulative_contribution",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: ranked_cumulative_loss",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "base.cost_rates",
+        "base.downtime_intervals",
+        "loss_reason_policy"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.improvement_absolute",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: post_value",
+      "positiveContextId": "verified_improvement",
+      "sourceTables": [
+        "improvement_actions",
+        "verification_shifts",
+        "verification_stop_events",
+        "verified_case_design"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.improvement_relative",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: post_value",
+      "positiveContextId": "verified_improvement",
+      "sourceTables": [
+        "improvement_actions",
+        "verification_shifts",
+        "verification_stop_events",
+        "verified_case_design"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.sustained_improvement",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: last_n_values",
+      "positiveContextId": "verified_improvement",
+      "sourceTables": [
+        "improvement_actions",
+        "verification_shifts",
+        "verification_stop_events",
+        "verified_case_design"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.recurrence_rate",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: repeated_events",
+      "positiveContextId": "verified_improvement",
+      "sourceTables": [
+        "improvement_actions",
+        "verification_shifts",
+        "verification_stop_events",
+        "verified_case_design"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.action_closure_rate",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: closed_due_actions",
+      "positiveContextId": "verified_improvement",
+      "sourceTables": [
+        "improvement_actions",
+        "verification_shifts",
+        "verification_stop_events",
+        "verified_case_design"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.on_time_action_closure",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: on_time_closed_due_actions",
+      "positiveContextId": "verified_improvement",
+      "sourceTables": [
+        "improvement_actions",
+        "verification_shifts",
+        "verification_stop_events",
+        "verified_case_design"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.internal_setup_time",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: internal_setup_union_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "changeovers",
+        "setup_tasks"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.external_setup_time",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: external_setup_union_min",
+      "positiveContextId": "production_job01",
+      "sourceTables": [
+        "changeovers",
+        "setup_tasks"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.process_mean",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Raw sigma algebra is reproducible; supplied MSA/stability wording does not establish qualified capability. Cp/Cpk/Pp/Ppk are withheld in observed mode. Measurement context is TP-CHAR1 / TP-P1-R1-OP30; this is not an average across different characteristics.",
+      "positiveContextId": "qualified_capability",
+      "sourceTables": [
+        "calibrations",
+        "capability_policy",
+        "gauge_study_readings",
+        "gauges",
+        "qualified_characteristics",
+        "qualified_measurements",
+        "qualified_subgroups"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.overall_sigma",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Raw sigma algebra is reproducible; supplied MSA/stability wording does not establish qualified capability. Cp/Cpk/Pp/Ppk are withheld in observed mode. Measurement context is TP-CHAR1 / TP-P1-R1-OP30; this is not an average across different characteristics.",
+      "positiveContextId": "qualified_capability",
+      "sourceTables": [
+        "calibrations",
+        "capability_policy",
+        "gauge_study_readings",
+        "gauges",
+        "qualified_characteristics",
+        "qualified_measurements",
+        "qualified_subgroups"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.within_subgroup_sigma",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Raw sigma algebra is reproducible; supplied MSA/stability wording does not establish qualified capability. Cp/Cpk/Pp/Ppk are withheld in observed mode. Measurement context is TP-CHAR1 / TP-P1-R1-OP30; this is not an average across different characteristics.",
+      "positiveContextId": "qualified_capability",
+      "sourceTables": [
+        "calibrations",
+        "capability_policy",
+        "gauge_study_readings",
+        "gauges",
+        "qualified_characteristics",
+        "qualified_measurements",
+        "qualified_subgroups"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.standard_deviation",
+      "existingClientAvailability": "observed",
+      "existingClientReason": "Raw sigma algebra is reproducible; supplied MSA/stability wording does not establish qualified capability. Cp/Cpk/Pp/Ppk are withheld in observed mode. Measurement context is TP-CHAR1 / TP-P1-R1-OP30; this is not an average across different characteristics.",
+      "positiveContextId": "qualified_capability",
+      "sourceTables": [
+        "calibrations",
+        "capability_policy",
+        "gauge_study_readings",
+        "gauges",
+        "qualified_characteristics",
+        "qualified_measurements",
+        "qualified_subgroups"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    },
+    {
+      "metricId": "ekas.coefficient_of_variation",
+      "existingClientAvailability": "unsupported",
+      "existingClientReason": "Missing operand: values",
+      "positiveContextId": "qualified_capability",
+      "sourceTables": [
+        "calibrations",
+        "capability_policy",
+        "gauge_study_readings",
+        "gauges",
+        "qualified_characteristics",
+        "qualified_measurements",
+        "qualified_subgroups"
+      ],
+      "requiresServiceAggregationExtension": true,
+      "extension": "Implement context-aware raw-record aggregations in operandSources; no owner service changes made. Existing global query support is not claimed."
+    }
+  ]
+}

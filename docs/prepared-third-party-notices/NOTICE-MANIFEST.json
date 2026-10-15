@@ -1,0 +1,650 @@
+{
+  "status": "Prepared, not yet in built/static package",
+  "packages": [
+    {
+      "name": "@babel/runtime",
+      "version": "7.29.7",
+      "classification": "browser direct/transitive manifest graph",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "babel_runtime-LICENSE",
+          "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+        }
+      ]
+    },
+    {
+      "name": "@highcharts/dashboards",
+      "version": "4.2.0",
+      "classification": "browser direct/transitive manifest graph",
+      "declaredLicense": "https://www.highcharts.com/license",
+      "notices": [
+        {
+          "file": "highcharts_dashboards-LICENSE.txt",
+          "sha256": "84e53ada29bde02e706fe0bc35b6150cba7bb2497f470dda7fb786ea8af1bd03"
+        }
+      ]
+    },
+    {
+      "name": "@highcharts/grid-lite",
+      "version": "3.2.0",
+      "classification": "browser direct/transitive manifest graph",
+      "declaredLicense": "SEE LICENSE IN LICENSE.txt",
+      "notices": [
+        {
+          "file": "highcharts_grid-lite-LICENSE.txt",
+          "sha256": "591d60a43f90791ee34b86f313543981578ffb1d0976050b22a1477ce06b9663"
+        }
+      ]
+    },
+    {
+      "name": "@oxc-project/types",
+      "version": "0.143.0",
+      "classification": "build graph",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "oxc-project_types-LICENSE",
+          "sha256": "95ced5ecf1133fbf41d409b5555c86c344f83f3b019926057ddbc07cfdcc27b3"
+        }
+      ]
+    },
+    {
+      "name": "@rolldown/binding-linux-x64-gnu",
+      "version": "1.2.3",
+      "classification": "installed non-dev optional/export/types: browser inclusion unverified",
+      "declaredLicense": "MIT",
+      "notices": []
+    },
+    {
+      "name": "@rolldown/binding-linux-x64-musl",
+      "version": "1.2.3",
+      "classification": "installed non-dev optional/export/types: browser inclusion unverified",
+      "declaredLicense": "MIT",
+      "notices": []
+    },
+    {
+      "name": "@rolldown/pluginutils",
+      "version": "1.0.1",
+      "classification": "build graph",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "rolldown_pluginutils-LICENSE",
+          "sha256": "e1919b3b98b8bf6c1b99fcc60a0ed46027c97ac947432e1278446c9606f50161"
+        }
+      ]
+    },
+    {
+      "name": "@types/pako",
+      "version": "2.0.4",
+      "classification": "installed non-dev optional/export/types: browser inclusion unverified",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "types_pako-LICENSE",
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        }
+      ]
+    },
+    {
+      "name": "@types/raf",
+      "version": "3.4.3",
+      "classification": "browser direct/transitive manifest graph",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "types_raf-LICENSE",
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        }
+      ]
+    },
+    {
+      "name": "@types/trusted-types",
+      "version": "2.0.7",
+      "classification": "installed non-dev optional/export/types: browser inclusion unverified",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "types_trusted-types-LICENSE",
+          "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+        }
+      ]
+    },
+    {
+      "name": "base64-arraybuffer",
+      "version": "1.0.2",
+      "classification": "installed non-dev optional/export/types: browser inclusion unverified",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "base64-arraybuffer-LICENSE",
+          "sha256": "f3eca6ff762533fa5a77caf954a143e48afa204668cf97dce758c45a9e006be3"
+        }
+      ]
+    },
+    {
+      "name": "canvg",
+      "version": "3.0.11",
+      "classification": "browser direct/transitive manifest graph",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "canvg-LICENSE",
+          "sha256": "86622ffc909487e6029235d31503263b796895679b0926f4a4d6f02d2623fde0"
+        }
+      ]
+    },
+    {
+      "name": "core-js",
+      "version": "3.49.0",
+      "classification": "browser direct/transitive manifest graph",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "core-js-LICENSE",
+          "sha256": "b87653fff2d44426ab5cd4723cee3b1364dc8d35a0acdf098c54689543123bf8"
+        }
+      ]
+    },
+    {
+      "name": "css-line-break",
+      "version": "2.1.0",
+      "classification": "installed non-dev optional/export/types: browser inclusion unverified",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "css-line-break-LICENSE",
+          "sha256": "ce1ee0539f7fe1f7b75b76d121e674cb897c709c3e24ddba7f9a10fe2d0d88a5"
+        }
+      ]
+    },
+    {
+      "name": "cssesc",
+      "version": "3.0.0",
+      "classification": "installed non-dev optional/export/types: browser inclusion unverified",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "cssesc-LICENSE-MIT.txt",
+          "sha256": "483acb265f182907d1caf6cff9c16c96f31325ed23792832cc5d8b12d5f88c8a"
+        }
+      ]
+    },
+    {
+      "name": "detect-libc",
+      "version": "2.1.2",
+      "classification": "build graph",
+      "declaredLicense": "Apache-2.0",
+      "notices": [
+        {
+          "file": "detect-libc-LICENSE",
+          "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+        }
+      ]
+    },
+    {
+      "name": "dompurify",
+      "version": "3.4.16",
+      "classification": "installed non-dev optional/export/types: browser inclusion unverified",
+      "declaredLicense": "(MPL-2.0 OR Apache-2.0)",
+      "notices": [
+        {
+          "file": "dompurify-LICENSE",
+          "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+        },
+        {
+          "file": "dompurify-LICENSE-MPL",
+          "sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85"
+        }
+      ]
+    },
+    {
+      "name": "fast-png",
+      "version": "6.4.0",
+      "classification": "installed non-dev optional/export/types: browser inclusion unverified",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "fast-png-LICENSE",
+          "sha256": "47ec9747cf2c470a505fcb20f3ec2ff2e60ea4febaf2e1e7041a24fc369fac3c"
+        }
+      ]
+    },
+    {
+      "name": "fdir",
+      "version": "6.5.0",
+      "classification": "build graph",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "fdir-LICENSE",
+          "sha256": "9a39f2aadab11a3697edd668ff2d8ad885b649737b7ab4d3bf12b34e5ada0c86"
+        }
+      ]
+    },
+    {
+      "name": "fflate",
+      "version": "0.8.3",
+      "classification": "installed non-dev optional/export/types: browser inclusion unverified",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "fflate-LICENSE",
+          "sha256": "0a1df3a083d0c010560aa342e87959c8c1070e6fd54545741f083f22d0c8b551"
+        }
+      ]
+    },
+    {
+      "name": "font-family-papandreou",
+      "version": "0.2.0-patch2",
+      "classification": "installed non-dev optional/export/types: browser inclusion unverified",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "font-family-papandreou-LICENSE",
+          "sha256": "6358b25be58f3ef5efe9705f17a02b294abe47dc607d92c1cb2d714a7def8d45"
+        }
+      ]
+    },
+    {
+      "name": "highcharts",
+      "version": "12.6.0",
+      "classification": "browser direct/transitive manifest graph",
+      "declaredLicense": "https://www.highcharts.com/license",
+      "notices": [
+        {
+          "file": "highcharts-LICENSE.txt",
+          "sha256": "84e53ada29bde02e706fe0bc35b6150cba7bb2497f470dda7fb786ea8af1bd03"
+        }
+      ]
+    },
+    {
+      "name": "html2canvas",
+      "version": "1.4.1",
+      "classification": "installed non-dev optional/export/types: browser inclusion unverified",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "html2canvas-LICENSE",
+          "sha256": "86200ce4e92d9a22c41c8647a55f7a5fddff304ff89b4d36ecc699ed8c123d2c"
+        }
+      ]
+    },
+    {
+      "name": "iobuffer",
+      "version": "5.4.0",
+      "classification": "installed non-dev optional/export/types: browser inclusion unverified",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "iobuffer-LICENSE",
+          "sha256": "1c22118fd112e8c394a5ec0598d2e2dfcdc19b3e1055ac3eaccdb2522b777335"
+        }
+      ]
+    },
+    {
+      "name": "jspdf",
+      "version": "4.2.1",
+      "classification": "installed non-dev optional/export/types: browser inclusion unverified",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "jspdf-LICENSE",
+          "sha256": "dc388ec35ff463288cdde3588a36fd4ed12a45deff053243b37309acc9ef583b"
+        }
+      ]
+    },
+    {
+      "name": "lightningcss",
+      "version": "1.33.0",
+      "classification": "build graph",
+      "declaredLicense": "MPL-2.0",
+      "notices": [
+        {
+          "file": "lightningcss-LICENSE",
+          "sha256": "5eba353fe5076ac3432177f8ab1cf75e3afcd0584251e37c3bfead5f447d040e"
+        }
+      ]
+    },
+    {
+      "name": "lightningcss-linux-x64-gnu",
+      "version": "1.33.0",
+      "classification": "installed non-dev optional/export/types: browser inclusion unverified",
+      "declaredLicense": "MPL-2.0",
+      "notices": [
+        {
+          "file": "lightningcss-linux-x64-gnu-LICENSE",
+          "sha256": "5eba353fe5076ac3432177f8ab1cf75e3afcd0584251e37c3bfead5f447d040e"
+        }
+      ]
+    },
+    {
+      "name": "lightningcss-linux-x64-musl",
+      "version": "1.33.0",
+      "classification": "installed non-dev optional/export/types: browser inclusion unverified",
+      "declaredLicense": "MPL-2.0",
+      "notices": [
+        {
+          "file": "lightningcss-linux-x64-musl-LICENSE",
+          "sha256": "5eba353fe5076ac3432177f8ab1cf75e3afcd0584251e37c3bfead5f447d040e"
+        }
+      ]
+    },
+    {
+      "name": "nanoid",
+      "version": "3.3.18",
+      "classification": "build graph",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "nanoid-LICENSE",
+          "sha256": "da4db1480d9beea3483a2eda5c53b22238d0827d57da162b48f122e04d2d9987"
+        }
+      ]
+    },
+    {
+      "name": "pako",
+      "version": "2.1.0",
+      "classification": "installed non-dev optional/export/types: browser inclusion unverified",
+      "declaredLicense": "(MIT AND Zlib)",
+      "notices": [
+        {
+          "file": "pako-LICENSE",
+          "sha256": "a04665b3b2de56c66730c1f720f528175739e4104f79073614aa611da1e85539"
+        }
+      ]
+    },
+    {
+      "name": "performance-now",
+      "version": "2.1.0",
+      "classification": "browser direct/transitive manifest graph",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "performance-now-license.txt",
+          "sha256": "c3af1272f30870168177e888b184c1f802e5081e75a126c794670c0b562d3783"
+        }
+      ]
+    },
+    {
+      "name": "picocolors",
+      "version": "1.1.1",
+      "classification": "build graph",
+      "declaredLicense": "ISC",
+      "notices": [
+        {
+          "file": "picocolors-LICENSE",
+          "sha256": "6582629e2979466878f6014313dcc2f3756c9616148682227ce3063dde310750"
+        }
+      ]
+    },
+    {
+      "name": "picomatch",
+      "version": "4.0.5",
+      "classification": "build graph",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "picomatch-LICENSE",
+          "sha256": "d0cd141b0c322fded5dfad1d4645bb2fedfc05b7321fe1009469638190d59ef9"
+        }
+      ]
+    },
+    {
+      "name": "postcss",
+      "version": "8.5.26",
+      "classification": "build graph",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "postcss-LICENSE",
+          "sha256": "5be1f3465bba68a626777f984878814aaf35e7ef8e9fd314d469bcf887050fb8"
+        }
+      ]
+    },
+    {
+      "name": "raf",
+      "version": "3.4.1",
+      "classification": "browser direct/transitive manifest graph",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "raf-LICENSE",
+          "sha256": "6b2194e178545b3dcde4a40a09b5f6c00bd9b5b695db0c826c14995c6c9b4ec5"
+        }
+      ]
+    },
+    {
+      "name": "react",
+      "version": "19.2.7",
+      "classification": "browser direct/transitive manifest graph",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "react-LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        }
+      ]
+    },
+    {
+      "name": "react-dom",
+      "version": "19.2.7",
+      "classification": "browser direct/transitive manifest graph",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "react-dom-LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        }
+      ]
+    },
+    {
+      "name": "regenerator-runtime",
+      "version": "0.13.11",
+      "classification": "browser direct/transitive manifest graph",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "regenerator-runtime-LICENSE",
+          "sha256": "51887a3d47051ac2fce1210562e5b9fe0830a8a8fabeb272c2d586eeb18a05fd"
+        }
+      ]
+    },
+    {
+      "name": "rgbcolor",
+      "version": "1.0.1",
+      "classification": "browser direct/transitive manifest graph",
+      "declaredLicense": "MIT OR SEE LICENSE IN FEEL-FREE.md",
+      "notices": [
+        {
+          "file": "rgbcolor-LICENSE.md",
+          "sha256": "86045408b01f66f9319a2fe7bc7f7e115f272956ac44d2d840fc00127124a78c"
+        },
+        {
+          "file": "rgbcolor-FEEL-FREE.md",
+          "sha256": "b5aa5b115427980bda4fb6cecdff9f6eab4adafae5ab3aeaf00e0a9ca7f0c780"
+        }
+      ]
+    },
+    {
+      "name": "rolldown",
+      "version": "1.2.3",
+      "classification": "build graph",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "rolldown-LICENSE",
+          "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734"
+        },
+        {
+          "file": "rolldown-THIRD-PARTY-LICENSE",
+          "sha256": "a877291d800ed43692f3f9ae09d8e01cc6f7293ad39d43896059c188ffbb8b7c"
+        }
+      ]
+    },
+    {
+      "name": "scheduler",
+      "version": "0.27.0",
+      "classification": "browser direct/transitive manifest graph",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "scheduler-LICENSE",
+          "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+        }
+      ]
+    },
+    {
+      "name": "source-map-js",
+      "version": "1.2.2",
+      "classification": "build graph",
+      "declaredLicense": "BSD-3-Clause",
+      "notices": [
+        {
+          "file": "source-map-js-LICENSE",
+          "sha256": "6cb0631f71c7749763fd3dd1d5bee52dd1070ec17f2edc1710079ad070bd2fbd"
+        }
+      ]
+    },
+    {
+      "name": "specificity",
+      "version": "0.4.1",
+      "classification": "installed non-dev optional/export/types: browser inclusion unverified",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "specificity-LICENSE",
+          "sha256": "b2aeda654259630ed67b54e9134623c38cfb11d26201730cdc6d311d3c7c78ed"
+        }
+      ]
+    },
+    {
+      "name": "stackblur-canvas",
+      "version": "2.7.0",
+      "classification": "browser direct/transitive manifest graph",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "stackblur-canvas-LICENSE-MIT.txt",
+          "sha256": "609e3755e6e7a048b8ca85de25233cfc4f62ec7cb9afeea603269a03b73db197"
+        }
+      ]
+    },
+    {
+      "name": "svg-pathdata",
+      "version": "6.0.3",
+      "classification": "browser direct/transitive manifest graph",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "svg-pathdata-LICENSE",
+          "sha256": "cd05e8e2516f46a2cd79494bbabdea76f874e8d049dbc19a76b367534a4e013e"
+        }
+      ]
+    },
+    {
+      "name": "svg2pdf.js",
+      "version": "2.7.0",
+      "classification": "installed non-dev optional/export/types: browser inclusion unverified",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "svg2pdf.js-LICENSE",
+          "sha256": "c56fccd1f9b617c44b9e83477cabcbbbceef1d4adea859cfcd34442a8e3b91bd"
+        }
+      ]
+    },
+    {
+      "name": "svgpath",
+      "version": "2.6.0",
+      "classification": "installed non-dev optional/export/types: browser inclusion unverified",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "svgpath-LICENSE",
+          "sha256": "6caa5f5c4e6957535e77e3eb2a4cc8cdf9242040976faaf01dcc8c3934e2ca4f"
+        }
+      ]
+    },
+    {
+      "name": "text-segmentation",
+      "version": "1.0.3",
+      "classification": "installed non-dev optional/export/types: browser inclusion unverified",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "text-segmentation-LICENSE",
+          "sha256": "8b00952cd8d0f5cbbefb13576778e1185dc963943151353d90c4e14a5a4caf40"
+        }
+      ]
+    },
+    {
+      "name": "tinyglobby",
+      "version": "0.2.17",
+      "classification": "build graph",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "tinyglobby-LICENSE",
+          "sha256": "22c68811e174cbbfb3813d4135918df4f540959c14d872e601d9abe83d3cde8f"
+        }
+      ]
+    },
+    {
+      "name": "typescript",
+      "version": "6.0.3",
+      "classification": "build graph",
+      "declaredLicense": "Apache-2.0",
+      "notices": [
+        {
+          "file": "typescript-LICENSE.txt",
+          "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47"
+        },
+        {
+          "file": "typescript-ThirdPartyNoticeText.txt",
+          "sha256": "1af3c68039c57e539422da82a4faada506ce6d0ea6f90e0b699d02dbcdb7a90c"
+        }
+      ]
+    },
+    {
+      "name": "utrie",
+      "version": "1.0.2",
+      "classification": "installed non-dev optional/export/types: browser inclusion unverified",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "utrie-LICENSE",
+          "sha256": "8b00952cd8d0f5cbbefb13576778e1185dc963943151353d90c4e14a5a4caf40"
+        }
+      ]
+    },
+    {
+      "name": "vite",
+      "version": "8.2.1",
+      "classification": "build graph",
+      "declaredLicense": "MIT",
+      "notices": [
+        {
+          "file": "vite-LICENSE.md",
+          "sha256": "387dd7baa307083401a27c58c362c30832f5ba1dba84f10cc22c33401523f45c"
+        }
+      ]
+    },
+    {
+      "name": "retained Tailwind stylesheet",
+      "classification": "Existing local public notice; historical stylesheet provenance",
+      "notices": [
+        {
+          "file": "tailwindcss-MIT.txt",
+          "sha256": "60e0b68c0f35c078eef3a5d29419d0b03ff84ec1df9c3f9d6e39a519a5ae7985"
+        }
+      ]
+    }
+  ],
+  "unresolvedStandaloneNotices": [
+    "@rolldown/binding-linux-x64-gnu",
+    "@rolldown/binding-linux-x64-musl"
+  ],
+  "limitations": "Metadata graph is not exact bundle inclusion, licence entitlement or legal clearance."
+}

@@ -1,0 +1,2259 @@
+{
+  "schemaVersion": 2,
+  "candidateIdentity": {
+    "version": "V84",
+    "status": "PROVISIONAL_REVIEW",
+    "createdAt": "2026-10-12T16:00:21.875007+00:00",
+    "sourceSha256": "bd402f082b3edd1202bfeb07d7c471124b9cd086efd43274892fdbe348f0430a",
+    "staticSha256": "6c572e8be406796fa6626b76660c381543ab45a928f61819de2ccab1cce3341b",
+    "serverSha256": "8685d1da727d2f15c9b531c75bcf94655da1c134712a479ab3cd1e5b360e8aa8",
+    "independentAccepted": false,
+    "zip": "EKAS_V84_PROVISIONAL_REVIEW.zip",
+    "zipSha256": "6b4ef145bc28d4bd136ad5a97b18bbb6818977edd582ad7608c9a721d044a1c7",
+    "zipBytes": 8294717,
+    "manifestFiles": 1135,
+    "zipEntries": 1136
+  },
+  "status": "PROVISIONAL_DOCUMENTATION",
+  "wholeAccepted": 0,
+  "counts": {
+    "master": 46,
+    "ux": 36,
+    "total": 82
+  },
+  "sources": {
+    "master46": {
+      "path": "docs/COMPLETION-MASTER-20261011.txt",
+      "sha256": "98023cd5f34edf12983aa4d458ab4383218ab948c6075e1f50ef2e4bfb8bba70"
+    },
+    "ux36": {
+      "path": "docs/UX-MASTER-36.txt",
+      "libraryFileId": "libfile_1d34c5f6879081919535a75f9a2d3c14",
+      "bytes": 24108,
+      "sha256": "4df003a796fabc0ef236a507440521a4e5e355f74155604c32c4f65cbed5f716"
+    }
+  },
+  "requirements": [
+    {
+      "id": "M01",
+      "source": "master46",
+      "requirement": "One exact final build exists.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "delivery",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Documentation, provenance/licence, actual integration and independent/human final verdicts remain required.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-53"
+        ],
+        "trueNorth": [
+          "TN-29",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Frozen V84 source/static/server and portable editable-source ZIP saved to Library; Node-only extraction smoke has zero external fetch attempts.",
+      "demonstratedEvidence": "1631 same-source tests in fixed serial groups; effective43 compiled checks with qualified timeout/recheck.",
+      "plannedOrUnproven": "Documentation, provenance/licence, actual integration and independent/human final verdicts remain required."
+    },
+    {
+      "id": "M02",
+      "source": "master46",
+      "requirement": "All known current defects are closed.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "delivery",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Documentation, provenance/licence, actual integration and independent/human final verdicts remain required.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-20",
+          "MIW-50"
+        ],
+        "trueNorth": [
+          "TN-07",
+          "TN-26",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Frozen V84 source/static/server and portable editable-source ZIP saved to Library; Node-only extraction smoke has zero external fetch attempts.",
+      "demonstratedEvidence": "1631 same-source tests in fixed serial groups; effective43 compiled checks with qualified timeout/recheck.",
+      "plannedOrUnproven": "Documentation, provenance/licence, actual integration and independent/human final verdicts remain required."
+    },
+    {
+      "id": "M03",
+      "source": "master46",
+      "requirement": "V72 comparison failures are resolved.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-20",
+          "MIW-50"
+        ],
+        "trueNorth": [
+          "TN-07",
+          "TN-26",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "M04",
+      "source": "master46",
+      "requirement": "V71 Guide defect is closed.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "guide",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 required missing/blocked/error/resume states and readable disabled controls.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-21",
+          "MIW-42"
+        ],
+        "trueNorth": [
+          "TN-02",
+          "TN-28",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Contextual guidance and ownership navigation controls exist.",
+      "demonstratedEvidence": "Source/compiled guidance checks; broad actual-user recovery remains unaccepted.",
+      "plannedOrUnproven": "Exact-V84 required missing/blocked/error/resume states and readable disabled controls."
+    },
+    {
+      "id": "M05",
+      "source": "master46",
+      "requirement": "Full conversational chat works naturally.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "conversation",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Independent exact-V84 multi-turn review plus authorized actual-model acceptance.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-30",
+          "MIW-31",
+          "MIW-32",
+          "MIW-33",
+          "MIW-34",
+          "MIW-35",
+          "MIW-36",
+          "MIW-37",
+          "MIW-38",
+          "MIW-39",
+          "MIW-40",
+          "MIW-41",
+          "MIW-42"
+        ],
+        "trueNorth": [
+          "TN-01",
+          "TN-02",
+          "TN-03",
+          "TN-04",
+          "TN-06",
+          "TN-18",
+          "TN-28",
+          "TN-30",
+          "TN-31",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Bounded deterministic interpretation, retained scope, corrections, metric/entity/calendar operands and versioned historical replay have source/compiled coverage.",
+      "demonstratedEvidence": "Actual unrestricted OpenAI conversation is not demonstrated.",
+      "plannedOrUnproven": "Independent exact-V84 multi-turn review plus authorized actual-model acceptance."
+    },
+    {
+      "id": "M06",
+      "source": "master46",
+      "requirement": "Context survives follow-ups/corrections.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "conversation",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Independent exact-V84 multi-turn review plus authorized actual-model acceptance.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-19",
+          "MIW-41",
+          "MIW-43"
+        ],
+        "trueNorth": [
+          "TN-03",
+          "TN-07",
+          "TN-26",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Bounded deterministic interpretation, retained scope, corrections, metric/entity/calendar operands and versioned historical replay have source/compiled coverage.",
+      "demonstratedEvidence": "Actual unrestricted OpenAI conversation is not demonstrated.",
+      "plannedOrUnproven": "Independent exact-V84 multi-turn review plus authorized actual-model acceptance."
+    },
+    {
+      "id": "M07",
+      "source": "master46",
+      "requirement": "Metric switching works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "conversation",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Independent exact-V84 multi-turn review plus authorized actual-model acceptance.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-39",
+          "MIW-41"
+        ],
+        "trueNorth": [
+          "TN-03",
+          "TN-04",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Bounded deterministic interpretation, retained scope, corrections, metric/entity/calendar operands and versioned historical replay have source/compiled coverage.",
+      "demonstratedEvidence": "Actual unrestricted OpenAI conversation is not demonstrated.",
+      "plannedOrUnproven": "Independent exact-V84 multi-turn review plus authorized actual-model acceptance."
+    },
+    {
+      "id": "M08",
+      "source": "master46",
+      "requirement": "No wrong-metric fallback.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Independent domain and native adverse cases; separate security authority/review remains required.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-39",
+          "MIW-41"
+        ],
+        "trueNorth": [
+          "TN-03",
+          "TN-04",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Exact source/version/clock/units/denominator eligibility and guarded lifecycle transitions have regression coverage.",
+      "demonstratedEvidence": "Prior bounded evidence and V84 local tests; no whole security or invariant verdict.",
+      "plannedOrUnproven": "Independent domain and native adverse cases; separate security authority/review remains required."
+    },
+    {
+      "id": "M09",
+      "source": "master46",
+      "requirement": "Daily plant review works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-29"
+        ],
+        "trueNorth": [
+          "TN-05",
+          "TN-06",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Synthetic owned actions, assignment acceptance, authorization, performed-work proof, verification, safety, acceptance, sustain and recurrence/reopen are implemented with typed guards.",
+      "demonstratedEvidence": "Prior V81 visible three-case cycle-2 journeys; V84 compiled positive journeys are scripted and chart-mocked.",
+      "plannedOrUnproven": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording."
+    },
+    {
+      "id": "M10",
+      "source": "master46",
+      "requirement": "Goal exceptions lead into investigation.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-29",
+          "MIW-38",
+          "MIW-40"
+        ],
+        "trueNorth": [
+          "TN-01",
+          "TN-05",
+          "TN-06",
+          "TN-18",
+          "TN-30",
+          "TN-31",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Synthetic owned actions, assignment acceptance, authorization, performed-work proof, verification, safety, acceptance, sustain and recurrence/reopen are implemented with typed guards.",
+      "demonstratedEvidence": "Prior V81 visible three-case cycle-2 journeys; V84 compiled positive journeys are scripted and chart-mocked.",
+      "plannedOrUnproven": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording."
+    },
+    {
+      "id": "M11",
+      "source": "master46",
+      "requirement": "Investigation persists.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-19",
+          "MIW-43",
+          "MIW-50"
+        ],
+        "trueNorth": [
+          "TN-03",
+          "TN-07",
+          "TN-26",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Synthetic owned actions, assignment acceptance, authorization, performed-work proof, verification, safety, acceptance, sustain and recurrence/reopen are implemented with typed guards.",
+      "demonstratedEvidence": "Prior V81 visible three-case cycle-2 journeys; V84 compiled positive journeys are scripted and chart-mocked.",
+      "plannedOrUnproven": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording."
+    },
+    {
+      "id": "M12",
+      "source": "master46",
+      "requirement": "Loss bridge works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-02",
+          "MIW-03",
+          "MIW-04"
+        ],
+        "trueNorth": [
+          "TN-04",
+          "TN-08",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Synthetic owned actions, assignment acceptance, authorization, performed-work proof, verification, safety, acceptance, sustain and recurrence/reopen are implemented with typed guards.",
+      "demonstratedEvidence": "Prior V81 visible three-case cycle-2 journeys; V84 compiled positive journeys are scripted and chart-mocked.",
+      "plannedOrUnproven": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording."
+    },
+    {
+      "id": "M13",
+      "source": "master46",
+      "requirement": "Contributors work.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-05",
+          "MIW-07"
+        ],
+        "trueNorth": [
+          "TN-09",
+          "TN-25",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Synthetic owned actions, assignment acceptance, authorization, performed-work proof, verification, safety, acceptance, sustain and recurrence/reopen are implemented with typed guards.",
+      "demonstratedEvidence": "Prior V81 visible three-case cycle-2 journeys; V84 compiled positive journeys are scripted and chart-mocked.",
+      "plannedOrUnproven": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording."
+    },
+    {
+      "id": "M14",
+      "source": "master46",
+      "requirement": "Evidence is traceable.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-06",
+          "MIW-07",
+          "MIW-44"
+        ],
+        "trueNorth": [
+          "TN-09",
+          "TN-10",
+          "TN-25",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "M15",
+      "source": "master46",
+      "requirement": "Facts/hypotheses/causes remain distinct.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Independent domain and native adverse cases; separate security authority/review remains required.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-08",
+          "MIW-45"
+        ],
+        "trueNorth": [
+          "TN-11",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Exact source/version/clock/units/denominator eligibility and guarded lifecycle transitions have regression coverage.",
+      "demonstratedEvidence": "Prior bounded evidence and V84 local tests; no whole security or invariant verdict.",
+      "plannedOrUnproven": "Independent domain and native adverse cases; separate security authority/review remains required."
+    },
+    {
+      "id": "M16",
+      "source": "master46",
+      "requirement": "Ownership works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-09",
+          "MIW-46"
+        ],
+        "trueNorth": [
+          "TN-12",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Synthetic owned actions, assignment acceptance, authorization, performed-work proof, verification, safety, acceptance, sustain and recurrence/reopen are implemented with typed guards.",
+      "demonstratedEvidence": "Prior V81 visible three-case cycle-2 journeys; V84 compiled positive journeys are scripted and chart-mocked.",
+      "plannedOrUnproven": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording."
+    },
+    {
+      "id": "M17",
+      "source": "master46",
+      "requirement": "Assignment acceptance works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-46"
+        ],
+        "trueNorth": [
+          "TN-12",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Synthetic owned actions, assignment acceptance, authorization, performed-work proof, verification, safety, acceptance, sustain and recurrence/reopen are implemented with typed guards.",
+      "demonstratedEvidence": "Prior V81 visible three-case cycle-2 journeys; V84 compiled positive journeys are scripted and chart-mocked.",
+      "plannedOrUnproven": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording."
+    },
+    {
+      "id": "M18",
+      "source": "master46",
+      "requirement": "Authorization works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-47",
+          "MIW-55"
+        ],
+        "trueNorth": [
+          "TN-13",
+          "TN-14",
+          "TN-23",
+          "TN-24",
+          "TN-33",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Synthetic owned actions, assignment acceptance, authorization, performed-work proof, verification, safety, acceptance, sustain and recurrence/reopen are implemented with typed guards.",
+      "demonstratedEvidence": "Prior V81 visible three-case cycle-2 journeys; V84 compiled positive journeys are scripted and chart-mocked.",
+      "plannedOrUnproven": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording."
+    },
+    {
+      "id": "M19",
+      "source": "master46",
+      "requirement": "Performed work is distinct.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Independent domain and native adverse cases; separate security authority/review remains required.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-11",
+          "MIW-47"
+        ],
+        "trueNorth": [
+          "TN-13",
+          "TN-14",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Exact source/version/clock/units/denominator eligibility and guarded lifecycle transitions have regression coverage.",
+      "demonstratedEvidence": "Prior bounded evidence and V84 local tests; no whole security or invariant verdict.",
+      "plannedOrUnproven": "Independent domain and native adverse cases; separate security authority/review remains required."
+    },
+    {
+      "id": "M20",
+      "source": "master46",
+      "requirement": "Verification works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-12",
+          "MIW-13",
+          "MIW-48"
+        ],
+        "trueNorth": [
+          "TN-08",
+          "TN-15",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Synthetic owned actions, assignment acceptance, authorization, performed-work proof, verification, safety, acceptance, sustain and recurrence/reopen are implemented with typed guards.",
+      "demonstratedEvidence": "Prior V81 visible three-case cycle-2 journeys; V84 compiled positive journeys are scripted and chart-mocked.",
+      "plannedOrUnproven": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording."
+    },
+    {
+      "id": "M21",
+      "source": "master46",
+      "requirement": "Sustain works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-14",
+          "MIW-49"
+        ],
+        "trueNorth": [
+          "TN-16",
+          "TN-17",
+          "TN-18",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Synthetic owned actions, assignment acceptance, authorization, performed-work proof, verification, safety, acceptance, sustain and recurrence/reopen are implemented with typed guards.",
+      "demonstratedEvidence": "Prior V81 visible three-case cycle-2 journeys; V84 compiled positive journeys are scripted and chart-mocked.",
+      "plannedOrUnproven": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording."
+    },
+    {
+      "id": "M22",
+      "source": "master46",
+      "requirement": "Reopen works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-14",
+          "MIW-40",
+          "MIW-49"
+        ],
+        "trueNorth": [
+          "TN-01",
+          "TN-06",
+          "TN-16",
+          "TN-17",
+          "TN-18",
+          "TN-30",
+          "TN-31",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Synthetic owned actions, assignment acceptance, authorization, performed-work proof, verification, safety, acceptance, sustain and recurrence/reopen are implemented with typed guards.",
+      "demonstratedEvidence": "Prior V81 visible three-case cycle-2 journeys; V84 compiled positive journeys are scripted and chart-mocked.",
+      "plannedOrUnproven": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording."
+    },
+    {
+      "id": "M23",
+      "source": "master46",
+      "requirement": "Downtime case works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-26"
+        ],
+        "trueNorth": [
+          "TN-01",
+          "TN-06",
+          "TN-09",
+          "TN-18",
+          "TN-19",
+          "TN-30",
+          "TN-31",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Synthetic owned actions, assignment acceptance, authorization, performed-work proof, verification, safety, acceptance, sustain and recurrence/reopen are implemented with typed guards.",
+      "demonstratedEvidence": "Prior V81 visible three-case cycle-2 journeys; V84 compiled positive journeys are scripted and chart-mocked.",
+      "plannedOrUnproven": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording."
+    },
+    {
+      "id": "M24",
+      "source": "master46",
+      "requirement": "Speed-loss case works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-27"
+        ],
+        "trueNorth": [
+          "TN-01",
+          "TN-18",
+          "TN-20",
+          "TN-30",
+          "TN-31",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Synthetic owned actions, assignment acceptance, authorization, performed-work proof, verification, safety, acceptance, sustain and recurrence/reopen are implemented with typed guards.",
+      "demonstratedEvidence": "Prior V81 visible three-case cycle-2 journeys; V84 compiled positive journeys are scripted and chart-mocked.",
+      "plannedOrUnproven": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording."
+    },
+    {
+      "id": "M25",
+      "source": "master46",
+      "requirement": "Quality-loss case works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-28"
+        ],
+        "trueNorth": [
+          "TN-01",
+          "TN-18",
+          "TN-21",
+          "TN-30",
+          "TN-31",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Synthetic owned actions, assignment acceptance, authorization, performed-work proof, verification, safety, acceptance, sustain and recurrence/reopen are implemented with typed guards.",
+      "demonstratedEvidence": "Prior V81 visible three-case cycle-2 journeys; V84 compiled positive journeys are scripted and chart-mocked.",
+      "plannedOrUnproven": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording."
+    },
+    {
+      "id": "M26",
+      "source": "master46",
+      "requirement": "Guide works across required states.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "guide",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 required missing/blocked/error/resume states and readable disabled controls.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-21",
+          "MIW-22",
+          "MIW-23",
+          "MIW-42"
+        ],
+        "trueNorth": [
+          "TN-02",
+          "TN-27",
+          "TN-28",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Contextual guidance and ownership navigation controls exist.",
+      "demonstratedEvidence": "Source/compiled guidance checks; broad actual-user recovery remains unaccepted.",
+      "plannedOrUnproven": "Exact-V84 required missing/blocked/error/resume states and readable disabled controls."
+    },
+    {
+      "id": "M27",
+      "source": "master46",
+      "requirement": "Mock data drives real service behavior.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "delivery",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Documentation, provenance/licence, actual integration and independent/human final verdicts remain required.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-01",
+          "MIW-51",
+          "MIW-52"
+        ],
+        "trueNorth": [
+          "TN-01",
+          "TN-04",
+          "TN-22",
+          "TN-23",
+          "TN-30",
+          "TN-32",
+          "TN-33",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Frozen V84 source/static/server and portable editable-source ZIP saved to Library; Node-only extraction smoke has zero external fetch attempts.",
+      "demonstratedEvidence": "1631 same-source tests in fixed serial groups; effective43 compiled checks with qualified timeout/recheck.",
+      "plannedOrUnproven": "Documentation, provenance/licence, actual integration and independent/human final verdicts remain required."
+    },
+    {
+      "id": "M28",
+      "source": "master46",
+      "requirement": "UI does not require direct fixture manipulation.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-51",
+          "MIW-52"
+        ],
+        "trueNorth": [
+          "TN-04",
+          "TN-22",
+          "TN-23",
+          "TN-30",
+          "TN-33",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "M29",
+      "source": "master46",
+      "requirement": "Typed service/API boundaries are stable.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "delivery",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Documentation, provenance/licence, actual integration and independent/human final verdicts remain required.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-51",
+          "MIW-52"
+        ],
+        "trueNorth": [
+          "TN-04",
+          "TN-22",
+          "TN-23",
+          "TN-30",
+          "TN-33",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Frozen V84 source/static/server and portable editable-source ZIP saved to Library; Node-only extraction smoke has zero external fetch attempts.",
+      "demonstratedEvidence": "1631 same-source tests in fixed serial groups; effective43 compiled checks with qualified timeout/recheck.",
+      "plannedOrUnproven": "Documentation, provenance/licence, actual integration and independent/human final verdicts remain required."
+    },
+    {
+      "id": "M30",
+      "source": "master46",
+      "requirement": "Backend adapter path is documented.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "delivery",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Documentation, provenance/licence, actual integration and independent/human final verdicts remain required.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-51",
+          "MIW-55"
+        ],
+        "trueNorth": [
+          "TN-04",
+          "TN-13",
+          "TN-14",
+          "TN-22",
+          "TN-23",
+          "TN-24",
+          "TN-30",
+          "TN-33",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Frozen V84 source/static/server and portable editable-source ZIP saved to Library; Node-only extraction smoke has zero external fetch attempts.",
+      "demonstratedEvidence": "1631 same-source tests in fixed serial groups; effective43 compiled checks with qualified timeout/recheck.",
+      "plannedOrUnproven": "Documentation, provenance/licence, actual integration and independent/human final verdicts remain required."
+    },
+    {
+      "id": "M31",
+      "source": "master46",
+      "requirement": "Security remains intact.",
+      "implementationStatus": "HELD_SECURITY_REVIEW",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Independent domain and native adverse cases; separate security authority/review remains required.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-54",
+          "MIW-55"
+        ],
+        "trueNorth": [
+          "TN-13",
+          "TN-14",
+          "TN-23",
+          "TN-24",
+          "TN-26",
+          "TN-33",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Exact source/version/clock/units/denominator eligibility and guarded lifecycle transitions have regression coverage.",
+      "demonstratedEvidence": "Prior bounded evidence and V84 local tests; no whole security or invariant verdict.",
+      "plannedOrUnproven": "Independent domain and native adverse cases; separate security authority/review remains required."
+    },
+    {
+      "id": "M32",
+      "source": "master46",
+      "requirement": "Persistence/reload works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-19",
+          "MIW-43",
+          "MIW-50"
+        ],
+        "trueNorth": [
+          "TN-03",
+          "TN-07",
+          "TN-26",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "M33",
+      "source": "master46",
+      "requirement": "Recovery works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-20",
+          "MIW-50"
+        ],
+        "trueNorth": [
+          "TN-07",
+          "TN-26",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "M34",
+      "source": "master46",
+      "requirement": "Copy/export/print work where required.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-24"
+        ],
+        "trueNorth": [
+          "TN-25",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "M35",
+      "source": "master46",
+      "requirement": "Desktop passes.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-21"
+        ],
+        "trueNorth": [
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "M36",
+      "source": "master46",
+      "requirement": "390 px passes.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-22"
+        ],
+        "trueNorth": [
+          "TN-27",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "M37",
+      "source": "master46",
+      "requirement": "320 px passes.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-22"
+        ],
+        "trueNorth": [
+          "TN-27",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "M38",
+      "source": "master46",
+      "requirement": "Keyboard passes.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-23"
+        ],
+        "trueNorth": [
+          "TN-28",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "M39",
+      "source": "master46",
+      "requirement": "Accessibility passes.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-23",
+          "MIW-42"
+        ],
+        "trueNorth": [
+          "TN-02",
+          "TN-28",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "M40",
+      "source": "master46",
+      "requirement": "Perceived performance is acceptable.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-20",
+          "MIW-42"
+        ],
+        "trueNorth": [
+          "TN-02",
+          "TN-28",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "M41",
+      "source": "master46",
+      "requirement": "Existing accepted functionality remains intact.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-53"
+        ],
+        "trueNorth": [
+          "TN-29",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "M42",
+      "source": "master46",
+      "requirement": "End-user documentation matches the build.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "delivery",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Documentation, provenance/licence, actual integration and independent/human final verdicts remain required.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-21",
+          "MIW-42",
+          "MIW-53"
+        ],
+        "trueNorth": [
+          "TN-02",
+          "TN-28",
+          "TN-29",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Current V84 guide/API drafts exist in this separate supplement; frozen historical guides remain unchanged.",
+      "demonstratedEvidence": "1631 same-source tests in fixed serial groups; effective43 compiled checks with qualified timeout/recheck.",
+      "plannedOrUnproven": "Validate drafts against independent V84 findings and actual-user/Tom contract review."
+    },
+    {
+      "id": "M43",
+      "source": "master46",
+      "requirement": "Developer/API documentation matches the build.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "delivery",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Documentation, provenance/licence, actual integration and independent/human final verdicts remain required.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-51",
+          "MIW-55"
+        ],
+        "trueNorth": [
+          "TN-04",
+          "TN-13",
+          "TN-14",
+          "TN-22",
+          "TN-23",
+          "TN-24",
+          "TN-30",
+          "TN-33",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Current V84 guide/API drafts exist in this separate supplement; frozen historical guides remain unchanged.",
+      "demonstratedEvidence": "1631 same-source tests in fixed serial groups; effective43 compiled checks with qualified timeout/recheck.",
+      "plannedOrUnproven": "Validate drafts against independent V84 findings and actual-user/Tom contract review."
+    },
+    {
+      "id": "M44",
+      "source": "master46",
+      "requirement": "Cowork plant-leader usability review passes.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-26",
+          "MIW-27",
+          "MIW-28",
+          "MIW-29",
+          "MIW-40",
+          "MIW-42"
+        ],
+        "trueNorth": [
+          "TN-01",
+          "TN-02",
+          "TN-05",
+          "TN-06",
+          "TN-09",
+          "TN-18",
+          "TN-19",
+          "TN-20",
+          "TN-21",
+          "TN-28",
+          "TN-30",
+          "TN-31",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "M45",
+      "source": "master46",
+      "requirement": "Fresh independent review returns APPROVE.",
+      "implementationStatus": "PENDING_INDEPENDENT_OR_HUMAN_VERDICT",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "delivery",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Documentation, provenance/licence, actual integration and independent/human final verdicts remain required.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-01",
+          "MIW-53"
+        ],
+        "trueNorth": [
+          "TN-01",
+          "TN-29",
+          "TN-30",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Frozen V84 source/static/server and portable editable-source ZIP saved to Library; Node-only extraction smoke has zero external fetch attempts.",
+      "demonstratedEvidence": "1631 same-source tests in fixed serial groups; effective43 compiled checks with qualified timeout/recheck.",
+      "plannedOrUnproven": "Documentation, provenance/licence, actual integration and independent/human final verdicts remain required."
+    },
+    {
+      "id": "M46",
+      "source": "master46",
+      "requirement": "No current-scope blocker remains.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "delivery",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Documentation, provenance/licence, actual integration and independent/human final verdicts remain required.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-01",
+          "MIW-20",
+          "MIW-55"
+        ],
+        "trueNorth": [
+          "TN-01",
+          "TN-13",
+          "TN-14",
+          "TN-23",
+          "TN-24",
+          "TN-30",
+          "TN-32",
+          "TN-33",
+          "TN-34",
+          "TN-35"
+        ]
+      },
+      "implementedEvidence": "Frozen V84 source/static/server and portable editable-source ZIP saved to Library; Node-only extraction smoke has zero external fetch attempts.",
+      "demonstratedEvidence": "1631 same-source tests in fixed serial groups; effective43 compiled checks with qualified timeout/recheck.",
+      "plannedOrUnproven": "Documentation, provenance/licence, actual integration and independent/human final verdicts remain required."
+    },
+    {
+      "id": "N01",
+      "text": "EKAS feels like one product.",
+      "source": "ux36",
+      "requirement": "EKAS feels like one product.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "N02",
+      "text": "Plant users land in chat.",
+      "source": "ux36",
+      "requirement": "Plant users land in chat.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "N03",
+      "text": "Analyst/developer capability remains preserved.",
+      "source": "ux36",
+      "requirement": "Analyst/developer capability remains preserved.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "N04",
+      "text": "No silent metric/plant substitution exists.",
+      "source": "ux36",
+      "requirement": "No silent metric/plant substitution exists.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Independent domain and native adverse cases; separate security authority/review remains required.",
+      "implementedEvidence": "Exact source/version/clock/units/denominator eligibility and guarded lifecycle transitions have regression coverage.",
+      "demonstratedEvidence": "Prior bounded evidence and V84 local tests; no whole security or invariant verdict.",
+      "plannedOrUnproven": "Independent domain and native adverse cases; separate security authority/review remains required."
+    },
+    {
+      "id": "N05",
+      "text": "One case has one state everywhere.",
+      "source": "ux36",
+      "requirement": "One case has one state everywhere.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Independent domain and native adverse cases; separate security authority/review remains required.",
+      "implementedEvidence": "Exact source/version/clock/units/denominator eligibility and guarded lifecycle transitions have regression coverage.",
+      "demonstratedEvidence": "Prior bounded evidence and V84 local tests; no whole security or invariant verdict.",
+      "plannedOrUnproven": "Independent domain and native adverse cases; separate security authority/review remains required."
+    },
+    {
+      "id": "N06",
+      "text": "One canonical conversation exists.",
+      "source": "ux36",
+      "requirement": "One canonical conversation exists.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "conversation",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Independent exact-V84 multi-turn review plus authorized actual-model acceptance.",
+      "implementedEvidence": "Bounded deterministic interpretation, retained scope, corrections, metric/entity/calendar operands and versioned historical replay have source/compiled coverage.",
+      "demonstratedEvidence": "Actual unrestricted OpenAI conversation is not demonstrated.",
+      "plannedOrUnproven": "Independent exact-V84 multi-turn review plus authorized actual-model acceptance."
+    },
+    {
+      "id": "N07",
+      "text": "One context bar exists.",
+      "source": "ux36",
+      "requirement": "One context bar exists.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "N08",
+      "text": "Sticky context is controlled.",
+      "source": "ux36",
+      "requirement": "Sticky context is controlled.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "conversation",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Independent exact-V84 multi-turn review plus authorized actual-model acceptance.",
+      "implementedEvidence": "Bounded deterministic interpretation, retained scope, corrections, metric/entity/calendar operands and versioned historical replay have source/compiled coverage.",
+      "demonstratedEvidence": "Actual unrestricted OpenAI conversation is not demonstrated.",
+      "plannedOrUnproven": "Independent exact-V84 multi-turn review plus authorized actual-model acceptance."
+    },
+    {
+      "id": "N09",
+      "text": "New-topic resets work.",
+      "source": "ux36",
+      "requirement": "New-topic resets work.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "conversation",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Independent exact-V84 multi-turn review plus authorized actual-model acceptance.",
+      "implementedEvidence": "Bounded deterministic interpretation, retained scope, corrections, metric/entity/calendar operands and versioned historical replay have source/compiled coverage.",
+      "demonstratedEvidence": "Actual unrestricted OpenAI conversation is not demonstrated.",
+      "plannedOrUnproven": "Independent exact-V84 multi-turn review plus authorized actual-model acceptance."
+    },
+    {
+      "id": "N10",
+      "text": "Common follow-ups work.",
+      "source": "ux36",
+      "requirement": "Common follow-ups work.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "conversation",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Independent exact-V84 multi-turn review plus authorized actual-model acceptance.",
+      "implementedEvidence": "Bounded deterministic interpretation, retained scope, corrections, metric/entity/calendar operands and versioned historical replay have source/compiled coverage.",
+      "demonstratedEvidence": "Actual unrestricted OpenAI conversation is not demonstrated.",
+      "plannedOrUnproven": "Independent exact-V84 multi-turn review plus authorized actual-model acceptance."
+    },
+    {
+      "id": "N11",
+      "text": "Generic dead ends are replaced by guided recovery.",
+      "source": "ux36",
+      "requirement": "Generic dead ends are replaced by guided recovery.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "guide",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 required missing/blocked/error/resume states and readable disabled controls.",
+      "implementedEvidence": "Contextual guidance and ownership navigation controls exist.",
+      "demonstratedEvidence": "Source/compiled guidance checks; broad actual-user recovery remains unaccepted.",
+      "plannedOrUnproven": "Exact-V84 required missing/blocked/error/resume states and readable disabled controls."
+    },
+    {
+      "id": "N12",
+      "text": "Full case lifecycle can be driven from chat.",
+      "source": "ux36",
+      "requirement": "Full case lifecycle can be driven from chat.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording.",
+      "implementedEvidence": "Synthetic owned actions, assignment acceptance, authorization, performed-work proof, verification, safety, acceptance, sustain and recurrence/reopen are implemented with typed guards.",
+      "demonstratedEvidence": "Prior V81 visible three-case cycle-2 journeys; V84 compiled positive journeys are scripted and chart-mocked.",
+      "plannedOrUnproven": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording."
+    },
+    {
+      "id": "N13",
+      "text": "Next action is always understandable.",
+      "source": "ux36",
+      "requirement": "Next action is always understandable.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording.",
+      "implementedEvidence": "Synthetic owned actions, assignment acceptance, authorization, performed-work proof, verification, safety, acceptance, sustain and recurrence/reopen are implemented with typed guards.",
+      "demonstratedEvidence": "Prior V81 visible three-case cycle-2 journeys; V84 compiled positive journeys are scripted and chart-mocked.",
+      "plannedOrUnproven": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording."
+    },
+    {
+      "id": "N14",
+      "text": "Demo timeline is explicit and non-destructive.",
+      "source": "ux36",
+      "requirement": "Demo timeline is explicit and non-destructive.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording.",
+      "implementedEvidence": "Synthetic owned actions, assignment acceptance, authorization, performed-work proof, verification, safety, acceptance, sustain and recurrence/reopen are implemented with typed guards.",
+      "demonstratedEvidence": "Prior V81 visible three-case cycle-2 journeys; V84 compiled positive journeys are scripted and chart-mocked.",
+      "plannedOrUnproven": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording."
+    },
+    {
+      "id": "N15",
+      "text": "Plant Review is scannable in under two minutes.",
+      "source": "ux36",
+      "requirement": "Plant Review is scannable in under two minutes.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "N16",
+      "text": "One recommended priority is clearly explained.",
+      "source": "ux36",
+      "requirement": "One recommended priority is clearly explained.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording.",
+      "implementedEvidence": "Synthetic owned actions, assignment acceptance, authorization, performed-work proof, verification, safety, acceptance, sustain and recurrence/reopen are implemented with typed guards.",
+      "demonstratedEvidence": "Prior V81 visible three-case cycle-2 journeys; V84 compiled positive journeys are scripted and chart-mocked.",
+      "plannedOrUnproven": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording."
+    },
+    {
+      "id": "N17",
+      "text": "Evidence is plain language first.",
+      "source": "ux36",
+      "requirement": "Evidence is plain language first.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "N18",
+      "text": "Technical details remain available.",
+      "source": "ux36",
+      "requirement": "Technical details remain available.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "N19",
+      "text": "Pending != failed.",
+      "source": "ux36",
+      "requirement": "Pending != failed.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Independent domain and native adverse cases; separate security authority/review remains required.",
+      "implementedEvidence": "Exact source/version/clock/units/denominator eligibility and guarded lifecycle transitions have regression coverage.",
+      "demonstratedEvidence": "Prior bounded evidence and V84 local tests; no whole security or invariant verdict.",
+      "plannedOrUnproven": "Independent domain and native adverse cases; separate security authority/review remains required."
+    },
+    {
+      "id": "N20",
+      "text": "Disabled controls are readable and explained.",
+      "source": "ux36",
+      "requirement": "Disabled controls are readable and explained.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "guide",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 required missing/blocked/error/resume states and readable disabled controls.",
+      "implementedEvidence": "Contextual guidance and ownership navigation controls exist.",
+      "demonstratedEvidence": "Source/compiled guidance checks; broad actual-user recovery remains unaccepted.",
+      "plannedOrUnproven": "Exact-V84 required missing/blocked/error/resume states and readable disabled controls."
+    },
+    {
+      "id": "N21",
+      "text": "Visible dates/cycles are correct.",
+      "source": "ux36",
+      "requirement": "Visible dates/cycles are correct.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Independent domain and native adverse cases; separate security authority/review remains required.",
+      "implementedEvidence": "Exact source/version/clock/units/denominator eligibility and guarded lifecycle transitions have regression coverage.",
+      "demonstratedEvidence": "Prior bounded evidence and V84 local tests; no whole security or invariant verdict.",
+      "plannedOrUnproven": "Independent domain and native adverse cases; separate security authority/review remains required."
+    },
+    {
+      "id": "N22",
+      "text": "Cycle reopen is clear.",
+      "source": "ux36",
+      "requirement": "Cycle reopen is clear.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording.",
+      "implementedEvidence": "Synthetic owned actions, assignment acceptance, authorization, performed-work proof, verification, safety, acceptance, sustain and recurrence/reopen are implemented with typed guards.",
+      "demonstratedEvidence": "Prior V81 visible three-case cycle-2 journeys; V84 compiled positive journeys are scripted and chart-mocked.",
+      "plannedOrUnproven": "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording."
+    },
+    {
+      "id": "N23",
+      "text": "Mobile is usable.",
+      "source": "ux36",
+      "requirement": "Mobile is usable.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "N24",
+      "text": "200% zoom is usable.",
+      "source": "ux36",
+      "requirement": "200% zoom is usable.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "N25",
+      "text": "Keyboard works.",
+      "source": "ux36",
+      "requirement": "Keyboard works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "N26",
+      "text": "Accessibility remains strong.",
+      "source": "ux36",
+      "requirement": "Accessibility remains strong.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "N27",
+      "text": "Errors explain recovery.",
+      "source": "ux36",
+      "requirement": "Errors explain recovery.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "guide",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 required missing/blocked/error/resume states and readable disabled controls.",
+      "implementedEvidence": "Contextual guidance and ownership navigation controls exist.",
+      "demonstratedEvidence": "Source/compiled guidance checks; broad actual-user recovery remains unaccepted.",
+      "plannedOrUnproven": "Exact-V84 required missing/blocked/error/resume states and readable disabled controls."
+    },
+    {
+      "id": "N28",
+      "text": "Copy/export preserve context.",
+      "source": "ux36",
+      "requirement": "Copy/export preserve context.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "N29",
+      "text": "All protected manufacturing invariants pass.",
+      "source": "ux36",
+      "requirement": "All protected manufacturing invariants pass.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Independent domain and native adverse cases; separate security authority/review remains required.",
+      "implementedEvidence": "Exact source/version/clock/units/denominator eligibility and guarded lifecycle transitions have regression coverage.",
+      "demonstratedEvidence": "Prior bounded evidence and V84 local tests; no whole security or invariant verdict.",
+      "plannedOrUnproven": "Independent domain and native adverse cases; separate security authority/review remains required."
+    },
+    {
+      "id": "N30",
+      "text": "All security invariants pass.",
+      "source": "ux36",
+      "requirement": "All security invariants pass.",
+      "implementationStatus": "HELD_SECURITY_REVIEW",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Independent domain and native adverse cases; separate security authority/review remains required.",
+      "implementedEvidence": "Exact source/version/clock/units/denominator eligibility and guarded lifecycle transitions have regression coverage.",
+      "demonstratedEvidence": "Prior bounded evidence and V84 local tests; no whole security or invariant verdict.",
+      "plannedOrUnproven": "Independent domain and native adverse cases; separate security authority/review remains required."
+    },
+    {
+      "id": "N31",
+      "text": "All existing accepted capability remains available.",
+      "source": "ux36",
+      "requirement": "All existing accepted capability remains available.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "N32",
+      "text": "No hidden manual manipulation is required.",
+      "source": "ux36",
+      "requirement": "No hidden manual manipulation is required.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability.",
+      "implementedEvidence": "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "demonstratedEvidence": "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "plannedOrUnproven": "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    },
+    {
+      "id": "N33",
+      "text": "Fresh user test returns READY FOR LIVE USER TESTING.",
+      "source": "ux36",
+      "requirement": "Fresh user test returns READY FOR LIVE USER TESTING.",
+      "implementationStatus": "PENDING_INDEPENDENT_OR_HUMAN_VERDICT",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "delivery",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Documentation, provenance/licence, actual integration and independent/human final verdicts remain required.",
+      "implementedEvidence": "Frozen V84 source/static/server and portable editable-source ZIP saved to Library; Node-only extraction smoke has zero external fetch attempts.",
+      "demonstratedEvidence": "1631 same-source tests in fixed serial groups; effective43 compiled checks with qualified timeout/recheck.",
+      "plannedOrUnproven": "Documentation, provenance/licence, actual integration and independent/human final verdicts remain required."
+    },
+    {
+      "id": "N34",
+      "text": "No P0 remains.",
+      "source": "ux36",
+      "requirement": "No P0 remains.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Independent domain and native adverse cases; separate security authority/review remains required.",
+      "implementedEvidence": "Exact source/version/clock/units/denominator eligibility and guarded lifecycle transitions have regression coverage.",
+      "demonstratedEvidence": "Prior bounded evidence and V84 local tests; no whole security or invariant verdict.",
+      "plannedOrUnproven": "Independent domain and native adverse cases; separate security authority/review remains required."
+    },
+    {
+      "id": "N35",
+      "text": "No P1 remains.",
+      "source": "ux36",
+      "requirement": "No P1 remains.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Independent domain and native adverse cases; separate security authority/review remains required.",
+      "implementedEvidence": "Exact source/version/clock/units/denominator eligibility and guarded lifecycle transitions have regression coverage.",
+      "demonstratedEvidence": "Prior bounded evidence and V84 local tests; no whole security or invariant verdict.",
+      "plannedOrUnproven": "Independent domain and native adverse cases; separate security authority/review remains required."
+    },
+    {
+      "id": "N36",
+      "text": "Final independent review returns VERDICT: APPROVE.",
+      "source": "ux36",
+      "requirement": "Final independent review returns VERDICT: APPROVE.",
+      "implementationStatus": "PENDING_INDEPENDENT_OR_HUMAN_VERDICT",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "delivery",
+      "evidenceKeys": [
+        "V84-source-map",
+        "V84-compiled-map",
+        "V84-portable",
+        "prior-native-qualified"
+      ],
+      "nextClosure": "Documentation, provenance/licence, actual integration and independent/human final verdicts remain required.",
+      "implementedEvidence": "Frozen V84 source/static/server and portable editable-source ZIP saved to Library; Node-only extraction smoke has zero external fetch attempts.",
+      "demonstratedEvidence": "1631 same-source tests in fixed serial groups; effective43 compiled checks with qualified timeout/recheck.",
+      "plannedOrUnproven": "Documentation, provenance/licence, actual integration and independent/human final verdicts remain required."
+    }
+  ],
+  "evidenceLimits": {
+    "conversation": [
+      "Bounded deterministic interpretation, retained scope, corrections, metric/entity/calendar operands and versioned historical replay have source/compiled coverage.",
+      "Actual unrestricted OpenAI conversation is not demonstrated.",
+      "Independent exact-V84 multi-turn review plus authorized actual-model acceptance."
+    ],
+    "journey": [
+      "Synthetic owned actions, assignment acceptance, authorization, performed-work proof, verification, safety, acceptance, sustain and recurrence/reopen are implemented with typed guards.",
+      "Prior V81 visible three-case cycle-2 journeys; V84 compiled positive journeys are scripted and chart-mocked.",
+      "Exact-V84 normal/adverse three-case native lifecycles, role/queue/reload and work-ID wording."
+    ],
+    "invariant": [
+      "Exact source/version/clock/units/denominator eligibility and guarded lifecycle transitions have regression coverage.",
+      "Prior bounded evidence and V84 local tests; no whole security or invariant verdict.",
+      "Independent domain and native adverse cases; separate security authority/review remains required."
+    ],
+    "guide": [
+      "Contextual guidance and ownership navigation controls exist.",
+      "Source/compiled guidance checks; broad actual-user recovery remains unaccepted.",
+      "Exact-V84 required missing/blocked/error/resume states and readable disabled controls."
+    ],
+    "ux": [
+      "Chat/workspace, actual Board/DataPool/Grid/Highcharts, local CSV and persisted semantic layouts are implemented.",
+      "Prior V83 FPY row/plot readability at desktop/390/320/return; not V84 full UX acceptance.",
+      "Exact-V84 native sort/layout reload/CSV bytes/keyboard/zoom/accessibility/performance and human usability."
+    ],
+    "delivery": [
+      "Frozen V84 source/static/server and portable editable-source ZIP saved to Library; Node-only extraction smoke has zero external fetch attempts.",
+      "1631 same-source tests in fixed serial groups; effective43 compiled checks with qualified timeout/recheck.",
+      "Documentation, provenance/licence, actual integration and independent/human final verdicts remain required."
+    ]
+  },
+  "externalGates": [
+    "Actual OpenAI key/model/budget activation and unrestricted acceptance",
+    "Tom confirmed API/auth/version conformance",
+    "Existing security review authority",
+    "Highcharts licence entitlement and complete provenance review"
+  ],
+  "retainedInventories": {
+    "services": 55,
+    "trueNorth": 35,
+    "original": {
+      "screens": 42,
+      "workflows": 85,
+      "controls": 191,
+      "specifications": 33,
+      "total": 351
+    },
+    "metrics": {
+      "occurrences": 322,
+      "groups": 162,
+      "IDs": 257,
+      "executableDefinitions": 178,
+      "gapDispositions": 56,
+      "sections": 28
+    }
+  }
+}

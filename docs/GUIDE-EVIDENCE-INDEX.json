@@ -1,0 +1,20 @@
+{
+  "revision": 2,
+  "status": "PROVISIONAL_DOCUMENTATION",
+  "nativeEvidence": [
+    "/home/pat/Documents/Codex/2026-10-11/task/V81-INDEPENDENT-NATIVE-REVIEW.md",
+    "/home/pat/Documents/Codex/2026-10-11/task/V83-BOUNDED-NATIVE-REVIEW.md"
+  ],
+  "sourceEvidence": [
+    "app/src/investigation/CanonicalWorkspace.tsx",
+    "app/src/GuideWalkthrough.tsx",
+    "app/src/guideProcedures.ts",
+    "app/src/investigation/contextualGuide.ts"
+  ],
+  "limitations": [
+    "No exact-V84 native acceptance added",
+    "No key configured/activated; future key server-side",
+    "Optional native bindings not shipped; missing notices not runtime defect",
+    "Formal test-result/disposition paths not demonstrated by bounded native journeys"
+  ]
+}

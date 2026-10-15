@@ -1,0 +1,2037 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-12T09:19:41.129929+00:00",
+  "assessmentBaseline": "V78 changed; scoped checks completed; full suite and compiled/native independent freeze pending",
+  "candidateIdentity": {
+    "version": "V77-provisional",
+    "sourceHash": "b1a64b931284744b8f24f88476b1e4609d581a22dce2d3299526473e5a169f8d",
+    "buildHash": "ea1e3d01345c5f93f7bbdbac39c78ae7e85079411dd45c5efcc4bd0c4f2079a5",
+    "serverHash": "b998b7d5acf26b0e07cdcc89693001f3d7806c123a004ce9a27051f1ce5fd37d",
+    "tests": {
+      "total": 1525,
+      "passed": 1525,
+      "failed": 0
+    },
+    "definition": "SHA256(sorted relative-path NUL member-SHA256 LF); app/static/server prefixes included",
+    "zip": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v77-server-context-working/EKAS_V77_PROVISIONAL_REVIEW.zip",
+    "zipHash": "a036861b576c32853e5182fed844b8428b9e4cc9b2e0ef143463e27d338a1127",
+    "zipBytes": 8059150,
+    "declaredMembers": 1140
+  },
+  "rules": [
+    "No completion percentage",
+    "Inventories overlap and are not additive acceptance",
+    "No fake-provider acceptance of unrestricted conversation",
+    "Historical captures remain at original timestamp/status",
+    "F01/F02 and final verdict remain open until independent closure"
+  ],
+  "sources": {
+    "master46": {
+      "path": "docs/COMPLETION-MASTER-20261011.txt",
+      "sha256": "98023cd5f34edf12983aa4d458ab4383218ab948c6075e1f50ef2e4bfb8bba70"
+    },
+    "ux36": {
+      "path": "docs/UX-MASTER-36.txt",
+      "libraryFileId": "libfile_1d34c5f6879081919535a75f9a2d3c14",
+      "bytes": 24108,
+      "sha256": "4df003a796fabc0ef236a507440521a4e5e355f74155604c32c4f65cbed5f716"
+    }
+  },
+  "evidence": {
+    "v78full": {
+      "file": "evidence/V78-TEST-COVERAGE-MAP.json",
+      "result": "1563/1563 across fixed serial batches; all1525V77identities retained",
+      "limit": "Recorded A8source; two interrupted monolithic runs are preserved, not counted as complete. Final3file scope-tag patch is validated separately."
+    },
+    "v78patch": {
+      "file": "v78-final-scope-metric.json",
+      "result": "92/92 final affected scope, format, historical and semantic checks",
+      "limit": "Final6339source patch has focused coverage; no claim of a repeated full same-hash batch run."
+    },
+    "v78compiled": {
+      "file": "evidence/V78-COMPILED-OWNER-RESULTS.json",
+      "result": "29/29 final compiled normal controls and actual Blob export cases",
+      "limit": "Scripted provider and mocked chart host; independent/native/unrestricted acceptance remains pending."
+    },
+    "v78binding": {
+      "file": "v78-binding-ui-r2.txt",
+      "result": "32/32 scoped HTTP binding and Board unit checks pass",
+      "limit": "In-process HTTP and mocked chart host; compiled/native independent F01 closure still required."
+    },
+    "v78journey": {
+      "file": "v78-lifecycle-recovery-r2.txt",
+      "result": "7/7 synthetic normal HTTP UI journeys, assignment and durable reload checks pass",
+      "limit": "Three happy lifecycle journeys with mocked charts; not all adverse Guide/role/capability acceptance."
+    },
+    "baseline": {
+      "full": "V77 full1525/1525 in282files;1493V76 identities retained;85inputs unchanged",
+      "file": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v77-server-context-working/v77-full-r2.json",
+      "limit": "Owner test evidence, not independent whole-product acceptance."
+    },
+    "http": {
+      "file": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v77-server-context-working/evidence/V77-COMPILED-HTTP-REGRESSION.json",
+      "result": "12 compiled TCP contract groups pass",
+      "limit": "Synthetic scripted provider; protocol checks, not native/unrestricted dialogue."
+    },
+    "normal": {
+      "file": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v77-server-context-working/evidence/v77-compiled-normal-ui-r4.json",
+      "result": "Mounted normal controls over compiled TCP pass",
+      "limit": "Chart rendering mocked; native chart/Grid acceptance remains separate."
+    },
+    "table": {
+      "file": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v77-server-context-working/v77-seeded-table.txt",
+      "result": "SeededFPY85% HTML table and actual exported Blob pass",
+      "limit": "One bounded seeded cohort/format."
+    },
+    "stop": {
+      "file": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v77-server-context-working/v77-stop-http-green.txt",
+      "result": "Controlled precommit and raced-postcommit HTTP UI reconciliation pass",
+      "limit": "V77 baseline only; new V78 bounded durable reload evidence is listed separately."
+    },
+    "roles": {
+      "file": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v77-server-context-working/v77-governed-lease-green.txt",
+      "result": "Synthetic role/session and queued publication lease checks pass",
+      "limit": "Not production authentication, real grant, masking or security approval."
+    },
+    "source": {
+      "file": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v77-server-context-working/evidence/V77-SOURCE-RETENTION.json",
+      "result": "85source inputs unchanged and all1493prior identities retained",
+      "limit": "Retention/inventory is not full workflow acceptance."
+    },
+    "labels": {
+      "file": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v77-server-context-working/v77-label-green.txt",
+      "result": "Schema4 baseline explicit plant labels, frozen historical schema1-3 and source refusals pass",
+      "limit": "Bounded examples; governingF01 remains open pending review."
+    }
+  },
+  "requirements": [
+    {
+      "id": "M01",
+      "source": "master46",
+      "requirement": "One exact final build exists.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "delivery",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Complete exact documentation, notices/provenance, portable validation and final same-build independent/human acceptance. Do not grade provisional ZIP availability as completion.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-53"
+        ],
+        "trueNorth": [
+          "TN-29",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M02",
+      "source": "master46",
+      "requirement": "All known current defects are closed.",
+      "implementationStatus": "PENDING_REVIEW",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "delivery",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Complete exact documentation, notices/provenance, portable validation and final same-build independent/human acceptance. Do not grade provisional ZIP availability as completion.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-20",
+          "MIW-50"
+        ],
+        "trueNorth": [
+          "TN-07",
+          "TN-26",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M03",
+      "source": "master46",
+      "requirement": "V72 comparison failures are resolved.",
+      "implementationStatus": "SOURCE_IMPLEMENTED",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-20",
+          "MIW-50"
+        ],
+        "trueNorth": [
+          "TN-07",
+          "TN-26",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M04",
+      "source": "master46",
+      "requirement": "V71 Guide defect is closed.",
+      "implementationStatus": "SOURCE_IMPLEMENTED",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "guide",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Demonstrate purpose/completed/missing/blocked/next/effect/recovery/resume and actual visible target across every declared page and significant state, with pause/skip/back/reload and no inferred completion.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-21",
+          "MIW-42"
+        ],
+        "trueNorth": [
+          "TN-02",
+          "TN-28",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M05",
+      "source": "master46",
+      "requirement": "Full conversational chat works naturally.",
+      "implementationStatus": "OPEN",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "conversation",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "http",
+        "normal",
+        "labels"
+      ],
+      "nextClosure": "Complete semantic/context/tool/prose contract, then independently exercise the mandated free-form/multi-turn chains with an authorized actual model. Fake scripts cannot close this obligation.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-30",
+          "MIW-31",
+          "MIW-32",
+          "MIW-33",
+          "MIW-34",
+          "MIW-35",
+          "MIW-36",
+          "MIW-37",
+          "MIW-38",
+          "MIW-39",
+          "MIW-40",
+          "MIW-41",
+          "MIW-42"
+        ],
+        "trueNorth": [
+          "TN-01",
+          "TN-02",
+          "TN-03",
+          "TN-04",
+          "TN-06",
+          "TN-18",
+          "TN-28",
+          "TN-30",
+          "TN-31",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M06",
+      "source": "master46",
+      "requirement": "Context survives follow-ups/corrections.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "conversation",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "http",
+        "normal",
+        "labels"
+      ],
+      "nextClosure": "Complete semantic/context/tool/prose contract, then independently exercise the mandated free-form/multi-turn chains with an authorized actual model. Fake scripts cannot close this obligation.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-19",
+          "MIW-41",
+          "MIW-43"
+        ],
+        "trueNorth": [
+          "TN-03",
+          "TN-07",
+          "TN-26",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M07",
+      "source": "master46",
+      "requirement": "Metric switching works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "conversation",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "http",
+        "normal",
+        "labels"
+      ],
+      "nextClosure": "Complete semantic/context/tool/prose contract, then independently exercise the mandated free-form/multi-turn chains with an authorized actual model. Fake scripts cannot close this obligation.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-39",
+          "MIW-41"
+        ],
+        "trueNorth": [
+          "TN-03",
+          "TN-04",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M08",
+      "source": "master46",
+      "requirement": "No wrong-metric fallback.",
+      "implementationStatus": "PENDING_REVIEW",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "http",
+        "normal",
+        "labels",
+        "v78binding"
+      ],
+      "nextClosure": "Fresh independent review must verify requested/resolved metric, scope, denominator, horizon, timestamp, source/version and permission binding, including invalid/stale/missing/refused cases.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-39",
+          "MIW-41"
+        ],
+        "trueNorth": [
+          "TN-03",
+          "TN-04",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M09",
+      "source": "master46",
+      "requirement": "Daily plant review works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "http",
+        "normal",
+        "labels",
+        "v78journey"
+      ],
+      "nextClosure": "Exercise the entire normal and adverse downtime/speed/quality chain through normal HTTP UI, all ownership/authorization/proof/verification/sustain/reopen gates, across surfaces and reload.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-29"
+        ],
+        "trueNorth": [
+          "TN-05",
+          "TN-06",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M10",
+      "source": "master46",
+      "requirement": "Goal exceptions lead into investigation.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "http",
+        "normal",
+        "labels",
+        "v78journey"
+      ],
+      "nextClosure": "Exercise the entire normal and adverse downtime/speed/quality chain through normal HTTP UI, all ownership/authorization/proof/verification/sustain/reopen gates, across surfaces and reload.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-29",
+          "MIW-38",
+          "MIW-40"
+        ],
+        "trueNorth": [
+          "TN-01",
+          "TN-05",
+          "TN-06",
+          "TN-18",
+          "TN-30",
+          "TN-31",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M11",
+      "source": "master46",
+      "requirement": "Investigation persists.",
+      "implementationStatus": "SOURCE_IMPLEMENTED",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "http",
+        "normal",
+        "labels",
+        "v78journey"
+      ],
+      "nextClosure": "Exercise the entire normal and adverse downtime/speed/quality chain through normal HTTP UI, all ownership/authorization/proof/verification/sustain/reopen gates, across surfaces and reload.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-19",
+          "MIW-43",
+          "MIW-50"
+        ],
+        "trueNorth": [
+          "TN-03",
+          "TN-07",
+          "TN-26",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M12",
+      "source": "master46",
+      "requirement": "Loss bridge works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "http",
+        "normal",
+        "labels",
+        "v78journey"
+      ],
+      "nextClosure": "Exercise the entire normal and adverse downtime/speed/quality chain through normal HTTP UI, all ownership/authorization/proof/verification/sustain/reopen gates, across surfaces and reload.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-02",
+          "MIW-03",
+          "MIW-04"
+        ],
+        "trueNorth": [
+          "TN-04",
+          "TN-08",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M13",
+      "source": "master46",
+      "requirement": "Contributors work.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "http",
+        "normal",
+        "labels",
+        "v78journey"
+      ],
+      "nextClosure": "Exercise the entire normal and adverse downtime/speed/quality chain through normal HTTP UI, all ownership/authorization/proof/verification/sustain/reopen gates, across surfaces and reload.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-05",
+          "MIW-07"
+        ],
+        "trueNorth": [
+          "TN-09",
+          "TN-25",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M14",
+      "source": "master46",
+      "requirement": "Evidence is traceable.",
+      "implementationStatus": "SOURCE_IMPLEMENTED",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-06",
+          "MIW-07",
+          "MIW-44"
+        ],
+        "trueNorth": [
+          "TN-09",
+          "TN-10",
+          "TN-25",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M15",
+      "source": "master46",
+      "requirement": "Facts/hypotheses/causes remain distinct.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "http",
+        "normal",
+        "labels",
+        "v78binding"
+      ],
+      "nextClosure": "Fresh independent review must verify requested/resolved metric, scope, denominator, horizon, timestamp, source/version and permission binding, including invalid/stale/missing/refused cases.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-08",
+          "MIW-45"
+        ],
+        "trueNorth": [
+          "TN-11",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M16",
+      "source": "master46",
+      "requirement": "Ownership works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "http",
+        "normal",
+        "labels",
+        "v78journey"
+      ],
+      "nextClosure": "Exercise the entire normal and adverse downtime/speed/quality chain through normal HTTP UI, all ownership/authorization/proof/verification/sustain/reopen gates, across surfaces and reload.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-09",
+          "MIW-46"
+        ],
+        "trueNorth": [
+          "TN-12",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M17",
+      "source": "master46",
+      "requirement": "Assignment acceptance works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "http",
+        "normal",
+        "labels",
+        "v78journey"
+      ],
+      "nextClosure": "Exercise the entire normal and adverse downtime/speed/quality chain through normal HTTP UI, all ownership/authorization/proof/verification/sustain/reopen gates, across surfaces and reload.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-46"
+        ],
+        "trueNorth": [
+          "TN-12",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M18",
+      "source": "master46",
+      "requirement": "Authorization works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "http",
+        "normal",
+        "labels",
+        "v78journey"
+      ],
+      "nextClosure": "Exercise the entire normal and adverse downtime/speed/quality chain through normal HTTP UI, all ownership/authorization/proof/verification/sustain/reopen gates, across surfaces and reload.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-47",
+          "MIW-55"
+        ],
+        "trueNorth": [
+          "TN-13",
+          "TN-14",
+          "TN-23",
+          "TN-24",
+          "TN-33",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M19",
+      "source": "master46",
+      "requirement": "Performed work is distinct.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "http",
+        "normal",
+        "labels",
+        "v78binding"
+      ],
+      "nextClosure": "Fresh independent review must verify requested/resolved metric, scope, denominator, horizon, timestamp, source/version and permission binding, including invalid/stale/missing/refused cases.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-11",
+          "MIW-47"
+        ],
+        "trueNorth": [
+          "TN-13",
+          "TN-14",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M20",
+      "source": "master46",
+      "requirement": "Verification works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "http",
+        "normal",
+        "labels",
+        "v78journey"
+      ],
+      "nextClosure": "Exercise the entire normal and adverse downtime/speed/quality chain through normal HTTP UI, all ownership/authorization/proof/verification/sustain/reopen gates, across surfaces and reload.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-12",
+          "MIW-13",
+          "MIW-48"
+        ],
+        "trueNorth": [
+          "TN-08",
+          "TN-15",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M21",
+      "source": "master46",
+      "requirement": "Sustain works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "http",
+        "normal",
+        "labels",
+        "v78journey"
+      ],
+      "nextClosure": "Exercise the entire normal and adverse downtime/speed/quality chain through normal HTTP UI, all ownership/authorization/proof/verification/sustain/reopen gates, across surfaces and reload.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-14",
+          "MIW-49"
+        ],
+        "trueNorth": [
+          "TN-16",
+          "TN-17",
+          "TN-18",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M22",
+      "source": "master46",
+      "requirement": "Reopen works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "http",
+        "normal",
+        "labels",
+        "v78journey"
+      ],
+      "nextClosure": "Exercise the entire normal and adverse downtime/speed/quality chain through normal HTTP UI, all ownership/authorization/proof/verification/sustain/reopen gates, across surfaces and reload.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-14",
+          "MIW-40",
+          "MIW-49"
+        ],
+        "trueNorth": [
+          "TN-01",
+          "TN-06",
+          "TN-16",
+          "TN-17",
+          "TN-18",
+          "TN-30",
+          "TN-31",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M23",
+      "source": "master46",
+      "requirement": "Downtime case works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "http",
+        "normal",
+        "labels",
+        "v78journey"
+      ],
+      "nextClosure": "Exercise the entire normal and adverse downtime/speed/quality chain through normal HTTP UI, all ownership/authorization/proof/verification/sustain/reopen gates, across surfaces and reload.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-26"
+        ],
+        "trueNorth": [
+          "TN-01",
+          "TN-06",
+          "TN-09",
+          "TN-18",
+          "TN-19",
+          "TN-30",
+          "TN-31",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M24",
+      "source": "master46",
+      "requirement": "Speed-loss case works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "http",
+        "normal",
+        "labels",
+        "v78journey"
+      ],
+      "nextClosure": "Exercise the entire normal and adverse downtime/speed/quality chain through normal HTTP UI, all ownership/authorization/proof/verification/sustain/reopen gates, across surfaces and reload.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-27"
+        ],
+        "trueNorth": [
+          "TN-01",
+          "TN-18",
+          "TN-20",
+          "TN-30",
+          "TN-31",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M25",
+      "source": "master46",
+      "requirement": "Quality-loss case works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "http",
+        "normal",
+        "labels",
+        "v78journey"
+      ],
+      "nextClosure": "Exercise the entire normal and adverse downtime/speed/quality chain through normal HTTP UI, all ownership/authorization/proof/verification/sustain/reopen gates, across surfaces and reload.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-28"
+        ],
+        "trueNorth": [
+          "TN-01",
+          "TN-18",
+          "TN-21",
+          "TN-30",
+          "TN-31",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M26",
+      "source": "master46",
+      "requirement": "Guide works across required states.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "guide",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Demonstrate purpose/completed/missing/blocked/next/effect/recovery/resume and actual visible target across every declared page and significant state, with pause/skip/back/reload and no inferred completion.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-21",
+          "MIW-22",
+          "MIW-23",
+          "MIW-42"
+        ],
+        "trueNorth": [
+          "TN-02",
+          "TN-27",
+          "TN-28",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M27",
+      "source": "master46",
+      "requirement": "Mock data drives real service behavior.",
+      "implementationStatus": "SOURCE_IMPLEMENTED",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "delivery",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Complete exact documentation, notices/provenance, portable validation and final same-build independent/human acceptance. Do not grade provisional ZIP availability as completion.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-01",
+          "MIW-51",
+          "MIW-52"
+        ],
+        "trueNorth": [
+          "TN-01",
+          "TN-04",
+          "TN-22",
+          "TN-23",
+          "TN-30",
+          "TN-32",
+          "TN-33",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M28",
+      "source": "master46",
+      "requirement": "UI does not require direct fixture manipulation.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-51",
+          "MIW-52"
+        ],
+        "trueNorth": [
+          "TN-04",
+          "TN-22",
+          "TN-23",
+          "TN-30",
+          "TN-33",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M29",
+      "source": "master46",
+      "requirement": "Typed service/API boundaries are stable.",
+      "implementationStatus": "SOURCE_IMPLEMENTED",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "delivery",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Complete exact documentation, notices/provenance, portable validation and final same-build independent/human acceptance. Do not grade provisional ZIP availability as completion.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-51",
+          "MIW-52"
+        ],
+        "trueNorth": [
+          "TN-04",
+          "TN-22",
+          "TN-23",
+          "TN-30",
+          "TN-33",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M30",
+      "source": "master46",
+      "requirement": "Backend adapter path is documented.",
+      "implementationStatus": "SOURCE_IMPLEMENTED",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "delivery",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Complete exact documentation, notices/provenance, portable validation and final same-build independent/human acceptance. Do not grade provisional ZIP availability as completion.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-51",
+          "MIW-55"
+        ],
+        "trueNorth": [
+          "TN-04",
+          "TN-13",
+          "TN-14",
+          "TN-22",
+          "TN-23",
+          "TN-24",
+          "TN-30",
+          "TN-33",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M31",
+      "source": "master46",
+      "requirement": "Security remains intact.",
+      "implementationStatus": "HELD_EXTERNAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "http",
+        "normal",
+        "labels",
+        "v78binding"
+      ],
+      "nextClosure": "Fresh independent review must verify requested/resolved metric, scope, denominator, horizon, timestamp, source/version and permission binding, including invalid/stale/missing/refused cases.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-54",
+          "MIW-55"
+        ],
+        "trueNorth": [
+          "TN-13",
+          "TN-14",
+          "TN-23",
+          "TN-24",
+          "TN-26",
+          "TN-33",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M32",
+      "source": "master46",
+      "requirement": "Persistence/reload works.",
+      "implementationStatus": "SOURCE_IMPLEMENTED",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "stop"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-19",
+          "MIW-43",
+          "MIW-50"
+        ],
+        "trueNorth": [
+          "TN-03",
+          "TN-07",
+          "TN-26",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M33",
+      "source": "master46",
+      "requirement": "Recovery works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "stop"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-20",
+          "MIW-50"
+        ],
+        "trueNorth": [
+          "TN-07",
+          "TN-26",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M34",
+      "source": "master46",
+      "requirement": "Copy/export/print work where required.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-24"
+        ],
+        "trueNorth": [
+          "TN-25",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M35",
+      "source": "master46",
+      "requirement": "Desktop passes.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-21"
+        ],
+        "trueNorth": [
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M36",
+      "source": "master46",
+      "requirement": "390 px passes.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-22"
+        ],
+        "trueNorth": [
+          "TN-27",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M37",
+      "source": "master46",
+      "requirement": "320 px passes.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-22"
+        ],
+        "trueNorth": [
+          "TN-27",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M38",
+      "source": "master46",
+      "requirement": "Keyboard passes.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-23"
+        ],
+        "trueNorth": [
+          "TN-28",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M39",
+      "source": "master46",
+      "requirement": "Accessibility passes.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-23",
+          "MIW-42"
+        ],
+        "trueNorth": [
+          "TN-02",
+          "TN-28",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M40",
+      "source": "master46",
+      "requirement": "Perceived performance is acceptable.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-20",
+          "MIW-42"
+        ],
+        "trueNorth": [
+          "TN-02",
+          "TN-28",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M41",
+      "source": "master46",
+      "requirement": "Existing accepted functionality remains intact.",
+      "implementationStatus": "PENDING_REVIEW",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-53"
+        ],
+        "trueNorth": [
+          "TN-29",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M42",
+      "source": "master46",
+      "requirement": "End-user documentation matches the build.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "delivery",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Complete exact documentation, notices/provenance, portable validation and final same-build independent/human acceptance. Do not grade provisional ZIP availability as completion.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-21",
+          "MIW-42",
+          "MIW-53"
+        ],
+        "trueNorth": [
+          "TN-02",
+          "TN-28",
+          "TN-29",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M43",
+      "source": "master46",
+      "requirement": "Developer/API documentation matches the build.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "delivery",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Complete exact documentation, notices/provenance, portable validation and final same-build independent/human acceptance. Do not grade provisional ZIP availability as completion.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-51",
+          "MIW-55"
+        ],
+        "trueNorth": [
+          "TN-04",
+          "TN-13",
+          "TN-14",
+          "TN-22",
+          "TN-23",
+          "TN-24",
+          "TN-30",
+          "TN-33",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M44",
+      "source": "master46",
+      "requirement": "Cowork plant-leader usability review passes.",
+      "implementationStatus": "HELD_EXTERNAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-26",
+          "MIW-27",
+          "MIW-28",
+          "MIW-29",
+          "MIW-40",
+          "MIW-42"
+        ],
+        "trueNorth": [
+          "TN-01",
+          "TN-02",
+          "TN-05",
+          "TN-06",
+          "TN-09",
+          "TN-18",
+          "TN-19",
+          "TN-20",
+          "TN-21",
+          "TN-28",
+          "TN-30",
+          "TN-31",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M45",
+      "source": "master46",
+      "requirement": "Fresh independent review returns APPROVE.",
+      "implementationStatus": "HELD_EXTERNAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "delivery",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Complete exact documentation, notices/provenance, portable validation and final same-build independent/human acceptance. Do not grade provisional ZIP availability as completion.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-01",
+          "MIW-53"
+        ],
+        "trueNorth": [
+          "TN-01",
+          "TN-29",
+          "TN-30",
+          "TN-32",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "M46",
+      "source": "master46",
+      "requirement": "No current-scope blocker remains.",
+      "implementationStatus": "PENDING_REVIEW",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "delivery",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Complete exact documentation, notices/provenance, portable validation and final same-build independent/human acceptance. Do not grade provisional ZIP availability as completion.",
+      "originalMappings": {
+        "serviceRows": [
+          "MIW-01",
+          "MIW-20",
+          "MIW-55"
+        ],
+        "trueNorth": [
+          "TN-01",
+          "TN-13",
+          "TN-14",
+          "TN-23",
+          "TN-24",
+          "TN-30",
+          "TN-32",
+          "TN-33",
+          "TN-34",
+          "TN-35"
+        ]
+      }
+    },
+    {
+      "id": "N01",
+      "text": "EKAS feels like one product.",
+      "source": "ux36",
+      "requirement": "EKAS feels like one product.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute."
+    },
+    {
+      "id": "N02",
+      "text": "Plant users land in chat.",
+      "source": "ux36",
+      "requirement": "Plant users land in chat.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute."
+    },
+    {
+      "id": "N03",
+      "text": "Analyst/developer capability remains preserved.",
+      "source": "ux36",
+      "requirement": "Analyst/developer capability remains preserved.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute."
+    },
+    {
+      "id": "N04",
+      "text": "No silent metric/plant substitution exists.",
+      "source": "ux36",
+      "requirement": "No silent metric/plant substitution exists.",
+      "implementationStatus": "PENDING_REVIEW",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "normal",
+        "http",
+        "v78binding"
+      ],
+      "nextClosure": "Fresh independent review must verify requested/resolved metric, scope, denominator, horizon, timestamp, source/version and permission binding, including invalid/stale/missing/refused cases."
+    },
+    {
+      "id": "N05",
+      "text": "One case has one state everywhere.",
+      "source": "ux36",
+      "requirement": "One case has one state everywhere.",
+      "implementationStatus": "PENDING_REVIEW",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "normal",
+        "http",
+        "v78binding"
+      ],
+      "nextClosure": "Fresh independent review must verify requested/resolved metric, scope, denominator, horizon, timestamp, source/version and permission binding, including invalid/stale/missing/refused cases."
+    },
+    {
+      "id": "N06",
+      "text": "One canonical conversation exists.",
+      "source": "ux36",
+      "requirement": "One canonical conversation exists.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "conversation",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "normal",
+        "http"
+      ],
+      "nextClosure": "Complete semantic/context/tool/prose contract, then independently exercise the mandated free-form/multi-turn chains with an authorized actual model. Fake scripts cannot close this obligation."
+    },
+    {
+      "id": "N07",
+      "text": "One context bar exists.",
+      "source": "ux36",
+      "requirement": "One context bar exists.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute."
+    },
+    {
+      "id": "N08",
+      "text": "Sticky context is controlled.",
+      "source": "ux36",
+      "requirement": "Sticky context is controlled.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "conversation",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "normal",
+        "http"
+      ],
+      "nextClosure": "Complete semantic/context/tool/prose contract, then independently exercise the mandated free-form/multi-turn chains with an authorized actual model. Fake scripts cannot close this obligation."
+    },
+    {
+      "id": "N09",
+      "text": "New-topic resets work.",
+      "source": "ux36",
+      "requirement": "New-topic resets work.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "conversation",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "normal",
+        "http"
+      ],
+      "nextClosure": "Complete semantic/context/tool/prose contract, then independently exercise the mandated free-form/multi-turn chains with an authorized actual model. Fake scripts cannot close this obligation."
+    },
+    {
+      "id": "N10",
+      "text": "Common follow-ups work.",
+      "source": "ux36",
+      "requirement": "Common follow-ups work.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "conversation",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "normal",
+        "http"
+      ],
+      "nextClosure": "Complete semantic/context/tool/prose contract, then independently exercise the mandated free-form/multi-turn chains with an authorized actual model. Fake scripts cannot close this obligation."
+    },
+    {
+      "id": "N11",
+      "text": "Generic dead ends are replaced by guided recovery.",
+      "source": "ux36",
+      "requirement": "Generic dead ends are replaced by guided recovery.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "guide",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Demonstrate purpose/completed/missing/blocked/next/effect/recovery/resume and actual visible target across every declared page and significant state, with pause/skip/back/reload and no inferred completion."
+    },
+    {
+      "id": "N12",
+      "text": "Full case lifecycle can be driven from chat.",
+      "source": "ux36",
+      "requirement": "Full case lifecycle can be driven from chat.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "normal",
+        "http",
+        "v78journey"
+      ],
+      "nextClosure": "Exercise the entire normal and adverse downtime/speed/quality chain through normal HTTP UI, all ownership/authorization/proof/verification/sustain/reopen gates, across surfaces and reload."
+    },
+    {
+      "id": "N13",
+      "text": "Next action is always understandable.",
+      "source": "ux36",
+      "requirement": "Next action is always understandable.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "normal",
+        "http",
+        "v78journey"
+      ],
+      "nextClosure": "Exercise the entire normal and adverse downtime/speed/quality chain through normal HTTP UI, all ownership/authorization/proof/verification/sustain/reopen gates, across surfaces and reload."
+    },
+    {
+      "id": "N14",
+      "text": "Demo timeline is explicit and non-destructive.",
+      "source": "ux36",
+      "requirement": "Demo timeline is explicit and non-destructive.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "normal",
+        "http",
+        "v78journey"
+      ],
+      "nextClosure": "Exercise the entire normal and adverse downtime/speed/quality chain through normal HTTP UI, all ownership/authorization/proof/verification/sustain/reopen gates, across surfaces and reload."
+    },
+    {
+      "id": "N15",
+      "text": "Plant Review is scannable in under two minutes.",
+      "source": "ux36",
+      "requirement": "Plant Review is scannable in under two minutes.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute."
+    },
+    {
+      "id": "N16",
+      "text": "One recommended priority is clearly explained.",
+      "source": "ux36",
+      "requirement": "One recommended priority is clearly explained.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "normal",
+        "http",
+        "v78journey"
+      ],
+      "nextClosure": "Exercise the entire normal and adverse downtime/speed/quality chain through normal HTTP UI, all ownership/authorization/proof/verification/sustain/reopen gates, across surfaces and reload."
+    },
+    {
+      "id": "N17",
+      "text": "Evidence is plain language first.",
+      "source": "ux36",
+      "requirement": "Evidence is plain language first.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute."
+    },
+    {
+      "id": "N18",
+      "text": "Technical details remain available.",
+      "source": "ux36",
+      "requirement": "Technical details remain available.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute."
+    },
+    {
+      "id": "N19",
+      "text": "Pending != failed.",
+      "source": "ux36",
+      "requirement": "Pending != failed.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "normal",
+        "http",
+        "v78binding"
+      ],
+      "nextClosure": "Fresh independent review must verify requested/resolved metric, scope, denominator, horizon, timestamp, source/version and permission binding, including invalid/stale/missing/refused cases."
+    },
+    {
+      "id": "N20",
+      "text": "Disabled controls are readable and explained.",
+      "source": "ux36",
+      "requirement": "Disabled controls are readable and explained.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "guide",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Demonstrate purpose/completed/missing/blocked/next/effect/recovery/resume and actual visible target across every declared page and significant state, with pause/skip/back/reload and no inferred completion."
+    },
+    {
+      "id": "N21",
+      "text": "Visible dates/cycles are correct.",
+      "source": "ux36",
+      "requirement": "Visible dates/cycles are correct.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "normal",
+        "http",
+        "v78binding"
+      ],
+      "nextClosure": "Fresh independent review must verify requested/resolved metric, scope, denominator, horizon, timestamp, source/version and permission binding, including invalid/stale/missing/refused cases."
+    },
+    {
+      "id": "N22",
+      "text": "Cycle reopen is clear.",
+      "source": "ux36",
+      "requirement": "Cycle reopen is clear.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "journey",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "normal",
+        "http",
+        "v78journey"
+      ],
+      "nextClosure": "Exercise the entire normal and adverse downtime/speed/quality chain through normal HTTP UI, all ownership/authorization/proof/verification/sustain/reopen gates, across surfaces and reload."
+    },
+    {
+      "id": "N23",
+      "text": "Mobile is usable.",
+      "source": "ux36",
+      "requirement": "Mobile is usable.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute."
+    },
+    {
+      "id": "N24",
+      "text": "200% zoom is usable.",
+      "source": "ux36",
+      "requirement": "200% zoom is usable.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute."
+    },
+    {
+      "id": "N25",
+      "text": "Keyboard works.",
+      "source": "ux36",
+      "requirement": "Keyboard works.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute."
+    },
+    {
+      "id": "N26",
+      "text": "Accessibility remains strong.",
+      "source": "ux36",
+      "requirement": "Accessibility remains strong.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute."
+    },
+    {
+      "id": "N27",
+      "text": "Errors explain recovery.",
+      "source": "ux36",
+      "requirement": "Errors explain recovery.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "guide",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Demonstrate purpose/completed/missing/blocked/next/effect/recovery/resume and actual visible target across every declared page and significant state, with pause/skip/back/reload and no inferred completion."
+    },
+    {
+      "id": "N28",
+      "text": "Copy/export preserve context.",
+      "source": "ux36",
+      "requirement": "Copy/export preserve context.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute."
+    },
+    {
+      "id": "N29",
+      "text": "All protected manufacturing invariants pass.",
+      "source": "ux36",
+      "requirement": "All protected manufacturing invariants pass.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "normal",
+        "http",
+        "v78binding"
+      ],
+      "nextClosure": "Fresh independent review must verify requested/resolved metric, scope, denominator, horizon, timestamp, source/version and permission binding, including invalid/stale/missing/refused cases."
+    },
+    {
+      "id": "N30",
+      "text": "All security invariants pass.",
+      "source": "ux36",
+      "requirement": "All security invariants pass.",
+      "implementationStatus": "HELD_EXTERNAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "normal",
+        "http",
+        "v78binding"
+      ],
+      "nextClosure": "Fresh independent review must verify requested/resolved metric, scope, denominator, horizon, timestamp, source/version and permission binding, including invalid/stale/missing/refused cases."
+    },
+    {
+      "id": "N31",
+      "text": "All existing accepted capability remains available.",
+      "source": "ux36",
+      "requirement": "All existing accepted capability remains available.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute."
+    },
+    {
+      "id": "N32",
+      "text": "No hidden manual manipulation is required.",
+      "source": "ux36",
+      "requirement": "No hidden manual manipulation is required.",
+      "implementationStatus": "PARTIAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "ux",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Fresh native/human tests on the exact build, required viewports/zoom/keyboard/IME/accessibility/recovery/performance and original capabilities; owner declarations do not substitute."
+    },
+    {
+      "id": "N33",
+      "text": "Fresh user test returns READY FOR LIVE USER TESTING.",
+      "source": "ux36",
+      "requirement": "Fresh user test returns READY FOR LIVE USER TESTING.",
+      "implementationStatus": "HELD_EXTERNAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "delivery",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Complete exact documentation, notices/provenance, portable validation and final same-build independent/human acceptance. Do not grade provisional ZIP availability as completion."
+    },
+    {
+      "id": "N34",
+      "text": "No P0 remains.",
+      "source": "ux36",
+      "requirement": "No P0 remains.",
+      "implementationStatus": "PENDING_REVIEW",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "normal",
+        "http",
+        "v78binding"
+      ],
+      "nextClosure": "Fresh independent review must verify requested/resolved metric, scope, denominator, horizon, timestamp, source/version and permission binding, including invalid/stale/missing/refused cases."
+    },
+    {
+      "id": "N35",
+      "text": "No P1 remains.",
+      "source": "ux36",
+      "requirement": "No P1 remains.",
+      "implementationStatus": "PENDING_REVIEW",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "invariant",
+      "evidenceKeys": [
+        "baseline",
+        "source",
+        "normal",
+        "http",
+        "v78binding"
+      ],
+      "nextClosure": "Fresh independent review must verify requested/resolved metric, scope, denominator, horizon, timestamp, source/version and permission binding, including invalid/stale/missing/refused cases."
+    },
+    {
+      "id": "N36",
+      "text": "Final independent review returns VERDICT: APPROVE.",
+      "source": "ux36",
+      "requirement": "Final independent review returns VERDICT: APPROVE.",
+      "implementationStatus": "HELD_EXTERNAL",
+      "wholeObligationAcceptance": "NOT_ASSERTED",
+      "group": "delivery",
+      "evidenceKeys": [
+        "baseline",
+        "source"
+      ],
+      "nextClosure": "Complete exact documentation, notices/provenance, portable validation and final same-build independent/human acceptance. Do not grade provisional ZIP availability as completion."
+    }
+  ],
+  "retainedInventories": {
+    "services": 55,
+    "trueNorth": 35,
+    "original": {
+      "screens": 42,
+      "workflows": 85,
+      "controls": 191,
+      "specifications": 33,
+      "total": 351
+    },
+    "metrics": {
+      "occurrences": 322,
+      "groups": 162,
+      "IDs": 257,
+      "executableDefinitions": 178,
+      "gapDispositions": 56,
+      "sections": 28
+    }
+  },
+  "capabilityEvidence": {
+    "workflowRegister": "docs/WORKFLOW-COMPLETION.json",
+    "declared": 85,
+    "navigationPassedInherited": 85,
+    "someActionBranchEvidenceInherited": 32,
+    "allBranchesAccepted": 0,
+    "independentAccepted": 0,
+    "note": "Inherited register is not regraded by full-suite pass; normal counterparts require fresh procedure evidence."
+  },
+  "criticalRemaining": [
+    "Mandatory unrestricted actual-model conversation acceptance",
+    "All82 whole-obligation acceptance rows remain unasserted",
+    "All-page Guide and full normal/adverse journeys",
+    "Normal22counterparts and original351capability procedures",
+    "Durable browser operation recovery, unknown usage/commit, budget ownership",
+    "Production principal/masks/history projection and actual Tom conformance",
+    "Native controls/charts/Grid/export/outage/zoom/IME/performance/human/security verdict",
+    "Final documentation/notices/legal entitlement and exact final APPROVE"
+  ],
+  "externalHolds": [
+    "Actual key/model/pricing/budget activation not authorized in this pass",
+    "Denied merged security review is not rerouted; prior R5 remains preserved",
+    "Tom production contract unavailable; proposed seam is not conformance",
+    "Optional build-binding notice/composition and Highcharts entitlement unresolved"
+  ]
+}

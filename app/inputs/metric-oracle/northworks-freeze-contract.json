@@ -1,0 +1,87 @@
+{
+  "specNamespace": "northworks-v3",
+  "originalDatasetID": "northworks-demo-v1",
+  "asOf": "2026-10-06T14:45:00Z",
+  "dataCutoff": "2026-10-06T14:00:00Z",
+  "preservedFiles": [
+    {
+      "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-template-adaptation/app/inputs/scenario-fixture.json",
+      "sha256": "705747d13cd695d44036f8ee2726ed338a5e17d8036bb65433949ae89564fa7d"
+    },
+    {
+      "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-template-adaptation/app/inputs/production-jobs-fixture.json",
+      "sha256": "63c6d0ea5ade51d7fdfacd7110e3a1b5d960a4c852baf6d5a8e41c2d66ec067a"
+    },
+    {
+      "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-template-adaptation/app/inputs/scenario-temporal-policy.json",
+      "sha256": "c0980941f41209892623772fb9f35dd6b37c299b3700fc2bd673157b3694524d"
+    },
+    {
+      "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-template-adaptation/app/inputs/maintenance-fixture.json",
+      "sha256": "a634a20191720e59f2fee241ab51833ffaed412b9fc8ba0d57ee2dfe924cc2e9"
+    },
+    {
+      "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-template-adaptation/app/inputs/knowledge-fixtures.json",
+      "sha256": "4f934e045b7e41591b0b8d3323c5e1254b0b5f9ac2e565301b710099f4ecef42"
+    },
+    {
+      "path": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-template-adaptation/app/inputs/sme-change-fixture.json",
+      "sha256": "dbcf7d516bbbe67914fa41263a6d84dbe8320e39dc1a2e1b9f8cef04239489f7"
+    }
+  ],
+  "lockedValues": {
+    "Line03": {
+      "planned_min": 480,
+      "run_min": 360,
+      "total_units": 648,
+      "good_units": 630,
+      "oee_pct": 65.625,
+      "availability_pct": 75,
+      "performance_pct": 90,
+      "quality_pct": 97.22222222222223
+    },
+    "plant": {
+      "planned_asset_min": 1440,
+      "run_asset_min": 1200,
+      "total_units": 2202,
+      "good_units": 2154,
+      "ideal_total_min": 1101,
+      "ideal_good_min": 1077,
+      "oee_pct": 74.79166666666667,
+      "capacity_bridge": [
+        2880,
+        480,
+        198,
+        48,
+        2154
+      ],
+      "approved_plan": 2304,
+      "plan_gap": 150
+    },
+    "case003": {
+      "baseline_feeder_min_per_eligible_shift": 60,
+      "post_feeder_min_per_eligible_shift": 30,
+      "eligible_post_shifts": 10,
+      "observed_reduction_pct": 50,
+      "financialRealization": "unavailable"
+    },
+    "P3": "unsupported"
+  },
+  "gates": {
+    "future_rule": "Later snapshots are prebuilt simulation states, never current observations at an earlier as-of clock.",
+    "initial_as_of": "2026-10-06T14:45:00Z",
+    "initial_data_cutoff": "2026-10-06T14:00:00Z",
+    "intervention_snapshot_as_of": "2026-10-06T15:15:00Z",
+    "operational_accepted_as_of": "2026-10-20T15:15:00Z",
+    "reopened_as_of": "2026-11-03T14:20:00Z",
+    "sustained_as_of": "2026-10-27T14:30:00Z",
+    "verification_pending_review_as_of": "2026-10-20T14:30:00Z"
+  },
+  "rules": [
+    "northworks observed values immutable",
+    "initial excludes15:10repair andOctober20/November3evidence",
+    "postendpoint met not enough without quality/energy/safetyreview",
+    "sustain acceptanceOctober27; two consecutive >45 recurrence November3",
+    "No attributable benefit to unreleased EC003"
+  ]
+}

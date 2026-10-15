@@ -1,0 +1,17 @@
+# V33 formula integrity and query-control batch
+
+12criteria closed: A15,C054,C055,C058,C061,C065,C066,C071,C072,C073,C074,patterns.351cumulativecriteria now305pass46partial; these are not305freshV33full-product passes. Original evidence identities retained; new path/count audit passed.
+
+Global definition tests used normal backup import of exported syntheticQA state. Prepared variants edit/delete only disposablefx:48fa3305-09af-4f12-9443-49d4ca654e47; originalV31formula and all capturedviews preserved. No global edit/delete UI exists, so this verifies controlled state invariants rather than claiming such a UI. Exported import proofs establish editedglobalright=laborHours while workingsnapshot/capturedright=downtime; deletion absentglobally while snapshots remain.43.20units/min preserved in explicitsnapshotqueries/captures throughreload. Removing both definition and currentquerysnapshot withholds every numeric value. Compatible ratio'szero andmissingoperandscopes also withhold, neverInfinity orzero. FreshSubtractunits/person-hours refused with explicit same-unit requirement. Earlier exactAllYours/secondset branch retainsV31proof.
+
+ActualHighchartsSVGpointclick activates exactjobcontrols; accessibleGridEnter and320work. Underlying shows exacteligiblejob864Goodunits, not inventedformularesult. This projection does not display rawdenominator; no completeoperandinspection claim. Selection/panel states are transient acrossgrouping/reload; query/source/cutoff retained.
+
+All8drilldestinations exercised for explicitpositiveformula and absentformula. Positive43.20units/min/exactjob/cutoff retained; missingmetadata staysnonnumeric. Undo restoresgrouping. Initialsnapshots for5dimensions showLoading; awaitedvisibleGrid confirmsvalues/units, resolving incompleteobservations. Operationdrillreload and320covered.
+
+Explore replacement/add/compare/Back/currentpoint preserve customidentifier/guard andexactsourcecontext. OnlyTP-S1 shortcut returns explicitemptyunderUIAS1scope, persistsreload and320; its positivebranch remainsC070partial. Patternscan refusesmissingformula numericclaims with explicitNo matchingobservations, reload/320covered; previouspositive/vote/dropempty/dropzerobranchesretaintheirpriorproof. ShareClose/Escape preservescurrentpoint; oldcapture stays distinctfrommissingcurrentmetadata.
+
+Presentation improvement: missingmetadata exposesrawfxidentifier/(value) andgeneric unavailable-or-maskedreason. Numericwithholding iscorrect; this is a crypticdiagnostic, not numericregression. EarlierCatalogemptyfeedback remainsopenuntil replacement.46source-unitmetadata fixes notdeployed/verifiedhere. R5isolated, no backend/livecalls/securityauthority/certification.
+
+Finalbackup49created21:55:25.738Z byte-identicalallretainedbaselineentries, legacyequal,11priorarchivesretained;17archivesnowpreserve thisbatch. FinalsafeTab1801476723, actualV33index-CZmGvxoy.js, committedIndexedDB, no dialog/editor,1854×909normalviewport. safe-boundary.json/png andprotection-proof.json recordactualstate. No original/legacy/server18190/sourcechanges.
+
+Remaining46primarycategories:2concrete(A28definition/policy staleness,C070positive scope shortcut),34aggregates,4print/toolblocked,2protected originalscope/recovery,2capability/contract,1Catalogissue,1source-metadataawaitingdeployment. Printpreviewuserassistlater: openownsyntheticQApage,clickPrint,inspectnativepreview,cancelwithoutprinting. OrdinaryPDFgenerationdoesnotverifyPrintpreview.

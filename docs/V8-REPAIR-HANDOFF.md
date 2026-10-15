@@ -1,0 +1,20 @@
+# Historical V8 handoff — superseded by V9 dark-only scope
+
+Palette additions described below were removed in V9. V9-SCOPE-ALIGNMENT.md is current. This record retains prior implementation and test history.
+
+# V8 repaired candidate — deploy handoff readiness, not acceptance
+
+V7 remains immutable and served. V8 is prepared in task-4/ekas-semantic-recovery-working; only parent-coordinated deployment may replace the served candidate. No owner browser interaction, reset, storage write or server mutation occurred during repair. Reviewer recovery tab1801475978 is current; reset completion remains unverified. Rebind evidence recorder to that exact tab before native retest. V7 captures115–162 are quarantined; screenshot163/DOM establish only the V7 Utilities checkpoint. Original1–114 and retained backup remain preserved. Conservative V7 counts:1PASS/6FAIL/78unaccepted of85 workflows.
+
+Prior nine isolated corrections are included: semantic identity recovery; bounded Share dialogs; scoped Northworks shell/navigation; valid waterfall state with ratio refusal; chart contrast/precision; compact responsive header; unavailable/masked Grid and chart suppression; job/revision question mapping and concrete follow-ups; honest restored/executed query feedback and naming. See V7-REVIEW-FIXES.md for their root causes and native checks still required.
+
+Additional confirmed source causes and corrections:
+
+- Palette: restoring search focus triggered its onFocus opener and recreated the dialog. Library search now opens on explicit click/Enter/Ctrl+K, not restored focus. Initial dialog focus prefers editable content. Correct-target regression failed with old focus behavior, then passed with correction. The first test accidentally clicked the alert Close; it was corrected to scope the dialog Close and the failing behavior was reproduced explicitly.
+- Native layout: Viz depended on rows object identity; immutable capture eligibility returns clones, so an unrelated parent render could destroy Board before Save. Board lifecycle now uses exact semantic/data signatures. Callback refs keep current point actions without remounting. Same-semantic clones preserve the instance; deliberate palette change carries unsaved governed layout into new theme. Source/data/cohort changes still rebuild and never reuse incompatible layout. Explicit Restore selects saved layout, not unsaved edits.
+- Guide: Capability guide changed a hidden training screen while embedded case stayed open. It now explicitly returns to training Inspection. Start demo/practice URLs retain suite=northworks; valid isolated entries remain recognized, and explicit suite=workspace remains training. The unused reusable Guide practice links receive the same explicit destination correction; no new automatic guided overlay was added.
+- Theme: Theme offered only density/name. Actual persisted light/dark template controls now update wrapper tokens and chart/Grid palette. Northworks Appearance retains its separate explicit light/dark case theme. Dashboards editing uses installed documented CSS color variables. Density adjusts spacing and small text while preserving44px controls. Native pixel/contrast/keyboard acceptance remains pending.
+
+Owner build/full suite and portable checks are recorded separately in the frozen manifest. All new tests target real state/DOM/calculated chart configuration or source signature behavior; native constructors are intercepted where geometry requires a browser. These do not certify native drag/resize, export, focus, mobile geometry, assistive output, performance or all351 acceptance entries. The full reviewer register must continue; no source test is counted as an E2E pass.
+
+Existing synthetic manufacturing boundaries are preserved: theoretical capacity2880−losses480−198−48=actual good output2154 vs plan2304; original cutoffs and later snapshots; approval/performed/safety/acceptance/sustain/reopen separation; controlled-document/EC release blocks; observed gains are not causal or financial proof. No real GLiDE/CMMS/security/dispatch integration or purchase/licence claim.

@@ -1,0 +1,22 @@
+import {positiveContexts,positiveMetricContexts,positiveValue} from '../platform/positiveBinding';
+import {API_VERSION,type CanonicalResult,type Query} from '../platform/contract';
+import {validResult} from '../platform/validation';
+import {trainingAssetIds} from './trainingPort';
+import type {PresentedTurn} from './conversation';
+export type MetricDemonstrationCapture={schemaVersion:1;question:string;mode:'value'|'sources'|'table'|'chart'|'help'|'unsupported';result:CanonicalResult};
+export type MetricDemonstrationContext={metricId:string;contextId:string;resultId:string;asOf:string};
+const explicit=/^Demonstrate synthetic metric ([a-z0-9_-]+(?:\.[a-z0-9_-]+)*)(?: as of (\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ))?\.?$/i;
+export function metricDemonstrationRequest(question:string,current?:MetricDemonstrationContext,active=false){const match=question.trim().match(explicit);if(match)return {metricId:match[1],asOf:match[2],mode:'value' as const};if(!active||!current||/return.*(?:original|investigation)|investigate (?:downtime|speed|quality)|show (?:the )?plant operating review/i.test(question))return null;const mode=/sources|evidence/i.test(question)?'sources':/table/i.test(question)?'table':/chart/i.test(question)?'chart':/help|explain/i.test(question)?'help':'unsupported';return {metricId:current.metricId,asOf:current.asOf,mode} as {metricId:string;asOf:string;mode:MetricDemonstrationCapture['mode']};}
+export function createMetricDemonstrationResult(metricId:string,asOf:string|undefined,id:string):CanonicalResult{
+ const contextId=positiveMetricContexts[metricId],ctx=positiveContexts[contextId];if(!ctx)throw Error('Unknown governed synthetic metric. Choose an exact definition in Metrics.');
+ const query:Query={fixtureVersion:'training-positive-v2',metricIds:[metricId],definitionVersions:{[metricId]:1},scope:{assetIds:[...trainingAssetIds],scenarioId:contextId},from:ctx.window[0],to:asOf&&asOf<ctx.window[1]?asOf:ctx.window[1],asOf:asOf||ctx.asOf,groupBy:[],filters:[],page:{offset:0,limit:100}},value=positiveValue(metricId,query);
+ const result:CanonicalResult={id,version:1,apiVersion:API_VERSION,query,definitionVersions:query.definitionVersions,fixtureVersion:query.fixtureVersion,rows:[{key:contextId,dimensions:{scenario:contextId},values:{[metricId]:value}}],total:1,returned:1,offset:0,limit:100,truncated:false,createdAt:query.asOf,synthetic:true,financiallyValidated:false};if(!validResult(result))throw Error('Invalid synthetic metric capture.');return result;
+}
+export function metricDemonstrationPresentation(c:MetricDemonstrationCapture):PresentedTurn{
+ const r=c.result,id=r.query.metricIds[0],value=r.rows[0].values[id],observed=value.availability==='observed'&&value.value!==null,allowed=c.mode!=='unsupported',sources=allowed?value.evidenceIds:[];
+ const prefix='Explicit synthetic metric demonstration · '+r.fixtureVersion+' · '+r.query.scope.scenarioId+' · '+id+' · original cutoff '+r.query.asOf+'. ';
+ const text=c.mode==='unsupported'?prefix+'No manufacturing action is available in this synthetic metric dataset. Ask for its exact sources, table, chart or explanation, or explicitly return to the original investigation.':c.mode==='sources'?prefix+'Exact raw-source references ('+sources.length+'): '+sources.slice(0,20).join('; ')+(sources.length>20?'. Full source list retained in this capture.':'')+' '+value.reason:prefix+(observed?'Value '+value.value+' '+value.unit+'. ':'Unavailable: ')+value.reason+(c.mode==='help'? ' Use Metrics to choose an exact definition or adverse scenario. These data do not approve, perform or verify a manufacturing action.':'');
+ const visual=observed&&allowed&&c.mode!=='sources'&&typeof value.value==='number'?{title:id,unit:value.unit,categories:[r.query.scope.scenarioId!],values:[value.value],kind:'column' as const,sourceIds:sources}:undefined;
+ return {text,evidence:observed&&allowed?'metrics':'none',metric:id,chart:!!visual,sourceIds:sources,qualification:allowed?value.reason:'No manufacturing action or borrowed case evidence in this dataset.',...(visual?{visual}:{})};
+}
+export function validMetricDemonstrationCapture(c:MetricDemonstrationCapture){try{return c?.schemaVersion===1&&typeof c.question==='string'&&['value','sources','table','chart','help','unsupported'].includes(c.mode)&&validResult(c.result)&&JSON.stringify(c.result)===JSON.stringify(createMetricDemonstrationResult(c.result.query.metricIds[0],c.result.query.asOf,c.result.id));}catch{return false;}}

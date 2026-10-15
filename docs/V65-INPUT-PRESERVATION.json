@@ -1,0 +1,347 @@
+{
+  "prior84": [
+    {
+      "path": "canonical-metric-groups.json",
+      "sha256": "af2306a442807715a7d537e202efebdcb587bf2a2b28a99e355e2e0be913d362"
+    },
+    {
+      "path": "conversation-months-v1.json",
+      "sha256": "9ee4618d2289374b1379d365cc9098078e90964bb184b7fc801a8b8cd988927f"
+    },
+    {
+      "path": "current-unit-ledgers-v63.json",
+      "sha256": "3abb12c1586fe0b806c90d36478d4df5ff10ea2e77564da1e8e7f35b0720895e"
+    },
+    {
+      "path": "gap-register.md",
+      "sha256": "421cb492d7fc81cd84889e3f75a2ba8a5256c76dba4db942de5c472a3237c59a"
+    },
+    {
+      "path": "gap-requirements.json",
+      "sha256": "2804eda21cfafc1d1627a2b2587f19ab6d5ac94dc263a33d2adf97defacf2c83"
+    },
+    {
+      "path": "investigation-negative-variants-v1.json",
+      "sha256": "b1ce84bf17653011bdd28f15b0d77dd96ba34019c211f631f2e7fc8208ec3e7a"
+    },
+    {
+      "path": "knowledge-fixtures.json",
+      "sha256": "4f934e045b7e41591b0b8d3323c5e1254b0b5f9ac2e565301b710099f4ecef42"
+    },
+    {
+      "path": "maintenance-fixture.json",
+      "sha256": "a634a20191720e59f2fee241ab51833ffaed412b9fc8ba0d57ee2dfe924cc2e9"
+    },
+    {
+      "path": "maintenance-fixture.part-1.json",
+      "sha256": "fc3e14c77e0171c84f32cb63f409fb501e21aba89c55eecac24e790089ccd515"
+    },
+    {
+      "path": "maintenance-fixture.part-2.json",
+      "sha256": "844faa9ab585abf79edb3937b476212458d40461d024aa0bd185bee6300f5891"
+    },
+    {
+      "path": "metric-alias-guards.json",
+      "sha256": "cf832c27a73865edccebf1cb7adb5178512c56ee43722ec08dc80fa7284e4254"
+    },
+    {
+      "path": "metric-oracle/COVERAGE-AND-AMBIGUITIES.md",
+      "sha256": "cf884e6118943128aac4763c9887175ff6d986b4a96bcc1b9fe7bd5fe63116f2"
+    },
+    {
+      "path": "metric-oracle/canonical-gap-spec-v1/DECISION-SUMMARY.md",
+      "sha256": "1fc752e73de69661adae9536d5102c09a044055d79358e3bdc7254b02e25bcc2"
+    },
+    {
+      "path": "metric-oracle/canonical-gap-spec-v1/README.md",
+      "sha256": "843d82af265c48c6c7557d3f5df0113f691487a62976a33adc889e722562054b"
+    },
+    {
+      "path": "metric-oracle/canonical-gap-spec-v1/api-result-contract.json",
+      "sha256": "964edc91a56658658c6d05deb24bf6943d9146a966731f340b453b05c9d84cc3"
+    },
+    {
+      "path": "metric-oracle/canonical-gap-spec-v1/build_oracles.py",
+      "sha256": "8fe4ff1ac12f95cb06c7564ebb304d9965d1dce27dce2c04c7c0aea2bfe1d4cf"
+    },
+    {
+      "path": "metric-oracle/canonical-gap-spec-v1/build_records.py",
+      "sha256": "3b4da5b988ee817879eef79c4b5aaa64869619ca8feb7edce10a8b022d9ad347"
+    },
+    {
+      "path": "metric-oracle/canonical-gap-spec-v1/build_spec.py",
+      "sha256": "58588af0fb0f5229783add05804a7a6421b7ac25b3f52bb785db5477fa3fc9b4"
+    },
+    {
+      "path": "metric-oracle/canonical-gap-spec-v1/decisions-required.json",
+      "sha256": "a2126726c45381ed2417ababe2a3dbe15312cbfc81a6273c04b537ee9a733cd9"
+    },
+    {
+      "path": "metric-oracle/canonical-gap-spec-v1/domain-schema.json",
+      "sha256": "d80bc77abfe964346fb0b517fa302625cd7c613175b5dbb6322b04eff99bd9b8"
+    },
+    {
+      "path": "metric-oracle/canonical-gap-spec-v1/gap-contracts.json",
+      "sha256": "51ea5522518656575c9cfa068970edc20d4d27077721e670107169fc35ef6059"
+    },
+    {
+      "path": "metric-oracle/canonical-gap-spec-v1/negative-boundary-fixtures.json",
+      "sha256": "085194b2c68ccaeffd6441ba6073ec088aa9222ce2fdfdb6c7b33455802927ed"
+    },
+    {
+      "path": "metric-oracle/canonical-gap-spec-v1/negative_fixture_checks.py",
+      "sha256": "637a6c8edb84e209ec4bedf43d9dcb9c4e09359fcf48695a82a227f90d2e48e7"
+    },
+    {
+      "path": "metric-oracle/canonical-gap-spec-v1/package-manifest.json",
+      "sha256": "237cb4c0b3fbc2dd30ba94a197d307bde742923e2d071ac8a76798225c8993c7"
+    },
+    {
+      "path": "metric-oracle/canonical-gap-spec-v1/positive-oracles.json",
+      "sha256": "0877b46ce9ccf4ea597de17a260c32d5ab9f461ed451e45808b63f6f3d2de9e0"
+    },
+    {
+      "path": "metric-oracle/canonical-gap-spec-v1/qac-reconciliation-oracle.json",
+      "sha256": "9a08665015ead928a26a84d46ec2df54f2b477f5a5f35bb36cc05c6a4dff52af"
+    },
+    {
+      "path": "metric-oracle/canonical-gap-spec-v1/raw-domain-records.json",
+      "sha256": "117ee28c52c0aac828fc9ed8deaab4e661930bd8ff37c65877352ae5799d22b8"
+    },
+    {
+      "path": "metric-oracle/canonical-gap-spec-v1/refresh_decision_dispositions.py",
+      "sha256": "32eb2c0a19f29811f1684c482ad67d50653b7c8933fe35f69221710e494d1bc7"
+    },
+    {
+      "path": "metric-oracle/canonical-gap-spec-v1/revision-provenance.json",
+      "sha256": "7c9931b717dd0ace32d37cedec83d3cdbef03ca1e7bfc1517d4fefad387f2ee9"
+    },
+    {
+      "path": "metric-oracle/canonical-gap-spec-v1/source-and-protection-binding.json",
+      "sha256": "c4c346860b0dcb7032bd489abbc08a476ef69d36207ea9463f9e99f0ccc45a07"
+    },
+    {
+      "path": "metric-oracle/canonical-gap-spec-v1/verification-report.json",
+      "sha256": "a57abb9863b8d88f5cd12ff6cd95aed202a3be94f17e919ac7384ed7d5605278"
+    },
+    {
+      "path": "metric-oracle/canonical-gap-spec-v1/verify_package.py",
+      "sha256": "186406b5000a94cf47f9eec97b715f7ee086dd2cc0d314b83b8487124c97e39f"
+    },
+    {
+      "path": "metric-oracle/known-answer-scenarios.json",
+      "sha256": "142eb753db2b121880b3996cc97571b2cb8b58ac672c5a50b09ffed643ef31d8"
+    },
+    {
+      "path": "metric-oracle/metric-contract.json",
+      "sha256": "cd284e340bd354612ae852e1e8b2f696c6f08f66daec8d9df0c0195a57532867"
+    },
+    {
+      "path": "metric-oracle/northworks-freeze-contract.json",
+      "sha256": "464245bbfcdb885d8b5999d973be856c51ca526e554ca61420326005bc2d1311"
+    },
+    {
+      "path": "metric-oracle/positive-extension-v2/README.md",
+      "sha256": "7a06b1727db4a401042468f244967b4152d97634caa6b4b98e82430cbe61b704"
+    },
+    {
+      "path": "metric-oracle/positive-extension-v2/additive-domain-records.json",
+      "sha256": "4eb3aa41dc6ae1225606f440fbbad95707e1cda2ebb791c86ddf9a521fa5f539"
+    },
+    {
+      "path": "metric-oracle/positive-extension-v2/capability-eligibility-evidence.json",
+      "sha256": "5d8be73eefda2640fa43d476857a64cd93aec46c136877dfc7b1121f8d8e8291"
+    },
+    {
+      "path": "metric-oracle/positive-extension-v2/context-metadata.json",
+      "sha256": "17b126a1659c91513f92e8ca4260d08a13d2a2261d61edbfd851503d257b433e"
+    },
+    {
+      "path": "metric-oracle/positive-extension-v2/domain-schema.json",
+      "sha256": "1fd4837ad56cc5dc20e2f80309a509eb898f952815ebc3ec9f02d62fe793d609"
+    },
+    {
+      "path": "metric-oracle/positive-extension-v2/known-answer-outputs.json",
+      "sha256": "d8684d8cd67d9d6ba53f2482cedaeef425eda0e87970259fe35342e3a22e844e"
+    },
+    {
+      "path": "metric-oracle/positive-extension-v2/manifest.json",
+      "sha256": "9f6f17f48a303c905bd0a4d2b58b1e12d3686eb234824c6073d2b106dcdf0af4"
+    },
+    {
+      "path": "metric-oracle/positive-extension-v2/negative-and-eligibility-cases.json",
+      "sha256": "bce5c6f393b40a84f8a3abc3eeb8af73252c6d06c9960b66812c9e1b4abdaffd"
+    },
+    {
+      "path": "metric-oracle/positive-extension-v2/policy-decisions.json",
+      "sha256": "f56b864931d01057580cf625a6702bd4e08f96bc4a4ef79a32b16047d51b7193"
+    },
+    {
+      "path": "metric-oracle/positive-extension-v2/service-extension-map.json",
+      "sha256": "9aac90bd9cf02ed0c45089f160f5411e38a22c374de207d3f745725ac336f401"
+    },
+    {
+      "path": "metric-oracle/positive-extension-v2/validation.json",
+      "sha256": "bbaa6eb84cc3a14a96fbbcd3a52313463b3647aa6da47c2cd4bd0f4e8fecc3fd"
+    },
+    {
+      "path": "metric-oracle/relational-spec.json",
+      "sha256": "cf3f85faa0797ebfd03fc9ab5ed97320787974188b8984bc4bb5a9b9a42e4f6d"
+    },
+    {
+      "path": "metric-oracle/seed-query-oracles.json",
+      "sha256": "31ef6029d258594c7da35de2252bfea8bad8b75acc9a5db9747c0f142ab931c7"
+    },
+    {
+      "path": "metric-oracle/training-relational-seed.json",
+      "sha256": "5b88498b10b80bcf18dc1fd1afe3f6b3442d5daf14889d1f7b58d63d89e5dab2"
+    },
+    {
+      "path": "metric-oracle/ui-acceptance-fixtures-v1/README.md",
+      "sha256": "85d27394e558874275e8b68420b2d9d67e244e0a2c02ae82ab37d735fa32bfad"
+    },
+    {
+      "path": "metric-oracle/ui-acceptance-fixtures-v1/build_contexts.py",
+      "sha256": "3b4e3d744db67f9cbf4f595348ec1668676bf05a73f2ecd49d4af73f5f41166a"
+    },
+    {
+      "path": "metric-oracle/ui-acceptance-fixtures-v1/build_records.py",
+      "sha256": "fd10c80bc32c4f235742d73857c02ced91aa75e15f9643f0f823b55c6c98fd81"
+    },
+    {
+      "path": "metric-oracle/ui-acceptance-fixtures-v1/calculate_oracles.py",
+      "sha256": "bc0d4d8a79314d1139aa766f600b26f4691a2da6e164363ccaa6ed1cc5ff2b30"
+    },
+    {
+      "path": "metric-oracle/ui-acceptance-fixtures-v1/known-answers.json",
+      "sha256": "cba7b103797c32ccfdc98469bac46aaacc13c9a31e173ab63c2e465a43579603"
+    },
+    {
+      "path": "metric-oracle/ui-acceptance-fixtures-v1/manifest.json",
+      "sha256": "4239ab34cdb89996d613c6faf58d719d142ac39ee95f7432bb0f764b74f28731"
+    },
+    {
+      "path": "metric-oracle/ui-acceptance-fixtures-v1/ownership-metadata.json",
+      "sha256": "419db3b5b8d7d81fca6886e45e95750253e4dd235760ac542b30663a61ac5748"
+    },
+    {
+      "path": "metric-oracle/ui-acceptance-fixtures-v1/raw-records.json",
+      "sha256": "3abff22e42ba8470202c0d39fd40d976c0f81eed05b4e9c70de380a7b4fa2205"
+    },
+    {
+      "path": "metric-oracle/ui-acceptance-fixtures-v1/schema.json",
+      "sha256": "a393b865a86c6d523644d6832357f46ed701c707836f1a1cc98636eb4199c324"
+    },
+    {
+      "path": "metric-oracle/ui-acceptance-fixtures-v1/selectable-contexts.json",
+      "sha256": "87c86fc448c157a0c017ac0c48e40152590625ec046bce052d6cf762b2d1b301"
+    },
+    {
+      "path": "metric-oracle/ui-acceptance-fixtures-v1/source-and-protection-binding.json",
+      "sha256": "b3915b67bb1446b81711550657c6c7459495634db72798c91f41c62371263e20"
+    },
+    {
+      "path": "metric-oracle/ui-acceptance-fixtures-v1/validate.py",
+      "sha256": "7bb9f79c3c13b99d7747aae9dd48ccd4bec3ab1ca7200a620416fa14cfe02a7d"
+    },
+    {
+      "path": "metric-oracle/ui-acceptance-fixtures-v1/verification-report.json",
+      "sha256": "6546c0a7a7f330ff68f0922e1b419f9a22b6e358c009aad9e3e5e9118c85ab78"
+    },
+    {
+      "path": "metrics-missing-rows.json",
+      "sha256": "c1f55fd293caf0dfd6173fad80608c77f7027ccf01f170bd447b9869ad03e383"
+    },
+    {
+      "path": "metrics-missing-rows.part-1.json",
+      "sha256": "38b6e29e6d109cc3692f5c4fba29f2ec27bfdb1b0a8c2d636b093bf644d88d75"
+    },
+    {
+      "path": "metrics-missing-rows.part-2.json",
+      "sha256": "a0f3021c9dc80e6a79a41067117ff52ceb104b804d4b8c794d990efec465d344"
+    },
+    {
+      "path": "metrics-missing-rows.part-3.json",
+      "sha256": "afc6fe5a652dc4658d77e0826d31642046bebe4362c28ef6a815cb010f394df3"
+    },
+    {
+      "path": "metrics-missing-rows.part-4.json",
+      "sha256": "1baf8daaf3b92f8437d5d841d5b1eb866381e7474583b8096fb309d4a12309f2"
+    },
+    {
+      "path": "metrics-source-occurrences.json",
+      "sha256": "56454d274f247a749c7158bac90dbd683f36667e267e984a3d33107da43354d3"
+    },
+    {
+      "path": "metrics-source-sections.json",
+      "sha256": "03a5371c90ab80acf2b1512e2815c018a719c3c5b9371fa58a938236dad8ba7d"
+    },
+    {
+      "path": "metrics.inventory.md",
+      "sha256": "c642387150f6501b5e4e1a3790fcb2c98a5992f163ea702d2a0b00580424e348"
+    },
+    {
+      "path": "negative-outcomes-v56.json",
+      "sha256": "cf4110a2fc2dac432c1ff359ac1f00278b3da15cb236ae9a053451502dbe842e"
+    },
+    {
+      "path": "northworks-investigation-v1.json",
+      "sha256": "a39d8f4ea697645e9d01a943ba7a7bd326b76c9ff5004ee30372a3f10df35444"
+    },
+    {
+      "path": "plant-target-approvals-v57.json",
+      "sha256": "ca9cf4188396083460e77ad5de6e5843f5ab6f0508881766567fbf4172955178"
+    },
+    {
+      "path": "production-jobs-fixture.json",
+      "sha256": "63c6d0ea5ade51d7fdfacd7110e3a1b5d960a4c852baf6d5a8e41c2d66ec067a"
+    },
+    {
+      "path": "quality-correction-comparison-v63.json",
+      "sha256": "2b7b8fa4dde630a8852e1455b85bded6a84a80c03716f4168988a6bf71b727c7"
+    },
+    {
+      "path": "quality-investigation-v1.json",
+      "sha256": "1a8cebdf962bbf61fa614e519dfc19d946327e9ad17cdc9f4251c47d2ffda066"
+    },
+    {
+      "path": "scenario-fixture.json",
+      "sha256": "705747d13cd695d44036f8ee2726ed338a5e17d8036bb65433949ae89564fa7d"
+    },
+    {
+      "path": "scenario-temporal-policy.json",
+      "sha256": "c0980941f41209892623772fb9f35dd6b37c299b3700fc2bd673157b3694524d"
+    },
+    {
+      "path": "sme-change-fixture.json",
+      "sha256": "dbcf7d516bbbe67914fa41263a6d84dbe8320e39dc1a2e1b9f8cef04239489f7"
+    },
+    {
+      "path": "source-provenance/manufacturing-catalog-original.md",
+      "sha256": "85d4602f63c2fbb432a43d2dbe1482839830f57a6805246090e45e2de8f2100e"
+    },
+    {
+      "path": "source-provenance/original-unit-metadata.json",
+      "sha256": "cf7b0cd2293369c1e90ee43df6117e82e4b12b978acdd7829a933e133357a695"
+    },
+    {
+      "path": "source-provenance/source-identity.json",
+      "sha256": "1d689d1a87948a820a4ba83c98b0683703407be360dd624c5e0cc979d4894734"
+    },
+    {
+      "path": "speed-investigation-v1.json",
+      "sha256": "96d8b44208767d5a8f775e21ee47b60d06cada4313e13e0d3c2bc5106d3967e5"
+    },
+    {
+      "path": "verification-plan-governance-v57.json",
+      "sha256": "0de3ea9c32fdcb5445abfa534e96fb7698cef96d6626b616dfd1fc88f4b8e945"
+    }
+  ],
+  "new": [
+    {
+      "path": "sustain-monitoring-v65.json",
+      "sha256": "f03e09805b5762cf93b48c60ae28c247e3c3d265854b992705fda635b1a921cb"
+    }
+  ],
+  "original82": "All prior84 byte exact; historical82 excluding two V63 additions explicitly preserved"
+}

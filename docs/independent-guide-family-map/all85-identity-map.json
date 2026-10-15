@@ -1,0 +1,427 @@
+[
+  {
+    "id": "workflow:F001",
+    "name": "Command palette",
+    "status": "existing inspection/interaction contract; full workflow not accepted"
+  },
+  {
+    "id": "workflow:F002",
+    "name": "Notifications",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F003",
+    "name": "Help",
+    "status": "existing inspection/interaction contract; full workflow not accepted"
+  },
+  {
+    "id": "workflow:F004",
+    "name": "Profile",
+    "status": "existing inspection/interaction contract; full workflow not accepted"
+  },
+  {
+    "id": "workflow:F005",
+    "name": "Invite teammate",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F006",
+    "name": "Status strip",
+    "status": "existing inspection/interaction contract; full workflow not accepted"
+  },
+  {
+    "id": "workflow:F007",
+    "name": "Trial resources",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F008",
+    "name": "Create new",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F009",
+    "name": "Home ask",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F010",
+    "name": "Library search",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F011",
+    "name": "Recents",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F012",
+    "name": "Watchlist",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F013",
+    "name": "Conversation",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F014",
+    "name": "Suggestions",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F015",
+    "name": "Memory",
+    "status": "existing inspection/interaction contract; full workflow not accepted"
+  },
+  {
+    "id": "workflow:F016",
+    "name": "Feedback",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F017",
+    "name": "Deep analysis",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F018",
+    "name": "Source",
+    "status": "existing inspection/interaction contract; full workflow not accepted"
+  },
+  {
+    "id": "workflow:F019",
+    "name": "Suggestions",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F020",
+    "name": "Go and clear",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F021",
+    "name": "Undo, redo, reset",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F022",
+    "name": "Column browser",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F023",
+    "name": "Add as filter",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F024",
+    "name": "Column information",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F025",
+    "name": "Formula",
+    "status": "implemented bounded action (owner evidence; not independently tested here)"
+  },
+  {
+    "id": "workflow:F026",
+    "name": "Set",
+    "status": "implemented bounded action (owner evidence; not independently tested here)"
+  },
+  {
+    "id": "workflow:F027",
+    "name": "Parameter",
+    "status": "implemented bounded action (owner evidence; not independently tested here)"
+  },
+  {
+    "id": "workflow:F028",
+    "name": "Coach mark",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F029",
+    "name": "Chart catalog",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F030",
+    "name": "Configure",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F031",
+    "name": "Conditional color",
+    "status": "existing inspection/interaction contract; full workflow not accepted"
+  },
+  {
+    "id": "workflow:F032",
+    "name": "Sort",
+    "status": "existing inspection/interaction contract; full workflow not accepted"
+  },
+  {
+    "id": "workflow:F033",
+    "name": "Legend exclude",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F034",
+    "name": "Drill",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F035",
+    "name": "Keep only and exclude",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F036",
+    "name": "Underlying rows",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F037",
+    "name": "SQL",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F038",
+    "name": "Save",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F039",
+    "name": "Pin",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F040",
+    "name": "Share",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F041",
+    "name": "Download",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F042",
+    "name": "Embed snippet",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F043",
+    "name": "Explore",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F044",
+    "name": "Not visualized",
+    "status": "existing inspection/interaction contract; full workflow not accepted"
+  },
+  {
+    "id": "workflow:F045",
+    "name": "Add to watchlist",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F046",
+    "name": "Pattern scan",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F047",
+    "name": "List, yours, tags",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F048",
+    "name": "Tabs",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F049",
+    "name": "Tiles and headlines",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F050",
+    "name": "Board filters",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F051",
+    "name": "Cross-filter",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F052",
+    "name": "Layout",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F053",
+    "name": "Present",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F054",
+    "name": "Comments",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F055",
+    "name": "Verify and follow",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F056",
+    "name": "Schedule from board",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F057",
+    "name": "Export definition",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F058",
+    "name": "Answers",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F059",
+    "name": "Collections",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F060",
+    "name": "Monitors",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F061",
+    "name": "Schedules",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F062",
+    "name": "Pattern preferences",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F063",
+    "name": "Objects",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F064",
+    "name": "Object detail",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F065",
+    "name": "Connections",
+    "status": "existing inspection/interaction contract; full workflow not accepted"
+  },
+  {
+    "id": "workflow:F066",
+    "name": "Studio",
+    "status": "existing inspection/interaction contract; full workflow not accepted"
+  },
+  {
+    "id": "workflow:F067",
+    "name": "Utilities",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F068",
+    "name": "Sync",
+    "status": "existing inspection/interaction contract; full workflow not accepted"
+  },
+  {
+    "id": "workflow:F069",
+    "name": "Memory sources",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F070",
+    "name": "Catalog",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F071",
+    "name": "Usage",
+    "status": "existing inspection/interaction contract; full workflow not accepted"
+  },
+  {
+    "id": "workflow:F072",
+    "name": "Definition sync",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F073",
+    "name": "Verification queue",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F074",
+    "name": "Embed guide and playground",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F075",
+    "name": "API guide and playground",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F076",
+    "name": "Theme and styles",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F077",
+    "name": "Custom actions",
+    "status": "held excluded"
+  },
+  {
+    "id": "workflow:F078",
+    "name": "Links, security, webhooks",
+    "status": "held excluded"
+  },
+  {
+    "id": "workflow:F079",
+    "name": "Users",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F080",
+    "name": "Groups",
+    "status": "existing inspection/interaction contract; full workflow not accepted"
+  },
+  {
+    "id": "workflow:F081",
+    "name": "Customization and onboarding",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F082",
+    "name": "Pricing and data usage",
+    "status": "remaining action contract"
+  },
+  {
+    "id": "workflow:F083",
+    "name": "Contact and get started",
+    "status": "existing inspection/interaction contract; full workflow not accepted"
+  },
+  {
+    "id": "workflow:F084",
+    "name": "Maintenance and terms",
+    "status": "existing inspection/interaction contract; full workflow not accepted"
+  },
+  {
+    "id": "workflow:F085",
+    "name": "Human gate",
+    "status": "held excluded"
+  }
+]

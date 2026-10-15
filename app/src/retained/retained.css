@@ -1,0 +1,254 @@
+@font-face{font-family:"IBM Plex Sans";src:url('/fonts/IBMPlexSans-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"IBM Plex Sans";src:url('/fonts/IBMPlexSans-SemiBold.ttf') format('truetype');font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"IBM Plex Sans";src:url('/fonts/IBMPlexSans-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"IBM Plex Mono";src:url('/fonts/IBMPlexMono-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+.retained-console{--color-bg:#0b1220;--color-surface:#131d31;--color-surface-2:#1a2740;--color-line:#24344f;--color-fg:#e7eef8;--color-muted:#93a4be;--color-primary:#2bb6a3;--color-primary-fg:#06221c;--color-amber:#e0a24a;--color-info:#6c9cff;--color-danger:#e06b6b;--color-good:#3ddc97;--font-sans:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;font-family:var(--font-sans);background:#0b1220;color:#e7eef8;min-height:100vh}
+.retained-console *{box-sizing:border-box;min-width:0}
+.retained-console button,.retained-console input,.retained-console select,.retained-console textarea{font:inherit;color:inherit;max-width:100%}
+.retained-console button{cursor:pointer;background:transparent;border:0;border-radius:6px;min-height:44px;padding:6px 10px}
+.retained-console input,.retained-console select,.retained-console textarea{background:#131d31;border:1px solid #24344f;border-radius:6px;padding:8px}
+.retained-console p{line-height:1.5;margin:8px 0}
+.retained-console table{border-collapse:collapse;max-width:100%}
+.retained-console td,.retained-console th{padding:8px;overflow-wrap:anywhere}
+.retained-console a{color:#85adff}
+.retained-boundary{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:12px;border-bottom:1px solid #24344f}
+.retained-boundary span{flex:1;font-size:13px}
+.retained-notice{position:fixed;bottom:16px;right:16px;z-index:10001;background:#1a2740;border:1px solid #6c9cff;padding:12px;max-width:min(500px,95vw)}
+.retained-viz{min-width:0}.retained-console .highcharts-dashboards-cell{background:transparent!important}.retained-console .hcg-container{--hcg-color:#e7eef8;--hcg-background:#131d31;--hcg-header-background:#1a2740;--hcg-row-even-background:#131d31;--hcg-row-odd-background:#1a2740}.retained-console details{max-width:100%;overflow-wrap:anywhere}.retained-empty{padding:24px;color:#e0a24a}
+.retained-console .bg-bg{background:var(--color-bg)}
+.retained-console .bg-primary{background:var(--color-primary)}
+.retained-console .bg-surface{background:var(--color-surface)}
+.retained-console .bg-surface-2{background:var(--color-surface-2)}
+.retained-console .block{display:block}
+.retained-console .border{border:1px solid var(--color-line)}
+.retained-console .border-amber{border-color:var(--color-amber)}
+.retained-console .border-b{border-bottom:1px solid var(--color-line)}
+.retained-console .border-line{border-color:var(--color-line)}
+.retained-console .border-t{border-top:1px solid var(--color-line)}
+.retained-console .content-center{align-content:center}
+.retained-console .fixed{position:fixed}
+.retained-console .flex{display:flex}
+.retained-console .flex-1{flex:1 1 0%}
+.retained-console .flex-col{flex-direction:column}
+.retained-console .flex-wrap{flex-wrap:wrap}
+.retained-console .font-mono{font-family:ui-monospace,monospace}
+.retained-console .font-semibold{font-weight:600}
+.retained-console .gap-1{gap:0.25rem}
+.retained-console .gap-2{gap:0.5rem}
+.retained-console .gap-3{gap:0.75rem}
+.retained-console .gap-4{gap:1.0rem}
+.retained-console .grid{display:grid}
+.retained-console .hidden{display:none}
+.retained-console .inset-0{inset:0}
+.retained-console .items-center{align-items:center}
+.retained-console .items-start{align-items:flex-start}
+.retained-console .justify-between{justify-content:space-between}
+.retained-console .justify-center{justify-content:center}
+.retained-console .max-h-48{max-height:12.0rem}
+.retained-console .max-h-64{max-height:16.0rem}
+.retained-console .mb-2{margin-bottom:0.5rem}
+@media(min-width:768px){.retained-console .md\:block{display:block}}
+@media(min-width:768px){.retained-console .md\:border-r{border-right:1px solid var(--color-line)}}
+@media(min-width:768px){.retained-console .md\:grid{display:grid}}
+@media(min-width:768px){.retained-console .md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:768px){.retained-console .md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:768px){.retained-console .md\:grid-cols-\[220px_1fr\]{grid-template-columns:220px minmax(0,1fr)}}
+@media(min-width:768px){.retained-console .md\:hidden{display:none}}
+@media(min-width:768px){.retained-console .md\:items-center{align-items:center}}
+@media(min-width:768px){.retained-console .md\:p-6{padding:1.5rem}}
+.retained-console .min-h-11{min-height:2.75rem}
+.retained-console .min-h-20{min-height:5.0rem}
+.retained-console .min-h-24{min-height:6.0rem}
+.retained-console .min-h-32{min-height:8.0rem}
+.retained-console .min-h-screen{min-height:100vh}
+.retained-console .min-w-0{min-width:0}
+.retained-console .mt-1{margin-top:0.25rem}
+.retained-console .mt-2{margin-top:0.5rem}
+.retained-console .mt-3{margin-top:0.75rem}
+.retained-console .overflow-x-auto{overflow-x:auto}
+.retained-console .overflow-x-hidden{overflow-x:hidden}
+.retained-console .p-2{padding:0.5rem}
+.retained-console .p-3{padding:0.75rem}
+.retained-console .p-4{padding:1.0rem}
+.retained-console .p-6{padding:1.5rem}
+.retained-console .pb-2{padding-bottom:0.5rem}
+.retained-console .px-2{padding-left:0.5rem;padding-right:0.5rem}
+.retained-console .px-3{padding-left:0.75rem;padding-right:0.75rem}
+.retained-console .px-4{padding-left:1.0rem;padding-right:1.0rem}
+.retained-console .py-1{padding-top:0.25rem;padding-bottom:0.25rem}
+.retained-console .py-2{padding-top:0.5rem;padding-bottom:0.5rem}
+.retained-console .py-6{padding-top:1.5rem;padding-bottom:1.5rem}
+.retained-console .rounded-full{border-radius:999px}
+.retained-console .rounded-lg{border-radius:.5rem}
+.retained-console .rounded-xl{border-radius:.75rem}
+.retained-console .shrink-0{flex-shrink:0}
+.retained-console .sticky{position:sticky}
+.retained-console .text-2xl{font-size:1.5rem}
+.retained-console .text-4xl{font-size:2.25rem}
+.retained-console .text-amber{color:var(--color-amber)}
+.retained-console .text-fg{color:var(--color-fg)}
+.retained-console .text-good{color:var(--color-good)}
+.retained-console .text-info{color:var(--color-info)}
+.retained-console .text-left{text-align:left}
+.retained-console .text-lg{font-size:1.125rem}
+.retained-console .text-muted{color:var(--color-muted)}
+.retained-console .text-primary{color:var(--color-primary)}
+.retained-console .text-primary-fg{color:var(--color-primary-fg)}
+.retained-console .text-sm{font-size:.875rem}
+.retained-console .text-xl{font-size:1.25rem}
+.retained-console .text-xs{font-size:.75rem}
+.retained-console .top-0{top:0}
+.retained-console .uppercase{text-transform:uppercase}
+.retained-console .w-full{width:100%}
+.retained-console .z-30{z-index:30}
+.retained-console .z-40{z-index:40}
+.retained-console .z-50{z-index:50}
+@media(max-width:767px){.retained-console main{padding:12px}.retained-console .fixed{overflow-y:auto}.retained-console .text-4xl{font-size:1.75rem}}
+
+.retained-console code,.retained-console pre{font-family:var(--font-mono)}
+
+.retained-console input:not([type="checkbox"]),.retained-console select,.retained-console textarea{min-height:44px}
+.compact .retained-console .text-sm{font-size:.75rem}
+.retained-console{--page:var(--color-bg);--surface:var(--color-surface);--text:var(--color-fg);--muted:var(--color-muted);--forest:var(--color-primary);--mint:var(--color-surface-2);--border:var(--color-line);--soft:var(--color-surface-2)}
+
+.retained-console main{width:100%;max-width:none;margin:0}
+.retained-console button.border{border:1px solid var(--color-line)}
+/* Review corrections: bounded overlays and an embedded case with no viewport rail. */
+.retained-console .retained-dialog{align-items:center;padding:12px;overflow:hidden}
+.retained-console .retained-dialog-panel{max-height:calc(100dvh - 24px);min-height:0;overflow:hidden;padding:0;gap:0}
+.retained-console .retained-dialog-header{flex:none;padding:12px 16px;border-bottom:1px solid var(--color-line);background:var(--color-surface)}
+.retained-console .retained-dialog-header h2{margin:0}
+.retained-console .retained-dialog-body{min-height:0;overflow:auto;overscroll-behavior:contain;padding:16px;display:flex;flex-direction:column;gap:12px}
+.retained-case .main-navigation{position:static;inset:auto;display:none;width:100%;max-height:55dvh;overflow:auto;z-index:auto;box-shadow:none}
+.retained-case .main-navigation.open{display:flex}
+.retained-case .main-mobile{display:inline-flex!important}
+.retained-case .shell{margin-left:0;width:100%}
+.retained-case .watch-demo,.retained-case .showme-bar{margin-left:0;width:100%;height:auto}
+.retained-case .variant-main.conversation-only main{height:auto;overflow:visible;padding:12px}
+.retained-case .ask-dock{position:static;margin:12px 0 0}
+.retained-case .answer-sidebar{position:static;inset:auto;max-height:none;box-shadow:none}
+.retained-case .workspace-bar{padding:8px 0}
+.retained-case .variant-main{color:var(--text);background:var(--page)}
+.retained-console .highcharts-dashboards-component{background:var(--color-surface)!important}
+.retained-console .retained-mobile-more{display:block;position:relative}
+.retained-console .retained-alert-strip>button{flex:none;white-space:nowrap;min-width:56px}
+@media(max-width:767px){
+ .retained-console .retained-header{position:sticky;top:0}
+ .retained-console .retained-primary-header{display:grid;grid-template-columns:auto auto minmax(0,1fr) auto;gap:4px;padding:4px 8px}
+ .retained-console .retained-primary-header>nav,.retained-console .retained-desktop-extra,.retained-console .retained-secondary-header{display:none}
+ .retained-console .retained-library-search{grid-column:1/-1;width:100%;grid-row:2}
+ .retained-console .retained-mobile-more{display:block;grid-column:4;grid-row:1}
+ .retained-console .retained-mobile-more>summary{min-height:44px;display:flex;align-items:center;padding:6px}
+ .retained-console .retained-mobile-more[open]{grid-column:1/-1;grid-row:3;max-height:calc(100dvh - 148px);overflow:auto}
+ .retained-console .retained-mobile-more nav{display:flex;flex-wrap:wrap}
+ .retained-console .retained-alert-strip{padding:4px 8px;gap:4px;font-size:12px;line-height:18px}
+ .retained-case .top{height:auto;flex-wrap:wrap;padding:8px 0}
+ .retained-case .main-site{flex-basis:100%}
+ .retained-case .main-top-actions{margin:0}
+ .retained-case .variant-main .workspace-bar{position:static}
+ .retained-case .workspace-navigation{position:static;inset:auto;margin:12px 0;width:100%;box-shadow:none}
+}
+.compact .retained-console main{padding:12px}
+.compact .retained-console .rounded-xl{padding:12px}
+:root[data-theme=dark] .retained-case{--page:#0b1220;--surface:#131d31;--text:#e7eef8;--muted:#93a4be;--border:#24344f;--soft:#1a2740;--forest:#2bb6a3;--mint:#1a2740}
+.retained-console{--highcharts-background-color:var(--color-surface);--highcharts-neutral-color-0:var(--color-surface);--highcharts-neutral-color-100:var(--color-fg);--highcharts-neutral-color-80:var(--color-fg);--highcharts-neutral-color-60:var(--color-muted);--highcharts-neutral-color-40:var(--color-muted);--highcharts-neutral-color-20:var(--color-line);--highcharts-neutral-color-10:var(--color-line);--highcharts-neutral-color-5:var(--color-surface-2);--highcharts-neutral-color-3:var(--color-surface-2);--highcharts-dashboards-content-background-color:var(--color-surface);--highcharts-dashboards-content-hover-color:var(--color-surface-2);--highcharts-dashboards-edit-row-color:var(--color-primary);--highcharts-dashboards-edit-row-contrast-color:var(--color-primary-fg);--highcharts-dashboards-edit-row-highlight-color:var(--color-info);--highcharts-dashboards-toggle-button-color:var(--color-primary);--highcharts-dashboards-overlay-color:#0b122080}
+
+.retained-console .retained-reset-ack{display:flex;align-items:center;gap:8px;min-height:44px}
+
+/* Native Grid hover/sync layers explicitly retain dark-row contrast. */
+.retained-console .hcg-container{--hcg-row-hover-background:#24344f;--hcg-row-sync-background:#24344f;--hcg-cell-hover-background:#24344f;--hcg-cell-sync-background:#24344f;--hcg-cell-hovered-row-background:#24344f;--hcg-cell-synced-row-background:#24344f;--hcg-cell-hovered-background:#24344f;--hcg-cell-synced-background:#24344f;--hcg-cell-hovered-row-color:#e7eef8;--hcg-cell-synced-row-color:#e7eef8;--hcg-cell-hovered-color:#e7eef8;--hcg-cell-synced-color:#e7eef8}
+
+.retained-console .retained-dialog-wide{width:min(1400px,calc(100vw - 24px));max-width:none}
+.retained-console .retained-dialog-footer{flex:none;padding:12px 16px;border-top:1px solid var(--color-line);background:var(--color-surface)}
+.retained-console .retained-dialog-body{flex:1 1 auto}
+
+/* Readable, named native edit controls; retain their native pointer callbacks. */
+.retained-console .highcharts-dashboards-edit-toolbar-item>div{min-width:44px!important;min-height:44px!important;padding:12px!important;filter:brightness(0) invert(1)!important;background-size:22px 22px!important}
+.retained-console .highcharts-dashboards-edit-menu-item{min-width:44px;min-height:44px}
+.retained-console .highcharts-dashboards-edit-tools-btn,.retained-console .highcharts-dashboards-edit-context-menu-btn,.retained-console .highcharts-dashboards-edit-popup-close{min-width:44px!important;min-height:44px!important}
+.retained-console [data-ekas-native-control]:focus-visible{outline:3px solid #6c9cff;outline-offset:2px}
+
+/* Sidebar tools have the full rail width: never shrink metadata beside a title. */
+.retained-console aside[aria-label="Template sidebar navigation"] .retained-boundary{display:grid;grid-template-columns:minmax(0, 1fr);gap:8px;align-items:start}
+.retained-console aside[aria-label="Template sidebar navigation"] .retained-boundary>button{text-align:left;width:100%;white-space:normal;line-height:1.5}
+.retained-console aside[aria-label="Template sidebar navigation"] .retained-boundary>strong,.retained-console aside[aria-label="Template sidebar navigation"] .retained-boundary>span{width:100%;min-width:0;overflow-wrap:anywhere;word-break:normal;line-height:1.5}
+.retained-console aside[aria-label="Template sidebar navigation"] .retained-boundary>span{font-size:13px}
+
+/* Native edit tools sit above their edit overlay and contain the44px target. */
+.retained-console .highcharts-dashboards-edit-tools{position:relative;z-index:9997;min-height:52px;height:auto;overflow:visible;padding:4px 10px}
+.retained-console .highcharts-dashboards-edit-tools .highcharts-dashboards-edit-tools-btn{min-height:44px;padding:6px 12px 6px 40px!important;background-repeat:no-repeat;background-size:20px;background-position:10px center;white-space:nowrap;pointer-events:auto}
+/* Do not distribute four selectors into illegible31px columns. */
+.retained-case .catalog-tools select{flex:1 1 160px;min-width:min(100%, 160px);max-width:100%;min-height:44px}
+.retained-case .context select,.retained-case .context button{min-height:44px}
+
+/* Native toolbar is anchored assuming30px width. Reserve an independent44px resize lane. */
+.retained-console .highcharts-dashboards-edit-toolbar:has(.highcharts-dashboards-edit-toolbar-cell){transform:translateX(-64px)}
+
+/* Native sidebar lives outside analytic stacking; native visibility classes stay authoritative. */
+.retained-console .highcharts-dashboards-edit-sidebar[data-ekas-native-palette]{z-index:10002;left:auto;right:8px;box-sizing:border-box;max-width:calc(100vw - 16px);overflow:auto;pointer-events:auto;transition:none;padding:12px;background:var(--color-surface)}
+/* Native inactive palettes normally live offscreen. Portalling must not expose them over the active board's palette. */
+.retained-console .highcharts-dashboards-edit-sidebar[data-ekas-native-palette]:not(.highcharts-dashboards-edit-sidebar-show):not(.highcharts-dashboards-edit-sidebar-right-show){display:none!important}
+.retained-console .highcharts-dashboards-edit-sidebar[data-ekas-native-palette] .highcharts-dashboards-edit-sidebar-wrapper{width:100%;height:auto;overflow:visible}
+.retained-console .highcharts-dashboards-edit-sidebar[data-ekas-native-palette] .highcharts-dashboards-edit-popup-close{min-width:44px;min-height:44px;width:auto;color:var(--color-fg);font-size:14px}
+.retained-console .retained-dialog-presentation .retained-dialog-header{gap:8px}
+.retained-console .retained-dialog-presentation .retained-dialog-header h2{flex:1;overflow-wrap:anywhere}
+.retained-console .retained-dialog-presentation .retained-dialog-header>button{flex:none;min-width:64px;min-height:44px;white-space:nowrap}
+@media(max-width:480px){
+.retained-console .retained-dialog-presentation{padding:8px}
+.retained-console .retained-dialog-presentation .retained-dialog-wide{width:calc(100vw - 16px);max-height:calc(100dvh - 16px)}
+.retained-console .retained-dialog-presentation .retained-dialog-body{padding:8px}
+.retained-console .retained-dialog-presentation .highcharts-dashboards-component{margin:2px}
+.retained-console .retained-dialog-presentation .retained-dialog-footer>div{flex-wrap:wrap}
+}
+
+/* V40: bounded native Grid labels; full names available in adjacent disclosure. */
+.retained-console .retained-viz .hcg-header-cell-content{white-space:nowrap;overflow-wrap:normal;min-width:90px;text-overflow:ellipsis;overflow:hidden}
+.retained-console .retained-viz .hcg-header-cell{height:auto;min-height:44px}
+
+.retained-console .retained-grid-column-names summary{min-height:44px;padding:12px 0;cursor:pointer}
+.retained-console .retained-grid-column-names li{overflow-wrap:anywhere;white-space:normal}
+.retained-console .retained-viz .hcg-container{min-width:0;max-width:100%}
+
+/* Recents retain full action labels at 320px and above. */
+.retained-console .retained-recent-row{display:flex;flex-direction:column;align-items:stretch;gap:8px;min-width:0}
+.retained-console .retained-recent-title{min-width:0;text-align:left;overflow-wrap:anywhere}
+.retained-console .retained-recent-actions{display:flex;flex-wrap:wrap;gap:8px;min-width:0}
+.retained-console .retained-recent-actions>button{flex:none;white-space:nowrap;overflow-wrap:normal;word-break:normal;min-height:44px}
+@media(min-width:1024px){.retained-console .retained-recent-row{flex-direction:row;align-items:center;justify-content:space-between}.retained-console .retained-recent-title{flex:1}.retained-console .retained-recent-actions{flex:0 1 auto}}
+
+.retained-console{width:100%;max-width:100%;overflow-x:clip}
+.retained-console .retained-viz{max-width:100%;overflow-x:auto}
+
+/* Secondary utilities use the existing More disclosure at every width. */
+.retained-console .retained-mobile-more>summary{min-height:44px;display:flex;align-items:center;padding:6px;cursor:pointer}
+.retained-console .retained-more-panel{position:absolute;right:0;top:100%;width:280px;max-width:calc(100vw - 24px);max-height:calc(100dvh - 80px);overflow:auto;z-index:40;background:var(--color-surface);border:1px solid var(--color-line);border-radius:8px;padding:12px}
+.retained-console .retained-more-panel button{min-height:44px;text-align:left;white-space:normal}
+.retained-console .retained-more-utilities{display:flex;flex-direction:column;gap:4px}
+.retained-console .retained-more-mobile{display:none}
+.retained-console summary:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px}
+@media(max-width:767px){.retained-console .retained-more-panel{position:static;width:100%;max-width:100%;max-height:none}.retained-console .retained-more-mobile{display:block}.retained-console .retained-more-mobile>button{width:100%}}
+.retained-console .retained-suggestion-context{display:block;width:100%;min-width:0}
+.retained-console .retained-suggestion-context dl{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,160px),1fr));gap:12px;margin:0 0 8px}
+.retained-console .retained-suggestion-context dt{font-size:12px;color:var(--color-muted)}
+.retained-console .retained-suggestion-context dd{margin:0;overflow-wrap:anywhere}
+
+/* V51: actual checkbox hit areas and safe narrow canonical heading. */
+.retained-console .retained-touch-checkbox{width:44px;height:44px;cursor:pointer}
+.retained-console .retained-touch-label{display:flex;align-items:center;gap:8px;min-height:44px;padding:8px;cursor:pointer;overflow-wrap:anywhere}
+.retained-console .retained-metriclab h1{overflow-wrap:anywhere;min-width:0}
+@media(max-width:390px){.retained-console .retained-metriclab h1{font-size:clamp(24px,7vw,30px);line-height:1.2}}
+
+/* V53: reveal mobile navigation at the current sticky-header boundary. */
+@media(max-width:767px){
+ .retained-console aside[aria-label="Template sidebar navigation"]{position:fixed;top:var(--retained-menu-top,121px);left:0;right:0;z-index:29;max-height:calc(100dvh - var(--retained-menu-top,121px));overflow-y:auto;overscroll-behavior:contain;box-sizing:border-box}
+}
+/* Bound the document to its scrollport; wide tables and Boards retain local scrolling. */
+html:has(.retained-console){overflow-x:clip}
+body:has(.retained-console),body:has(.retained-console)>#root{min-width:0;max-width:100%;width:auto}
+
+.retained-console .retained-dialog-header>h2{min-width:0;overflow-wrap:anywhere}
+.retained-console .retained-dialog-header>button{flex:none;white-space:nowrap;word-break:normal}
+.retained-console [data-investigation-events]{flex:none;min-height:fit-content;overflow-x:auto}
+
+/* Captured source labels remain readable in the native Grid at narrow widths. */
+.manufacturing-evidence .hcg-cell.ekas-evidence-label{white-space:normal!important;overflow-wrap:anywhere;text-overflow:clip;line-height:1.35;vertical-align:top}

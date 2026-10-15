@@ -1,0 +1,9 @@
+{
+  "text": "EKAS Guide \u2014 this help request performs no action. Active dataset: training. Active cursor training at 2026-09-29T00:00:00Z. Recorded context: {\"query\":{\"title\":\"Untitled answer\",\"description\":\"Independent training-plant-v1; synthetic. Mixed-cycle OEE uses proposed time-weighted quality. No financial certification.\",\"columns\":[],\"filters\":[],\"chart\":\"column\",\"bucket\":\"month\",\"compare\":false,\"decimals\":1,\"labels\":true,\"asOf\":\"2026-09-29T00:00:00Z\"},\"presentation\":{\"rls\":false,\"site\":\"TP-S1\",\"maskDowntime\":false}}. The original manufacturing case is an inactive retained investigation. Explicitly return to its original investigation before using its approval readiness. Use the current dataset\u2019s visible evidence and normal controls. No manufacturing approval readiness is inferred. Earlier answers keep their original context and clock.",
+  "scope": "{\"query\":{\"title\":\"Untitled answer\",\"description\":\"Independent training-plant-v1; synthetic. Mixed-cycle OEE uses proposed time-weighted quality. No financial certification.\",\"columns\":[],\"filters\":[],\"chart\":\"column\",\"bucket\":\"month\",\"compare\":false,\"decimals\":1,\"labels\":true,\"asOf\":\"2026-09-29T00:00:00Z\"},\"presentation\":{\"rls\":false,\"site\":\"TP-S1\",\"maskDowntime\":false}}",
+  "provenance": {
+    "candidate": "frozen V71",
+    "independent_report_sha256": "58bd2962b6b91df6ddd90076d9d827f99f09713d902a75a56c30ebe2cdbf413b",
+    "historic_interpretation": "schema2 retained exactly; live new Help uses schema3"
+  }
+}

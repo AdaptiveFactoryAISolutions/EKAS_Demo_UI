@@ -1,0 +1,2 @@
+export type SessionCredentialStatus={configured:boolean;revision:number;reference:string|null;persistence:'server-session-only'};
+export function createSessionCredentialStore(options?:{beforeReplace?:(candidate:string)=>void}):{status():SessionCredentialStatus;replace(candidate:string,expectedRevision:number):SessionCredentialStatus;remove(expectedRevision:number):SessionCredentialStatus;withCredential<T>(use:(key:string)=>T):T};

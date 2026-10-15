@@ -1,0 +1,59 @@
+{
+  "explicitFreezeContractFiles": [
+    {
+      "file": "app/inputs/scenario-fixture.json",
+      "expectedSha256": "705747d13cd695d44036f8ee2726ed338a5e17d8036bb65433949ae89564fa7d",
+      "actualSha256": "705747d13cd695d44036f8ee2726ed338a5e17d8036bb65433949ae89564fa7d",
+      "matches": true
+    },
+    {
+      "file": "app/inputs/production-jobs-fixture.json",
+      "expectedSha256": "63c6d0ea5ade51d7fdfacd7110e3a1b5d960a4c852baf6d5a8e41c2d66ec067a",
+      "actualSha256": "63c6d0ea5ade51d7fdfacd7110e3a1b5d960a4c852baf6d5a8e41c2d66ec067a",
+      "matches": true
+    },
+    {
+      "file": "app/inputs/scenario-temporal-policy.json",
+      "expectedSha256": "c0980941f41209892623772fb9f35dd6b37c299b3700fc2bd673157b3694524d",
+      "actualSha256": "c0980941f41209892623772fb9f35dd6b37c299b3700fc2bd673157b3694524d",
+      "matches": true
+    },
+    {
+      "file": "app/inputs/maintenance-fixture.json",
+      "expectedSha256": "a634a20191720e59f2fee241ab51833ffaed412b9fc8ba0d57ee2dfe924cc2e9",
+      "actualSha256": "a634a20191720e59f2fee241ab51833ffaed412b9fc8ba0d57ee2dfe924cc2e9",
+      "matches": true
+    },
+    {
+      "file": "app/inputs/knowledge-fixtures.json",
+      "expectedSha256": "4f934e045b7e41591b0b8d3323c5e1254b0b5f9ac2e565301b710099f4ecef42",
+      "actualSha256": "4f934e045b7e41591b0b8d3323c5e1254b0b5f9ac2e565301b710099f4ecef42",
+      "matches": true
+    },
+    {
+      "file": "app/inputs/sme-change-fixture.json",
+      "expectedSha256": "dbcf7d516bbbe67914fa41263a6d84dbe8320e39dc1a2e1b9f8cef04239489f7",
+      "actualSha256": "dbcf7d516bbbe67914fa41263a6d84dbe8320e39dc1a2e1b9f8cef04239489f7",
+      "matches": true
+    }
+  ],
+  "sourceAnchors": [
+    {
+      "file": "source-provenance/manufacturing-catalog-original.md",
+      "sha256": "85d4602f63c2fbb432a43d2dbe1482839830f57a6805246090e45e2de8f2100e"
+    },
+    {
+      "file": "metrics.inventory.md",
+      "sha256": "c642387150f6501b5e4e1a3790fcb2c98a5992f163ea702d2a0b00580424e348"
+    },
+    {
+      "file": "gap-register.md",
+      "sha256": "421cb492d7fc81cd84889e3f75a2ba8a5256c76dba4db942de5c472a3237c59a"
+    }
+  ],
+  "note": "Frozen contract explicitly enumerates6files;85original/non-history inputs preserved in wider V87/V88identitycheck, including original82. No extra seventh filename is inferred.",
+  "currentInputFiles": 92,
+  "temporalIndexedRecords": 72,
+  "temporalDefaultAsOf": "2026-10-06T14:45:00Z",
+  "temporalDataCutoff": "2026-10-06T14:00:00Z"
+}

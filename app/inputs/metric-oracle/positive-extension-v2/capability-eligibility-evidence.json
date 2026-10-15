@@ -1,0 +1,38 @@
+{
+  "data_origin": "synthetic",
+  "production_certified": false,
+  "assessment_n": 125,
+  "subgroups": 25,
+  "subgroup_size": 5,
+  "gauge_repeatability_sigma_mm": 0.010000000000005116,
+  "six_sigma_percent_spec": 0.3000000000001535,
+  "study_mean_bias_mm": 0.0,
+  "operator_mean_bias_mm": {
+    "SYN-OP0": 0.0,
+    "SYN-OP1": 0.0,
+    "SYN-OP2": 0.0
+  },
+  "part_operator_cells": 30,
+  "trials_per_cell": 3,
+  "calibration_max_abs_error_mm": 0.0010000000000047748,
+  "baseline_subgroups": 30,
+  "baseline_mean": 100.0,
+  "frozen_xbar_limits": [
+    97.31671842700025,
+    102.68328157299975
+  ],
+  "frozen_s_limits": [
+    0,
+    4.178
+  ],
+  "xbar_points_outside_limits": 0,
+  "s_points_outside_limits": 0,
+  "additional_run_rules_enabled": false,
+  "eligibility_basis": "passes specified limited synthetic demo protocol; no blanket qualified boolean; no normality/yield prediction or real plant certification",
+  "limitations": [
+    "repeatability/reproducibility protocol is simplified, not full AIAG crossed ANOVA approval",
+    "independence is synthetic scenario assumption",
+    "expanded run rules could flag alternating subgroup means; current rules must be stated",
+    "customer policy must approve adequacy/MSA thresholds/stability rules before production"
+  ]
+}

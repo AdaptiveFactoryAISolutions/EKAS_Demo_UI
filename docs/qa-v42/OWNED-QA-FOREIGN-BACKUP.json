@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "semanticModel": "ekas-manufacturing-shift-v1",
+  "fixtureVersion": "training-plant-v1",
+  "synthetic": true,
+  "entries": {
+    "unowned.synthetic-qa.retained.test": "{}"
+  }
+}

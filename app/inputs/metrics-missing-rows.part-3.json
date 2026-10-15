@@ -1,0 +1,589 @@
+[
+  {
+    "requirement_id": "KPI-103",
+    "source_name": "Past-Due Quantity",
+    "canonical_id": "past_due_quantity",
+    "kind": "metric",
+    "source_section": 11,
+    "source_section_title": "Delivery and customer service",
+    "family": "delivery",
+    "required_inputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semantic_flags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ],
+    "source_lines": [
+      253,
+      253
+    ],
+    "source_formula": "Σ outstanding quantity past promised date",
+    "source_unit": "units"
+  },
+  {
+    "requirement_id": "KPI-104",
+    "source_name": "Average Delivery Delay",
+    "canonical_id": "average_delivery_delay",
+    "kind": "metric",
+    "source_section": 11,
+    "source_section_title": "Delivery and customer service",
+    "family": "delivery",
+    "required_inputs": "Order lines, shipped/delivered quantity, original/revised promise timestamps",
+    "semantic_flags": [
+      "promise_date_version",
+      "due_cohort_vs_delivered_cohort",
+      "order_line_unit_basis"
+    ],
+    "source_lines": [
+      254,
+      254
+    ],
+    "source_formula": "Σ late days / Late Deliveries",
+    "source_unit": "days"
+  },
+  {
+    "requirement_id": "KPI-105",
+    "source_name": "Inventory Turns",
+    "canonical_id": "inventory_turns",
+    "kind": "metric",
+    "source_section": 12,
+    "source_section_title": "Inventory",
+    "family": "inventory",
+    "required_inputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semantic_flags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ],
+    "source_lines": [
+      264,
+      264
+    ],
+    "source_formula": "Annual COGS / Average Inventory Value",
+    "source_unit": "turns/year"
+  },
+  {
+    "requirement_id": "KPI-106",
+    "source_name": "Inventory Days / DIO",
+    "canonical_id": "inventory_days_dio",
+    "kind": "metric",
+    "source_section": 12,
+    "source_section_title": "Inventory",
+    "family": "inventory",
+    "required_inputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semantic_flags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ],
+    "source_lines": [
+      265,
+      265
+    ],
+    "source_formula": "Average Inventory / COGS × Days in Period",
+    "source_unit": "days"
+  },
+  {
+    "requirement_id": "KPI-107",
+    "source_name": "Raw Material Days",
+    "canonical_id": "raw_material_days",
+    "kind": "metric",
+    "source_section": 12,
+    "source_section_title": "Inventory",
+    "family": "inventory",
+    "required_inputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semantic_flags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ],
+    "source_lines": [
+      266,
+      266
+    ],
+    "source_formula": "Average Raw Material Inventory / Material Usage × Days",
+    "source_unit": "days"
+  },
+  {
+    "requirement_id": "KPI-108",
+    "source_name": "WIP Days",
+    "canonical_id": "wip_days",
+    "kind": "metric",
+    "source_section": 12,
+    "source_section_title": "Inventory",
+    "family": "inventory",
+    "required_inputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semantic_flags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ],
+    "source_lines": [
+      267,
+      267
+    ],
+    "source_formula": "Average WIP / Manufacturing Cost or Throughput × Days",
+    "source_unit": "days"
+  },
+  {
+    "requirement_id": "KPI-109",
+    "source_name": "Finished Goods Days",
+    "canonical_id": "finished_goods_days",
+    "kind": "metric",
+    "source_section": 12,
+    "source_section_title": "Inventory",
+    "family": "inventory",
+    "required_inputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semantic_flags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ],
+    "source_lines": [
+      268,
+      268
+    ],
+    "source_formula": "Average FG Inventory / COGS × Days",
+    "source_unit": "days"
+  },
+  {
+    "requirement_id": "KPI-110",
+    "source_name": "WIP Units",
+    "canonical_id": "wip_units",
+    "kind": "metric",
+    "source_section": 12,
+    "source_section_title": "Inventory",
+    "family": "inventory",
+    "required_inputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semantic_flags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ],
+    "source_lines": [
+      269,
+      269
+    ],
+    "source_formula": "Σ units currently inside production process",
+    "source_unit": "units"
+  },
+  {
+    "requirement_id": "KPI-111",
+    "source_name": "Inventory Accuracy",
+    "canonical_id": "inventory_accuracy",
+    "kind": "metric",
+    "source_section": 12,
+    "source_section_title": "Inventory",
+    "family": "inventory",
+    "required_inputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semantic_flags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ],
+    "source_lines": [
+      270,
+      270
+    ],
+    "source_formula": "Correct inventory records / Records checked × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-112",
+    "source_name": "Obsolete Inventory %",
+    "canonical_id": "obsolete_inventory",
+    "kind": "metric",
+    "source_section": 12,
+    "source_section_title": "Inventory",
+    "family": "inventory",
+    "required_inputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semantic_flags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ],
+    "source_lines": [
+      271,
+      271
+    ],
+    "source_formula": "Obsolete Inventory Value / Total Inventory Value × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-113",
+    "source_name": "Excess Inventory %",
+    "canonical_id": "excess_inventory",
+    "kind": "metric",
+    "source_section": 12,
+    "source_section_title": "Inventory",
+    "family": "inventory",
+    "required_inputs": "Inventory snapshots, valuation policy, COGS/consumption and periods",
+    "semantic_flags": [
+      "valuation_and_period",
+      "wip_dimensions",
+      "time_weighted_inventory"
+    ],
+    "source_lines": [
+      272,
+      272
+    ],
+    "source_formula": "Inventory Above Governed Maximum / Total Inventory × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-114",
+    "source_name": "Little's Law",
+    "canonical_id": "little_s_law",
+    "kind": "model",
+    "source_section": 13,
+    "source_section_title": "Little's Law / manufacturing flow",
+    "family": "flow_model",
+    "required_inputs": "Matched time-average WIP, throughput and boundary-defined lead times",
+    "semantic_flags": [
+      "steady_state_boundary",
+      "scenario_not_causal_prediction"
+    ],
+    "source_lines": [
+      280,
+      297
+    ],
+    "source_formula": "WIP = Throughput × Lead Time ; Lead Time = WIP / Throughput ; Throughput = WIP / Lead Time",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-115",
+    "source_name": "Labor Productivity",
+    "canonical_id": "labor_productivity",
+    "kind": "metric",
+    "source_section": 14,
+    "source_section_title": "Labor and workforce productivity",
+    "family": "workforce",
+    "required_inputs": "Approved labor hours, standard time versions, good output",
+    "semantic_flags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ],
+    "source_lines": [
+      304,
+      304
+    ],
+    "source_formula": "Good Units / Labor Hours",
+    "source_unit": "units/labor-hour"
+  },
+  {
+    "requirement_id": "KPI-116",
+    "source_name": "Labor Efficiency",
+    "canonical_id": "labor_efficiency",
+    "kind": "metric",
+    "source_section": 14,
+    "source_section_title": "Labor and workforce productivity",
+    "family": "workforce",
+    "required_inputs": "Approved labor hours, standard time versions, good output",
+    "semantic_flags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ],
+    "source_lines": [
+      305,
+      305
+    ],
+    "source_formula": "Standard Hours Earned / Actual Labor Hours × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-117",
+    "source_name": "Standard Hours Earned",
+    "canonical_id": "standard_hours_earned",
+    "kind": "metric",
+    "source_section": 14,
+    "source_section_title": "Labor and workforce productivity",
+    "family": "workforce",
+    "required_inputs": "Approved labor hours, standard time versions, good output",
+    "semantic_flags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ],
+    "source_lines": [
+      306,
+      306
+    ],
+    "source_formula": "Good Quantity × Standard Labor Time per Unit",
+    "source_unit": "hours"
+  },
+  {
+    "requirement_id": "KPI-118",
+    "source_name": "Labor Utilization",
+    "canonical_id": "labor_utilization",
+    "kind": "metric",
+    "source_section": 14,
+    "source_section_title": "Labor and workforce productivity",
+    "family": "workforce",
+    "required_inputs": "Approved labor hours, standard time versions, good output",
+    "semantic_flags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ],
+    "source_lines": [
+      307,
+      307
+    ],
+    "source_formula": "Productive Labor Hours / Paid Labor Hours × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-119",
+    "source_name": "Direct Labor Utilization",
+    "canonical_id": "direct_labor_utilization",
+    "kind": "metric",
+    "source_section": 14,
+    "source_section_title": "Labor and workforce productivity",
+    "family": "workforce",
+    "required_inputs": "Approved labor hours, standard time versions, good output",
+    "semantic_flags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ],
+    "source_lines": [
+      308,
+      308
+    ],
+    "source_formula": "Direct Productive Hours / Direct Available Hours × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-120",
+    "source_name": "Overtime %",
+    "canonical_id": "overtime",
+    "kind": "metric",
+    "source_section": 14,
+    "source_section_title": "Labor and workforce productivity",
+    "family": "workforce",
+    "required_inputs": "Approved labor hours, standard time versions, good output",
+    "semantic_flags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ],
+    "source_lines": [
+      309,
+      309
+    ],
+    "source_formula": "Overtime Hours / Total Labor Hours × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-121",
+    "source_name": "Absenteeism Rate",
+    "canonical_id": "absenteeism_rate",
+    "kind": "metric",
+    "source_section": 14,
+    "source_section_title": "Labor and workforce productivity",
+    "family": "workforce",
+    "required_inputs": "Approved labor hours, standard time versions, good output",
+    "semantic_flags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ],
+    "source_lines": [
+      310,
+      310
+    ],
+    "source_formula": "Absent Scheduled Hours / Total Scheduled Hours × 100",
+    "source_unit": "%"
+  },
+  {
+    "requirement_id": "KPI-122",
+    "source_name": "Units per Employee Hour",
+    "canonical_id": "units_per_employee_hour",
+    "kind": "metric",
+    "source_section": 14,
+    "source_section_title": "Labor and workforce productivity",
+    "family": "workforce",
+    "required_inputs": "Approved labor hours, standard time versions, good output",
+    "semantic_flags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ],
+    "source_lines": [
+      311,
+      311
+    ],
+    "source_formula": "Good Units / Employee Hours",
+    "source_unit": "units/hour"
+  },
+  {
+    "requirement_id": "KPI-123",
+    "source_name": "Labor Cost per Unit",
+    "canonical_id": "labor_cost_per_unit",
+    "kind": "metric",
+    "source_section": 14,
+    "source_section_title": "Labor and workforce productivity",
+    "family": "workforce",
+    "required_inputs": "Approved labor hours, standard time versions, good output",
+    "semantic_flags": [
+      "hour_categories",
+      "product_mix",
+      "privacy"
+    ],
+    "source_lines": [
+      312,
+      312
+    ],
+    "source_formula": "Direct Labor Cost / Good Units",
+    "source_unit": "currency/unit"
+  },
+  {
+    "requirement_id": "KPI-124",
+    "source_name": "Manufacturing Cost per Unit",
+    "canonical_id": "manufacturing_cost_per_unit",
+    "kind": "metric",
+    "source_section": 15,
+    "source_section_title": "Cost",
+    "family": "cost",
+    "required_inputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semantic_flags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ],
+    "source_lines": [
+      322,
+      322
+    ],
+    "source_formula": "Total Manufacturing Cost / Good Units Produced",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-125",
+    "source_name": "Conversion Cost per Unit",
+    "canonical_id": "conversion_cost_per_unit",
+    "kind": "metric",
+    "source_section": 15,
+    "source_section_title": "Cost",
+    "family": "cost",
+    "required_inputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semantic_flags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ],
+    "source_lines": [
+      323,
+      323
+    ],
+    "source_formula": "(Direct Labor + Manufacturing Overhead) / Good Units",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-126",
+    "source_name": "Scrap Cost",
+    "canonical_id": "scrap_cost",
+    "kind": "metric",
+    "source_section": 15,
+    "source_section_title": "Cost",
+    "family": "cost",
+    "required_inputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semantic_flags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ],
+    "source_lines": [
+      324,
+      324
+    ],
+    "source_formula": "Scrap Quantity × Governed Unit Cost",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-127",
+    "source_name": "Rework Cost",
+    "canonical_id": "rework_cost",
+    "kind": "metric",
+    "source_section": 15,
+    "source_section_title": "Cost",
+    "family": "cost",
+    "required_inputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semantic_flags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ],
+    "source_lines": [
+      325,
+      325
+    ],
+    "source_formula": "Rework Labor + Material + Overhead",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-128",
+    "source_name": "Downtime Cost",
+    "canonical_id": "downtime_cost",
+    "kind": "metric",
+    "source_section": 15,
+    "source_section_title": "Cost",
+    "family": "cost",
+    "required_inputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semantic_flags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ],
+    "source_lines": [
+      326,
+      326
+    ],
+    "source_formula": "Downtime Duration × Governed Loss/Cost Rate",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-129",
+    "source_name": "Cost Variance",
+    "canonical_id": "cost_variance",
+    "kind": "metric",
+    "source_section": 15,
+    "source_section_title": "Cost",
+    "family": "cost",
+    "required_inputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semantic_flags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ],
+    "source_lines": [
+      327,
+      327
+    ],
+    "source_formula": "Actual Cost − Standard/Budget Cost",
+    "source_unit": null
+  },
+  {
+    "requirement_id": "KPI-130",
+    "source_name": "Cost Variance %",
+    "canonical_id": "cost_variance",
+    "kind": "metric",
+    "source_section": 15,
+    "source_section_title": "Cost",
+    "family": "cost",
+    "required_inputs": "Governed cost ledger/rates, quantity and allocation rules",
+    "semantic_flags": [
+      "cost_governance",
+      "double_counting",
+      "currency_period"
+    ],
+    "source_lines": [
+      328,
+      328
+    ],
+    "source_formula": "(Actual − Standard) / Standard × 100",
+    "source_unit": null
+  }
+]

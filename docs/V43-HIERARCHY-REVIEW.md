@@ -1,0 +1,13 @@
+# Current workbench hierarchy review
+
+Scope:closure brief section5, current V42 source and reviewer V39/V40 bounded findings. This is source/DOM assessment, not pixel or market-leading visual acceptance.
+
+Studio/Underlying already use optional ResultEvidence disclosures for structured selected-result definition, source unit/implementation unit, version, denominator and evidence. Native Grid already constrains widths and provides full names separately. Northworks Snapshot details, sidebar Evidence/Definition and catalog source-unit detail are already expandable. Keep result-level units, eligibility, historical time and current restrictions visible; do not collapse unavailable explanations.
+
+One minimal confirmed cleanup:Ask displayed its entire working SQL block in the main result flow. Move that unchanged block under closed Working query details, after the chart and its current working-query qualification. Preserve text/query/state and all captured notes/qualifications. A red/green actual-screen DOM test checks disclosure and visible result/current-context copy.
+
+Other density remains in Ask suggestion scope, captured notes and the two shell navigation areas. Their text currently communicates exact scope or history, and the reviewer has not supplied a bounded confirmed failure requiring reconstruction. Do not broadly consolidate navigation or split immutable capture notes in this slice. Later native320/390 review can identify a precise remaining defect. Dark-only styles and calculation/registry architecture unchanged.
+
+The independent V41 review subsequently supplied a confirmed P1:latest reply y33913px in a36328px document at320px. V43 therefore also puts the latest reply adjacent to the composer, follows newly appended replies when earlier-history mode is closed, and provides explicit Jump to latest reply. Earlier history uses a bounded scroll region and lazy chart disclosures; opening it pauses automatic follow. Actual header height sets the jump offset. Full immutable notes, timestamp/status, capture rows/query/evidence and feedback indexing are preserved. Chart/working SQL is available in the result/disclosure; original history is never rewritten. Native320/390scroll/focus/reading-flow remains independently reviewable.
+
+Exact additional finite phrases from reviewer conversation-cases.json:actually by part;round to2decimals;show it as a table with two decimal places. These retain existing metric, filters, cutoff, excluded tuples and formula snapshot and change only requested grouping/presentation. Unsupported precision/intent still clarifies; no unrestricted understanding is claimed.

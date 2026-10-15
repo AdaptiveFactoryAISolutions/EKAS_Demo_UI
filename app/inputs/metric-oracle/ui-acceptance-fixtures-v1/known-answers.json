@@ -1,0 +1,3626 @@
+{
+  "oracleVersion": "ui-acceptance-independent@1.0.0",
+  "rawSha256": "3abff22e42ba8470202c0d39fd40d976c0f81eed05b4e9c70de380a7b4fa2205",
+  "knowledgeAsOf": "2026-09-29T00:00:00Z",
+  "timezone": "UTC",
+  "certificationStatus": "UNCERTIFIED_SYNTHETIC",
+  "rows": [
+    {
+      "jobId": "UIA-PAGE-001",
+      "day": "2026-07-01",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-001"
+      },
+      "goodUnits": 100,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.10416666666666667,
+      "oeePercent": 10.416666666666668,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 50.0,
+      "totalProduced": 105,
+      "fpyFraction": 0.9523809523809523,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9523809523809523,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-001",
+        "UIA-PAGE-001-COUNT",
+        "UIA-PAGE-001-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-001-PLAN",
+        "UIA-PAGE-001-LAB",
+        "UIA-PAGE-001-RUN",
+        "UIA-PAGE-001-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-002",
+      "day": "2026-07-02",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-002"
+      },
+      "goodUnits": 101,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.10520833333333333,
+      "oeePercent": 10.520833333333334,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 50.5,
+      "totalProduced": 106,
+      "fpyFraction": 0.9528301886792453,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9528301886792453,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-002",
+        "UIA-PAGE-002-COUNT",
+        "UIA-PAGE-002-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-002-PLAN",
+        "UIA-PAGE-002-LAB",
+        "UIA-PAGE-002-RUN",
+        "UIA-PAGE-002-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-003",
+      "day": "2026-07-03",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-003"
+      },
+      "goodUnits": 102,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.10625,
+      "oeePercent": 10.625,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 51.0,
+      "totalProduced": 107,
+      "fpyFraction": 0.9532710280373832,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9532710280373832,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-003",
+        "UIA-PAGE-003-COUNT",
+        "UIA-PAGE-003-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-003-PLAN",
+        "UIA-PAGE-003-LAB",
+        "UIA-PAGE-003-RUN",
+        "UIA-PAGE-003-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-004",
+      "day": "2026-07-04",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-004"
+      },
+      "goodUnits": 103,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.10729166666666666,
+      "oeePercent": 10.729166666666666,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 51.5,
+      "totalProduced": 108,
+      "fpyFraction": 0.9537037037037037,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9537037037037037,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-004",
+        "UIA-PAGE-004-COUNT",
+        "UIA-PAGE-004-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-004-PLAN",
+        "UIA-PAGE-004-LAB",
+        "UIA-PAGE-004-RUN",
+        "UIA-PAGE-004-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-005",
+      "day": "2026-07-05",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-005"
+      },
+      "goodUnits": 104,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.10833333333333334,
+      "oeePercent": 10.833333333333334,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 52.0,
+      "totalProduced": 109,
+      "fpyFraction": 0.9541284403669725,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9541284403669725,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-005",
+        "UIA-PAGE-005-COUNT",
+        "UIA-PAGE-005-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-005-PLAN",
+        "UIA-PAGE-005-LAB",
+        "UIA-PAGE-005-RUN",
+        "UIA-PAGE-005-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-006",
+      "day": "2026-07-06",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-006"
+      },
+      "goodUnits": 105,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.109375,
+      "oeePercent": 10.9375,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 52.5,
+      "totalProduced": 110,
+      "fpyFraction": 0.9545454545454546,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9545454545454546,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-006",
+        "UIA-PAGE-006-COUNT",
+        "UIA-PAGE-006-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-006-PLAN",
+        "UIA-PAGE-006-LAB",
+        "UIA-PAGE-006-RUN",
+        "UIA-PAGE-006-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-007",
+      "day": "2026-07-07",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-007"
+      },
+      "goodUnits": 106,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.11041666666666666,
+      "oeePercent": 11.041666666666666,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 53.0,
+      "totalProduced": 111,
+      "fpyFraction": 0.954954954954955,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.954954954954955,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-007",
+        "UIA-PAGE-007-COUNT",
+        "UIA-PAGE-007-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-007-PLAN",
+        "UIA-PAGE-007-LAB",
+        "UIA-PAGE-007-RUN",
+        "UIA-PAGE-007-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-008",
+      "day": "2026-07-08",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-008"
+      },
+      "goodUnits": 107,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.11145833333333334,
+      "oeePercent": 11.145833333333334,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 53.5,
+      "totalProduced": 112,
+      "fpyFraction": 0.9553571428571429,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9553571428571429,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-008",
+        "UIA-PAGE-008-COUNT",
+        "UIA-PAGE-008-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-008-PLAN",
+        "UIA-PAGE-008-LAB",
+        "UIA-PAGE-008-RUN",
+        "UIA-PAGE-008-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-009",
+      "day": "2026-07-09",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-009"
+      },
+      "goodUnits": 108,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.1125,
+      "oeePercent": 11.25,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 54.0,
+      "totalProduced": 113,
+      "fpyFraction": 0.9557522123893806,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9557522123893806,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-009",
+        "UIA-PAGE-009-COUNT",
+        "UIA-PAGE-009-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-009-PLAN",
+        "UIA-PAGE-009-LAB",
+        "UIA-PAGE-009-RUN",
+        "UIA-PAGE-009-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-010",
+      "day": "2026-07-10",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-010"
+      },
+      "goodUnits": 109,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.11354166666666667,
+      "oeePercent": 11.354166666666666,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 54.5,
+      "totalProduced": 114,
+      "fpyFraction": 0.956140350877193,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.956140350877193,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-010",
+        "UIA-PAGE-010-COUNT",
+        "UIA-PAGE-010-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-010-PLAN",
+        "UIA-PAGE-010-LAB",
+        "UIA-PAGE-010-RUN",
+        "UIA-PAGE-010-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-011",
+      "day": "2026-07-11",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-011"
+      },
+      "goodUnits": 110,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.11458333333333333,
+      "oeePercent": 11.458333333333332,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 55.0,
+      "totalProduced": 115,
+      "fpyFraction": 0.9565217391304348,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9565217391304348,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-011",
+        "UIA-PAGE-011-COUNT",
+        "UIA-PAGE-011-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-011-PLAN",
+        "UIA-PAGE-011-LAB",
+        "UIA-PAGE-011-RUN",
+        "UIA-PAGE-011-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-012",
+      "day": "2026-07-12",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-012"
+      },
+      "goodUnits": 111,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.115625,
+      "oeePercent": 11.5625,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 55.5,
+      "totalProduced": 116,
+      "fpyFraction": 0.9568965517241379,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9568965517241379,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-012",
+        "UIA-PAGE-012-COUNT",
+        "UIA-PAGE-012-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-012-PLAN",
+        "UIA-PAGE-012-LAB",
+        "UIA-PAGE-012-RUN",
+        "UIA-PAGE-012-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-013",
+      "day": "2026-07-13",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-013"
+      },
+      "goodUnits": 112,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.11666666666666667,
+      "oeePercent": 11.666666666666666,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 56.0,
+      "totalProduced": 117,
+      "fpyFraction": 0.9572649572649573,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9572649572649573,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-013",
+        "UIA-PAGE-013-COUNT",
+        "UIA-PAGE-013-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-013-PLAN",
+        "UIA-PAGE-013-LAB",
+        "UIA-PAGE-013-RUN",
+        "UIA-PAGE-013-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-014",
+      "day": "2026-07-14",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-014"
+      },
+      "goodUnits": 113,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.11770833333333333,
+      "oeePercent": 11.770833333333334,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 56.5,
+      "totalProduced": 118,
+      "fpyFraction": 0.9576271186440678,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9576271186440678,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-014",
+        "UIA-PAGE-014-COUNT",
+        "UIA-PAGE-014-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-014-PLAN",
+        "UIA-PAGE-014-LAB",
+        "UIA-PAGE-014-RUN",
+        "UIA-PAGE-014-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-015",
+      "day": "2026-07-15",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-015"
+      },
+      "goodUnits": 114,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.11875,
+      "oeePercent": 11.875,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 57.0,
+      "totalProduced": 119,
+      "fpyFraction": 0.957983193277311,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.957983193277311,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-015",
+        "UIA-PAGE-015-COUNT",
+        "UIA-PAGE-015-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-015-PLAN",
+        "UIA-PAGE-015-LAB",
+        "UIA-PAGE-015-RUN",
+        "UIA-PAGE-015-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-016",
+      "day": "2026-07-16",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-016"
+      },
+      "goodUnits": 115,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.11979166666666667,
+      "oeePercent": 11.979166666666668,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 57.5,
+      "totalProduced": 120,
+      "fpyFraction": 0.9583333333333334,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9583333333333334,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-016",
+        "UIA-PAGE-016-COUNT",
+        "UIA-PAGE-016-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-016-PLAN",
+        "UIA-PAGE-016-LAB",
+        "UIA-PAGE-016-RUN",
+        "UIA-PAGE-016-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-017",
+      "day": "2026-07-17",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-017"
+      },
+      "goodUnits": 116,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.12083333333333333,
+      "oeePercent": 12.083333333333334,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 58.0,
+      "totalProduced": 121,
+      "fpyFraction": 0.9586776859504132,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9586776859504132,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-017",
+        "UIA-PAGE-017-COUNT",
+        "UIA-PAGE-017-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-017-PLAN",
+        "UIA-PAGE-017-LAB",
+        "UIA-PAGE-017-RUN",
+        "UIA-PAGE-017-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-018",
+      "day": "2026-07-18",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-018"
+      },
+      "goodUnits": 117,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.121875,
+      "oeePercent": 12.1875,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 58.5,
+      "totalProduced": 122,
+      "fpyFraction": 0.9590163934426229,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9590163934426229,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-018",
+        "UIA-PAGE-018-COUNT",
+        "UIA-PAGE-018-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-018-PLAN",
+        "UIA-PAGE-018-LAB",
+        "UIA-PAGE-018-RUN",
+        "UIA-PAGE-018-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-019",
+      "day": "2026-07-19",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-019"
+      },
+      "goodUnits": 118,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.12291666666666666,
+      "oeePercent": 12.291666666666666,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 59.0,
+      "totalProduced": 123,
+      "fpyFraction": 0.959349593495935,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.959349593495935,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-019",
+        "UIA-PAGE-019-COUNT",
+        "UIA-PAGE-019-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-019-PLAN",
+        "UIA-PAGE-019-LAB",
+        "UIA-PAGE-019-RUN",
+        "UIA-PAGE-019-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-020",
+      "day": "2026-07-20",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-020"
+      },
+      "goodUnits": 119,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.12395833333333334,
+      "oeePercent": 12.395833333333334,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 59.5,
+      "totalProduced": 124,
+      "fpyFraction": 0.9596774193548387,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9596774193548387,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-020",
+        "UIA-PAGE-020-COUNT",
+        "UIA-PAGE-020-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-020-PLAN",
+        "UIA-PAGE-020-LAB",
+        "UIA-PAGE-020-RUN",
+        "UIA-PAGE-020-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-021",
+      "day": "2026-07-21",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-021"
+      },
+      "goodUnits": 120,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.125,
+      "oeePercent": 12.5,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 60.0,
+      "totalProduced": 125,
+      "fpyFraction": 0.96,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.96,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-021",
+        "UIA-PAGE-021-COUNT",
+        "UIA-PAGE-021-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-021-PLAN",
+        "UIA-PAGE-021-LAB",
+        "UIA-PAGE-021-RUN",
+        "UIA-PAGE-021-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-022",
+      "day": "2026-07-22",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-022"
+      },
+      "goodUnits": 121,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.12604166666666666,
+      "oeePercent": 12.604166666666666,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 60.5,
+      "totalProduced": 126,
+      "fpyFraction": 0.9603174603174603,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9603174603174603,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-022",
+        "UIA-PAGE-022-COUNT",
+        "UIA-PAGE-022-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-022-PLAN",
+        "UIA-PAGE-022-LAB",
+        "UIA-PAGE-022-RUN",
+        "UIA-PAGE-022-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-023",
+      "day": "2026-07-23",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-023"
+      },
+      "goodUnits": 122,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.12708333333333333,
+      "oeePercent": 12.708333333333332,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 61.0,
+      "totalProduced": 127,
+      "fpyFraction": 0.9606299212598425,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9606299212598425,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-023",
+        "UIA-PAGE-023-COUNT",
+        "UIA-PAGE-023-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-023-PLAN",
+        "UIA-PAGE-023-LAB",
+        "UIA-PAGE-023-RUN",
+        "UIA-PAGE-023-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-024",
+      "day": "2026-07-24",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-024"
+      },
+      "goodUnits": 123,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.128125,
+      "oeePercent": 12.812499999999998,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 61.5,
+      "totalProduced": 128,
+      "fpyFraction": 0.9609375,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9609375,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-024",
+        "UIA-PAGE-024-COUNT",
+        "UIA-PAGE-024-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-024-PLAN",
+        "UIA-PAGE-024-LAB",
+        "UIA-PAGE-024-RUN",
+        "UIA-PAGE-024-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-025",
+      "day": "2026-07-25",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-025"
+      },
+      "goodUnits": 124,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.12916666666666668,
+      "oeePercent": 12.916666666666668,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 62.0,
+      "totalProduced": 129,
+      "fpyFraction": 0.9612403100775194,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9612403100775194,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-025",
+        "UIA-PAGE-025-COUNT",
+        "UIA-PAGE-025-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-025-PLAN",
+        "UIA-PAGE-025-LAB",
+        "UIA-PAGE-025-RUN",
+        "UIA-PAGE-025-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-026",
+      "day": "2026-07-26",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-026"
+      },
+      "goodUnits": 125,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.13020833333333334,
+      "oeePercent": 13.020833333333334,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 62.5,
+      "totalProduced": 130,
+      "fpyFraction": 0.9615384615384616,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9615384615384616,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-026",
+        "UIA-PAGE-026-COUNT",
+        "UIA-PAGE-026-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-026-PLAN",
+        "UIA-PAGE-026-LAB",
+        "UIA-PAGE-026-RUN",
+        "UIA-PAGE-026-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-027",
+      "day": "2026-07-27",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-027"
+      },
+      "goodUnits": 126,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.13125,
+      "oeePercent": 13.125,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 63.0,
+      "totalProduced": 131,
+      "fpyFraction": 0.9618320610687023,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9618320610687023,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-027",
+        "UIA-PAGE-027-COUNT",
+        "UIA-PAGE-027-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-027-PLAN",
+        "UIA-PAGE-027-LAB",
+        "UIA-PAGE-027-RUN",
+        "UIA-PAGE-027-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-028",
+      "day": "2026-07-28",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-028"
+      },
+      "goodUnits": 127,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.13229166666666667,
+      "oeePercent": 13.229166666666666,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 63.5,
+      "totalProduced": 132,
+      "fpyFraction": 0.9621212121212122,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9621212121212122,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-028",
+        "UIA-PAGE-028-COUNT",
+        "UIA-PAGE-028-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-028-PLAN",
+        "UIA-PAGE-028-LAB",
+        "UIA-PAGE-028-RUN",
+        "UIA-PAGE-028-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-029",
+      "day": "2026-07-29",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-029"
+      },
+      "goodUnits": 128,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.13333333333333333,
+      "oeePercent": 13.333333333333334,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 64.0,
+      "totalProduced": 133,
+      "fpyFraction": 0.9624060150375939,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9624060150375939,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-029",
+        "UIA-PAGE-029-COUNT",
+        "UIA-PAGE-029-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-029-PLAN",
+        "UIA-PAGE-029-LAB",
+        "UIA-PAGE-029-RUN",
+        "UIA-PAGE-029-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-030",
+      "day": "2026-07-30",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-030"
+      },
+      "goodUnits": 129,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.134375,
+      "oeePercent": 13.4375,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 64.5,
+      "totalProduced": 134,
+      "fpyFraction": 0.9626865671641791,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9626865671641791,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-030",
+        "UIA-PAGE-030-COUNT",
+        "UIA-PAGE-030-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-030-PLAN",
+        "UIA-PAGE-030-LAB",
+        "UIA-PAGE-030-RUN",
+        "UIA-PAGE-030-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-031",
+      "day": "2026-07-31",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-031"
+      },
+      "goodUnits": 130,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.13541666666666666,
+      "oeePercent": 13.541666666666666,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 65.0,
+      "totalProduced": 135,
+      "fpyFraction": 0.9629629629629629,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9629629629629629,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-031",
+        "UIA-PAGE-031-COUNT",
+        "UIA-PAGE-031-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-031-PLAN",
+        "UIA-PAGE-031-LAB",
+        "UIA-PAGE-031-RUN",
+        "UIA-PAGE-031-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-032",
+      "day": "2026-08-01",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-032"
+      },
+      "goodUnits": 131,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.13645833333333332,
+      "oeePercent": 13.645833333333332,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 65.5,
+      "totalProduced": 136,
+      "fpyFraction": 0.9632352941176471,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9632352941176471,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-032",
+        "UIA-PAGE-032-COUNT",
+        "UIA-PAGE-032-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-032-PLAN",
+        "UIA-PAGE-032-LAB",
+        "UIA-PAGE-032-RUN",
+        "UIA-PAGE-032-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-033",
+      "day": "2026-08-02",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-033"
+      },
+      "goodUnits": 132,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.1375,
+      "oeePercent": 13.750000000000002,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 66.0,
+      "totalProduced": 137,
+      "fpyFraction": 0.9635036496350365,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9635036496350365,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-033",
+        "UIA-PAGE-033-COUNT",
+        "UIA-PAGE-033-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-033-PLAN",
+        "UIA-PAGE-033-LAB",
+        "UIA-PAGE-033-RUN",
+        "UIA-PAGE-033-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-034",
+      "day": "2026-08-03",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-034"
+      },
+      "goodUnits": 133,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.13854166666666667,
+      "oeePercent": 13.854166666666668,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 66.5,
+      "totalProduced": 138,
+      "fpyFraction": 0.9637681159420289,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9637681159420289,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-034",
+        "UIA-PAGE-034-COUNT",
+        "UIA-PAGE-034-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-034-PLAN",
+        "UIA-PAGE-034-LAB",
+        "UIA-PAGE-034-RUN",
+        "UIA-PAGE-034-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-035",
+      "day": "2026-08-04",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-035"
+      },
+      "goodUnits": 134,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.13958333333333334,
+      "oeePercent": 13.958333333333334,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 67.0,
+      "totalProduced": 139,
+      "fpyFraction": 0.9640287769784173,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9640287769784173,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-035",
+        "UIA-PAGE-035-COUNT",
+        "UIA-PAGE-035-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-035-PLAN",
+        "UIA-PAGE-035-LAB",
+        "UIA-PAGE-035-RUN",
+        "UIA-PAGE-035-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-036",
+      "day": "2026-08-05",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-036"
+      },
+      "goodUnits": 135,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.140625,
+      "oeePercent": 14.0625,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 67.5,
+      "totalProduced": 140,
+      "fpyFraction": 0.9642857142857143,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9642857142857143,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-036",
+        "UIA-PAGE-036-COUNT",
+        "UIA-PAGE-036-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-036-PLAN",
+        "UIA-PAGE-036-LAB",
+        "UIA-PAGE-036-RUN",
+        "UIA-PAGE-036-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-037",
+      "day": "2026-08-06",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-037"
+      },
+      "goodUnits": 136,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.14166666666666666,
+      "oeePercent": 14.166666666666666,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 68.0,
+      "totalProduced": 141,
+      "fpyFraction": 0.9645390070921985,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9645390070921985,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-037",
+        "UIA-PAGE-037-COUNT",
+        "UIA-PAGE-037-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-037-PLAN",
+        "UIA-PAGE-037-LAB",
+        "UIA-PAGE-037-RUN",
+        "UIA-PAGE-037-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-038",
+      "day": "2026-08-07",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-038"
+      },
+      "goodUnits": 137,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.14270833333333333,
+      "oeePercent": 14.270833333333332,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 68.5,
+      "totalProduced": 142,
+      "fpyFraction": 0.9647887323943662,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9647887323943662,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-038",
+        "UIA-PAGE-038-COUNT",
+        "UIA-PAGE-038-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-038-PLAN",
+        "UIA-PAGE-038-LAB",
+        "UIA-PAGE-038-RUN",
+        "UIA-PAGE-038-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-039",
+      "day": "2026-08-08",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-039"
+      },
+      "goodUnits": 138,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.14375,
+      "oeePercent": 14.374999999999998,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 69.0,
+      "totalProduced": 143,
+      "fpyFraction": 0.965034965034965,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.965034965034965,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-039",
+        "UIA-PAGE-039-COUNT",
+        "UIA-PAGE-039-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-039-PLAN",
+        "UIA-PAGE-039-LAB",
+        "UIA-PAGE-039-RUN",
+        "UIA-PAGE-039-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-040",
+      "day": "2026-08-09",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-040"
+      },
+      "goodUnits": 139,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.14479166666666668,
+      "oeePercent": 14.479166666666668,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 69.5,
+      "totalProduced": 144,
+      "fpyFraction": 0.9652777777777778,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9652777777777778,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-040",
+        "UIA-PAGE-040-COUNT",
+        "UIA-PAGE-040-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-040-PLAN",
+        "UIA-PAGE-040-LAB",
+        "UIA-PAGE-040-RUN",
+        "UIA-PAGE-040-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-041",
+      "day": "2026-08-10",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-041"
+      },
+      "goodUnits": 140,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.14583333333333334,
+      "oeePercent": 14.583333333333334,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 70.0,
+      "totalProduced": 145,
+      "fpyFraction": 0.9655172413793104,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9655172413793104,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-041",
+        "UIA-PAGE-041-COUNT",
+        "UIA-PAGE-041-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-041-PLAN",
+        "UIA-PAGE-041-LAB",
+        "UIA-PAGE-041-RUN",
+        "UIA-PAGE-041-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-042",
+      "day": "2026-08-11",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-042"
+      },
+      "goodUnits": 141,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.146875,
+      "oeePercent": 14.6875,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 70.5,
+      "totalProduced": 146,
+      "fpyFraction": 0.9657534246575342,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9657534246575342,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-042",
+        "UIA-PAGE-042-COUNT",
+        "UIA-PAGE-042-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-042-PLAN",
+        "UIA-PAGE-042-LAB",
+        "UIA-PAGE-042-RUN",
+        "UIA-PAGE-042-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-043",
+      "day": "2026-08-12",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-043"
+      },
+      "goodUnits": 142,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.14791666666666667,
+      "oeePercent": 14.791666666666666,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 71.0,
+      "totalProduced": 147,
+      "fpyFraction": 0.9659863945578231,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9659863945578231,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-043",
+        "UIA-PAGE-043-COUNT",
+        "UIA-PAGE-043-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-043-PLAN",
+        "UIA-PAGE-043-LAB",
+        "UIA-PAGE-043-RUN",
+        "UIA-PAGE-043-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-044",
+      "day": "2026-08-13",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-044"
+      },
+      "goodUnits": 143,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.14895833333333333,
+      "oeePercent": 14.895833333333334,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 71.5,
+      "totalProduced": 148,
+      "fpyFraction": 0.9662162162162162,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9662162162162162,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-044",
+        "UIA-PAGE-044-COUNT",
+        "UIA-PAGE-044-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-044-PLAN",
+        "UIA-PAGE-044-LAB",
+        "UIA-PAGE-044-RUN",
+        "UIA-PAGE-044-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-045",
+      "day": "2026-08-14",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-045"
+      },
+      "goodUnits": 144,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.15,
+      "oeePercent": 15.0,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 72.0,
+      "totalProduced": 149,
+      "fpyFraction": 0.9664429530201343,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9664429530201343,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-045",
+        "UIA-PAGE-045-COUNT",
+        "UIA-PAGE-045-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-045-PLAN",
+        "UIA-PAGE-045-LAB",
+        "UIA-PAGE-045-RUN",
+        "UIA-PAGE-045-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-046",
+      "day": "2026-08-15",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-046"
+      },
+      "goodUnits": 145,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.15104166666666666,
+      "oeePercent": 15.104166666666666,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 72.5,
+      "totalProduced": 150,
+      "fpyFraction": 0.9666666666666667,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9666666666666667,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-046",
+        "UIA-PAGE-046-COUNT",
+        "UIA-PAGE-046-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-046-PLAN",
+        "UIA-PAGE-046-LAB",
+        "UIA-PAGE-046-RUN",
+        "UIA-PAGE-046-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-047",
+      "day": "2026-08-16",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-047"
+      },
+      "goodUnits": 146,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.15208333333333332,
+      "oeePercent": 15.208333333333332,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 73.0,
+      "totalProduced": 151,
+      "fpyFraction": 0.9668874172185431,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9668874172185431,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-047",
+        "UIA-PAGE-047-COUNT",
+        "UIA-PAGE-047-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-047-PLAN",
+        "UIA-PAGE-047-LAB",
+        "UIA-PAGE-047-RUN",
+        "UIA-PAGE-047-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-048",
+      "day": "2026-08-17",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-048"
+      },
+      "goodUnits": 147,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.153125,
+      "oeePercent": 15.312500000000002,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 73.5,
+      "totalProduced": 152,
+      "fpyFraction": 0.9671052631578947,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9671052631578947,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-048",
+        "UIA-PAGE-048-COUNT",
+        "UIA-PAGE-048-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-048-PLAN",
+        "UIA-PAGE-048-LAB",
+        "UIA-PAGE-048-RUN",
+        "UIA-PAGE-048-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-049",
+      "day": "2026-08-18",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-049"
+      },
+      "goodUnits": 148,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.15416666666666667,
+      "oeePercent": 15.416666666666668,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 74.0,
+      "totalProduced": 153,
+      "fpyFraction": 0.9673202614379085,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9673202614379085,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-049",
+        "UIA-PAGE-049-COUNT",
+        "UIA-PAGE-049-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-049-PLAN",
+        "UIA-PAGE-049-LAB",
+        "UIA-PAGE-049-RUN",
+        "UIA-PAGE-049-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-050",
+      "day": "2026-08-19",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-050"
+      },
+      "goodUnits": 149,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.15520833333333334,
+      "oeePercent": 15.520833333333334,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 74.5,
+      "totalProduced": 154,
+      "fpyFraction": 0.9675324675324676,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9675324675324676,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-050",
+        "UIA-PAGE-050-COUNT",
+        "UIA-PAGE-050-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-050-PLAN",
+        "UIA-PAGE-050-LAB",
+        "UIA-PAGE-050-RUN",
+        "UIA-PAGE-050-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-051",
+      "day": "2026-08-20",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-051"
+      },
+      "goodUnits": 150,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.15625,
+      "oeePercent": 15.625,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 75.0,
+      "totalProduced": 155,
+      "fpyFraction": 0.967741935483871,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.967741935483871,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-051",
+        "UIA-PAGE-051-COUNT",
+        "UIA-PAGE-051-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-051-PLAN",
+        "UIA-PAGE-051-LAB",
+        "UIA-PAGE-051-RUN",
+        "UIA-PAGE-051-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-052",
+      "day": "2026-08-21",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-052"
+      },
+      "goodUnits": 151,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.15729166666666666,
+      "oeePercent": 15.729166666666666,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 75.5,
+      "totalProduced": 156,
+      "fpyFraction": 0.967948717948718,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.967948717948718,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-052",
+        "UIA-PAGE-052-COUNT",
+        "UIA-PAGE-052-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-052-PLAN",
+        "UIA-PAGE-052-LAB",
+        "UIA-PAGE-052-RUN",
+        "UIA-PAGE-052-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-053",
+      "day": "2026-08-22",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-053"
+      },
+      "goodUnits": 152,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.15833333333333333,
+      "oeePercent": 15.833333333333332,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 76.0,
+      "totalProduced": 157,
+      "fpyFraction": 0.9681528662420382,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9681528662420382,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-053",
+        "UIA-PAGE-053-COUNT",
+        "UIA-PAGE-053-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-053-PLAN",
+        "UIA-PAGE-053-LAB",
+        "UIA-PAGE-053-RUN",
+        "UIA-PAGE-053-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-054",
+      "day": "2026-08-23",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-054"
+      },
+      "goodUnits": 153,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.159375,
+      "oeePercent": 15.937499999999998,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 76.5,
+      "totalProduced": 158,
+      "fpyFraction": 0.9683544303797469,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9683544303797469,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-054",
+        "UIA-PAGE-054-COUNT",
+        "UIA-PAGE-054-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-054-PLAN",
+        "UIA-PAGE-054-LAB",
+        "UIA-PAGE-054-RUN",
+        "UIA-PAGE-054-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-055",
+      "day": "2026-08-24",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-055"
+      },
+      "goodUnits": 154,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.16041666666666668,
+      "oeePercent": 16.041666666666668,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 77.0,
+      "totalProduced": 159,
+      "fpyFraction": 0.9685534591194969,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9685534591194969,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-055",
+        "UIA-PAGE-055-COUNT",
+        "UIA-PAGE-055-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-055-PLAN",
+        "UIA-PAGE-055-LAB",
+        "UIA-PAGE-055-RUN",
+        "UIA-PAGE-055-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-056",
+      "day": "2026-08-25",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-056"
+      },
+      "goodUnits": 155,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.16145833333333334,
+      "oeePercent": 16.145833333333336,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 77.5,
+      "totalProduced": 160,
+      "fpyFraction": 0.96875,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.96875,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-056",
+        "UIA-PAGE-056-COUNT",
+        "UIA-PAGE-056-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-056-PLAN",
+        "UIA-PAGE-056-LAB",
+        "UIA-PAGE-056-RUN",
+        "UIA-PAGE-056-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-057",
+      "day": "2026-08-26",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-057"
+      },
+      "goodUnits": 156,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.1625,
+      "oeePercent": 16.25,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 78.0,
+      "totalProduced": 161,
+      "fpyFraction": 0.968944099378882,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.968944099378882,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-057",
+        "UIA-PAGE-057-COUNT",
+        "UIA-PAGE-057-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-057-PLAN",
+        "UIA-PAGE-057-LAB",
+        "UIA-PAGE-057-RUN",
+        "UIA-PAGE-057-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-058",
+      "day": "2026-08-27",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-058"
+      },
+      "goodUnits": 157,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.16354166666666667,
+      "oeePercent": 16.354166666666668,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 78.5,
+      "totalProduced": 162,
+      "fpyFraction": 0.9691358024691358,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9691358024691358,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-058",
+        "UIA-PAGE-058-COUNT",
+        "UIA-PAGE-058-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-058-PLAN",
+        "UIA-PAGE-058-LAB",
+        "UIA-PAGE-058-RUN",
+        "UIA-PAGE-058-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-059",
+      "day": "2026-08-28",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-059"
+      },
+      "goodUnits": 158,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.16458333333333333,
+      "oeePercent": 16.458333333333332,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 79.0,
+      "totalProduced": 163,
+      "fpyFraction": 0.9693251533742331,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9693251533742331,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-059",
+        "UIA-PAGE-059-COUNT",
+        "UIA-PAGE-059-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-059-PLAN",
+        "UIA-PAGE-059-LAB",
+        "UIA-PAGE-059-RUN",
+        "UIA-PAGE-059-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-060",
+      "day": "2026-08-29",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-060"
+      },
+      "goodUnits": 159,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.165625,
+      "oeePercent": 16.5625,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 79.5,
+      "totalProduced": 164,
+      "fpyFraction": 0.9695121951219512,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9695121951219512,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-060",
+        "UIA-PAGE-060-COUNT",
+        "UIA-PAGE-060-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-060-PLAN",
+        "UIA-PAGE-060-LAB",
+        "UIA-PAGE-060-RUN",
+        "UIA-PAGE-060-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-061",
+      "day": "2026-08-30",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-061"
+      },
+      "goodUnits": 160,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.16666666666666666,
+      "oeePercent": 16.666666666666664,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 80.0,
+      "totalProduced": 165,
+      "fpyFraction": 0.9696969696969697,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9696969696969697,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-061",
+        "UIA-PAGE-061-COUNT",
+        "UIA-PAGE-061-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-061-PLAN",
+        "UIA-PAGE-061-LAB",
+        "UIA-PAGE-061-RUN",
+        "UIA-PAGE-061-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-062",
+      "day": "2026-08-31",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-062"
+      },
+      "goodUnits": 161,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.16770833333333332,
+      "oeePercent": 16.770833333333332,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 80.5,
+      "totalProduced": 166,
+      "fpyFraction": 0.9698795180722891,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9698795180722891,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-062",
+        "UIA-PAGE-062-COUNT",
+        "UIA-PAGE-062-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-062-PLAN",
+        "UIA-PAGE-062-LAB",
+        "UIA-PAGE-062-RUN",
+        "UIA-PAGE-062-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-063",
+      "day": "2026-09-01",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-063"
+      },
+      "goodUnits": 162,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.16875,
+      "oeePercent": 16.875,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 81.0,
+      "totalProduced": 167,
+      "fpyFraction": 0.9700598802395209,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9700598802395209,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-063",
+        "UIA-PAGE-063-COUNT",
+        "UIA-PAGE-063-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-063-PLAN",
+        "UIA-PAGE-063-LAB",
+        "UIA-PAGE-063-RUN",
+        "UIA-PAGE-063-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-064",
+      "day": "2026-09-02",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-064"
+      },
+      "goodUnits": 163,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.16979166666666667,
+      "oeePercent": 16.979166666666668,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 81.5,
+      "totalProduced": 168,
+      "fpyFraction": 0.9702380952380952,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9702380952380952,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-064",
+        "UIA-PAGE-064-COUNT",
+        "UIA-PAGE-064-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-064-PLAN",
+        "UIA-PAGE-064-LAB",
+        "UIA-PAGE-064-RUN",
+        "UIA-PAGE-064-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-065",
+      "day": "2026-09-03",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-065"
+      },
+      "goodUnits": 164,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.17083333333333334,
+      "oeePercent": 17.083333333333332,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 82.0,
+      "totalProduced": 169,
+      "fpyFraction": 0.9704142011834319,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9704142011834319,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-065",
+        "UIA-PAGE-065-COUNT",
+        "UIA-PAGE-065-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-065-PLAN",
+        "UIA-PAGE-065-LAB",
+        "UIA-PAGE-065-RUN",
+        "UIA-PAGE-065-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-066",
+      "day": "2026-09-04",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-066"
+      },
+      "goodUnits": 165,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.171875,
+      "oeePercent": 17.1875,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 82.5,
+      "totalProduced": 170,
+      "fpyFraction": 0.9705882352941176,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9705882352941176,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-066",
+        "UIA-PAGE-066-COUNT",
+        "UIA-PAGE-066-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-066-PLAN",
+        "UIA-PAGE-066-LAB",
+        "UIA-PAGE-066-RUN",
+        "UIA-PAGE-066-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-067",
+      "day": "2026-09-05",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-067"
+      },
+      "goodUnits": 166,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.17291666666666666,
+      "oeePercent": 17.291666666666668,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 83.0,
+      "totalProduced": 171,
+      "fpyFraction": 0.9707602339181286,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9707602339181286,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-067",
+        "UIA-PAGE-067-COUNT",
+        "UIA-PAGE-067-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-067-PLAN",
+        "UIA-PAGE-067-LAB",
+        "UIA-PAGE-067-RUN",
+        "UIA-PAGE-067-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-068",
+      "day": "2026-09-06",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-068"
+      },
+      "goodUnits": 167,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.17395833333333333,
+      "oeePercent": 17.395833333333332,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 83.5,
+      "totalProduced": 172,
+      "fpyFraction": 0.9709302325581395,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9709302325581395,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-068",
+        "UIA-PAGE-068-COUNT",
+        "UIA-PAGE-068-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-068-PLAN",
+        "UIA-PAGE-068-LAB",
+        "UIA-PAGE-068-RUN",
+        "UIA-PAGE-068-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-069",
+      "day": "2026-09-07",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-069"
+      },
+      "goodUnits": 168,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.175,
+      "oeePercent": 17.5,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 84.0,
+      "totalProduced": 173,
+      "fpyFraction": 0.9710982658959537,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9710982658959537,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-069",
+        "UIA-PAGE-069-COUNT",
+        "UIA-PAGE-069-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-069-PLAN",
+        "UIA-PAGE-069-LAB",
+        "UIA-PAGE-069-RUN",
+        "UIA-PAGE-069-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-070",
+      "day": "2026-09-08",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-070"
+      },
+      "goodUnits": 169,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.17604166666666668,
+      "oeePercent": 17.604166666666668,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 84.5,
+      "totalProduced": 174,
+      "fpyFraction": 0.9712643678160919,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9712643678160919,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-070",
+        "UIA-PAGE-070-COUNT",
+        "UIA-PAGE-070-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-070-PLAN",
+        "UIA-PAGE-070-LAB",
+        "UIA-PAGE-070-RUN",
+        "UIA-PAGE-070-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-071",
+      "day": "2026-09-09",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-071"
+      },
+      "goodUnits": 170,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.17708333333333334,
+      "oeePercent": 17.708333333333336,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 85.0,
+      "totalProduced": 175,
+      "fpyFraction": 0.9714285714285714,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9714285714285714,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-071",
+        "UIA-PAGE-071-COUNT",
+        "UIA-PAGE-071-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-071-PLAN",
+        "UIA-PAGE-071-LAB",
+        "UIA-PAGE-071-RUN",
+        "UIA-PAGE-071-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-072",
+      "day": "2026-09-10",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-072"
+      },
+      "goodUnits": 171,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.178125,
+      "oeePercent": 17.8125,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 85.5,
+      "totalProduced": 176,
+      "fpyFraction": 0.9715909090909091,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9715909090909091,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-072",
+        "UIA-PAGE-072-COUNT",
+        "UIA-PAGE-072-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-072-PLAN",
+        "UIA-PAGE-072-LAB",
+        "UIA-PAGE-072-RUN",
+        "UIA-PAGE-072-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-073",
+      "day": "2026-09-11",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-073"
+      },
+      "goodUnits": 172,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.17916666666666667,
+      "oeePercent": 17.916666666666668,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 86.0,
+      "totalProduced": 177,
+      "fpyFraction": 0.9717514124293786,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9717514124293786,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-073",
+        "UIA-PAGE-073-COUNT",
+        "UIA-PAGE-073-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-073-PLAN",
+        "UIA-PAGE-073-LAB",
+        "UIA-PAGE-073-RUN",
+        "UIA-PAGE-073-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-074",
+      "day": "2026-09-12",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-074"
+      },
+      "goodUnits": 173,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.18020833333333333,
+      "oeePercent": 18.020833333333332,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 86.5,
+      "totalProduced": 178,
+      "fpyFraction": 0.9719101123595506,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9719101123595506,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-074",
+        "UIA-PAGE-074-COUNT",
+        "UIA-PAGE-074-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-074-PLAN",
+        "UIA-PAGE-074-LAB",
+        "UIA-PAGE-074-RUN",
+        "UIA-PAGE-074-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-075",
+      "day": "2026-09-13",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-075"
+      },
+      "goodUnits": 174,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.18125,
+      "oeePercent": 18.125,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 87.0,
+      "totalProduced": 179,
+      "fpyFraction": 0.9720670391061452,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9720670391061452,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-075",
+        "UIA-PAGE-075-COUNT",
+        "UIA-PAGE-075-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-075-PLAN",
+        "UIA-PAGE-075-LAB",
+        "UIA-PAGE-075-RUN",
+        "UIA-PAGE-075-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-076",
+      "day": "2026-09-14",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-076"
+      },
+      "goodUnits": 175,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.18229166666666666,
+      "oeePercent": 18.229166666666664,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 87.5,
+      "totalProduced": 180,
+      "fpyFraction": 0.9722222222222222,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9722222222222222,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-076",
+        "UIA-PAGE-076-COUNT",
+        "UIA-PAGE-076-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-076-PLAN",
+        "UIA-PAGE-076-LAB",
+        "UIA-PAGE-076-RUN",
+        "UIA-PAGE-076-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-077",
+      "day": "2026-09-15",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-077"
+      },
+      "goodUnits": 176,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.18333333333333332,
+      "oeePercent": 18.333333333333332,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 88.0,
+      "totalProduced": 181,
+      "fpyFraction": 0.9723756906077348,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9723756906077348,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-077",
+        "UIA-PAGE-077-COUNT",
+        "UIA-PAGE-077-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-077-PLAN",
+        "UIA-PAGE-077-LAB",
+        "UIA-PAGE-077-RUN",
+        "UIA-PAGE-077-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-078",
+      "day": "2026-09-16",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-078"
+      },
+      "goodUnits": 177,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.184375,
+      "oeePercent": 18.4375,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 88.5,
+      "totalProduced": 182,
+      "fpyFraction": 0.9725274725274725,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9725274725274725,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-078",
+        "UIA-PAGE-078-COUNT",
+        "UIA-PAGE-078-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-078-PLAN",
+        "UIA-PAGE-078-LAB",
+        "UIA-PAGE-078-RUN",
+        "UIA-PAGE-078-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-079",
+      "day": "2026-09-17",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-079"
+      },
+      "goodUnits": 178,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.18541666666666667,
+      "oeePercent": 18.541666666666668,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 89.0,
+      "totalProduced": 183,
+      "fpyFraction": 0.9726775956284153,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9726775956284153,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-079",
+        "UIA-PAGE-079-COUNT",
+        "UIA-PAGE-079-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-079-PLAN",
+        "UIA-PAGE-079-LAB",
+        "UIA-PAGE-079-RUN",
+        "UIA-PAGE-079-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-080",
+      "day": "2026-09-18",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-080"
+      },
+      "goodUnits": 179,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.18645833333333334,
+      "oeePercent": 18.645833333333332,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 89.5,
+      "totalProduced": 184,
+      "fpyFraction": 0.9728260869565217,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9728260869565217,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-080",
+        "UIA-PAGE-080-COUNT",
+        "UIA-PAGE-080-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-080-PLAN",
+        "UIA-PAGE-080-LAB",
+        "UIA-PAGE-080-RUN",
+        "UIA-PAGE-080-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-081",
+      "day": "2026-09-19",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-081"
+      },
+      "goodUnits": 180,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.1875,
+      "oeePercent": 18.75,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 90.0,
+      "totalProduced": 185,
+      "fpyFraction": 0.972972972972973,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.972972972972973,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-081",
+        "UIA-PAGE-081-COUNT",
+        "UIA-PAGE-081-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-081-PLAN",
+        "UIA-PAGE-081-LAB",
+        "UIA-PAGE-081-RUN",
+        "UIA-PAGE-081-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-082",
+      "day": "2026-09-20",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-082"
+      },
+      "goodUnits": 181,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.18854166666666666,
+      "oeePercent": 18.854166666666668,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 90.5,
+      "totalProduced": 186,
+      "fpyFraction": 0.9731182795698925,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9731182795698925,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-082",
+        "UIA-PAGE-082-COUNT",
+        "UIA-PAGE-082-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-082-PLAN",
+        "UIA-PAGE-082-LAB",
+        "UIA-PAGE-082-RUN",
+        "UIA-PAGE-082-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-083",
+      "day": "2026-09-21",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-083"
+      },
+      "goodUnits": 182,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.18958333333333333,
+      "oeePercent": 18.958333333333332,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 91.0,
+      "totalProduced": 187,
+      "fpyFraction": 0.9732620320855615,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.9732620320855615,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-083",
+        "UIA-PAGE-083-COUNT",
+        "UIA-PAGE-083-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-083-PLAN",
+        "UIA-PAGE-083-LAB",
+        "UIA-PAGE-083-RUN",
+        "UIA-PAGE-083-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-PAGE-084",
+      "day": "2026-09-22",
+      "contextId": "pagination-84days",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-PAGE-084"
+      },
+      "goodUnits": 183,
+      "downtimeMinutes": 5.0,
+      "oeeFraction": 0.190625,
+      "oeePercent": 19.0625,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 475.0,
+      "idealGoodMinutes": 91.5,
+      "totalProduced": 188,
+      "fpyFraction": 0.973404255319149,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.973404255319149,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-PAGE-084",
+        "UIA-PAGE-084-COUNT",
+        "UIA-PAGE-084-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-PAGE-084-PLAN",
+        "UIA-PAGE-084-LAB",
+        "UIA-PAGE-084-RUN",
+        "UIA-PAGE-084-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-HIGH-OEE",
+      "day": "2026-09-25",
+      "contextId": "oee-zero-unavailable",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-HIGH-OEE"
+      },
+      "goodUnits": 864,
+      "downtimeMinutes": 20.0,
+      "oeeFraction": 0.9,
+      "oeePercent": 90.0,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 460.0,
+      "idealGoodMinutes": 432.0,
+      "totalProduced": 900,
+      "fpyFraction": 0.9488888888888889,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.96,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-HIGH-OEE",
+        "UIA-HIGH-OEE-COUNT",
+        "UIA-HIGH-OEE-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-HIGH-OEE-PLAN",
+        "UIA-HIGH-OEE-LAB",
+        "UIA-HIGH-OEE-RUN",
+        "UIA-HIGH-OEE-STOP"
+      ]
+    },
+    {
+      "jobId": "UIA-ZERO-DOWNTIME",
+      "day": "2026-09-26",
+      "contextId": "oee-zero-unavailable",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-ZERO-DOWNTIME"
+      },
+      "goodUnits": 864,
+      "downtimeMinutes": 0,
+      "oeeFraction": 0.9,
+      "oeePercent": 90.0,
+      "plannedMinutes": 480,
+      "runtimeMinutes": 480.0,
+      "idealGoodMinutes": 432.0,
+      "totalProduced": 900,
+      "fpyFraction": 0.96,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": 0.96,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "eligible synthetic observation",
+        "downtime": "eligible synthetic observation"
+      },
+      "sourceRecordIds": [
+        "UIA-ZERO-DOWNTIME",
+        "UIA-ZERO-DOWNTIME-COUNT",
+        "UIA-ZERO-DOWNTIME-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-ZERO-DOWNTIME-PLAN",
+        "UIA-ZERO-DOWNTIME-LAB",
+        "UIA-ZERO-DOWNTIME-RUN"
+      ]
+    },
+    {
+      "jobId": "UIA-UNAVAILABLE",
+      "day": "2026-09-27",
+      "contextId": "oee-zero-unavailable",
+      "dimensions": {
+        "site": "UIA-S1",
+        "line": "UIA-L1",
+        "asset": "UIA-A1",
+        "part": "UIA-P1",
+        "revision": "UIA-P1-R1",
+        "operation": "UIA-P1-R1-OP10",
+        "job": "UIA-UNAVAILABLE"
+      },
+      "goodUnits": null,
+      "downtimeMinutes": null,
+      "oeeFraction": null,
+      "oeePercent": null,
+      "plannedMinutes": 480,
+      "runtimeMinutes": null,
+      "idealGoodMinutes": null,
+      "totalProduced": 900,
+      "fpyFraction": null,
+      "laborPersonHours": 16,
+      "scheduleAttainmentFraction": null,
+      "energyIntensity": null,
+      "eligibility": {
+        "oee": "quality disposition and classified equipment evidence unavailable",
+        "downtime": "primary-state classification unavailable; not zero"
+      },
+      "sourceRecordIds": [
+        "UIA-UNAVAILABLE",
+        "UIA-UNAVAILABLE-COUNT",
+        "UIA-UNAVAILABLE-COVERAGE",
+        "UIA-P1-R1-OP10-STD",
+        "UIA-UNAVAILABLE-PLAN",
+        "UIA-UNAVAILABLE-LAB"
+      ]
+    }
+  ],
+  "edgeAcceptance": {
+    "oeeGreaterThan80Percent": [
+      "UIA-HIGH-OEE",
+      "UIA-ZERO-DOWNTIME"
+    ],
+    "strictBoundary": "exact unrounded fraction >0.8; missing excluded from numeric condition, not replaced by zero",
+    "dropZeroDowntimeKeeps": [
+      "UIA-HIGH-OEE",
+      "UIA-UNAVAILABLE"
+    ],
+    "dropZeroDowntimeRemoves": [
+      "UIA-ZERO-DOWNTIME"
+    ],
+    "dropEmptyDowntimeKeeps": [
+      "UIA-HIGH-OEE",
+      "UIA-ZERO-DOWNTIME"
+    ],
+    "dropEmptyDowntimeRemoves": [
+      "UIA-UNAVAILABLE"
+    ],
+    "combinedDropZeroAndEmptyKeeps": [
+      "UIA-HIGH-OEE"
+    ],
+    "initialRows": 3
+  },
+  "paginationAcceptance": {
+    "groupBy": [
+      "date_raw"
+    ],
+    "sort": "goodUnits DESC then key ASC, matching existing workspace sort",
+    "totalDistinctGroups": 84,
+    "returnedGroupsAtLimit80": 80,
+    "truncated": true,
+    "firstReturnedJob": "UIA-PAGE-084",
+    "lastReturnedJob": "UIA-PAGE-005",
+    "returnedGoodSum": 11480,
+    "fullPopulationGoodSum": 11886,
+    "hiddenGoodSum": 406,
+    "orderedReturnedJobIds": [
+      "UIA-PAGE-084",
+      "UIA-PAGE-083",
+      "UIA-PAGE-082",
+      "UIA-PAGE-081",
+      "UIA-PAGE-080",
+      "UIA-PAGE-079",
+      "UIA-PAGE-078",
+      "UIA-PAGE-077",
+      "UIA-PAGE-076",
+      "UIA-PAGE-075",
+      "UIA-PAGE-074",
+      "UIA-PAGE-073",
+      "UIA-PAGE-072",
+      "UIA-PAGE-071",
+      "UIA-PAGE-070",
+      "UIA-PAGE-069",
+      "UIA-PAGE-068",
+      "UIA-PAGE-067",
+      "UIA-PAGE-066",
+      "UIA-PAGE-065",
+      "UIA-PAGE-064",
+      "UIA-PAGE-063",
+      "UIA-PAGE-062",
+      "UIA-PAGE-061",
+      "UIA-PAGE-060",
+      "UIA-PAGE-059",
+      "UIA-PAGE-058",
+      "UIA-PAGE-057",
+      "UIA-PAGE-056",
+      "UIA-PAGE-055",
+      "UIA-PAGE-054",
+      "UIA-PAGE-053",
+      "UIA-PAGE-052",
+      "UIA-PAGE-051",
+      "UIA-PAGE-050",
+      "UIA-PAGE-049",
+      "UIA-PAGE-048",
+      "UIA-PAGE-047",
+      "UIA-PAGE-046",
+      "UIA-PAGE-045",
+      "UIA-PAGE-044",
+      "UIA-PAGE-043",
+      "UIA-PAGE-042",
+      "UIA-PAGE-041",
+      "UIA-PAGE-040",
+      "UIA-PAGE-039",
+      "UIA-PAGE-038",
+      "UIA-PAGE-037",
+      "UIA-PAGE-036",
+      "UIA-PAGE-035",
+      "UIA-PAGE-034",
+      "UIA-PAGE-033",
+      "UIA-PAGE-032",
+      "UIA-PAGE-031",
+      "UIA-PAGE-030",
+      "UIA-PAGE-029",
+      "UIA-PAGE-028",
+      "UIA-PAGE-027",
+      "UIA-PAGE-026",
+      "UIA-PAGE-025",
+      "UIA-PAGE-024",
+      "UIA-PAGE-023",
+      "UIA-PAGE-022",
+      "UIA-PAGE-021",
+      "UIA-PAGE-020",
+      "UIA-PAGE-019",
+      "UIA-PAGE-018",
+      "UIA-PAGE-017",
+      "UIA-PAGE-016",
+      "UIA-PAGE-015",
+      "UIA-PAGE-014",
+      "UIA-PAGE-013",
+      "UIA-PAGE-012",
+      "UIA-PAGE-011",
+      "UIA-PAGE-010",
+      "UIA-PAGE-009",
+      "UIA-PAGE-008",
+      "UIA-PAGE-007",
+      "UIA-PAGE-006",
+      "UIA-PAGE-005"
+    ],
+    "orderedHiddenJobIds": [
+      "UIA-PAGE-004",
+      "UIA-PAGE-003",
+      "UIA-PAGE-002",
+      "UIA-PAGE-001"
+    ],
+    "fullPopulationPlannedMinutes": 40320,
+    "fullPopulationDowntimeMinutes": 420.0,
+    "viewExportBoundary": "current bounded view has80data rows; total population84 must remain visible; full-population export requires explicit separate all-row query, not silent view relabelling"
+  },
+  "ownershipAcceptance": {
+    "allNames": [
+      "Shared team set",
+      "Personal set"
+    ],
+    "yourNames": [
+      "Personal set"
+    ],
+    "classification": "static source-owned demo boolean only; no real account authorization"
+  }
+}

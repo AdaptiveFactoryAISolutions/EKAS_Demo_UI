@@ -1,0 +1,2 @@
+export type ApplicationListener={once(event:'error'|'close',callback:(error?:Error)=>void):ApplicationListener;listen(port:number,host:string,callback:()=>void):ApplicationListener;address():{port:number,address:string,family:string}|string|null;close(callback:(error?:Error)=>void):void};
+export function createNodeApplicationListener(options:{handler:(request:Request)=>Promise<Response>}):ApplicationListener;

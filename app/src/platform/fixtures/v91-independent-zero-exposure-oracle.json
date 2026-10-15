@@ -1,0 +1,4052 @@
+[
+  {
+    "metricId": "ekas.oee",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "planned_min"
+    ],
+    "originalOperands": {
+      "ideal_good_min": 379.5,
+      "planned_min": 480.0
+    },
+    "simulatedOperands": {
+      "ideal_good_min": 379.5,
+      "planned_min": 0
+    },
+    "expression": "100 * ideal_good_min / planned_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.availability",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "planned_min"
+    ],
+    "originalOperands": {
+      "planned_min": 480.0,
+      "run_min": 430.0
+    },
+    "simulatedOperands": {
+      "planned_min": 0,
+      "run_min": 430.0
+    },
+    "expression": "100 * run_min / planned_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.run_time",
+    "value": -50.0,
+    "availability": "observed",
+    "modifiedOperands": [
+      "planned_min"
+    ],
+    "originalOperands": {
+      "downtime_min": 50.0,
+      "planned_min": 480.0
+    },
+    "simulatedOperands": {
+      "downtime_min": 50.0,
+      "planned_min": 0
+    },
+    "expression": "planned_min - downtime_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.performance",
+    "value": 90.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "ideal_total_min": 387.0,
+      "run_min": 430.0
+    },
+    "simulatedOperands": {
+      "ideal_total_min": 387.0,
+      "run_min": 430.0
+    },
+    "expression": "100 * ideal_total_min / run_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.quality",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "good_units",
+      "total_units"
+    ],
+    "originalOperands": {
+      "good_units": 759,
+      "total_units": 774
+    },
+    "simulatedOperands": {
+      "good_units": 0,
+      "total_units": 0
+    },
+    "expression": "100 * good_units / total_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.overall_utilization",
+    "value": 29.86111111111111,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "calendar_min": 1440.0,
+      "run_min": 430.0
+    },
+    "simulatedOperands": {
+      "calendar_min": 1440.0,
+      "run_min": 430.0
+    },
+    "expression": "100 * run_min / calendar_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.asset_utilization",
+    "value": 89.58333333333333,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "available_asset_min": 480.0,
+      "operating_min": 430.0
+    },
+    "simulatedOperands": {
+      "available_asset_min": 480.0,
+      "operating_min": 430.0
+    },
+    "expression": "100 * operating_min / available_asset_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.teep",
+    "value": 26.354166666666668,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "calendar_min": 1440.0,
+      "ideal_good_min": 379.5
+    },
+    "simulatedOperands": {
+      "calendar_min": 1440.0,
+      "ideal_good_min": 379.5
+    },
+    "expression": "100 * ideal_good_min / calendar_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.loading",
+    "value": 0.0,
+    "availability": "observed",
+    "modifiedOperands": [
+      "planned_min"
+    ],
+    "originalOperands": {
+      "calendar_min": 1440.0,
+      "planned_min": 480.0
+    },
+    "simulatedOperands": {
+      "calendar_min": 1440.0,
+      "planned_min": 0
+    },
+    "expression": "100 * planned_min / calendar_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.oee_gap_to_target",
+    "value": 0.9375,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "actual_pct": 79.0625,
+      "target_pct": 80
+    },
+    "simulatedOperands": {
+      "actual_pct": 79.0625,
+      "target_pct": 80
+    },
+    "expression": "target_pct - actual_pct",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.oee_improvement",
+    "value": 0.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "baseline_pct": 79.0625,
+      "current_pct": 79.0625
+    },
+    "simulatedOperands": {
+      "baseline_pct": 79.0625,
+      "current_pct": 79.0625
+    },
+    "expression": "current_pct - baseline_pct",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.production_vs_plan",
+    "value": 98.06201550387597,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "actual_output": 759,
+      "plan_output": 774
+    },
+    "simulatedOperands": {
+      "actual_output": 759,
+      "plan_output": 774
+    },
+    "expression": "100 * actual_output / plan_output",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.production_variance",
+    "value": -15,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "actual_output": 759,
+      "plan_output": 774
+    },
+    "simulatedOperands": {
+      "actual_output": 759,
+      "plan_output": 774
+    },
+    "expression": "actual_output - plan_output",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.net_throughput",
+    "value": 0.0,
+    "availability": "observed",
+    "modifiedOperands": [
+      "good_units"
+    ],
+    "originalOperands": {
+      "elapsed_h": 8.0,
+      "good_units": 759
+    },
+    "simulatedOperands": {
+      "elapsed_h": 8.0,
+      "good_units": 0
+    },
+    "expression": "good_units / elapsed_h",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.gross_throughput",
+    "value": 0.0,
+    "availability": "observed",
+    "modifiedOperands": [
+      "total_units"
+    ],
+    "originalOperands": {
+      "elapsed_h": 8.0,
+      "total_units": 774
+    },
+    "simulatedOperands": {
+      "elapsed_h": 8.0,
+      "total_units": 0
+    },
+    "expression": "total_units / elapsed_h",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.run_rate",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "operating_h",
+      "total_units"
+    ],
+    "originalOperands": {
+      "operating_h": 7.166666666666667,
+      "total_units": 774
+    },
+    "simulatedOperands": {
+      "operating_h": 0,
+      "total_units": 0
+    },
+    "expression": "total_units / operating_h",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.target_run_rate",
+    "value": 120.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "ideal_cycle_min": 0.5
+    },
+    "simulatedOperands": {
+      "ideal_cycle_min": 0.5
+    },
+    "expression": "60 / ideal_cycle_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.run_rate_attainment",
+    "value": 90.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "actual_rate": 108.0,
+      "target_rate": 120.0
+    },
+    "simulatedOperands": {
+      "actual_rate": 108.0,
+      "target_rate": 120.0
+    },
+    "expression": "100 * actual_rate / target_rate",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.capacity_utilization",
+    "value": 79.0625,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "actual_output": 759,
+      "rated_capacity": 960.0
+    },
+    "simulatedOperands": {
+      "actual_output": 759,
+      "rated_capacity": 960.0
+    },
+    "expression": "100 * actual_output / rated_capacity",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.capacity_attainment",
+    "value": 79.0625,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "actual_output": 759,
+      "available_capacity": 960.0
+    },
+    "simulatedOperands": {
+      "actual_output": 759,
+      "available_capacity": 960.0
+    },
+    "expression": "100 * actual_output / available_capacity",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.unused_capacity",
+    "value": 201.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "actual_output": 759,
+      "available_capacity": 960.0
+    },
+    "simulatedOperands": {
+      "actual_output": 759,
+      "available_capacity": 960.0
+    },
+    "expression": "available_capacity - actual_output",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.constraint_utilization",
+    "value": 89.58333333333333,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "constraint_available_min": 480.0,
+      "constraint_run_min": 430.0
+    },
+    "simulatedOperands": {
+      "constraint_available_min": 480.0,
+      "constraint_run_min": 430.0
+    },
+    "expression": "100 * constraint_run_min / constraint_available_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.constraint_productive_utilization",
+    "value": 80.625,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "constraint_available_min": 480.0,
+      "constraint_productive_min": 387.0
+    },
+    "simulatedOperands": {
+      "constraint_available_min": 480.0,
+      "constraint_productive_min": 387.0
+    },
+    "expression": "100 * constraint_productive_min / constraint_available_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.constraint_throughput",
+    "value": 0.0,
+    "availability": "observed",
+    "modifiedOperands": [
+      "constraint_good_units"
+    ],
+    "originalOperands": {
+      "constraint_good_units": 759,
+      "elapsed_h": 8.0
+    },
+    "simulatedOperands": {
+      "constraint_good_units": 0,
+      "elapsed_h": 8.0
+    },
+    "expression": "constraint_good_units / elapsed_h",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.schedule_adherence",
+    "value": 100.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "as_scheduled_qty": 774,
+      "scheduled_qty": 774
+    },
+    "simulatedOperands": {
+      "as_scheduled_qty": 774,
+      "scheduled_qty": 774
+    },
+    "expression": "100 * as_scheduled_qty / scheduled_qty",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.schedule_attainment",
+    "value": 100.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "completed_qty": 774,
+      "scheduled_qty": 774
+    },
+    "simulatedOperands": {
+      "completed_qty": 774,
+      "scheduled_qty": 774
+    },
+    "expression": "100 * completed_qty / scheduled_qty",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.schedule_variance",
+    "value": 0.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "actual_completion_epoch_min": 29715240.0,
+      "planned_completion_epoch_min": 29715240.0
+    },
+    "simulatedOperands": {
+      "actual_completion_epoch_min": 29715240.0,
+      "planned_completion_epoch_min": 29715240.0
+    },
+    "expression": "actual_completion_epoch_min - planned_completion_epoch_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.orders_completed_to_schedule",
+    "value": 100.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "orders_on_scheduled_date": 1,
+      "scheduled_orders": 1
+    },
+    "simulatedOperands": {
+      "orders_on_scheduled_date": 1,
+      "scheduled_orders": 1
+    },
+    "expression": "100 * orders_on_scheduled_date / scheduled_orders",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.actual_cycle_time",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "total_units"
+    ],
+    "originalOperands": {
+      "operating_min": 430.0,
+      "total_units": 774
+    },
+    "simulatedOperands": {
+      "operating_min": 430.0,
+      "total_units": 0
+    },
+    "expression": "operating_min / total_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.ideal_cycle_time",
+    "value": 0.5,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "ideal_cycle_min": 0.5
+    },
+    "simulatedOperands": {
+      "ideal_cycle_min": 0.5
+    },
+    "expression": "ideal_cycle_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.cycle_time_variance",
+    "value": 0.05555555555555558,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "actual_cycle_min": 0.5555555555555556,
+      "standard_cycle_min": 0.5
+    },
+    "simulatedOperands": {
+      "actual_cycle_min": 0.5555555555555556,
+      "standard_cycle_min": 0.5
+    },
+    "expression": "actual_cycle_min - standard_cycle_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.cycle_time_performance",
+    "value": 90.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "actual_cycle_min": 0.5555555555555556,
+      "standard_cycle_min": 0.5
+    },
+    "simulatedOperands": {
+      "actual_cycle_min": 0.5555555555555556,
+      "standard_cycle_min": 0.5
+    },
+    "expression": "100 * standard_cycle_min / actual_cycle_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.takt_time",
+    "value": 0.6,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "available_production_min": 480.0,
+      "demand_units": 800
+    },
+    "simulatedOperands": {
+      "available_production_min": 480.0,
+      "demand_units": 800
+    },
+    "expression": "available_production_min / demand_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.takt_attainment",
+    "value": 108.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "actual_cycle_min": 0.5555555555555556,
+      "takt_min": 0.6
+    },
+    "simulatedOperands": {
+      "actual_cycle_min": 0.5555555555555556,
+      "takt_min": 0.6
+    },
+    "expression": "100 * takt_min / actual_cycle_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.cycle_to_takt_ratio",
+    "value": 0.925925925925926,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "actual_cycle_min": 0.5555555555555556,
+      "takt_min": 0.6
+    },
+    "simulatedOperands": {
+      "actual_cycle_min": 0.5555555555555556,
+      "takt_min": 0.6
+    },
+    "expression": "actual_cycle_min / takt_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.lead_time",
+    "value": 600.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "completion_epoch_min": 29715240.0,
+      "release_epoch_min": 29714640.0
+    },
+    "simulatedOperands": {
+      "completion_epoch_min": 29715240.0,
+      "release_epoch_min": 29714640.0
+    },
+    "expression": "completion_epoch_min - release_epoch_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.manufacturing_lead_time",
+    "value": 600.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "move_min": 10.0,
+      "process_min": 430.0,
+      "queue_min": 120.0,
+      "setup_min": 10.0,
+      "wait_min": 30.0
+    },
+    "simulatedOperands": {
+      "move_min": 10.0,
+      "process_min": 430.0,
+      "queue_min": 120.0,
+      "setup_min": 10.0,
+      "wait_min": 30.0
+    },
+    "expression": "queue_min + setup_min + process_min + move_min + wait_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.touch_time",
+    "value": 450.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "touch_union_min": 450.0
+    },
+    "simulatedOperands": {
+      "touch_union_min": 450.0
+    },
+    "expression": "touch_union_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.flow_efficiency",
+    "value": 71.66666666666667,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "lead_min": 600.0,
+      "value_added_min": 430.0
+    },
+    "simulatedOperands": {
+      "lead_min": 600.0,
+      "value_added_min": 430.0
+    },
+    "expression": "100 * value_added_min / lead_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.total_downtime",
+    "value": 50.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "downtime_union_min": 50.0
+    },
+    "simulatedOperands": {
+      "downtime_union_min": 50.0
+    },
+    "expression": "downtime_union_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.unplanned_downtime",
+    "value": 40.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "unplanned_union_min": 40.0
+    },
+    "simulatedOperands": {
+      "unplanned_union_min": 40.0
+    },
+    "expression": "unplanned_union_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.planned_downtime",
+    "value": 10.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "planned_union_min": 10.0
+    },
+    "simulatedOperands": {
+      "planned_union_min": 10.0
+    },
+    "expression": "planned_union_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.downtime",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "planned_min"
+    ],
+    "originalOperands": {
+      "downtime_min": 50.0,
+      "planned_min": 480.0
+    },
+    "simulatedOperands": {
+      "downtime_min": 50.0,
+      "planned_min": 0
+    },
+    "expression": "100 * downtime_min / planned_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.downtime_frequency",
+    "value": 0.625,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "downtime_events": 5,
+      "elapsed_h": 8.0
+    },
+    "simulatedOperands": {
+      "downtime_events": 5,
+      "elapsed_h": 8.0
+    },
+    "expression": "downtime_events / elapsed_h",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.average_downtime_event",
+    "value": 10.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "downtime_events": 5,
+      "downtime_min": 50.0
+    },
+    "simulatedOperands": {
+      "downtime_events": 5,
+      "downtime_min": 50.0
+    },
+    "expression": "downtime_min / downtime_events",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.downtime_by_reason",
+    "value": 10.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "reason_union_min": 10.0
+    },
+    "simulatedOperands": {
+      "reason_union_min": 10.0
+    },
+    "expression": "reason_union_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.downtime_contribution",
+    "value": 20.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "reason_min": 10.0,
+      "total_loss_min": 50.0
+    },
+    "simulatedOperands": {
+      "reason_min": 10.0,
+      "total_loss_min": 50.0
+    },
+    "expression": "100 * reason_min / total_loss_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.top_loss_contribution",
+    "value": 20.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "largest_category_min": 10.0,
+      "total_loss_min": 50.0
+    },
+    "simulatedOperands": {
+      "largest_category_min": 10.0,
+      "total_loss_min": 50.0
+    },
+    "expression": "100 * largest_category_min / total_loss_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.minor_stop_time",
+    "value": 0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "minor_stop_union_min": 0
+    },
+    "simulatedOperands": {
+      "minor_stop_union_min": 0
+    },
+    "expression": "minor_stop_union_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.speed_loss",
+    "value": 860.0,
+    "availability": "observed",
+    "modifiedOperands": [
+      "total_units"
+    ],
+    "originalOperands": {
+      "ideal_cycle_min": 0.5,
+      "run_min": 430.0,
+      "total_units": 774
+    },
+    "simulatedOperands": {
+      "ideal_cycle_min": 0.5,
+      "run_min": 430.0,
+      "total_units": 0
+    },
+    "expression": "run_min / ideal_cycle_min - total_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.lost_production_from_downtime",
+    "value": 100.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "downtime_min": 50.0,
+      "expected_units_per_min": 2.0
+    },
+    "simulatedOperands": {
+      "downtime_min": 50.0,
+      "expected_units_per_min": 2.0
+    },
+    "expression": "downtime_min * expected_units_per_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.downtime_cost",
+    "value": 150.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "downtime_min": 50.0,
+      "loss_cost_per_min": 3
+    },
+    "simulatedOperands": {
+      "downtime_min": 50.0,
+      "loss_cost_per_min": 3
+    },
+    "expression": "downtime_min * loss_cost_per_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.changeover_time",
+    "value": 10.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "first_good_new_epoch_min": 29714850.0,
+      "last_good_old_epoch_min": 29714840.0
+    },
+    "simulatedOperands": {
+      "first_good_new_epoch_min": 29714850.0,
+      "last_good_old_epoch_min": 29714840.0
+    },
+    "expression": "first_good_new_epoch_min - last_good_old_epoch_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.average_changeover_time",
+    "value": 10.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "changeover_total_min": 10.0,
+      "changeovers": 1
+    },
+    "simulatedOperands": {
+      "changeover_total_min": 10.0,
+      "changeovers": 1
+    },
+    "expression": "changeover_total_min / changeovers",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.changeover_variance",
+    "value": 2.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "changeover_actual_min": 10.0,
+      "changeover_standard_min": 8
+    },
+    "simulatedOperands": {
+      "changeover_actual_min": 10.0,
+      "changeover_standard_min": 8
+    },
+    "expression": "changeover_actual_min - changeover_standard_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.changeover_attainment",
+    "value": 80.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "changeover_actual_min": 10.0,
+      "changeover_standard_min": 8
+    },
+    "simulatedOperands": {
+      "changeover_actual_min": 10.0,
+      "changeover_standard_min": 8
+    },
+    "expression": "100 * changeover_standard_min / changeover_actual_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.setup_loss",
+    "value": 2.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "setup_actual_min": 10.0,
+      "setup_target_min": 8
+    },
+    "simulatedOperands": {
+      "setup_actual_min": 10.0,
+      "setup_target_min": 8
+    },
+    "expression": "setup_actual_min - setup_target_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.first_pass_yield",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "entering_units",
+      "first_pass_good_units"
+    ],
+    "originalOperands": {
+      "entering_units": 774,
+      "first_pass_good_units": 754
+    },
+    "simulatedOperands": {
+      "entering_units": 0,
+      "first_pass_good_units": 0
+    },
+    "expression": "100 * first_pass_good_units / entering_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.first_time_through",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "entering_units",
+      "first_pass_good_units"
+    ],
+    "originalOperands": {
+      "entering_units": 774,
+      "first_pass_good_units": 754
+    },
+    "simulatedOperands": {
+      "entering_units": 0,
+      "first_pass_good_units": 0
+    },
+    "expression": "100 * first_pass_good_units / entering_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.scrap_rate",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "produced_units"
+    ],
+    "originalOperands": {
+      "produced_units": 774,
+      "scrap_units": 15
+    },
+    "simulatedOperands": {
+      "produced_units": 0,
+      "scrap_units": 15
+    },
+    "expression": "100 * scrap_units / produced_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.reject_rate",
+    "value": 1.937984496124031,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "inspected_units": 774,
+      "rejected_units": 15
+    },
+    "simulatedOperands": {
+      "inspected_units": 774,
+      "rejected_units": 15
+    },
+    "expression": "100 * rejected_units / inspected_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.rework_rate",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "produced_units"
+    ],
+    "originalOperands": {
+      "produced_units": 774,
+      "reworked_unique_units": 5
+    },
+    "simulatedOperands": {
+      "produced_units": 0,
+      "reworked_unique_units": 5
+    },
+    "expression": "100 * reworked_unique_units / produced_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.defect_rate",
+    "value": 2.5839793281653747,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "defective_unique_units": 20,
+      "inspected_units": 774
+    },
+    "simulatedOperands": {
+      "defective_unique_units": 20,
+      "inspected_units": 774
+    },
+    "expression": "100 * defective_unique_units / inspected_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.defects_per_unit_dpu",
+    "value": 0.029715762273901807,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "defects": 23,
+      "inspected_units": 774
+    },
+    "simulatedOperands": {
+      "defects": 23,
+      "inspected_units": 774
+    },
+    "expression": "defects / inspected_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.dpmo",
+    "value": 5943.152454780362,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "defects": 23,
+      "opportunity_count": 3870
+    },
+    "simulatedOperands": {
+      "defects": 23,
+      "opportunity_count": 3870
+    },
+    "expression": "1000000 * defects / opportunity_count",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.ppm_defective",
+    "value": 25839.793281653747,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "defective_unique_units": 20,
+      "inspected_units": 774
+    },
+    "simulatedOperands": {
+      "defective_unique_units": 20,
+      "inspected_units": 774
+    },
+    "expression": "1000000 * defective_unique_units / inspected_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.customer_reject_rate",
+    "value": 0.21367521367521367,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "customer_rejected_units": 5,
+      "shipped_units": 2340
+    },
+    "simulatedOperands": {
+      "customer_rejected_units": 5,
+      "shipped_units": 2340
+    },
+    "expression": "100 * customer_rejected_units / shipped_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.customer_ppm",
+    "value": 2136.7521367521367,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "customer_defective_units": 5,
+      "shipped_units": 2340
+    },
+    "simulatedOperands": {
+      "customer_defective_units": 5,
+      "shipped_units": 2340
+    },
+    "expression": "1000000 * customer_defective_units / shipped_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.quality_loss",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "final_non_good_units",
+      "total_units"
+    ],
+    "originalOperands": {
+      "final_non_good_units": 15,
+      "total_units": 774
+    },
+    "simulatedOperands": {
+      "final_non_good_units": 0,
+      "total_units": 0
+    },
+    "expression": "100 * final_non_good_units / total_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.good_count",
+    "value": 759,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "final_accepted_unique_units": 759
+    },
+    "simulatedOperands": {
+      "final_accepted_unique_units": 759
+    },
+    "expression": "final_accepted_unique_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.rolled_throughput_yield",
+    "value": 94.96221662468514,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "stage_first_pass_yields": [
+        0.9874055415617129,
+        0.9872448979591837,
+        0.9741602067183462
+      ]
+    },
+    "simulatedOperands": {
+      "stage_first_pass_yields": [
+        0.9874055415617129,
+        0.9872448979591837,
+        0.9741602067183462
+      ]
+    },
+    "expression": "product(stage_first_pass_yields)",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.cp",
+    "value": 1.6666666666666667,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "lsl": 90,
+      "sigma_within": 2.0,
+      "usl": 110
+    },
+    "simulatedOperands": {
+      "lsl": 90,
+      "sigma_within": 2.0,
+      "usl": 110
+    },
+    "expression": "(usl - lsl) / (6 * sigma_within)",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.cpk",
+    "value": 1.665333333333334,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "lsl": 90,
+      "process_mean": 99.992,
+      "sigma_within": 2.0,
+      "usl": 110
+    },
+    "simulatedOperands": {
+      "lsl": 90,
+      "process_mean": 99.992,
+      "sigma_within": 2.0,
+      "usl": 110
+    },
+    "expression": "min((usl - process_mean) / (3 * sigma_within), (process_mean - lsl) / (3 * sigma_within))",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.pp",
+    "value": 1.8444477869306306,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "lsl": 90,
+      "sigma_overall": 1.807225640624057,
+      "usl": 110
+    },
+    "simulatedOperands": {
+      "lsl": 90,
+      "sigma_overall": 1.807225640624057,
+      "usl": 110
+    },
+    "expression": "(usl - lsl) / (6 * sigma_overall)",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.ppk",
+    "value": 1.842972228701087,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "lsl": 90,
+      "process_mean": 99.992,
+      "sigma_overall": 1.807225640624057,
+      "usl": 110
+    },
+    "simulatedOperands": {
+      "lsl": 90,
+      "process_mean": 99.992,
+      "sigma_overall": 1.807225640624057,
+      "usl": 110
+    },
+    "expression": "min((usl - process_mean) / (3 * sigma_overall), (process_mean - lsl) / (3 * sigma_overall))",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.mtbf",
+    "value": 0.0,
+    "availability": "observed",
+    "modifiedOperands": [
+      "operating_h"
+    ],
+    "originalOperands": {
+      "failures": 20,
+      "operating_h": 129.0
+    },
+    "simulatedOperands": {
+      "failures": 20,
+      "operating_h": 0
+    },
+    "expression": "operating_h / failures",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.mttr_repair",
+    "value": 0.09999999999999999,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "active_repair_elapsed_h": 1.2,
+      "repairs": 12
+    },
+    "simulatedOperands": {
+      "active_repair_elapsed_h": 1.2,
+      "repairs": 12
+    },
+    "expression": "active_repair_elapsed_h / repairs",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.mttr_restore",
+    "value": 0.16666666666666666,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "incidents": 12,
+      "restoration_elapsed_h": 2.0
+    },
+    "simulatedOperands": {
+      "incidents": 12,
+      "restoration_elapsed_h": 2.0
+    },
+    "expression": "restoration_elapsed_h / incidents",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.mttf",
+    "value": 130.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "failed_complete_lifetime_h": 520,
+      "nonrepairable_failures": 4
+    },
+    "simulatedOperands": {
+      "failed_complete_lifetime_h": 520,
+      "nonrepairable_failures": 4
+    },
+    "expression": "failed_complete_lifetime_h / nonrepairable_failures",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.failure_rate",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "operating_h"
+    ],
+    "originalOperands": {
+      "failures": 20,
+      "operating_h": 129.0
+    },
+    "simulatedOperands": {
+      "failures": 20,
+      "operating_h": 0
+    },
+    "expression": "failures / operating_h",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.reliability",
+    "value": 0.28929450030903336,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "failure_lambda_per_h": 0.15503875968992248,
+      "horizon_h": 8
+    },
+    "simulatedOperands": {
+      "failure_lambda_per_h": 0.15503875968992248,
+      "horizon_h": 8
+    },
+    "expression": "exp(-failure_lambda_per_h * horizon_h)",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.repair_rate",
+    "value": 10.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "active_repair_elapsed_h": 1.2,
+      "repairs": 12
+    },
+    "simulatedOperands": {
+      "active_repair_elapsed_h": 1.2,
+      "repairs": 12
+    },
+    "expression": "repairs / active_repair_elapsed_h",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.maintenance_downtime",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "planned_min"
+    ],
+    "originalOperands": {
+      "maintenance_union_min": 20.0,
+      "planned_min": 480.0
+    },
+    "simulatedOperands": {
+      "maintenance_union_min": 20.0,
+      "planned_min": 0
+    },
+    "expression": "100 * maintenance_union_min / planned_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.breakdown_frequency",
+    "value": 3.3333333333333335,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "breakdowns": 20,
+      "elapsed_days": 6
+    },
+    "simulatedOperands": {
+      "breakdowns": 20,
+      "elapsed_days": 6
+    },
+    "expression": "breakdowns / elapsed_days",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.reactive_maintenance",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "maintenance_labor_h",
+      "reactive_labor_h"
+    ],
+    "originalOperands": {
+      "maintenance_labor_h": 6.4,
+      "reactive_labor_h": 2.4
+    },
+    "simulatedOperands": {
+      "maintenance_labor_h": 0,
+      "reactive_labor_h": 0
+    },
+    "expression": "100 * reactive_labor_h / maintenance_labor_h",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.planned_maintenance",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "maintenance_labor_h",
+      "planned_labor_h"
+    ],
+    "originalOperands": {
+      "maintenance_labor_h": 6.4,
+      "planned_labor_h": 4.0
+    },
+    "simulatedOperands": {
+      "maintenance_labor_h": 0,
+      "planned_labor_h": 0
+    },
+    "expression": "100 * planned_labor_h / maintenance_labor_h",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.pm_compliance",
+    "value": 75.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "pm_due": 8,
+      "pm_on_time": 6
+    },
+    "simulatedOperands": {
+      "pm_due": 8,
+      "pm_on_time": 6
+    },
+    "expression": "100 * pm_on_time / pm_due",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.schedule_compliance_maintenance",
+    "value": 75.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "maintenance_jobs_as_planned": 9,
+      "maintenance_jobs_scheduled": 12
+    },
+    "simulatedOperands": {
+      "maintenance_jobs_as_planned": 9,
+      "maintenance_jobs_scheduled": 12
+    },
+    "expression": "100 * maintenance_jobs_as_planned / maintenance_jobs_scheduled",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.maintenance_backlog",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "available_weekly_labor_h",
+      "backlog_labor_h"
+    ],
+    "originalOperands": {
+      "available_weekly_labor_h": 40,
+      "backlog_labor_h": 48
+    },
+    "simulatedOperands": {
+      "available_weekly_labor_h": 0,
+      "backlog_labor_h": 0
+    },
+    "expression": "backlog_labor_h / available_weekly_labor_h",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.repeat_failure_rate",
+    "value": 15.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "failures": 20,
+      "repeat_failures": 3
+    },
+    "simulatedOperands": {
+      "failures": 20,
+      "repeat_failures": 3
+    },
+    "expression": "100 * repeat_failures / failures",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.emergency_work",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "emergency_labor_h",
+      "maintenance_labor_h"
+    ],
+    "originalOperands": {
+      "emergency_labor_h": 0.8,
+      "maintenance_labor_h": 6.4
+    },
+    "simulatedOperands": {
+      "emergency_labor_h": 0,
+      "maintenance_labor_h": 0
+    },
+    "expression": "100 * emergency_labor_h / maintenance_labor_h",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.otif",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "eligible_orders"
+    ],
+    "originalOperands": {
+      "eligible_orders": 12,
+      "orders_both_on_time_in_full": 6
+    },
+    "simulatedOperands": {
+      "eligible_orders": 0,
+      "orders_both_on_time_in_full": 6
+    },
+    "expression": "100 * orders_both_on_time_in_full / eligible_orders",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.on_time_delivery_otd",
+    "value": 50.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "delivered_on_time_orders": 6,
+      "delivered_orders": 12
+    },
+    "simulatedOperands": {
+      "delivered_on_time_orders": 6,
+      "delivered_orders": 12
+    },
+    "expression": "100 * delivered_on_time_orders / delivered_orders",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.in_full_delivery",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "eligible_orders"
+    ],
+    "originalOperands": {
+      "complete_orders": 9,
+      "eligible_orders": 12
+    },
+    "simulatedOperands": {
+      "complete_orders": 9,
+      "eligible_orders": 0
+    },
+    "expression": "100 * complete_orders / eligible_orders",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.fill_rate",
+    "value": 80.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "immediately_shipped_units": 320,
+      "ordered_units": 400
+    },
+    "simulatedOperands": {
+      "immediately_shipped_units": 320,
+      "ordered_units": 400
+    },
+    "expression": "100 * immediately_shipped_units / ordered_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.perfect_order_rate",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "eligible_orders"
+    ],
+    "originalOperands": {
+      "eligible_orders": 12,
+      "perfect_orders": 3
+    },
+    "simulatedOperands": {
+      "eligible_orders": 0,
+      "perfect_orders": 3
+    },
+    "expression": "100 * perfect_orders / eligible_orders",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.late_order_rate",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "eligible_orders"
+    ],
+    "originalOperands": {
+      "eligible_orders": 12,
+      "late_orders": 6
+    },
+    "simulatedOperands": {
+      "eligible_orders": 0,
+      "late_orders": 6
+    },
+    "expression": "100 * late_orders / eligible_orders",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.past_due_quantity",
+    "value": 60,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "past_due_remaining_qty": 60
+    },
+    "simulatedOperands": {
+      "past_due_remaining_qty": 60
+    },
+    "expression": "past_due_remaining_qty",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.average_delivery_delay",
+    "value": 2.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "late_days_sum": 6.0,
+      "late_deliveries": 3
+    },
+    "simulatedOperands": {
+      "late_days_sum": 6.0,
+      "late_deliveries": 3
+    },
+    "expression": "late_days_sum / late_deliveries",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.inventory_turns",
+    "value": 7.562369324793522,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "annual_cogs": 18250,
+      "average_inventory_value": 2413.264840182648
+    },
+    "simulatedOperands": {
+      "annual_cogs": 18250,
+      "average_inventory_value": 2413.264840182648
+    },
+    "expression": "annual_cogs / average_inventory_value",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.inventory_turns_period",
+    "value": 1.8685121107266436,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "average_inventory_value": 2408.3333333333335,
+      "period_cogs": 4500.0
+    },
+    "simulatedOperands": {
+      "average_inventory_value": 2408.3333333333335,
+      "period_cogs": 4500.0
+    },
+    "expression": "period_cogs / average_inventory_value",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.inventory_days_dio",
+    "value": 48.166666666666664,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "average_inventory_value": 2408.3333333333335,
+      "period_cogs": 4500.0,
+      "period_days": 90
+    },
+    "simulatedOperands": {
+      "average_inventory_value": 2408.3333333333335,
+      "period_cogs": 4500.0,
+      "period_days": 90
+    },
+    "expression": "average_inventory_value * period_days / period_cogs",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.raw_material_days",
+    "value": 26.666666666666668,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "average_rm_value": 800.0,
+      "period_days": 90,
+      "period_material_usage_value": 2700.0
+    },
+    "simulatedOperands": {
+      "average_rm_value": 800.0,
+      "period_days": 90,
+      "period_material_usage_value": 2700.0
+    },
+    "expression": "average_rm_value * period_days / period_material_usage_value",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.wip_days_value",
+    "value": 17.77777777777778,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "average_wip_value": 800.0,
+      "period_days": 90,
+      "period_manufacturing_cost": 4050.0
+    },
+    "simulatedOperands": {
+      "average_wip_value": 800.0,
+      "period_days": 90,
+      "period_manufacturing_cost": 4050.0
+    },
+    "expression": "average_wip_value * period_days / period_manufacturing_cost",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.wip_days_units",
+    "value": 4.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "average_wip_units": 20.0,
+      "throughput_units_per_day": 5.0
+    },
+    "simulatedOperands": {
+      "average_wip_units": 20.0,
+      "throughput_units_per_day": 5.0
+    },
+    "expression": "average_wip_units / throughput_units_per_day",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.finished_goods_days",
+    "value": 16.166666666666668,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "average_fg_value": 808.3333333333333,
+      "period_cogs": 4500.0,
+      "period_days": 90
+    },
+    "simulatedOperands": {
+      "average_fg_value": 808.3333333333333,
+      "period_cogs": 4500.0,
+      "period_days": 90
+    },
+    "expression": "average_fg_value * period_days / period_cogs",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.wip_units",
+    "value": 100,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "snapshot_wip_units": 100
+    },
+    "simulatedOperands": {
+      "snapshot_wip_units": 100
+    },
+    "expression": "snapshot_wip_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.inventory_accuracy",
+    "value": 83.33333333333333,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "inventory_checked_records": 6,
+      "inventory_correct_records": 5
+    },
+    "simulatedOperands": {
+      "inventory_checked_records": 6,
+      "inventory_correct_records": 5
+    },
+    "expression": "100 * inventory_correct_records / inventory_checked_records",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.obsolete_inventory",
+    "value": 16.666666666666668,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "obsolete_value": 500,
+      "total_inventory_value": 3000
+    },
+    "simulatedOperands": {
+      "obsolete_value": 500,
+      "total_inventory_value": 3000
+    },
+    "expression": "100 * obsolete_value / total_inventory_value",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.excess_inventory",
+    "value": 16.666666666666668,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "excess_value": 500,
+      "total_inventory_value": 3000
+    },
+    "simulatedOperands": {
+      "excess_value": 500,
+      "total_inventory_value": 3000
+    },
+    "expression": "100 * excess_value / total_inventory_value",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.little_s_law",
+    "value": 4.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "average_wip_units": 20.0,
+      "throughput_units_per_day": 5.0
+    },
+    "simulatedOperands": {
+      "average_wip_units": 20.0,
+      "throughput_units_per_day": 5.0
+    },
+    "expression": "average_wip_units / throughput_units_per_day",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.labor_productivity",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "good_units",
+      "labor_h"
+    ],
+    "originalOperands": {
+      "good_units": 759,
+      "labor_h": 16
+    },
+    "simulatedOperands": {
+      "good_units": 0,
+      "labor_h": 0
+    },
+    "expression": "good_units / labor_h",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.labor_efficiency",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "labor_h"
+    ],
+    "originalOperands": {
+      "earned_standard_h": 7.59,
+      "labor_h": 16
+    },
+    "simulatedOperands": {
+      "earned_standard_h": 7.59,
+      "labor_h": 0
+    },
+    "expression": "100 * earned_standard_h / labor_h",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.standard_hours_earned",
+    "value": 0,
+    "availability": "observed",
+    "modifiedOperands": [
+      "good_units",
+      "standard_labor_h_per_unit"
+    ],
+    "originalOperands": {
+      "good_units": 759,
+      "standard_labor_h_per_unit": 0.01
+    },
+    "simulatedOperands": {
+      "good_units": 0,
+      "standard_labor_h_per_unit": 0
+    },
+    "expression": "good_units * standard_labor_h_per_unit",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.labor_utilization",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "paid_labor_h",
+      "productive_labor_h"
+    ],
+    "originalOperands": {
+      "paid_labor_h": 16,
+      "productive_labor_h": 12
+    },
+    "simulatedOperands": {
+      "paid_labor_h": 0,
+      "productive_labor_h": 0
+    },
+    "expression": "100 * productive_labor_h / paid_labor_h",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.direct_labor_utilization",
+    "value": 75.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "direct_available_h": 16,
+      "direct_productive_h": 12
+    },
+    "simulatedOperands": {
+      "direct_available_h": 16,
+      "direct_productive_h": 12
+    },
+    "expression": "100 * direct_productive_h / direct_available_h",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.overtime",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "labor_h"
+    ],
+    "originalOperands": {
+      "labor_h": 16,
+      "overtime_h": 2
+    },
+    "simulatedOperands": {
+      "labor_h": 0,
+      "overtime_h": 2
+    },
+    "expression": "100 * overtime_h / labor_h",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.absenteeism_rate",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "scheduled_labor_h"
+    ],
+    "originalOperands": {
+      "absent_scheduled_h": 0,
+      "scheduled_labor_h": 16
+    },
+    "simulatedOperands": {
+      "absent_scheduled_h": 0,
+      "scheduled_labor_h": 0
+    },
+    "expression": "100 * absent_scheduled_h / scheduled_labor_h",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.units_per_employee_hour",
+    "value": 0.0,
+    "availability": "observed",
+    "modifiedOperands": [
+      "good_units"
+    ],
+    "originalOperands": {
+      "employee_h": 16,
+      "good_units": 759
+    },
+    "simulatedOperands": {
+      "employee_h": 16,
+      "good_units": 0
+    },
+    "expression": "good_units / employee_h",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.labor_cost_per_unit",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "good_units"
+    ],
+    "originalOperands": {
+      "direct_labor_cost": 320,
+      "good_units": 759
+    },
+    "simulatedOperands": {
+      "direct_labor_cost": 320,
+      "good_units": 0
+    },
+    "expression": "direct_labor_cost / good_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.manufacturing_cost_per_unit",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "good_units"
+    ],
+    "originalOperands": {
+      "good_units": 759,
+      "manufacturing_cost": 2105.4
+    },
+    "simulatedOperands": {
+      "good_units": 0,
+      "manufacturing_cost": 2105.4
+    },
+    "expression": "manufacturing_cost / good_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.conversion_cost_per_unit",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "good_units"
+    ],
+    "originalOperands": {
+      "direct_labor_cost": 320,
+      "good_units": 759,
+      "overhead_cost": 160
+    },
+    "simulatedOperands": {
+      "direct_labor_cost": 320,
+      "good_units": 0,
+      "overhead_cost": 160
+    },
+    "expression": "(direct_labor_cost + overhead_cost) / good_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.scrap_cost",
+    "value": 30,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "scrap_unit_cost": 2,
+      "scrap_units": 15
+    },
+    "simulatedOperands": {
+      "scrap_unit_cost": 2,
+      "scrap_units": 15
+    },
+    "expression": "scrap_units * scrap_unit_cost",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.scrap_cost_share",
+    "value": 1.4249073810202337,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "manufacturing_cost": 2105.4,
+      "scrap_cost_amount": 30
+    },
+    "simulatedOperands": {
+      "manufacturing_cost": 2105.4,
+      "scrap_cost_amount": 30
+    },
+    "expression": "100 * scrap_cost_amount / manufacturing_cost",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.rework_cost",
+    "value": 15.5,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "rework_labor_cost": 10.0,
+      "rework_material_cost": 0.5,
+      "rework_overhead_cost": 5.0
+    },
+    "simulatedOperands": {
+      "rework_labor_cost": 10.0,
+      "rework_material_cost": 0.5,
+      "rework_overhead_cost": 5.0
+    },
+    "expression": "rework_labor_cost + rework_material_cost + rework_overhead_cost",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.cost_variance",
+    "value": 329.70000000000005,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "actual_cost": 2105.4,
+      "standard_cost": 1775.7
+    },
+    "simulatedOperands": {
+      "actual_cost": 2105.4,
+      "standard_cost": 1775.7
+    },
+    "expression": "actual_cost - standard_cost",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.cost_variance_percent",
+    "value": 18.567325561750298,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "actual_cost": 2105.4,
+      "standard_cost": 1775.7
+    },
+    "simulatedOperands": {
+      "actual_cost": 2105.4,
+      "standard_cost": 1775.7
+    },
+    "expression": "100 * (actual_cost - standard_cost) / standard_cost",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.material_usage_variance",
+    "value": 77.40000000000009,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "actual_material_qty": 812.7,
+      "standard_material_price": 2,
+      "standard_material_qty": 774
+    },
+    "simulatedOperands": {
+      "actual_material_qty": 812.7,
+      "standard_material_price": 2,
+      "standard_material_qty": 774
+    },
+    "expression": "(actual_material_qty - standard_material_qty) * standard_material_price",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.labor_efficiency_variance",
+    "value": 0,
+    "availability": "observed",
+    "modifiedOperands": [
+      "actual_labor_h",
+      "standard_labor_h"
+    ],
+    "originalOperands": {
+      "actual_labor_h": 16,
+      "standard_labor_h": 7.59,
+      "standard_labor_rate": 20
+    },
+    "simulatedOperands": {
+      "actual_labor_h": 0,
+      "standard_labor_h": 0,
+      "standard_labor_rate": 20
+    },
+    "expression": "(actual_labor_h - standard_labor_h) * standard_labor_rate",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.copq_cost_of_poor_quality",
+    "value": 100,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "external_failure_cost": 15,
+      "internal_failure_cost": 85
+    },
+    "simulatedOperands": {
+      "external_failure_cost": 15,
+      "internal_failure_cost": 85
+    },
+    "expression": "internal_failure_cost + external_failure_cost",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.cost_of_quality",
+    "value": 150,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "appraisal_cost": 30,
+      "external_failure_cost": 15,
+      "internal_failure_cost": 85,
+      "prevention_cost": 20
+    },
+    "simulatedOperands": {
+      "appraisal_cost": 30,
+      "external_failure_cost": 15,
+      "internal_failure_cost": 85,
+      "prevention_cost": 20
+    },
+    "expression": "prevention_cost + appraisal_cost + internal_failure_cost + external_failure_cost",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.copq_sales",
+    "value": 1.4814814814814814,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "copq_amount": 100,
+      "sales": 6750.0
+    },
+    "simulatedOperands": {
+      "copq_amount": 100,
+      "sales": 6750.0
+    },
+    "expression": "100 * copq_amount / sales",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.warranty_cost",
+    "value": 0.6666666666666666,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "sales": 6750.0,
+      "warranty_cost_amount": 45.0
+    },
+    "simulatedOperands": {
+      "sales": 6750.0,
+      "warranty_cost_amount": 45.0
+    },
+    "expression": "100 * warranty_cost_amount / sales",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.energy_consumption",
+    "value": 600,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "energy_kwh": 600
+    },
+    "simulatedOperands": {
+      "energy_kwh": 600
+    },
+    "expression": "energy_kwh",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.energy_per_unit",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "good_units"
+    ],
+    "originalOperands": {
+      "energy_kwh": 600,
+      "good_units": 7590
+    },
+    "simulatedOperands": {
+      "energy_kwh": 600,
+      "good_units": 0
+    },
+    "expression": "energy_kwh / good_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.energy_intensity",
+    "value": 0.07905138339920949,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "energy_kwh": 600,
+      "governed_production_measure": 7590
+    },
+    "simulatedOperands": {
+      "energy_kwh": 600,
+      "governed_production_measure": 7590
+    },
+    "expression": "energy_kwh / governed_production_measure",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.idle_energy",
+    "value": 10.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "energy_kwh": 600,
+      "idle_kwh": 60
+    },
+    "simulatedOperands": {
+      "energy_kwh": 600,
+      "idle_kwh": 60
+    },
+    "expression": "100 * idle_kwh / energy_kwh",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.peak_demand",
+    "value": 40,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "interval_kw": [
+        20,
+        40,
+        30
+      ]
+    },
+    "simulatedOperands": {
+      "interval_kw": [
+        20,
+        40,
+        30
+      ]
+    },
+    "expression": "max(interval_kw)",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.co_e_per_unit",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "good_units"
+    ],
+    "originalOperands": {
+      "co2e_kg": 150.0,
+      "good_units": 7590
+    },
+    "simulatedOperands": {
+      "co2e_kg": 150.0,
+      "good_units": 0
+    },
+    "expression": "co2e_kg / good_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.waste_per_unit",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "good_units"
+    ],
+    "originalOperands": {
+      "good_units": 7590,
+      "waste_kg": 30
+    },
+    "simulatedOperands": {
+      "good_units": 0,
+      "waste_kg": 30
+    },
+    "expression": "waste_kg / good_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.water_per_unit",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "good_units"
+    ],
+    "originalOperands": {
+      "good_units": 7590,
+      "water_m3": 12
+    },
+    "simulatedOperands": {
+      "good_units": 0,
+      "water_m3": 12
+    },
+    "expression": "water_m3 / good_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.constraint_lost_time",
+    "value": 93.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "constraint_available_min": 480.0,
+      "constraint_productive_min": 387.0
+    },
+    "simulatedOperands": {
+      "constraint_available_min": 480.0,
+      "constraint_productive_min": 387.0
+    },
+    "expression": "constraint_available_min - constraint_productive_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.constraint_yield",
+    "value": 0.0,
+    "availability": "observed",
+    "modifiedOperands": [
+      "constraint_good_units"
+    ],
+    "originalOperands": {
+      "constraint_good_units": 759,
+      "constraint_input_units": 774
+    },
+    "simulatedOperands": {
+      "constraint_good_units": 0,
+      "constraint_input_units": 774
+    },
+    "expression": "100 * constraint_good_units / constraint_input_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.throughput_contribution",
+    "value": 3600.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "sales": 6750.0,
+      "totally_variable_cost": 3150.0
+    },
+    "simulatedOperands": {
+      "sales": 6750.0,
+      "totally_variable_cost": 3150.0
+    },
+    "expression": "sales - totally_variable_cost",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.trir",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "worked_h"
+    ],
+    "originalOperands": {
+      "recordable_cases": 1,
+      "worked_h": 192
+    },
+    "simulatedOperands": {
+      "recordable_cases": 1,
+      "worked_h": 0
+    },
+    "expression": "recordable_cases * 200000 / worked_h",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.dart_rate",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "worked_h"
+    ],
+    "originalOperands": {
+      "dart_cases": 1,
+      "worked_h": 192
+    },
+    "simulatedOperands": {
+      "dart_cases": 1,
+      "worked_h": 0
+    },
+    "expression": "dart_cases * 200000 / worked_h",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.lost_time_incident_rate",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "worked_h"
+    ],
+    "originalOperands": {
+      "lost_time_cases": 1,
+      "worked_h": 192
+    },
+    "simulatedOperands": {
+      "lost_time_cases": 1,
+      "worked_h": 0
+    },
+    "expression": "lost_time_cases * 200000 / worked_h",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.near_miss_rate",
+    "value": null,
+    "availability": "zero_denominator",
+    "modifiedOperands": [
+      "exposure_denominator"
+    ],
+    "originalOperands": {
+      "exposure_denominator": 192,
+      "exposure_multiplier": 1000,
+      "near_misses": 3
+    },
+    "simulatedOperands": {
+      "exposure_denominator": 0,
+      "exposure_multiplier": 1000,
+      "near_misses": 3
+    },
+    "expression": "near_misses * exposure_multiplier / exposure_denominator",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.availability_loss_time",
+    "value": -430.0,
+    "availability": "observed",
+    "modifiedOperands": [
+      "planned_min"
+    ],
+    "originalOperands": {
+      "planned_min": 480.0,
+      "run_min": 430.0
+    },
+    "simulatedOperands": {
+      "planned_min": 0,
+      "run_min": 430.0
+    },
+    "expression": "planned_min - run_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.performance_loss_time",
+    "value": 43.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "ideal_total_min": 387.0,
+      "run_min": 430.0
+    },
+    "simulatedOperands": {
+      "ideal_total_min": 387.0,
+      "run_min": 430.0
+    },
+    "expression": "run_min - ideal_total_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.quality_loss_units",
+    "value": 0,
+    "availability": "observed",
+    "modifiedOperands": [
+      "good_units",
+      "total_units"
+    ],
+    "originalOperands": {
+      "good_units": 759,
+      "total_units": 774
+    },
+    "simulatedOperands": {
+      "good_units": 0,
+      "total_units": 0
+    },
+    "expression": "total_units - good_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.quality_loss_time",
+    "value": 7.5,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "ideal_good_min": 379.5,
+      "ideal_total_min": 387.0
+    },
+    "simulatedOperands": {
+      "ideal_good_min": 379.5,
+      "ideal_total_min": 387.0
+    },
+    "expression": "ideal_total_min - ideal_good_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.lost_units",
+    "value": 960.0,
+    "availability": "observed",
+    "modifiedOperands": [
+      "good_units"
+    ],
+    "originalOperands": {
+      "expected_units": 960.0,
+      "good_units": 759
+    },
+    "simulatedOperands": {
+      "expected_units": 960.0,
+      "good_units": 0
+    },
+    "expression": "expected_units - good_units",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.unfavorable_gap_higher",
+    "value": 0.9375,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "actual_value": 79.0625,
+      "target_value": 80
+    },
+    "simulatedOperands": {
+      "actual_value": 79.0625,
+      "target_value": 80
+    },
+    "expression": "target_value - actual_value",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.unfavorable_gap_lower",
+    "value": 2.416666666666666,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "actual_value": 10.416666666666666,
+      "target_value": 8
+    },
+    "simulatedOperands": {
+      "actual_value": 10.416666666666666,
+      "target_value": 8
+    },
+    "expression": "actual_value - target_value",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.absolute_change",
+    "value": 0.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "current_value": 79.0625,
+      "previous_value": 79.0625
+    },
+    "simulatedOperands": {
+      "current_value": 79.0625,
+      "previous_value": 79.0625
+    },
+    "expression": "current_value - previous_value",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.relative_percentage_change",
+    "value": 0.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "current_value": 79.0625,
+      "previous_value": 79.0625
+    },
+    "simulatedOperands": {
+      "current_value": 79.0625,
+      "previous_value": 79.0625
+    },
+    "expression": "100 * (current_value - previous_value) / previous_value",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.target_variance_absolute",
+    "value": -0.9375,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "actual_value": 79.0625,
+      "target_value": 80
+    },
+    "simulatedOperands": {
+      "actual_value": 79.0625,
+      "target_value": 80
+    },
+    "expression": "actual_value - target_value",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.target_variance_relative",
+    "value": -1.171875,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "actual_value": 79.0625,
+      "target_value": 80
+    },
+    "simulatedOperands": {
+      "actual_value": 79.0625,
+      "target_value": 80
+    },
+    "expression": "100 * (actual_value - target_value) / target_value",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.moving_average",
+    "value": 79.0625,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "last_n_values": [
+        79.0625,
+        79.0625,
+        79.0625
+      ]
+    },
+    "simulatedOperands": {
+      "last_n_values": [
+        79.0625,
+        79.0625,
+        79.0625
+      ]
+    },
+    "expression": "mean(last_n_values)",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.rolling_change",
+    "value": 0.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "current_value": 79.0625,
+      "value_n_periods_ago": 79.0625
+    },
+    "simulatedOperands": {
+      "current_value": 79.0625,
+      "value_n_periods_ago": 79.0625
+    },
+    "expression": "current_value - value_n_periods_ago",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.trend_slope",
+    "value": 0.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "ordered_values": [
+        79.0625,
+        79.0625,
+        79.0625,
+        79.0625,
+        79.0625,
+        79.0625
+      ],
+      "time_offsets": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0
+      ]
+    },
+    "simulatedOperands": {
+      "ordered_values": [
+        79.0625,
+        79.0625,
+        79.0625,
+        79.0625,
+        79.0625,
+        79.0625
+      ],
+      "time_offsets": [
+        0.0,
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0
+      ]
+    },
+    "expression": "ols_slope(time_offsets, ordered_values)",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.volatility",
+    "value": 0.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "values": [
+        79.0625,
+        79.0625,
+        79.0625,
+        79.0625,
+        79.0625,
+        79.0625
+      ]
+    },
+    "simulatedOperands": {
+      "values": [
+        79.0625,
+        79.0625,
+        79.0625,
+        79.0625,
+        79.0625,
+        79.0625
+      ]
+    },
+    "expression": "100 * sample_sd(values) / mean(values)",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.category_contribution",
+    "value": 20.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "category_loss": 10.0,
+      "total_loss": 50.0
+    },
+    "simulatedOperands": {
+      "category_loss": 10.0,
+      "total_loss": 50.0
+    },
+    "expression": "100 * category_loss / total_loss",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.cumulative_contribution",
+    "value": 40.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "ranked_cumulative_loss": 20.0,
+      "total_loss": 50.0
+    },
+    "simulatedOperands": {
+      "ranked_cumulative_loss": 20.0,
+      "total_loss": 50.0
+    },
+    "expression": "100 * ranked_cumulative_loss / total_loss",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.improvement_absolute",
+    "value": -30.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "post_value": 30.0,
+      "pre_value": 60.0
+    },
+    "simulatedOperands": {
+      "post_value": 30.0,
+      "pre_value": 60.0
+    },
+    "expression": "post_value - pre_value",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.improvement_relative",
+    "value": -50.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "post_value": 30.0,
+      "pre_value": 60.0
+    },
+    "simulatedOperands": {
+      "post_value": 30.0,
+      "pre_value": 60.0
+    },
+    "expression": "100 * (post_value - pre_value) / pre_value",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.sustained_improvement",
+    "value": true,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "direction": "lower",
+      "last_n_values": [
+        28.0,
+        29.0,
+        27.0,
+        30.0,
+        26.0
+      ],
+      "threshold": 30
+    },
+    "simulatedOperands": {
+      "direction": "lower",
+      "last_n_values": [
+        28.0,
+        29.0,
+        27.0,
+        30.0,
+        26.0
+      ],
+      "threshold": 30
+    },
+    "expression": "all_threshold(last_n_values, threshold, direction)",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.recurrence_rate",
+    "value": 40.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "relevant_events": 5,
+      "repeated_events": 2
+    },
+    "simulatedOperands": {
+      "relevant_events": 5,
+      "repeated_events": 2
+    },
+    "expression": "100 * repeated_events / relevant_events",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.action_closure_rate",
+    "value": 75.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "closed_due_actions": 3,
+      "due_actions": 4
+    },
+    "simulatedOperands": {
+      "closed_due_actions": 3,
+      "due_actions": 4
+    },
+    "expression": "100 * closed_due_actions / due_actions",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.on_time_action_closure",
+    "value": 50.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "due_actions": 4,
+      "on_time_closed_due_actions": 2
+    },
+    "simulatedOperands": {
+      "due_actions": 4,
+      "on_time_closed_due_actions": 2
+    },
+    "expression": "100 * on_time_closed_due_actions / due_actions",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.internal_setup_time",
+    "value": 10.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "internal_setup_union_min": 10.0
+    },
+    "simulatedOperands": {
+      "internal_setup_union_min": 10.0
+    },
+    "expression": "internal_setup_union_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.external_setup_time",
+    "value": 5.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "external_setup_union_min": 5.0
+    },
+    "simulatedOperands": {
+      "external_setup_union_min": 5.0
+    },
+    "expression": "external_setup_union_min",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.process_mean",
+    "value": 99.992,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "values": [
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8
+      ]
+    },
+    "simulatedOperands": {
+      "values": [
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8
+      ]
+    },
+    "expression": "mean(values)",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.overall_sigma",
+    "value": 1.807225640624057,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "values": [
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8
+      ]
+    },
+    "simulatedOperands": {
+      "values": [
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8
+      ]
+    },
+    "expression": "sample_sd(values)",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.within_subgroup_sigma",
+    "value": 2.0,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "within_dof": 100,
+      "within_ss": 400.0
+    },
+    "simulatedOperands": {
+      "within_dof": 100,
+      "within_ss": 400.0
+    },
+    "expression": "sqrt(within_ss / within_dof)",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.standard_deviation",
+    "value": 1.807225640624057,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "values": [
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8
+      ]
+    },
+    "simulatedOperands": {
+      "values": [
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8
+      ]
+    },
+    "expression": "sample_sd(values)",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  },
+  {
+    "metricId": "ekas.coefficient_of_variation",
+    "value": 1.8073702302424763,
+    "availability": "observed",
+    "modifiedOperands": [],
+    "originalOperands": {
+      "values": [
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8
+      ]
+    },
+    "simulatedOperands": {
+      "values": [
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8,
+        98.2,
+        98.2,
+        100.2,
+        102.2,
+        102.2,
+        97.8,
+        97.8,
+        99.8,
+        101.8,
+        101.8
+      ]
+    },
+    "expression": "100 * sample_sd(values) / mean(values)",
+    "qualification": "Arithmetic effect of the implementation-declared operand overrides only; physical zero-exposure eligibility is not accepted by this oracle."
+  }
+]

@@ -1,0 +1,1169 @@
+{
+  "synthetic": true,
+  "independentlyAuthoredAddon": true,
+  "originalMetricCatalogInventoryUnchanged": {
+    "occurrences": 322,
+    "groups": 162,
+    "allTypeIdsInOriginalCatalog": 257,
+    "sourceBackedDefinitions": 178,
+    "dispositions": 56,
+    "sections": 28
+  },
+  "diagnosticRecordOccurrences": 57,
+  "diagnosticRecordIds": 57,
+  "nodeOccurrencesAcrossSnapshotVersions": 45,
+  "uniqueNodeIds": 15,
+  "edgeOccurrencesAcrossSnapshotVersions": 45,
+  "uniqueEdgeIds": 15,
+  "fixtureSha256": "abfda9675f4dd7503982be5d32442ce5ec2c07c84b62103124cad158af330e0e",
+  "qualification": "New auxiliary IDs are a separate diagnostic source inventory, not extra metric definitions or closure of original catalog requirements. No event/cause totals inferred from pages or sparse samples.",
+  "records": [
+    {
+      "id": "DIAG-DOWNTIME-M1",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "kind": "measurement",
+      "sourceId": "DIAG-DOWNTIME-HIST-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/downtime/records/0"
+    },
+    {
+      "id": "DIAG-DOWNTIME-M2",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "kind": "measurement",
+      "sourceId": "DIAG-DOWNTIME-HIST-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/downtime/records/1"
+    },
+    {
+      "id": "DIAG-DOWNTIME-M3",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "kind": "measurement",
+      "sourceId": "DIAG-DOWNTIME-HIST-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/downtime/records/2"
+    },
+    {
+      "id": "DIAG-DOWNTIME-A1",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "kind": "alarm-activation",
+      "sourceId": "DIAG-DOWNTIME-ALARM-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/downtime/records/3"
+    },
+    {
+      "id": "DIAG-DOWNTIME-A2",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "kind": "alarm-acknowledgement",
+      "sourceId": "DIAG-DOWNTIME-ALARM-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/downtime/records/4"
+    },
+    {
+      "id": "DIAG-DOWNTIME-A3",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "kind": "alarm-clearance",
+      "sourceId": "DIAG-DOWNTIME-ALARM-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/downtime/records/5"
+    },
+    {
+      "id": "DIAG-DOWNTIME-CONTROL-1",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "kind": "controller-response",
+      "sourceId": "DIAG-DOWNTIME-CONTROL-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/downtime/records/6"
+    },
+    {
+      "id": "DIAG-DOWNTIME-HUMAN-1",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "kind": "human-observation",
+      "sourceId": "DIAG-DOWNTIME-OBS-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/downtime/records/7"
+    },
+    {
+      "id": "DIAG-DOWNTIME-LATE-1",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "kind": "late-ingested-observation",
+      "sourceId": "independently-authored-late-observation",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/downtime/records/8"
+    },
+    {
+      "id": "DIAG-DOWNTIME-ALARM-A2",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "kind": "alarm-activation",
+      "sourceId": "DIAG-DOWNTIME-ALARM-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/downtime/records/9"
+    },
+    {
+      "id": "DIAG-DOWNTIME-M-TIE",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "kind": "measurement",
+      "sourceId": "DIAG-DOWNTIME-HIST-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/downtime/records/10"
+    },
+    {
+      "id": "DIAG-DOWNTIME-C2-1",
+      "caseId": "downtime",
+      "snapshot": "recurrence",
+      "kind": "measurement",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/downtime/newCycle/records/0"
+    },
+    {
+      "id": "DIAG-DOWNTIME-C2-2",
+      "caseId": "downtime",
+      "snapshot": "recurrence",
+      "kind": "measurement",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/downtime/newCycle/records/1"
+    },
+    {
+      "id": "DIAG-DOWNTIME-C2-3",
+      "caseId": "downtime",
+      "snapshot": "recurrence",
+      "kind": "measurement",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/downtime/newCycle/records/2"
+    },
+    {
+      "id": "DIAG-DOWNTIME-C2-4",
+      "caseId": "downtime",
+      "snapshot": "recurrence",
+      "kind": "alarm-activation",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/downtime/newCycle/records/3"
+    },
+    {
+      "id": "DIAG-DOWNTIME-C2-5",
+      "caseId": "downtime",
+      "snapshot": "recurrence",
+      "kind": "alarm-acknowledgement",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/downtime/newCycle/records/4"
+    },
+    {
+      "id": "DIAG-DOWNTIME-C2-6",
+      "caseId": "downtime",
+      "snapshot": "recurrence",
+      "kind": "alarm-clearance",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/downtime/newCycle/records/5"
+    },
+    {
+      "id": "DIAG-DOWNTIME-C2-7",
+      "caseId": "downtime",
+      "snapshot": "recurrence",
+      "kind": "controller-response",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/downtime/newCycle/records/6"
+    },
+    {
+      "id": "DIAG-DOWNTIME-C2-8",
+      "caseId": "downtime",
+      "snapshot": "recurrence",
+      "kind": "human-observation",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/downtime/newCycle/records/7"
+    },
+    {
+      "id": "DIAG-SPEED-M1",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "kind": "measurement",
+      "sourceId": "DIAG-SPEED-HIST-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/speed/records/0"
+    },
+    {
+      "id": "DIAG-SPEED-M2",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "kind": "measurement",
+      "sourceId": "DIAG-SPEED-HIST-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/speed/records/1"
+    },
+    {
+      "id": "DIAG-SPEED-M3",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "kind": "measurement",
+      "sourceId": "DIAG-SPEED-HIST-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/speed/records/2"
+    },
+    {
+      "id": "DIAG-SPEED-A1",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "kind": "alarm-activation",
+      "sourceId": "DIAG-SPEED-ALARM-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/speed/records/3"
+    },
+    {
+      "id": "DIAG-SPEED-A2",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "kind": "alarm-acknowledgement",
+      "sourceId": "DIAG-SPEED-ALARM-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/speed/records/4"
+    },
+    {
+      "id": "DIAG-SPEED-A3",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "kind": "alarm-clearance",
+      "sourceId": "DIAG-SPEED-ALARM-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/speed/records/5"
+    },
+    {
+      "id": "DIAG-SPEED-CONTROL-1",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "kind": "controller-response",
+      "sourceId": "DIAG-SPEED-CONTROL-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/speed/records/6"
+    },
+    {
+      "id": "DIAG-SPEED-HUMAN-1",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "kind": "human-observation",
+      "sourceId": "DIAG-SPEED-OBS-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/speed/records/7"
+    },
+    {
+      "id": "DIAG-SPEED-LATE-1",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "kind": "late-ingested-observation",
+      "sourceId": "independently-authored-late-observation",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/speed/records/8"
+    },
+    {
+      "id": "DIAG-SPEED-ALARM-A2",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "kind": "alarm-activation",
+      "sourceId": "DIAG-SPEED-ALARM-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/speed/records/9"
+    },
+    {
+      "id": "DIAG-SPEED-M-TIE",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "kind": "measurement",
+      "sourceId": "DIAG-SPEED-HIST-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/speed/records/10"
+    },
+    {
+      "id": "DIAG-SPEED-C2-1",
+      "caseId": "speed",
+      "snapshot": "recurrence",
+      "kind": "measurement",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/speed/newCycle/records/0"
+    },
+    {
+      "id": "DIAG-SPEED-C2-2",
+      "caseId": "speed",
+      "snapshot": "recurrence",
+      "kind": "measurement",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/speed/newCycle/records/1"
+    },
+    {
+      "id": "DIAG-SPEED-C2-3",
+      "caseId": "speed",
+      "snapshot": "recurrence",
+      "kind": "measurement",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/speed/newCycle/records/2"
+    },
+    {
+      "id": "DIAG-SPEED-C2-4",
+      "caseId": "speed",
+      "snapshot": "recurrence",
+      "kind": "alarm-activation",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/speed/newCycle/records/3"
+    },
+    {
+      "id": "DIAG-SPEED-C2-5",
+      "caseId": "speed",
+      "snapshot": "recurrence",
+      "kind": "alarm-acknowledgement",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/speed/newCycle/records/4"
+    },
+    {
+      "id": "DIAG-SPEED-C2-6",
+      "caseId": "speed",
+      "snapshot": "recurrence",
+      "kind": "alarm-clearance",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/speed/newCycle/records/5"
+    },
+    {
+      "id": "DIAG-SPEED-C2-7",
+      "caseId": "speed",
+      "snapshot": "recurrence",
+      "kind": "controller-response",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/speed/newCycle/records/6"
+    },
+    {
+      "id": "DIAG-SPEED-C2-8",
+      "caseId": "speed",
+      "snapshot": "recurrence",
+      "kind": "human-observation",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/speed/newCycle/records/7"
+    },
+    {
+      "id": "DIAG-QUALITY-M1",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "kind": "measurement",
+      "sourceId": "DIAG-QUALITY-HIST-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/quality/records/0"
+    },
+    {
+      "id": "DIAG-QUALITY-M2",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "kind": "measurement",
+      "sourceId": "DIAG-QUALITY-HIST-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/quality/records/1"
+    },
+    {
+      "id": "DIAG-QUALITY-M3",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "kind": "measurement",
+      "sourceId": "DIAG-QUALITY-HIST-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/quality/records/2"
+    },
+    {
+      "id": "DIAG-QUALITY-A1",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "kind": "alarm-activation",
+      "sourceId": "DIAG-QUALITY-ALARM-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/quality/records/3"
+    },
+    {
+      "id": "DIAG-QUALITY-A2",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "kind": "alarm-acknowledgement",
+      "sourceId": "DIAG-QUALITY-ALARM-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/quality/records/4"
+    },
+    {
+      "id": "DIAG-QUALITY-A3",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "kind": "alarm-clearance",
+      "sourceId": "DIAG-QUALITY-ALARM-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/quality/records/5"
+    },
+    {
+      "id": "DIAG-QUALITY-CONTROL-1",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "kind": "controller-response",
+      "sourceId": "DIAG-QUALITY-CONTROL-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/quality/records/6"
+    },
+    {
+      "id": "DIAG-QUALITY-HUMAN-1",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "kind": "human-observation",
+      "sourceId": "DIAG-QUALITY-OBS-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/quality/records/7"
+    },
+    {
+      "id": "DIAG-QUALITY-LATE-1",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "kind": "late-ingested-observation",
+      "sourceId": "independently-authored-late-observation",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/quality/records/8"
+    },
+    {
+      "id": "DIAG-QUALITY-ALARM-A2",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "kind": "alarm-activation",
+      "sourceId": "DIAG-QUALITY-ALARM-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/quality/records/9"
+    },
+    {
+      "id": "DIAG-QUALITY-M-TIE",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "kind": "measurement",
+      "sourceId": "DIAG-QUALITY-HIST-V1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/quality/records/10"
+    },
+    {
+      "id": "DIAG-QUALITY-C2-1",
+      "caseId": "quality",
+      "snapshot": "recurrence",
+      "kind": "measurement",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/quality/newCycle/records/0"
+    },
+    {
+      "id": "DIAG-QUALITY-C2-2",
+      "caseId": "quality",
+      "snapshot": "recurrence",
+      "kind": "measurement",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/quality/newCycle/records/1"
+    },
+    {
+      "id": "DIAG-QUALITY-C2-3",
+      "caseId": "quality",
+      "snapshot": "recurrence",
+      "kind": "measurement",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/quality/newCycle/records/2"
+    },
+    {
+      "id": "DIAG-QUALITY-C2-4",
+      "caseId": "quality",
+      "snapshot": "recurrence",
+      "kind": "alarm-activation",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/quality/newCycle/records/3"
+    },
+    {
+      "id": "DIAG-QUALITY-C2-5",
+      "caseId": "quality",
+      "snapshot": "recurrence",
+      "kind": "alarm-acknowledgement",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/quality/newCycle/records/4"
+    },
+    {
+      "id": "DIAG-QUALITY-C2-6",
+      "caseId": "quality",
+      "snapshot": "recurrence",
+      "kind": "alarm-clearance",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/quality/newCycle/records/5"
+    },
+    {
+      "id": "DIAG-QUALITY-C2-7",
+      "caseId": "quality",
+      "snapshot": "recurrence",
+      "kind": "controller-response",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/quality/newCycle/records/6"
+    },
+    {
+      "id": "DIAG-QUALITY-C2-8",
+      "caseId": "quality",
+      "snapshot": "recurrence",
+      "kind": "human-observation",
+      "sourceId": "independently-authored-recurrence-episode-v1",
+      "sourceVersion": 1,
+      "anchor": "diagnostic-synthetic-v1.json#/cases/quality/newCycle/records/7"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "DIAG-DOWNTIME-UPSTREAM",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "topologyVersion": 1
+    },
+    {
+      "id": "DIAG-DOWNTIME-ROOT",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "topologyVersion": 1
+    },
+    {
+      "id": "DIAG-DOWNTIME-CONTROL",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "topologyVersion": 1
+    },
+    {
+      "id": "DIAG-DOWNTIME-ASSOC",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "topologyVersion": 1
+    },
+    {
+      "id": "DIAG-DOWNTIME-UPSTREAM-2",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "topologyVersion": 1
+    },
+    {
+      "id": "DIAG-DOWNTIME-UPSTREAM",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "topologyVersion": 2
+    },
+    {
+      "id": "DIAG-DOWNTIME-ROOT",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "topologyVersion": 2
+    },
+    {
+      "id": "DIAG-DOWNTIME-CONTROL",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "topologyVersion": 2
+    },
+    {
+      "id": "DIAG-DOWNTIME-ASSOC",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "topologyVersion": 2
+    },
+    {
+      "id": "DIAG-DOWNTIME-UPSTREAM-2",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "topologyVersion": 2
+    },
+    {
+      "id": "DIAG-DOWNTIME-UPSTREAM",
+      "caseId": "downtime",
+      "snapshot": "recurrence",
+      "topologyVersion": 3
+    },
+    {
+      "id": "DIAG-DOWNTIME-ROOT",
+      "caseId": "downtime",
+      "snapshot": "recurrence",
+      "topologyVersion": 3
+    },
+    {
+      "id": "DIAG-DOWNTIME-CONTROL",
+      "caseId": "downtime",
+      "snapshot": "recurrence",
+      "topologyVersion": 3
+    },
+    {
+      "id": "DIAG-DOWNTIME-ASSOC",
+      "caseId": "downtime",
+      "snapshot": "recurrence",
+      "topologyVersion": 3
+    },
+    {
+      "id": "DIAG-DOWNTIME-UPSTREAM-2",
+      "caseId": "downtime",
+      "snapshot": "recurrence",
+      "topologyVersion": 3
+    },
+    {
+      "id": "DIAG-SPEED-UPSTREAM",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "topologyVersion": 1
+    },
+    {
+      "id": "DIAG-SPEED-ROOT",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "topologyVersion": 1
+    },
+    {
+      "id": "DIAG-SPEED-CONTROL",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "topologyVersion": 1
+    },
+    {
+      "id": "DIAG-SPEED-ASSOC",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "topologyVersion": 1
+    },
+    {
+      "id": "DIAG-SPEED-UPSTREAM-2",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "topologyVersion": 1
+    },
+    {
+      "id": "DIAG-SPEED-UPSTREAM",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "topologyVersion": 2
+    },
+    {
+      "id": "DIAG-SPEED-ROOT",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "topologyVersion": 2
+    },
+    {
+      "id": "DIAG-SPEED-CONTROL",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "topologyVersion": 2
+    },
+    {
+      "id": "DIAG-SPEED-ASSOC",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "topologyVersion": 2
+    },
+    {
+      "id": "DIAG-SPEED-UPSTREAM-2",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "topologyVersion": 2
+    },
+    {
+      "id": "DIAG-SPEED-UPSTREAM",
+      "caseId": "speed",
+      "snapshot": "recurrence",
+      "topologyVersion": 3
+    },
+    {
+      "id": "DIAG-SPEED-ROOT",
+      "caseId": "speed",
+      "snapshot": "recurrence",
+      "topologyVersion": 3
+    },
+    {
+      "id": "DIAG-SPEED-CONTROL",
+      "caseId": "speed",
+      "snapshot": "recurrence",
+      "topologyVersion": 3
+    },
+    {
+      "id": "DIAG-SPEED-ASSOC",
+      "caseId": "speed",
+      "snapshot": "recurrence",
+      "topologyVersion": 3
+    },
+    {
+      "id": "DIAG-SPEED-UPSTREAM-2",
+      "caseId": "speed",
+      "snapshot": "recurrence",
+      "topologyVersion": 3
+    },
+    {
+      "id": "DIAG-QUALITY-UPSTREAM",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "topologyVersion": 1
+    },
+    {
+      "id": "DIAG-QUALITY-ROOT",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "topologyVersion": 1
+    },
+    {
+      "id": "DIAG-QUALITY-CONTROL",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "topologyVersion": 1
+    },
+    {
+      "id": "DIAG-QUALITY-ASSOC",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "topologyVersion": 1
+    },
+    {
+      "id": "DIAG-QUALITY-UPSTREAM-2",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "topologyVersion": 1
+    },
+    {
+      "id": "DIAG-QUALITY-UPSTREAM",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "topologyVersion": 2
+    },
+    {
+      "id": "DIAG-QUALITY-ROOT",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "topologyVersion": 2
+    },
+    {
+      "id": "DIAG-QUALITY-CONTROL",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "topologyVersion": 2
+    },
+    {
+      "id": "DIAG-QUALITY-ASSOC",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "topologyVersion": 2
+    },
+    {
+      "id": "DIAG-QUALITY-UPSTREAM-2",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "topologyVersion": 2
+    },
+    {
+      "id": "DIAG-QUALITY-UPSTREAM",
+      "caseId": "quality",
+      "snapshot": "recurrence",
+      "topologyVersion": 3
+    },
+    {
+      "id": "DIAG-QUALITY-ROOT",
+      "caseId": "quality",
+      "snapshot": "recurrence",
+      "topologyVersion": 3
+    },
+    {
+      "id": "DIAG-QUALITY-CONTROL",
+      "caseId": "quality",
+      "snapshot": "recurrence",
+      "topologyVersion": 3
+    },
+    {
+      "id": "DIAG-QUALITY-ASSOC",
+      "caseId": "quality",
+      "snapshot": "recurrence",
+      "topologyVersion": 3
+    },
+    {
+      "id": "DIAG-QUALITY-UPSTREAM-2",
+      "caseId": "quality",
+      "snapshot": "recurrence",
+      "topologyVersion": 3
+    }
+  ],
+  "edges": [
+    {
+      "id": "DIAG-DOWNTIME-E1",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "topologyVersion": 1,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-DOWNTIME-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-DOWNTIME-E2",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "topologyVersion": 1,
+      "relationship": "control-influence",
+      "sourceId": "DIAG-DOWNTIME-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-DOWNTIME-E3",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "topologyVersion": 1,
+      "relationship": "association",
+      "sourceId": "DIAG-DOWNTIME-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-DOWNTIME-EDGE-U2",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "topologyVersion": 1,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-DOWNTIME-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-DOWNTIME-EDGE-CYCLE",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "topologyVersion": 1,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-DOWNTIME-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-DOWNTIME-E1",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "topologyVersion": 2,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-DOWNTIME-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-DOWNTIME-E2",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "topologyVersion": 2,
+      "relationship": "control-influence",
+      "sourceId": "DIAG-DOWNTIME-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-DOWNTIME-E3",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "topologyVersion": 2,
+      "relationship": "association",
+      "sourceId": "DIAG-DOWNTIME-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-DOWNTIME-EDGE-U2",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "topologyVersion": 2,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-DOWNTIME-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-DOWNTIME-EDGE-CYCLE",
+      "caseId": "downtime",
+      "snapshot": "initial",
+      "topologyVersion": 2,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-DOWNTIME-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-DOWNTIME-E1",
+      "caseId": "downtime",
+      "snapshot": "recurrence",
+      "topologyVersion": 3,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-DOWNTIME-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-DOWNTIME-E2",
+      "caseId": "downtime",
+      "snapshot": "recurrence",
+      "topologyVersion": 3,
+      "relationship": "control-influence",
+      "sourceId": "DIAG-DOWNTIME-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-DOWNTIME-E3",
+      "caseId": "downtime",
+      "snapshot": "recurrence",
+      "topologyVersion": 3,
+      "relationship": "association",
+      "sourceId": "DIAG-DOWNTIME-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-DOWNTIME-EDGE-U2",
+      "caseId": "downtime",
+      "snapshot": "recurrence",
+      "topologyVersion": 3,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-DOWNTIME-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-DOWNTIME-EDGE-CYCLE",
+      "caseId": "downtime",
+      "snapshot": "recurrence",
+      "topologyVersion": 3,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-DOWNTIME-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-SPEED-E1",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "topologyVersion": 1,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-SPEED-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-SPEED-E2",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "topologyVersion": 1,
+      "relationship": "control-influence",
+      "sourceId": "DIAG-SPEED-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-SPEED-E3",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "topologyVersion": 1,
+      "relationship": "association",
+      "sourceId": "DIAG-SPEED-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-SPEED-EDGE-U2",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "topologyVersion": 1,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-SPEED-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-SPEED-EDGE-CYCLE",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "topologyVersion": 1,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-SPEED-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-SPEED-E1",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "topologyVersion": 2,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-SPEED-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-SPEED-E2",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "topologyVersion": 2,
+      "relationship": "control-influence",
+      "sourceId": "DIAG-SPEED-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-SPEED-E3",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "topologyVersion": 2,
+      "relationship": "association",
+      "sourceId": "DIAG-SPEED-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-SPEED-EDGE-U2",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "topologyVersion": 2,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-SPEED-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-SPEED-EDGE-CYCLE",
+      "caseId": "speed",
+      "snapshot": "initial",
+      "topologyVersion": 2,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-SPEED-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-SPEED-E1",
+      "caseId": "speed",
+      "snapshot": "recurrence",
+      "topologyVersion": 3,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-SPEED-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-SPEED-E2",
+      "caseId": "speed",
+      "snapshot": "recurrence",
+      "topologyVersion": 3,
+      "relationship": "control-influence",
+      "sourceId": "DIAG-SPEED-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-SPEED-E3",
+      "caseId": "speed",
+      "snapshot": "recurrence",
+      "topologyVersion": 3,
+      "relationship": "association",
+      "sourceId": "DIAG-SPEED-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-SPEED-EDGE-U2",
+      "caseId": "speed",
+      "snapshot": "recurrence",
+      "topologyVersion": 3,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-SPEED-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-SPEED-EDGE-CYCLE",
+      "caseId": "speed",
+      "snapshot": "recurrence",
+      "topologyVersion": 3,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-SPEED-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-QUALITY-E1",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "topologyVersion": 1,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-QUALITY-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-QUALITY-E2",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "topologyVersion": 1,
+      "relationship": "control-influence",
+      "sourceId": "DIAG-QUALITY-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-QUALITY-E3",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "topologyVersion": 1,
+      "relationship": "association",
+      "sourceId": "DIAG-QUALITY-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-QUALITY-EDGE-U2",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "topologyVersion": 1,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-QUALITY-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-QUALITY-EDGE-CYCLE",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "topologyVersion": 1,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-QUALITY-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-QUALITY-E1",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "topologyVersion": 2,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-QUALITY-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-QUALITY-E2",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "topologyVersion": 2,
+      "relationship": "control-influence",
+      "sourceId": "DIAG-QUALITY-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-QUALITY-E3",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "topologyVersion": 2,
+      "relationship": "association",
+      "sourceId": "DIAG-QUALITY-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-QUALITY-EDGE-U2",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "topologyVersion": 2,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-QUALITY-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-QUALITY-EDGE-CYCLE",
+      "caseId": "quality",
+      "snapshot": "initial",
+      "topologyVersion": 2,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-QUALITY-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-QUALITY-E1",
+      "caseId": "quality",
+      "snapshot": "recurrence",
+      "topologyVersion": 3,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-QUALITY-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-QUALITY-E2",
+      "caseId": "quality",
+      "snapshot": "recurrence",
+      "topologyVersion": 3,
+      "relationship": "control-influence",
+      "sourceId": "DIAG-QUALITY-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-QUALITY-E3",
+      "caseId": "quality",
+      "snapshot": "recurrence",
+      "topologyVersion": 3,
+      "relationship": "association",
+      "sourceId": "DIAG-QUALITY-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-QUALITY-EDGE-U2",
+      "caseId": "quality",
+      "snapshot": "recurrence",
+      "topologyVersion": 3,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-QUALITY-TOPOLOGY-V1"
+    },
+    {
+      "id": "DIAG-QUALITY-EDGE-CYCLE",
+      "caseId": "quality",
+      "snapshot": "recurrence",
+      "topologyVersion": 3,
+      "relationship": "physical-flow",
+      "sourceId": "DIAG-QUALITY-TOPOLOGY-V1"
+    }
+  ]
+}

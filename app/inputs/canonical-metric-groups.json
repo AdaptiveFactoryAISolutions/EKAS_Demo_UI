@@ -1,0 +1,507 @@
+{
+  "absenteeism_rate": [
+    "KPI-121"
+  ],
+  "absolute_change": [
+    "KPI-174"
+  ],
+  "action_closure_rate": [
+    "KPI-187"
+  ],
+  "actual_cycle_time": [
+    "KPI-031"
+  ],
+  "asset_utilization": [
+    "KPI-007"
+  ],
+  "availability": [
+    "KPI-002",
+    "KPI-046"
+  ],
+  "availability_loss_time": [
+    "KPI-169"
+  ],
+  "average_changeover_time": [
+    "KPI-057"
+  ],
+  "average_delivery_delay": [
+    "KPI-104"
+  ],
+  "average_downtime_event": [
+    "KPI-048"
+  ],
+  "breakdown_frequency": [
+    "KPI-089"
+  ],
+  "capacity_attainment": [
+    "KPI-022"
+  ],
+  "capacity_utilization": [
+    "KPI-021"
+  ],
+  "category_contribution": [
+    "KPI-181"
+  ],
+  "changeover_attainment": [
+    "KPI-059"
+  ],
+  "changeover_time": [
+    "KPI-056"
+  ],
+  "changeover_variance": [
+    "KPI-058"
+  ],
+  "co_e_per_unit": [
+    "KPI-143"
+  ],
+  "constraint_lost_time": [
+    "KPI-148"
+  ],
+  "constraint_throughput": [
+    "KPI-025",
+    "KPI-147"
+  ],
+  "constraint_utilization": [
+    "KPI-024",
+    "KPI-146"
+  ],
+  "constraint_yield": [
+    "KPI-149"
+  ],
+  "conversion_cost_per_unit": [
+    "KPI-125"
+  ],
+  "copq_cost_of_poor_quality": [
+    "KPI-133"
+  ],
+  "copq_sales": [
+    "KPI-135"
+  ],
+  "cost_of_quality": [
+    "KPI-134"
+  ],
+  "cost_variance": [
+    "KPI-129",
+    "KPI-130"
+  ],
+  "cp": [
+    "KPI-077"
+  ],
+  "cpk": [
+    "KPI-078"
+  ],
+  "cumulative_contribution": [
+    "KPI-182"
+  ],
+  "customer_ppm": [
+    "KPI-073"
+  ],
+  "customer_reject_rate": [
+    "KPI-072"
+  ],
+  "cycle_time_performance": [
+    "KPI-034"
+  ],
+  "cycle_time_variance": [
+    "KPI-033"
+  ],
+  "cycle_to_takt_ratio": [
+    "KPI-037"
+  ],
+  "dart_rate": [
+    "KPI-152"
+  ],
+  "defect_rate": [
+    "KPI-068"
+  ],
+  "defects_per_unit_dpu": [
+    "KPI-069"
+  ],
+  "direct_labor_utilization": [
+    "KPI-119"
+  ],
+  "downtime": [
+    "KPI-045"
+  ],
+  "downtime_by_reason": [
+    "KPI-049"
+  ],
+  "downtime_contribution": [
+    "KPI-050"
+  ],
+  "downtime_cost": [
+    "KPI-055",
+    "KPI-128"
+  ],
+  "downtime_frequency": [
+    "KPI-047"
+  ],
+  "dpmo": [
+    "KPI-070"
+  ],
+  "emergency_work": [
+    "KPI-096"
+  ],
+  "energy_consumption": [
+    "KPI-138"
+  ],
+  "energy_intensity": [
+    "KPI-140"
+  ],
+  "energy_per_unit": [
+    "KPI-139"
+  ],
+  "excess_inventory": [
+    "KPI-113"
+  ],
+  "failure_rate": [
+    "KPI-085"
+  ],
+  "fill_rate": [
+    "KPI-100"
+  ],
+  "finished_goods_days": [
+    "KPI-109"
+  ],
+  "first_pass_yield": [
+    "KPI-063"
+  ],
+  "first_time_through": [
+    "KPI-064"
+  ],
+  "flow_efficiency": [
+    "KPI-041"
+  ],
+  "good_count": [
+    "KPI-075"
+  ],
+  "gross_throughput": [
+    "KPI-016"
+  ],
+  "ideal_cycle_time": [
+    "KPI-032"
+  ],
+  "idle_energy": [
+    "KPI-141"
+  ],
+  "improvement": [
+    "KPI-183",
+    "KPI-184"
+  ],
+  "in_full_delivery": [
+    "KPI-099"
+  ],
+  "inventory_accuracy": [
+    "KPI-111"
+  ],
+  "inventory_days_dio": [
+    "KPI-106",
+    "KPI-160"
+  ],
+  "inventory_turns": [
+    "KPI-105"
+  ],
+  "labor_cost_per_unit": [
+    "KPI-123"
+  ],
+  "labor_efficiency": [
+    "KPI-116"
+  ],
+  "labor_efficiency_variance": [
+    "KPI-132"
+  ],
+  "labor_productivity": [
+    "KPI-115"
+  ],
+  "labor_utilization": [
+    "KPI-118"
+  ],
+  "late_order_rate": [
+    "KPI-102"
+  ],
+  "lead_time": [
+    "KPI-038"
+  ],
+  "little_s_law": [
+    "KPI-114"
+  ],
+  "loading": [
+    "KPI-009"
+  ],
+  "lost_production_from_downtime": [
+    "KPI-054"
+  ],
+  "lost_time_incident_rate": [
+    "KPI-153"
+  ],
+  "lost_units": [
+    "KPI-172"
+  ],
+  "maintenance_backlog": [
+    "KPI-094"
+  ],
+  "maintenance_downtime": [
+    "KPI-088"
+  ],
+  "manufacturing_cost_per_unit": [
+    "KPI-124"
+  ],
+  "manufacturing_lead_time": [
+    "KPI-039"
+  ],
+  "material_usage_variance": [
+    "KPI-131"
+  ],
+  "minor_stop_time": [
+    "KPI-052"
+  ],
+  "moving_average": [
+    "KPI-177"
+  ],
+  "mtbf": [
+    "KPI-081"
+  ],
+  "mttf": [
+    "KPI-084"
+  ],
+  "mttr_repair": [
+    "KPI-082"
+  ],
+  "mttr_restore": [
+    "KPI-083"
+  ],
+  "near_miss_rate": [
+    "KPI-154"
+  ],
+  "net_throughput": [
+    "KPI-015",
+    "KPI-017"
+  ],
+  "obsolete_inventory": [
+    "KPI-112"
+  ],
+  "oee": [
+    "KPI-001",
+    "KPI-156"
+  ],
+  "oee_gap_to_target": [
+    "KPI-010"
+  ],
+  "oee_improvement": [
+    "KPI-011"
+  ],
+  "on_time_action_closure": [
+    "KPI-188"
+  ],
+  "on_time_delivery_otd": [
+    "KPI-098"
+  ],
+  "orders_completed_to_schedule": [
+    "KPI-030"
+  ],
+  "otif": [
+    "KPI-097",
+    "KPI-161"
+  ],
+  "overall_utilization": [
+    "KPI-006"
+  ],
+  "overtime": [
+    "KPI-120"
+  ],
+  "past_due_quantity": [
+    "KPI-103"
+  ],
+  "peak_demand": [
+    "KPI-142"
+  ],
+  "perfect_order_rate": [
+    "KPI-101"
+  ],
+  "performance": [
+    "KPI-004"
+  ],
+  "performance_loss_time": [
+    "KPI-170"
+  ],
+  "planned_downtime": [
+    "KPI-044"
+  ],
+  "planned_maintenance": [
+    "KPI-091"
+  ],
+  "pm_compliance": [
+    "KPI-092"
+  ],
+  "pp": [
+    "KPI-079"
+  ],
+  "ppk": [
+    "KPI-080"
+  ],
+  "ppm_defective": [
+    "KPI-071"
+  ],
+  "production_variance": [
+    "KPI-014"
+  ],
+  "production_vs_plan": [
+    "KPI-012",
+    "KPI-013",
+    "KPI-028",
+    "KPI-155"
+  ],
+  "quality": [
+    "KPI-005",
+    "KPI-061",
+    "KPI-062"
+  ],
+  "quality_loss": [
+    "KPI-074",
+    "KPI-158"
+  ],
+  "quality_loss_units_and_quality_loss_time": [
+    "KPI-171"
+  ],
+  "raw_material_days": [
+    "KPI-107"
+  ],
+  "reactive_maintenance": [
+    "KPI-090"
+  ],
+  "recurrence_rate": [
+    "KPI-186"
+  ],
+  "reject_rate": [
+    "KPI-066"
+  ],
+  "relative_percentage_change": [
+    "KPI-175"
+  ],
+  "reliability": [
+    "KPI-086"
+  ],
+  "repair_rate": [
+    "KPI-087"
+  ],
+  "repeat_failure_rate": [
+    "KPI-095"
+  ],
+  "rework_cost": [
+    "KPI-127"
+  ],
+  "rework_rate": [
+    "KPI-067"
+  ],
+  "rolled_throughput_yield": [
+    "KPI-076"
+  ],
+  "rolling_change": [
+    "KPI-178"
+  ],
+  "run_rate": [
+    "KPI-018"
+  ],
+  "run_rate_attainment": [
+    "KPI-020"
+  ],
+  "run_time": [
+    "KPI-003"
+  ],
+  "schedule_adherence": [
+    "KPI-026",
+    "KPI-159"
+  ],
+  "schedule_attainment": [
+    "KPI-027"
+  ],
+  "schedule_compliance_maintenance": [
+    "KPI-093"
+  ],
+  "schedule_variance": [
+    "KPI-029"
+  ],
+  "scrap_cost": [
+    "KPI-126",
+    "KPI-136"
+  ],
+  "scrap_rate": [
+    "KPI-065"
+  ],
+  "setup_loss": [
+    "KPI-060"
+  ],
+  "speed_loss": [
+    "KPI-053"
+  ],
+  "standard_hours_earned": [
+    "KPI-117"
+  ],
+  "sustained_improvement": [
+    "KPI-185"
+  ],
+  "takt_attainment": [
+    "KPI-036"
+  ],
+  "takt_time": [
+    "KPI-035"
+  ],
+  "target_run_rate": [
+    "KPI-019"
+  ],
+  "target_variance": [
+    "KPI-176"
+  ],
+  "teep": [
+    "KPI-008"
+  ],
+  "throughput_contribution": [
+    "KPI-150"
+  ],
+  "top_loss_contribution": [
+    "KPI-051"
+  ],
+  "total_downtime": [
+    "KPI-042",
+    "KPI-157"
+  ],
+  "touch_time": [
+    "KPI-040"
+  ],
+  "trend_slope": [
+    "KPI-179"
+  ],
+  "trir": [
+    "KPI-151"
+  ],
+  "unfavorable_gap_to_target": [
+    "KPI-173"
+  ],
+  "units_per_employee_hour": [
+    "KPI-122"
+  ],
+  "unplanned_downtime": [
+    "KPI-043"
+  ],
+  "unused_capacity": [
+    "KPI-023"
+  ],
+  "volatility": [
+    "KPI-180"
+  ],
+  "warranty_cost": [
+    "KPI-137"
+  ],
+  "waste_per_unit": [
+    "KPI-144"
+  ],
+  "water_per_unit": [
+    "KPI-145"
+  ],
+  "wip_days": [
+    "KPI-108"
+  ],
+  "wip_units": [
+    "KPI-110"
+  ]
+}

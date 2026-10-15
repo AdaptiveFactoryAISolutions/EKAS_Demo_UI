@@ -1,0 +1,18 @@
+{
+  "earlierExtractPath": "/home/pat/Documents/Codex/2026-10-09/task/metric-oracle/v19-completeness-audit/occurrence-matrix.json",
+  "frozenV32ContractPath": "/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v32-navigation-working/app/inputs/metric-oracle/metric-contract.json",
+  "frozenV32ContractSHA256": "cd284e340bd354612ae852e1e8b2f696c6f08f66daec8d9df0c0195a57532867",
+  "reviewerCheckPath": "/home/pat/Documents/Codex/2026-10-08/task-3/evidence/v32/batch2/reattached-source-independent-check.json",
+  "reviewerCheckSHA256": "32ed678abd7dbfcc3411ee828790ca8e4edf348ace286fa9e11f5945b6783597",
+  "originalExplicitUnitCells": 125,
+  "earlierExtractExplicitUnitCellsMissing": 125,
+  "earlierExtractDistinctAffectedDefinitions": 120,
+  "frozenV32ExplicitUnitCellsRetained": 79,
+  "frozenV32ExplicitUnitCellsMissing": 46,
+  "frozenV32MissingCellsDistinctAffectedDefinitions": 42,
+  "frozenV32RetainedUnitMismatches": 0,
+  "originalTwoColumnRowsWithoutExplicitUnit": 41,
+  "runtimeMissingUnitsAmongAffectedDefinitions": 0,
+  "confirmedRuntimeDefectsDueToUnitMetadataLoss": 0,
+  "ownerFixScope": "Only source-unit metadata for KPI-001..KPI-046 / OCC-001..OCC-046; preserve existing 79 source unit cells and all runtime units/formulas. Source ambiguous notation is preserved verbatim, not converted to runtime unit."
+}

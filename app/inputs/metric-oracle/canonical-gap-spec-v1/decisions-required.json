@@ -1,0 +1,211 @@
+{
+  "items": [
+    {
+      "id": "D01",
+      "contracts": [
+        "MET-015"
+      ],
+      "sourceAnchor": "MIK001lines421-432",
+      "decision": "Approved input contract \u00a75.3 retains TBC-P4-16-015; no formula/input/validation/overlap method is supplied.",
+      "authority": "Patrick/Tom and manufacturingmethod authority",
+      "status": "follow-on definition required",
+      "originalGapStatement": "Follow-on validation formula/input/cause-countermeasure binding/overlap/oracle is TBC. A hypothesis or performed repair alone does not establish recoverablequantity.",
+      "category": "undefined_calculation_method",
+      "historicalStatementRetained": true
+    },
+    {
+      "id": "D02",
+      "contracts": [
+        "MET-016"
+      ],
+      "sourceAnchor": "MIK001lines433-447",
+      "decision": "Approved input contract \u00a75.3 retains TBC-P4-16-016. Standard-cost doctrine for MET-029 does not define MET-016.",
+      "authority": "Patrick/Tom with Finance/customer authority",
+      "status": "follow-on definition and Finance/customer basis required",
+      "originalGapStatement": "Customer/Finance-approved mutually-exclusive valuation basis and model is absent; allocated standard cost is not avoidedexpense or saving.",
+      "category": "undefined_calculation_method_and_customer_valuation",
+      "historicalStatementRetained": true
+    },
+    {
+      "id": "D03",
+      "contracts": [
+        "MET-029"
+      ],
+      "sourceAnchor": "MIK001lines647-660 TBC420",
+      "decision": "D-096/CR-051 settle the first standard-cost lens and visible confidence; exact band thresholds and per-figure versus presence-combination method remain undefined. Candidate arithmetic is not an approved computed confidence rule.",
+      "authority": "Patrick/Tom decision under sourcegovernance",
+      "status": "TBC-420 remains open",
+      "originalGapStatement": "Exact HIGH/MEDIUM/LOW thresholds/method and perfigure vs presence-state-combination are open. Do not assign even HIGH solely from necessary conditions. Arithmeticcandidate may be independentlychecked, but published dollar/confidence pair needs the protocol.",
+      "category": "undefined_confidence_method",
+      "historicalStatementRetained": true
+    },
+    {
+      "id": "D04",
+      "contracts": [
+        "MET-028"
+      ],
+      "sourceAnchor": "MIK001lines635-638 TBC417",
+      "decision": "CR-051 \u00a7Disposition and TBC register resolve TBC-417 through MET-029 doctrine. Earlier D-092 open-status wording is historical. No customer severity configuration is supplied; numeric MET-028 gaps remain available with SEVERITY_UNAVAILABLE. This is not permission to infer profitability.",
+      "authority": "Patrick/Tom/customer commercialconfiguration authority",
+      "status": "TBC-417 RESOLVED by later CR-051; customer severity absent",
+      "originalGapStatement": "Governed customer quote/severity contract and distinct contribution/full-absorption classifications are not specified. Numericrategap supports nullable SEVERITY_UNAVAILABLE; severitycannotbe inferred from gap.",
+      "category": "missing_customer_configuration_not_open_TBC417",
+      "historicalStatementRetained": true,
+      "tbc417Status": "RESOLVED 2026-08-19 by CR-051 / D-096",
+      "customerSeverityConfiguration": "ABSENT"
+    },
+    {
+      "id": "D05",
+      "contracts": [
+        "MET-022"
+      ],
+      "sourceAnchor": "MIK001lines527-537",
+      "decision": "MIK-001 requires an upper percentile but selects no percentile or estimator. Equipment-state over administrative precedence, contradictory-sequence quarantine and open-event reporting are already defined. Concrete same-class source priorities belong to adapter configuration.",
+      "authority": "Patrick/Tom/manufacturingsemantic authority",
+      "status": "percentile/estimator undefined; source hierarchy already controlled",
+      "originalGapStatement": "Upperpercentile selection/estimator and sourceprecedence conflicts need protocol. Per-event boundary values are defined; no aggregate mean without required distribution.",
+      "category": "distribution_method_and_customer_source_binding",
+      "historicalStatementRetained": true
+    },
+    {
+      "id": "D06",
+      "contracts": [
+        "MET-018"
+      ],
+      "sourceAnchor": "MIK001line470",
+      "decision": "Use the explicit max(0,elapsed-PUST) formula for MET-018 and signed AUST-PUST for MET-019. The under-standard diagnostic equality needs document clarification, not approval to calculate 0 and -5.",
+      "authority": "Patrick/Tom sourceamendment authority",
+      "status": "clean calculations unblocked",
+      "originalGapStatement": "max(0,elapsed-PUST) and diagnostic overrun=(AUST-PUST)+ADET contradict for inside-standard changeover. Preserve clampedmetric0 and signedvariance-5; diagnostic is not a universal equality unless sourceclarifies.",
+      "category": "source_diagnostic_correction",
+      "historicalStatementRetained": true
+    },
+    {
+      "id": "D07",
+      "contracts": [
+        "MET-021"
+      ],
+      "sourceAnchor": "MIK001lines509-514",
+      "decision": "Approved input contract \u00a76.4 repeats Effectiveness/Quality but does not supply definitions or setup-denominator binding. No approved canonical activation follows from the 66.5% illustration.",
+      "authority": "Patrick/Tom/manufacturingdefinition authority",
+      "status": "canonical component/version binding required",
+      "originalGapStatement": "Effectiveness and Quality need pinned component definitions/bases; source doesnot explicitlybind Effectiveness denominatorwithsetup. Fixture arithmetic66.5% under declared MET002candidate doesnot activate canonicalNEE.",
+      "category": "undefined_component_binding",
+      "historicalStatementRetained": true
+    },
+    {
+      "id": "D08",
+      "contracts": [
+        "MET-011",
+        "MET-012",
+        "MET-013",
+        "MET-014"
+      ],
+      "sourceAnchor": "MIK001MET004\u00a75 versus\u00a75afamily",
+      "decision": "Retain MET-004 component aggregation in \u00a75 and the explicit capacity-family rule in \u00a75a within their respective contexts. Never replace generic MET-004 silently. A unified mixed-product OEE interpretation needs controlled clarification; existing homogeneous fixtures need no choice.",
+      "authority": "Patrick/Tom sourceauthority",
+      "status": "clean homogeneous synthetic examples unblocked",
+      "originalGapStatement": "Conflicting mixed-product OEE aggregation; homogeneousfixture avoids it. Choose/sourceamend version before arbitrary mixedcohorts; do not rewrite frozenNorthworks.",
+      "category": "context_specific_authority_and_potential_source_clarification",
+      "historicalStatementRetained": true
+    },
+    {
+      "id": "D09",
+      "contracts": [
+        "QAC-001",
+        "MET-028"
+      ],
+      "sourceAnchor": "MIK001lines674-677",
+      "decision": "D-092 already adopts 300 consecutive parts within 1\u20138h unless an effective customer-approved override exists. Keep the QAC 490-minute reconstruction separate from qualified MET-028 runs; no override requested or invented.",
+      "authority": "Patrick/Tom if reusing canonicalbenchmarkasMET028qualifieddemo",
+      "status": "resolved without new approval for separate fixtures",
+      "originalGapStatement": "Generic QAC10000pieces/12run bridge is arithmeticonly. Proposed raw reconstruction needs98machineh/12runs=8h10m each, exceeding MET028default1-8h. Keep separate; no silent qualificationoverride. Other source-consistent mappings may exist but are not uniquelygiven.",
+      "category": "implementation_separation",
+      "historicalStatementRetained": true
+    },
+    {
+      "id": "D10",
+      "contracts": [
+        "QAC-001",
+        "MET-029"
+      ],
+      "sourceAnchor": "MIK001lines647-675",
+      "decision": "D-096/CR-051 already adopt reconciled conversion hours times standard shop rate. Customer evidence must establish compatible basis including setup/downtime; do not reopen the lens or silently expand per_productive_hour applicability.",
+      "authority": "Patrick/Tom/customer methodmapping authority",
+      "status": "lens already adopted; rate applicability must be explicit",
+      "originalGapStatement": "Allowed QACbasisper_productive_hour and conversionhour dollar lens require explicit dimensional/basis applicability for setup/downtime included in24h total. No implicit genericshoprateconversionapproval.",
+      "category": "customer_rate_basis_compatibility",
+      "historicalStatementRetained": true
+    },
+    {
+      "id": "D11",
+      "contracts": [
+        "QAC-001"
+      ],
+      "sourceAnchor": "MIK001lines669-677",
+      "decision": "QAC already governs conjunctive scope, ambiguity refusal, single B/A buckets, no double-count and both bridges. The existing repository synthetic oracle uses 1e-9h; production tolerance, broader-scope precedence and specific transformations require declared approved mapping. TBC-418 requires cleared representative artifact validation.",
+      "authority": "Patrick/Tom/customer adapterauthority",
+      "status": "exact-scope synthetic example unblocked; customer activation validation retained",
+      "originalGapStatement": "Broader-scope precedence, bucket-transform methodapproval, numericalreconciliationtolerance and realquote-artifact fieldvalidation remain required. Fixtureexactscope/noambiguity and numerical1e-9check are not productionpolicydefaults.",
+      "category": "customer_mapping_and_activation_validation",
+      "historicalStatementRetained": true
+    },
+    {
+      "id": "D12",
+      "contracts": [
+        "MET-026"
+      ],
+      "sourceAnchor": "MIK001\u00a73a.3 lines99-101,579-591",
+      "decision": "Approved input contract \u00a72/\u00a77 settles equipment union versus deduplicated additive person-time. Conflicting person bookings or cross-event allocations require source adjudication only when encountered; no invented effort split.",
+      "authority": "Patrick/Tom/source-system authority",
+      "status": "clean dedup/concurrent-person arithmetic unblocked",
+      "originalGapStatement": "Exact duplicate source-key removal is demonstrable; conflicting same-person overlaps or cross-event allocation needs governed sourceadjudication. Do not fabricate effort split.",
+      "category": "customer_source_exception_adjudication",
+      "historicalStatementRetained": true
+    },
+    {
+      "id": "D13",
+      "contracts": [
+        "MET-027"
+      ],
+      "sourceAnchor": "MIK001lines603-615",
+      "decision": "Approved input contract \u00a78 requires actual accepted completion separately from accepted shipment. Added six independent completion facts; no formula substitution. Completion/shipment reconciliation remains explicitly TBC-P4-16-027-COMPLETION-SHIPMENT. Source freshness and over-allocation exception policies are customer/adapter configuration; missing inputs remain unknown/refused.",
+      "authority": "Patrick/Tom/customer APSERP authority",
+      "status": "clean synthetic case complete after accepted-completion addition",
+      "originalGapStatement": "Overallocated negative openquantity is not defined as clampedzero; source freshness policy/timezone/authority mappings and conflict precedences need a governed binding. Fixture avoids over-allocation and explicitlyunknown coverage.",
+      "category": "customer_source_binding_and_required_input_correction",
+      "historicalStatementRetained": true
+    },
+    {
+      "id": "D14",
+      "contracts": [
+        "MET-011",
+        "MET-012",
+        "MET-013",
+        "MET-014",
+        "MET-015",
+        "MET-016",
+        "MET-018",
+        "MET-019",
+        "MET-020",
+        "MET-021",
+        "MET-022",
+        "MET-023",
+        "MET-024",
+        "MET-026",
+        "MET-027",
+        "MET-028",
+        "MET-029"
+      ],
+      "sourceAnchor": "MIK004@0.4.0 DRAFT pointer register and TBC411-414",
+      "decision": "WP-P4-16 logical inputs are APPROVED/DONE. TBC-411..414 physical DAT mappings remain open and MIK-004 pointers remain DRAFT. No need to reapprove clean synthetic definitions, but no production activation or certification is inferred.",
+      "authority": "Patrick/Tom controlled registry/mapping authority",
+      "status": "logical input contract approved; physical mappings/activation open",
+      "originalGapStatement": "Pointerversion candidates and DATtable mappings are draft. SourceMIK001definition authority doesnot automaticallyapproveinstance mappings or productactivation.",
+      "category": "physical_mapping_and_activation_control",
+      "historicalStatementRetained": true
+    }
+  ],
+  "revision": "canonical-gap-spec@1.0.1",
+  "note": "Disposition overlay after existing-decision search; no source authority or method approvals changed."
+}

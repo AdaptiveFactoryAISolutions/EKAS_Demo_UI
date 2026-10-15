@@ -1,0 +1,86 @@
+{
+  "status": "Authorship record, not legal clearance",
+  "icons": [
+    {
+      "file": "settings.svg",
+      "author": "Codex for this EKAS task, 2026-10-10",
+      "basis": "New geometry authored for generic action; no external icon source consulted",
+      "original_sha256": "4d6300d1f88f0db56904c43fe5cd71c673e95791bc4caa4d30527bddd6ac0ace",
+      "replacement_sha256": "e9fe7ec615b99122c7451fa69e3e53cc0211434fa80cabc953e3727175d2c688",
+      "dimensions": "viewBox 0 0 24 24",
+      "purpose": "settings"
+    },
+    {
+      "file": "resize-handle.svg",
+      "author": "Codex for this EKAS task, 2026-10-10",
+      "basis": "New geometry authored for generic action; no external icon source consulted",
+      "original_sha256": "b4dee71bc919df08ebf5ee303735a51b97f39face1e3c24e301119669bf16aeb",
+      "replacement_sha256": "b794dd171fb69898c4bf750c0c85cf8fe3090ef3ea790d6714a405b18f7575f1",
+      "dimensions": "viewBox 0 0 24 24",
+      "purpose": "resize-handle"
+    },
+    {
+      "file": "close.svg",
+      "author": "Codex for this EKAS task, 2026-10-10",
+      "basis": "New geometry authored for generic action; no external icon source consulted",
+      "original_sha256": "d08d56d4c297ba66449ada4ee3c12935416915ec2e28bf6f1891f2f30c7f2ceb",
+      "replacement_sha256": "6353e384e31543c339d7219002a5bd601e37f94ec3aa16180b5942016415f047",
+      "dimensions": "viewBox 0 0 24 24",
+      "purpose": "close"
+    },
+    {
+      "file": "dropdown-pointer.svg",
+      "author": "Codex for this EKAS task, 2026-10-10",
+      "basis": "New geometry authored for generic action; no external icon source consulted",
+      "original_sha256": "b2f5a096c7c4adf764c6392afa3aa2d33af85f95cb4e7d32fabe4ec317a44b6b",
+      "replacement_sha256": "161366ac5212960f91f64b9ff2b2e1661451636349be149b19b05e950ba4d934",
+      "dimensions": "viewBox 0 0 24 24",
+      "purpose": "dropdown-pointer"
+    },
+    {
+      "file": "fullscreen.svg",
+      "author": "Codex for this EKAS task, 2026-10-10",
+      "basis": "New geometry authored for generic action; no external icon source consulted",
+      "original_sha256": "b270e37165cb3057474e5fe24de3ae2117c9aedb329ed37f3e2e6b9ddbd03317",
+      "replacement_sha256": "d32b9f39f3fd461f8993aa7704a09b871075567f5c53bff3a42e3356eb87e81e",
+      "dimensions": "viewBox 0 0 24 24",
+      "purpose": "fullscreen"
+    },
+    {
+      "file": "menu.svg",
+      "author": "Codex for this EKAS task, 2026-10-10",
+      "basis": "New geometry authored for generic action; no external icon source consulted",
+      "original_sha256": "360d133b4d4352b894741d0fc985810ad77bbdfe296eed5bbd6c172f2b4968f0",
+      "replacement_sha256": "cb67081418257c56fe2ea904fbd41978fc956db15039fedc7d2edcb283be0d1d",
+      "dimensions": "viewBox 0 0 24 24",
+      "purpose": "menu"
+    },
+    {
+      "file": "add.svg",
+      "author": "Codex for this EKAS task, 2026-10-10",
+      "basis": "New geometry authored for generic action; no external icon source consulted",
+      "original_sha256": "4065c7a1c92b642cc91b6798f3c564638660ede8debcc12636b2ced404eb4b02",
+      "replacement_sha256": "2f49502640361c0c96234aabbe3d8930d22e5811bd0717aab1bc7706c9d9f223",
+      "dimensions": "viewBox 0 0 24 24",
+      "purpose": "add"
+    },
+    {
+      "file": "drag.svg",
+      "author": "Codex for this EKAS task, 2026-10-10",
+      "basis": "New geometry authored for generic action; no external icon source consulted",
+      "original_sha256": "6c3494aa56c40e47159955177276d4c5179664e960326f2e0e05e1a7573e0baf",
+      "replacement_sha256": "8d96d850b19986774b06494bc4a686dce63ff4023f80bf47c1ef0e4cdb2a5ca0",
+      "dimensions": "viewBox 0 0 24 24",
+      "purpose": "drag"
+    },
+    {
+      "file": "destroy.svg",
+      "author": "Codex for this EKAS task, 2026-10-10",
+      "basis": "New geometry authored for generic action; no external icon source consulted",
+      "original_sha256": "fde715866032e0229269029dee2754fdb8138c001a4b50794cfcc7ef475b5a7c",
+      "replacement_sha256": "57246b03cd5f25a97a8df68f03b655a79b192abe816f707a000fefc9f1fa0142",
+      "dimensions": "viewBox 0 0 24 24",
+      "purpose": "destroy"
+    }
+  ]
+}
