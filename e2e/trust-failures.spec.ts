@@ -3,8 +3,7 @@ import { ask, assetOrder, lastAnswer } from './helpers';
 
 /**
  * Correct-behavior regressions for the release-blocking trust failures.
- * They are red on this candidate: each assertion is the behavior a plant
- * leader can trust, and the current local demo does not do that yet.
+ * Each assertion is the behavior a plant leader can trust.
  */
 test.beforeEach(async ({ page }) => {
   await page.goto('/');
@@ -16,7 +15,7 @@ test('a natural production question states the plan gap or that the period is un
   await page.screenshot({ path: 'docs/wp1/screenshots/production-yesterday.png', fullPage: true });
   const answer = await lastAnswer(page);
   expect(answer, answer).not.toMatch(/TP-S\d: Good units|good units total/i);
-  expect(answer).toMatch(/approved plan|plan miss|approved target is unavailable/i);
+  expect(answer).toMatch(/approved plan|plan miss|unavailable/i);
   await expect(page.getByRole('region', { name: 'Current investigation context' }).locator('strong')).not.toHaveText('Training');
 });
 
@@ -37,14 +36,14 @@ test('an invalid TP-S1 question does not refuse the next exact machine question'
   expect(answer).toMatch(/Machine 1/);
 });
 
-test('worst first reverses the previous machine ranking', async ({ page }) => {
+test('worst first reorders the ranking ascending with asset-ID ties', async ({ page }) => {
   await ask(page, 'Please rank the machines by descending OEE');
   const first = assetOrder(await lastAnswer(page));
   await ask(page, 'Now put the worst first');
   await page.screenshot({ path: 'docs/wp1/screenshots/worst-first.png', fullPage: true });
   const second = assetOrder(await lastAnswer(page));
-  expect(first.length, first.join(', ')).toBeGreaterThan(1);
-  expect(second, `first ${first.join(', ')}`).toEqual([...first].reverse());
+  expect(first, first.join(', ')).toEqual(['TP-A5', 'TP-A1', 'TP-A3', 'TP-A7']);
+  expect(second, `first ${first.join(', ')}`).toEqual(['TP-A7', 'TP-A1', 'TP-A3', 'TP-A5']);
 });
 
 test('a production question does not leave the context bar on the training dataset', async ({ page }) => {

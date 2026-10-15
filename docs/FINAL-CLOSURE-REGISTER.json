@@ -67,7 +67,8 @@
         "M01.02",
         "M01.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "release candidate"
     },
     {
       "id": "M01.01",
@@ -100,7 +101,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "verification/sustain"
     },
     {
       "id": "M01.02",
@@ -134,7 +136,8 @@
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
       },
-      "currentArtifactQualification": "f2b PINNED-MANIFEST has81static members:index.html plus80otherfiles. Original80assets wording may exclude entry HTML. Fresh package/served-byte verification must disclose its counting basis and cover all81members; remains pending."
+      "currentArtifactQualification": "f2b PINNED-MANIFEST has81static members:index.html plus80otherfiles. Original80assets wording may exclude entry HTML. Fresh package/served-byte verification must disclose its counting basis and cover all81members; remains pending.",
+      "acceptanceFamily": "release candidate"
     },
     {
       "id": "M01.03",
@@ -162,7 +165,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "action"
     },
     {
       "id": "M02",
@@ -200,7 +204,8 @@
         "M02.04",
         "M02.05"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "release candidate"
     },
     {
       "id": "M02.01",
@@ -230,13 +235,14 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "release candidate"
     },
     {
       "id": "M02.02",
       "kind": "atomic-criterion",
       "parent": "M02",
-      "text": "F083 real input\u2192prerequisite Save success/failure and late Formula/Parameter modal focus source repros pass.",
+      "text": "F083 real input→prerequisite Save success/failure and late Formula/Parameter modal focus source repros pass.",
       "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
@@ -253,14 +259,15 @@
       ],
       "finalAcceptanceCase": {
         "id": "M02.02-FINAL",
-        "expected": "F083 real input\u2192prerequisite Save success/failure and late Formula/Parameter modal focus source repros pass.",
+        "expected": "F083 real input→prerequisite Save success/failure and late Formula/Parameter modal focus source repros pass.",
         "adverseRecovery": null,
         "requiredProof": "Current final-build result plus applicable native/user evidence; prior assertions alone do not close."
       },
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "M02.03",
@@ -290,7 +297,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "M02.04",
@@ -325,7 +333,8 @@
       "disposition": {
         "localDemo": "Known corrections implemented with targeted proof; exact-current independent/native retest and complete final suite remain unaccepted. Any newly reproduced defect must become FIX.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M02.05",
@@ -355,7 +364,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "M03",
@@ -391,7 +401,8 @@
         "M03.02",
         "M03.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "comparison"
     },
     {
       "id": "M03.01",
@@ -421,7 +432,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M03.02",
@@ -451,7 +463,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "comparison"
     },
     {
       "id": "M03.03",
@@ -479,7 +492,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "comparison"
     },
     {
       "id": "M04",
@@ -515,7 +529,8 @@
         "M04.02",
         "M04.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "M04.01",
@@ -546,7 +561,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "M04.02",
@@ -576,7 +592,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "M04.03",
@@ -611,7 +628,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "M05",
@@ -652,7 +670,8 @@
         "M05.05",
         "M05.06"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "M05.01",
@@ -684,7 +703,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "M05.02",
@@ -716,7 +736,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "M05.03",
@@ -741,7 +762,7 @@
         },
         {
           "path": "evidence/rc-proposal-genealogy-runtime-attempt.json",
-          "qualification": "11/11 source cases including existing captured-model \u2192 human-confirmed source-pinned PM typed lifecycle and public proposal UI; no autonomous mutation or live model quality credit."
+          "qualification": "11/11 source cases including existing captured-model → human-confirmed source-pinned PM typed lifecycle and public proposal UI; no autonomous mutation or live model quality credit."
         }
       ],
       "finalAcceptanceCase": {
@@ -751,9 +772,10 @@
         "requiredProof": "Current final-build result plus applicable native/user evidence; prior assertions alone do not close."
       },
       "disposition": {
-        "localDemo": "Existing source-pinned modelDraft \u2192 human review/type/basis/confirmation \u2192 governed proposal and canonical action/view routes are implemented. Arbitrary autonomous writes remain refused. Exact current normal UI/model/Board application acceptance still required.",
+        "localDemo": "Existing source-pinned modelDraft → human review/type/basis/confirmation → governed proposal and canonical action/view routes are implemented. Arbitrary autonomous writes remain refused. Exact current normal UI/model/Board application acceptance still required.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M05.04",
@@ -783,7 +805,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "M05.05",
@@ -813,14 +836,15 @@
       "disposition": {
         "localDemo": "Requires privately entered user credential, current original budget/pricing and explicitly cost-authorized real inference; no fake result substitutes.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "quality"
     },
     {
       "id": "M05.06",
       "kind": "atomic-criterion",
       "parent": "M05",
       "text": "Plant leader can converse naturally without developer coaching.",
-      "status": "USER ACTION",
+      "status": "VERIFY",
       "implementation": [
         "app/src/server/manufacturingBoundary.ts",
         "app/src/server/conversationBoundary.ts",
@@ -843,7 +867,9 @@
       "disposition": {
         "localDemo": "Requires representative human or explicitly authorized actual-provider/backend acceptance; source/mock counts cannot prove this criterion.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "conversation",
+      "acceptanceOwner": "native test operator"
     },
     {
       "id": "M06",
@@ -879,7 +905,8 @@
         "M06.03",
         "M06.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "M06.01",
@@ -908,7 +935,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "M06.02",
@@ -937,7 +965,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "admin/provider"
     },
     {
       "id": "M06.03",
@@ -964,7 +993,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M06.04",
@@ -991,7 +1021,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "M07",
@@ -1027,7 +1058,8 @@
         "M07.03",
         "M07.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "M07.01",
@@ -1056,7 +1088,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "export"
     },
     {
       "id": "M07.02",
@@ -1085,7 +1118,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "M07.03",
@@ -1112,7 +1146,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "M07.04",
@@ -1139,7 +1174,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "M08",
@@ -1175,7 +1211,8 @@
         "M08.03",
         "M08.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "M08.01",
@@ -1204,7 +1241,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "M08.02",
@@ -1233,7 +1271,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "M08.03",
@@ -1260,7 +1299,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M08.04",
@@ -1287,7 +1327,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "M09",
@@ -1322,7 +1363,8 @@
         "M09.02",
         "M09.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "plant review"
     },
     {
       "id": "M09.01",
@@ -1351,7 +1393,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M09.02",
@@ -1378,7 +1421,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M09.03",
@@ -1405,7 +1449,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "M10",
@@ -1441,7 +1486,8 @@
         "M10.02",
         "M10.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "loss bridge"
     },
     {
       "id": "M10.01",
@@ -1471,7 +1517,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "loss bridge"
     },
     {
       "id": "M10.02",
@@ -1499,13 +1546,14 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M10.03",
       "kind": "atomic-criterion",
       "parent": "M10",
-      "text": "Goal\u2192gap\u2192loss\u2192contributor\u2192samecase is followed without hidden data edits.",
+      "text": "Goal→gap→loss→contributor→samecase is followed without hidden data edits.",
       "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
@@ -1520,14 +1568,15 @@
       ],
       "finalAcceptanceCase": {
         "id": "M10.03-FINAL",
-        "expected": "Goal\u2192gap\u2192loss\u2192contributor\u2192samecase is followed without hidden data edits.",
+        "expected": "Goal→gap→loss→contributor→samecase is followed without hidden data edits.",
         "adverseRecovery": "NATIVE_MATRIX",
         "requiredProof": "Current final-build result plus applicable native/user evidence; prior assertions alone do not close."
       },
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "loss bridge"
     },
     {
       "id": "M11",
@@ -1564,7 +1613,8 @@
         "M11.03",
         "M11.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "M11.01",
@@ -1594,7 +1644,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "M11.02",
@@ -1624,7 +1675,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "M11.03",
@@ -1652,7 +1704,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "M11.04",
@@ -1680,7 +1733,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "M12",
@@ -1716,13 +1770,14 @@
         "M12.02",
         "M12.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "loss bridge"
     },
     {
       "id": "M12.01",
       "kind": "atomic-criterion",
       "parent": "M12",
-      "text": "Compiled 2880\u2212480\u2212198\u221248=2154 capacity and 2304 plan/gap 150 stay distinct.",
+      "text": "Compiled 2880−480−198−48=2154 capacity and 2304 plan/gap 150 stay distinct.",
       "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
@@ -1739,14 +1794,15 @@
       ],
       "finalAcceptanceCase": {
         "id": "M12.01-FINAL",
-        "expected": "Compiled 2880\u2212480\u2212198\u221248=2154 capacity and 2304 plan/gap 150 stay distinct.",
+        "expected": "Compiled 2880−480−198−48=2154 capacity and 2304 plan/gap 150 stay distinct.",
         "adverseRecovery": null,
         "requiredProof": "Current final-build result plus applicable native/user evidence; prior assertions alone do not close."
       },
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "loss bridge"
     },
     {
       "id": "M12.02",
@@ -1776,7 +1832,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M12.03",
@@ -1804,7 +1861,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "loss bridge"
     },
     {
       "id": "M13",
@@ -1840,7 +1898,8 @@
         "M13.02",
         "M13.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "loss bridge"
     },
     {
       "id": "M13.01",
@@ -1870,7 +1929,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M13.02",
@@ -1898,7 +1958,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "loss bridge"
     },
     {
       "id": "M13.03",
@@ -1926,7 +1987,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "loss bridge"
     },
     {
       "id": "M14",
@@ -1963,7 +2025,8 @@
         "M14.03",
         "M14.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "evidence"
     },
     {
       "id": "M14.01",
@@ -1993,7 +2056,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "evidence"
     },
     {
       "id": "M14.02",
@@ -2023,7 +2087,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "M14.03",
@@ -2051,7 +2116,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M14.04",
@@ -2083,7 +2149,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "evidence"
     },
     {
       "id": "M15",
@@ -2120,7 +2187,8 @@
         "M15.03",
         "M15.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "M15.01",
@@ -2150,7 +2218,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "action"
     },
     {
       "id": "M15.02",
@@ -2180,7 +2249,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "verification/sustain"
     },
     {
       "id": "M15.03",
@@ -2208,7 +2278,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M15.04",
@@ -2236,7 +2307,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "action"
     },
     {
       "id": "M16",
@@ -2273,7 +2345,8 @@
         "M16.03",
         "M16.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "action"
     },
     {
       "id": "M16.01",
@@ -2303,7 +2376,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "action"
     },
     {
       "id": "M16.02",
@@ -2333,7 +2407,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "M16.03",
@@ -2361,7 +2436,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "action"
     },
     {
       "id": "M16.04",
@@ -2389,7 +2465,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "M17",
@@ -2425,7 +2502,8 @@
         "M17.02",
         "M17.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "action"
     },
     {
       "id": "M17.01",
@@ -2455,7 +2533,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "M17.02",
@@ -2485,7 +2564,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "M17.03",
@@ -2513,7 +2593,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "M18",
@@ -2550,7 +2631,8 @@
         "M18.03",
         "M18.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "security"
     },
     {
       "id": "M18.01",
@@ -2580,7 +2662,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "M18.02",
@@ -2610,7 +2693,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "M18.03",
@@ -2638,7 +2722,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M18.04",
@@ -2672,7 +2757,8 @@
             "localFacetRemainsRequired": true
           }
         ]
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "M19",
@@ -2709,13 +2795,14 @@
         "M19.03",
         "M19.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "action"
     },
     {
       "id": "M19.01",
       "kind": "atomic-criterion",
       "parent": "M19",
-      "text": "Exact source work-ID original cases and case sequences preserve approval\u2260performed\u2260verification.",
+      "text": "Exact source work-ID original cases and case sequences preserve approval≠performed≠verification.",
       "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
@@ -2732,14 +2819,15 @@
       ],
       "finalAcceptanceCase": {
         "id": "M19.01-FINAL",
-        "expected": "Exact source work-ID original cases and case sequences preserve approval\u2260performed\u2260verification.",
+        "expected": "Exact source work-ID original cases and case sequences preserve approval≠performed≠verification.",
         "adverseRecovery": null,
         "requiredProof": "Current final-build result plus applicable native/user evidence; prior assertions alone do not close."
       },
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "verification/sustain"
     },
     {
       "id": "M19.02",
@@ -2769,7 +2857,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "evidence"
     },
     {
       "id": "M19.03",
@@ -2797,7 +2886,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M19.04",
@@ -2825,7 +2915,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "action"
     },
     {
       "id": "M20",
@@ -2862,7 +2953,8 @@
         "M20.03",
         "M20.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "verification/sustain"
     },
     {
       "id": "M20.01",
@@ -2892,7 +2984,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "verification/sustain"
     },
     {
       "id": "M20.02",
@@ -2922,7 +3015,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M20.03",
@@ -2950,13 +3044,14 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M20.04",
       "kind": "atomic-criterion",
       "parent": "M20",
-      "text": "Jam 60\u219230\u226430, speed 90\u219230\u226435, FPY85\u219295.909\u226595 and eligible counts are understandable.",
+      "text": "Jam 60→30≤30, speed 90→30≤35, FPY85→95.909≥95 and eligible counts are understandable.",
       "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
@@ -2971,14 +3066,15 @@
       ],
       "finalAcceptanceCase": {
         "id": "M20.04-FINAL",
-        "expected": "Jam 60\u219230\u226430, speed 90\u219230\u226435, FPY85\u219295.909\u226595 and eligible counts are understandable.",
+        "expected": "Jam 60→30≤30, speed 90→30≤35, FPY85→95.909≥95 and eligible counts are understandable.",
         "adverseRecovery": "NATIVE_MATRIX",
         "requiredProof": "Current final-build result plus applicable native/user evidence; prior assertions alone do not close."
       },
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "speed"
     },
     {
       "id": "M21",
@@ -3015,7 +3111,8 @@
         "M21.03",
         "M21.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "verification/sustain"
     },
     {
       "id": "M21.01",
@@ -3045,7 +3142,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "verification/sustain"
     },
     {
       "id": "M21.02",
@@ -3075,7 +3173,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M21.03",
@@ -3103,7 +3202,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "verification/sustain"
     },
     {
       "id": "M21.04",
@@ -3131,7 +3231,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "verification/sustain"
     },
     {
       "id": "M22",
@@ -3167,7 +3268,8 @@
         "M22.02",
         "M22.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "action"
     },
     {
       "id": "M22.01",
@@ -3197,7 +3299,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "verification/sustain"
     },
     {
       "id": "M22.02",
@@ -3225,7 +3328,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "verification/sustain"
     },
     {
       "id": "M22.03",
@@ -3253,7 +3357,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "action"
     },
     {
       "id": "M23",
@@ -3289,7 +3394,8 @@
         "M23.02",
         "M23.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "downtime"
     },
     {
       "id": "M23.01",
@@ -3319,7 +3425,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "downtime"
     },
     {
       "id": "M23.02",
@@ -3347,14 +3454,15 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "M23.03",
       "kind": "atomic-criterion",
       "parent": "M23",
       "text": "Unaided current browser downtime journey and persistence pass.",
-      "status": "USER ACTION",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -3375,7 +3483,9 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "downtime",
+      "acceptanceOwner": "native test operator"
     },
     {
       "id": "M24",
@@ -3411,7 +3521,8 @@
         "M24.02",
         "M24.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "speed"
     },
     {
       "id": "M24.01",
@@ -3441,7 +3552,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "speed"
     },
     {
       "id": "M24.02",
@@ -3469,14 +3581,15 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "speed"
     },
     {
       "id": "M24.03",
       "kind": "atomic-criterion",
       "parent": "M24",
       "text": "Unaided current browser speed journey and persistence pass.",
-      "status": "USER ACTION",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -3497,7 +3610,9 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "speed",
+      "acceptanceOwner": "native test operator"
     },
     {
       "id": "M25",
@@ -3534,7 +3649,8 @@
         "M25.03",
         "M25.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "quality"
     },
     {
       "id": "M25.01",
@@ -3564,7 +3680,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "quality"
     },
     {
       "id": "M25.02",
@@ -3594,7 +3711,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "quality"
     },
     {
       "id": "M25.03",
@@ -3622,14 +3740,15 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "quality"
     },
     {
       "id": "M25.04",
       "kind": "atomic-criterion",
       "parent": "M25",
       "text": "Unaided current browser FORM-Q1/QL-A/Q1 quality journey and persistence pass.",
-      "status": "USER ACTION",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -3650,7 +3769,9 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "quality",
+      "acceptanceOwner": "native test operator"
     },
     {
       "id": "M26",
@@ -3689,7 +3810,8 @@
         "M26.05",
         "M26.06"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "M26.01",
@@ -3727,13 +3849,14 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "M26.02",
       "kind": "atomic-criterion",
       "parent": "M26",
-      "text": "Native F083 empty\u2192input\u2192Save recordsone Guideobservation, zero manufacturing receipts, and exactnote survivesreload.",
+      "text": "Native F083 empty→input→Save recordsone Guideobservation, zero manufacturing receipts, and exactnote survivesreload.",
       "status": "VERIFY",
       "implementation": [
         "app/src/Guide.tsx",
@@ -3750,14 +3873,15 @@
       ],
       "finalAcceptanceCase": {
         "id": "M26.02-FINAL",
-        "expected": "Native F083 empty\u2192input\u2192Save recordsone Guideobservation, zero manufacturing receipts, and exactnote survivesreload.",
+        "expected": "Native F083 empty→input→Save recordsone Guideobservation, zero manufacturing receipts, and exactnote survivesreload.",
         "adverseRecovery": null,
         "requiredProof": "Current final-build result plus applicable native/user evidence; prior assertions alone do not close."
       },
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "M26.03",
@@ -3787,7 +3911,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "M26.04",
@@ -3824,7 +3949,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "action"
     },
     {
       "id": "M26.05",
@@ -3861,7 +3987,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "M26.06",
@@ -3898,7 +4025,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "M27",
@@ -3934,7 +4062,8 @@
         "M27.02",
         "M27.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M27.01",
@@ -3964,7 +4093,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "M27.02",
@@ -3994,7 +4124,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M27.03",
@@ -4022,7 +4153,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M28",
@@ -4059,7 +4191,8 @@
         "M28.03",
         "M28.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M28.01",
@@ -4089,7 +4222,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M28.02",
@@ -4119,7 +4253,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M28.03",
@@ -4156,7 +4291,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "M28.04",
@@ -4187,7 +4323,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M29",
@@ -4224,7 +4361,8 @@
         "M29.03",
         "M29.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M29.01",
@@ -4254,7 +4392,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M29.02",
@@ -4284,7 +4423,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "admin/provider"
     },
     {
       "id": "M29.03",
@@ -4312,7 +4452,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M29.04",
@@ -4346,7 +4487,8 @@
             "localFacetRemainsRequired": true
           }
         ]
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "M30",
@@ -4383,7 +4525,8 @@
         "M30.03",
         "M30.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "evidence"
     },
     {
       "id": "M30.01",
@@ -4413,7 +4556,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M30.02",
@@ -4443,7 +4587,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "admin/provider"
     },
     {
       "id": "M30.03",
@@ -4471,7 +4616,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M30.04",
@@ -4505,7 +4651,8 @@
             "localFacetRemainsRequired": true
           }
         ]
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "M31",
@@ -4542,7 +4689,8 @@
         "M31.03",
         "M31.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "security"
     },
     {
       "id": "M31.01",
@@ -4572,7 +4720,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M31.02",
@@ -4602,7 +4751,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "admin/provider"
     },
     {
       "id": "M31.03",
@@ -4630,7 +4780,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "M31.04",
@@ -4664,7 +4815,8 @@
             "localFacetRemainsRequired": true
           }
         ]
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "M32",
@@ -4700,7 +4852,8 @@
         "M32.03",
         "M32.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "M32.01",
@@ -4729,7 +4882,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "M32.02",
@@ -4758,7 +4912,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M32.03",
@@ -4792,7 +4947,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "M32.04",
@@ -4826,7 +4982,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "M33",
@@ -4863,7 +5020,8 @@
         "M33.04",
         "M33.05"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "M33.01",
@@ -4892,7 +5050,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M33.02",
@@ -4921,7 +5080,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M33.03",
@@ -4948,7 +5108,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "M33.04",
@@ -4975,7 +5136,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "export"
     },
     {
       "id": "M33.05",
@@ -5002,7 +5164,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M34",
@@ -5038,7 +5201,8 @@
         "M34.02",
         "M34.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "export"
     },
     {
       "id": "M34.01",
@@ -5068,7 +5232,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "export"
     },
     {
       "id": "M34.02",
@@ -5096,7 +5261,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "export"
     },
     {
       "id": "M34.03",
@@ -5124,7 +5290,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "verification/sustain"
     },
     {
       "id": "M35",
@@ -5160,7 +5327,8 @@
         "M35.02",
         "M35.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "M35.01",
@@ -5190,13 +5358,14 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M35.02",
       "kind": "atomic-criterion",
       "parent": "M35",
-      "text": "1366\u00d7768 chat/composer/navigation/Guide/charts/tables/evidence/dialogs/forms/actions/reload/errors pass.",
+      "text": "1366×768 chat/composer/navigation/Guide/charts/tables/evidence/dialogs/forms/actions/reload/errors pass.",
       "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
@@ -5211,14 +5380,15 @@
       ],
       "finalAcceptanceCase": {
         "id": "M35.02-FINAL",
-        "expected": "1366\u00d7768 chat/composer/navigation/Guide/charts/tables/evidence/dialogs/forms/actions/reload/errors pass.",
+        "expected": "1366×768 chat/composer/navigation/Guide/charts/tables/evidence/dialogs/forms/actions/reload/errors pass.",
         "adverseRecovery": "NATIVE_MATRIX",
         "requiredProof": "Current final-build result plus applicable native/user evidence; prior assertions alone do not close."
       },
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "M35.03",
@@ -5246,7 +5416,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "M36",
@@ -5282,7 +5453,8 @@
         "M36.02",
         "M36.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "M36.01",
@@ -5312,13 +5484,14 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M36.02",
       "kind": "atomic-criterion",
       "parent": "M36",
-      "text": "Native 390 scrolled Menu\u2192Answers opensreadabledrawer andcollapsesafterselection.",
+      "text": "Native 390 scrolled Menu→Answers opensreadabledrawer andcollapsesafterselection.",
       "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
@@ -5335,20 +5508,21 @@
       ],
       "finalAcceptanceCase": {
         "id": "M36.02-FINAL",
-        "expected": "Native 390 scrolled Menu\u2192Answers opensreadabledrawer andcollapsesafterselection.",
+        "expected": "Native 390 scrolled Menu→Answers opensreadabledrawer andcollapsesafterselection.",
         "adverseRecovery": null,
         "requiredProof": "Current final-build result plus applicable native/user evidence; prior assertions alone do not close."
       },
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "M36.03",
       "kind": "atomic-criterion",
       "parent": "M36",
-      "text": "390\u00d7844 all required surfaces/forms/controls/readability/scroll/focus pass.",
+      "text": "390×844 all required surfaces/forms/controls/readability/scroll/focus pass.",
       "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
@@ -5363,14 +5537,15 @@
       ],
       "finalAcceptanceCase": {
         "id": "M36.03-FINAL",
-        "expected": "390\u00d7844 all required surfaces/forms/controls/readability/scroll/focus pass.",
+        "expected": "390×844 all required surfaces/forms/controls/readability/scroll/focus pass.",
         "adverseRecovery": "NATIVE_MATRIX",
         "requiredProof": "Current final-build result plus applicable native/user evidence; prior assertions alone do not close."
       },
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "M37",
@@ -5406,7 +5581,8 @@
         "M37.02",
         "M37.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "M37.01",
@@ -5436,7 +5612,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M37.02",
@@ -5466,13 +5643,14 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "M37.03",
       "kind": "atomic-criterion",
       "parent": "M37",
-      "text": "320\u00d7844 all required surfaces including long labels/composer/dialogs pass without inaccessible overflow.",
+      "text": "320×844 all required surfaces including long labels/composer/dialogs pass without inaccessible overflow.",
       "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
@@ -5487,14 +5665,15 @@
       ],
       "finalAcceptanceCase": {
         "id": "M37.03-FINAL",
-        "expected": "320\u00d7844 all required surfaces including long labels/composer/dialogs pass without inaccessible overflow.",
+        "expected": "320×844 all required surfaces including long labels/composer/dialogs pass without inaccessible overflow.",
         "adverseRecovery": "NATIVE_MATRIX",
         "requiredProof": "Current final-build result plus applicable native/user evidence; prior assertions alone do not close."
       },
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "M38",
@@ -5532,7 +5711,8 @@
         "M38.04",
         "M38.05"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "M38.01",
@@ -5562,7 +5742,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "M38.02",
@@ -5592,7 +5773,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "action"
     },
     {
       "id": "M38.03",
@@ -5622,7 +5804,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "M38.04",
@@ -5650,14 +5833,15 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "M38.05",
       "kind": "atomic-criterion",
       "parent": "M38",
       "text": "Actual keyboard-only end-to-end navigation, chart/Grid/menu/modal/Guide and focus return pass.",
-      "status": "USER ACTION",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -5685,7 +5869,9 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility",
+      "acceptanceOwner": "native test operator"
     },
     {
       "id": "M39",
@@ -5722,7 +5908,8 @@
         "M39.03",
         "M39.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "M39.01",
@@ -5752,7 +5939,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "M39.02",
@@ -5780,7 +5968,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M39.03",
@@ -5808,7 +5997,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "M39.04",
@@ -5836,7 +6026,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "M40",
@@ -5873,7 +6064,8 @@
         "M40.03",
         "M40.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M40.01",
@@ -5903,7 +6095,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M40.02",
@@ -5931,7 +6124,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M40.03",
@@ -5959,14 +6153,15 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "M40.04",
       "kind": "atomic-criterion",
       "parent": "M40",
       "text": "Firstuse/dailyreview under 120 seconds and perceived responsiveness are acceptable.",
-      "status": "USER ACTION",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -5987,7 +6182,9 @@
       "disposition": {
         "localDemo": "Requires representative human or explicitly authorized actual-provider/backend acceptance; source/mock counts cannot prove this criterion.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility",
+      "acceptanceOwner": "native test operator"
     },
     {
       "id": "M41",
@@ -6024,7 +6221,8 @@
         "M41.03",
         "M41.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "release candidate"
     },
     {
       "id": "M41.01",
@@ -6054,7 +6252,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M41.02",
@@ -6084,7 +6283,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "M41.03",
@@ -6112,7 +6312,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M41.04",
@@ -6140,7 +6341,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M42",
@@ -6177,7 +6379,8 @@
         "M42.03",
         "M42.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "evidence"
     },
     {
       "id": "M42.01",
@@ -6207,7 +6410,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "M42.02",
@@ -6235,7 +6439,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "M42.03",
@@ -6263,7 +6468,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "evidence"
     },
     {
       "id": "M42.04",
@@ -6291,7 +6497,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M43",
@@ -6327,7 +6534,8 @@
         "M43.02",
         "M43.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "evidence"
     },
     {
       "id": "M43.01",
@@ -6357,7 +6565,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "admin/provider"
     },
     {
       "id": "M43.02",
@@ -6385,7 +6594,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "M43.03",
@@ -6419,14 +6629,15 @@
             "localFacetRemainsRequired": true
           }
         ]
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "M44",
       "kind": "obligation",
       "sourceInventory": "master46",
       "text": "Cowork plant-leader usability review passes.",
-      "status": "USER ACTION",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -6455,7 +6666,9 @@
         "M44.02",
         "M44.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "platform and remaining acceptance",
+      "acceptanceOwner": "Cowork"
     },
     {
       "id": "M44.01",
@@ -6488,14 +6701,15 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "M44.02",
       "kind": "atomic-criterion",
       "parent": "M44",
       "text": "Independent visible plant-leader reviewer explicitly returns READY FOR LIVE USER TESTING.",
-      "status": "USER ACTION",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -6516,7 +6730,9 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance",
+      "acceptanceOwner": "Cowork"
     },
     {
       "id": "M44.03",
@@ -6544,14 +6760,15 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "admin/provider"
     },
     {
       "id": "M45",
       "kind": "obligation",
       "sourceInventory": "master46",
       "text": "Fresh independent review returns APPROVE.",
-      "status": "USER ACTION",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -6579,14 +6796,16 @@
         "M45.01",
         "M45.02"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "action",
+      "acceptanceOwner": "independent reviewer"
     },
     {
       "id": "M45.01",
       "kind": "atomic-criterion",
       "parent": "M45",
       "text": "Exact frozen tuple, current evidence/limitations and known findings are delivered.",
-      "status": "USER ACTION",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -6609,14 +6828,16 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "evidence",
+      "acceptanceOwner": "independent reviewer"
     },
     {
       "id": "M45.02",
       "kind": "atomic-criterion",
       "parent": "M45",
       "text": "Fresh current source/domain/native review explicitly returns VERDICT: APPROVE.",
-      "status": "USER ACTION",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -6637,7 +6858,9 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "action",
+      "acceptanceOwner": "independent reviewer"
     },
     {
       "id": "M46",
@@ -6674,7 +6897,8 @@
         "M46.03",
         "M46.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "release candidate"
     },
     {
       "id": "M46.01",
@@ -6702,7 +6926,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "M46.02",
@@ -6730,7 +6955,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "evidence"
     },
     {
       "id": "M46.03",
@@ -6758,7 +6984,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "M46.04",
@@ -6786,7 +7013,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "release candidate"
     },
     {
       "id": "N01",
@@ -6825,7 +7053,8 @@
       "aliases": [
         "M05",
         "M41"
-      ]
+      ],
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N01.01",
@@ -6855,7 +7084,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N01.02",
@@ -6883,7 +7113,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "N01.03",
@@ -6911,7 +7142,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N02",
@@ -6950,7 +7182,8 @@
       ],
       "aliases": [
         "M05"
-      ]
+      ],
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "N02.01",
@@ -6980,7 +7213,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N02.02",
@@ -7010,7 +7244,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "N02.03",
@@ -7040,14 +7275,15 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N02.04",
       "kind": "atomic-criterion",
       "parent": "N02",
       "text": "New plant leader finds useful firsttask under 120 seconds.",
-      "status": "USER ACTION",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -7068,7 +7304,9 @@
       "disposition": {
         "localDemo": "Requires representative human or explicitly authorized actual-provider/backend acceptance; source/mock counts cannot prove this criterion.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance",
+      "acceptanceOwner": "native test operator"
     },
     {
       "id": "N03",
@@ -7105,7 +7343,8 @@
         "N03.03",
         "N03.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N03.01",
@@ -7135,7 +7374,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N03.02",
@@ -7165,7 +7405,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N03.03",
@@ -7195,7 +7436,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N03.04",
@@ -7223,18 +7465,21 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N04",
       "kind": "obligation",
       "sourceInventory": "ux36",
       "text": "No silent metric/plant substitution exists.",
-      "status": "FIX",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
-        "app/src/investigation/workflow.ts"
+        "app/src/investigation/workflow.ts",
+        "app/src/investigation/conversation.ts",
+        "app/src/investigation/requestOperands.ts"
       ],
       "evidence": [
         {
@@ -7244,6 +7489,10 @@
         {
           "path": "docs/wp1/screenshots",
           "qualification": "Reproduced in Chrome at http://127.0.0.1:18191/ on working tree 711b7027e59fb128f57df535dfbc9ac23053167a6276da4a870d88d8899d805d, 2026-10-15. Why did we miss production yesterday? returns TP-S1 and TP-S2 training good units, and OEE by machine in March 2025 returns the 2026 monthly cohort."
+        },
+        {
+          "path": "docs/wp1/screenshots",
+          "qualification": "Targeted Chrome pass at http://127.0.0.1:18191/ on 2026-10-15, plus targeted vitest. Yesterday production is unavailable and the context bar is not Training. March 2025 is refused and the refusal does not contain 2026. An explicit Machine 1 question clears a prior TP-S1 clarification. Worst-first ascending asset-ID order is TP-A7, TP-A1, TP-A3, TP-A5. Text typed while Send is busy is kept without the sent command. Canceling an uncertain Save settings holds Test connection and Enable until a fresh status read succeeds. This is candidate proof, not final-RC acceptance."
         }
       ],
       "finalAcceptanceCase": {
@@ -7265,18 +7514,21 @@
       ],
       "aliases": [
         "M08"
-      ]
+      ],
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "N04.01",
       "kind": "atomic-criterion",
       "parent": "N04",
       "text": "Unknown requested scope/metric/finance/period packets contain no default numeric substitution.",
-      "status": "FIX",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
-        "app/src/investigation/workflow.ts"
+        "app/src/investigation/workflow.ts",
+        "app/src/investigation/conversation.ts",
+        "app/src/investigation/requestOperands.ts"
       ],
       "evidence": [
         {
@@ -7288,6 +7540,10 @@
         {
           "path": "docs/wp1/screenshots",
           "qualification": "Reproduced in Chrome at http://127.0.0.1:18191/ on working tree 711b7027e59fb128f57df535dfbc9ac23053167a6276da4a870d88d8899d805d, 2026-10-15. OEE by machine in March 2025 answers \"Machine 1's March OEE was 83.33%\" from the separate 2026 monthly cohort. Alias REVIEW155-029."
+        },
+        {
+          "path": "docs/wp1/screenshots",
+          "qualification": "Targeted Chrome pass at http://127.0.0.1:18191/ on 2026-10-15, plus targeted vitest. Yesterday production is unavailable and the context bar is not Training. March 2025 is refused and the refusal does not contain 2026. An explicit Machine 1 question clears a prior TP-S1 clarification. Worst-first ascending asset-ID order is TP-A7, TP-A1, TP-A3, TP-A5. Text typed while Send is busy is kept without the sent command. Canceling an uncertain Save settings holds Test connection and Enable until a fresh status read succeeds. This is candidate proof, not final-RC acceptance."
         }
       ],
       "finalAcceptanceCase": {
@@ -7302,7 +7558,8 @@
       },
       "aliases": [
         "REVIEW155-029"
-      ]
+      ],
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "N04.02",
@@ -7335,18 +7592,21 @@
       },
       "aliases": [
         "REVIEW155-027"
-      ]
+      ],
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "N04.03",
       "kind": "atomic-criterion",
       "parent": "N04",
       "text": "Combined model arbitrary-scope phrases and current UI exposure prevent all silent substitutions.",
-      "status": "FIX",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
-        "app/src/investigation/workflow.ts"
+        "app/src/investigation/workflow.ts",
+        "app/src/investigation/conversation.ts",
+        "app/src/investigation/requestOperands.ts"
       ],
       "evidence": [
         {
@@ -7356,6 +7616,10 @@
         {
           "path": "docs/wp1/screenshots",
           "qualification": "Reproduced in Chrome at http://127.0.0.1:18191/ on working tree 711b7027e59fb128f57df535dfbc9ac23053167a6276da4a870d88d8899d805d, 2026-10-15. Why did we miss production yesterday? answers TP-S1: Good units 7,590 and TP-S2: Good units 4,098 from training-plant-v1. The context bar says Training. Aliases REVIEW155-019, REVIEW155-024, REVIEW155-053."
+        },
+        {
+          "path": "docs/wp1/screenshots",
+          "qualification": "Targeted Chrome pass at http://127.0.0.1:18191/ on 2026-10-15, plus targeted vitest. Yesterday production is unavailable and the context bar is not Training. March 2025 is refused and the refusal does not contain 2026. An explicit Machine 1 question clears a prior TP-S1 clarification. Worst-first ascending asset-ID order is TP-A7, TP-A1, TP-A3, TP-A5. Text typed while Send is busy is kept without the sent command. Canceling an uncertain Save settings holds Test connection and Enable until a fresh status read succeeds. This is candidate proof, not final-RC acceptance."
         }
       ],
       "finalAcceptanceCase": {
@@ -7372,13 +7636,14 @@
         "REVIEW155-019",
         "REVIEW155-024",
         "REVIEW155-053"
-      ]
+      ],
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "N05",
       "kind": "obligation",
       "sourceInventory": "ux36",
-      "text": "One case has one state everywhere.",
+      "text": "One case has one state everywhere. Closure still requires the same case state across Chat, Improvements, Guide, Evidence, reload, and lifecycle transitions (assignment, approval, performed work). Chat and Improvements agreement on the supplied goal journey is not closure.",
       "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
@@ -7393,7 +7658,7 @@
       ],
       "finalAcceptanceCase": {
         "id": "N05-FINAL",
-        "expected": "One case has one state everywhere.",
+        "expected": "One case has one state everywhere. Closure still requires the same case state across Chat, Improvements, Guide, Evidence, reload, and lifecycle transitions (assignment, approval, performed work). Chat and Improvements agreement on the supplied goal journey is not closure.",
         "requiredProof": [
           "exact-final-build relevant automated test",
           "exact-final-build native or actual-user acceptance as applicable"
@@ -7417,7 +7682,8 @@
         "M20",
         "M21",
         "M22"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "N05.01",
@@ -7447,7 +7713,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "action"
     },
     {
       "id": "N05.02",
@@ -7477,7 +7744,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "N05.03",
@@ -7505,7 +7773,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "N06",
@@ -7544,7 +7813,8 @@
       "aliases": [
         "M05",
         "M06"
-      ]
+      ],
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "N06.01",
@@ -7574,7 +7844,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "N06.02",
@@ -7604,7 +7875,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "N06.03",
@@ -7632,7 +7904,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "N07",
@@ -7670,7 +7943,8 @@
       ],
       "aliases": [
         "M06"
-      ]
+      ],
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "N07.01",
@@ -7700,7 +7974,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "admin/provider"
     },
     {
       "id": "N07.02",
@@ -7732,7 +8007,8 @@
       "aliases": [
         "REVIEW155-001",
         "REVIEW155-013"
-      ]
+      ],
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "N07.03",
@@ -7760,14 +8036,15 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "N08",
       "kind": "obligation",
       "sourceInventory": "ux36",
       "text": "Sticky context is controlled.",
-      "status": "FIX",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -7781,6 +8058,10 @@
         {
           "path": "docs/wp1/screenshots",
           "qualification": "Reproduced in Chrome at http://127.0.0.1:18191/ on working tree 711b7027e59fb128f57df535dfbc9ac23053167a6276da4a870d88d8899d805d, 2026-10-15. What is quality on TP-S1? retains that unknown asset, and Show quality for Machine 1 is then refused as Requested: TP-S1."
+        },
+        {
+          "path": "docs/wp1/screenshots",
+          "qualification": "Targeted Chrome pass at http://127.0.0.1:18191/ on 2026-10-15, plus targeted vitest. Yesterday production is unavailable and the context bar is not Training. March 2025 is refused and the refusal does not contain 2026. An explicit Machine 1 question clears a prior TP-S1 clarification. Worst-first ascending asset-ID order is TP-A7, TP-A1, TP-A3, TP-A5. Text typed while Send is busy is kept without the sent command. Canceling an uncertain Save settings holds Test connection and Enable until a fresh status read succeeds. This is candidate proof, not final-RC acceptance."
         }
       ],
       "finalAcceptanceCase": {
@@ -7802,7 +8083,8 @@
       ],
       "aliases": [
         "M06"
-      ]
+      ],
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "N08.01",
@@ -7832,7 +8114,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N08.02",
@@ -7862,14 +8145,15 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N08.03",
       "kind": "atomic-criterion",
       "parent": "N08",
       "text": "Sticky collectors/drafts/role/period/version across every contextchange refuseorreset precisely.",
-      "status": "FIX",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -7883,6 +8167,10 @@
         {
           "path": "docs/wp1/screenshots",
           "qualification": "Reproduced in Chrome at http://127.0.0.1:18191/ on working tree 711b7027e59fb128f57df535dfbc9ac23053167a6276da4a870d88d8899d805d, 2026-10-15. What is quality on TP-S1? followed by Show quality for Machine 1 keeps the TP-S1 clarification and withholds Machine 1. Aliases REVIEW155-022 and REVIEW155-032."
+        },
+        {
+          "path": "docs/wp1/screenshots",
+          "qualification": "Targeted Chrome pass at http://127.0.0.1:18191/ on 2026-10-15, plus targeted vitest. Yesterday production is unavailable and the context bar is not Training. March 2025 is refused and the refusal does not contain 2026. An explicit Machine 1 question clears a prior TP-S1 clarification. Worst-first ascending asset-ID order is TP-A7, TP-A1, TP-A3, TP-A5. Text typed while Send is busy is kept without the sent command. Canceling an uncertain Save settings holds Test connection and Enable until a fresh status read succeeds. This is candidate proof, not final-RC acceptance."
         }
       ],
       "finalAcceptanceCase": {
@@ -7898,7 +8186,8 @@
       "aliases": [
         "REVIEW155-022",
         "REVIEW155-032"
-      ]
+      ],
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "N09",
@@ -7936,7 +8225,8 @@
       ],
       "aliases": [
         "M06"
-      ]
+      ],
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N09.01",
@@ -7966,7 +8256,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N09.02",
@@ -7994,7 +8285,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "N09.03",
@@ -8022,7 +8314,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "N10",
@@ -8061,7 +8354,8 @@
       ],
       "aliases": [
         "M06"
-      ]
+      ],
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "N10.01",
@@ -8091,7 +8385,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "N10.02",
@@ -8121,7 +8416,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "N10.03",
@@ -8156,7 +8452,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "comparison"
     },
     {
       "id": "N10.04",
@@ -8184,7 +8481,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "quality"
     },
     {
       "id": "N11",
@@ -8222,7 +8520,8 @@
         "N11.04",
         "N11.05"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "N11.01",
@@ -8252,7 +8551,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "N11.02",
@@ -8282,7 +8582,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "N11.03",
@@ -8312,7 +8613,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "N11.04",
@@ -8342,7 +8644,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N11.05",
@@ -8372,7 +8675,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N12",
@@ -8419,7 +8723,8 @@
         "M20",
         "M21",
         "M22"
-      ]
+      ],
+      "acceptanceFamily": "action"
     },
     {
       "id": "N12.01",
@@ -8449,7 +8754,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "verification/sustain"
     },
     {
       "id": "N12.02",
@@ -8474,7 +8780,7 @@
         },
         {
           "path": "evidence/rc-proposal-genealogy-runtime-attempt.json",
-          "qualification": "11/11 source cases including existing captured-model \u2192 human-confirmed source-pinned PM typed lifecycle and public proposal UI; no autonomous mutation or live model quality credit."
+          "qualification": "11/11 source cases including existing captured-model → human-confirmed source-pinned PM typed lifecycle and public proposal UI; no autonomous mutation or live model quality credit."
         }
       ],
       "finalAcceptanceCase": {
@@ -8484,9 +8790,10 @@
         "requiredProof": "Current final-build result plus applicable native/user evidence; prior assertions alone do not close."
       },
       "disposition": {
-        "localDemo": "Existing source-pinned modelDraft \u2192 human review/type/basis/confirmation \u2192 governed proposal and canonical action/view routes are implemented. Arbitrary autonomous writes remain refused. Exact current normal UI/model/Board application acceptance still required.",
+        "localDemo": "Existing source-pinned modelDraft → human review/type/basis/confirmation → governed proposal and canonical action/view routes are implemented. Arbitrary autonomous writes remain refused. Exact current normal UI/model/Board application acceptance still required.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "action"
     },
     {
       "id": "N12.03",
@@ -8516,7 +8823,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "action"
     },
     {
       "id": "N12.04",
@@ -8551,7 +8859,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "N12.05",
@@ -8585,7 +8894,8 @@
             "localFacetRemainsRequired": true
           }
         ]
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "N13",
@@ -8621,7 +8931,8 @@
         "N13.02",
         "N13.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "action"
     },
     {
       "id": "N13.01",
@@ -8651,7 +8962,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N13.02",
@@ -8679,7 +8991,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "N13.03",
@@ -8707,7 +9020,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N14",
@@ -8745,7 +9059,8 @@
       ],
       "aliases": [
         "M28"
-      ]
+      ],
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N14.01",
@@ -8775,7 +9090,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "N14.02",
@@ -8805,7 +9121,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "N14.03",
@@ -8833,7 +9150,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N15",
@@ -8871,7 +9189,8 @@
       ],
       "aliases": [
         "M09"
-      ]
+      ],
+      "acceptanceFamily": "plant review"
     },
     {
       "id": "N15.01",
@@ -8901,7 +9220,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "N15.02",
@@ -8929,14 +9249,15 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N15.03",
       "kind": "atomic-criterion",
       "parent": "N15",
       "text": "Uncoachedreviewer understandsdailyreview inunder 120 seconds.",
-      "status": "USER ACTION",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -8957,7 +9278,9 @@
       "disposition": {
         "localDemo": "Requires representative human or explicitly authorized actual-provider/backend acceptance; source/mock counts cannot prove this criterion.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance",
+      "acceptanceOwner": "native test operator"
     },
     {
       "id": "N16",
@@ -8993,7 +9316,8 @@
         "N16.02",
         "N16.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N16.01",
@@ -9023,7 +9347,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "comparison"
     },
     {
       "id": "N16.02",
@@ -9051,7 +9376,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "loss bridge"
     },
     {
       "id": "N16.03",
@@ -9079,7 +9405,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "N17",
@@ -9119,7 +9446,8 @@
         "N17.02",
         "N17.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "evidence"
     },
     {
       "id": "N17.01",
@@ -9149,7 +9477,8 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "evidence"
     },
     {
       "id": "N17.02",
@@ -9177,14 +9506,15 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "evidence"
     },
     {
       "id": "N17.03",
       "kind": "atomic-criterion",
       "parent": "N17",
       "text": "Novice distinguishes controlled,current,superseded/unreleased anduncertain evidence.",
-      "status": "USER ACTION",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -9205,7 +9535,9 @@
       "disposition": {
         "localDemo": "Requires representative human or explicitly authorized actual-provider/backend acceptance; source/mock counts cannot prove this criterion.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "evidence",
+      "acceptanceOwner": "native test operator"
     },
     {
       "id": "N18",
@@ -9241,7 +9573,8 @@
         "N18.02",
         "N18.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N18.01",
@@ -9271,7 +9604,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "N18.02",
@@ -9301,7 +9635,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N18.03",
@@ -9329,7 +9664,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "N19",
@@ -9366,7 +9702,8 @@
         "N19.03",
         "N19.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N19.01",
@@ -9396,7 +9733,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "N19.02",
@@ -9426,7 +9764,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "verification/sustain"
     },
     {
       "id": "N19.03",
@@ -9454,7 +9793,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N19.04",
@@ -9482,7 +9822,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N20",
@@ -9520,7 +9861,8 @@
         "N20.04",
         "N20.05"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N20.01",
@@ -9550,7 +9892,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "N20.02",
@@ -9580,7 +9923,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N20.03",
@@ -9610,7 +9954,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "admin/provider"
     },
     {
       "id": "N20.04",
@@ -9640,7 +9985,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N20.05",
@@ -9668,7 +10014,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "N21",
@@ -9705,7 +10052,8 @@
         "N21.03",
         "N21.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N21.01",
@@ -9735,7 +10083,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "N21.02",
@@ -9765,7 +10114,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "N21.03",
@@ -9793,7 +10143,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N21.04",
@@ -9821,7 +10172,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "N22",
@@ -9857,7 +10209,8 @@
         "N22.02",
         "N22.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "action"
     },
     {
       "id": "N22.01",
@@ -9887,7 +10240,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "verification/sustain"
     },
     {
       "id": "N22.02",
@@ -9915,7 +10269,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "N22.03",
@@ -9943,7 +10298,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "verification/sustain"
     },
     {
       "id": "N23",
@@ -9979,7 +10335,8 @@
         "N23.02",
         "N23.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N23.01",
@@ -10009,13 +10366,14 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N23.02",
       "kind": "atomic-criterion",
       "parent": "N23",
-      "text": "390\u00d7844 and 320\u00d7844 all surfaces/forms/menus/composer/data/Guide/errors areusable.",
+      "text": "390×844 and 320×844 all surfaces/forms/menus/composer/data/Guide/errors areusable.",
       "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
@@ -10030,14 +10388,15 @@
       ],
       "finalAcceptanceCase": {
         "id": "N23.02-FINAL",
-        "expected": "390\u00d7844 and 320\u00d7844 all surfaces/forms/menus/composer/data/Guide/errors areusable.",
+        "expected": "390×844 and 320×844 all surfaces/forms/menus/composer/data/Guide/errors areusable.",
         "adverseRecovery": "NATIVE_MATRIX",
         "requiredProof": "Current final-build result plus applicable native/user evidence; prior assertions alone do not close."
       },
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "N23.03",
@@ -10065,7 +10424,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N24",
@@ -10104,7 +10464,8 @@
         "M35",
         "M36",
         "M37"
-      ]
+      ],
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "N24.01",
@@ -10134,7 +10495,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "N24.02",
@@ -10162,7 +10524,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "N25",
@@ -10200,7 +10563,8 @@
       ],
       "aliases": [
         "M38"
-      ]
+      ],
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "N25.01",
@@ -10230,7 +10594,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "N25.02",
@@ -10258,7 +10623,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "N25.03",
@@ -10293,7 +10659,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "N26",
@@ -10332,7 +10699,8 @@
       ],
       "aliases": [
         "M39"
-      ]
+      ],
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "N26.01",
@@ -10362,7 +10730,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "action"
     },
     {
       "id": "N26.02",
@@ -10390,7 +10759,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N26.03",
@@ -10418,7 +10788,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "N26.04",
@@ -10446,7 +10817,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "N27",
@@ -10483,7 +10855,8 @@
         "N27.03",
         "N27.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "N27.01",
@@ -10513,7 +10886,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "N27.02",
@@ -10543,7 +10917,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N27.03",
@@ -10573,7 +10948,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "N27.04",
@@ -10603,7 +10979,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "N28",
@@ -10640,7 +11017,8 @@
         "N28.03",
         "N28.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "export"
     },
     {
       "id": "N28.01",
@@ -10670,7 +11048,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "export"
     },
     {
       "id": "N28.02",
@@ -10700,7 +11079,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N28.03",
@@ -10728,7 +11108,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "export"
     },
     {
       "id": "N28.04",
@@ -10756,7 +11137,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "N29",
@@ -10794,7 +11176,8 @@
       ],
       "aliases": [
         "M41"
-      ]
+      ],
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N29.01",
@@ -10824,7 +11207,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "N29.02",
@@ -10854,7 +11238,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "loss bridge"
     },
     {
       "id": "N29.03",
@@ -10882,7 +11267,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N30",
@@ -10921,7 +11307,8 @@
       ],
       "aliases": [
         "M31"
-      ]
+      ],
+      "acceptanceFamily": "security"
     },
     {
       "id": "N30.01",
@@ -10951,7 +11338,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "N30.02",
@@ -10981,7 +11369,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "admin/provider"
     },
     {
       "id": "N30.03",
@@ -11009,7 +11398,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "N30.04",
@@ -11043,7 +11433,8 @@
             "localFacetRemainsRequired": true
           }
         ]
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "N31",
@@ -11082,7 +11473,8 @@
       ],
       "aliases": [
         "M41"
-      ]
+      ],
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N31.01",
@@ -11113,7 +11505,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "admin/provider"
     },
     {
       "id": "N31.02",
@@ -11143,7 +11536,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N31.03",
@@ -11180,7 +11574,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N31.04",
@@ -11217,7 +11612,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "verification/sustain"
     },
     {
       "id": "N32",
@@ -11255,7 +11651,8 @@
       ],
       "aliases": [
         "M28"
-      ]
+      ],
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N32.01",
@@ -11285,7 +11682,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "N32.02",
@@ -11315,7 +11713,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N32.03",
@@ -11345,14 +11744,15 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "N33",
       "kind": "obligation",
       "sourceInventory": "ux36",
       "text": "Fresh user test returns READY FOR LIVE USER TESTING.",
-      "status": "USER ACTION",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -11383,7 +11783,9 @@
       ],
       "aliases": [
         "M44"
-      ]
+      ],
+      "acceptanceFamily": "platform and remaining acceptance",
+      "acceptanceOwner": "independent reviewer"
     },
     {
       "id": "N33.01",
@@ -11416,14 +11818,15 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N33.02",
       "kind": "atomic-criterion",
       "parent": "N33",
       "text": "Freshindependentuser review returnsliteral READY FOR LIVE USER TESTING.",
-      "status": "USER ACTION",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -11444,7 +11847,9 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance",
+      "acceptanceOwner": "independent reviewer"
     },
     {
       "id": "N33.03",
@@ -11472,7 +11877,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "N34",
@@ -11508,7 +11914,8 @@
         "N34.02",
         "N34.03"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N34.01",
@@ -11538,7 +11945,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "N34.02",
@@ -11566,7 +11974,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "action"
     },
     {
       "id": "N34.03",
@@ -11594,7 +12003,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "action"
     },
     {
       "id": "N35",
@@ -11631,7 +12041,8 @@
         "N35.03",
         "N35.04"
       ],
-      "aliases": []
+      "aliases": [],
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N35.01",
@@ -11661,7 +12072,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "N35.02",
@@ -11691,7 +12103,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "action"
     },
     {
       "id": "N35.03",
@@ -11719,7 +12132,8 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "N35.04",
@@ -11747,14 +12161,15 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "N36",
       "kind": "obligation",
       "sourceInventory": "ux36",
       "text": "Final independent review returns VERDICT: APPROVE.",
-      "status": "USER ACTION",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -11784,14 +12199,16 @@
       ],
       "aliases": [
         "M45"
-      ]
+      ],
+      "acceptanceFamily": "action",
+      "acceptanceOwner": "independent reviewer"
     },
     {
       "id": "N36.01",
       "kind": "atomic-criterion",
       "parent": "N36",
       "text": "Exacttuple/current evidence/limitations deliveredandpreserved.",
-      "status": "USER ACTION",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -11814,14 +12231,16 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "evidence",
+      "acceptanceOwner": "independent reviewer"
     },
     {
       "id": "N36.02",
       "kind": "atomic-criterion",
       "parent": "N36",
       "text": "Freshfinalreview explicitlyreturns VERDICT: APPROVE; no selfapproval.",
-      "status": "USER ACTION",
+      "status": "VERIFY",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -11842,7 +12261,9 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "action",
+      "acceptanceOwner": "independent reviewer"
     },
     {
       "id": "F001",
@@ -11885,7 +12306,8 @@
       },
       "aliases": [
         "REVIEW155-070"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F002",
@@ -11928,7 +12350,8 @@
       },
       "aliases": [
         "REVIEW155-071"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F003",
@@ -11974,7 +12397,8 @@
         "REVIEW155-007",
         "REVIEW155-026",
         "REVIEW155-072"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F004",
@@ -12017,7 +12441,8 @@
       },
       "aliases": [
         "REVIEW155-073"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F005",
@@ -12060,7 +12485,8 @@
       },
       "aliases": [
         "REVIEW155-074"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F006",
@@ -12104,7 +12530,8 @@
       "aliases": [
         "REVIEW155-003",
         "REVIEW155-075"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F007",
@@ -12147,7 +12574,8 @@
       },
       "aliases": [
         "REVIEW155-076"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F008",
@@ -12190,7 +12618,8 @@
       },
       "aliases": [
         "REVIEW155-077"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F009",
@@ -12234,7 +12663,8 @@
       },
       "aliases": [
         "REVIEW155-078"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F010",
@@ -12277,7 +12707,8 @@
       },
       "aliases": [
         "REVIEW155-079"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F011",
@@ -12320,7 +12751,8 @@
       },
       "aliases": [
         "REVIEW155-080"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F012",
@@ -12363,7 +12795,8 @@
       },
       "aliases": [
         "REVIEW155-081"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F013",
@@ -12407,7 +12840,8 @@
       },
       "aliases": [
         "REVIEW155-082"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F014",
@@ -12450,7 +12884,8 @@
       },
       "aliases": [
         "REVIEW155-083"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F015",
@@ -12484,7 +12919,8 @@
       },
       "aliases": [
         "REVIEW155-084"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F016",
@@ -12518,7 +12954,8 @@
       },
       "aliases": [
         "REVIEW155-085"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F017",
@@ -12558,7 +12995,8 @@
       },
       "aliases": [
         "REVIEW155-086"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F018",
@@ -12598,7 +13036,8 @@
       },
       "aliases": [
         "REVIEW155-087"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F019",
@@ -12638,7 +13077,8 @@
       },
       "aliases": [
         "REVIEW155-088"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F020",
@@ -12678,7 +13118,8 @@
       },
       "aliases": [
         "REVIEW155-089"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F021",
@@ -12718,7 +13159,8 @@
       },
       "aliases": [
         "REVIEW155-090"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F022",
@@ -12758,7 +13200,8 @@
       },
       "aliases": [
         "REVIEW155-091"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F023",
@@ -12798,7 +13241,8 @@
       },
       "aliases": [
         "REVIEW155-092"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F024",
@@ -12838,7 +13282,8 @@
       },
       "aliases": [
         "REVIEW155-093"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F025",
@@ -12878,7 +13323,8 @@
       },
       "aliases": [
         "REVIEW155-094"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F026",
@@ -12918,7 +13364,8 @@
       },
       "aliases": [
         "REVIEW155-095"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F027",
@@ -12958,7 +13405,8 @@
       },
       "aliases": [
         "REVIEW155-096"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F028",
@@ -12998,7 +13446,8 @@
       },
       "aliases": [
         "REVIEW155-097"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F029",
@@ -13038,7 +13487,8 @@
       },
       "aliases": [
         "REVIEW155-098"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F030",
@@ -13078,7 +13528,8 @@
       },
       "aliases": [
         "REVIEW155-099"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F031",
@@ -13113,7 +13564,8 @@
       },
       "aliases": [
         "REVIEW155-100"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F032",
@@ -13153,7 +13605,8 @@
       },
       "aliases": [
         "REVIEW155-101"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F033",
@@ -13193,7 +13646,8 @@
       },
       "aliases": [
         "REVIEW155-102"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F034",
@@ -13233,7 +13687,8 @@
       },
       "aliases": [
         "REVIEW155-103"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F035",
@@ -13273,7 +13728,8 @@
       },
       "aliases": [
         "REVIEW155-104"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F036",
@@ -13313,7 +13769,8 @@
       },
       "aliases": [
         "REVIEW155-105"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F037",
@@ -13347,7 +13804,8 @@
       },
       "aliases": [
         "REVIEW155-106"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F038",
@@ -13387,7 +13845,8 @@
       },
       "aliases": [
         "REVIEW155-107"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F039",
@@ -13427,7 +13886,8 @@
       },
       "aliases": [
         "REVIEW155-108"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F040",
@@ -13467,7 +13927,8 @@
       },
       "aliases": [
         "REVIEW155-109"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F041",
@@ -13501,7 +13962,8 @@
       },
       "aliases": [
         "REVIEW155-110"
-      ]
+      ],
+      "acceptanceFamily": "export"
     },
     {
       "id": "F042",
@@ -13535,7 +13997,8 @@
       },
       "aliases": [
         "REVIEW155-111"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F043",
@@ -13581,7 +14044,8 @@
         "REVIEW155-039",
         "REVIEW155-040",
         "REVIEW155-112"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F044",
@@ -13625,7 +14089,8 @@
       },
       "aliases": [
         "REVIEW155-113"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F045",
@@ -13669,7 +14134,8 @@
       },
       "aliases": [
         "REVIEW155-114"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F046",
@@ -13707,7 +14173,8 @@
       },
       "aliases": [
         "REVIEW155-115"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F047",
@@ -13751,7 +14218,8 @@
       },
       "aliases": [
         "REVIEW155-116"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F048",
@@ -13795,7 +14263,8 @@
       },
       "aliases": [
         "REVIEW155-117"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F049",
@@ -13839,7 +14308,8 @@
       },
       "aliases": [
         "REVIEW155-118"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F050",
@@ -13883,7 +14353,8 @@
       },
       "aliases": [
         "REVIEW155-119"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F051",
@@ -13927,7 +14398,8 @@
       },
       "aliases": [
         "REVIEW155-120"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F052",
@@ -13971,7 +14443,8 @@
       },
       "aliases": [
         "REVIEW155-121"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F053",
@@ -14009,7 +14482,8 @@
       },
       "aliases": [
         "REVIEW155-122"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F054",
@@ -14047,7 +14521,8 @@
       },
       "aliases": [
         "REVIEW155-123"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F055",
@@ -14092,7 +14567,8 @@
       "aliases": [
         "REVIEW155-046",
         "REVIEW155-124"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F056",
@@ -14136,7 +14612,8 @@
       },
       "aliases": [
         "REVIEW155-125"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F057",
@@ -14174,7 +14651,8 @@
       },
       "aliases": [
         "REVIEW155-126"
-      ]
+      ],
+      "acceptanceFamily": "export"
     },
     {
       "id": "F058",
@@ -14218,7 +14696,8 @@
       },
       "aliases": [
         "REVIEW155-127"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F059",
@@ -14262,7 +14741,8 @@
       },
       "aliases": [
         "REVIEW155-128"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F060",
@@ -14300,7 +14780,8 @@
       },
       "aliases": [
         "REVIEW155-129"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F061",
@@ -14338,7 +14819,8 @@
       },
       "aliases": [
         "REVIEW155-130"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F062",
@@ -14376,7 +14858,8 @@
       },
       "aliases": [
         "REVIEW155-131"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F063",
@@ -14410,7 +14893,8 @@
       },
       "aliases": [
         "REVIEW155-132"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F064",
@@ -14444,7 +14928,8 @@
       },
       "aliases": [
         "REVIEW155-133"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F065",
@@ -14484,7 +14969,8 @@
       },
       "aliases": [
         "REVIEW155-134"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F066",
@@ -14524,7 +15010,8 @@
       },
       "aliases": [
         "REVIEW155-135"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F067",
@@ -14558,7 +15045,8 @@
       },
       "aliases": [
         "REVIEW155-136"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F068",
@@ -14598,7 +15086,8 @@
       },
       "aliases": [
         "REVIEW155-137"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F069",
@@ -14632,7 +15121,8 @@
       },
       "aliases": [
         "REVIEW155-138"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F070",
@@ -14666,7 +15156,8 @@
       },
       "aliases": [
         "REVIEW155-139"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F071",
@@ -14700,7 +15191,8 @@
       },
       "aliases": [
         "REVIEW155-140"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F072",
@@ -14734,7 +15226,8 @@
       },
       "aliases": [
         "REVIEW155-141"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F073",
@@ -14768,7 +15261,8 @@
       },
       "aliases": [
         "REVIEW155-142"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F074",
@@ -14802,7 +15296,8 @@
       },
       "aliases": [
         "REVIEW155-143"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F075",
@@ -14836,7 +15331,8 @@
       },
       "aliases": [
         "REVIEW155-144"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F076",
@@ -14870,7 +15366,8 @@
       },
       "aliases": [
         "REVIEW155-145"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F077",
@@ -14904,7 +15401,8 @@
       },
       "aliases": [
         "REVIEW155-146"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F078",
@@ -14938,7 +15436,8 @@
       },
       "aliases": [
         "REVIEW155-147"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F079",
@@ -14972,7 +15471,8 @@
       },
       "aliases": [
         "REVIEW155-148"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F080",
@@ -15007,7 +15507,8 @@
       },
       "aliases": [
         "REVIEW155-149"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F081",
@@ -15041,7 +15542,8 @@
       },
       "aliases": [
         "REVIEW155-150"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F082",
@@ -15075,7 +15577,8 @@
       },
       "aliases": [
         "REVIEW155-151"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F083",
@@ -15109,7 +15612,8 @@
       },
       "aliases": [
         "REVIEW155-152"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F084",
@@ -15143,7 +15647,8 @@
       },
       "aliases": [
         "REVIEW155-153"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F085",
@@ -15177,7 +15682,8 @@
       },
       "aliases": [
         "REVIEW155-154"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "F003-CAPTURE",
@@ -15207,7 +15713,8 @@
       "disposition": {
         "localDemo": "Required known issue/acceptance action; not new unrelated scope.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "V106-GENEALOGY-TIMING",
@@ -15251,7 +15758,8 @@
       "disposition": {
         "localDemo": "Current independent timing regression; exact root cause and correction unproven.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "V106-AUTO-LATEST-POSITION",
@@ -15291,7 +15799,8 @@
       "disposition": {
         "localDemo": "Required known issue/acceptance action; not new unrelated scope.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "CONVERSATION-DISPLAYED-HISTORY",
@@ -15325,7 +15834,8 @@
       "disposition": {
         "localDemo": "Required known issue/acceptance action; not new unrelated scope.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "CONVERSATION-LIFECYCLE",
@@ -15369,7 +15879,8 @@
       },
       "aliases": [
         "REVIEW155-033"
-      ]
+      ],
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "ADMIN-LOCAL-SETUP",
@@ -15451,7 +15962,8 @@
       },
       "aliases": [
         "REVIEW155-012"
-      ]
+      ],
+      "acceptanceFamily": "admin/provider"
     },
     {
       "id": "MODEL-TOKEN-STREAMING",
@@ -15489,7 +16001,8 @@
       "disposition": {
         "localDemo": "Required known issue/acceptance action; not new unrelated scope.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "LIVE-PRIVATE-KEY-AND-TEST",
@@ -15541,7 +16054,8 @@
         "localDemo": "Required known issue/acceptance action; not new unrelated scope.",
         "productionOnlyFacets": []
       },
-      "currentQualification": "CF evidence is historical and artifact-specific. Current private provider state is unknown to this reconciliation. f2b synthetic tests do not substitute for cost-authorized real inference."
+      "currentQualification": "CF evidence is historical and artifact-specific. Current private provider state is unknown to this reconciliation. f2b synthetic tests do not substitute for cost-authorized real inference.",
+      "acceptanceFamily": "quality"
     },
     {
       "id": "REAL-200PCT-ZOOM",
@@ -15571,7 +16085,8 @@
       "disposition": {
         "localDemo": "Native browser action by parent-coordinated permitted reviewer; actual browser zoom proof required, not CSS/viewport substitute.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "EXPORT-DELIVERY",
@@ -15599,13 +16114,14 @@
       "disposition": {
         "localDemo": "Actual permitted browser export and artifact delivery verification; denied routes remain closed. USER ACTION if unavailable.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "export"
     },
     {
       "id": "UNAIDED-120MIN-HUMAN",
       "kind": "finding",
       "text": "Fresh representative plantleader without developer context/coaching; record stated scores and full120min, no self/agent substitution.",
-      "status": "USER ACTION",
+      "status": "VERIFY",
       "mapsTo": [
         "M44",
         "N33"
@@ -15627,13 +16143,15 @@
       "disposition": {
         "localDemo": "Required known issue/acceptance action; not new unrelated scope.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "conversation",
+      "acceptanceOwner": "native test operator"
     },
     {
       "id": "FINAL-INDEPENDENT-APPROVE",
       "kind": "finding",
       "text": "One fresh independent product review of exactRC with verdictAPPROVE; distinct from denied security action.",
-      "status": "USER ACTION",
+      "status": "VERIFY",
       "mapsTo": [
         "M45",
         "N36"
@@ -15655,7 +16173,9 @@
       "disposition": {
         "localDemo": "Required known issue/acceptance action; not new unrelated scope.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "security",
+      "acceptanceOwner": "independent reviewer"
     },
     {
       "id": "RC-NATIVE-G01",
@@ -15695,7 +16215,8 @@
       "disposition": {
         "localDemo": "Required visual correction; no final closure claimed.",
         "productionOnlyFacets": []
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "RC-ADMIN-CONFIRMATION",
@@ -15738,7 +16259,8 @@
       },
       "aliases": [
         "ADMIN-CONFIRM-FOCUS-01"
-      ]
+      ],
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "RC-HEADER-SETTLE",
@@ -15769,12 +16291,13 @@
       "finalAcceptanceCase": {
         "id": "RC-HEADER-SETTLE-FINAL",
         "expected": "New reply remains below changing stickyheader atnarrowviewport; history/readerinput neverforcedback; exactlatestnative checks required."
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "JOURNEY-CONTEXT-01",
       "kind": "finding",
-      "text": "Plant Review answer switches toNorthworks/October while canonicalbar retainsmonthlyMachine1/March/FPY/February. Newtopicmustcommit coherentcontext/answer/history without rewritingpastturns.",
+      "text": "Plant Review answer switches toNorthworks/October while canonicalbar retainsmonthlyMachine1/March/FPY/February. Newtopicmustcommit coherentcontext/answer/history without rewritingpastturns. Remains open until one final candidate shows the same case state across Chat, Improvements, Guide, Evidence, reload, and lifecycle transitions. Chat versus Improvements agreement is not this closure.",
       "status": "VERIFY",
       "implementation": [
         "app/src/investigation/conversation.ts",
@@ -15814,7 +16337,8 @@
       "aliases": [
         "REVIEW155-001",
         "REVIEW155-013"
-      ]
+      ],
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "JOURNEY-FOCUS-01",
@@ -15862,7 +16386,8 @@
       },
       "aliases": [
         "REVIEW155-023"
-      ]
+      ],
+      "acceptanceFamily": "plant review"
     },
     {
       "id": "LIVE-OPERATION-STATUS-01",
@@ -15891,7 +16416,8 @@
       "finalAcceptanceCase": {
         "id": "LIVE-OPERATION-STATUS-01-FINAL",
         "expected": "Settled failures expose bounded safe metadata while holds and legacy history remain; no automatic generation, reset, refund, fake usage or credential leak."
-      }
+      },
+      "acceptanceFamily": "admin/provider"
     },
     {
       "id": "JOURNEY-INVESTIGATE-01",
@@ -15937,7 +16463,8 @@
         "app/src/investigation/conversation.ts",
         "app/src/investigation/service.ts",
         "app/src/investigation/Replies.tsx"
-      ]
+      ],
+      "acceptanceFamily": "plant review"
     },
     {
       "id": "CONSERVATIVE-RECOVERY-01",
@@ -15965,7 +16492,7 @@
         },
         {
           "path": "evidence/RC-COMPILED-CONSERVATIVE-RECOVERY-PROOF.json",
-          "qualification": "Exact compiled normal composition with injectedfakeResponses: activeprofilelock/no mutation\u2192offlinebackup/review\u2192restart\u2192fakeprivateactivation\u21922canonicalturns/replay\u2192restart preserveshold;0externalcalls."
+          "qualification": "Exact compiled normal composition with injectedfakeResponses: activeprofilelock/no mutation→offlinebackup/review→restart→fakeprivateactivation→2canonicalturns/replay→restart preserveshold;0externalcalls."
         },
         {
           "path": "evidence/RC-FROZEN-RECOVERY-CLI-PROOF.json",
@@ -15979,7 +16506,8 @@
       "finalAcceptanceCase": {
         "id": "CONSERVATIVE-RECOVERY-01-FINAL",
         "expected": "Validated replacement and reviewed command preserve exact original/backup/fullholds; coordinateddeployment only, userprivatekeyreentry, no agentpaidrequest."
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "CANONICAL-FALLBACK-REPLAY-01",
@@ -16014,7 +16542,8 @@
       "finalAcceptanceCase": {
         "id": "CANONICAL-FALLBACK-REPLAY-01-FINAL",
         "expected": "Exactsamefallbackoperation returnsoriginalresult withno providercall/reservation/versionconflict; changedpayload/permission stillrefused."
-      }
+      },
+      "acceptanceFamily": "admin/provider"
     },
     {
       "id": "OPERATING-REVIEW-CONTEXT-01",
@@ -16040,7 +16569,8 @@
       "finalAcceptanceCase": {
         "id": "OPERATING-REVIEW-CONTEXT-01-FINAL",
         "expected": "Original four failures and focused policy3/4 replay regression pass; complete same-source+compiled inventory reconciles; no change to preserved live/mock snapshots."
-      }
+      },
+      "acceptanceFamily": "plant review"
     },
     {
       "id": "RESTORED-OPERATION-CANCELLATION-01",
@@ -16063,7 +16593,8 @@
       "finalAcceptanceCase": {
         "id": "RESTORED-OPERATION-CANCELLATION-01-FINAL",
         "expected": "No false fresh-cancellation message or implicit retry; correct saved-operation guidance and oldhistory/hold preservation; same-source fullsuite/nativeverification."
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "INCOMPLETE-RESPONSE-DIAGNOSTIC-01",
@@ -16095,7 +16626,8 @@
       "finalAcceptanceCase": {
         "id": "INCOMPLETE-RESPONSE-DIAGNOSTIC-01-FINAL",
         "expected": "Fullsource/compiledfakespass;actualfailurestatusisdiagnosablewithoutsecretsorrefund;coordinateddeploymentandindependentlivemultiturnacceptancepending."
-      }
+      },
+      "acceptanceFamily": "admin/provider"
     },
     {
       "id": "COMPARISON-PROCEDURE-TIMING-01",
@@ -16135,7 +16667,8 @@
       "finalAcceptanceCase": {
         "id": "COMPARISON-PROCEDURE-TIMING-01-FINAL",
         "expected": "Bothoriginalcasespassunchangeddeadlinewithstrictsource/reportproof; actualtimecauseinvestigated; completeoriginalassertioninventoryreconciles. No ignoredfailureorartificialtimeoutincrease."
-      }
+      },
+      "acceptanceFamily": "verification/sustain"
     },
     {
       "id": "REGRESSION-BATCH2-TIMING-01",
@@ -16167,13 +16700,14 @@
       "finalAcceptanceCase": {
         "id": "REGRESSION-BATCH2-TIMING-01-FINAL",
         "expected": "Alloriginal602assertionsreexecutedwithsame deadlines;controlledcasesfreshprocessesdetermineactualbehavior;completeinventorymustreconcile;no partialfailedreportcredit."
-      }
+      },
+      "acceptanceFamily": "comparison"
     },
     {
       "id": "MOCK-JOURNEY-BUDGET-01",
       "kind": "finding",
       "status": "VERIFY",
-      "text": "Native mock18338/c3d15542 completedsteps1\u201317butstep18evidencerequestwasrefusedbyspendingauthority. Fullsyntheticjourneymustfitexplicitmock-onlyaccountingwithoutweakeningrealbudgetcontrols.",
+      "text": "Native mock18338/c3d15542 completedsteps1–17butstep18evidencerequestwasrefusedbyspendingauthority. Fullsyntheticjourneymustfitexplicitmock-onlyaccountingwithoutweakeningrealbudgetcontrols.",
       "implementation": [
         "app/src/server/localMockBudget.ts",
         "app/src/server/localAiRuntime.ts"
@@ -16195,7 +16729,8 @@
       "finalAcceptanceCase": {
         "id": "MOCK-JOURNEY-BUDGET-01-FINAL",
         "expected": "Explicitindependentmockallowancepermitsentire34requestjourney,replayandrequiredreviewcycles;realjournalunchangedandrealcontrolsremainstrict;nativeexactbuildretest."
-      }
+      },
+      "acceptanceFamily": "admin/provider"
     },
     {
       "id": "LIVE-MARCH-INCOMPLETE-01",
@@ -16231,8 +16766,9 @@
       ],
       "finalAcceptanceCase": {
         "id": "LIVE-MARCH-INCOMPLETE-01-FINAL",
-        "expected": "BoundednormalJan\u2192Marchproviderflowcorrectedandregressionverified;safeunknownreasonhandlingexplainable;singlecoordinatedlivefollow-upacceptancewithoutresend/guardrelaxation;priorcommittedJanuaryretained."
-      }
+        "expected": "BoundednormalJan→Marchproviderflowcorrectedandregressionverified;safeunknownreasonhandlingexplainable;singlecoordinatedlivefollow-upacceptancewithoutresend/guardrelaxation;priorcommittedJanuaryretained."
+      },
+      "acceptanceFamily": "admin/provider"
     },
     {
       "id": "AUDIT-EXPLICIT-FPY-01",
@@ -16256,7 +16792,8 @@
       "finalAcceptanceCase": {
         "id": "AUDIT-EXPLICIT-FPY-01-FINAL",
         "expected": "Originalnegativecaseandnewforward/versionedreplayregressionpass;priorcapturedsemanticsstable;nofabricatedFPYorchart."
-      }
+      },
+      "acceptanceFamily": "quality"
     },
     {
       "id": "COMPILED-DIAGNOSTIC-TIMING-01",
@@ -16279,7 +16816,8 @@
       "finalAcceptanceCase": {
         "id": "COMPILED-DIAGNOSTIC-TIMING-01-FINAL",
         "expected": "All501 originalcompiledidentities and63templates reconciled atoriginaldeadlines;failedattemptpreserved;no fabricatedhistoricalcause;independentreviewacceptance."
-      }
+      },
+      "acceptanceFamily": "quality"
     },
     {
       "id": "NATIVE-OWNER-STATUS-WORDING-01",
@@ -16301,7 +16839,7 @@
         },
         {
           "path": "evidence/rc-lifecycle-wording-final-green.json",
-          "qualification": "Corrected33d86668 source-stable type0/60related regressionspass;newpolicy6,old0\u20135semanticsretained;workflowauthority/known-time gatesunchanged."
+          "qualification": "Corrected33d86668 source-stable type0/60related regressionspass;newpolicy6,old0–5semanticsretained;workflowauthority/known-time gatesunchanged."
         },
         {
           "path": "evidence/LIFECYCLE-WORDING-COMPILED-HTTP-PROOF.json",
@@ -16315,7 +16853,8 @@
       "finalAcceptanceCase": {
         "id": "NATIVE-OWNER-STATUS-WORDING-01-FINAL",
         "expected": "Targeted red/green regression preserving context,authority,source/cutoff/history;separate corrected-preview native retest."
-      }
+      },
+      "acceptanceFamily": "action"
     },
     {
       "id": "NATIVE-INSPECTION-EVIDENCE-WORDING-01",
@@ -16337,7 +16876,7 @@
         },
         {
           "path": "evidence/rc-lifecycle-wording-final-green.json",
-          "qualification": "Corrected33d86668 source-stable type0/60related regressionspass;newpolicy6,old0\u20135semanticsretained;workflowauthority/known-time gatesunchanged."
+          "qualification": "Corrected33d86668 source-stable type0/60related regressionspass;newpolicy6,old0–5semanticsretained;workflowauthority/known-time gatesunchanged."
         },
         {
           "path": "evidence/LIFECYCLE-WORDING-COMPILED-HTTP-PROOF.json",
@@ -16351,7 +16890,8 @@
       "finalAcceptanceCase": {
         "id": "NATIVE-INSPECTION-EVIDENCE-WORDING-01-FINAL",
         "expected": "Targeted red/green regression preserving context,authority,source/cutoff/history;separate corrected-preview native retest."
-      }
+      },
+      "acceptanceFamily": "quality"
     },
     {
       "id": "NATIVE-GUIDE-F003-HELP-TARGET-01",
@@ -16386,7 +16926,8 @@
       "finalAcceptanceCase": {
         "id": "NATIVE-GUIDE-F003-HELP-TARGET-01-FINAL",
         "expected": "F003purpose/action/recoverydescribeactualnormalHelpcontextualGuide;opening/focusingdoesnotcompletebusinesswork;case/queryretained;targetedredgreenandseparatenativeretest."
-      }
+      },
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "LIVE-MONTHLY-COMPARISON-PROVENANCE-01",
@@ -16410,7 +16951,7 @@
         },
         {
           "path": "evidence/MONTHLY-COMPARISON-ROOT-CAUSE.json",
-          "qualification": "CanonicalFebruaryrowexists;presenter/claimsassembledprimaryonly;newpolicy7capturesbothexistingknownoperands/IDs;older0\u20136capturesunchanged."
+          "qualification": "CanonicalFebruaryrowexists;presenter/claimsassembledprimaryonly;newpolicy7capturesbothexistingknownoperands/IDs;older0–6capturesunchanged."
         },
         {
           "path": "evidence/REVIEW-BATCH-COMPILED-HTTP-PROOF.json",
@@ -16424,7 +16965,8 @@
       "finalAcceptanceCase": {
         "id": "LIVE-MONTHLY-COMPARISON-PROVENANCE-01-FINAL",
         "expected": "BothcanonicalperiodsourceIDs/paths/operandvaluesvisibleinexactcapturedpanelandvalidatedclaims/receipts;unauthorizedaccessrefused;missing/FPYnosubstitution;oldcapturesunchanged;targetedredgreenandnativeretest."
-      }
+      },
+      "acceptanceFamily": "comparison"
     },
     {
       "id": "NATIVE-GUIDE-F063-OBJECT-FILTER-PAGE-01",
@@ -16458,8 +17000,9 @@
       ],
       "finalAcceptanceCase": {
         "id": "NATIVE-GUIDE-F063-OBJECT-FILTER-PAGE-01-FINAL",
-        "expected": "Page2\u2192ManufacturingSearch/YoursimmediatelyshowsmatchingModel/Worksheet;clear/Allresetfirstpage;no-match/Nextrecoveryvalid;targetedredgreenandcombinedsuccessornativeretest."
-      }
+        "expected": "Page2→ManufacturingSearch/YoursimmediatelyshowsmatchingModel/Worksheet;clear/Allresetfirstpage;no-match/Nextrecoveryvalid;targetedredgreenandcombinedsuccessornativeretest."
+      },
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "SOURCE-GUIDE-PROCESS-EXIT-01",
@@ -16482,13 +17025,14 @@
       "finalAcceptanceCase": {
         "id": "SOURCE-GUIDE-PROCESS-EXIT-01-FINAL",
         "expected": "Completeexact-sourceassertioninventoryandprocesssuccessreconciled;originalfailedattemptpreserved;successfulunionformexplicit;no deadlinechanges/fabricatedrootcause."
-      }
+      },
+      "acceptanceFamily": "Guide"
     },
     {
       "id": "NATIVE-F001-PROFILE-JUMP-01",
       "kind": "finding",
       "status": "VERIFY",
-      "text": "On the current 7e26 candidate at 320px, Jump > Global \u00b7 Profile navigates Home without opening Profile. Native report confirms the normal More > Profile path works. Source correction awaits terminal current-source validation so existing proof remains attributable.",
+      "text": "On the current 7e26 candidate at 320px, Jump > Global · Profile navigates Home without opening Profile. Native report confirms the normal More > Profile path works. Source correction awaits terminal current-source validation so existing proof remains attributable.",
       "implementation": [
         "app/src/retained/screens.tsx",
         "app/src/retained/dialog.tsx"
@@ -16523,7 +17067,8 @@
         "candidate": "4b63f361",
         "outcome": "PASS SCOPED NATIVE",
         "evidence": "evidence/native-profile-notes-4b63/REPORT.md"
-      }
+      },
+      "acceptanceFamily": "responsive/accessibility"
     },
     {
       "id": "NATIVE-F015-F016-VISIBILITY-01",
@@ -16565,7 +17110,8 @@
         "candidate": "4b63f361",
         "outcome": "F015PASSlocal;F016storagePASS/GuideprogressnewFIX",
         "evidence": "evidence/native-profile-notes-4b63/REPORT.md"
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "COMPILED-7E26-NONPASS-01",
@@ -16588,7 +17134,8 @@
       "finalAcceptanceCase": {
         "id": "COMPILED-7E26-NONPASS-01-FINAL",
         "expected": "Reconcile all original failures and complete exact-successor compiled inventory under original deadlines with retained original evidence; no fabricated root cause or old-candidate credit."
-      }
+      },
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "NATIVE-F016-FEEDBACK-RECEIPT-01",
@@ -16614,13 +17161,14 @@
       ],
       "finalAcceptanceCase": {
         "id": "NATIVE-F016-FEEDBACK-RECEIPT-01-FINAL",
-        "expected": "Normal Useful\u2192Unclear keeps one truthful historical Guide action observation, current preference remains Unclear across reload/resume, no extra completion or automatic action; context changes and actual evidence loss remain guarded."
+        "expected": "Normal Useful→Unclear keeps one truthful historical Guide action observation, current preference remains Unclear across reload/resume, no extra completion or automatic action; context changes and actual evidence loss remain guarded."
       },
       "currentImplementationCandidate": {
         "sourceSha256": "711b7027e59fb128f57df535dfbc9ac23053167a6276da4a870d88d8899d805d",
         "staticSha256": "b6fe4b1b34803a45bf14ff3c6ebade613636899fcf0f90421a2d08c6e236515e",
         "serverSha256": "79a83e2e84cd028a1d7ec49268019dbd45a4e46eb5660729c2bb7b6b05ade86b"
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "NATIVE-F053-HEADLINE-QUALIFICATION-01",
@@ -16648,7 +17196,8 @@
         "sourceSha256": "711b7027e59fb128f57df535dfbc9ac23053167a6276da4a870d88d8899d805d",
         "staticSha256": "b6fe4b1b34803a45bf14ff3c6ebade613636899fcf0f90421a2d08c6e236515e",
         "serverSha256": "79a83e2e84cd028a1d7ec49268019dbd45a4e46eb5660729c2bb7b6b05ade86b"
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "NATIVE-F054-COMMENT-ATTRIBUTION-01",
@@ -16676,13 +17225,14 @@
         "sourceSha256": "711b7027e59fb128f57df535dfbc9ac23053167a6276da4a870d88d8899d805d",
         "staticSha256": "b6fe4b1b34803a45bf14ff3c6ebade613636899fcf0f90421a2d08c6e236515e",
         "serverSha256": "79a83e2e84cd028a1d7ec49268019dbd45a4e46eb5660729c2bb7b6b05ade86b"
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "USER-MACHINE-OEE-RANKING-01",
       "kind": "finding",
       "status": "VERIFY",
-      "text": "Priority user13:05:47 exact \u201cplease rank the machines by decending OEE\u201d falls through to All OEE aggregate. Source parser recognizes measure but lacks machine rank grouping and explicit sort query contract. Fix shared interpretation/query execution/render ordering, preserve old captures; no live model credit from mock tests.",
+      "text": "Priority user13:05:47 exact “please rank the machines by decending OEE” falls through to All OEE aggregate. Source parser recognizes measure but lacks machine rank grouping and explicit sort query contract. Fix shared interpretation/query execution/render ordering, preserve old captures; no live model credit from mock tests.",
       "implementation": [
         "app/src/platform/workspaceQuery.ts",
         "app/src/platform/boundedFollowup.ts",
@@ -16722,7 +17272,8 @@
         "compiledMock": "exact/corrected/ascending/scopedties/history/restart/replayPASS",
         "native": "b951 scoped native ranking PASS; conflicting context defect separately registered",
         "fullSuite": "not run"
-      }
+      },
+      "acceptanceFamily": "metrics"
     },
     {
       "id": "COMPILED-4B63-LONG-SESSIONS-01",
@@ -16741,7 +17292,8 @@
       "finalAcceptanceCase": {
         "id": "COMPILED-4B63-LONG-SESSIONS-01-FINAL",
         "expected": "Reconcile long-session failures and complete current-successor full compiled inventory plus hosted proofs under original deadlines; retain all earlier nonpasses and source identities."
-      }
+      },
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "NATIVE-TRAINING-CONTEXT-01",
@@ -16767,7 +17319,8 @@
       "finalAcceptanceCase": {
         "id": "NATIVE-TRAINING-CONTEXT-01-FINAL",
         "expected": "Actual source-bound training context in header/dialog/canonical receipt/history, original capture unchanged across narrower follow-up/reload; observation window distinct from cutoff."
-      }
+      },
+      "acceptanceFamily": "persistence/recovery"
     },
     {
       "id": "NATIVE-F071-F082-AUDIT-WINDOW-01",
@@ -16792,7 +17345,8 @@
       "finalAcceptanceCase": {
         "id": "NATIVE-F071-F082-AUDIT-WINDOW-01-FINAL",
         "expected": "Actual mixed timestamp retained audit ranges correct on desktop/narrow/reload;80events and10query70other counts unchanged."
-      }
+      },
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "ADMIN-EXPIRED-OWNER-UX-01",
@@ -16840,7 +17394,8 @@
         "Whole-successor source/domain run",
         "Historical silentPOST cause not reconstructed; no new login audit telemetry introduced"
       ],
-      "servedArtifactStatus": "711b18352 and cf29618329 unchanged; isolated fix not promoted."
+      "servedArtifactStatus": "711b18352 and cf29618329 unchanged; isolated fix not promoted.",
+      "acceptanceFamily": "verification/sustain"
     },
     {
       "id": "COMPILED-711B-RELIABILITY-01",
@@ -16864,7 +17419,8 @@
       "compiledCandidate": "f2b1292c",
       "sourceFullStatus": "PASSED_CONTROLLED_RESUME2910/492",
       "browserAcceptance": "PENDING",
-      "independentFunctionalReview": "BOUNDED_PASS14/14fresh_tests142/142evidence_checks"
+      "independentFunctionalReview": "BOUNDED_PASS14/14fresh_tests142/142evidence_checks",
+      "acceptanceFamily": "platform and remaining acceptance"
     },
     {
       "id": "UX-COMPETING-WORKSPACES-01",
@@ -16890,13 +17446,14 @@
       },
       "aliases": [
         "REVIEW155-004"
-      ]
+      ],
+      "acceptanceFamily": "security"
     },
     {
       "id": "D68-UX-CANCEL-01",
       "kind": "independent-defect",
       "text": "After canceling an uncertain owner settings mutation, hold dependent actions until authoritative status reconciliation.",
-      "status": "FIX",
+      "status": "VERIFY",
       "implementation": [
         "app/src/admin/AdminAiPage.tsx"
       ],
@@ -16904,40 +17461,50 @@
         {
           "path": "/home/pat/Documents/Codex/2026-10-11/task-3/review-d68f632c/REPORT.md",
           "qualification": "Independent defect reproduced on pinned d68 candidate; correction pending isolated successor."
+        },
+        {
+          "path": "docs/wp1/screenshots",
+          "qualification": "Targeted Chrome pass at http://127.0.0.1:18191/ on 2026-10-15, plus targeted vitest. Yesterday production is unavailable and the context bar is not Training. March 2025 is refused and the refusal does not contain 2026. An explicit Machine 1 question clears a prior TP-S1 clarification. Worst-first ascending asset-ID order is TP-A7, TP-A1, TP-A3, TP-A5. Text typed while Send is busy is kept without the sent command. Canceling an uncertain Save settings holds Test connection and Enable until a fresh status read succeeds. This is candidate proof, not final-RC acceptance."
         }
       ],
       "finalAcceptanceCase": {
         "id": "D68-UX-CANCEL-01-FINAL",
         "expected": "Cancel deferred Save settings; Test connection and Enable remain held until fresh authoritative status succeeds."
-      }
+      },
+      "acceptanceFamily": "security"
     },
     {
       "id": "FOLLOWUP-ORDER-01",
       "kind": "independent-defect",
       "text": "After a machine ranking, \"Now put the worst first\" keeps the previous order.",
-      "status": "FIX",
+      "status": "VERIFY",
       "aliases": [
         "REVIEW155-021"
       ],
       "implementation": [
-        "app/src/platform/boundedFollowup.ts"
+        "app/src/platform/workspaceQuery.ts"
       ],
       "evidence": [
         {
           "path": "docs/wp1/screenshots/worst-first.png",
           "qualification": "Reproduced in Chrome at http://127.0.0.1:18191/ on working tree 711b7027e59fb128f57df535dfbc9ac23053167a6276da4a870d88d8899d805d, 2026-10-15. Please rank the machines by descending OEE returns TP-A5, TP-A1, TP-A3, TP-A7. Now put the worst first repeats that order."
+        },
+        {
+          "path": "docs/wp1/screenshots",
+          "qualification": "Targeted Chrome pass at http://127.0.0.1:18191/ on 2026-10-15, plus targeted vitest. Yesterday production is unavailable and the context bar is not Training. March 2025 is refused and the refusal does not contain 2026. An explicit Machine 1 question clears a prior TP-S1 clarification. Worst-first ascending asset-ID order is TP-A7, TP-A1, TP-A3, TP-A5. Text typed while Send is busy is kept without the sent command. Canceling an uncertain Save settings holds Test connection and Enable until a fresh status read succeeds. This is candidate proof, not final-RC acceptance."
         }
       ],
       "finalAcceptanceCase": {
         "id": "FOLLOWUP-ORDER-01-FINAL",
-        "expected": "The follow-up ranking is the previous machine order reversed, or the product asks which order was meant."
-      }
+        "expected": "Worst-first reorders the current asset ranking ascending. Equal values stay in asset-ID order: descending TP-A5, TP-A1, TP-A3, TP-A7 becomes TP-A7, TP-A1, TP-A3, TP-A5."
+      },
+      "acceptanceFamily": "conversation"
     },
     {
       "id": "PENDING-SUBMISSION-01",
       "kind": "independent-defect",
       "text": "Text typed while a reply is saving stays glued to the command already sent, so the next draft contains both.",
-      "status": "FIX",
+      "status": "VERIFY",
       "aliases": [
         "REVIEW155-018"
       ],
@@ -16948,11 +17515,39 @@
         {
           "path": "docs/wp1/screenshots/pending-draft.png",
           "qualification": "Reproduced in Chrome at http://127.0.0.1:18191/ on working tree 711b7027e59fb128f57df535dfbc9ac23053167a6276da4a870d88d8899d805d, 2026-10-15. A newline typed while Send is aria-busy stays in the composer with the command already submitted."
+        },
+        {
+          "path": "docs/wp1/screenshots",
+          "qualification": "Targeted Chrome pass at http://127.0.0.1:18191/ on 2026-10-15, plus targeted vitest. Yesterday production is unavailable and the context bar is not Training. March 2025 is refused and the refusal does not contain 2026. An explicit Machine 1 question clears a prior TP-S1 clarification. Worst-first ascending asset-ID order is TP-A7, TP-A1, TP-A3, TP-A5. Text typed while Send is busy is kept without the sent command. Canceling an uncertain Save settings holds Test connection and Enable until a fresh status read succeeds. This is candidate proof, not final-RC acceptance."
         }
       ],
       "finalAcceptanceCase": {
         "id": "PENDING-SUBMISSION-01-FINAL",
         "expected": "The in-flight command is snapshotted. Keystrokes during the save become the next draft and do not include the command already sent."
+      },
+      "acceptanceFamily": "conversation"
+    },
+    {
+      "id": "REVIEW155-025",
+      "kind": "acceptance-row",
+      "text": "Technician report, standard work, and confirm-or-disprove evidence questions return specific notes, a standard-work id, and tests.",
+      "status": "VERIFY",
+      "acceptanceFamily": "quality",
+      "acceptanceOwner": "native test operator",
+      "implementation": [],
+      "evidence": [
+        {
+          "path": "docs/GOAL-FEATURE-DESTINATION-MATRIX.csv",
+          "qualification": "Reported FAIL. No existing requirement states this sentence, so it is not aliased. Not claimed fixed and not retested in this run."
+        }
+      ],
+      "finalAcceptanceCase": {
+        "id": "REVIEW155-025-FINAL",
+        "expected": "Specific notes, SW ID, and tests."
+      },
+      "disposition": {
+        "localDemo": "Own acceptance row. Not claimed fixed and not retested in this run.",
+        "productionOnlyFacets": []
       }
     }
   ],
@@ -17205,10 +17800,9 @@
     "releaseReady": false,
     "noNewSecurityReviewGate": true,
     "wp1": {
-      "at": "2026-10-15T20:29:55Z",
-      "candidate": "711b7027e59fb128f57df535dfbc9ac23053167a6276da4a870d88d8899d805d",
+      "at": "2026-10-15T21:00:00Z",
       "url": "http://127.0.0.1:18191/",
-      "note": "User-review rows remain in docs/GOAL-FEATURE-DESTINATION-MATRIX.csv. G01-G85 are aliases of F001-F085. Reproduced P0/P1 trust failures are FIX on the existing items plus FOLLOWUP-ORDER-01 and PENDING-SUBMISSION-01. No second register was added."
+      "note": "The six trust defects are implemented on this candidate and moved from FIX to VERIFY. VERIFY rows carry acceptanceFamily. USER ACTION is only a private key or paid authorization. REVIEW155-025 is its own row. Contradictory case state stays VERIFY. Current EKAS_Platform_v2 main was retried on 2026-10-15 and is still HTTP 404 / repository not found for this credential. No mapping is VERIFIED against current main."
     }
   },
   "isolatedOwnerUxSuccessor": {
