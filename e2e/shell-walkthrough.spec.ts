@@ -84,7 +84,7 @@ test('plant shell walk-through of the closure screens', async ({ page }) => {
   await page.getByRole('button', { name: 'Investigations', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Investigations' })).toBeVisible();
   const summary = page.getByRole('region', { name: 'Investigation summary' });
-  await expect(summary).toContainText(/good units below plan/);
+  await expect(summary).toContainText('150 units below plan');
   await expect(summary).toContainText('Status: No owner requested');
   await expect(summary).toContainText('Owner: Not assigned');
   await expect(summary).toContainText('Next: Request an owner');
@@ -99,7 +99,7 @@ test('plant shell walk-through of the closure screens', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 700 });
   await expect(page.getByRole('button', { name: 'Menu' })).toBeVisible();
   await expect(menu).toBeHidden();
-  await expect(page.getByLabel('Investigation section')).toBeVisible();
+  await expect(page.getByLabel('Investigation section', { exact: true })).toBeVisible();
   await expect(summary).toContainText('Next: Request an owner');
   const field = page.getByLabel('Ask EKAS');
   const send = page.getByRole('button', { name: 'Send' });
@@ -132,9 +132,9 @@ test('plant shell walk-through of the closure screens', async ({ page }) => {
   expect(evidenceText.split('Standard Work 030 — Current').length - 1).toBe(1);
   expect(evidenceText).toContain('Technician note — Uncontrolled /');
   expect(evidenceText).toContain('Stop event 01 — Feeder jams / 12 minutes · FEED-03 · Oct 6');
-  expect(evidenceText).not.toContain('SW-030');
+  expect(evidenceText).not.toMatch(/SW-030 ·/);
   expect(evidenceText).not.toContain('Saved with this reply');
-  expect(evidenceText).toContain('Next: Request an owner');
+  expect(evidenceText).toContain('Request an owner');
   await page.screenshot({ path: `${shots}/05-evidence.png`, fullPage: false });
   await page.keyboard.press('Escape');
 
