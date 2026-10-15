@@ -252,3 +252,4 @@ body:has(.retained-console),body:has(.retained-console)>#root{min-width:0;max-wi
 
 /* Captured source labels remain readable in the native Grid at narrow widths. */
 .manufacturing-evidence .hcg-cell.ekas-evidence-label{white-space:normal!important;overflow-wrap:anywhere;text-overflow:clip;line-height:1.35;vertical-align:top}
+nav[aria-label="Template header navigation"]:empty{display:none}

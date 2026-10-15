@@ -10,6 +10,7 @@ import {synchronizeAliases} from './synonyms';
 import { useEffect, useLayoutEffect,useRef,useState, type CSSProperties,type ReactNode } from "react";
 import { Toaster } from "./notices";
 import { Overlays, ScreenBody } from "./screens";
+import {beginNewConversation} from '../investigation/unified';
 import { areaOf, useEkas, type Screen } from "./store";
 
 export const INSIGHTS: { id: Screen; label: string; group?: string }[] = [
@@ -101,9 +102,9 @@ export function Console({content,onNavigate,workspaceTools,plantMode}:{content?:
   let lastGroup = "";
   return (
     <div className="min-h-screen bg-bg text-fg">
-      <Toaster theme="dark" /><PersistenceStatus/><FixtureSelector/>
+      <Toaster theme="dark" /><PersistenceStatus quiet={!!plantMode}/>{!plantMode&&<FixtureSelector/>}
       <header ref={headerRef} className="retained-header sticky top-0 z-30 border-b border-line bg-bg">
-        {alertOn && (
+        {alertOn && !plantMode && (
           <div className="retained-alert-strip flex items-center justify-between gap-3 bg-surface px-4 py-2 text-sm">
             <span>Sample figures are demonstrated, not plant actuals. A change is not a cause.</span>
             <button className="min-h-11 px-2" data-guide-action="status-dismiss" onClick={() => {dismissObserved();(window.innerWidth<768?menuButton:brandButton).current?.focus()}}>Close</button>
@@ -138,14 +139,14 @@ export function Console({content,onNavigate,workspaceTools,plantMode}:{content?:
             <summary ref={moreSummary} aria-label="More workspace utilities">More</summary>
             <div className="retained-more-panel">
               <div className="retained-more-mobile">{plantMode?null:<nav aria-label="Mobile workspace navigation">{(["Insights","Data","Develop","Admin"] as const).map(a=><button key={a} onClick={()=>navigate(a==="Insights"?"home":a==="Data"?"objects":a==="Develop"?"devhome":"users")}>{a}</button>)}</nav>}<button onClick={()=>withGuideInspection('notices-inspected',noticesInspectionPayload,()=>useEkas.setState({notifOpen:true}))}>Notices</button><button data-guide-action="help-open" onClick={()=>openObserved('help','ui-help-opened')}>Help</button><button data-guide-action="profile-open" onClick={()=>openObserved('profile','ui-profile-opened')}>Profile</button></div>
-              <nav aria-label="Secondary workspace utilities" className="retained-more-utilities"><button onClick={()=>navigate("pricing")}>Plan</button><button onClick={()=>navigate("contact")}>Expert note</button><button onClick={()=>navigate("getstarted")}>Features</button><span className="text-sm text-muted">Ctrl+K · Search the library</span></nav>
+              {!(plantMode&&!plantMode.engineering)&&<nav aria-label="Secondary workspace utilities" className="retained-more-utilities"><button onClick={()=>navigate("pricing")}>Plan</button><button onClick={()=>navigate("contact")}>Expert note</button><button onClick={()=>navigate("getstarted")}>Features</button><span className="text-sm text-muted">Ctrl+K · Search the library</span></nav>}
             </div>
           </details>
         </div>
       </header>
       <div className="md:grid md:grid-cols-[220px_1fr]">
         <aside style={{'--retained-menu-top':menuTop+'px'} as CSSProperties} aria-label="Template sidebar navigation" className={navOpen ? "border-line bg-surface p-3 md:block md:border-r" : "hidden border-line bg-surface p-3 md:block md:border-r"}>
-          <button className="mb-2 min-h-11 w-full rounded-lg bg-primary text-sm font-semibold text-primary-fg" onClick={() => useEkas.setState({ createOpen: true })}>Create</button>
+          {plantMode?<button className="mb-2 min-h-11 w-full rounded-lg bg-primary text-sm font-semibold text-primary-fg" onClick={()=>{void beginNewConversation();plantMode.onArea('Brief');useEkas.setState({navOpen:false})}}>New conversation</button>:<button className="mb-2 min-h-11 w-full rounded-lg bg-primary text-sm font-semibold text-primary-fg" onClick={() => useEkas.setState({ createOpen: true })}>Create</button>}
           {plantMode?[{id:"Brief",label:"Chat"},{id:"Dashboards",label:"Dashboards"},{id:"Explore",label:"Investigations"},{id:"Improvements",label:"Improvements"},{id:"Knowledge",label:"Knowledge"},...(plantMode.engineering?[{id:"Administration",label:"Administration"}]:[])].map(item=><div key={item.id}><button className={plantMode.area===item.id||(item.id==="Dashboards"&&plantMode.area==="Metrics")?"min-h-11 w-full rounded-lg bg-surface-2 px-2 text-left text-sm":"min-h-11 w-full rounded-lg px-2 text-left text-sm text-muted"} aria-current={plantMode.area===item.id?"page":undefined} onClick={()=>{plantMode.onArea(item.id);useEkas.setState({navOpen:false})}}>{item.label}</button></div>):nav.map((item) => {
             const header = item.group && item.group !== lastGroup ? item.group : "";
             if (item.group) lastGroup = item.group;

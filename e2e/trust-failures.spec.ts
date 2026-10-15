@@ -83,13 +83,11 @@ test('typing during a save does not glue the sent command to the next draft', as
 test('Chat and Improvements show the same case action status', async ({ page }) => {
   await page.getByRole('button', { name: 'We missed our production goal.' }).click();
   await expect(page.locator('article.ekas-captured-reply').last().locator('.ekas-question')).toHaveText('We missed our production goal.');
-  const chat = await page.getByRole('region', { name: 'Current investigation context' }).innerText();
-  const chatAction = chat.match(/Action\s+([a-z-]+)/i)?.[1];
+  const chatState = (await page.getByRole('region', { name: 'Current investigation context' }).locator('[data-case-state]').innerText()).replace(/\s+/g, ' ').trim();
+  expect(chatState).toMatch(/Awaiting owner acceptance|Owner accepted/);
   await page.getByRole('button', { name: 'Improvements' }).click();
   await expect(page.getByRole('heading', { name: 'Current improvement' })).toBeVisible();
   await page.screenshot({ path: 'docs/wp1/screenshots/case-status-improvements.png', fullPage: true });
-  const improvements = await page.getByRole('region', { name: 'Current shared case' }).innerText();
-  const improvementsAction = improvements.match(/Action\s+([a-z-]+)/i)?.[1];
-  expect(chatAction, chat).toBeTruthy();
-  expect(improvementsAction, improvements).toBe(chatAction);
+  const improvementsState = (await page.getByRole('region', { name: 'Current shared case' }).locator('[data-case-state]').innerText()).replace(/\s+/g, ' ').trim();
+  expect(improvementsState, improvementsState).toBe(chatState);
 });
