@@ -27,13 +27,13 @@ Demo roles are fictional session labels: `manager`, `supervisor`, `maintenance`,
 
 Local manufacturing cases use explicit synthetic identities: plant, line, asset, part, revision, job, operation, and shift. The supplied cases are downtime (`FEED-03`), speed (`PRESS-S1`), and quality (`FORM-Q1`). Monthly rows use `Machine 1` and `Machine 2` with month names. Training queries use the training-plant grain. Captured timestamps that the pilot adapter checks are RFC3339 instants (`app/src/platform/pilotTime.ts`, used from `pilotAdapter.ts`).
 
-A month name without a year still uses the supplied 2026 monthly cohort. An explicit year other than that cohort, including March 2025, is refused and no 2026 figure is published (`N04.01`, now implemented on this candidate and awaiting final-RC acceptance). "Why did we miss production yesterday?" states that yesterday is unavailable and does not open the training dataset.
+A month name without a year still uses the supplied 2026 monthly cohort. An explicit year other than that cohort, including March 2025, is refused and no 2026 figure is published (`N04.01`, now implemented on this candidate and awaiting final-RC acceptance). "Why did we miss production yesterday?" says "I don't have data for yesterday. The latest available production day is 2026-10-06. Would you like me to use that?" and answers the plan only after that day is accepted. It does not open the training dataset and does not swap the day in silently.
 
 | | Demo complete | Adapter verified | Live integration verified | Backend mapping |
 |---|---|---|---|---|
 | ISA95-style case tuple on a manufacturing turn | Local context object | Pilot completed turns require `machine_id`, ordered `window_start`/`window_end`, and `ontology_version` (`pilotAdapter.ts` lines 35–37) | Not run | **PARTIAL**. Site, line, part, revision, and job are not required by the pilot turn validator. |
 | Half-open windows and cohort identity | Enforced inside the local investigation service for governed cases | Pilot windows must end after they start and must not end after certification (`pilotAdapter.ts` line 37) | Not run | **PARTIAL**. |
-| Production plant timezone and unavailable periods | Explicit non-cohort years and "yesterday" are refused locally | Not covered by the pilot adapter | Not run | **MISSING IN BACKEND** relative to inspected baseline `fe2635ce`. Current `main` remains **UNVERIFIED**. Demo acceptance does not wait on that. |
+| Production plant timezone and unavailable periods | Explicit non-cohort years are refused locally. Yesterday is refused with an offer of the latest supplied production day, 2026-10-06, and that day is used only after acceptance | Not covered by the pilot adapter | Not run | **MISSING IN BACKEND** relative to inspected baseline `fe2635ce`. Current `main` remains **UNVERIFIED**. Demo acceptance does not wait on that. |
 
 ## Conversation, Governor, and ContextContract
 
@@ -55,7 +55,7 @@ Chat can request OEE, availability, performance, quality, FPY, and downtime. Gov
 
 | | Demo complete | Adapter verified | Live integration verified | Backend mapping |
 |---|---|---|---|---|
-| Synthetic case and training metrics | Implemented. "Why did we miss production yesterday?" now says the period is unavailable and stays off the training dataset (`N04.03`). | Pilot result shape is validated when a wire is injected | Not run | **PARTIAL** for the pilot metric result. The manufacturing metric-demonstration route is **MISSING IN BACKEND** relative to inspected baseline `fe2635ce`. |
+| Synthetic case and training metrics | Implemented. "Why did we miss production yesterday?" offers 2026-10-06 and answers the supplied plan only after acceptance. It stays off the training dataset (`N04.03`). | Pilot result shape is validated when a wire is injected | Not run | **PARTIAL** for the pilot metric result. The manufacturing metric-demonstration route is **MISSING IN BACKEND** relative to inspected baseline `fe2635ce`. |
 | Recorded kernel metric contracts | Not executed against the backend | Hashes only, in `docs/V2-SOURCE-IDENTITY.json` | Not run | **PARTIAL**. `contracts/tools/kernel.compute_metric.*.v1.json` and `contracts/charts/oee-chart-contract.v2.json` were not re-opened. |
 
 ## Evidence

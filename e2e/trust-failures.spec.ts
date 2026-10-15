@@ -7,16 +7,23 @@ import { ask, assetOrder, lastAnswer } from './helpers';
  */
 test.beforeEach(async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByRole('heading', { name: 'Chat Home' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Chat' })).toBeVisible();
 });
 
-test('a natural production question states the plan gap or that the period is unavailable', async ({ page }) => {
+test('yesterday offers the latest supplied day and answers only after acceptance', async ({ page }) => {
   await ask(page, 'Why did we miss production yesterday?');
+  const offer = await lastAnswer(page);
+  expect(offer, offer).not.toMatch(/TP-S\d: Good units|good units total|below the approved plan/i);
+  expect(offer).toBe("I don't have data for yesterday. The latest available production day is 2026-10-06. Would you like me to use that?");
+  await ask(page, 'Yes, use 2026-10-06');
   await page.screenshot({ path: 'docs/wp1/screenshots/production-yesterday.png', fullPage: true });
   const answer = await lastAnswer(page);
-  expect(answer, answer).not.toMatch(/TP-S\d: Good units|good units total/i);
-  expect(answer).toMatch(/approved plan|plan miss|unavailable/i);
-  await expect(page.getByRole('region', { name: 'Current investigation context' }).locator('strong')).not.toHaveText('Training');
+  expect(answer, answer).toMatch(/latest available day you accepted, 2026-10-06/);
+  expect(answer).toMatch(/below the approved plan/);
+  expect(answer).toMatch(/FEED-03/);
+  expect(answer).toMatch(/JOB-8303/);
+  expect(answer).toMatch(/I would start with the feeder-jam evidence/);
+  await expect(page.getByRole('region', { name: 'Current investigation context' }).locator('strong').first()).not.toHaveText('Training');
 });
 
 test('March 2025 is not answered with March 2026 numbers', async ({ page }) => {
@@ -50,7 +57,7 @@ test('a production question does not leave the context bar on the training datas
   await ask(page, 'Why did we miss production yesterday?');
   await page.screenshot({ path: 'docs/wp1/screenshots/context-bar.png', fullPage: true });
   const bar = page.getByRole('region', { name: 'Current investigation context' });
-  expect(await bar.locator('strong').innerText()).not.toBe('Training');
+  expect(await bar.locator('strong').first().innerText()).not.toBe('Training');
   expect(await bar.innerText()).not.toContain('training-plant-v1');
 });
 

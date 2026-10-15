@@ -12,7 +12,7 @@ import { Toaster } from "./notices";
 import { Overlays, ScreenBody } from "./screens";
 import { areaOf, useEkas, type Screen } from "./store";
 
-const INSIGHTS: { id: Screen; label: string; group?: string }[] = [
+export const INSIGHTS: { id: Screen; label: string; group?: string }[] = [
   { id: "home", label: "Home" },
   { id:"metriclab",label:"Metric workbench" },
   { id:"canonicalmetrics",label:"Canonical contracts" },
@@ -27,7 +27,7 @@ const INSIGHTS: { id: Screen; label: string; group?: string }[] = [
   { id: "inspection", label: "Inspection" },
 ];
 
-const DATA: { id: Screen; label: string; group?: string }[] = [
+export const DATA: { id: Screen; label: string; group?: string }[] = [
   { id: "objects", label: "Data objects" },
   { id: "connections", label: "Connections" },
   { id: "studio", label: "Studio" },
@@ -40,7 +40,7 @@ const DATA: { id: Screen; label: string; group?: string }[] = [
   { id: "verify", label: "Verification", group: "Governance" },
 ];
 
-const DEVELOP: { id: Screen; label: string; group?: string }[] = [
+export const DEVELOP: { id: Screen; label: string; group?: string }[] = [
   { id: "devhome", label: "Home" },
   { id: "playground", label: "Embed playground", group: "Embed" },
   { id: "apiplay", label: "API playground", group: "API" },
@@ -52,7 +52,7 @@ const DEVELOP: { id: Screen; label: string; group?: string }[] = [
   { id: "webhooks", label: "Webhooks", group: "Customize" },
 ];
 
-const ADMIN: { id: Screen; label: string; group?: string }[] = [
+export const ADMIN: { id: Screen; label: string; group?: string }[] = [
   { id: "users", label: "Users" },
   { id: "groups", label: "Groups" },
   { id: "customization", label: "Customization", group: "Configuration" },
@@ -65,7 +65,7 @@ const ADMIN: { id: Screen; label: string; group?: string }[] = [
   { id: "terms", label: "Terms", group: "Monitor" },
 ];
 
-export function Console({content,onNavigate,workspaceTools,plantMode}:{content?:ReactNode;onNavigate?:()=>void;workspaceTools?:ReactNode;plantMode?:{area:string;onArea:(area:string)=>void;onAdvanced:()=>void}}={}) {
+export function Console({content,onNavigate,workspaceTools,plantMode}:{content?:ReactNode;onNavigate?:()=>void;workspaceTools?:ReactNode;plantMode?:{area:string;onArea:(area:string)=>void;onAdvanced:()=>void;engineering?:boolean}}={}) {
   const openObserved=(field:'palette'|'profile'|'help',kind:'ui-palette-opened'|'ui-profile-opened'|'ui-help-opened')=>{const before=useEkas.getState()[field];if((field==='help'||field==='profile')&&moreMenu.current?.open){const inside=moreMenu.current.contains(document.activeElement);moreMenu.current.open=false;if(inside)moreSummary.current?.focus();}if(field==='help'&&!before){withGuideInspection('help-opened',()=>useEkas.getState().help?{opened:true,synthetic:true,businessCompleted:false,qualification:'Normal Help opening in the exact local scope; no training or workflow completion.'}:null,()=>useEkas.setState({help:true}));}else useEkas.setState({[field]:true});if(!before&&useEkas.getState()[field])emitGuideUiObservation(kind);};
   const dismissObserved=()=>{const before=useEkas.getState().alertOn;useEkas.setState({alertOn:false});if(before&&!useEkas.getState().alertOn)emitGuideUiObservation('ui-status-dismissed');};
   const moreMenu=useRef<HTMLDetailsElement>(null),moreSummary=useRef<HTMLElement>(null);const mainContent=useRef<HTMLElement>(null),menuButton=useRef<HTMLButtonElement>(null),brandButton=useRef<HTMLButtonElement>(null),focusAfterNavigation=useRef(false);const navigate=(screen:Screen)=>{if(moreMenu.current)moreMenu.current.open=false;focusAfterNavigation.current=true;useEkas.getState().go(screen);onNavigate?.()};
@@ -113,7 +113,7 @@ export function Console({content,onNavigate,workspaceTools,plantMode}:{content?:
           <button ref={menuButton} aria-expanded={navOpen} className="min-h-11 px-2 font-semibold md:hidden" onClick={() => useEkas.setState({ navOpen: !navOpen })}>Menu</button>
           <button ref={brandButton} className="min-h-11 px-2 text-lg font-semibold" onClick={() => plantMode?plantMode.onArea("Brief"):navigate("home")}>{displayName}</button>
           <nav aria-label="Template header navigation" className="flex gap-1 overflow-x-auto">
-            {plantMode?<><button className="min-h-11 rounded-lg bg-surface px-3 text-sm" onClick={()=>plantMode.onArea("Brief")}>Plant workspace</button><button className="min-h-11 px-3 text-sm text-muted" onClick={plantMode.onAdvanced}>Advanced tools</button></>:(["insights", "data", "develop", "admin"] as const).map((a) => (
+            {plantMode?null:(["insights", "data", "develop", "admin"] as const).map((a) => (
               <button
                 key={a}
                 className={area === a ? "min-h-11 rounded-lg bg-surface px-3 text-sm" : "min-h-11 px-3 text-sm text-muted"}
@@ -123,21 +123,21 @@ export function Console({content,onNavigate,workspaceTools,plantMode}:{content?:
               </button>
             ))}
           </nav>
-          <input
+          {!plantMode&&<input
             data-guide-action="palette-open" aria-label="Search the library" value={librarySearch}
             onChange={(e) => withGuideInspection('library-searched',libraryInspectionPayload,()=>useEkas.setState({librarySearch:e.target.value}))}
             onClick={() => openObserved('palette','ui-palette-opened')}
             onKeyDown={event=>{if(event.key==="Enter"){event.preventDefault();openObserved('palette','ui-palette-opened')}}}
             placeholder="Search the library"
             className="retained-library-search min-h-11 min-w-0 flex-1 rounded-lg border border-line bg-surface px-3 text-sm"
-          />
+          />}
           <button className="retained-desktop-extra min-h-11 px-2 text-sm" onClick={() => withGuideInspection('notices-inspected',noticesInspectionPayload,()=>useEkas.setState({notifOpen:true}))}>Notices</button>
           <button className="retained-desktop-extra min-h-11 px-2 text-sm" data-guide-action="help-open" onClick={() => openObserved('help','ui-help-opened')}>Help</button>
           <button className="retained-desktop-extra min-h-11 px-2 text-sm" data-guide-action="profile-open" onClick={() => openObserved('profile','ui-profile-opened')}>Profile</button>
           <details ref={moreMenu} className="retained-mobile-more" aria-label="Workspace utilities" onKeyDown={event=>{if(event.key==='Escape'&&moreMenu.current?.open){event.preventDefault();event.stopPropagation();moreMenu.current.open=false;moreSummary.current?.focus()}}}>
             <summary ref={moreSummary} aria-label="More workspace utilities">More</summary>
             <div className="retained-more-panel">
-              <div className="retained-more-mobile"><nav aria-label="Mobile workspace navigation">{(["Insights","Data","Develop","Admin"] as const).map(a=><button key={a} onClick={()=>navigate(a==="Insights"?"home":a==="Data"?"objects":a==="Develop"?"devhome":"users")}>{a}</button>)}</nav><button onClick={()=>withGuideInspection('notices-inspected',noticesInspectionPayload,()=>useEkas.setState({notifOpen:true}))}>Notices</button><button data-guide-action="help-open" onClick={()=>openObserved('help','ui-help-opened')}>Help</button><button data-guide-action="profile-open" onClick={()=>openObserved('profile','ui-profile-opened')}>Profile</button></div>
+              <div className="retained-more-mobile">{plantMode?null:<nav aria-label="Mobile workspace navigation">{(["Insights","Data","Develop","Admin"] as const).map(a=><button key={a} onClick={()=>navigate(a==="Insights"?"home":a==="Data"?"objects":a==="Develop"?"devhome":"users")}>{a}</button>)}</nav>}<button onClick={()=>withGuideInspection('notices-inspected',noticesInspectionPayload,()=>useEkas.setState({notifOpen:true}))}>Notices</button><button data-guide-action="help-open" onClick={()=>openObserved('help','ui-help-opened')}>Help</button><button data-guide-action="profile-open" onClick={()=>openObserved('profile','ui-profile-opened')}>Profile</button></div>
               <nav aria-label="Secondary workspace utilities" className="retained-more-utilities"><button onClick={()=>navigate("pricing")}>Plan</button><button onClick={()=>navigate("contact")}>Expert note</button><button onClick={()=>navigate("getstarted")}>Features</button><span className="text-sm text-muted">Ctrl+K · Search the library</span></nav>
             </div>
           </details>
@@ -146,7 +146,7 @@ export function Console({content,onNavigate,workspaceTools,plantMode}:{content?:
       <div className="md:grid md:grid-cols-[220px_1fr]">
         <aside style={{'--retained-menu-top':menuTop+'px'} as CSSProperties} aria-label="Template sidebar navigation" className={navOpen ? "border-line bg-surface p-3 md:block md:border-r" : "hidden border-line bg-surface p-3 md:block md:border-r"}>
           <button className="mb-2 min-h-11 w-full rounded-lg bg-primary text-sm font-semibold text-primary-fg" onClick={() => useEkas.setState({ createOpen: true })}>Create</button>
-          {plantMode?["Brief","Explore","Improvements","Knowledge","Metrics"].map(item=><div key={item}><button className={plantMode.area===item?"min-h-11 w-full rounded-lg bg-surface-2 px-2 text-left text-sm":"min-h-11 w-full rounded-lg px-2 text-left text-sm text-muted"} aria-current={plantMode.area===item?"page":undefined} onClick={()=>{plantMode.onArea(item);useEkas.setState({navOpen:false})}}>{item==="Brief"?"Chat Home":item}</button></div>):nav.map((item) => {
+          {plantMode?[{id:"Brief",label:"Chat"},{id:"Dashboards",label:"Dashboards"},{id:"Explore",label:"Investigations"},{id:"Improvements",label:"Improvements"},{id:"Knowledge",label:"Knowledge"},...(plantMode.engineering?[{id:"Administration",label:"Administration"}]:[])].map(item=><div key={item.id}><button className={plantMode.area===item.id||(item.id==="Dashboards"&&plantMode.area==="Metrics")?"min-h-11 w-full rounded-lg bg-surface-2 px-2 text-left text-sm":"min-h-11 w-full rounded-lg px-2 text-left text-sm text-muted"} aria-current={plantMode.area===item.id?"page":undefined} onClick={()=>{plantMode.onArea(item.id);useEkas.setState({navOpen:false})}}>{item.label}</button></div>):nav.map((item) => {
             const header = item.group && item.group !== lastGroup ? item.group : "";
             if (item.group) lastGroup = item.group;
             return (
@@ -167,7 +167,7 @@ export function Console({content,onNavigate,workspaceTools,plantMode}:{content?:
           {content ?? <ScreenBody />}
         </main>
       </div>
-      <Overlays onWorkspaceNavigate={navigate} guidePage={plantMode?"ask":undefined} guideNavigate={plantMode?page=>{useEkas.getState().go(page);plantMode.onAdvanced()}:undefined}/>
+      <Overlays onWorkspaceNavigate={navigate} guidePage={plantMode?"ask":undefined} guideNavigate={plantMode?page=>{if(!plantMode.engineering)return;useEkas.getState().go(page);plantMode.onAdvanced()}:undefined}/>
     </div>
   );
 }
