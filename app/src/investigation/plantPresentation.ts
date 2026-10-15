@@ -1,5 +1,5 @@
 import knowledge from '../../inputs/knowledge-fixtures.json';
-import {fixtureCase} from './cases';
+import {fixtureCase,type CaseId} from './cases';
 
 const MONTHS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
@@ -98,6 +98,75 @@ export function impactLine(v:CaseLike){
 
 export function nextStep(v:CaseLike){return lifecycleState(v).next}
 
+/** The role this case can actually assign, taken from its acceptance records. */
+function assignableOwner(caseId?:string|null){
+ if(caseId!=='downtime'&&caseId!=='speed'&&caseId!=='quality')return null;
+ const list=fixtureCase(caseId as CaseId).assignmentAcceptances;
+ if(!list?.length)return null;
+ return list.find(item=>item.owner&&!String(item.owner).includes('backup'))?.owner||list[0].owner||null;
+}
+
+type CommandView=CaseLike&{caseId?:string|null;availableHypotheses?:{id:string}[]|null;availableWork?:{id?:string}|null};
+
+/** The command that performs the current next step. The visible label stays lifecycleState().next. */
+export function nextLifecycleCommand(v:CommandView|null|undefined):{kind:string;owner?:string;hypothesisId?:string;workId?:string;evidenceId?:string}|null{
+ const requested=v?.owner?.requested||null;
+ const accepted=v?.owner?.accepted||null;
+ const action=v?.action?.status||'';
+ const verification=v?.verification?.status||'';
+ const sustain=v?.sustain?.status||'';
+ const hypotheses=v?.hypotheses?.length||0;
+ if(!accepted&&!requested){
+  const owner=assignableOwner(v?.caseId);
+  return owner?{kind:'request-assignment',owner}:null;
+ }
+ if(!accepted&&requested)return {kind:'accept-assignment'};
+ if(sustain==='recurrence')return {kind:'reopen'};
+ if(sustain==='sustained')return null;
+ if(action==='performed'){
+  if(verification==='accepted')return {kind:'record-sustain'};
+  if(verification==='awaiting_acceptance')return {kind:'accept-result'};
+  if(verification==='safety_review_required'&&v?.caseId)return {kind:'review-safety',evidenceId:v.caseId+'-SAFETY-01'};
+  if(verification==='awaiting_work'||!verification)return {kind:'record-verification'};
+  return null;
+ }
+ if(action==='authorized'&&v?.availableWork?.id)return {kind:'record-performed-work',workId:v.availableWork.id};
+ if(action==='requested')return {kind:'authorize-action'};
+ if(action==='recommended')return {kind:'request-authorization'};
+ if(action==='rejected'||action==='failed')return null;
+ if(hypotheses)return {kind:'recommend-action'};
+ const hypothesisId=v?.availableHypotheses?.[0]?.id;
+ return hypothesisId?{kind:'add-hypothesis',hypothesisId}:null;
+}
+
+export function overviewCopy(v:(CaseLike&{events?:{id:string}[]|null;hypotheses?:unknown[]|null})|null|undefined){
+ if(!v?.title)return 'Open a supplied case from Chat. Nothing here is substituted from another investigation.';
+ const life=lifecycleState(v);
+ const stops=(v.events||[]).filter(event=>/^stop-/i.test(event.id)).length;
+ const hypotheses=v.hypotheses?.length||0;
+ return [impactLine(v),`Status is ${life.status}.`,`Owner is ${life.owner}.`,stops?`${stops.toLocaleString('en-US')} stops are recorded.`:'',hypotheses?`${hypotheses.toLocaleString('en-US')} hypotheses are recorded.`:'No hypothesis is recorded.'].filter(Boolean).join(' ');
+}
+
+/** Group a count. Leave years, dates, and identifiers alone. */
+export function groupThousands(text:string){
+ return text.replace(/(?<![\d.,-])(\d{4,})(?![\d-])(?=\s*(?:against|good|units?|below|above)\b|[.,;:])/g,n=>Number(n).toLocaleString('en-US'));
+}
+
+/** Turn a stored period such as 2026-10-06 day shift into Oct 6, 2026, day shift. */
+export function humanScopeWhen(period?:string|null,shift?:string|null){
+ const raw=period||'';
+ const iso=raw.match(/\d{4}-\d{2}-\d{2}/);
+ let day='';
+ if(iso){
+  const [,year,month,date]=iso[0].match(/(\d{4})-(\d{2})-(\d{2})/)||[];
+  const index=Number(month)-1;
+  if(MONTHS[index]&&date&&year)day=`${MONTHS[index]} ${Number(date)}, ${year}`;
+ }
+ const named=/night/i.test(raw)||(shift||'').toLowerCase()==='night'?'night shift':/day shift/i.test(raw)||(shift||'').toLowerCase()==='day'?'day shift':'';
+ if(day&&named)return `${day}, ${named}`;
+ return day||raw;
+}
+
 type DocLike={id:string;version?:string|number;kind?:string;text?:string;status?:string;eligible?:boolean;controlled?:boolean};
 type EventLike={id:string;start?:number|null;end?:number|null;reason?:string|null;startAt?:string|null};
 
@@ -145,11 +214,40 @@ function statusLabel(d:DocLike){
  return status.charAt(0).toUpperCase()+status.slice(1).replaceAll('_',' ');
 }
 
+function isNote(d:DocLike){return d.kind==='note'||d.kind==='uncontrolled_note'}
+
+function stripRecordPrefixes(text:string){
+ return text.split('\n').map(line=>line.replace(/^[A-Z][A-Z0-9-]*(?::s\d+)?:\s+/,'').trim()).filter(Boolean).join(' ');
+}
+
+/** Presentation only. The stored note text is unchanged. */
+function plainNote(text?:string){
+ let body=stripRecordPrefixes(text||'');
+ body=body.replace(/^Fictional note claims\s+/i,'');
+ body=body.replace(/\s*It conflicts with SW-\d+\s+\S+\s+and has no approval or effective scope\.?/i,' It is uncontrolled and contradicts the current standard.');
+ body=body.replace(/\s+/g,' ').trim();
+ if(body)body=body.charAt(0).toUpperCase()+body.slice(1);
+ return body;
+}
+
+function noteBody(d:DocLike){return stripRecordPrefixes(d.text||'')}
+
+function duplicateNote(shorter:string,longer:string){
+ if(!shorter||!longer)return false;
+ if(shorter===longer)return true;
+ if(!longer.startsWith(shorter))return false;
+ const next=longer.charAt(shorter.length);
+ return next===''||/[\s.]/.test(next);
+}
+
 function describe(d:DocLike){
  const title=sourceTitle(d.id,d.version);
- const sentence=plainSentence(d.text);
- if(d.kind==='note'||d.kind==='uncontrolled_note')return sentence||title;
- return title||sentence;
+ if(isNote(d)){
+  const body=plainNote(d.text);
+  if(/contradicts the current standard/.test(body))return body;
+  return plainSentence(body)||title;
+ }
+ return title||plainSentence(d.text);
 }
 
 export function documentLine(d:DocLike){
@@ -157,9 +255,32 @@ export function documentLine(d:DocLike){
  return `${typeAndName(d)} — ${statusLabel(d)}${description?' / '+description:''}`;
 }
 
-/** Same id and version with the same text is one item. A current and a superseded revision stay. */
-export function presentDocuments(docs:DocLike[]){
- return uniqueBy(docs,d=>`${d.id}\u0000${d.version??''}\u0000${d.text||''}`).map(documentLine);
+export type PresentedDocument={key:string;line:string;sources:string[]};
+
+/** Same id, version, and text is one item. A shorter note whose text is the start of a longer note is one item. Current and superseded revisions stay. */
+export function presentDocuments(docs:DocLike[]):PresentedDocument[]{
+ const unique=uniqueBy(docs,d=>`${d.id}\u0000${d.version??''}\u0000${d.text||''}`);
+ const notes=unique.filter(isNote);
+ const ranked=[...notes].sort((a,b)=>noteBody(b).length-noteBody(a).length);
+ const dropped=new Set<DocLike>();
+ const extras=new Map<DocLike,DocLike[]>();
+ for(const candidate of ranked){
+  if(dropped.has(candidate))continue;
+  const body=noteBody(candidate);
+  for(const keeper of ranked){
+   if(keeper===candidate||dropped.has(keeper)||noteBody(keeper).length<body.length)continue;
+   if(!duplicateNote(body,noteBody(keeper)))continue;
+   dropped.add(candidate);
+   const list=extras.get(keeper)||[];
+   list.push(candidate);
+   extras.set(keeper,list);
+   break;
+  }
+ }
+ return unique.filter(d=>!dropped.has(d)).map(d=>{
+  const sources=[d,...(extras.get(d)||[])].map(item=>`${item.id} · ${item.version??''}`);
+  return {key:sources.join('|'),line:documentLine(d),sources};
+ });
 }
 
 function reasonText(reason?:string|null){

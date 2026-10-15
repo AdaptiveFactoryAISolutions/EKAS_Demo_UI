@@ -64,3 +64,4 @@ html{scroll-padding-bottom:calc(var(--ekas-composer-h, 168px) + 20px)}
  .ekas-captured-reply table:not(.ekas-scorecard-table) tr{display:grid;gap:2px;border:1px solid #24344f;border-radius:8px;margin:0 0 8px;padding:8px}
  .ekas-captured-reply table:not(.ekas-scorecard-table) th,.ekas-captured-reply table:not(.ekas-scorecard-table) td{display:block;border:0;padding:2px 0}
 }
+.ekas-plant button.ekas-next-cta{background:#2bb6a3;color:#06221c;border-color:#2bb6a3;font-weight:650;justify-self:start}

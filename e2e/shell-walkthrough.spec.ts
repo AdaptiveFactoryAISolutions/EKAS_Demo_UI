@@ -66,6 +66,11 @@ test('plant shell walk-through of the closure screens', async ({ page }) => {
   await page.getByRole('button', { name: 'We missed our production goal.' }).click();
   const answer = page.locator('article.ekas-captured-reply').last();
   await expect(answer).toContainText(/below the approved plan/i);
+  await expect(answer).toContainText('2,154');
+  await expect(answer).toContainText('2,304');
+  await expect(answer).toContainText('726-unit');
+  await expect(answer).not.toContainText('2154');
+  await expect(answer).not.toContainText('cycle 1');
   await expect(answer).toContainText('EKAS');
   await expect(answer).not.toContainText('Synthetic captured answer');
   await expect(answer).toContainText(/Snapshot: .+ UTC · Synthetic/);
@@ -88,8 +93,12 @@ test('plant shell walk-through of the closure screens', async ({ page }) => {
   await expect(summary).toContainText('Status: No owner requested');
   await expect(summary).toContainText('Owner: Not assigned');
   await expect(summary).toContainText('Next: Request an owner');
+  await expect(summary).toContainText('No hypothesis is recorded.');
+  await expect(summary).not.toContainText('Use the sections');
   await expect(summary).not.toContainText('Start with the feeder-jam');
   await expect(summary.getByRole('tab', { name: 'Evidence' })).toBeVisible();
+  await expect(summary.getByRole('button', { name: 'Request an owner' })).toBeVisible();
+  await expect(page.getByLabel('Investigation section', { exact: true })).toHaveCount(0);
   const summaryText = await summary.innerText();
   expect(summaryText.split('Northworks feeder-jam plan miss').length - 1).toBe(1);
   expect(summaryText).not.toContain('No chart was published');
@@ -100,6 +109,8 @@ test('plant shell walk-through of the closure screens', async ({ page }) => {
   await expect(page.getByRole('button', { name: 'Menu' })).toBeVisible();
   await expect(menu).toBeHidden();
   await expect(page.getByLabel('Investigation section', { exact: true })).toBeVisible();
+  await expect(summary.getByRole('tab')).toHaveCount(0);
+  await expect(summary.getByRole('button', { name: 'Request an owner' })).toBeVisible();
   await expect(summary).toContainText('Next: Request an owner');
   const field = page.getByLabel('Ask EKAS');
   const send = page.getByRole('button', { name: 'Send' });
@@ -120,7 +131,7 @@ test('plant shell walk-through of the closure screens', async ({ page }) => {
   await page.getByRole('button', { name: 'Evidence and investigation' }).click();
   const evidence = page.getByRole('dialog', { name: 'Captured evidence and investigation' });
   const evidenceText = await evidence.innerText();
-  const order = ['What this evidence says', 'Current case state', 'Next action', 'Scope', 'Relevant evidence', 'Technical record'];
+  const order = ['What this evidence says', 'Current case state', 'Next action', 'Scope', 'Relevant evidence', 'Technical details'];
   let cursor = -1;
   for (const label of order) {
     const at = evidenceText.indexOf(label);
@@ -130,13 +141,29 @@ test('plant shell walk-through of the closure screens', async ({ page }) => {
   expect(evidenceText).toContain('Standard Work 030 — Current / Feeder setup reference and evidence record');
   expect(evidenceText).toContain('Standard Work 030 — Superseded /');
   expect(evidenceText.split('Standard Work 030 — Current').length - 1).toBe(1);
-  expect(evidenceText).toContain('Technician note — Uncontrolled /');
+  expect(evidenceText).toContain('Technician note — Uncontrolled / The old two-field setup record is sufficient for all product revisions. It is uncontrolled and contradicts the current standard.');
+  expect(evidenceText).toContain('Technician note — Uncontrolled / Feeder stopped with housings backed up at the guide during JOB-8301.');
+  expect(evidenceText.split('Feeder jam recurred').length - 1).toBe(1);
+  expect(evidenceText).toContain('Oct 6, 2026, day shift');
+  expect(evidenceText).toContain('2,154');
+  expect(evidenceText).not.toMatch(/NOTE-2401:s1|NOTE-2402-COPY|Fictional note claims/);
   expect(evidenceText).toContain('Stop event 01 — Feeder jams / 12 minutes · FEED-03 · Oct 6');
   expect(evidenceText).not.toMatch(/SW-030 ·/);
   expect(evidenceText).not.toContain('Saved with this reply');
   expect(evidenceText).toContain('Request an owner');
   await page.screenshot({ path: `${shots}/05-evidence.png`, fullPage: false });
   await page.keyboard.press('Escape');
+
+  await page.getByRole('button', { name: 'Investigations', exact: true }).click();
+  await expect(summary.getByRole('button', { name: 'Request an owner' })).toBeVisible();
+  await summary.getByRole('button', { name: 'Request an owner' }).click();
+  await expect(summary).toContainText('Status: Awaiting maintenance acceptance');
+  await expect(summary).toContainText('Owner: Maintenance — not yet accepted');
+  await expect(summary).toContainText('Next: Accept ownership');
+  await expect(summary.getByRole('button', { name: 'Accept ownership' })).toBeVisible();
+  await expect(summary.getByRole('button', { name: 'Request an owner' })).toHaveCount(0);
+  await contextUnderHeader(page);
+  await page.screenshot({ path: `${shots}/04-investigation-after.png`, fullPage: false });
 
   await menu.getByRole('button', { name: 'New conversation' }).click();
   await expect(page.locator('article.ekas-captured-reply')).toHaveCount(0);
@@ -151,7 +178,18 @@ test('plant shell walk-through of the closure screens', async ({ page }) => {
   expect(reviewText).not.toContain('Synthetic captured answer');
   await aboveComposer(page, scorecard);
   await contextUnderHeader(page);
+  const composer = page.locator('form.ekas-composer');
+  await expect(composer).toBeVisible();
+  await expect(page.getByLabel('Ask EKAS')).toHaveValue('');
+  const composerBox = await composer.boundingBox();
+  const viewport = page.viewportSize();
+  expect(composerBox, 'composer box').toBeTruthy();
+  expect(composerBox!.y).toBeGreaterThan(120);
+  expect(composerBox!.y + composerBox!.height).toBeLessThanOrEqual((viewport?.height || 900) + 1);
+  await expect(scorecard.locator('table')).toContainText('2,154');
+  await expect(scorecard.locator('table')).toContainText('2,304');
   await page.screenshot({ path: `${shots}/03-plant-review.png`, fullPage: false });
+  await page.screenshot({ path: `${shots}/03-plant-review-composer.png`, fullPage: false });
 
   await page.evaluate(() => { document.documentElement.style.zoom = '1.5'; });
   await aboveComposer(page, scorecard);
