@@ -144,7 +144,8 @@ export function overviewCopy(v:(CaseLike&{events?:{id:string}[]|null;hypotheses?
  const life=lifecycleState(v);
  const stops=(v.events||[]).filter(event=>/^stop-/i.test(event.id)).length;
  const hypotheses=v.hypotheses?.length||0;
- return [impactLine(v),`Status is ${life.status}.`,`Owner is ${life.owner}.`,stops?`${stops.toLocaleString('en-US')} stops are recorded.`:'',hypotheses?`${hypotheses.toLocaleString('en-US')} hypotheses are recorded.`:'No hypothesis is recorded.'].filter(Boolean).join(' ');
+ const impact=impactLine(v).replace(/[.!?]$/,'');
+ return [`${impact}.`,`Status: ${life.status}.`,`Owner: ${life.owner}.`,stops?`${stops.toLocaleString('en-US')} stops are recorded.`:'',hypotheses?`${hypotheses.toLocaleString('en-US')} hypotheses are recorded.`:'No hypothesis is recorded.'].filter(Boolean).join(' ');
 }
 
 /** Group a count. Leave years, dates, and identifiers alone. */

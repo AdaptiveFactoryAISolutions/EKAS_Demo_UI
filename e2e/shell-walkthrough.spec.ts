@@ -21,6 +21,53 @@ async function aboveComposer(page: Page, target: Locator) {
   expect(content!.y + content!.height).toBeLessThanOrEqual(composer!.y + 1);
 }
 
+async function identityAboveAction(page: Page, summary: Locator, buttonName: string) {
+  await page.evaluate(() => {
+    const main = document.querySelector<HTMLElement>('[aria-label="Workspace content"]');
+    if (main) main.scrollTop = 0;
+  });
+  const button = summary.getByRole('button', { name: buttonName });
+  await expect(button).toBeVisible();
+  const buttonBox = await button.boundingBox();
+  const viewport = page.viewportSize();
+  expect(buttonBox, 'next action button').toBeTruthy();
+  expect(buttonBox!.y).toBeGreaterThanOrEqual(0);
+  expect(buttonBox!.y + buttonBox!.height).toBeLessThanOrEqual((viewport?.height || 700) + 1);
+  const lines = summary.locator('.ekas-invest-head > p');
+  await expect(lines).toHaveCount(5);
+  const bar = await page.getByRole('region', { name: 'Current investigation context' }).boundingBox();
+  for (let index = 0; index < 5; index += 1) {
+    const box = await lines.nth(index).boundingBox();
+    expect(box, `identity line ${index}`).toBeTruthy();
+    expect(box!.height).toBeGreaterThan(8);
+    expect(box!.y).toBeGreaterThanOrEqual((bar?.y || 0) + (bar?.height || 0) - 1);
+    expect(box!.y + box!.height).toBeLessThanOrEqual(buttonBox!.y + 1);
+    expect(box!.x).toBeGreaterThanOrEqual(-1);
+    expect(box!.x + box!.width).toBeLessThanOrEqual((viewport?.width || 320) + 1);
+  }
+}
+
+async function composerInView(page: Page) {
+  const field = page.getByLabel('Ask EKAS');
+  const send = page.getByRole('button', { name: 'Send' });
+  const hint = page.getByText('Enter to send');
+  const viewport = page.viewportSize();
+  await expect(field).toBeVisible();
+  await expect(send).toBeVisible();
+  await expect(hint).toBeVisible();
+  for (const locator of [field, send, hint]) {
+    const box = await locator.boundingBox();
+    expect(box).toBeTruthy();
+    expect(box!.y).toBeGreaterThanOrEqual(0);
+    expect(box!.y + box!.height).toBeLessThanOrEqual((viewport?.height || 700) + 1);
+    expect(box!.x).toBeGreaterThanOrEqual(-1);
+    expect(box!.x + box!.width).toBeLessThanOrEqual((viewport?.width || 320) + 1);
+  }
+  expect((await field.boundingBox())!.width).toBeGreaterThan(140);
+  const main = await page.locator('[aria-label="Workspace content"]').evaluate((el) => ({ sw: el.scrollWidth, cw: el.clientWidth }));
+  expect(main.sw).toBeLessThanOrEqual(main.cw + 1);
+}
+
 async function contextUnderHeader(page: Page) {
   const bar = page.getByRole('region', { name: 'Current investigation context' });
   await expect(bar).toBeVisible();
@@ -89,11 +136,10 @@ test('plant shell walk-through of the closure screens', async ({ page }) => {
   await page.getByRole('button', { name: 'Investigations', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Investigations' })).toBeVisible();
   const summary = page.getByRole('region', { name: 'Investigation summary' });
-  await expect(summary).toContainText('150 units below plan');
+  await expect(summary).toContainText('150 units below plan. Status: No owner requested. Owner: Not assigned. 12 stops are recorded. No hypothesis is recorded.');
   await expect(summary).toContainText('Status: No owner requested');
   await expect(summary).toContainText('Owner: Not assigned');
   await expect(summary).toContainText('Next: Request an owner');
-  await expect(summary).toContainText('No hypothesis is recorded.');
   await expect(summary).not.toContainText('Use the sections');
   await expect(summary).not.toContainText('Start with the feeder-jam');
   await expect(summary.getByRole('tab', { name: 'Evidence' })).toBeVisible();
@@ -112,17 +158,10 @@ test('plant shell walk-through of the closure screens', async ({ page }) => {
   await expect(summary.getByRole('tab')).toHaveCount(0);
   await expect(summary.getByRole('button', { name: 'Request an owner' })).toBeVisible();
   await expect(summary).toContainText('Next: Request an owner');
+  await identityAboveAction(page, summary, 'Request an owner');
   const field = page.getByLabel('Ask EKAS');
   const send = page.getByRole('button', { name: 'Send' });
-  await field.scrollIntoViewIfNeeded();
-  await expect(send).toBeVisible();
-  const fieldBox = await field.boundingBox();
-  const sendBox = await send.boundingBox();
-  expect(fieldBox, 'composer field').toBeTruthy();
-  expect(sendBox, 'send button').toBeTruthy();
-  expect(fieldBox!.width).toBeGreaterThan(140);
-  expect(sendBox!.x).toBeGreaterThanOrEqual(0);
-  expect(sendBox!.x + sendBox!.width).toBeLessThanOrEqual(322);
+  await composerInView(page);
   await contextUnderHeader(page);
   await page.screenshot({ path: `${shots}/04-investigation-320.png`, fullPage: false });
   await page.setViewportSize({ width: 1440, height: 900 });
@@ -157,6 +196,7 @@ test('plant shell walk-through of the closure screens', async ({ page }) => {
   await page.getByRole('button', { name: 'Investigations', exact: true }).click();
   await expect(summary.getByRole('button', { name: 'Request an owner' })).toBeVisible();
   await summary.getByRole('button', { name: 'Request an owner' }).click();
+  await expect(summary).toContainText('150 units below plan. Status: Awaiting maintenance acceptance. Owner: Maintenance — not yet accepted. 12 stops are recorded. No hypothesis is recorded.');
   await expect(summary).toContainText('Status: Awaiting maintenance acceptance');
   await expect(summary).toContainText('Owner: Maintenance — not yet accepted');
   await expect(summary).toContainText('Next: Accept ownership');
@@ -164,6 +204,14 @@ test('plant shell walk-through of the closure screens', async ({ page }) => {
   await expect(summary.getByRole('button', { name: 'Request an owner' })).toHaveCount(0);
   await contextUnderHeader(page);
   await page.screenshot({ path: `${shots}/04-investigation-after.png`, fullPage: false });
+  await page.setViewportSize({ width: 320, height: 700 });
+  await expect(page.getByLabel('Investigation section', { exact: true })).toBeVisible();
+  await expect(summary.getByRole('tab')).toHaveCount(0);
+  await identityAboveAction(page, summary, 'Accept ownership');
+  await composerInView(page);
+  await contextUnderHeader(page);
+  await page.screenshot({ path: `${shots}/04-investigation-320-after.png`, fullPage: false });
+  await page.setViewportSize({ width: 1440, height: 900 });
 
   await menu.getByRole('button', { name: 'New conversation' }).click();
   await expect(page.locator('article.ekas-captured-reply')).toHaveCount(0);

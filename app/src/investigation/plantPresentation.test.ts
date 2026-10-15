@@ -1,6 +1,6 @@
 import {expect,it} from 'vitest';
 import {fixtureCase} from './cases';
-import {documentLine,eventLine,groupThousands,humanScopeWhen,lifecycleState,nextLifecycleCommand,presentDocuments,snapshotLabel} from './plantPresentation';
+import {documentLine,eventLine,groupThousands,humanScopeWhen,lifecycleState,nextLifecycleCommand,overviewCopy,presentDocuments,snapshotLabel} from './plantPresentation';
 
 it('reads the next step from the saved owner and does not invent one',()=>{
  expect(lifecycleState({title:'Northworks feeder-jam plan miss',owner:{requested:null,accepted:null},action:{status:'draft'}})).toEqual({status:'No owner requested',owner:'Not assigned',next:'Request an owner'});
@@ -44,4 +44,12 @@ it('describes a stop from its own minutes, asset, and UTC day',()=>{
 
 it('prints the synthetic snapshot in UTC',()=>{
  expect(snapshotLabel('2026-10-06T14:45:00Z')).toBe('Snapshot: Oct 6, 2026 · 2:45 PM UTC · Synthetic');
+});
+
+it('separates overview facts into sentences taken from the case',()=>{
+ const fresh={title:'Northworks feeder-jam plan miss',owner:{requested:null,accepted:null},action:{status:'draft'},goal:{gap:150},events:Array.from({length:12},(_,index)=>({id:'stop-'+String(index+1).padStart(2,'0')})),hypotheses:[]};
+ expect(overviewCopy(fresh)).toBe('150 units below plan. Status: No owner requested. Owner: Not assigned. 12 stops are recorded. No hypothesis is recorded.');
+ const requested={...fresh,owner:{requested:'maintenance',accepted:null}};
+ expect(overviewCopy(requested)).toBe('150 units below plan. Status: Awaiting maintenance acceptance. Owner: Maintenance — not yet accepted. 12 stops are recorded. No hypothesis is recorded.');
+ expect(overviewCopy({title:'Open case',goal:{gap:null}})).toBe('Plan gap is not available at this cutoff. Status: No owner requested. Owner: Not assigned. No hypothesis is recorded.');
 });
