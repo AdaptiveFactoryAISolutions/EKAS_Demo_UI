@@ -76,7 +76,7 @@ test('plant shell walk-through of the six acceptance states', async ({ page }) =
     expect(at, label).toBeGreaterThan(cursor);
     cursor = at;
   }
-  expect(evidenceText.indexOf('Saved with this reply')).toBeGreaterThan(evidenceText.indexOf('Relevant evidence'));
+  expect(evidenceText).not.toContain('Saved with this reply');
   await page.screenshot({ path: `${shots}/05-evidence.png`, fullPage: true });
   await page.keyboard.press('Escape');
 
