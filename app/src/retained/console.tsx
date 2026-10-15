@@ -101,7 +101,7 @@ export function Console({content,onNavigate,workspaceTools,plantMode}:{content?:
   if(useEkas.persist.getStatus()==="loading")return <main aria-label="Loading saved workspace"><p>Loading and validating saved local data…</p></main>;
   let lastGroup = "";
   return (
-    <div className="min-h-screen bg-bg text-fg">
+    <div className={"min-h-screen bg-bg text-fg"+(plantMode?" retained-plant-shell":"")}>
       <Toaster theme="dark" /><PersistenceStatus quiet={!!plantMode}/>{!plantMode&&<FixtureSelector/>}
       <header ref={headerRef} className="retained-header sticky top-0 z-30 border-b border-line bg-bg">
         {alertOn && !plantMode && (
@@ -144,7 +144,7 @@ export function Console({content,onNavigate,workspaceTools,plantMode}:{content?:
           </details>
         </div>
       </header>
-      <div className="md:grid md:grid-cols-[220px_1fr]">
+      <div className="retained-shell-body md:grid md:grid-cols-[220px_1fr]">
         <aside style={{'--retained-menu-top':menuTop+'px'} as CSSProperties} aria-label="Template sidebar navigation" className={navOpen ? "border-line bg-surface p-3 md:block md:border-r" : "hidden border-line bg-surface p-3 md:block md:border-r"}>
           {plantMode?<button className="mb-2 min-h-11 w-full rounded-lg bg-primary text-sm font-semibold text-primary-fg" onClick={()=>{void beginNewConversation();plantMode.onArea('Brief');useEkas.setState({navOpen:false})}}>New conversation</button>:<button className="mb-2 min-h-11 w-full rounded-lg bg-primary text-sm font-semibold text-primary-fg" onClick={() => useEkas.setState({ createOpen: true })}>Create</button>}
           {plantMode?[{id:"Brief",label:"Chat"},{id:"Dashboards",label:"Dashboards"},{id:"Explore",label:"Investigations"},{id:"Improvements",label:"Improvements"},{id:"Knowledge",label:"Knowledge"},...(plantMode.engineering?[{id:"Administration",label:"Administration"}]:[])].map(item=><div key={item.id}><button className={plantMode.area===item.id||(item.id==="Dashboards"&&plantMode.area==="Metrics")?"min-h-11 w-full rounded-lg bg-surface-2 px-2 text-left text-sm":"min-h-11 w-full rounded-lg px-2 text-left text-sm text-muted"} aria-current={plantMode.area===item.id?"page":undefined} onClick={()=>{plantMode.onArea(item.id);useEkas.setState({navOpen:false})}}>{item.label}</button></div>):nav.map((item) => {

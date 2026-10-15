@@ -253,3 +253,14 @@ body:has(.retained-console),body:has(.retained-console)>#root{min-width:0;max-wi
 /* Captured source labels remain readable in the native Grid at narrow widths. */
 .manufacturing-evidence .hcg-cell.ekas-evidence-label{white-space:normal!important;overflow-wrap:anywhere;text-overflow:clip;line-height:1.35;vertical-align:top}
 nav[aria-label="Template header navigation"]:empty{display:none}
+
+/* Plant shell: header, navigation, then the context bar. The header does not cover the context. */
+.retained-plant-shell{height:100dvh;max-height:100dvh;display:flex;flex-direction:column;overflow:hidden}
+.retained-plant-shell .retained-header{position:static;top:auto;flex:none;z-index:30}
+.retained-plant-shell .retained-shell-body{flex:1 1 auto;min-height:0;overflow:hidden}
+.retained-plant-shell .retained-shell-body>main{min-height:0;overflow:auto;padding-top:0}
+.retained-plant-shell .ekas-context{position:sticky;top:0;z-index:12;background:#0b1220}
+@media(max-width:767px){
+ .retained-plant-shell .retained-header{position:static;top:auto}
+ .retained-plant-shell .ekas-context{position:sticky;top:0}
+}

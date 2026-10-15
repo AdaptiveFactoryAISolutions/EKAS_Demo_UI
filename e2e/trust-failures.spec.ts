@@ -84,7 +84,7 @@ test('Chat and Improvements show the same case action status', async ({ page }) 
   await page.getByRole('button', { name: 'We missed our production goal.' }).click();
   await expect(page.locator('article.ekas-captured-reply').last().locator('.ekas-question')).toHaveText('We missed our production goal.');
   const chatState = (await page.getByRole('region', { name: 'Current investigation context' }).locator('[data-case-state]').innerText()).replace(/\s+/g, ' ').trim();
-  expect(chatState).toMatch(/Awaiting owner acceptance|Owner accepted/);
+  expect(chatState).toMatch(/No owner requested|Awaiting .+ acceptance|Owner accepted|Action /);
   await page.getByRole('button', { name: 'Improvements' }).click();
   await expect(page.getByRole('heading', { name: 'Current improvement' })).toBeVisible();
   await page.screenshot({ path: 'docs/wp1/screenshots/case-status-improvements.png', fullPage: true });

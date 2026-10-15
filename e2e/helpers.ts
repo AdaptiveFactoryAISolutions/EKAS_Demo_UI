@@ -12,7 +12,8 @@ export async function lastAnswer(page: Page) {
   const article = page.locator('article.ekas-captured-reply').last();
   await expect(article).toBeVisible();
   const text = await article.innerText();
-  return (text.split('Synthetic captured answer')[1] ?? text).split('Captured synthetic snapshot')[0].trim();
+  const afterSpeaker = text.split(/\nEKAS\n/)[1] ?? text;
+  return afterSpeaker.split(/\nSnapshot:/)[0].trim();
 }
 
 export function assetOrder(text: string) {
