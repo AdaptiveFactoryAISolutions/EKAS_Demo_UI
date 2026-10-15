@@ -7,7 +7,7 @@ test('plant shell walk-through of the six acceptance states', async ({ page }) =
   await expect(page.getByRole('heading', { name: 'Chat' })).toBeVisible();
   await expect(page.getByRole('button', { name: 'Administration' })).toHaveCount(0);
   await expect(page.getByRole('button', { name: 'Advanced tools' })).toHaveCount(0);
-  const menu = page.getByRole('navigation', { name: 'Template sidebar navigation' });
+  const menu = page.getByRole('complementary', { name: 'Template sidebar navigation' });
   for (const area of ['Chat', 'Dashboards', 'Investigations', 'Improvements', 'Knowledge']) {
     await expect(menu.getByRole('button', { name: area, exact: true })).toBeVisible();
   }
