@@ -7230,7 +7230,7 @@
       "kind": "obligation",
       "sourceInventory": "ux36",
       "text": "No silent metric/plant substitution exists.",
-      "status": "VERIFY",
+      "status": "FIX",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -7240,6 +7240,10 @@
         {
           "path": "../ekas-v106-guide-prerequisite-working/V106-REVIEW-HANDOFF.md",
           "qualification": "Historical corrective baseline only; not current final-build acceptance."
+        },
+        {
+          "path": "docs/wp1/screenshots",
+          "qualification": "Reproduced in Chrome at http://127.0.0.1:18191/ on working tree 711b7027e59fb128f57df535dfbc9ac23053167a6276da4a870d88d8899d805d, 2026-10-15. Why did we miss production yesterday? returns TP-S1 and TP-S2 training good units, and OEE by machine in March 2025 returns the 2026 monthly cohort."
         }
       ],
       "finalAcceptanceCase": {
@@ -7268,7 +7272,7 @@
       "kind": "atomic-criterion",
       "parent": "N04",
       "text": "Unknown requested scope/metric/finance/period packets contain no default numeric substitution.",
-      "status": "VERIFY",
+      "status": "FIX",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -7280,6 +7284,10 @@
             "COMPILED"
           ],
           "qualification": "Original historical evidence retained, final-build acceptance still required."
+        },
+        {
+          "path": "docs/wp1/screenshots",
+          "qualification": "Reproduced in Chrome at http://127.0.0.1:18191/ on working tree 711b7027e59fb128f57df535dfbc9ac23053167a6276da4a870d88d8899d805d, 2026-10-15. OEE by machine in March 2025 answers \"Machine 1's March OEE was 83.33%\" from the separate 2026 monthly cohort. Alias REVIEW155-029."
         }
       ],
       "finalAcceptanceCase": {
@@ -7291,7 +7299,10 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-029"
+      ]
     },
     {
       "id": "N04.02",
@@ -7321,14 +7332,17 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-027"
+      ]
     },
     {
       "id": "N04.03",
       "kind": "atomic-criterion",
       "parent": "N04",
       "text": "Combined model arbitrary-scope phrases and current UI exposure prevent all silent substitutions.",
-      "status": "VERIFY",
+      "status": "FIX",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -7338,6 +7352,10 @@
         {
           "references": [],
           "qualification": "Original historical evidence retained, final-build acceptance still required."
+        },
+        {
+          "path": "docs/wp1/screenshots",
+          "qualification": "Reproduced in Chrome at http://127.0.0.1:18191/ on working tree 711b7027e59fb128f57df535dfbc9ac23053167a6276da4a870d88d8899d805d, 2026-10-15. Why did we miss production yesterday? answers TP-S1: Good units 7,590 and TP-S2: Good units 4,098 from training-plant-v1. The context bar says Training. Aliases REVIEW155-019, REVIEW155-024, REVIEW155-053."
         }
       ],
       "finalAcceptanceCase": {
@@ -7349,7 +7367,12 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-019",
+        "REVIEW155-024",
+        "REVIEW155-053"
+      ]
     },
     {
       "id": "N05",
@@ -7705,7 +7728,11 @@
       "disposition": {
         "localDemo": "Required final exact-candidate verification is unperformed or incomplete; this label does not assert a demonstrated code defect is closed.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-001",
+        "REVIEW155-013"
+      ]
     },
     {
       "id": "N07.03",
@@ -7740,7 +7767,7 @@
       "kind": "obligation",
       "sourceInventory": "ux36",
       "text": "Sticky context is controlled.",
-      "status": "VERIFY",
+      "status": "FIX",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -7750,6 +7777,10 @@
         {
           "path": "../ekas-v106-guide-prerequisite-working/V106-REVIEW-HANDOFF.md",
           "qualification": "Historical corrective baseline only; not current final-build acceptance."
+        },
+        {
+          "path": "docs/wp1/screenshots",
+          "qualification": "Reproduced in Chrome at http://127.0.0.1:18191/ on working tree 711b7027e59fb128f57df535dfbc9ac23053167a6276da4a870d88d8899d805d, 2026-10-15. What is quality on TP-S1? retains that unknown asset, and Show quality for Machine 1 is then refused as Requested: TP-S1."
         }
       ],
       "finalAcceptanceCase": {
@@ -7838,7 +7869,7 @@
       "kind": "atomic-criterion",
       "parent": "N08",
       "text": "Sticky collectors/drafts/role/period/version across every contextchange refuseorreset precisely.",
-      "status": "VERIFY",
+      "status": "FIX",
       "implementation": [
         "app/src/investigation/CanonicalWorkspace.tsx",
         "app/src/investigation/service.ts",
@@ -7848,6 +7879,10 @@
         {
           "references": [],
           "qualification": "Original historical evidence retained, final-build acceptance still required."
+        },
+        {
+          "path": "docs/wp1/screenshots",
+          "qualification": "Reproduced in Chrome at http://127.0.0.1:18191/ on working tree 711b7027e59fb128f57df535dfbc9ac23053167a6276da4a870d88d8899d805d, 2026-10-15. What is quality on TP-S1? followed by Show quality for Machine 1 keeps the TP-S1 clarification and withholds Machine 1. Aliases REVIEW155-022 and REVIEW155-032."
         }
       ],
       "finalAcceptanceCase": {
@@ -7859,7 +7894,11 @@
       "disposition": {
         "localDemo": "Required unless an explicitly identified production-only facet is separately deferred.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-022",
+        "REVIEW155-032"
+      ]
     },
     {
       "id": "N09",
@@ -11843,7 +11882,10 @@
         "source": "5161d735",
         "outcome": "PARTIAL",
         "currentSuccessorAcceptanceNotInferred": true
-      }
+      },
+      "aliases": [
+        "REVIEW155-070"
+      ]
     },
     {
       "id": "F002",
@@ -11883,7 +11925,10 @@
         "source": "5161d735",
         "outcome": "COMPLETE_LOCAL",
         "currentSuccessorAcceptanceNotInferred": true
-      }
+      },
+      "aliases": [
+        "REVIEW155-071"
+      ]
     },
     {
       "id": "F003",
@@ -11924,7 +11969,12 @@
         "source": "5161d735",
         "outcome": "COMPLETE_LOCAL",
         "currentSuccessorAcceptanceNotInferred": true
-      }
+      },
+      "aliases": [
+        "REVIEW155-007",
+        "REVIEW155-026",
+        "REVIEW155-072"
+      ]
     },
     {
       "id": "F004",
@@ -11964,7 +12014,10 @@
         "source": "5161d735",
         "outcome": "COMPLETE_LOCAL",
         "currentSuccessorAcceptanceNotInferred": true
-      }
+      },
+      "aliases": [
+        "REVIEW155-073"
+      ]
     },
     {
       "id": "F005",
@@ -12004,7 +12057,10 @@
         "source": "5161d735",
         "outcome": "COMPLETE_LOCAL",
         "currentSuccessorAcceptanceNotInferred": true
-      }
+      },
+      "aliases": [
+        "REVIEW155-074"
+      ]
     },
     {
       "id": "F006",
@@ -12044,7 +12100,11 @@
         "source": "5161d735",
         "outcome": "COMPLETE_LOCAL",
         "currentSuccessorAcceptanceNotInferred": true
-      }
+      },
+      "aliases": [
+        "REVIEW155-003",
+        "REVIEW155-075"
+      ]
     },
     {
       "id": "F007",
@@ -12084,7 +12144,10 @@
         "source": "5161d735",
         "outcome": "COMPLETE_LOCAL",
         "currentSuccessorAcceptanceNotInferred": true
-      }
+      },
+      "aliases": [
+        "REVIEW155-076"
+      ]
     },
     {
       "id": "F008",
@@ -12124,7 +12187,10 @@
         "source": "5161d735",
         "outcome": "COMPLETE_LOCAL",
         "currentSuccessorAcceptanceNotInferred": true
-      }
+      },
+      "aliases": [
+        "REVIEW155-077"
+      ]
     },
     {
       "id": "F009",
@@ -12165,7 +12231,10 @@
         "outcome": "COMPLETE LOCAL",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-NEXT-TEN-COMPLETIONS.md",
         "qualification": "Stated local path only; independent report uses supplied source identity; status unchanged pending full acceptance."
-      }
+      },
+      "aliases": [
+        "REVIEW155-078"
+      ]
     },
     {
       "id": "F010",
@@ -12205,7 +12274,10 @@
         "source": "5161d735",
         "outcome": "COMPLETE_LOCAL",
         "currentSuccessorAcceptanceNotInferred": true
-      }
+      },
+      "aliases": [
+        "REVIEW155-079"
+      ]
     },
     {
       "id": "F011",
@@ -12245,7 +12317,10 @@
         "source": "5161d735",
         "outcome": "PARTIAL",
         "currentSuccessorAcceptanceNotInferred": true
-      }
+      },
+      "aliases": [
+        "REVIEW155-080"
+      ]
     },
     {
       "id": "F012",
@@ -12285,7 +12360,10 @@
         "source": "5161d735",
         "outcome": "COMPLETE_LOCAL",
         "currentSuccessorAcceptanceNotInferred": true
-      }
+      },
+      "aliases": [
+        "REVIEW155-081"
+      ]
     },
     {
       "id": "F013",
@@ -12326,7 +12404,10 @@
         "outcome": "COMPLETE LOCAL",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-NEXT-TEN-COMPLETIONS.md",
         "qualification": "Stated local path only; independent report uses supplied source identity; status unchanged pending full acceptance."
-      }
+      },
+      "aliases": [
+        "REVIEW155-082"
+      ]
     },
     {
       "id": "F014",
@@ -12366,7 +12447,10 @@
         "source": "5161d735",
         "outcome": "COMPLETE_LOCAL_TERMINAL_REFUSAL",
         "currentSuccessorAcceptanceNotInferred": true
-      }
+      },
+      "aliases": [
+        "REVIEW155-083"
+      ]
     },
     {
       "id": "F015",
@@ -12397,7 +12481,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-084"
+      ]
     },
     {
       "id": "F016",
@@ -12428,7 +12515,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-085"
+      ]
     },
     {
       "id": "F017",
@@ -12465,7 +12555,10 @@
         "outcome": "COMPLETE LOCAL",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-NEXT-TEN-COMPLETIONS.md",
         "qualification": "Stated local path only; independent report uses supplied source identity; status unchanged pending full acceptance."
-      }
+      },
+      "aliases": [
+        "REVIEW155-086"
+      ]
     },
     {
       "id": "F018",
@@ -12502,7 +12595,10 @@
         "outcome": "COMPLETE LOCAL",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-NEXT-TEN-COMPLETIONS.md",
         "qualification": "Stated local path only; independent report uses supplied source identity; status unchanged pending full acceptance."
-      }
+      },
+      "aliases": [
+        "REVIEW155-087"
+      ]
     },
     {
       "id": "F019",
@@ -12539,7 +12635,10 @@
         "outcome": "COMPLETE LOCAL",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-NEXT-TEN-COMPLETIONS.md",
         "qualification": "Stated local path only; independent report uses supplied source identity; status unchanged pending full acceptance."
-      }
+      },
+      "aliases": [
+        "REVIEW155-088"
+      ]
     },
     {
       "id": "F020",
@@ -12576,7 +12675,10 @@
         "outcome": "COMPLETE LOCAL",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-NEXT-TEN-COMPLETIONS.md",
         "qualification": "Stated local path only; independent report uses supplied source identity; status unchanged pending full acceptance."
-      }
+      },
+      "aliases": [
+        "REVIEW155-089"
+      ]
     },
     {
       "id": "F021",
@@ -12613,7 +12715,10 @@
         "outcome": "COMPLETE LOCAL",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-NEXT-TEN-COMPLETIONS.md",
         "qualification": "Stated local path only; independent report uses supplied source identity; status unchanged pending full acceptance."
-      }
+      },
+      "aliases": [
+        "REVIEW155-090"
+      ]
     },
     {
       "id": "F022",
@@ -12650,7 +12755,10 @@
         "outcome": "COMPLETE LOCAL",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-NEXT-TEN-COMPLETIONS.md",
         "qualification": "Stated local path only; independent report uses supplied source identity; status unchanged pending full acceptance."
-      }
+      },
+      "aliases": [
+        "REVIEW155-091"
+      ]
     },
     {
       "id": "F023",
@@ -12687,7 +12795,10 @@
         "outcome": "COMPLETE LOCAL",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-NEXT-TEN-COMPLETIONS.md",
         "qualification": "Stated local path only; independent report uses supplied source identity; status unchanged pending full acceptance."
-      }
+      },
+      "aliases": [
+        "REVIEW155-092"
+      ]
     },
     {
       "id": "F024",
@@ -12724,7 +12835,10 @@
         "outcome": "COMPLETE LOCAL",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-NEXT-TEN-COMPLETIONS.md",
         "qualification": "Stated local path only; independent report uses supplied source identity; status unchanged pending full acceptance."
-      }
+      },
+      "aliases": [
+        "REVIEW155-093"
+      ]
     },
     {
       "id": "F025",
@@ -12761,7 +12875,10 @@
         "outcome": "COMPLETE LOCAL",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-NEXT-TEN-COMPLETIONS.md",
         "qualification": "Stated local path only; independent report uses supplied source identity; status unchanged pending full acceptance."
-      }
+      },
+      "aliases": [
+        "REVIEW155-094"
+      ]
     },
     {
       "id": "F026",
@@ -12798,7 +12915,10 @@
         "outcome": "COMPLETE LOCAL",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-F026-ONWARD-COMPLETIONS.md",
         "qualification": "Stated local exposed path; supplied source identity; status not promoted DONE."
-      }
+      },
+      "aliases": [
+        "REVIEW155-095"
+      ]
     },
     {
       "id": "F027",
@@ -12835,7 +12955,10 @@
         "outcome": "COMPLETE LOCAL",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-F026-ONWARD-COMPLETIONS.md",
         "qualification": "Stated local exposed path; supplied source identity; status not promoted DONE."
-      }
+      },
+      "aliases": [
+        "REVIEW155-096"
+      ]
     },
     {
       "id": "F028",
@@ -12872,7 +12995,10 @@
         "outcome": "COMPLETE LOCAL",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-F026-ONWARD-COMPLETIONS.md",
         "qualification": "Stated local exposed path; supplied source identity; status not promoted DONE."
-      }
+      },
+      "aliases": [
+        "REVIEW155-097"
+      ]
     },
     {
       "id": "F029",
@@ -12909,7 +13035,10 @@
         "outcome": "COMPLETE LOCAL",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-F026-ONWARD-COMPLETIONS.md",
         "qualification": "Stated local exposed path; supplied source identity; status not promoted DONE."
-      }
+      },
+      "aliases": [
+        "REVIEW155-098"
+      ]
     },
     {
       "id": "F030",
@@ -12946,7 +13075,10 @@
         "outcome": "COMPLETE LOCAL",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-F026-ONWARD-COMPLETIONS.md",
         "qualification": "Stated local exposed path; supplied source identity; status not promoted DONE."
-      }
+      },
+      "aliases": [
+        "REVIEW155-099"
+      ]
     },
     {
       "id": "F031",
@@ -12978,7 +13110,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-100"
+      ]
     },
     {
       "id": "F032",
@@ -13015,7 +13150,10 @@
         "outcome": "COMPLETE LOCAL",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-F026-ONWARD-COMPLETIONS.md",
         "qualification": "Stated local exposed path; supplied source identity; status not promoted DONE."
-      }
+      },
+      "aliases": [
+        "REVIEW155-101"
+      ]
     },
     {
       "id": "F033",
@@ -13052,7 +13190,10 @@
         "outcome": "COMPLETE LOCAL",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-F026-ONWARD-COMPLETIONS.md",
         "qualification": "Stated local exposed path; supplied source identity; status not promoted DONE."
-      }
+      },
+      "aliases": [
+        "REVIEW155-102"
+      ]
     },
     {
       "id": "F034",
@@ -13089,7 +13230,10 @@
         "outcome": "COMPLETE LOCAL",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-F026-ONWARD-COMPLETIONS.md",
         "qualification": "Stated local exposed path; supplied source identity; status not promoted DONE."
-      }
+      },
+      "aliases": [
+        "REVIEW155-103"
+      ]
     },
     {
       "id": "F035",
@@ -13126,7 +13270,10 @@
         "outcome": "COMPLETE LOCAL",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-F026-ONWARD-COMPLETIONS.md",
         "qualification": "Stated local exposed path; supplied source identity; status not promoted DONE."
-      }
+      },
+      "aliases": [
+        "REVIEW155-104"
+      ]
     },
     {
       "id": "F036",
@@ -13163,7 +13310,10 @@
         "outcome": "COMPLETE LOCAL",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-F026-ONWARD-COMPLETIONS.md",
         "qualification": "Stated local exposed path; supplied source identity; status not promoted DONE."
-      }
+      },
+      "aliases": [
+        "REVIEW155-105"
+      ]
     },
     {
       "id": "F037",
@@ -13194,7 +13344,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-106"
+      ]
     },
     {
       "id": "F038",
@@ -13231,7 +13384,10 @@
         "outcome": "COMPLETE LOCAL EXPOSED PATH",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-F037-ONWARD-COMPLETIONS.md",
         "qualification": "Scoped paths only; supplied source identity; not DONE/full acceptance."
-      }
+      },
+      "aliases": [
+        "REVIEW155-107"
+      ]
     },
     {
       "id": "F039",
@@ -13268,7 +13424,10 @@
         "outcome": "COMPLETE LOCAL EXPOSED PATH",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-F037-ONWARD-COMPLETIONS.md",
         "qualification": "Scoped paths only; supplied source identity; not DONE/full acceptance."
-      }
+      },
+      "aliases": [
+        "REVIEW155-108"
+      ]
     },
     {
       "id": "F040",
@@ -13305,7 +13464,10 @@
         "outcome": "COMPLETE LOCAL EXPOSED PATH",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-F037-ONWARD-COMPLETIONS.md",
         "qualification": "Scoped paths only; supplied source identity; not DONE/full acceptance."
-      }
+      },
+      "aliases": [
+        "REVIEW155-109"
+      ]
     },
     {
       "id": "F041",
@@ -13336,7 +13498,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-110"
+      ]
     },
     {
       "id": "F042",
@@ -13367,7 +13532,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-111"
+      ]
     },
     {
       "id": "F043",
@@ -13408,7 +13576,12 @@
         "outcome": "COMPLETE LOCAL EXPOSED PATH",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-F037-ONWARD-COMPLETIONS.md",
         "qualification": "Scoped paths only; supplied source identity; not DONE/full acceptance."
-      }
+      },
+      "aliases": [
+        "REVIEW155-039",
+        "REVIEW155-040",
+        "REVIEW155-112"
+      ]
     },
     {
       "id": "F044",
@@ -13449,7 +13622,10 @@
         "outcome": "COMPLETE LOCAL EXPOSED PATH",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-F037-ONWARD-COMPLETIONS.md",
         "qualification": "Scoped paths only; supplied source identity; not DONE/full acceptance."
-      }
+      },
+      "aliases": [
+        "REVIEW155-113"
+      ]
     },
     {
       "id": "F045",
@@ -13490,7 +13666,10 @@
         "outcome": "COMPLETE LOCAL EXPOSED PATH",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-F037-ONWARD-COMPLETIONS.md",
         "qualification": "Scoped paths only; supplied source identity; not DONE/full acceptance."
-      }
+      },
+      "aliases": [
+        "REVIEW155-114"
+      ]
     },
     {
       "id": "F046",
@@ -13525,7 +13704,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-115"
+      ]
     },
     {
       "id": "F047",
@@ -13566,7 +13748,10 @@
         "outcome": "COMPLETE LOCAL EXPOSED PATH",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-F037-ONWARD-COMPLETIONS.md",
         "qualification": "Scoped paths only; supplied source identity; not DONE/full acceptance."
-      }
+      },
+      "aliases": [
+        "REVIEW155-116"
+      ]
     },
     {
       "id": "F048",
@@ -13607,7 +13792,10 @@
         "outcome": "COMPLETE LOCAL EXPOSED PATH",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-F037-ONWARD-COMPLETIONS.md",
         "qualification": "Scoped paths only; supplied source identity; not DONE/full acceptance."
-      }
+      },
+      "aliases": [
+        "REVIEW155-117"
+      ]
     },
     {
       "id": "F049",
@@ -13648,7 +13836,10 @@
         "outcome": "COMPLETE LOCAL EXPOSED PATH",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-F037-ONWARD-COMPLETIONS.md",
         "qualification": "Scoped paths only; supplied source identity; not DONE/full acceptance."
-      }
+      },
+      "aliases": [
+        "REVIEW155-118"
+      ]
     },
     {
       "id": "F050",
@@ -13689,7 +13880,10 @@
         "outcome": "COMPLETE LOCAL EXPOSED PATH",
         "evidence": "evidence/native-next-ten-7e26/RC-7E26E707-F037-ONWARD-COMPLETIONS.md",
         "qualification": "Scoped paths only; supplied source identity; not DONE/full acceptance."
-      }
+      },
+      "aliases": [
+        "REVIEW155-119"
+      ]
     },
     {
       "id": "F051",
@@ -13730,7 +13924,10 @@
         "outcome": "COMPLETE LOCAL EXPOSED PATH",
         "evidence": "evidence/native-profile-notes-4b63/RC-4B63F361-F051-ONWARD-CHECKPOINT.md",
         "qualification": "Exact report cohort only; no status DONE/full85/production credit."
-      }
+      },
+      "aliases": [
+        "REVIEW155-120"
+      ]
     },
     {
       "id": "F052",
@@ -13771,7 +13968,10 @@
         "outcome": "COMPLETE LOCAL EXPOSED PATH",
         "evidence": "evidence/native-profile-notes-4b63/RC-4B63F361-F051-ONWARD-CHECKPOINT.md",
         "qualification": "Exact report cohort only; no status DONE/full85/production credit."
-      }
+      },
+      "aliases": [
+        "REVIEW155-121"
+      ]
     },
     {
       "id": "F053",
@@ -13806,7 +14006,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-122"
+      ]
     },
     {
       "id": "F054",
@@ -13841,7 +14044,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-123"
+      ]
     },
     {
       "id": "F055",
@@ -13882,7 +14088,11 @@
         "outcome": "COMPLETE LOCAL EXPOSED PATH",
         "evidence": "evidence/native-profile-notes-4b63/RC-4B63F361-F051-ONWARD-CHECKPOINT.md",
         "qualification": "Exact report cohort only; no status DONE/full85/production credit."
-      }
+      },
+      "aliases": [
+        "REVIEW155-046",
+        "REVIEW155-124"
+      ]
     },
     {
       "id": "F056",
@@ -13923,7 +14133,10 @@
         "outcome": "COMPLETE LOCAL EXPOSED PATH",
         "evidence": "evidence/native-profile-notes-4b63/RC-4B63F361-F051-ONWARD-CHECKPOINT.md",
         "qualification": "Exact report cohort only; no status DONE/full85/production credit."
-      }
+      },
+      "aliases": [
+        "REVIEW155-125"
+      ]
     },
     {
       "id": "F057",
@@ -13958,7 +14171,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-126"
+      ]
     },
     {
       "id": "F058",
@@ -13999,7 +14215,10 @@
         "outcome": "COMPLETE LOCAL EXPOSED PATH",
         "evidence": "evidence/native-profile-notes-4b63/RC-4B63F361-F051-ONWARD-CHECKPOINT.md",
         "qualification": "Exact report cohort only; no status DONE/full85/production credit."
-      }
+      },
+      "aliases": [
+        "REVIEW155-127"
+      ]
     },
     {
       "id": "F059",
@@ -14040,7 +14259,10 @@
         "outcome": "COMPLETE LOCAL EXPOSED PATH",
         "evidence": "evidence/native-profile-notes-4b63/RC-4B63F361-F051-ONWARD-CHECKPOINT.md",
         "qualification": "Exact report cohort only; no status DONE/full85/production credit."
-      }
+      },
+      "aliases": [
+        "REVIEW155-128"
+      ]
     },
     {
       "id": "F060",
@@ -14075,7 +14297,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-129"
+      ]
     },
     {
       "id": "F061",
@@ -14110,7 +14335,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-130"
+      ]
     },
     {
       "id": "F062",
@@ -14145,7 +14373,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-131"
+      ]
     },
     {
       "id": "F063",
@@ -14176,7 +14407,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-132"
+      ]
     },
     {
       "id": "F064",
@@ -14207,7 +14441,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-133"
+      ]
     },
     {
       "id": "F065",
@@ -14244,7 +14481,10 @@
         "outcome": "COMPLETE LOCAL EXPOSED PATH",
         "evidence": "evidence/native-profile-notes-4b63/RC-4B63F361-F051-ONWARD-CHECKPOINT.md",
         "qualification": "Exact report cohort only; no status DONE/full85/production credit."
-      }
+      },
+      "aliases": [
+        "REVIEW155-134"
+      ]
     },
     {
       "id": "F066",
@@ -14281,7 +14521,10 @@
         "outcome": "COMPLETE LOCAL EXPOSED PATH",
         "evidence": "evidence/native-profile-notes-4b63/RC-4B63F361-F051-ONWARD-CHECKPOINT.md",
         "qualification": "Exact report cohort only; no status DONE/full85/production credit."
-      }
+      },
+      "aliases": [
+        "REVIEW155-135"
+      ]
     },
     {
       "id": "F067",
@@ -14312,7 +14555,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-136"
+      ]
     },
     {
       "id": "F068",
@@ -14349,7 +14595,10 @@
         "outcome": "COMPLETE LOCAL EXPOSED PATH",
         "evidence": "evidence/native-profile-notes-4b63/RC-4B63F361-F051-ONWARD-CHECKPOINT.md",
         "qualification": "Exact report cohort only; no status DONE/full85/production credit."
-      }
+      },
+      "aliases": [
+        "REVIEW155-137"
+      ]
     },
     {
       "id": "F069",
@@ -14380,7 +14629,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-138"
+      ]
     },
     {
       "id": "F070",
@@ -14411,7 +14663,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-139"
+      ]
     },
     {
       "id": "F071",
@@ -14442,7 +14697,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-140"
+      ]
     },
     {
       "id": "F072",
@@ -14473,7 +14731,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-141"
+      ]
     },
     {
       "id": "F073",
@@ -14504,7 +14765,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-142"
+      ]
     },
     {
       "id": "F074",
@@ -14535,7 +14799,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-143"
+      ]
     },
     {
       "id": "F075",
@@ -14566,7 +14833,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-144"
+      ]
     },
     {
       "id": "F076",
@@ -14597,7 +14867,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-145"
+      ]
     },
     {
       "id": "F077",
@@ -14628,7 +14901,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-146"
+      ]
     },
     {
       "id": "F078",
@@ -14659,7 +14935,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-147"
+      ]
     },
     {
       "id": "F079",
@@ -14690,7 +14969,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-148"
+      ]
     },
     {
       "id": "F080",
@@ -14722,7 +15004,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-149"
+      ]
     },
     {
       "id": "F081",
@@ -14753,7 +15038,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-150"
+      ]
     },
     {
       "id": "F082",
@@ -14784,7 +15072,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-151"
+      ]
     },
     {
       "id": "F083",
@@ -14815,7 +15106,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-152"
+      ]
     },
     {
       "id": "F084",
@@ -14846,7 +15140,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-153"
+      ]
     },
     {
       "id": "F085",
@@ -14877,7 +15174,10 @@
       "disposition": {
         "localDemo": "Retain identity and verify its actual local behavior; mixed production facets cannot hide local obligations.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-154"
+      ]
     },
     {
       "id": "F003-CAPTURE",
@@ -15066,7 +15366,10 @@
       "disposition": {
         "localDemo": "Required known issue/acceptance action; not new unrelated scope.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-033"
+      ]
     },
     {
       "id": "ADMIN-LOCAL-SETUP",
@@ -15145,7 +15448,10 @@
       "disposition": {
         "localDemo": "Sanctioned public dummy-only preview identity/path implemented with distinct scope/cookie. Real modes/keys/history unavailable; normal owner/session/CSRF retained. Handler and paid gateway reject rehearsal authority even under deliberately miswired normal runtime. Positive native setup remains required.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-012"
+      ]
     },
     {
       "id": "MODEL-TOKEN-STREAMING",
@@ -15504,7 +15810,11 @@
       "finalAcceptanceCase": {
         "id": "JOURNEY-CONTEXT-01-FINAL",
         "expected": "Authoritative newtopiccontext matchesplantanswer/allbars/history; oldmonthlyturnsunchanged; nativeexactjourneyretetrequired."
-      }
+      },
+      "aliases": [
+        "REVIEW155-001",
+        "REVIEW155-013"
+      ]
     },
     {
       "id": "JOURNEY-FOCUS-01",
@@ -15549,7 +15859,10 @@
       "finalAcceptanceCase": {
         "id": "JOURNEY-FOCUS-01-FINAL",
         "expected": "Prioritize governed plant metric without asset confusion; preserve context and prior captures; exact native journey retest."
-      }
+      },
+      "aliases": [
+        "REVIEW155-023"
+      ]
     },
     {
       "id": "LIVE-OPERATION-STATUS-01",
@@ -16574,7 +16887,10 @@
       "disposition": {
         "localDemo": "Unresolved usability concern; source/compiled counts do not settle it.",
         "productionOnlyFacets": []
-      }
+      },
+      "aliases": [
+        "REVIEW155-004"
+      ]
     },
     {
       "id": "D68-UX-CANCEL-01",
@@ -16593,6 +16909,50 @@
       "finalAcceptanceCase": {
         "id": "D68-UX-CANCEL-01-FINAL",
         "expected": "Cancel deferred Save settings; Test connection and Enable remain held until fresh authoritative status succeeds."
+      }
+    },
+    {
+      "id": "FOLLOWUP-ORDER-01",
+      "kind": "independent-defect",
+      "text": "After a machine ranking, \"Now put the worst first\" keeps the previous order.",
+      "status": "FIX",
+      "aliases": [
+        "REVIEW155-021"
+      ],
+      "implementation": [
+        "app/src/platform/boundedFollowup.ts"
+      ],
+      "evidence": [
+        {
+          "path": "docs/wp1/screenshots/worst-first.png",
+          "qualification": "Reproduced in Chrome at http://127.0.0.1:18191/ on working tree 711b7027e59fb128f57df535dfbc9ac23053167a6276da4a870d88d8899d805d, 2026-10-15. Please rank the machines by descending OEE returns TP-A5, TP-A1, TP-A3, TP-A7. Now put the worst first repeats that order."
+        }
+      ],
+      "finalAcceptanceCase": {
+        "id": "FOLLOWUP-ORDER-01-FINAL",
+        "expected": "The follow-up ranking is the previous machine order reversed, or the product asks which order was meant."
+      }
+    },
+    {
+      "id": "PENDING-SUBMISSION-01",
+      "kind": "independent-defect",
+      "text": "Text typed while a reply is saving stays glued to the command already sent, so the next draft contains both.",
+      "status": "FIX",
+      "aliases": [
+        "REVIEW155-018"
+      ],
+      "implementation": [
+        "app/src/investigation/CanonicalWorkspace.tsx"
+      ],
+      "evidence": [
+        {
+          "path": "docs/wp1/screenshots/pending-draft.png",
+          "qualification": "Reproduced in Chrome at http://127.0.0.1:18191/ on working tree 711b7027e59fb128f57df535dfbc9ac23053167a6276da4a870d88d8899d805d, 2026-10-15. A newline typed while Send is aria-busy stays in the composer with the command already submitted."
+        }
+      ],
+      "finalAcceptanceCase": {
+        "id": "PENDING-SUBMISSION-01-FINAL",
+        "expected": "The in-flight command is snapshotted. Keystrokes during the save become the next draft and do not include the command already sent."
       }
     }
   ],
@@ -16843,7 +17203,13 @@
     "openCriteria": "evidence/CURRENT-OPEN-CRITERIA.json",
     "nativeAcceptance": false,
     "releaseReady": false,
-    "noNewSecurityReviewGate": true
+    "noNewSecurityReviewGate": true,
+    "wp1": {
+      "at": "2026-10-15T20:29:55Z",
+      "candidate": "711b7027e59fb128f57df535dfbc9ac23053167a6276da4a870d88d8899d805d",
+      "url": "http://127.0.0.1:18191/",
+      "note": "User-review rows remain in docs/GOAL-FEATURE-DESTINATION-MATRIX.csv. G01-G85 are aliases of F001-F085. Reproduced P0/P1 trust failures are FIX on the existing items plus FOLLOWUP-ORDER-01 and PENDING-SUBMISSION-01. No second register was added."
+    }
   },
   "isolatedOwnerUxSuccessor": {
     "identity": {

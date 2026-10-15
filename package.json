@@ -1,0 +1,13 @@
+{
+  "name": "ekas-demo-ui-e2e",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "e2e": "playwright test",
+    "e2e:trust": "playwright test e2e/trust-failures.spec.ts",
+    "e2e:smoke": "playwright test e2e/journey-smoke.spec.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1"
+  }
+}
