@@ -1,3 +1,4 @@
+if(typeof globalThis.ResizeObserver==='undefined'){globalThis.ResizeObserver=class{observe(){}unobserve(){}disconnect(){}};}
 import{mkdirSync,writeFileSync}from'node:fs';
 import{dirname,resolve}from'node:path';
 import{beforeAll,expect}from'vitest';

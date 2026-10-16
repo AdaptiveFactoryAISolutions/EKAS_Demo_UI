@@ -17789,7 +17789,11 @@
     "OpenAI": "Required server-side provider; no Ollama fallback.",
     "Tom": "Proposed local ports implemented; actual versioned API/auth/schema/error/CAS/idempotency/paging/stream conformance unverified and engineer-owned.",
     "selfContainedDemoDependency": "Unseen production backend is not an additional prerequisite to synthetic local behavior acceptance.",
-    "reference": "integration/TOM-CONFORMANCE-HANDOFF.md"
+    "reference": "integration/TOM-CONFORMANCE-HANDOFF.md",
+    "deferredProductionDependency": "Deferred production dependency: current EKAS_Platform_v2 main lacks the complete investigation/case/metrics contract required for full backend-connected EKAS behavior. Backend Gap Contract is defined. Adapter remains fail-closed. Live integration is not claimed.",
+    "backendMain": "473bdc0d2458fcffdbe516d220d4f88bcb2f1916",
+    "backendAdapterVerified": "NO",
+    "liveIntegrationVerified": "NO"
   },
   "reconciliation": {
     "at": "2026-10-15T18:52:24.732039+00:00",
@@ -17818,6 +17822,28 @@
       "at": "2026-10-15T21:00:00Z",
       "url": "http://127.0.0.1:18191/",
       "note": "VERIFY grew from 479 to 509 without grouping inventing rows. Before this accounting the register had 513 entries: VERIFY 479, USER ACTION 26, FIX 8. After the prior status pass it has 514 entries: VERIFY 509, USER ACTION 5, FIX 0. The +30 VERIFY count is 29 existing rows that changed status plus one inserted row. Status moves into VERIFY, all previously existing criteria: from USER ACTION M05.06, M23.03, M24.03, M25.04, M38.05, M40.04, M44, M44.02, M45, M45.01, M45.02, N02.04, N15.03, N17.03, N33, N33.02, N36, N36.01, N36.02, UNAIDED-120MIN-HUMAN, FINAL-INDEPENDENT-APPROVE; from FIX N04, N04.01, N04.03, N08, N08.03, D68-UX-CANCEL-01, FOLLOWUP-ORDER-01, PENDING-SUBMISSION-01. The only added row is REVIEW155-025, the technician-report criterion already present in docs/GOAL-FEATURE-DESTINATION-MATRIX.csv. No other register row states that criterion, so it is kept. No duplicate rows were removed. USER ACTION remains only a private key or paid authorization: M05.05, M44.03, N12.05, N33.03, LIVE-PRIVATE-KEY-AND-TEST. Contradictory case state stays VERIFY. Current EKAS_Platform_v2 main was retried on 2026-10-15 and is still HTTP 404 / repository not found for this credential. No mapping is VERIFIED against current main. Shell moves stay on existing rows: Chat and supporting views N01.01, N01.02, N02.01; one context bar N07; competing Advanced tools UX-COMPETING-WORKSPACES-01; composer N02.02 and M35.02; Administration ADMIN-LOCAL-SETUP; sample dataset label on the existing selector under N04.03 and N07. No new register row was added for the shell."
+    },
+    "wp5b": {
+      "status": "ACCEPTED",
+      "acceptedRevision": "e0074f2",
+      "acceptedRevisionFull": "e0074f2bd2e2ac1178b72b49535b4838a074bbc0",
+      "demoComplete": "can proceed independently",
+      "backendAdapterVerified": "NO",
+      "liveIntegrationVerified": "NO",
+      "adapter": "fails closed and does not fake unsupported operations",
+      "text": "Deferred production dependency: current EKAS_Platform_v2 main lacks the complete investigation/case/metrics contract required for full backend-connected EKAS behavior. Backend Gap Contract is defined. Adapter remains fail-closed. Live integration is not claimed."
+    },
+    "deferredProductionDependency": "Deferred production dependency: current EKAS_Platform_v2 main lacks the complete investigation/case/metrics contract required for full backend-connected EKAS behavior. Backend Gap Contract is defined. Adapter remains fail-closed. Live integration is not claimed.",
+    "wp6": {
+      "at": "2026-10-16T18:16:00Z",
+      "phase": "RC acceptance started; not approved",
+      "statusCounts": {
+        "VERIFY": 509,
+        "USER ACTION": 5
+      },
+      "productionOnlyFacetsDeferred": 7,
+      "fix": 0,
+      "note": "No new inventory row. FIX is 0. USER ACTION remains only the five Patrick-personal provider rows: M05.05, M44.03, N12.05, N33.03, LIVE-PRIVATE-KEY-AND-TEST. Existing productionOnlyFacets stay DEFERRED-PRODUCTION, including Tom conformance, and the local facet of those rows stays VERIFY. The WP5B backend contract gap is recorded verbatim as deferredProductionDependency. Local criteria stay VERIFY until this exact RC is tested and independently accepted. None is marked DONE by this accounting."
     }
   },
   "isolatedOwnerUxSuccessor": {
