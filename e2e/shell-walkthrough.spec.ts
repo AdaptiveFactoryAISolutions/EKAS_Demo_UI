@@ -208,7 +208,8 @@ test('plant shell walk-through of the closure screens', async ({ page }) => {
   await page.getByRole('button', { name: 'Investigations', exact: true }).click();
   await expect(summary.getByRole('button', { name: 'Record this hypothesis' })).toBeVisible();
   await summary.getByRole('button', { name: 'Record this hypothesis' }).click();
-  await expect(summary).toContainText('Hypothesis: 1 hypothesis is recorded.');
+  await expect(summary).toContainText('1 hypothesis is recorded.');
+  expect((await summary.innerText()).match(/1 hypothesis is recorded/g)).toHaveLength(1);
   await expect(summary).toContainText('Status: No owner requested');
   await expect(summary).toContainText('Owner: Not assigned');
   await expect(summary).toContainText('Next: Request an owner');

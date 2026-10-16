@@ -394,10 +394,12 @@ for (const journey of journeys) {
       if (turn.ask === 'Why did it reopen?') await expect(answer).toContainText(journey.id === 'quality' ? /92%/ : /minutes per eligible shift/);
       if (journey.id === 'quality' && turn.ask === 'What would prove it?') await expect(answer).toContainText(journey.prove);
       if (turn.ask === 'Did it work?') {
+        await page.evaluate(() => window.dispatchEvent(new WheelEvent('wheel', { deltaY: 1 })));
+        await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
         await page.evaluate(() => {
-          window.dispatchEvent(new WheelEvent('wheel', { deltaY: 1 }));
           const scroller = document.querySelector<HTMLElement>('[aria-label="Workspace content"]');
-          const reply = document.querySelector('article.ekas-captured-reply:last-of-type');
+          const replies = document.querySelectorAll('article.ekas-captured-reply');
+          const reply = replies[replies.length - 1];
           const context = document.querySelector('.ekas-context');
           if (!scroller || !reply || !context) return;
           scroller.scrollTop += reply.getBoundingClientRect().top - (context.getBoundingClientRect().bottom + 16);
