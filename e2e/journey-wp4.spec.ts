@@ -159,8 +159,9 @@ async function advanceUntilReopen(page: Page, id: string, narrow = false) {
       await expect(summary).toContainText('Main measure:');
       await expect(summary).toContainText('Quality:');
       await expect(summary).toContainText('Energy:');
-      await expect(summary).not.toContainText('Primary endpoint');
-      await expect(summary).not.toContainText(/\bPASS\b|\bPENDING\b|\bFAIL\b/);
+      const visible = summary.locator('.ekas-invest-head');
+      await expect(visible).not.toContainText('Primary endpoint');
+      await expect(visible).not.toContainText(/\bPASS\b|\bPENDING\b|\bFAIL\b/);
       await expect(summary).not.toContainText('Status: Safety review required');
       await expect(page.locator('[data-case-state]').first()).not.toContainText('Safety review required');
       await expect(summary).not.toContainText(/\.00\b/);

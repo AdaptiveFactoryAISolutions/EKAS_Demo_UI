@@ -102,6 +102,7 @@ export function routeConversation(question:string,previous:ConversationContext,r
  else if(/^recommend this action\.?$/i.test(question.trim())){commands=[{kind:'recommend-action'}];intent='command';}
  else if(/review (?:the )?verification result/.test(q)){commands=[{kind:'accept-result'}];intent='command';}
  else if(/^record the measurement\.?$/i.test(question.trim())){commands=[{kind:'record-verification'}];intent='command';}
+ else if(/why did it reopen/.test(q))intent='sustain';
  else if(/reopen/.test(q)){intent='command';commands=[{kind:'reopen'}];}
  else if(clockOperandVersion===2?workflowClockDirective(question):/advance|simulate|move (?:the )?(?:clock|time)/.test(q)){
   const asOf=/recurr|november|nov\s*3/.test(q)?'2026-11-03T14:00:00Z':/sustain|oct(?:ober)?\s*27/.test(q)?'2026-10-27T14:00:00Z':/post|verification|oct(?:ober)?\s*20/.test(q)?'2026-10-20T15:15:00Z':/inspection|repair|complete|15:15/.test(q)?'2026-10-06T15:15:00Z':null;

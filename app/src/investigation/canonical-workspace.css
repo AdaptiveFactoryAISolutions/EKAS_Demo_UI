@@ -73,10 +73,12 @@ html{scroll-padding-bottom:calc(var(--ekas-composer-h, 168px) + 20px)}
  .retained-console .ekas-invest-head>p{margin:0;line-height:1.3}
  .retained-console .ekas-case-title{font-size:16px;line-height:1.25;overflow-wrap:anywhere}
  .retained-console [aria-label="Investigation summary"]>h1{margin:0 0 2px;font-size:18px;line-height:1.2}
- .retained-console .ekas-tabs-mobile{margin:6px 0}
- .retained-console [aria-label="Investigation summary"] [role="tabpanel"]>p{margin:0;line-height:1.35}
+ .retained-console .ekas-tabs-mobile{margin:0}
+ .retained-console [aria-label="Investigation summary"] [role="tabpanel"]>p{margin:0;font-size:13px;line-height:1.2}
  .retained-console .ekas-journey-record{margin:0}
  .retained-console .ekas-journey-record>p{margin:0;line-height:1.2;font-size:12px}
+ .retained-plant-shell .ekas-context{padding:2px 0}
+ .retained-console .ekas-composer-inline #ekas-chat-main{padding-top:4px;padding-bottom:0}
  .ekas-composer-inline main{margin-bottom:0}
- .ekas-composer-inline .ekas-composer{margin-top:0;padding:4px 8px}
+ .ekas-embedded.ekas-composer-inline .ekas-composer,.ekas-composer-inline .ekas-composer{margin-top:0;padding:4px 8px}
 }
