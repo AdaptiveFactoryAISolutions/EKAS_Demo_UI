@@ -12,21 +12,41 @@ function slug(label: string) {
   return label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 48);
 }
 
+async function settledLabel(button: ReturnType<Page['locator']>, previous = '') {
+  let current = '';
+  await expect.poll(async () => {
+    current = (await button.innerText()).trim();
+    return !await button.isDisabled() && current !== previous ? current : '';
+  }, { timeout: 20000 }).not.toBe('');
+  return current;
+}
+
 async function advanceUntilReopen(page: Page, id: string) {
   const summary = page.getByRole('region', { name: 'Investigation summary' });
   const button = summary.locator('[data-next-cta]');
   const labels: string[] = [];
-  for (let step = 0; step < 30; step += 1) {
-    await expect(button).toBeVisible();
-    const label = (await button.innerText()).trim();
+  for (let step = 0; step < 24; step += 1) {
+    const label = await settledLabel(button, labels.at(-1) || '');
+    if (labels.at(-1) === label) throw new Error(`${id} repeated “${label}” before the case changed`);
     labels.push(label);
     expect(label, id).not.toMatch(/SAFETY-01|-H1|investigation-v1/);
+    const alert = page.getByRole('alert');
+    if (await alert.count()) throw new Error(`${id} at “${label}”: ${await alert.first().innerText()}`);
+    if (id === 'downtime' && label === 'Review safety') {
+      await page.setViewportSize({ width: 320, height: 700 });
+      await page.evaluate(() => {
+        const main = document.querySelector<HTMLElement>('[aria-label="Workspace content"]');
+        if (main) main.scrollTop = 0;
+      });
+      await page.screenshot({ path: `${shots}/downtime-320-review-safety.png`, fullPage: false });
+      await page.setViewportSize({ width: 1440, height: 900 });
+    }
     await page.screenshot({ path: `${shots}/${id}-${String(step).padStart(2, '0')}-${slug(label)}.png`, fullPage: false });
-    const before = await summary.innerText();
-    await button.click();
-    await expect(summary).not.toHaveText(before, { timeout: 15000 });
+    await button.evaluate((el: HTMLButtonElement) => el.click());
     if (label === 'Open a new cycle') {
-      await expect(summary).toContainText('No owner requested');
+      await settledLabel(button, label);
+      await expect(summary).toContainText('Status: No owner requested');
+      await expect(button).toHaveText('Request an owner');
       await page.screenshot({ path: `${shots}/${id}-reopened.png`, fullPage: false });
       return labels;
     }
