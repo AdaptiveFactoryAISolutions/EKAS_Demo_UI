@@ -11,7 +11,12 @@ import { useEffect, useLayoutEffect,useRef,useState, type CSSProperties,type Rea
 import { Toaster } from "./notices";
 import { Overlays, ScreenBody } from "./screens";
 import {beginNewConversation} from '../investigation/unified';
+import {saveLocalPreference} from './localPreferences';
+import { Bell, BookOpen, ChartNoAxesColumn, CircleHelp, Ellipsis, MessageSquare, Search, Settings, SquarePen, TrendingUp, User, type LucideIcon } from 'lucide-react';
 import { areaOf, useEkas, type Screen } from "./store";
+
+const plantIcons: Record<string, LucideIcon> = { Brief: MessageSquare, Dashboards: ChartNoAxesColumn, Explore: Search, Improvements: TrendingUp, Knowledge: BookOpen, Administration: Settings };
+function Glyph({ icon: Icon }: { icon: LucideIcon }) { return <Icon aria-hidden="true" size={18} strokeWidth={1.75} />; }
 
 export const INSIGHTS: { id: Screen; label: string; group?: string }[] = [
   { id: "home", label: "Home" },
@@ -78,6 +83,7 @@ export function Console({content,onNavigate,workspaceTools,plantMode}:{content?:
   const alertOn = useEkas((s) => s.alertOn);
   const displayName = useEkas((s) => s.displayName);
   const compact = useEkas((s) => s.compact);
+  const appearance = useEkas((s) => s.appearance);
   const librarySearch = useEkas((s) => s.librarySearch);
   useLayoutEffect(()=>{if(focusAfterNavigation.current&&mainContent.current){mainContent.current.focus();focusAfterNavigation.current=false}},[screen,navOpen]);
   const headerRef=useRef<HTMLElement>(null);const [menuTop,setMenuTop]=useState(0);
@@ -92,6 +98,7 @@ export function Console({content,onNavigate,workspaceTools,plantMode}:{content?:
   useEffect(() => {
     document.body.classList.toggle("compact", compact);
   }, [compact]);
+  useEffect(() => { document.documentElement.dataset.theme = appearance === 'dark' ? 'dark' : 'light'; }, [appearance]);
 
   useEffect(()=>registerWorkspaceShortcut(10,()=>{const before=useEkas.getState().palette;useEkas.setState({palette:!before});if(!before&&useEkas.getState().palette)emitGuideUiObservation('ui-palette-opened')}),[]);
 
@@ -102,7 +109,7 @@ export function Console({content,onNavigate,workspaceTools,plantMode}:{content?:
   let lastGroup = "";
   return (
     <div className={"min-h-screen bg-bg text-fg"+(plantMode?" retained-plant-shell":"")}>
-      <Toaster theme="dark" /><PersistenceStatus quiet={!!plantMode}/>{!plantMode&&<FixtureSelector/>}
+      <Toaster theme={appearance === 'dark' ? 'dark' : 'light'} /><PersistenceStatus quiet={!!plantMode}/>{!plantMode&&<FixtureSelector/>}
       <header ref={headerRef} className="retained-header sticky top-0 z-30 border-b border-line bg-bg">
         {alertOn && !plantMode && (
           <div className="retained-alert-strip flex items-center justify-between gap-3 bg-surface px-4 py-2 text-sm">
@@ -132,13 +139,14 @@ export function Console({content,onNavigate,workspaceTools,plantMode}:{content?:
             placeholder="Search the library"
             className="retained-library-search min-h-11 min-w-0 flex-1 rounded-lg border border-line bg-surface px-3 text-sm"
           />}
-          <button className="retained-desktop-extra min-h-11 px-2 text-sm" onClick={() => withGuideInspection('notices-inspected',noticesInspectionPayload,()=>useEkas.setState({notifOpen:true}))}>Notices</button>
-          <button className="retained-desktop-extra min-h-11 px-2 text-sm" data-guide-action="help-open" onClick={() => openObserved('help','ui-help-opened')}>Help</button>
-          <button className="retained-desktop-extra min-h-11 px-2 text-sm" data-guide-action="profile-open" onClick={() => openObserved('profile','ui-profile-opened')}>Profile</button>
+          <button className="retained-desktop-extra min-h-11 px-2 text-sm" onClick={() => withGuideInspection('notices-inspected',noticesInspectionPayload,()=>useEkas.setState({notifOpen:true}))}><Glyph icon={Bell} /><span>Notices</span></button>
+          <button className="retained-desktop-extra min-h-11 px-2 text-sm" data-guide-action="help-open" onClick={() => openObserved('help','ui-help-opened')}><Glyph icon={CircleHelp} /><span>Help</span></button>
+          <button className="retained-desktop-extra min-h-11 px-2 text-sm" data-guide-action="profile-open" onClick={() => openObserved('profile','ui-profile-opened')}><Glyph icon={User} /><span>Profile</span></button>
           <details ref={moreMenu} className="retained-mobile-more" aria-label="Workspace utilities" onKeyDown={event=>{if(event.key==='Escape'&&moreMenu.current?.open){event.preventDefault();event.stopPropagation();moreMenu.current.open=false;moreSummary.current?.focus()}}}>
-            <summary ref={moreSummary} aria-label="More workspace utilities">More</summary>
+            <summary ref={moreSummary} aria-label="More workspace utilities"><Glyph icon={Ellipsis} /><span>More</span></summary>
             <div className="retained-more-panel">
               <div className="retained-more-mobile">{plantMode?null:<nav aria-label="Mobile workspace navigation">{(["Insights","Data","Develop","Admin"] as const).map(a=><button key={a} onClick={()=>navigate(a==="Insights"?"home":a==="Data"?"objects":a==="Develop"?"devhome":"users")}>{a}</button>)}</nav>}<button onClick={()=>withGuideInspection('notices-inspected',noticesInspectionPayload,()=>useEkas.setState({notifOpen:true}))}>Notices</button><button data-guide-action="help-open" onClick={()=>openObserved('help','ui-help-opened')}>Help</button><button data-guide-action="profile-open" onClick={()=>openObserved('profile','ui-profile-opened')}>Profile</button></div>
+              <button type="button" onClick={() => saveLocalPreference('appearance', appearance === 'dark' ? 'light' : 'dark')}>{appearance === 'dark' ? 'Use light appearance' : 'Use dark appearance'}</button>
               {!(plantMode&&!plantMode.engineering)&&<nav aria-label="Secondary workspace utilities" className="retained-more-utilities"><button onClick={()=>navigate("pricing")}>Plan</button><button onClick={()=>navigate("contact")}>Expert note</button><button onClick={()=>navigate("getstarted")}>Features</button><span className="text-sm text-muted">Ctrl+K · Search the library</span></nav>}
             </div>
           </details>
@@ -146,8 +154,8 @@ export function Console({content,onNavigate,workspaceTools,plantMode}:{content?:
       </header>
       <div className="retained-shell-body md:grid md:grid-cols-[220px_1fr]">
         <aside style={{'--retained-menu-top':menuTop+'px'} as CSSProperties} aria-label="Template sidebar navigation" className={navOpen ? "border-line bg-surface p-3 md:block md:border-r" : "hidden border-line bg-surface p-3 md:block md:border-r"}>
-          {plantMode?<button className="mb-2 min-h-11 w-full rounded-lg bg-primary text-sm font-semibold text-primary-fg" onClick={()=>{void beginNewConversation();plantMode.onArea('Brief');useEkas.setState({navOpen:false})}}>New conversation</button>:<button className="mb-2 min-h-11 w-full rounded-lg bg-primary text-sm font-semibold text-primary-fg" onClick={() => useEkas.setState({ createOpen: true })}>Create</button>}
-          {plantMode?[{id:"Brief",label:"Chat"},{id:"Dashboards",label:"Dashboards"},{id:"Explore",label:"Investigations"},{id:"Improvements",label:"Improvements"},{id:"Knowledge",label:"Knowledge"},...(plantMode.engineering?[{id:"Administration",label:"Administration"}]:[])].map(item=><div key={item.id}><button className={plantMode.area===item.id||(item.id==="Dashboards"&&plantMode.area==="Metrics")?"min-h-11 w-full rounded-lg bg-surface-2 px-2 text-left text-sm":"min-h-11 w-full rounded-lg px-2 text-left text-sm text-muted"} aria-current={plantMode.area===item.id?"page":undefined} onClick={()=>{plantMode.onArea(item.id);useEkas.setState({navOpen:false})}}>{item.label}</button></div>):nav.map((item) => {
+          {plantMode?<button className="ekas-nav-item mb-2 min-h-11 w-full rounded-lg bg-primary text-sm font-semibold text-primary-fg" onClick={()=>{void beginNewConversation();plantMode.onArea('Brief');useEkas.setState({navOpen:false})}}><Glyph icon={SquarePen} /><span>New conversation</span></button>:<button className="mb-2 min-h-11 w-full rounded-lg bg-primary text-sm font-semibold text-primary-fg" onClick={() => useEkas.setState({ createOpen: true })}>Create</button>}
+          {plantMode?[{id:"Brief",label:"Chat"},{id:"Dashboards",label:"Dashboards"},{id:"Explore",label:"Investigations"},{id:"Improvements",label:"Improvements"},{id:"Knowledge",label:"Knowledge"},...(plantMode.engineering?[{id:"Administration",label:"Administration"}]:[])].map(item=>{const Icon=plantIcons[item.id]||MessageSquare;return <div key={item.id}><button className={(plantMode.area===item.id||(item.id==="Dashboards"&&plantMode.area==="Metrics")?"min-h-11 w-full rounded-lg bg-surface-2 px-2 text-left text-sm":"min-h-11 w-full rounded-lg px-2 text-left text-sm text-muted")+" ekas-nav-item"} aria-current={plantMode.area===item.id?"page":undefined} onClick={()=>{plantMode.onArea(item.id);useEkas.setState({navOpen:false})}}><Glyph icon={Icon} /><span>{item.label}</span></button></div>}):nav.map((item) => {
             const header = item.group && item.group !== lastGroup ? item.group : "";
             if (item.group) lastGroup = item.group;
             return (

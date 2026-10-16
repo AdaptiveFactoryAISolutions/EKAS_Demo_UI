@@ -17804,6 +17804,11 @@
       "acceptedRevision": "ed2447a",
       "text": "WP4 — Manufacturing Journeys: PASS\nAccepted revision: ed2447a\nDowntime, speed and quality journeys pass independent usability review through Goal → Gap → Loss → Contributor → Evidence → Hypothesis → Action → Owner → Authorization → Performed Work → Verification → Sustain → Reopen.\nFrozen shell remains intact.\nFull regression remains deferred to RC freeze."
     },
+    "wp5a": {
+      "status": "PASS",
+      "acceptedRevision": "f36ecb3",
+      "text": "WP5A — Dashboard Integration: PASS\nAccepted revision: f36ecb3\nPlant Operations and Production & OEE dashboards now use governed Highcharts visuals, preserve shared EKAS context, distinguish plant shortfall from line contribution, and remain connected to Chat and Investigation without creating a separate BI state."
+    },
     "wp1": {
       "at": "2026-10-15T21:00:00Z",
       "url": "http://127.0.0.1:18191/",

@@ -1020,6 +1020,7 @@ function Develop() {
   const rows = useRows(query);
   const name = useEkas((s) => s.displayName);
   const compact = useEkas((s) => s.compact);
+  const appearance = useEkas((s) => s.appearance);
   const links = useEkas((s) => s.links);
   const webhooks = useEkas((s) => s.webhooks);
   const webhookEvents=useEkas(s=>s.webhookEvents);
@@ -1074,7 +1075,9 @@ function Develop() {
           <input value={name} onChange={(e) => saveLocalPreference("displayName",e.target.value)} className="mt-1 min-h-11 w-full rounded-lg border border-line bg-surface px-3" />
         </label>
         <Btn data-guide-action="theme-density" onClick={() => saveLocalPreference("compact",!compact)}>Density {compact ? "compact" : "comfortable"}</Btn>
-        <p className="text-sm text-muted">Dark theme only. Theme edits the display name and compact density. The palette does not change.</p>
+        <Btn onClick={() => saveLocalPreference("appearance","light")} aria-pressed={appearance !== "dark"}>Light appearance</Btn>
+        <Btn onClick={() => saveLocalPreference("appearance","dark")} aria-pressed={appearance === "dark"}>Dark appearance</Btn>
+        <p className="text-sm text-muted">Light is the default. Dark is saved with your other local display preferences. It does not change plant data, calculations, or the conversation.</p>
       </div>
     );
   }

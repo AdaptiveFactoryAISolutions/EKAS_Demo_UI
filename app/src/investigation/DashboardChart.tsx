@@ -1,32 +1,41 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Highcharts from 'highcharts';
 import 'highcharts/modules/accessibility';
+import { chartFrame } from '../visual/chartTheme';
 import type { DashboardChart as DashboardChartModel } from './dashboardCatalog';
 
 /** Native Highcharts column chart. Series, labels, and the table are the same governed points. */
 export function DashboardChart({ chart }: { chart: DashboardChartModel }) {
   const host = useRef<HTMLDivElement>(null);
   const signature = chart.points.map(item => item.id + ':' + item.numeric + ':' + item.display).join('|');
+  const [theme, setTheme] = useState(() => document.documentElement.dataset.theme || 'light');
+  useEffect(() => {
+    const sync = () => setTheme(document.documentElement.dataset.theme || 'light');
+    const observer = new MutationObserver(sync);
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    return () => observer.disconnect();
+  }, []);
   useEffect(() => {
     const node = host.current;
     if (!node) return;
+    const frame = chartFrame(theme);
     const drawn = Highcharts.chart(node, {
-      chart: { type: 'column', backgroundColor: '#131d31', height: 176, animation: false, spacing: [4, 6, 2, 6], style: { fontFamily: 'IBM Plex Sans, sans-serif' } },
-      title: { text: chart.title, style: { color: '#e7eef8', fontSize: '14px' } },
+      chart: { type: 'column', backgroundColor: frame.surface, height: 176, animation: false, spacing: [4, 6, 2, 6], style: { fontFamily: 'IBM Plex Sans, sans-serif' } },
+      title: { text: chart.title, style: { color: frame.text, fontSize: '14px' } },
       credits: { enabled: false },
       legend: { enabled: false },
       accessibility: { enabled: true, description: chart.description },
-      xAxis: { type: 'category', lineColor: '#24344f', labels: { style: { color: '#e7eef8', fontSize: '11px' } } },
-      yAxis: { title: { text: chart.unit, style: { color: '#b7c8df' } }, gridLineColor: '#24344f', labels: { style: { color: '#b7c8df' } } },
+      xAxis: { type: 'category', lineColor: frame.line, labels: { style: { color: frame.text, fontSize: '11px' } } },
+      yAxis: { title: { text: chart.unit, style: { color: frame.muted } }, gridLineColor: frame.line, labels: { style: { color: frame.muted } } },
       tooltip: {
         outside: true,
-        backgroundColor: '#0b1220',
-        borderColor: '#24344f',
-        style: { color: '#e7eef8' },
+        backgroundColor: frame.tooltip,
+        borderColor: frame.line,
+        style: { color: frame.text },
         headerFormat: '',
         pointFormatter() {
           const custom = (this.options as { custom?: { display?: string; scope?: string } }).custom;
-          return `<span style="color:#e7eef8">${this.name}: ${custom?.display || this.y}</span><br/><span style="color:#b7c8df">${custom?.scope || chart.scope}</span>`;
+          return `<span style="color:${frame.text}">${this.name}: ${custom?.display || this.y}</span><br/><span style="color:${frame.muted}">${custom?.scope || chart.scope}</span>`;
         },
         positioner(labelWidth, labelHeight, point) {
           const hostChart = this.chart;
@@ -45,7 +54,7 @@ export function DashboardChart({ chart }: { chart: DashboardChartModel }) {
         },
       },
       plotOptions: {
-        column: { borderWidth: 0, color: '#2bb6a3' },
+        column: { borderWidth: 0, colorByPoint: true },
         series: {
           animation: false,
           dataLabels: {
@@ -55,7 +64,7 @@ export function DashboardChart({ chart }: { chart: DashboardChartModel }) {
             formatter() {
               return (this.options as { custom?: { display?: string } }).custom?.display || '';
             },
-            style: { color: '#e7eef8', textOutline: 'none', fontSize: '11px', fontWeight: '600' },
+            style: { color: frame.text, textOutline: 'none', fontSize: '11px', fontWeight: '600' },
           },
         },
       },
@@ -71,7 +80,7 @@ export function DashboardChart({ chart }: { chart: DashboardChartModel }) {
       observer.disconnect();
       drawn.destroy();
     };
-  }, [signature, chart.description, chart.id, chart.scope, chart.title, chart.unit]);
+  }, [signature, chart.description, chart.id, chart.scope, chart.title, chart.unit, theme]);
   return <figure className="ekas-dash-figure" data-chart-id={chart.id} data-values={chart.points.map(item => String(item.numeric)).join(',')} aria-label={chart.description}>
     <p className="ekas-dash-scope">{chart.scope}</p>
     <div className="ekas-dash-chart" ref={host} />

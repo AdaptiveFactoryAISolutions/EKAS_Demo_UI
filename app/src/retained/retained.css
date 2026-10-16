@@ -2,19 +2,20 @@
 @font-face{font-family:"IBM Plex Sans";src:url('/fonts/IBMPlexSans-SemiBold.ttf') format('truetype');font-weight:600;font-style:normal;font-display:swap}
 @font-face{font-family:"IBM Plex Sans";src:url('/fonts/IBMPlexSans-Bold.ttf') format('truetype');font-weight:700;font-style:normal;font-display:swap}
 @font-face{font-family:"IBM Plex Mono";src:url('/fonts/IBMPlexMono-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
-.retained-console{--color-bg:#0b1220;--color-surface:#131d31;--color-surface-2:#1a2740;--color-line:#24344f;--color-fg:#e7eef8;--color-muted:#93a4be;--color-primary:#2bb6a3;--color-primary-fg:#06221c;--color-amber:#e0a24a;--color-info:#6c9cff;--color-danger:#e06b6b;--color-good:#3ddc97;--font-sans:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;font-family:var(--font-sans);background:#0b1220;color:#e7eef8;min-height:100vh}
+.retained-console{--color-bg:#f7f7f5;--color-surface:#ffffff;--color-surface-2:#ececea;--color-line:#e4e3df;--color-fg:#1c1c1a;--color-muted:#5c5b57;--color-primary:#2c2c2a;--color-primary-fg:#f7f7f5;--color-amber:#8a5a00;--color-info:#1d4ed8;--color-danger:#b42318;--color-good:#146c3a;--font-sans:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;--font-mono:"IBM Plex Mono",ui-monospace,monospace;font-family:var(--font-sans);background:var(--bg,#f7f7f5);color:var(--text-primary,#1c1c1a);min-height:100vh}
+html[data-theme=dark] .retained-console{--color-bg:#161616;--color-surface:#1f1f1f;--color-surface-2:#2c2c2c;--color-line:#3a3a3a;--color-fg:#f3f3f1;--color-muted:#93a4be;--color-primary:#f3f3f1;--color-primary-fg:#161616;--color-amber:#f0c27a;--color-info:#6c9cff;--color-danger:#ffb4a8;--color-good:#6ee7a8;background:#161616;color:#f3f3f1}
 .retained-console *{box-sizing:border-box;min-width:0}
 .retained-console button,.retained-console input,.retained-console select,.retained-console textarea{font:inherit;color:inherit;max-width:100%}
 .retained-console button{cursor:pointer;background:transparent;border:0;border-radius:6px;min-height:44px;padding:6px 10px}
-.retained-console input,.retained-console select,.retained-console textarea{background:#131d31;border:1px solid #24344f;border-radius:6px;padding:8px}
+.retained-console input,.retained-console select,.retained-console textarea{background:var(--color-surface);border:1px solid var(--color-line);border-radius:6px;padding:8px}
 .retained-console p{line-height:1.5;margin:8px 0}
 .retained-console table{border-collapse:collapse;max-width:100%}
 .retained-console td,.retained-console th{padding:8px;overflow-wrap:anywhere}
-.retained-console a{color:#85adff}
+.retained-console a{color:var(--color-info)}
 .retained-boundary{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:12px;border-bottom:1px solid #24344f}
 .retained-boundary span{flex:1;font-size:13px}
 .retained-notice{position:fixed;bottom:16px;right:16px;z-index:10001;background:#1a2740;border:1px solid #6c9cff;padding:12px;max-width:min(500px,95vw)}
-.retained-viz{min-width:0}.retained-console .highcharts-dashboards-cell{background:transparent!important}.retained-console .hcg-container{--hcg-color:#e7eef8;--hcg-background:#131d31;--hcg-header-background:#1a2740;--hcg-row-even-background:#131d31;--hcg-row-odd-background:#1a2740}.retained-console details{max-width:100%;overflow-wrap:anywhere}.retained-empty{padding:24px;color:#e0a24a}
+.retained-viz{min-width:0}.retained-console .highcharts-dashboards-cell{background:transparent!important}.retained-console .hcg-container{--hcg-color:var(--text-primary);--hcg-background:var(--chart-surface);--hcg-header-background:var(--surface-secondary);--hcg-row-even-background:var(--chart-surface);--hcg-row-odd-background:var(--surface-secondary)}.retained-console details{max-width:100%;overflow-wrap:anywhere}.retained-empty{padding:24px;color:var(--warning)}
 .retained-console .bg-bg{background:var(--color-bg)}
 .retained-console .bg-primary{background:var(--color-primary)}
 .retained-console .bg-surface{background:var(--color-surface)}
@@ -163,7 +164,7 @@
 .retained-console .retained-dialog-body{flex:1 1 auto}
 
 /* Readable, named native edit controls; retain their native pointer callbacks. */
-.retained-console .highcharts-dashboards-edit-toolbar-item>div{min-width:44px!important;min-height:44px!important;padding:12px!important;filter:brightness(0) invert(1)!important;background-size:22px 22px!important}
+.retained-console .highcharts-dashboards-edit-toolbar-item>div{min-width:44px!important;min-height:44px!important;padding:12px!important;filter:brightness(0)!important;background-size:22px 22px!important}
 .retained-console .highcharts-dashboards-edit-menu-item{min-width:44px;min-height:44px}
 .retained-console .highcharts-dashboards-edit-tools-btn,.retained-console .highcharts-dashboards-edit-context-menu-btn,.retained-console .highcharts-dashboards-edit-popup-close{min-width:44px!important;min-height:44px!important}
 .retained-console [data-ekas-native-control]:focus-visible{outline:3px solid #6c9cff;outline-offset:2px}

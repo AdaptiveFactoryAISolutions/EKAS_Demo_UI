@@ -20,3 +20,9 @@ Downtime, speed and quality journeys pass independent usability review through G
 Frozen shell remains intact.
 Full regression remains deferred to RC freeze.
 
+WP5A — Dashboard Integration: PASS
+Accepted revision: f36ecb3
+Plant Operations and Production & OEE dashboards now use governed Highcharts visuals, preserve shared EKAS context, distinguish plant shortfall from line contribution, and remain connected to Chat and Investigation without creating a separate BI state.
+
+The visual system that follows is presentation only. It may change color, type, icons, and theme. It does not redesign the frozen navigation, header and context order, composers, evidence presentation, responsive shell, or plant-role menu. Chat remains the primary product experience. Dashboards remain supporting views.
+

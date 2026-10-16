@@ -12,8 +12,14 @@ function targetLine(row: DashboardMeasure) {
   return `Target ${row.target}`;
 }
 
+function statusClass(status: string) {
+  if (status === 'On target') return 'ekas-status-passed';
+  if (status === 'Below target' || status === 'Above target') return 'ekas-status-failed';
+  return 'ekas-status-unavailable';
+}
+
 function MeasureCards({ rows, showScope }: { rows: DashboardMeasure[]; showScope: boolean }) {
-  return <ul className="ekas-dash-kpis">{rows.map(row => <li key={row.id}><p>{row.label}</p><p>{row.display}</p><p>{targetLine(row)}</p><p>{row.status}</p>{showScope && <p>{row.scope}</p>}</li>)}</ul>;
+  return <ul className="ekas-dash-kpis">{rows.map(row => <li key={row.id}><p>{row.label}</p><p>{row.display}</p><p>{targetLine(row)}</p><p className={statusClass(row.status)}>{row.status}</p>{showScope && <p>{row.scope}</p>}</li>)}</ul>;
 }
 
 function rankName(rank: DashboardRank) {

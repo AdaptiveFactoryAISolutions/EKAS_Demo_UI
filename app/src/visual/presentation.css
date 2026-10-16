@@ -1,0 +1,286 @@
+/* Light is the default. Dark is optional and selected with data-theme="dark". */
+:root {
+  --bg: #f7f7f5;
+  --surface: #ffffff;
+  --surface-secondary: #f3f3f1;
+  --surface-raised: #ffffff;
+  --text-primary: #1c1c1a;
+  --text-secondary: #5c5b57;
+  --text-tertiary: #6f6e69;
+  --border: #e4e3df;
+  --divider: #ecebe7;
+  --nav-selected: #ececea;
+  --nav-hover: #f3f3f1;
+  --action: #2c2c2a;
+  --action-fg: #f7f7f5;
+  --action-hover: #3a3a38;
+  --focus: #1d4ed8;
+  --success: #146c3a;
+  --success-bg: #e7f6ee;
+  --warning: #8a5a00;
+  --warning-bg: #fff6e8;
+  --error: #b42318;
+  --error-bg: #fdecea;
+  --info: #1d4ed8;
+  --info-bg: #e8f0fc;
+  --unavailable: #5c5b57;
+  --chart-surface: #ffffff;
+  --chart-text: #1c1c1a;
+  --chart-muted: #5c5b57;
+  --chart-grid: #e4e3df;
+  --chart-tooltip: #ffffff;
+  --overlay: rgba(28, 28, 26, .45);
+  --disabled: #8a8883;
+  --page: var(--bg);
+  --text: var(--text-primary);
+  --muted: var(--text-secondary);
+  --forest: var(--action);
+  --mint: var(--nav-selected);
+  --soft: var(--surface-secondary);
+  --red: var(--error);
+  --amber: var(--warning);
+  color: var(--text-primary);
+  background: var(--bg);
+}
+
+html[data-theme="dark"] {
+  --bg: #161616;
+  --surface: #1f1f1f;
+  --surface-secondary: #262626;
+  --surface-raised: #2a2a2a;
+  --text-primary: #f3f3f1;
+  --text-secondary: #c4c4be;
+  --text-tertiary: #9a9a94;
+  --border: #3a3a3a;
+  --divider: #2e2e2e;
+  --nav-selected: #2c2c2c;
+  --nav-hover: #333333;
+  --action: #f3f3f1;
+  --action-fg: #161616;
+  --action-hover: #ffffff;
+  --focus: #8cb4ff;
+  --success: #6ee7a8;
+  --success-bg: #163226;
+  --warning: #f0c27a;
+  --warning-bg: #3a2e18;
+  --error: #ffb4a8;
+  --error-bg: #3a201c;
+  --info: #8cb4ff;
+  --info-bg: #1c2740;
+  --unavailable: #c4c4be;
+  --chart-surface: #1f1f1f;
+  --chart-text: #f3f3f1;
+  --chart-muted: #c4c4be;
+  --chart-grid: #3a3a3a;
+  --chart-tooltip: #2a2a2a;
+  --overlay: rgba(0, 0, 0, .55);
+  --disabled: #8a8883;
+  --page: var(--bg);
+  --text: var(--text-primary);
+  --muted: var(--text-secondary);
+  --forest: var(--action);
+  --mint: var(--nav-selected);
+  --soft: var(--surface-secondary);
+  --red: var(--error);
+  --amber: var(--warning);
+  --color-muted: #93a4be;
+  --color-info: #6c9cff;
+  color: var(--text-primary);
+  background: var(--bg);
+}
+
+.retained-console {
+  background: var(--bg);
+  color: var(--text-primary);
+}
+
+.retained-console a { color: var(--info); }
+.retained-console button:focus-visible,
+.retained-console input:focus-visible,
+.retained-console select:focus-visible,
+.retained-console textarea:focus-visible,
+.retained-console a:focus-visible,
+.retained-console summary:focus-visible,
+.ekas-plant button:focus-visible,
+.ekas-plant textarea:focus-visible,
+.ekas-plant select:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.retained-console aside button.ekas-nav-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.retained-console aside button.ekas-nav-item svg,
+.retained-console .retained-primary-header button svg,
+.retained-console .retained-mobile-more summary svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  stroke: currentColor;
+}
+.retained-console aside button.ekas-nav-item:hover { background: var(--nav-hover); }
+.retained-console aside button.ekas-nav-item[aria-current="page"] {
+  background: var(--nav-selected);
+  color: var(--text-primary);
+}
+.retained-console .bg-primary,
+.retained-console .bg-primary:hover {
+  background: var(--action);
+  color: var(--action-fg);
+}
+.retained-console .bg-primary:hover { background: var(--action-hover); }
+
+.ekas-plant {
+  background: transparent;
+  color: var(--text-primary);
+  --ekas-ink: var(--text-primary);
+  --ekas-accent: var(--action);
+}
+.ekas-plant button,
+.ekas-plant textarea,
+.ekas-plant select {
+  background: var(--surface);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+.ekas-plant button:disabled {
+  background: var(--surface-secondary);
+  color: var(--disabled);
+  border-color: var(--border);
+}
+.ekas-plant button:hover:not(:disabled) { background: var(--nav-hover); border-color: var(--border); }
+.retained-plant-shell .ekas-context,
+.ekas-context {
+  background: var(--bg);
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+}
+.retained-plant-shell .ekas-plant details,
+.ekas-plant details,
+.ekas-context-details {
+  background: var(--surface);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+.retained-plant-shell .ekas-plant details summary,
+.ekas-plant details summary {
+  color: var(--text-primary);
+}
+.ekas-plant nav { border-color: var(--border); }
+.ekas-dash button.ekas-dash-family {
+  background: var(--surface);
+  color: var(--text-secondary);
+  border-color: var(--border);
+}
+.ekas-dash-kpis li,
+.ekas-dash-cards li,
+.ekas-scorecard,
+.ekas-dash-figure,
+.ekas-dash-table {
+  background: var(--surface);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+.ekas-question {
+  background: var(--surface-secondary);
+  color: var(--text-primary);
+}
+.ekas-answer-speaker,
+.ekas-answer-speaker span { color: var(--text-primary); }
+.ekas-answer-actions button,
+.ekas-answer-actions button:hover {
+  color: var(--text-secondary);
+  background: transparent;
+  border-color: transparent;
+}
+.ekas-composer,
+.ekas-embedded .ekas-composer,
+.ekas-plant textarea,
+.ekas-plant select {
+  background: var(--surface);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+.ekas-plant button.ekas-next-cta,
+.ekas-plant button.ekas-next-cta:hover,
+.ekas-composer button[type="submit"],
+.ekas-composer button[type="submit"]:hover {
+  background: var(--action);
+  color: var(--action-fg);
+  border-color: var(--action);
+}
+.ekas-plant button.ekas-next-cta:hover,
+.ekas-composer button[type="submit"]:hover { background: var(--action-hover); }
+.ekas-dash button.ekas-dash-family.ekas-dash-family-active,
+.ekas-dash button.ekas-dash-family.ekas-dash-family-active:hover,
+.ekas-dash button.ekas-dash-family.ekas-dash-family-active:focus,
+.ekas-dash button.ekas-dash-family.ekas-dash-family-active:focus-visible,
+.ekas-dash-ranks button[aria-pressed="true"] {
+  background: var(--nav-selected) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border) !important;
+}
+.ekas-tabs button[aria-selected="true"] {
+  background: transparent;
+  border-bottom-color: var(--text-primary);
+  color: var(--text-primary);
+}
+.ekas-plant nav [aria-current="page"] { color: var(--text-primary); }
+.ekas-plant .text-muted,
+.ekas-scope-meta { color: var(--text-secondary); }
+
+.ekas-status-passed { color: var(--success); font-weight: 650; }
+.ekas-status-pending { color: var(--warning); font-weight: 650; }
+.ekas-status-failed { color: var(--error); font-weight: 650; }
+.ekas-status-unavailable { color: var(--unavailable); }
+.ekas-status-passed,
+.ekas-status-pending,
+.ekas-status-failed,
+.ekas-status-unavailable { background: transparent; }
+
+.retained-console .highcharts-background { fill: var(--chart-surface) !important; }
+.retained-console .highcharts-title,
+.retained-console .highcharts-subtitle,
+.retained-console .highcharts-axis-labels text,
+.retained-console .highcharts-axis-title,
+.retained-console .highcharts-legend-item text,
+.retained-console .highcharts-data-label text { fill: var(--chart-text) !important; color: var(--chart-text) !important; }
+.retained-console .highcharts-grid-line,
+.retained-console .highcharts-axis-line,
+.retained-console .highcharts-tick { stroke: var(--chart-grid) !important; }
+.retained-console .highcharts-tooltip-box,
+.retained-console .highcharts-tooltip .highcharts-label-box { fill: var(--chart-tooltip) !important; }
+.retained-console .highcharts-tooltip text { fill: var(--chart-text) !important; }
+.highcharts-tooltip,
+.highcharts-contextmenu { color: var(--chart-text); }
+.retained-console .hcg-container {
+  --hcg-color: var(--text-primary);
+  --hcg-background: var(--chart-surface);
+  --hcg-header-background: var(--surface-secondary);
+  --hcg-row-even-background: var(--chart-surface);
+  --hcg-row-odd-background: var(--surface-secondary);
+  --hcg-row-hover-background: var(--nav-hover);
+  --hcg-row-sync-background: var(--nav-selected);
+  --hcg-cell-hover-background: var(--nav-hover);
+  --hcg-cell-sync-background: var(--nav-selected);
+  --hcg-cell-hovered-row-background: var(--nav-hover);
+  --hcg-cell-synced-row-background: var(--nav-selected);
+  --hcg-cell-hovered-background: var(--nav-hover);
+  --hcg-cell-synced-background: var(--nav-selected);
+  --hcg-cell-hovered-row-color: var(--text-primary);
+  --hcg-cell-synced-row-color: var(--text-primary);
+  --hcg-cell-hovered-color: var(--text-primary);
+  --hcg-cell-synced-color: var(--text-primary);
+  --hcg-border-color: var(--border);
+}
+.retained-console { --highcharts-dashboards-overlay-color: var(--overlay); }
+html[data-theme="dark"] .retained-console .highcharts-dashboards-edit-toolbar-item > div { filter: brightness(0) invert(1) !important; }
+
+@media (max-width: 767px) {
+  .retained-console aside button.ekas-nav-item svg,
+  .retained-console .retained-primary-header button svg { width: 20px; height: 20px; }
+}

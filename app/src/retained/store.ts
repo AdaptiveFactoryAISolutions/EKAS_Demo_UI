@@ -147,6 +147,7 @@ type State = {
   alertOn: boolean;
   coach: boolean;
   compact: boolean;
+  appearance: 'light' | 'dark';
   displayName: string;
   welcome: string;
   rls: boolean;
@@ -268,6 +269,7 @@ export const useEkas = create<State>()(
       alertOn: true,
       coach: true,
       compact: false,
+      appearance: "light",
       displayName: "EKAS",
       welcome: "Ask a governed question. A change is not a cause.",
       rls: selectedFixture?.runCtx.rls??false,
