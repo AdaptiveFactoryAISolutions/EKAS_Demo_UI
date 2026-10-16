@@ -1,5 +1,6 @@
 import knowledge from '../../inputs/knowledge-fixtures.json';
 import {fixtureCase,type CaseId} from './cases';
+import {clocks} from './model';
 
 const MONTHS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
@@ -96,7 +97,7 @@ export function impactLine(v:CaseLike){
  return 'On the approved plan';
 }
 
-export function nextStep(v:CaseLike){return lifecycleState(v).next}
+export function nextStep(v:CaseLike){return journeyAction(v).label}
 
 /** The role this case can actually assign, taken from its acceptance records. */
 function assignableOwner(caseId?:string|null){
@@ -130,13 +131,81 @@ export function nextLifecycleCommand(v:CommandView|null|undefined):{kind:string;
   if(verification==='awaiting_work'||!verification)return {kind:'record-verification'};
   return null;
  }
- if(action==='authorized'&&v?.availableWork?.id)return {kind:'record-performed-work',workId:v.availableWork.id};
+ if(action==='authorized')return v?.availableWork?.id?{kind:'record-performed-work',workId:v.availableWork.id}:null;
  if(action==='requested')return {kind:'authorize-action'};
  if(action==='recommended')return {kind:'request-authorization'};
  if(action==='rejected'||action==='failed')return null;
  if(hypotheses)return {kind:'recommend-action'};
  const hypothesisId=v?.availableHypotheses?.[0]?.id;
  return hypothesisId?{kind:'add-hypothesis',hypothesisId}:null;
+}
+
+type JourneyActor='supervisor'|'maintenance'|'manager'|'safety'|'viewer';
+type JourneyCommand={kind:string;owner?:string;hypothesisId?:string;workId?:string;evidenceId?:string;asOf?:string};
+type JourneyView=CommandView&{asOf?:string|null;verification?:{status?:string}|null;sustain?:{status?:string;observations?:{id:string}[]}|null;action?:{status?:string;performedId?:string|null}|null};
+
+function suppliedCase(caseId?:string|null){
+ if(caseId!=='downtime'&&caseId!=='speed'&&caseId!=='quality')return null;
+ return fixtureCase(caseId);
+}
+function laterClock(asOf?:string|null){
+ if(!asOf)return null;
+ return clocks.find(clock=>clock>asOf)||null;
+}
+function clockLabel(iso:string){
+ const t=Date.parse(iso);
+ if(!Number.isFinite(t))return iso;
+ const d=new Date(t);
+ let hour=d.getUTCHours();
+ const suffix=hour>=12?'PM':'AM';
+ hour=hour%12||12;
+ const minute=String(d.getUTCMinutes()).padStart(2,'0');
+ return `${MONTHS[d.getUTCMonth()]} ${d.getUTCDate()}, ${hour}:${minute} ${suffix}`;
+}
+function unrecordedSustain(v:JourneyView){
+ const fixture=suppliedCase(v.caseId);
+ if(!fixture||!v.asOf)return [];
+ const recorded=new Set((v.sustain?.observations||[]).map(item=>item.id));
+ return fixture.sustain.observations.filter(item=>item.eligible&&item.at<=v.asOf!&&!recorded.has(item.id));
+}
+function safetyRecordId(v:JourneyView){
+ const fixture=suppliedCase(v.caseId);
+ if(!fixture||!v.asOf)return null;
+ const performed=v.action?.performedId;
+ const review=fixture.safetyReviews.find(item=>item.status==='pass'&&item.knownAt<=v.asOf!&&(!performed||item.workId===performed));
+ return review?.id||null;
+}
+
+/** The next visible step and the command that performs it. Waiting steps open the next supplied snapshot. */
+export function journeyAction(v:JourneyView|null|undefined,session:JourneyActor='manager',facts?:{verificationRecorded?:boolean}):{label:string;command:JourneyCommand|null;actor:JourneyActor}{
+ const life=lifecycleState(v);
+ const clock=laterClock(v?.asOf);
+ const snapshot=clock?{label:`Open the ${clockLabel(clock)} snapshot`,command:{kind:'advance-time',asOf:clock},actor:session}:null;
+ const action=v?.action?.status||'';
+ const verification=v?.verification?.status||'';
+ const sustain=v?.sustain?.status||'';
+ if(action==='authorized'&&!v?.availableWork&&snapshot)return snapshot;
+ if(action==='performed'&&(verification==='measuring'||verification==='awaiting_work')&&snapshot)return snapshot;
+ if(verification==='safety_review_required'&&!facts?.verificationRecorded)return {label:'Record verification',command:{kind:'record-verification'},actor:session};
+ if(verification==='safety_review_required'&&v){
+  const evidenceId=safetyRecordId(v);
+  if(evidenceId)return {label:life.next,command:{kind:'review-safety',evidenceId},actor:session==='safety'?'safety':'manager'};
+  if(snapshot)return snapshot;
+ }
+ if(sustain==='sustained'&&v){
+  if(unrecordedSustain(v).length)return {label:'Record sustainment',command:{kind:'record-sustain'},actor:session};
+  if(snapshot)return snapshot;
+ }
+ if(verification==='accepted'&&sustain==='insufficient'&&v&&!unrecordedSustain(v).length&&snapshot)return snapshot;
+ const command=nextLifecycleCommand(v);
+ if(!command)return {label:life.next,command:null,actor:session};
+ if(command.kind==='accept-assignment')return {label:life.next,command,actor:'maintenance'};
+ if(command.kind==='review-safety'&&v){
+  const evidenceId=safetyRecordId(v);
+  if(!evidenceId)return snapshot||{label:life.next,command:null,actor:session};
+  return {label:life.next,command:{...command,evidenceId},actor:session==='safety'?session:'manager'};
+ }
+ return {label:life.next,command,actor:session};
 }
 
 export function overviewCopy(v:(CaseLike&{events?:{id:string}[]|null;hypotheses?:unknown[]|null})|null|undefined){

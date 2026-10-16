@@ -1,6 +1,7 @@
 import {expect,it} from 'vitest';
 import {fixtureCase} from './cases';
-import {documentLine,eventLine,groupThousands,humanScopeWhen,lifecycleState,nextLifecycleCommand,overviewCopy,presentDocuments,snapshotLabel} from './plantPresentation';
+import {documentLine,eventLine,groupThousands,humanScopeWhen,journeyAction,lifecycleState,nextLifecycleCommand,overviewCopy,presentDocuments,snapshotLabel} from './plantPresentation';
+import {createWorkflow,executeWorkflow,workflowView} from './workflow';
 
 it('reads the next step from the saved owner and does not invent one',()=>{
  expect(lifecycleState({title:'Northworks feeder-jam plan miss',owner:{requested:null,accepted:null},action:{status:'draft'}})).toEqual({status:'No owner requested',owner:'Not assigned',next:'Request an owner'});
@@ -44,6 +45,28 @@ it('describes a stop from its own minutes, asset, and UTC day',()=>{
 
 it('prints the synthetic snapshot in UTC',()=>{
  expect(snapshotLabel('2026-10-06T14:45:00Z')).toBe('Snapshot: Oct 6, 2026 · 2:45 PM UTC · Synthetic');
+});
+
+it('follows the saved case through owner, work, verification, sustainment, and a new cycle',()=>{
+ for(const caseId of ['downtime','speed','quality'] as const){
+  let w=createWorkflow(caseId);
+  const labels:string[]=[];
+  for(let i=0;i<40&&w.cycle===1;i++){
+   const view=workflowView(w);
+   const step=journeyAction(view,'manager',{verificationRecorded:w.verificationRecorded});
+   expect(step.command,`${caseId} ${view.action.status} ${view.verification.status} ${view.sustain.status}`).toBeTruthy();
+   expect(step.label).not.toMatch(/H1|SAFETY-01|investigation-v1|fixture/i);
+   labels.push(step.label);
+   try{w=executeWorkflow(w,step.command!,step.actor,'journey-'+caseId+'-'+i);}catch(error){throw Error(caseId+' after ['+labels.join(' | ')+'] asOf '+view.asOf+' verification '+view.verification.status+' command '+JSON.stringify(step.command)+' '+(error instanceof Error?error.message:error));}
+  }
+  expect(w.cycle,caseId).toBe(2);
+  expect(w.priorCycles[0].accepted,caseId).toBe(true);
+  expect(labels,caseId).toEqual(expect.arrayContaining(['Request an owner','Accept ownership','Record a hypothesis','Recommend the action','Request authorization','Authorize the action','Record performed work','Record verification','Review safety','Accept the measured result','Record sustainment','Open a new cycle']));
+  expect(labels.some(label=>label.startsWith('Open the ')),caseId).toBe(true);
+ }
+ const fresh=workflowView(createWorkflow('downtime'));
+ expect(journeyAction(fresh).label).toBe('Request an owner');
+ expect(journeyAction(fresh).actor).toBe('manager');
 });
 
 it('separates overview facts into sentences taken from the case',()=>{
