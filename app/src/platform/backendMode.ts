@@ -32,7 +32,7 @@ export class LivePilotWire implements PilotWire{
   let response:Response;
   try{
    response=await this.fetchImpl(target,{method:request.method,headers:{Accept:'application/json',Authorization:`Bearer ${this.access.bearer}`,...request.headers,...(request.body===undefined?{}:{'Content-Type':'application/json'})},body:request.body===undefined?undefined:JSON.stringify(request.body)});
-  }catch{throw new LiveBackendUnavailable();}
+  }catch(error){const name=error instanceof Error?error.name:'';throw new LiveBackendUnavailable(name==='AbortError'||name==='TimeoutError'?'The live EKAS call timed out. Demo mode was not used as a substitute.':undefined);}
   const text=await response.text();
   let body:unknown;
   try{body=text?JSON.parse(text):null;}catch{throw new LiveBackendUnavailable('The live EKAS response was not JSON. Demo mode was not used as a substitute.');}
@@ -40,6 +40,13 @@ export class LivePilotWire implements PilotWire{
  }
 }
 export function openLivePilot(access:LiveAccess,fetchImpl:typeof fetch=fetch){return new PilotAdapter(new LivePilotWire(access,fetchImpl));}
+/** Unauthenticated liveness probes from apps/api/ekas_api/main.py and runtime_identity.py. Readiness is not this shape. */
+export function validateRuntimeProbe(path:'/healthz'|'/livez',body:unknown){
+ if(!body||typeof body!=='object'||Array.isArray(body))throw new Error('Invalid runtime probe.');
+ const probe=body as Record<string,unknown>;
+ const component=path==='/healthz'?'ui-shell-api':'api-runtime';
+ if(probe.status!=='ok'||probe.component!==component||typeof probe.wp!=='string'||!probe.wp.trim())throw new Error('Invalid runtime probe.');
+}
 /** Investigation and workflow commands stay on the demo manufacturing service. Live mode does not borrow that service. */
 export function refuseLiveInvestigationCommand():never{
  throw new UnsupportedBackendOperation('The documented pilot contract has no investigation or workflow command route. The call was not sent. Demo mode was not used as a substitute.');
