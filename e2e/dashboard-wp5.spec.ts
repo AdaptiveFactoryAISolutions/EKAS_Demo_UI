@@ -31,13 +31,11 @@ async function expectNoEmptyHeading(region: Locator) {
   expect(blanks).toEqual([]);
 }
 
-async function chartValues(page: Page, id: string) {
-  return page.evaluate(chartId => {
-    const host = document.querySelector(`[data-chart-id="${chartId}"] .ekas-dash-chart`);
-    const charts = ((window as unknown as { Highcharts?: { charts?: { renderTo?: Element; series?: { points?: { y?: number }[] }[] }[] } }).Highcharts?.charts || []).filter(Boolean);
-    const chart = charts.find(item => item.renderTo === host || (host ? host.contains(item.renderTo as Node) : false));
-    return chart?.series?.[0]?.points?.map(point => point.y) || [];
-  }, id);
+async function expectSeriesMatchesTable(figure: Locator) {
+  const labels = (await figure.locator('.highcharts-data-label').allTextContents()).map(text => text.replace(/\s+/g, ' ').trim()).filter(Boolean);
+  const shown = await figure.locator('tbody tr').evaluateAll(rows => rows.map(row => row.querySelector('td')?.textContent?.replace(/\s+/g, ' ').trim() || ''));
+  expect(labels).toEqual(shown);
+  expect(labels.length).toBeGreaterThan(0);
 }
 
 test('plant operations selects Line 03, explains the 150-unit gap, and opens the downtime case', async ({ page }) => {
@@ -51,6 +49,7 @@ test('plant operations selects Line 03, explains the 150-unit gap, and opens the
   const operations = dashboard.getByRole('tab', { name: 'Plant operations' });
   await expect(operations).toHaveAttribute('aria-selected', 'true');
   await expect(dashboard.getByRole('tab', { selected: true })).toHaveCount(1);
+  await expect(dashboard.getByLabel('Dashboard family')).toBeHidden();
   const activeStyle = await operations.evaluate(el => {
     const style = getComputedStyle(el);
     return { background: style.backgroundColor, color: style.color };
@@ -87,12 +86,14 @@ test('plant operations selects Line 03, explains the 150-unit gap, and opens the
   await expect(dashboard).not.toContainText('91.30%');
   await expect(dashboard.locator('.highcharts-container').first()).toBeVisible();
   await expect(dashboard.locator('.highcharts-legend')).toHaveCount(0);
-  const planValues = (await dashboard.locator('[data-chart-id="plan-versus-actual"]').getAttribute('data-values'))!.split(',').map(Number);
-  expect(await chartValues(page, 'plan-versus-actual')).toEqual(planValues);
+  const planFigure = dashboard.locator('[data-chart-id="plan-versus-actual"]');
+  const planValues = (await planFigure.getAttribute('data-values'))!.split(',').map(Number);
   expect(planValues).toEqual([2304, 2154, 150]);
-  const bridgeValues = (await dashboard.locator('[data-chart-id="capacity-bridge"]').getAttribute('data-values'))!.split(',').map(Number);
-  expect(await chartValues(page, 'capacity-bridge')).toEqual(bridgeValues);
+  await expectSeriesMatchesTable(planFigure);
+  const bridgeFigure = dashboard.locator('[data-chart-id="capacity-bridge"]');
+  const bridgeValues = (await bridgeFigure.getAttribute('data-values'))!.split(',').map(Number);
   expect(bridgeValues[1]).not.toBe(150);
+  await expectSeriesMatchesTable(bridgeFigure);
   await expect(dashboard.locator('[data-chart-id="plan-versus-actual"]')).toContainText('2,304 good units');
   await expect(dashboard.locator('[data-chart-id="plan-versus-actual"]')).toContainText('2,154 good units');
   await expect(dashboard.locator('[data-chart-id="capacity-bridge"]')).toContainText('Do not add');
@@ -126,6 +127,7 @@ test('plant operations selects Line 03, explains the 150-unit gap, and opens the
   await expect(answer).toContainText(/2,304|2304/);
   await expect(answer).not.toContainText('Machine 1');
   await expect(answer).not.toContainText('training-positive');
+  await answer.scrollIntoViewIfNeeded();
   await shot(page, '03-why');
 
   await goArea(page, 'Dashboards');
@@ -144,9 +146,10 @@ test('plant operations selects Line 03, explains the 150-unit gap, and opens the
   await expect(dashboard.locator('[data-chart-id="apq"] .highcharts-container')).toBeVisible();
   await expect(dashboard).toContainText('No time series is supplied');
   await expect(dashboard).toContainText('Availability');
-  const apqValues = (await dashboard.locator('[data-chart-id="apq"]').getAttribute('data-values'))!.split(',').map(Number);
-  expect(await chartValues(page, 'apq')).toEqual(apqValues);
+  await expectSeriesMatchesTable(dashboard.locator('[data-chart-id="apq"]'));
   await expectNoEmptyHeading(dashboard);
+  await page.locator('[aria-label="Workspace content"]').evaluate(el => { el.scrollTop = 0; });
+  await shot(page, '05-production-family');
   await dashboard.locator('[data-chart-id="apq"]').scrollIntoViewIfNeeded();
   await expectNoOverflow(page);
   await shot(page, '05-production-oee');
