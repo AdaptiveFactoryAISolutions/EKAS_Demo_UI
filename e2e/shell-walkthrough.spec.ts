@@ -1,3 +1,5 @@
+import { createHash } from 'node:crypto';
+import { readFileSync } from 'node:fs';
 import { expect, test, type Locator, type Page } from '@playwright/test';
 
 const shots = 'docs/wp1/screenshots';
@@ -137,9 +139,12 @@ test('plant shell walk-through of the closure screens', async ({ page }) => {
   await page.getByRole('button', { name: 'Investigations', exact: true }).click();
   await expect(page.getByRole('heading', { name: 'Investigations' })).toBeVisible();
   const summary = page.getByRole('region', { name: 'Investigation summary' });
-  await expect(summary).toContainText('Known:');
-  await expect(summary).toContainText('Not yet known:');
-  await expect(summary).toContainText('Next decision: Record this hypothesis.');
+  await expect(summary).toContainText('Known');
+  await expect(summary).toContainText('Not yet known');
+  await expect(summary).toContainText('No hypothesis has been recorded.');
+  await expect(summary).toContainText('No owner has been assigned.');
+  await expect(summary).toContainText('Next decision');
+  await expect(summary.getByRole('listitem').filter({ hasText: 'Record this hypothesis' })).toBeVisible();
   await expect(summary).not.toContainText('150 units below plan. Status:');
   await expect(summary).toContainText('Status: No owner requested');
   await expect(summary).toContainText('Owner: Not assigned');
@@ -245,7 +250,16 @@ test('plant shell walk-through of the closure screens', async ({ page }) => {
   await expect(scorecard.locator('table')).toContainText('2,154');
   await expect(scorecard.locator('table')).toContainText('2,304');
   await page.screenshot({ path: `${shots}/03-plant-review.png`, fullPage: false });
+  await page.getByLabel('Ask EKAS').fill('What should we investigate next?');
+  await expect(page.locator('form.ekas-composer').getByRole('button', { name: 'Send' })).toBeEnabled();
+  await aboveComposer(page, scorecard);
+  const scoreBox = await scorecard.boundingBox();
+  const openComposer = await composer.boundingBox();
+  expect(scoreBox!.y + scoreBox!.height).toBeLessThanOrEqual(openComposer!.y + 1);
   await page.screenshot({ path: `${shots}/03-plant-review-composer.png`, fullPage: false });
+  const digest = (file: string) => createHash('md5').update(readFileSync(file)).digest('hex');
+  expect(digest(`${shots}/03-plant-review.png`)).not.toBe(digest(`${shots}/03-plant-review-composer.png`));
+  await page.getByLabel('Ask EKAS').fill('');
 
   await page.evaluate(() => { document.documentElement.style.zoom = '1.5'; });
   await aboveComposer(page, scorecard);

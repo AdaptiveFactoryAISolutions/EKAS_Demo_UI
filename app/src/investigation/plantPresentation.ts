@@ -354,21 +354,34 @@ function resultWord(status?:string|null){
  if(status==='fail')return 'Failed';
  return 'Pending';
 }
-function thresholdSentence(endpoint:string|undefined,direction:string|undefined,value:number,unit:string|undefined,count:number){
+function spokenUnit(unit?:string){
+ return (unit||'').replace(/^min\b/,'minutes').trim();
+}
+/** A governed number with its unit. Percents stay attached to the number. */
+export function measureAmount(value:number,unit?:string,digits=2){
+ const shown=amount(value,digits);
+ if(unit?.startsWith('%'))return `${shown}%`;
+ return spokenUnit(unit)?`${shown} ${spokenUnit(unit)}`:shown;
+}
+export function seriesWithUnit(values:number[],unit?:string){
+ const parts=values.map(value=>unit?.startsWith('%')?`${amount(value)}%`:amount(value));
+ const list=parts.length<2?parts.join(''):parts.length===2?`${parts[0]} and ${parts[1]}`:`${parts.slice(0,-1).join(', ')} and ${parts[parts.length-1]}`;
+ return !unit?.startsWith('%')&&spokenUnit(unit)?`${list} ${spokenUnit(unit)}`:list;
+}
+export function reopenSentence(endpoint:string|undefined,direction:string|undefined,value:number,unit:string|undefined,count:number){
  const name=endpointName(endpoint).replace(/^Main measure$/,'the main measure').toLowerCase();
  const verb=direction==='higher'?'falls below':'goes above';
  const times=count===2?'two':count.toLocaleString('en-US');
- const shown=unit?.startsWith('%')?`${amount(value)}${unit}`:`${amount(value)}${unit?` ${unit}`:''}`;
- return `Reopen if ${name} ${verb} ${shown} for ${times} consecutive eligible shifts.`;
+ return `Reopen if ${name} ${verb} ${measureAmount(value,unit)} for ${times} consecutive eligible shifts.`;
 }
 
 function recurrenceReason(v:{asOf?:string|null;plan?:{endpoint?:string;direction?:string;unit?:string}|null},fixture:NonNullable<ReturnType<typeof suppliedCase>>){
  const plan=v.plan;
  if(!plan)return '';
- const watch=thresholdSentence(plan.endpoint,plan.direction,fixture.sustain.threshold,plan.unit,fixture.sustain.consecutiveRecurrence);
- const recent=fixture.sustain.observations.filter(item=>item.eligible&&v.asOf&&item.at<=v.asOf).slice(-fixture.sustain.consecutiveRecurrence).map(item=>amount(item.value));
- const unit=plan.unit?.startsWith('%')?plan.unit:`${plan.unit||''}`.trim();
- return `Reason: ${watch}${recent.length?` Latest eligible shifts: ${recent.join(', ')}${unit?` ${unit}`:''}.`:''}`;
+ const watch=reopenSentence(plan.endpoint,plan.direction,fixture.sustain.threshold,plan.unit,fixture.sustain.consecutiveRecurrence);
+ const recent=fixture.sustain.observations.filter(item=>item.eligible&&v.asOf&&item.at<=v.asOf).slice(-fixture.sustain.consecutiveRecurrence).map(item=>item.value);
+ const latest=recent.length?` Latest eligible shifts: ${seriesWithUnit(recent,plan.unit)}.`:'';
+ return `Reason: ${watch}${latest}`;
 }
 
 type BriefView=JourneyView&{title?:string;cycle?:number;documents?:{id?:string;text?:string}[]|null;plan?:{endpoint?:string;direction?:string;target?:number;unit?:string;requiredShifts?:number;qualityMaxPct?:number;energyMaxKwhPerGood?:number;qualityMaxWorseningPp?:number;energyMaxWorseningPct?:number}|null;hypotheses?:{id?:string;description?:string;test?:string;supportingEvidenceIds?:string[]}[]|null;action?:{status?:string;description?:string;performedId?:string|null;performedAt?:string|null;performer?:string|null;confirmation?:string|null}|null;verification?:{status?:string;before?:number|null;after?:number|null;outputGain?:number|null;oeeGain?:number|null;beforeMetrics?:{oee?:{value?:number|boolean|null}};afterMetrics?:{oee?:{value?:number|boolean|null}};guardrails?:{quality?:{status?:string};energy?:{status?:string}};safetyPass?:boolean;causalStatus?:string}|null};
@@ -414,7 +427,8 @@ export function journeyBrief(v:BriefView|null|undefined,facts?:{verificationReco
   const plan=v.plan;
   const name=endpointName(plan.endpoint);
   const sense=plan.direction==='higher'?'at least':'at most';
-  known.push(`Main measure: ${name}. Baseline and target use ${plan.unit}. Target: ${sense} ${amount(plan.target,2)} ${plan.unit}. Required observations: ${plan.requiredShifts} eligible shifts.`);
+  const targetText=typeof plan.target==='number'?measureAmount(plan.target,plan.unit):'unavailable';
+  known.push(`Main measure: ${name}. Baseline and target use ${spokenUnit(plan.unit)||'the governed unit'}. Target: ${sense} ${targetText}. Required observations: ${plan.requiredShifts} eligible shifts.`);
   const measured=v.verification;
   known.push('Guardrails');
   if(plan.qualityMaxPct!=null)known.push(`Quality: ≤${limitAmount(plan.qualityMaxPct)}%`);
@@ -423,23 +437,25 @@ export function journeyBrief(v:BriefView|null|undefined,facts?:{verificationReco
   else if(plan.energyMaxWorseningPct!=null)known.push(`Energy: worsening ≤${limitAmount(plan.energyMaxWorseningPct)}%`);
   known.push(`Safety: ${measured?.safetyPass?'Recorded':'Pending review'}`);
   if(measured&&measured.before!=null&&measured.after!=null){
-   known.push(`Observed result: ${amount(measured.after)} ${plan.unit}. Baseline was ${amount(measured.before)}.`);
+   known.push(`Observed result: ${measureAmount(measured.after,plan.unit)}. Baseline was ${measureAmount(measured.before,plan.unit)}.`);
    const beforeOee=measured.beforeMetrics?.oee?.value;
    const afterOee=measured.afterMetrics?.oee?.value;
    if(beforeOee!=null&&afterOee!=null)known.push(`Supporting OEE: ${amount(beforeOee)}% → ${amount(afterOee)}%.`);
    if(measured.outputGain!=null)known.push(`Good units: ${Number(measured.outputGain)>0?'+':''}${amount(measured.outputGain,0)} across the eligible post cohort.`);
-   known.push(`Quality: ${resultWord(measured.guardrails?.quality?.status)}.`);
-   known.push(`Energy: ${resultWord(measured.guardrails?.energy?.status)}.`);
-   known.push(`Safety: ${measured.safetyPass?'Passed':'Pending'}.`);
+   known.push('Guardrail results');
+   known.push(`Quality: ${resultWord(measured.guardrails?.quality?.status)}`);
+   known.push(`Energy: ${resultWord(measured.guardrails?.energy?.status)}`);
+   known.push(`Safety: ${measured.safetyPass?'Passed':'Pending'}`);
    if(!measured.safetyPass)known.push('Safety review pending. Observed improvement is supported by the eligible comparison. Causality is not isolated. Verification cannot be accepted until the safety review is complete.');
    else if(kind==='accept-result')known.push('The safety review is recorded. Accepting the result does not isolate the cause or claim savings.');
   }
  }
  if((kind==='record-sustain'||v.sustain?.status==='sustained'||v.sustain?.status==='recurrence')&&fixture&&v.plan){
-  const watch=thresholdSentence(v.plan.endpoint,v.plan.direction,fixture.sustain.threshold,v.plan.unit,fixture.sustain.consecutiveRecurrence);
-  known.push(`Sustain check. Target: ${endpointName(v.plan.endpoint)} ${v.plan.direction==='higher'?'at least':'at most'} ${amount(v.plan.target)} ${v.plan.unit}. ${watch}`);
-  const values=fixture.sustain.observations.filter(item=>item.eligible&&v.asOf&&item.at<=v.asOf).map(item=>amount(item.value));
-  if(values.length)known.push(`Recent eligible shifts: ${values.join(', ')}.`);
+  const watch=reopenSentence(v.plan.endpoint,v.plan.direction,fixture.sustain.threshold,v.plan.unit,fixture.sustain.consecutiveRecurrence);
+  const targetText=typeof v.plan.target==='number'?measureAmount(v.plan.target,v.plan.unit):'unavailable';
+  known.push(`Sustain check. Target: ${endpointName(v.plan.endpoint)} ${v.plan.direction==='higher'?'at least':'at most'} ${targetText}. ${watch}`);
+  const values=fixture.sustain.observations.filter(item=>item.eligible&&v.asOf&&item.at<=v.asOf).map(item=>item.value);
+  if(values.length)known.push(`Recent eligible shifts: ${seriesWithUnit(values,v.plan.unit)}.`);
   if(v.sustain?.status==='sustained')known.push('Status: Sustained.');
   if(v.sustain?.status==='recurrence'&&kind!=='reopen'&&!(v.cycle&&v.cycle>1))known.push('Status: Recurrence. Cycle 1 stays completed and historical.');
  }
@@ -447,33 +463,28 @@ export function journeyBrief(v:BriefView|null|undefined,facts?:{verificationReco
  return {known,records,note:follow&&step.label===follow.label?follow.note:''};
 }
 
-export function overviewCopy(v:(CaseLike&{events?:{id:string}[]|null;documents?:{id?:string}[]|null;hypotheses?:unknown[]|null;verification?:{status?:string}|null})|null|undefined,facts?:{verificationRecorded?:boolean}){
- if(!v?.title)return 'Open a supplied case from Chat. Nothing here is substituted from another investigation.';
+export type OverviewSections={known:string[];unknown:string[];next:string};
+/** Each fact appears once: known records, open questions, then the next decision. */
+export function overviewCopy(v:(CaseLike&{events?:{id:string}[]|null;documents?:{id?:string}[]|null;hypotheses?:unknown[]|null;verification?:{status?:string}|null})|null|undefined,facts?:{verificationRecorded?:boolean}):OverviewSections{
+ if(!v?.title)return {known:['Open a supplied case from Chat. Nothing here is substituted from another investigation.'],unknown:[],next:''};
  const stops=(v.events||[]).filter(event=>/^stop-/i.test(event.id)).length;
  const documents=(v.documents||[]).length;
  const hypotheses=v.hypotheses?.length||0;
  const known:string[]=[];
- if(stops)known.push(countSentence(stops,'stop','stops').replace(/\.$/,''));
- if(documents)known.push(`${documents.toLocaleString('en-US')} ${documents===1?'document is':'documents are'} on the case`);
- if(hypotheses)known.push(countSentence(hypotheses,'hypothesis','hypotheses').replace(/\.$/,''));
- if(!known.length)known.push('The case is open');
+ if(stops)known.push(countSentence(stops,'stop','stops'));
+ if(documents)known.push(`${documents.toLocaleString('en-US')} ${documents===1?'document is':'documents are'} available.`);
+ if(hypotheses)known.push(countSentence(hypotheses,'hypothesis','hypotheses'));
+ if(!known.length)known.push('The case is open.');
  const unknown:string[]=[];
- if(!hypotheses)unknown.push('no hypothesis is recorded');
- if(!v.owner?.accepted&&!v.owner?.requested)unknown.push('no owner is assigned');
- else if(!v.owner?.accepted)unknown.push('owner acceptance is not recorded');
+ if(!hypotheses)unknown.push('No hypothesis has been recorded.');
+ if(!v.owner?.accepted&&!v.owner?.requested)unknown.push('No owner has been assigned.');
+ else if(!v.owner?.accepted)unknown.push('Owner acceptance has not been recorded.');
  const verification=v.verification?.status||'';
- if(verification==='safety_review_required')unknown.push(facts?.verificationRecorded?'the safety review is still pending':'the safety review is not recorded');
- else if(verification==='awaiting_acceptance')unknown.push('the measured result is not accepted');
- else if(verification!=='accepted')unknown.push('the result is not measured');
- const evidence=stops+documents;
+ if(verification==='safety_review_required')unknown.push(facts?.verificationRecorded?'The safety review is still pending.':'The safety review has not been recorded.');
+ else if(verification==='awaiting_acceptance')unknown.push('The measured result has not been accepted.');
+ else if(verification!=='accepted')unknown.push('The result has not been measured.');
  const step=journeyAction(v,'manager',facts);
- return [
-  `Known: ${known.join('. ')}.`,
-  unknown.length?`Not yet known: ${unknown.join('; ')}.`:'',
-  `Evidence: ${evidence?`${evidence.toLocaleString('en-US')} ${evidence===1?'record':'records'}`:'none recorded'}.`,
-  `Hypothesis: ${hypotheses?countSentence(hypotheses,'hypothesis','hypotheses').replace(/\.$/,''):'none recorded'}.`,
-  `Next decision: ${step.next||step.label}.`,
- ].filter(Boolean).join(' ');
+ return {known,unknown,next:step.next||step.label};
 }
 
 function countSentence(n:number,singular:string,plural:string){

@@ -40,6 +40,10 @@ html{scroll-padding-bottom:calc(var(--ekas-composer-h, 168px) + 20px)}
 .ekas-case-title{font-size:18px;font-weight:650}
 .ekas-guardrail-label{margin:8px 0 2px}
 .ekas-guardrail{margin:0 0 2px;padding-left:14px}
+.ekas-overview h2{font-size:15px;margin:12px 0 4px}
+.ekas-overview h2:first-child{margin-top:0}
+.ekas-overview ul{margin:0 0 4px;padding-left:18px}
+.ekas-overview li{margin:0 0 2px}
 .ekas-scorecard-cards{display:none;list-style:none;margin:8px 0;padding:0}
 .ekas-card-title{font-weight:650}
 .ekas-context details{margin:4px 0 0}
@@ -75,6 +79,10 @@ html{scroll-padding-bottom:calc(var(--ekas-composer-h, 168px) + 20px)}
  .retained-console [aria-label="Investigation summary"]>h1{margin:0 0 2px;font-size:18px;line-height:1.2}
  .retained-console .ekas-tabs-mobile{margin:0}
  .retained-console [aria-label="Investigation summary"] [role="tabpanel"]>p{margin:0;font-size:13px;line-height:1.2}
+ .retained-console .ekas-overview h2{font-size:12px;line-height:1.15;margin:0}
+ .retained-console .ekas-overview ul{margin:0;padding-left:16px}
+ .retained-console .ekas-overview li{font-size:12px;line-height:1.15;margin:0}
+ .ekas-embedded.ekas-composer-inline .ekas-composer small{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
  .retained-console .ekas-journey-record{margin:0}
  .retained-console .ekas-journey-record>p{margin:0;line-height:1.2;font-size:12px}
  .retained-plant-shell .ekas-context{padding:2px 0}

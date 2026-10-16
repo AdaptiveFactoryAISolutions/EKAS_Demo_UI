@@ -87,9 +87,19 @@ it('follows the saved case through owner, work, verification, sustainment, and a
     expect(brief).toContain('Quality:');
     expect(brief).toContain('Energy:');
     expect(brief).toContain('Safety: Pending review');
+    expect(brief).toContain('Guardrail results');
+    expect(brief).toMatch(/Baseline was \S/);
+    expect(brief).not.toMatch(/\d\s+%/);
     expect(brief).not.toMatch(/Primary endpoint|\bPASS\b|\bPENDING\b|\bFAIL\b/);
+    expect(brief.indexOf('Guardrail results')).toBeGreaterThan(brief.indexOf('Good units'));
    }
-   if(step.label==='Reopen the investigation')expect(brief).toMatch(/Reopen if .+(?:min per eligible shift|% first-pass accepted)/);
+   if(step.label==='Reopen the investigation'&&caseId==='quality'){
+    expect(brief).toContain('Reopen if first-pass yield falls below 92% for two consecutive eligible shifts.');
+    expect(brief).toContain('Latest eligible shifts: 89% and 88%.');
+    expect(brief).not.toMatch(/\d\s+%/);
+    expect(brief).not.toContain('% first-pass accepted');
+   }
+   if(step.label==='Reopen the investigation'&&caseId!=='quality')expect(brief).toMatch(/Reopen if .+ minutes per eligible shift/);
    labels.push(step.label);
    try{commands.forEach((command,index)=>{w=executeWorkflow(w,command,step.actor,'journey-'+caseId+'-'+i+'-'+index);});}catch(error){throw Error(caseId+' after ['+labels.join(' | ')+'] asOf '+view.asOf+' verification '+view.verification.status+' command '+JSON.stringify(commands)+' '+(error instanceof Error?error.message:error));}
   }
@@ -111,16 +121,22 @@ it('follows the saved case through owner, work, verification, sustainment, and a
 
 it('separates overview facts into sentences taken from the case',()=>{
  const fresh={title:'Northworks feeder-jam plan miss',owner:{requested:null,accepted:null},action:{status:'draft'},goal:{gap:150},events:Array.from({length:12},(_,index)=>({id:'stop-'+String(index+1).padStart(2,'0')})),hypotheses:[]};
- expect(overviewCopy(fresh)).toBe('Known: 12 stops are recorded. Not yet known: no hypothesis is recorded; no owner is assigned; the result is not measured. Evidence: 12 records. Hypothesis: none recorded. Next decision: Request an owner.');
- expect(overviewCopy(fresh)).not.toContain('150 units below plan');
- expect(overviewCopy(fresh)).not.toContain('Status:');
+ expect(overviewCopy(fresh)).toEqual({known:['12 stops are recorded.'],unknown:['No hypothesis has been recorded.','No owner has been assigned.','The result has not been measured.'],next:'Request an owner'});
+ const freshText=[...overviewCopy(fresh).known,...overviewCopy(fresh).unknown,overviewCopy(fresh).next].join(' ');
+ expect(freshText).not.toContain('150 units below plan');
+ expect(freshText).not.toContain('Status:');
+ expect(freshText.match(/hypothesis/gi)).toHaveLength(1);
  const requested={...fresh,owner:{requested:'maintenance',accepted:null}};
- expect(overviewCopy(requested)).toContain('owner acceptance is not recorded');
- expect(overviewCopy(requested)).toContain('Next decision: Accept ownership.');
- expect(overviewCopy({title:'Open case',goal:{gap:null}})).toContain('Known: The case is open.');
- expect(overviewCopy({title:'Open case',goal:{gap:null}})).not.toContain('Plan gap');
- expect(overviewCopy({title:'Open case',goal:{gap:10},hypotheses:[{id:'h'}],verification:{status:'safety_review_required'}})).toContain('the safety review is not recorded');
- expect(overviewCopy({title:'Open case',goal:{gap:10},hypotheses:[{id:'h'}],verification:{status:'safety_review_required'}},{verificationRecorded:true})).toContain('the safety review is still pending');
+ expect(overviewCopy(requested).unknown).toContain('Owner acceptance has not been recorded.');
+ expect(overviewCopy(requested).next).toBe('Accept ownership');
+ const recorded={...fresh,hypotheses:[{id:'h'}]};
+ const recordedText=[...overviewCopy(recorded).known,...overviewCopy(recorded).unknown].join(' ');
+ expect(recordedText.match(/1 hypothesis is recorded/g)).toHaveLength(1);
+ expect(recordedText).not.toContain('No hypothesis has been recorded');
+ expect(overviewCopy({title:'Open case',goal:{gap:null}}).known).toContain('The case is open.');
+ expect([...overviewCopy({title:'Open case',goal:{gap:null}}).known,...overviewCopy({title:'Open case',goal:{gap:null}}).unknown].join(' ')).not.toContain('Plan gap');
+ expect(overviewCopy({title:'Open case',goal:{gap:10},hypotheses:[{id:'h'}],verification:{status:'safety_review_required'}}).unknown).toContain('The safety review has not been recorded.');
+ expect(overviewCopy({title:'Open case',goal:{gap:10},hypotheses:[{id:'h'}],verification:{status:'safety_review_required'}},{verificationRecorded:true}).unknown).toContain('The safety review is still pending.');
 });
 
 it('keeps a fresh case on the current owner state and cites only supported plausibility',()=>{

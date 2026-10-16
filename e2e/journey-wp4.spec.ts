@@ -156,6 +156,8 @@ async function advanceUntilReopen(page: Page, id: string, narrow = false) {
       await expect(summary).toContainText('Safety: Pending review');
       await expect(summary).toContainText('Complete safety review');
       await expect(summary).toContainText(/Observed result:/);
+      await expect(summary).toContainText(/Baseline was .+(?:minutes per eligible shift|%)/);
+      await expect(summary).toContainText('Guardrail results');
       await expect(summary).toContainText('Main measure:');
       await expect(summary).toContainText('Quality:');
       await expect(summary).toContainText('Energy:');
@@ -172,7 +174,9 @@ async function advanceUntilReopen(page: Page, id: string, narrow = false) {
       await expect(summary).toContainText('Cycle 1: Completed / historical');
       await expect(summary).toContainText('Cycle 2: Open after recurrence');
       await expect(summary).toContainText(/Reason: Reopen if /);
-      await expect(summary).toContainText(id === 'quality' ? '% first-pass accepted' : 'min per eligible shift');
+      await expect(summary).toContainText(id === 'quality' ? 'Reopen if first-pass yield falls below 92% for two consecutive eligible shifts.' : 'minutes per eligible shift');
+      if (id === 'quality') await expect(summary).toContainText('Latest eligible shifts: 89% and 88%.');
+      await expect(summary.locator('.ekas-invest-head')).not.toContainText(/\d\s+%/);
     }
     await expect(summary.locator('.ekas-invest-head')).not.toContainText(/\bUTC\b|\bEC-003\b|Primary endpoint|unique terminal disposition/);
     const overview = await summary.innerText();
@@ -387,8 +391,23 @@ for (const journey of journeys) {
         await expect(context).not.toContainText('Oct 6 · Day Shift');
         await expect(page.locator('article.ekas-captured-reply').first()).toContainText('Oct 6');
       }
-      if (turn.ask === 'Why did it reopen?') await expect(answer).toContainText(journey.id === 'quality' ? /92%/ : /min per eligible shift/);
+      if (turn.ask === 'Why did it reopen?') await expect(answer).toContainText(journey.id === 'quality' ? /92%/ : /minutes per eligible shift/);
       if (journey.id === 'quality' && turn.ask === 'What would prove it?') await expect(answer).toContainText(journey.prove);
+      if (turn.ask === 'Did it work?') {
+        await page.evaluate(() => {
+          window.dispatchEvent(new WheelEvent('wheel', { deltaY: 1 }));
+          const scroller = document.querySelector<HTMLElement>('[aria-label="Workspace content"]');
+          const reply = document.querySelector('article.ekas-captured-reply:last-of-type');
+          const context = document.querySelector('.ekas-context');
+          if (!scroller || !reply || !context) return;
+          scroller.scrollTop += reply.getBoundingClientRect().top - (context.getBoundingClientRect().bottom + 16);
+        });
+        const question = await answer.locator('.ekas-question').boundingBox();
+        expect(question!.y).toBeGreaterThan(40);
+        expect(question!.y).toBeLessThan(420);
+        await expect(answer).toContainText('Guardrail results');
+        await expect(answer).toContainText(/Causality is not isolated|safety review is complete|cannot be accepted/i);
+      }
       await shot(page, turn.file);
     }
   });
