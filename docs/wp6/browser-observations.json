@@ -1,0 +1,136 @@
+{
+  "master": [
+    {
+      "question": "What was OEE in January?",
+      "lead": "Machine 1's January OEE was 77.08%. This is the separate 2026 monthly synthetic cohort, with 480 planned minutes and 740 accepted good units."
+    },
+    {
+      "question": "And March?",
+      "lead": "Machine 1's March OEE was 83.33%. This is the separate 2026 monthly synthetic cohort, with 480 planned minutes and 800 accepted good units."
+    },
+    {
+      "question": "What about Machine 2?",
+      "lead": "Machine 2's March OEE was 81.25%. This is the separate 2026 monthly synthetic cohort, with 480 planned minutes and 780 accepted good units."
+    },
+    {
+      "question": "No, I meant Machine 1.",
+      "lead": "Machine 1's March OEE was 83.33%. This is the separate 2026 monthly synthetic cohort, with 480 planned minutes and 800 accepted good units."
+    },
+    {
+      "question": "Why?",
+      "lead": "Machine 1's March OEE was 83.33%. Availability was 83.33%, and the production record includes an unplanned mechanical stop lasting 80 minutes. That is the strongest documented availability contributor."
+    },
+    {
+      "question": "Show me.",
+      "lead": "Machine 1's March OEE was 83.33%. Availability was 83.33%, and the production record includes an unplanned mechanical stop lasting 80 minutes. That is the strongest documented availability contributor."
+    },
+    {
+      "question": "Compare it with last month.",
+      "lead": "Machine 1's March OEE was 83.33%, compared with 79.17% for Machine 1 in February. That is a 4.17 percentage-point change. March remains the primary period."
+    },
+    {
+      "question": "Go back to the first machine.",
+      "lead": "Machine 1's March OEE was 83.33%. This is the separate 2026 monthly synthetic cohort, with 480 planned minutes and 800 accepted good units. The comparison period remains February."
+    },
+    {
+      "question": "What was FPY?",
+      "lead": "First-pass yield (FPY) is unavailable for Machine 1 in March. These monthly records do not include first-pass unit dispositions. Final accepted quality cannot replace FPY; we need a governed first-pass numerator and the matching entering-unit cohort."
+    },
+    {
+      "question": "Run my plant review.",
+      "lead": "Plant review"
+    },
+    {
+      "question": "What's off target?",
+      "lead": "Plant review"
+    },
+    {
+      "question": "What should I focus on first?",
+      "lead": "Plant review"
+    },
+    {
+      "question": "Investigate it.",
+      "lead": "Quality loss: observed 2.18 %, approved fictional target 1.50 %, unfavorable deviation 0.68 percentage points. Review cutoff 2026-10-06T14:45:00Z. Scope northworks/all-lines; reporting horizon 2026-10-06T06:00:00Z to 2026-10-06T14:00:00Z. A persistent Plant Review discovery investigation is open for this selected metric. Reason-coded dispositions and a confirmed cause for these non-good units are not supplied. The current-job trace does not establish an approved quality intervention or performed work. Controlled action, acceptance, work proof and comparison cohorts remain unavailable."
+    },
+    {
+      "question": "Where did we lose the most?",
+      "lead": "Quality loss: observed 2.18 %, approved fictional target 1.50 %, unfavorable deviation 0.68 percentage points. Review cutoff 2026-10-06T14:45:00Z. Scope northworks/all-lines; reporting horizon 2026-10-06T06:00:00Z to 2026-10-06T14:00:00Z. Line 03 has the largest observed non-good count: 18 of 648 units (2.78%). Across all three current jobs, 48/2,202 units are non-good. Line 03: 18/648 (2.78%); Line 01: 16/810 (1.98%); Line 02: 14/744 (1.88%). These are full matching frozen-shift exposures, not historical note counts or first-pass FPY. The plant target is not a separately approved line target. Reason-coded dispositions and a confirmed cause for these non-good units are not supplied. The current-job trace does not establish an approved quality intervention or performed work."
+    },
+    {
+      "question": "Which line?",
+      "lead": "Quality loss: observed 2.18 %, approved fictional target 1.50 %, unfavorable deviation 0.68 percentage points. Review cutoff 2026-10-06T14:45:00Z. Scope northworks/all-lines; reporting horizon 2026-10-06T06:00:00Z to 2026-10-06T14:00:00Z. Line 03 has the largest observed non-good count: 18 of 648 units (2.78%). Across all three current jobs, 48/2,202 units are non-good. Line 03: 18/648 (2.78%); Line 01: 16/810 (1.98%); Line 02: 14/744 (1.88%). These are full matching frozen-shift exposures, not historical note counts or first-pass FPY. The plant target is not a separately approved line target. Reason-coded dispositions and a confirmed cause for these non-good units are not supplied. The current-job trace does not establish an approved quality intervention or performed work."
+    },
+    {
+      "question": "Which machine?",
+      "lead": "Line 03 / FEED-03 / JOB-8303, part NW-A revision P2, operation OP-030. The current full-shift job row records 648 total and 630 good units: 18 non-good (2.78%), from 2026-10-06T06:00:00Z to 2026-10-06T14:00:00Z. Historical job links without matching exposure remain unranked. This is a contributor trace within the plant Quality loss discovery; no different case was opened and no cause was confirmed. Reason-coded dispositions and a confirmed cause for these non-good units are not supplied. The current-job trace does not establish an approved quality intervention or performed work."
+    },
+    {
+      "question": "What job?",
+      "lead": "Line 03 / FEED-03 / JOB-8303, part NW-A revision P2, operation OP-030. The current full-shift job row records 648 total and 630 good units: 18 non-good (2.78%), from 2026-10-06T06:00:00Z to 2026-10-06T14:00:00Z. Historical job links without matching exposure remain unranked. This is a contributor trace within the plant Quality loss discovery; no different case was opened and no cause was confirmed. Reason-coded dispositions and a confirmed cause for these non-good units are not supplied. The current-job trace does not establish an approved quality intervention or performed work."
+    },
+    {
+      "question": "What evidence do we have?",
+      "lead": "Quality loss: observed 2.18 %, approved fictional target 1.50 %, unfavorable deviation 0.68 percentage points. Review cutoff 2026-10-06T14:45:00Z. Scope northworks/all-lines; reporting horizon 2026-10-06T06:00:00Z to 2026-10-06T14:00:00Z. The retained reporting source and fictional target approval FICTIONAL-APPROVAL-V57-qualityLoss version 1 support this measured deviation. The three current jobs reconcile 48/2202 non-good units; Line 03 / FEED-03 / JOB-8303, part NW-A revision P2, operation OP-030. They do not establish a root cause, performed intervention or verified saving. Reason-coded dispositions and a confirmed cause for these non-good units are not supplied. The current-job trace does not establish an approved quality intervention or performed work."
+    },
+    {
+      "question": "How do you know that?",
+      "lead": "Quality loss: observed 2.18 %, approved fictional target 1.50 %, unfavorable deviation 0.68 percentage points. Review cutoff 2026-10-06T14:45:00Z. Scope northworks/all-lines; reporting horizon 2026-10-06T06:00:00Z to 2026-10-06T14:00:00Z. The retained reporting source and fictional target approval FICTIONAL-APPROVAL-V57-qualityLoss version 1 support this measured deviation. The three current jobs reconcile 48/2202 non-good units; Line 03 / FEED-03 / JOB-8303, part NW-A revision P2, operation OP-030. They do not establish a root cause, performed intervention or verified saving. Reason-coded dispositions and a confirmed cause for these non-good units are not supplied. The current-job trace does not establish an approved quality intervention or performed work."
+    },
+    {
+      "question": "Are you sure?",
+      "lead": "Quality loss: observed 2.18 %, approved fictional target 1.50 %, unfavorable deviation 0.68 percentage points. Review cutoff 2026-10-06T14:45:00Z. Scope northworks/all-lines; reporting horizon 2026-10-06T06:00:00Z to 2026-10-06T14:00:00Z. The retained reporting source and fictional target approval FICTIONAL-APPROVAL-V57-qualityLoss version 1 support this measured deviation. The three current jobs reconcile 48/2202 non-good units; Line 03 / FEED-03 / JOB-8303, part NW-A revision P2, operation OP-030. They do not establish a root cause, performed intervention or verified saving. Reason-coded dispositions and a confirmed cause for these non-good units are not supplied. The current-job trace does not establish an approved quality intervention or performed work."
+    },
+    {
+      "question": "What are the possible causes?",
+      "lead": "Quality loss: observed 2.18 %, approved fictional target 1.50 %, unfavorable deviation 0.68 percentage points. Review cutoff 2026-10-06T14:45:00Z. Scope northworks/all-lines; reporting horizon 2026-10-06T06:00:00Z to 2026-10-06T14:00:00Z. The cause is not established. Line 03 / FEED-03 / JOB-8303, part NW-A revision P2, operation OP-030. Reason-coded dispositions and a confirmed cause for these non-good units are not supplied. The current-job trace does not establish an approved quality intervention or performed work. Obtain the same-scope dispositions/events before proposing a testable cause; no hypothesis was confirmed."
+    },
+    {
+      "question": "What should we check first?",
+      "lead": "First review the 18 non-good unit dispositions for JOB-8303 (FEED-03, NW-A P2, OP-030), identify a qualified owner and check the applicable released control-plan/standard-work versions. Then record a testable hypothesis and bounded test. Reason-coded dispositions and a confirmed cause for these non-good units are not supplied. The current-job trace does not establish an approved quality intervention or performed work. Approval, performed work, verification and sustainment cannot be inferred from the plant score."
+    },
+    {
+      "question": "Who owns it?",
+      "lead": "No accepted owner is recorded. This remains the Quality loss Plant Review discovery; a request is not acceptance or performed work."
+    },
+    {
+      "question": "Assign it.",
+      "lead": "The fictional maintenance assignment request is recorded; acceptance is still unavailable. No work or approval was performed. Reason-coded dispositions and a confirmed cause for these non-good units are not supplied. The current-job trace does not establish an approved quality intervention or performed work."
+    },
+    {
+      "question": "Did they accept it?",
+      "lead": "Assignment was requested for fictional maintenance. Acceptance is unavailable. This remains the Quality loss Plant Review discovery; a request is not acceptance or performed work."
+    },
+    {
+      "question": "What should we do?",
+      "lead": "First review the 18 non-good unit dispositions for JOB-8303 (FEED-03, NW-A P2, OP-030), identify a qualified owner and check the applicable released control-plan/standard-work versions. Then record a testable hypothesis and bounded test. Reason-coded dispositions and a confirmed cause for these non-good units are not supplied. The current-job trace does not establish an approved quality intervention or performed work. Approval, performed work, verification and sustainment cannot be inferred from the plant score."
+    },
+    {
+      "question": "Request approval.",
+      "lead": "That operational transition is unavailable for this Quality loss Plant Review discovery. This discovery has not established an accepted operational owner, authorized quality intervention, performed-work proof or eligible post-work comparison. No action authorization, performed repair, verification, sustainment or reopened cycle was recorded."
+    },
+    {
+      "question": "Was it approved?",
+      "lead": "For Quality loss, no matching performed intervention or eligible post-work/monitoring cohort is supplied. There is no verified result, sustainment or recurrence to show. A goal deviation is not repair evidence. Reason-coded dispositions and a confirmed cause for these non-good units are not supplied. The current-job trace does not establish an approved quality intervention or performed work."
+    },
+    {
+      "question": "What work was done?",
+      "lead": "First review the 18 non-good unit dispositions for JOB-8303 (FEED-03, NW-A P2, OP-030), identify a qualified owner and check the applicable released control-plan/standard-work versions. Then record a testable hypothesis and bounded test. Reason-coded dispositions and a confirmed cause for these non-good units are not supplied. The current-job trace does not establish an approved quality intervention or performed work. Approval, performed work, verification and sustainment cannot be inferred from the plant score."
+    },
+    {
+      "question": "Did it work?",
+      "lead": "For Quality loss, no matching performed intervention or eligible post-work/monitoring cohort is supplied. There is no verified result, sustainment or recurrence to show. A goal deviation is not repair evidence. Reason-coded dispositions and a confirmed cause for these non-good units are not supplied. The current-job trace does not establish an approved quality intervention or performed work."
+    },
+    {
+      "question": "What is still blocking acceptance?",
+      "lead": "For Quality loss, no matching performed intervention or eligible post-work/monitoring cohort is supplied. There is no verified result, sustainment or recurrence to show. A goal deviation is not repair evidence. Reason-coded dispositions and a confirmed cause for these non-good units are not supplied. The current-job trace does not establish an approved quality intervention or performed work."
+    },
+    {
+      "question": "Did it hold?",
+      "lead": "For Quality loss, no matching performed intervention or eligible post-work/monitoring cohort is supplied. There is no verified result, sustainment or recurrence to show. A goal deviation is not repair evidence. Reason-coded dispositions and a confirmed cause for these non-good units are not supplied. The current-job trace does not establish an approved quality intervention or performed work."
+    },
+    {
+      "question": "Why did it reopen?",
+      "lead": "For Quality loss, no matching performed intervention or eligible post-work/monitoring cohort is supplied. There is no verified result, sustainment or recurrence to show. A goal deviation is not repair evidence. Reason-coded dispositions and a confirmed cause for these non-good units are not supplied. The current-job trace does not establish an approved quality intervention or performed work."
+    }
+  ]
+}

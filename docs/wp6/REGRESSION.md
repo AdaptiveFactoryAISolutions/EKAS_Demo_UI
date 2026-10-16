@@ -1,0 +1,53 @@
+# Regression — EKAS DEMO RC1
+
+Source under test: extracted `EKAS-DEMO-RC1.zip`, SHA `63ccec742c73b824c7c99c5ee1ba0a3e689801b6`.
+Command: `npm ci`, then `npx vitest run` in `app/`.
+Result on the product tree: **2,933 passed, 10 failed, 2,943 tests**. Exit code 1. No failure was deleted or weakened.
+
+The extraction also contained a temporary launch file, `app/wp6-hold-admin.test.ts`, which is not in the ZIP. That extra test failed with `LOCAL_PROFILE_ALREADY_OPEN` because the rehearsal server already held the profile lock. It is not a product failure and it is not in RC1. With it included, the process reported 2,944 tests and 11 failures.
+
+An earlier run on the same product source, before the training-scope fix was confirmed, was 2,916 passed and 27 failed of 2,943. Seventeen of those failures were retested with the assertions unchanged after the missing gitignored `evidence/` directory was created, the ResizeObserver harness polyfill was added, the lifecycle selector was aligned to the accepted Chat label, the acceptance assertion was aligned to the capitalized role name, and the training evidence scope line was corrected. Those seventeen passed. The ten below remained.
+
+Build on the extraction: `tsc --noEmit && vite build` exited 0. Targeted protected tests on the extraction (`rcTrainingEvidenceContext`, `rcAuditJourney`, `backendMode`): 25 passed.
+
+Browser cohort before this archive, on the Vite dev server of the same source: 19 Playwright tests passed (admin cancel, WP5 dashboards, journey smoke, three WP4 journeys, 320px downtime, three chat journeys, shell walk-through, seven trust failures). Official RC browser proof is the fresh-profile run against `vite preview` of the extraction: 13 passed. See `SCREENSHOT-CATALOG.md`.
+
+## P0
+
+None.
+
+## P1
+
+None.
+
+## P2 — historical fixtures fail closed
+
+`validConversation` refuses the frozen historical bytes. The read returns `INVALID_RESULT`. Current conversations still load, including reload and reopen in the browser. The validator was not loosened.
+
+| Test | Failure |
+| --- | --- |
+| `assetScopeGuard.test.ts` — legacy V67 unknown-asset answer stays byte-exact | `INVALID_RESULT` |
+| `historyCompatibility.test.ts` — original V57 captures load unchanged | `INVALID_RESULT` |
+| `legacyAssetPublication.test.ts` — frozen V89 wrong-asset history stays byte-identical | `INVALID_RESULT` |
+| `legacyAssetPublication.test.ts` — reopened legacy wrong asset | `INVALID_RESULT` |
+| `legacyAssetPublication.test.ts` — relative ownership after an unsafe legacy request | `INVALID_RESULT` |
+| `v58Compatibility.test.ts` — original V58 wrong-cutoff captures load unchanged | `INVALID_RESULT` |
+
+Disposition: preserved. Not a fresh-RC silent loss of a current conversation. Not a release blocker for a new plant-leader session.
+
+## P3 — setup or superseded assertion
+
+| Test | Failure | Evidence |
+| --- | --- | --- |
+| `v102HealthCaseTransitionRegression.test.tsx` | `ENOENT` writing `/home/pat/Documents/Codex/2026-10-08/task-4/ekas-v102-measurement-trust-working/evidence/v102-health-cross-case-independent-proof.json` | The case transition ran. The throw is the write. Creating `/home/pat` was denied. The path was not changed. |
+| `v102MeasurementCaseTransitionRegression.test.tsx` | `ENOENT` writing `.../v102-measurement-cross-case-proof.json` | Same. |
+| `v94ProfileControls.test.tsx` | `button('Discuss this synthetic metric')` is undefined, then reading `disabled` throws | The plant dashboard does not mount that metric-lab control. The composer-disabled check was reached earlier in the test. The lab was not restored. |
+| `v45ReplyOffset.test.tsx` | expected `scrollMarginTop` `185px`, received `197px` | The current offset is locked by the passing `rcLatestReplyPosition.test.ts`. The older expectation was not weakened and the product offset was not changed. |
+
+## Preserved browser observation
+
+Not a failing test. After Plant Review, “Investigate it.” opens the Quality loss discovery. The scorecard’s first case line remains the feeder-jam plan miss of 150. This matches the locked audit-journey test. The reply does not invent approval, performed work, verification, or a reopen. The separate downtime, speed, and quality journeys reached reopen.
+
+## FIX count
+
+0. No further product change was made for these residuals.

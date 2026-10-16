@@ -17835,15 +17835,18 @@
     },
     "deferredProductionDependency": "Deferred production dependency: current EKAS_Platform_v2 main lacks the complete investigation/case/metrics contract required for full backend-connected EKAS behavior. Backend Gap Contract is defined. Adapter remains fail-closed. Live integration is not claimed.",
     "wp6": {
-      "at": "2026-10-16T18:16:00Z",
-      "phase": "RC acceptance started; not approved",
+      "at": "2026-10-16T19:05:00Z",
+      "phase": "RC1 frozen; pending independent review",
+      "status": "PENDING INDEPENDENT REVIEW",
+      "rc1": "63ccec742c73b824c7c99c5ee1ba0a3e689801b6",
+      "zipSha256": "cf3ff8ce6bdda7068c21724761620a1e9245f315a1e285f6fadb649770d87e5a",
       "statusCounts": {
         "VERIFY": 509,
         "USER ACTION": 5
       },
       "productionOnlyFacetsDeferred": 7,
       "fix": 0,
-      "note": "No new inventory row. FIX is 0. USER ACTION remains only the five Patrick-personal provider rows: M05.05, M44.03, N12.05, N33.03, LIVE-PRIVATE-KEY-AND-TEST. Existing productionOnlyFacets stay DEFERRED-PRODUCTION, including Tom conformance, and the local facet of those rows stays VERIFY. The WP5B backend contract gap is recorded verbatim as deferredProductionDependency. Local criteria stay VERIFY until this exact RC is tested and independently accepted. None is marked DONE by this accounting."
+      "note": "No new inventory row. FIX is 0. USER ACTION remains only the five Patrick-personal provider rows: M05.05, M44.03, N12.05, N33.03, LIVE-PRIVATE-KEY-AND-TEST. Existing productionOnlyFacets stay DEFERRED-PRODUCTION, including Tom conformance, and the local facet of those rows stays VERIFY. The WP5B backend contract gap is recorded verbatim as deferredProductionDependency. Local criteria stay VERIFY until this exact RC is independently accepted. None is marked DONE. RC1 source tests on the extracted archive: 2933 passed, 10 failed, 2943 product tests. P0 0. P1 0."
     }
   },
   "isolatedOwnerUxSuccessor": {
