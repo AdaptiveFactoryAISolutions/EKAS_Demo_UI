@@ -122,8 +122,14 @@ async function advanceUntilReopen(page: Page, id: string, narrow = false) {
       await expect(summary).toContainText('Status: No owner requested');
       await expect(summary).toContainText('Owner: Not assigned');
       await expect(summary).toContainText('Next: Request an owner');
+      await expect(summary).not.toContainText('Owner accepted');
     }
     if (label === 'Record this hypothesis') {
+      await expect(summary).toContainText('Status: No owner requested');
+      await expect(summary).toContainText('Owner: Not assigned');
+      await expect(summary).not.toContainText('Owner accepted');
+      await expect(summary).not.toContainText('Maintenance accepted');
+      await expect(summary).not.toContainText(/Work performed|Observed result|Action authorized/);
       await expect(summary).toContainText(/Hypothesis:/);
       await expect(summary).toContainText(/Why this is plausible:/);
       await expect(summary).toContainText(/What would test it:/);
@@ -133,7 +139,11 @@ async function advanceUntilReopen(page: Page, id: string, narrow = false) {
         await expect(summary).toContainText(/Tool edge|burr/i);
         await expect(summary).toContainText(/0\.10 mm/);
         await expect(summary).toContainText(/controlled acceptance limit/);
+        await expect(summary).toContainText('a final disposition was recorded for the part');
+        await expect(summary).toContainText('final good output and first-pass yield are different measures');
         await expect(summary).not.toContainText('QUALITY-NOTE-01');
+        await expect(summary).not.toContainText('unique terminal disposition');
+        await expect(summary).not.toContainText('not FPY');
       }
     }
     if (label === 'Recommend this action') {
@@ -143,9 +153,14 @@ async function advanceUntilReopen(page: Page, id: string, narrow = false) {
     if (label === 'Record performed work') await expect(summary).toContainText(/Work performed:/);
     if (label === 'Review safety') {
       await expect(summary).toContainText('Status: Measurement recorded');
-      await expect(summary).toContainText('Safety review pending');
+      await expect(summary).toContainText('Safety: Pending review');
       await expect(summary).toContainText('Complete safety review');
       await expect(summary).toContainText(/Observed result:/);
+      await expect(summary).toContainText('Main measure:');
+      await expect(summary).toContainText('Quality:');
+      await expect(summary).toContainText('Energy:');
+      await expect(summary).not.toContainText('Primary endpoint');
+      await expect(summary).not.toContainText(/\bPASS\b|\bPENDING\b|\bFAIL\b/);
       await expect(summary).not.toContainText('Status: Safety review required');
       await expect(page.locator('[data-case-state]').first()).not.toContainText('Safety review required');
       await expect(summary).not.toContainText(/\.00\b/);
@@ -155,8 +170,12 @@ async function advanceUntilReopen(page: Page, id: string, narrow = false) {
     if (label === 'Reopen the investigation') {
       await expect(summary).toContainText('Cycle 1: Completed / historical');
       await expect(summary).toContainText('Cycle 2: Open after recurrence');
-      await expect(summary).toContainText(/Reason:/);
+      await expect(summary).toContainText(/Reason: Reopen if /);
+      await expect(summary).toContainText(id === 'quality' ? '% first-pass accepted' : 'min per eligible shift');
     }
+    await expect(summary.locator('.ekas-invest-head')).not.toContainText(/\bUTC\b|\bEC-003\b|Primary endpoint|unique terminal disposition/);
+    const overview = await summary.innerText();
+    expect(overview.match(/units below plan/g)?.length || 0, `${id} duplicated impact`).toBe(1);
     await contentBeforeButton(page, summary);
     const alert = page.getByRole('alert');
     if (await alert.count()) throw new Error(`${id} at “${label}”: ${await alert.first().innerText()}`);
@@ -199,8 +218,10 @@ async function advanceUntilReopen(page: Page, id: string, narrow = false) {
       await expect(summary).toContainText('Cycle 1: Completed / historical');
       await expect(summary).toContainText('Cycle 2: Open after recurrence');
       await expect(summary).toContainText(/Reason:/);
-      await expect(summary).toContainText('Next: Request an owner');
-      await expect(button).toHaveText('Request an owner');
+      await expect(summary).toContainText('Next: Record this hypothesis');
+      await expect(button).toHaveText('Record this hypothesis');
+      await expect(summary).toContainText('Owner: Not assigned');
+      await expect(summary).not.toContainText('Owner accepted');
       await expect(summary.locator('.ekas-invest-head')).not.toContainText('simulation');
       if (narrow) await narrowStep(page, summary);
       await shot(page, `${prefix}-17-reopen`);
@@ -219,6 +240,12 @@ for (const journey of journeys) {
     const answer = page.locator('article.ekas-captured-reply').last();
     await expect(answer).toContainText(/below the approved plan/i);
     await expect(answer).toContainText(journey.loss);
+    expect(await page.evaluate(() => {
+      const bar = document.querySelector('[aria-label="Current investigation context"]');
+      const heading = document.querySelector('#ekas-chat-main > h1');
+      if (!bar || !heading) return -1;
+      return heading.getBoundingClientRect().top - bar.getBoundingClientRect().bottom;
+    }), `${journey.id} chat heading gap`).toBeGreaterThanOrEqual(16);
     if (journey.id !== 'downtime') await expect(answer).toContainText(/is the contributor/);
     await shot(page, `${journey.id}-01-goal`);
     await shot(page, `${journey.id}-02-gap`);
@@ -250,7 +277,9 @@ for (const journey of journeys) {
 
     await goArea(page, 'Investigations');
     const summary = page.getByRole('region', { name: 'Investigation summary' });
-    await expect(summary).toContainText('Next: Request an owner');
+    await expect(summary).toContainText('Next: Record this hypothesis');
+    await expect(summary).toContainText('Status: No owner requested');
+    await expect(summary).not.toContainText('Owner accepted');
     await page.locator('[aria-label="Workspace content"]').evaluate(el => { el.scrollTop = 0; });
     expect(await headingGap(page), `${journey.id} heading gap`).toBeGreaterThanOrEqual(12);
     const labels = await advanceUntilReopen(page, journey.id);
@@ -282,14 +311,14 @@ test('the downtime journey stays usable from start to reopen at 320px', async ({
   await page.keyboard.press('Escape');
   await goArea(page, 'Investigations');
   const summary = page.getByRole('region', { name: 'Investigation summary' });
-  await expect(summary).toContainText('Next: Request an owner');
+  await expect(summary).toContainText('Next: Record this hypothesis');
   await page.locator('[aria-label="Workspace content"]').evaluate(el => { el.scrollTop = 0; });
   expect(await headingGap(page), '320 heading gap').toBeGreaterThanOrEqual(1);
   await expect(page.getByLabel('Investigation section', { exact: true })).toBeVisible();
   await expect(summary.getByRole('tab')).toHaveCount(0);
   const labels = await advanceUntilReopen(page, 'downtime', true);
   expect(labels).toContain('Reopen the investigation');
-  expect(labels[0]).toBe('Request an owner');
+  expect(labels[0]).toBe('Record this hypothesis');
 });
 
 for (const journey of journeys) {
@@ -315,8 +344,8 @@ for (const journey of journeys) {
       { ask: 'What work was done?', expect: /authorized|not recorded as approved or performed/i, file: `chat-${journey.id}-06-work-before` },
       { ask: 'Record the performed work.', expect: /Work performed/i, file: `chat-${journey.id}-06-work-done` },
       { ask: 'What work was done?', expect: /Work performed/i, file: `chat-${journey.id}-06-work-done-after` },
-      { ask: 'Check results after two weeks.', expect: /follow-up measurement period on Oct 20/i, file: `chat-${journey.id}-two-weeks`, forbid: /\d{4}-\d{2}-\d{2}T|simulation clock/i },
-      { ask: 'Did it work?', expect: journey.endpoint, file: `chat-${journey.id}-07-did-it-work`, forbid: /\.00\b|\d{4}-\d{2}-\d{2}T/ },
+      { ask: 'Check results after two weeks.', expect: /follow-up measurement period on Oct 20/i, file: `chat-${journey.id}-two-weeks`, forbid: /\d{4}-\d{2}-\d{2}T|simulation clock|UTC/i },
+      { ask: 'Did it work?', expect: journey.endpoint, file: `chat-${journey.id}-07-did-it-work`, forbid: /\.00\b|\d{4}-\d{2}-\d{2}T|\bUTC\b/ },
       { ask: 'What is still blocking acceptance?', expect: /safety review is complete|Safety: pending/i, file: `chat-${journey.id}-08-blocking` },
       { ask: 'Review safety.', expect: /safety review is recorded/i, file: `chat-${journey.id}-safety` },
       { ask: 'Review the verification result.', expect: /accepted/i, file: `chat-${journey.id}-verification` },
@@ -346,7 +375,18 @@ for (const journey of journeys) {
       if (journey.id === 'quality' && turn.ask === 'Why do you think that?') {
         await expect(answer).toContainText(/0\.10 mm/);
         await expect(answer).toContainText(/Why this is plausible/i);
+        await expect(answer).toContainText('a final disposition was recorded for the part');
+        await expect(answer).not.toContainText('unique terminal disposition');
+        await expect(answer).not.toContainText('not FPY');
       }
+      if (turn.ask === 'Check results after two weeks.') {
+        const context = page.getByRole('region', { name: 'Current investigation context' });
+        await expect(context).toContainText('Follow-up measurement period');
+        await expect(context).toContainText('Oct 20');
+        await expect(context).not.toContainText('Oct 6 · Day Shift');
+        await expect(page.locator('article.ekas-captured-reply').first()).toContainText('Oct 6');
+      }
+      if (turn.ask === 'Why did it reopen?') await expect(answer).toContainText(journey.id === 'quality' ? /92%/ : /min per eligible shift/);
       if (journey.id === 'quality' && turn.ask === 'What would prove it?') await expect(answer).toContainText(journey.prove);
       await shot(page, turn.file);
     }

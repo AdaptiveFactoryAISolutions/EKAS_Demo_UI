@@ -263,10 +263,9 @@ nav[aria-label="Template header navigation"]:empty{display:none}
  .retained-plant-shell .retained-shell-body{display:grid;grid-template-columns:220px minmax(0,1fr)}
 }
 .retained-plant-shell .ekas-context{position:sticky;top:0;z-index:12;background:#0b1220}
-/* Documented journey defect: the Investigation heading touched the frozen context bar. Padding does not collapse into that bar. */
+/* Documented journey defect: Chat and Investigation headings met the sticky context. Heading padding does not collapse, and it applies above 320px only. */
 @media(min-width:321px){
- .retained-plant-shell [aria-label="Investigation summary"]{padding-top:16px}
- .retained-plant-shell [aria-label="Investigation summary"]>h1{margin-top:0}
+ .retained-plant-shell #ekas-chat-main>h1,.retained-plant-shell [aria-label="Investigation summary"]>h1{margin-top:0;padding-top:28px}
 }
 @media(max-width:767px){
  .retained-plant-shell .retained-header{position:static;top:auto}

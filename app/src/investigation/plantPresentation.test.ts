@@ -1,6 +1,6 @@
 import {expect,it} from 'vitest';
 import {fixtureCase} from './cases';
-import {demoClockSentence,documentLine,eventLine,groupThousands,humanScopeWhen,journeyAction,journeyBrief,journeyCommands,lifecycleState,nextLifecycleCommand,overviewCopy,plausibleLine,presentDocuments,snapshotLabel} from './plantPresentation';
+import {demoClockSentence,documentLine,eventLine,groupThousands,humanScopeWhen,journeyAction,journeyBrief,journeyCommands,lifecycleState,nextLifecycleCommand,overviewCopy,plausibleLine,presentDocuments,presentedStatus,snapshotLabel,visiblePeriod} from './plantPresentation';
 import {createWorkflow,executeWorkflow,workflowView} from './workflow';
 
 it('reads the next step from the saved owner and does not invent one',()=>{
@@ -43,8 +43,13 @@ it('describes a stop from its own minutes, asset, and UTC day',()=>{
  expect(eventLine({id:'stop-01',start:18,end:30,reason:'feeder_jams',startAt:'2026-10-06T06:18:00Z'},'FEED-03')).toBe('Stop event 01 — Feeder jams / 12 minutes · FEED-03 · Oct 6');
 });
 
-it('prints the synthetic snapshot in UTC',()=>{
- expect(snapshotLabel('2026-10-06T14:45:00Z')).toBe('Snapshot: Oct 6, 2026 · 2:45 PM UTC · Synthetic');
+it('prints the plant snapshot without a raw clock label',()=>{
+ expect(snapshotLabel('2026-10-06T14:45:00Z')).toBe('Snapshot: Oct 6, 2026 · 2:45 PM · Synthetic');
+ expect(snapshotLabel('2026-10-20T15:15:00Z')).not.toMatch(/UTC|T15:15:00Z/);
+ expect(visiblePeriod('2026-10-06T14:45:00Z')).toBe('Oct 6');
+ expect(visiblePeriod('2026-10-20T15:15:00Z')).toBe('Follow-up measurement period · Oct 20');
+ expect(visiblePeriod('2026-10-27T14:00:00Z')).toBe('Sustainment check · Oct 27');
+ expect(visiblePeriod('2026-11-03T14:00:00Z')).toBe('Later-shift check · Nov 3');
 });
 
 it('follows the saved case through owner, work, verification, sustainment, and a new cycle',()=>{
@@ -59,39 +64,77 @@ it('follows the saved case through owner, work, verification, sustainment, and a
    expect(step.command,`${caseId} ${view.action.status} ${view.verification.status} ${view.sustain.status}`).toBeTruthy();
    expect(commands.length,caseId).toBeGreaterThan(0);
    expect(step.label).not.toMatch(/H1|SAFETY-01|investigation-v1|fixture|snapshot|(?:^|\s)Open the /i);
+   const brief=[...journeyBrief(view,facts).known,...journeyBrief(view,facts).records].join('\n');
+   if(!view.owner.accepted){
+    expect(presentedStatus(view,facts),`${caseId} ${step.label}`).not.toMatch(/Owner accepted|Maintenance accepted/);
+    const ownerLine=lifecycleState(view).owner;
+    expect(ownerLine,`${caseId} ${step.label}`).not.toMatch(/Maintenance accepted/);
+    expect(brief,`${caseId} ${step.label}`).not.toMatch(/Owner accepted|Maintenance accepted|Work performed|Observed result|Action authorized/);
+   }
+   if(['add-hypothesis','request-assignment','accept-assignment','recommend-action','request-authorization','authorize-action'].includes(step.command?.kind||''))expect(brief,`${caseId} ${step.label}`).not.toMatch(/Work performed|Observed result/);
+   if(step.label==='Record this hypothesis'&&caseId==='quality'){
+    expect(brief).toContain('a final disposition was recorded for the part');
+    expect(brief).toContain('final good output and first-pass yield are different measures');
+    expect(brief).not.toMatch(/unique terminal disposition|not FPY/);
+   }
+   if(step.label==='Recommend this action'&&caseId==='downtime'){
+    expect(brief).toContain('Engineering change 003');
+    expect(brief).not.toContain('EC-003');
+   }
+   if(step.label==='Review safety'){
+    expect(brief).toContain('Main measure:');
+    expect(brief).toContain('Guardrails');
+    expect(brief).toContain('Quality:');
+    expect(brief).toContain('Energy:');
+    expect(brief).toContain('Safety: Pending review');
+    expect(brief).not.toMatch(/Primary endpoint|\bPASS\b|\bPENDING\b|\bFAIL\b/);
+   }
+   if(step.label==='Reopen the investigation')expect(brief).toMatch(/Reopen if .+(?:min per eligible shift|% first-pass accepted)/);
    labels.push(step.label);
    try{commands.forEach((command,index)=>{w=executeWorkflow(w,command,step.actor,'journey-'+caseId+'-'+i+'-'+index);});}catch(error){throw Error(caseId+' after ['+labels.join(' | ')+'] asOf '+view.asOf+' verification '+view.verification.status+' command '+JSON.stringify(commands)+' '+(error instanceof Error?error.message:error));}
   }
   expect(w.cycle,caseId).toBe(2);
   expect(w.priorCycles[0].accepted,caseId).toBe(true);
   expect(labels,caseId).toEqual(expect.arrayContaining(['Request an owner','Accept ownership','Record this hypothesis','Recommend this action','Request authorization','Authorize the action','Check the completed repair','Record performed work','Check results after two weeks','Review safety','Review verification result','Check whether the result held','Record sustainment','Check the later shifts','Reopen the investigation']));
+  expect(labels[0],caseId).toBe('Record this hypothesis');
+  expect(labels.indexOf('Record this hypothesis'),caseId).toBeLessThan(labels.indexOf('Request an owner'));
+  expect(labels.indexOf('Request an owner'),caseId).toBeLessThan(labels.indexOf('Accept ownership'));
+  expect(labels.indexOf('Accept ownership'),caseId).toBeLessThan(labels.indexOf('Recommend this action'));
   expect(labels.some(label=>/snapshot|(?:^|\s)Open the /i.test(label)),caseId).toBe(false);
   expect(labels.join(' '),caseId).not.toContain('Safety review required');
  }
  const fresh=workflowView(createWorkflow('downtime'));
- expect(journeyAction(fresh).label).toBe('Request an owner');
+ expect(journeyAction(fresh).label).toBe('Record this hypothesis');
  expect(journeyAction(fresh).actor).toBe('manager');
+ expect(presentedStatus(fresh)).toBe('No owner requested');
 });
 
 it('separates overview facts into sentences taken from the case',()=>{
  const fresh={title:'Northworks feeder-jam plan miss',owner:{requested:null,accepted:null},action:{status:'draft'},goal:{gap:150},events:Array.from({length:12},(_,index)=>({id:'stop-'+String(index+1).padStart(2,'0')})),hypotheses:[]};
- expect(overviewCopy(fresh)).toBe('150 units below plan. Status: No owner requested. Owner: Not assigned. 12 stops are recorded. No hypothesis is recorded.');
+ expect(overviewCopy(fresh)).toBe('Known: 12 stops are recorded. Not yet known: no hypothesis is recorded; no owner is assigned; the result is not measured. Evidence: 12 records. Hypothesis: none recorded. Next decision: Request an owner.');
+ expect(overviewCopy(fresh)).not.toContain('150 units below plan');
+ expect(overviewCopy(fresh)).not.toContain('Status:');
  const requested={...fresh,owner:{requested:'maintenance',accepted:null}};
- expect(overviewCopy(requested)).toBe('150 units below plan. Status: Awaiting maintenance acceptance. Owner: Maintenance — not yet accepted. 12 stops are recorded. No hypothesis is recorded.');
- expect(overviewCopy({title:'Open case',goal:{gap:null}})).toBe('Plan gap is not available at this cutoff. Status: No owner requested. Owner: Not assigned. No hypothesis is recorded.');
- expect(overviewCopy({title:'Open case',goal:{gap:10},hypotheses:[{id:'h'}],verification:{status:'safety_review_required'}})).toBe('10 units below plan. Status: Measurement recorded. Owner: Not assigned. 1 hypothesis is recorded.');
- expect(overviewCopy({title:'Open case',goal:{gap:10},hypotheses:[{id:'h'}],verification:{status:'safety_review_required'}},{verificationRecorded:true})).toContain('Status: Safety review pending.');
+ expect(overviewCopy(requested)).toContain('owner acceptance is not recorded');
+ expect(overviewCopy(requested)).toContain('Next decision: Accept ownership.');
+ expect(overviewCopy({title:'Open case',goal:{gap:null}})).toContain('Known: The case is open.');
+ expect(overviewCopy({title:'Open case',goal:{gap:null}})).not.toContain('Plan gap');
+ expect(overviewCopy({title:'Open case',goal:{gap:10},hypotheses:[{id:'h'}],verification:{status:'safety_review_required'}})).toContain('the safety review is not recorded');
+ expect(overviewCopy({title:'Open case',goal:{gap:10},hypotheses:[{id:'h'}],verification:{status:'safety_review_required'}},{verificationRecorded:true})).toContain('the safety review is still pending');
 });
 
 it('keeps a fresh case on the current owner state and cites only supported plausibility',()=>{
  const fresh=workflowView(createWorkflow('downtime'));
  const text=[...journeyBrief(fresh).known,...journeyBrief(fresh).records].join(' ');
- expect(text).not.toMatch(/authored acceptance|Fictional maintenance|performed by/i);
- expect(journeyBrief(fresh).known).toEqual([]);
+ expect(text).not.toMatch(/authored acceptance|Fictional maintenance|performed by|Owner accepted|Work performed/i);
+ expect(text).toContain('Hypothesis: Guide wear or feeder setup may contribute to jams.');
+ expect(presentedStatus(fresh)).toBe('No owner requested');
  const quality=plausibleLine('quality',['quality-investigation-v1-baseline-1-reason']);
  expect(quality).toContain('controlled acceptance limit');
  expect(quality).toContain('0.10 mm');
- expect(quality).not.toMatch(/QUALITY-NOTE-01|superseded|NOT released/);
+ expect(quality).toContain('a final disposition was recorded for the part');
+ expect(quality).toContain('final good output and first-pass yield are different measures');
+ expect(quality).not.toMatch(/QUALITY-NOTE-01|superseded|NOT released|unique terminal disposition|not FPY/);
  const speed=plausibleLine('speed',['speed-investigation-v1-baseline-1-reason']);
  expect(speed).toContain('pressure recovery');
  expect(speed).toContain('Current controlled record');

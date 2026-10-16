@@ -38,6 +38,8 @@ html{scroll-padding-bottom:calc(var(--ekas-composer-h, 168px) + 20px)}
 .ekas-invest-head{display:grid;gap:4px;margin:8px 0 4px}
 .ekas-invest-head p,.ekas-case-title{margin:0}
 .ekas-case-title{font-size:18px;font-weight:650}
+.ekas-guardrail-label{margin:8px 0 2px}
+.ekas-guardrail{margin:0 0 2px;padding-left:14px}
 .ekas-scorecard-cards{display:none;list-style:none;margin:8px 0;padding:0}
 .ekas-card-title{font-weight:650}
 .ekas-context details{margin:4px 0 0}
