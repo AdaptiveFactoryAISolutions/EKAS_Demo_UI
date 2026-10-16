@@ -10,6 +10,8 @@ This is the boundary the local demo expects. It is not a second closure register
 
 A retry on 2026-10-15, as GitHub account `cursor`, still cannot read `github.com/AdaptiveFactoryAISolutions/EKAS_Platform_v2`. `gh api repos/AdaptiveFactoryAISolutions/EKAS_Platform_v2` returns HTTP 404 / "Not Found". `git ls-remote` returns "Repository not found". Current `main` was not opened. Compatibility with current `EKAS_Platform_v2` `main` remains **UNVERIFIED**. No row below is **VERIFIED** against current `main`.
 
+A further read-only retry on 2026-10-16 received the same repository HTTP 404 / "Not Found" from `gh api repos/AdaptiveFactoryAISolutions/EKAS_Platform_v2`, and `git ls-remote` again returned "Repository not found". `gh api user` returned HTTP 403, so this run could not read an account login. No live base URL or bearer was configured. Current `main` was not opened. The WP5B matrix is `docs/integration/WP5B-COMPATIBILITY-MATRIX.md`.
+
 **MISSING IN BACKEND** means the route or behavior is absent from the recorded baseline that was actually inspected, `fe2635cef64cf99eccad6c84df82bff466cb46df` in `docs/V2-SOURCE-IDENTITY.json` (branch `docs/d274-sonar-host-identity-skips` on a private working copy). It is not a claim about current EKAS v2. Where that baseline and the local adapter agree, the mapping is **PARTIAL**.
 
 Live failure must say that the live EKAS connection is unavailable and let the user choose demo mode. The local demo must not silently pretend a live call succeeded.

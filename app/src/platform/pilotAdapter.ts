@@ -14,13 +14,17 @@ export interface PilotError {error_class:string;error_code:string;message:string
 export class PilotResponseError extends Error {constructor(readonly status:number,readonly detail:PilotError){super(detail.message)}}
 const object=(x:unknown):x is Record<string,unknown>=>!!x&&typeof x==='object'&&!Array.isArray(x);
 const nonempty=(x:unknown):x is string=>typeof x==='string'&&x.trim().length>0;
+function exclusive(message:Record<string,unknown>,allowed:string[]){
+ if(Object.keys(message).some(k=>!allowed.includes(k)))throw new Error('Pilot message fields are exclusive.');
+ if(message.client_context!==undefined){const c=message.client_context;if(!object(c)||Object.keys(c).some(k=>k!=='presentation_label')||!nonempty(c.presentation_label))throw new Error('Invalid client context.');}
+}
 export function validatePilotMessage(message:unknown):asserts message is PilotMessage{
  if(!object(message))throw new Error('Pilot message must be an object.');
  const kinds=['text','structured_request','clarification_answer'].filter(k=>message[k]!==undefined&&message[k]!==null);
  if(kinds.length!==1)throw new Error('Exactly one pilot message input is required.');
- if(kinds[0]==='text'&&(!nonempty(message.text)||message.text.length>4000))throw new Error('Invalid text.');
- if(kinds[0]==='structured_request'){const r=message.structured_request;if(!object(r)||!['metric','machine','window'].every(k=>nonempty(r[k])))throw new Error('Invalid structured request.');}
- if(kinds[0]==='clarification_answer'){const r=message.clarification_answer;if(!object(r)||Object.keys(r).some(k=>!['clarification_id','value'].includes(k))||!nonempty(r.clarification_id)||r.clarification_id.length>128||!nonempty(r.value)||r.value.length>256)throw new Error('Invalid clarification answer.');}
+ if(kinds[0]==='text'){exclusive(message,['text','client_context']);if(!nonempty(message.text)||message.text.length>4000)throw new Error('Invalid text.');}
+ if(kinds[0]==='structured_request'){exclusive(message,['structured_request']);const r=message.structured_request;if(!object(r)||Object.keys(r).some(k=>!['metric','machine','window'].includes(k))||!['metric','machine','window'].every(k=>nonempty(r[k])))throw new Error('Invalid structured request.');}
+ if(kinds[0]==='clarification_answer'){exclusive(message,['clarification_answer','client_context']);const r=message.clarification_answer;if(!object(r)||Object.keys(r).some(k=>!['clarification_id','value'].includes(k))||!nonempty(r.clarification_id)||r.clarification_id.length>128||!nonempty(r.value)||r.value.length>256)throw new Error('Invalid clarification answer.');}
 }
 /** Only the required, source-confirmed conversation response fields are checked here.
  * Additive optional pilot blocks are retained verbatim; narrative is never accepted.

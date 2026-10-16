@@ -17809,6 +17809,11 @@
       "acceptedRevision": "f36ecb3",
       "text": "WP5A — Dashboard Integration: PASS\nAccepted revision: f36ecb3\nPlant Operations and Production & OEE dashboards now use governed Highcharts visuals, preserve shared EKAS context, distinguish plant shortfall from line contribution, and remain connected to Chat and Investigation without creating a separate BI state."
     },
+    "visualSystem": {
+      "status": "PASS",
+      "acceptedRevision": "0d54c01",
+      "text": "Visual System Package — PASS\nAccepted revision: 0d54c01 (0d54c0138215337386ec1c00b9035bedb7e3f0e1)\nLight mode default, dark mode supported, neutral chrome, Lucide icon family, native Highcharts analytical colors, corrected contrast, primary-action treatment, clean header spacing, and chat-first hierarchy preserved.\nTargeted regression passed.\nNo functional/context regression found."
+    },
     "wp1": {
       "at": "2026-10-15T21:00:00Z",
       "url": "http://127.0.0.1:18191/",
