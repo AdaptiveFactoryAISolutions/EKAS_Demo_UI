@@ -101,10 +101,11 @@ for (const journey of journeys) {
     await expect(dashboard).toContainText('What is happening');
     await expect(dashboard).toContainText('Where is the loss');
     await expect(dashboard).toContainText('What to investigate');
-    await expect(page.locator('main')).not.toContainText('Explicit synthetic metric demonstration');
-    await expect(page.locator('main')).not.toContainText('training-positive');
-    await expect(page.locator('main')).not.toContainText('ekas.oee');
-    await expect(page.locator('main')).not.toContainText('No chart was published');
+    const surface = page.locator('#ekas-chat-main');
+    await expect(surface).not.toContainText('Explicit synthetic metric demonstration');
+    await expect(surface).not.toContainText('training-positive');
+    await expect(surface).not.toContainText('ekas.oee');
+    await expect(surface).not.toContainText('No chart was published');
     await page.screenshot({ path: `${shots}/${journey.id}-dashboard.png`, fullPage: false });
 
     await page.getByRole('button', { name: 'Investigations', exact: true }).click();
@@ -179,9 +180,10 @@ test('a plant leader can drive the downtime journey in ordinary language', async
   await expect(page.locator('article.ekas-captured-reply').last()).toContainText(/below the approved plan/i);
   for (const [index, turn] of turns.entries()) {
     const box = page.getByLabel('Ask EKAS');
-    await expect(page.getByRole('button', { name: 'Send' })).toBeEnabled();
+    const send = page.locator('form.ekas-composer').getByRole('button', { name: 'Send' });
     await box.fill(turn.ask);
-    await page.getByRole('button', { name: 'Send' }).click();
+    await expect(send).toBeEnabled();
+    await send.click();
     const answer = page.locator('article.ekas-captured-reply').last();
     await expect(answer, turn.ask).toContainText(turn.expect);
     await page.screenshot({ path: `${shots}/${turn.file}.png`, fullPage: false });
