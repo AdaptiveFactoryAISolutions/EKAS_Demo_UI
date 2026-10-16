@@ -233,18 +233,19 @@ html[data-theme="dark"] {
 .ekas-context-compact { color: var(--text-secondary); }
 .ekas-scope,
 .ekas-scope strong { color: var(--text-primary); }
-.retained-console .retained-primary-header { column-gap: 12px; }
-.retained-console .retained-primary-header > button,
-.retained-console .retained-primary-header .retained-desktop-extra,
-.retained-console .retained-primary-header summary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-.retained-console .retained-primary-header summary { list-style: none; }
+.retained-console .retained-primary-header summary { gap: 8px; list-style: none; }
 .retained-console .retained-primary-header summary::-webkit-details-marker { display: none; }
+@media (min-width: 768px) {
+  .retained-console .retained-primary-header { column-gap: 12px; }
+  .retained-console .retained-primary-header > button.retained-desktop-extra,
+  .retained-console .retained-primary-header summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 .ekas-dash button.ekas-dash-family.ekas-dash-family-active,
 .ekas-dash button.ekas-dash-family.ekas-dash-family-active:hover,
 .ekas-dash button.ekas-dash-family.ekas-dash-family-active:focus,
