@@ -3,7 +3,7 @@ import {MockRepository} from './mockRepository';
 import {PilotResponseError,validatePilotMessage,validatePilotTurn,type PilotWireRequest} from './pilotAdapter';
 import {ManufacturingService} from '../investigation/service';
 import {createManufacturingClient} from '../investigation/clientPort';
-import {LiveBackendUnavailable,UnsupportedBackendOperation,assertDocumentedPilotPath,openLivePilot,refuseLiveInvestigationCommand,validateRuntimeProbe} from './backendMode';
+import {LIVE_CAPABILITY_REFUSALS,LiveBackendUnavailable,UnsupportedBackendOperation,assertDocumentedPilotPath,openLivePilot,refuseLiveInvestigationCommand,refuseUnsupportedLiveCapability,validateRuntimeProbe} from './backendMode';
 import type {Transport} from './contract';
 
 const sha='sha256:'+'ab'.repeat(32);
@@ -68,7 +68,8 @@ describe('WP5B backend mode',()=>{
   const fetchImpl=vi.fn();
   openLivePilot(access,fetchImpl as typeof fetch);
   expect(()=>refuseLiveInvestigationCommand()).toThrow(UnsupportedBackendOperation);
-  expect(()=>assertDocumentedPilotPath('/api/v1/manufacturing/investigations/case/commands')).toThrow(/not on the documented pilot surface/);
+  expect(()=>refuseLiveInvestigationCommand()).toThrow(LIVE_CAPABILITY_REFUSALS.investigation);
+  expect(()=>assertDocumentedPilotPath('/api/v1/manufacturing/investigations/case/commands')).toThrow(LIVE_CAPABILITY_REFUSALS.investigation);
   expect(()=>assertDocumentedPilotPath('/v1/actions')).toThrow(UnsupportedBackendOperation);
   expect(()=>validatePilotMessage({text:'Authorize the feeder repair.',expectedVersion:4})).toThrow(/exclusive/);
   expect(fetchImpl).not.toHaveBeenCalled();
@@ -114,9 +115,10 @@ describe('WP5B backend mode',()=>{
   let demoSends=0;
   const fetchImpl=vi.fn(async()=>{demoSends+=1;throw Object.assign(new Error('aborted'),{name:'AbortError'});});
   await expect(openLivePilot(access,fetchImpl as typeof fetch).createConversation()).rejects.toThrow(/timed out/);
-  expect(()=>assertDocumentedPilotPath('/v1/opportunities/qualify')).toThrow(UnsupportedBackendOperation);
-  expect(()=>assertDocumentedPilotPath('/v1/tools/kernel.compute_metric')).toThrow(UnsupportedBackendOperation);
-  expect(()=>assertDocumentedPilotPath('/api/v1/metrics/oee-tiles-v2')).toThrow(UnsupportedBackendOperation);
+  expect(()=>assertDocumentedPilotPath('/v1/opportunities/qualify')).toThrow(/opportunity workflow is not the investigation lifecycle/);
+  expect(()=>assertDocumentedPilotPath('/v1/recommendations/rec/dispositions')).toThrow(/No investigation state was recorded/);
+  expect(()=>assertDocumentedPilotPath('/v1/tools/kernel.compute_metric')).toThrow(LIVE_CAPABILITY_REFUSALS.metricRead);
+  expect(()=>assertDocumentedPilotPath('/api/v1/metrics/oee-tiles-v2')).toThrow(/No metric was fetched/);
   const denied=openLivePilot(access,vi.fn(async()=>json(403,envelope('FORBIDDEN','EVIDENCE_FORBIDDEN','Evidence is not available to this principal.'))) as typeof fetch);
   await expect(denied.listTurns('foreign')).rejects.toMatchObject({status:403,detail:{error_code:'EVIDENCE_FORBIDDEN'}});
   const down=openLivePilot(access,vi.fn(async()=>json(503,envelope('EXECUTION_FAILURE','DEPENDENCY_UNAVAILABLE','The action-loop service is unavailable.',true))) as typeof fetch);
@@ -129,6 +131,12 @@ describe('WP5B backend mode',()=>{
   expect(()=>validateRuntimeProbe('/healthz',{status:'ok',component:'ui-shell-api',wp:'WP-P3-15'})).not.toThrow();
   expect(()=>validateRuntimeProbe('/livez',{status:'ok',component:'api-runtime',wp:'WP-P4-23'})).not.toThrow();
   expect(()=>validateRuntimeProbe('/healthz',{status:'ready'})).toThrow(/runtime probe/);
+  const blocked=vi.fn();
+  for(const capability of Object.keys(LIVE_CAPABILITY_REFUSALS) as (keyof typeof LIVE_CAPABILITY_REFUSALS)[]){
+   expect(()=>refuseUnsupportedLiveCapability(capability)).toThrow(LIVE_CAPABILITY_REFUSALS[capability]);
+  }
+  expect(()=>refuseUnsupportedLiveCapability('investigationOwnership')).toThrow('This connected EKAS backend does not currently support investigation ownership. No assignment was recorded.');
+  expect(blocked).not.toHaveBeenCalled();
   const published={...evidenceBundle,publication:{publication_id:'pub',snapshot_id:'snap',content_sha256:'abc',approved_publication_ref:'ref'}};
   await expect(openLivePilot(access,vi.fn(async()=>json(200,published)) as typeof fetch).fetchEvidence(sha)).resolves.toMatchObject({publication:{snapshot_id:'snap'}});
   const broken={...evidenceBundle,publication:{snapshot_id:'snap'}};

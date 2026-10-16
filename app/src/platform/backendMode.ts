@@ -19,9 +19,39 @@ export function assertLiveAccess(access?:Partial<LiveAccess>):asserts access is 
  if(url.username||url.password)throw new LiveBackendUnavailable('The live EKAS base URL must not embed credentials. Demo mode was not used as a substitute.');
  if(FICTIONAL_ROLES.has(access.bearer.trim())||access.bearer.includes('presentationOnly'))throw new LiveBackendUnavailable('A fictional demo role is not a live bearer credential. Demo mode was not used as a substitute.');
 }
-/** Documented pilot routes only. Manufacturing command paths are not translated and are not sent. */
+/** User-facing refusals for capabilities current main does not provide as investigation operations.
+ * Each refusal is local. It does not fetch, does not write local live state, and does not call the opportunity routes.
+ */
+export const LIVE_CAPABILITY_REFUSALS={
+ investigationOwnership:'This connected EKAS backend does not currently support investigation ownership. No assignment was recorded.',
+ investigation:'This connected EKAS backend does not currently support investigation create, read, or update. No investigation was recorded.',
+ caseLifecycle:'This connected EKAS backend does not currently support the investigation case lifecycle. No case change was recorded.',
+ ownerRequest:'This connected EKAS backend does not currently support an investigation owner request. No request was recorded.',
+ ownerAcceptance:'This connected EKAS backend does not currently support investigation owner acceptance. No acceptance was recorded.',
+ hypothesis:'This connected EKAS backend does not currently support an investigation hypothesis. No hypothesis was recorded.',
+ recommendation:'This connected EKAS backend does not currently support an investigation recommendation. The opportunity workflow was not used. No recommendation was recorded.',
+ caseAuthorization:'This connected EKAS backend does not currently support investigation authorization. The opportunity workflow was not used. No decision was recorded.',
+ performedWork:'This connected EKAS backend does not currently support investigation performed work. The opportunity workflow was not used. No work was recorded.',
+ verificationPlan:'This connected EKAS backend does not currently support an investigation verification plan. The opportunity workflow was not used. No plan was recorded.',
+ verificationResult:'This connected EKAS backend does not currently support an investigation verification result. The opportunity workflow was not used. No result was recorded.',
+ safetyReview:'This connected EKAS backend does not currently support a safety or guardrail review. No review was recorded.',
+ sustain:'This connected EKAS backend does not currently support investigation sustain. The opportunity workflow was not used. No sustainment was recorded.',
+ recurrence:'This connected EKAS backend does not currently support investigation recurrence. No recurrence record was written.',
+ reopen:'This connected EKAS backend does not currently support reopen or a new investigation cycle. No cycle was recorded.',
+ expectedVersion:'This connected EKAS backend does not currently support expected-version handling for investigation commands. No command was recorded.',
+ metricRead:'This connected EKAS backend does not currently support a dedicated governed metric read. No metric was fetched.',
+} as const;
+export type UnsupportedLiveCapability=keyof typeof LIVE_CAPABILITY_REFUSALS;
+export function refuseUnsupportedLiveCapability(capability:UnsupportedLiveCapability):never{
+ throw new UnsupportedBackendOperation(LIVE_CAPABILITY_REFUSALS[capability]);
+}
+/** Documented pilot routes only. Manufacturing, opportunity, and kernel paths are not translated and are not sent. */
 export function assertDocumentedPilotPath(path:string){
- if(!DOCUMENTED_PATH.test(path))throw new UnsupportedBackendOperation('That route is not on the documented pilot surface. The call was not sent. Demo mode was not used as a substitute.');
+ if(DOCUMENTED_PATH.test(path))return;
+ if(path.startsWith('/v1/opportunities')||path.startsWith('/v1/recommendations')||path.startsWith('/v1/interventions')||path.startsWith('/v1/financial-assumptions'))throw new UnsupportedBackendOperation('This connected EKAS backend opportunity workflow is not the investigation lifecycle. The call was not sent. No investigation state was recorded.');
+ if(path.startsWith('/v1/tools/kernel')||path.startsWith('/api/v1/metrics'))throw new UnsupportedBackendOperation(LIVE_CAPABILITY_REFUSALS.metricRead);
+ if(path.includes('/investigations')||path.endsWith('/commands'))throw new UnsupportedBackendOperation(LIVE_CAPABILITY_REFUSALS.investigation);
+ throw new UnsupportedBackendOperation('That route is not on the documented pilot surface. The call was not sent. Demo mode was not used as a substitute.');
 }
 export class LivePilotWire implements PilotWire{
  constructor(readonly access:LiveAccess,private readonly fetchImpl:typeof fetch){assertLiveAccess(access);}
@@ -47,7 +77,7 @@ export function validateRuntimeProbe(path:'/healthz'|'/livez',body:unknown){
  const component=path==='/healthz'?'ui-shell-api':'api-runtime';
  if(probe.status!=='ok'||probe.component!==component||typeof probe.wp!=='string'||!probe.wp.trim())throw new Error('Invalid runtime probe.');
 }
-/** Investigation and workflow commands stay on the demo manufacturing service. Live mode does not borrow that service. */
+/** Investigation commands stay refused in live mode. This does not borrow the demo manufacturing service. */
 export function refuseLiveInvestigationCommand():never{
- throw new UnsupportedBackendOperation('The documented pilot contract has no investigation or workflow command route. The call was not sent. Demo mode was not used as a substitute.');
+ return refuseUnsupportedLiveCapability('investigation');
 }

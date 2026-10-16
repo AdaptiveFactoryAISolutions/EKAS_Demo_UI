@@ -1,6 +1,6 @@
 # WP5B compatibility matrix
 
-Superseded for current-main claims by `docs/integration/WP5B-CURRENT-MAIN.md` at snapshot `473bdc0d2458fcffdbe516d220d4f88bcb2f1916`. The table below is the earlier fe2635c-oriented pass and is not the current mapping.
+Superseded for current-main claims by `docs/integration/WP5B-CURRENT-MAIN.md` at snapshot `473bdc0d2458fcffdbe516d220d4f88bcb2f1916`, including the five-file addendum at that same SHA. The table below is the earlier fe2635c-oriented pass and is not the current mapping.
 
 Status: **PENDING INDEPENDENT REVIEW**. This file does not certify WP5B.
 
