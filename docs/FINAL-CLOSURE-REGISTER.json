@@ -17799,6 +17799,11 @@
     "nativeAcceptance": false,
     "releaseReady": false,
     "noNewSecurityReviewGate": true,
+    "wp4": {
+      "status": "PASS",
+      "acceptedRevision": "ed2447a",
+      "text": "WP4 — Manufacturing Journeys: PASS\nAccepted revision: ed2447a\nDowntime, speed and quality journeys pass independent usability review through Goal → Gap → Loss → Contributor → Evidence → Hypothesis → Action → Owner → Authorization → Performed Work → Verification → Sustain → Reopen.\nFrozen shell remains intact.\nFull regression remains deferred to RC freeze."
+    },
     "wp1": {
       "at": "2026-10-15T21:00:00Z",
       "url": "http://127.0.0.1:18191/",

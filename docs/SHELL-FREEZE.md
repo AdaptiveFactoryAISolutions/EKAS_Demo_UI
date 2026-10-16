@@ -12,4 +12,11 @@ WP4 journey steps use the existing Investigation next-step control. The label an
 
 Journey defect, not a shell change: the next-step control could accept another activation before the saved case version was shown, so the visible label and the command diverged. The control now stays unavailable until that newer version is on screen.
 
-Documented shell defect from the speed and quality journeys: the Chat and Investigation headings still met the frozen context region. A 16px top margin collapsed, and 28px of padding sat inside the heading box, so the box itself stayed about 7px under the context. The smallest correction is a 24px top margin on those headings above 320px, and reply scrolling stops before that heading slides under the context. Navigation, context hierarchy, composer placement, evidence presentation, and the role shell are unchanged. At 320px the fresh hypothesis record is kept, and only the surrounding investigation spacing is tightened so the identity, next action, and Ask EKAS still fit. The eight-screen visual gate is rerun from the revision that contains this correction and stays pending independent review.
+Documented shell defect from the speed and quality journeys: the Chat and Investigation headings still met the frozen context region. A 16px top margin collapsed, and 28px of padding sat inside the heading box, so the box itself stayed about 7px under the context. The smallest correction is a 24px top margin on those headings above 320px, and reply scrolling stops before that heading slides under the context. Navigation, context hierarchy, composer placement, evidence presentation, and the role shell are unchanged. At 320px the fresh hypothesis record is kept, and only the surrounding investigation spacing is tightened so the identity, next action, and Ask EKAS still fit. The eight-screen visual gate was rerun from the revision that contains this correction.
+
+WP4 — Manufacturing Journeys: PASS
+Accepted revision: ed2447a
+Downtime, speed and quality journeys pass independent usability review through Goal → Gap → Loss → Contributor → Evidence → Hypothesis → Action → Owner → Authorization → Performed Work → Verification → Sustain → Reopen.
+Frozen shell remains intact.
+Full regression remains deferred to RC freeze.
+
