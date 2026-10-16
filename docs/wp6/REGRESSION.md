@@ -1,3 +1,32 @@
+# Regression — EKAS DEMO RC2 test-only delta
+
+Patrick's decision, recorded verbatim:
+
+"Residual regression disposition: 10 accepted as non-blocking for human acceptance. No P0/P1. Six are superseded historical-fixture expectations; two are superseded UI expectations; two are test-only machine-specific path defects. The machine-specific test dependencies must be removed before final release approval."
+
+Release state:
+
+- RC1 Technical Gate: PASS WITH ACCEPTED NON-BLOCKING RESIDUALS
+- Human Gates: OPEN
+- Final Release: NOT YET APPROVED
+
+RC2 does not change product source. `validConversation` is unchanged. The ten residual tests now assert the current behavior.
+
+| Residual | RC2 assertion |
+| --- | --- |
+| `assetScopeGuard.test.ts` legacy V67 | `readConversation` rejects `INVALID_RESULT`. Stored bytes stay unchanged. |
+| `historyCompatibility.test.ts` original V57 | `readConversation` rejects `INVALID_RESULT`. Stored bytes stay unchanged. |
+| `legacyAssetPublication.test.ts` frozen V89 history | `readConversation` rejects `INVALID_RESULT`. Stored bytes stay unchanged. |
+| `legacyAssetPublication.test.ts` reopened legacy selection | `loadCanonicalSelection` rejects `INVALID_RESULT`. Stored bytes stay unchanged. |
+| `legacyAssetPublication.test.ts` relative ownership on unsafe legacy bytes | `readConversation` rejects `INVALID_RESULT`. No assignment is committed. |
+| `v58Compatibility.test.ts` | Clarification capture `conversation-3` rejects `INVALID_RESULT`. Stored bytes stay unchanged. The frozen wrong-cutoff capture `conversation-1` still validates, so that read remains an equality check. It is not forced to fail, and the validator is not loosened to reject it. The old continuation turn is not issued. |
+| `v45ReplyOffset.test.tsx` | `scrollMarginTop` is `197px`, the offset already locked by `rcLatestReplyPosition.test.ts`. |
+| `v94ProfileControls.test.tsx` | Plant Metrics does not render "Discuss this synthetic metric". The test expects that label to be absent. The composer-disabled checks stay. |
+| `v102HealthCaseTransitionRegression.test.tsx` | The proof file is written under `os.tmpdir()`, not `/home/pat/...`. |
+| `v102MeasurementCaseTransitionRegression.test.tsx` | The proof file is written under `os.tmpdir()`, not `/home/pat/...`. |
+
+The one full-suite result on a fresh RC2 extraction is recorded with the RC2 identity after this freeze. The RC1 classification below is kept as the record of what failed before this delta.
+
 # Regression — EKAS DEMO RC1
 
 Source under test: extracted `EKAS-DEMO-RC1.zip`, SHA `63ccec742c73b824c7c99c5ee1ba0a3e689801b6`.

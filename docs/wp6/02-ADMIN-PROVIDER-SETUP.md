@@ -12,9 +12,15 @@ Rehearsal keeps the provider in a mock session. It does not call OpenAI. The ser
 
 ## Real provider — not performed in this package
 
-Patrick enters a real provider key privately through **Admin AI**. Do not paste it into chat, a ticket, a screenshot, or a document.
+Patrick enters a real provider key privately through **Admin AI**. Do not paste it into chat, a ticket, a screenshot, or a document. This package does not request the key and does not display one.
 
-Before any spend, confirm the provider and model, a current pricing review, the remaining authorized budget, and how an unknown outcome is reserved. The fixture pricing used by older tests expires `2026-10-16T00:00:00Z`. A real call needs a current review. This package does not perform that call and does not record a pass.
+The expired saved pricing cannot authorize spend. The fixture pricing used by older tests expires `2026-10-16T00:00:00Z`. Before the key is entered privately in Admin, Patrick must refresh all three of the following:
+
+1. Current model availability
+2. Current pricing
+3. Authorized test budget
+
+A saved pricing record from that expired fixture is not authority to spend. This package does not perform a paid call and does not record a pass.
 
 Save, Test connection, Enable, and Disable are the local controls. Test connection requires the cost confirmation. Canceling an uncertain Save holds Test and Enable until a fresh status succeeds. A key is for the server session. It is not a browser secret and it does not survive as a documented value here.
 
