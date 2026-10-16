@@ -97,7 +97,7 @@ export function impactLine(v:CaseLike){
  return 'On the approved plan';
 }
 
-export function nextStep(v:CaseLike){return journeyAction(v).label}
+export function nextStep(v:CaseLike){const step=journeyAction(v);return step.next||step.label}
 
 /** The role this case can actually assign, taken from its acceptance records. */
 function assignableOwner(caseId?:string|null){
@@ -148,20 +148,6 @@ function suppliedCase(caseId?:string|null){
  if(caseId!=='downtime'&&caseId!=='speed'&&caseId!=='quality')return null;
  return fixtureCase(caseId);
 }
-function laterClock(asOf?:string|null){
- if(!asOf)return null;
- return clocks.find(clock=>clock>asOf)||null;
-}
-function clockLabel(iso:string){
- const t=Date.parse(iso);
- if(!Number.isFinite(t))return iso;
- const d=new Date(t);
- let hour=d.getUTCHours();
- const suffix=hour>=12?'PM':'AM';
- hour=hour%12||12;
- const minute=String(d.getUTCMinutes()).padStart(2,'0');
- return `${MONTHS[d.getUTCMonth()]} ${d.getUTCDate()}, ${hour}:${minute} ${suffix}`;
-}
 function unrecordedSustain(v:JourneyView){
  const fixture=suppliedCase(v.caseId);
  if(!fixture||!v.asOf)return [];
@@ -176,45 +162,213 @@ function safetyRecordId(v:JourneyView){
  return review?.id||null;
 }
 
-/** The next visible step and the command that performs it. Waiting steps open the next supplied snapshot. */
-export function journeyAction(v:JourneyView|null|undefined,session:JourneyActor='manager',facts?:{verificationRecorded?:boolean}):{label:string;command:JourneyCommand|null;actor:JourneyActor}{
+const DEMO_FOLLOW_UP='This synthetic demo advances to the authored follow-up period. Existing investigation history and performed-work records remain unchanged.';
+
+function clockAtOrAfter(iso?:string|null){
+ if(!iso)return null;
+ return clocks.find(clock=>clock>=iso)||null;
+}
+
+/** The next authored period a plant leader is waiting on. Intermediate clocks stay internal. */
+export function followUpStep(v:JourneyView|null|undefined):{label:string;asOf:string;note:string}|null{
+ if(!v?.asOf)return null;
+ const fixture=suppliedCase(v.caseId);
+ if(!fixture)return null;
+ const asOf=v.asOf;
+ const action=v.action?.status||'';
+ const verification=v.verification?.status||'';
+ const sustain=v.sustain?.status||'';
+ const later=(iso:string|undefined,label:string)=>{
+  const at=clockAtOrAfter(iso);
+  return at&&at>asOf?{label,asOf:at,note:DEMO_FOLLOW_UP}:null;
+ };
+ if(action==='authorized'&&!v.availableWork)return later(fixture.work.knownAt,'Check the completed repair');
+ if(action==='performed'&&(verification==='measuring'||verification==='awaiting_work'))return later((fixture.verification as {plannedMeasurementAt?:string}).plannedMeasurementAt||'2026-10-20T15:15:00Z','Check results after two weeks');
+ if(verification==='accepted'&&sustain==='insufficient'){
+  const next=fixture.sustain.observations.find(item=>item.eligible&&item.at>asOf);
+  return later(next?.at,'Check whether the result held');
+ }
+ if(sustain==='sustained'&&!unrecordedSustain(v).length){
+  const next=fixture.sustain.observations.find(item=>item.eligible&&item.at>asOf);
+  return later(next?.at,'Check the later shifts');
+ }
+ return null;
+}
+
+/** Status a plant leader can reconcile with the next step. */
+export function presentedStatus(v:CaseLike|null|undefined,facts?:{verificationRecorded?:boolean}){
  const life=lifecycleState(v);
- const clock=laterClock(v?.asOf);
- const snapshot=clock?{label:`Open the ${clockLabel(clock)} snapshot`,command:{kind:'advance-time',asOf:clock},actor:session}:null;
+ const verification=v?.verification?.status||'';
+ if(verification==='safety_review_required'&&!facts?.verificationRecorded)return 'Measurement recorded';
+ if(verification==='safety_review_required')return 'Safety review pending';
+ if(verification==='awaiting_acceptance')return 'Verification ready for acceptance';
+ return life.status;
+}
+
+/** The next visible step and the command that performs it. Waiting steps use plant language. */
+export function journeyAction(v:JourneyView|null|undefined,session:JourneyActor='manager',facts?:{verificationRecorded?:boolean}):{label:string;next?:string;command:JourneyCommand|null;actor:JourneyActor}{
+ const life=lifecycleState(v);
+ const follow=followUpStep(v);
+ const followCommand=follow?{label:follow.label,command:{kind:'advance-time',asOf:follow.asOf},actor:session}:null;
  const action=v?.action?.status||'';
  const verification=v?.verification?.status||'';
  const sustain=v?.sustain?.status||'';
- if(action==='authorized'&&!v?.availableWork&&snapshot)return snapshot;
- if(action==='performed'&&(verification==='measuring'||verification==='awaiting_work')&&snapshot)return snapshot;
- if(verification==='safety_review_required'&&!facts?.verificationRecorded)return {label:'Record verification',command:{kind:'record-verification'},actor:session};
+ if(action==='authorized'&&!v?.availableWork&&followCommand)return followCommand;
+ if(action==='performed'&&(verification==='measuring'||verification==='awaiting_work')&&followCommand)return followCommand;
  if(verification==='safety_review_required'&&v){
   const evidenceId=safetyRecordId(v);
-  if(evidenceId)return {label:life.next,command:{kind:'review-safety',evidenceId},actor:session==='safety'?'safety':'manager'};
-  if(snapshot)return snapshot;
+  if(evidenceId)return {label:'Review safety',next:'Complete safety review',command:{kind:'review-safety',evidenceId},actor:session==='safety'?'safety':'manager'};
+  if(followCommand)return followCommand;
  }
  if(sustain==='sustained'&&v){
   if(unrecordedSustain(v).length)return {label:'Record sustainment',command:{kind:'record-sustain'},actor:session};
-  if(snapshot)return snapshot;
+  if(followCommand)return followCommand;
  }
- if(verification==='accepted'&&sustain==='insufficient'&&v&&!unrecordedSustain(v).length&&snapshot)return snapshot;
+ if(verification==='accepted'&&sustain==='insufficient'&&v&&!unrecordedSustain(v).length&&followCommand)return followCommand;
  const command=nextLifecycleCommand(v);
  if(!command)return {label:life.next,command:null,actor:session};
  if(command.kind==='accept-assignment')return {label:life.next,command,actor:'maintenance'};
+ if(command.kind==='accept-result')return {label:'Review verification result',next:'Review result',command,actor:session};
+ if(command.kind==='reopen')return {label:'Reopen the investigation',command,actor:session};
+ if(command.kind==='add-hypothesis')return {label:'Record this hypothesis',command,actor:session};
+ if(command.kind==='recommend-action')return {label:'Recommend this action',command,actor:session};
  if(command.kind==='review-safety'&&v){
   const evidenceId=safetyRecordId(v);
-  if(!evidenceId)return snapshot||{label:life.next,command:null,actor:session};
-  return {label:life.next,command:{...command,evidenceId},actor:session==='safety'?session:'manager'};
+  if(!evidenceId)return followCommand||{label:life.next,command:null,actor:session};
+  return {label:'Review safety',next:'Complete safety review',command:{...command,evidenceId},actor:session==='safety'?session:'manager'};
  }
  return {label:life.next,command,actor:session};
 }
 
-export function overviewCopy(v:(CaseLike&{events?:{id:string}[]|null;hypotheses?:unknown[]|null})|null|undefined){
+/** Commands for the visible step. A safety review first records the measurement already on screen. */
+export function journeyCommands(v:JourneyView|null|undefined,session:JourneyActor='manager',facts?:{verificationRecorded?:boolean}):JourneyCommand[]{
+ const step=journeyAction(v,session,facts);
+ if(!step.command)return [];
+ if(step.command.kind==='review-safety'&&!facts?.verificationRecorded)return [{kind:'record-verification'},step.command];
+ return [step.command];
+}
+
+export function plantMoment(iso?:string|null){
+ if(!iso)return '';
+ const t=Date.parse(iso);
+ if(!Number.isFinite(t))return iso;
+ const d=new Date(t);
+ let hour=d.getUTCHours();
+ const suffix=hour>=12?'PM':'AM';
+ hour=hour%12||12;
+ const minute=String(d.getUTCMinutes()).padStart(2,'0');
+ return `${MONTHS[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}, ${hour}:${minute} ${suffix}`;
+}
+
+function endpointName(endpoint?:string){
+ if(endpoint==='jamMin')return 'Feeder-jam minutes';
+ if(endpoint==='speedLossMin')return 'Speed-loss minutes';
+ if(endpoint==='fpy')return 'First-pass yield';
+ return endpoint||'Primary endpoint';
+}
+
+function amount(value:number|boolean|null|undefined,digits=2){
+ if(typeof value!=='number'||!Number.isFinite(value))return 'unavailable';
+ return Number(value).toLocaleString('en-US',{maximumFractionDigits:digits,minimumFractionDigits:Number.isInteger(Number(value))?0:Math.min(digits,2)});
+}
+
+function evidenceSentence(documents:{id?:string;text?:string}[]|null|undefined,id:string){
+ for(const doc of documents||[]){
+  const text=doc.text||'';
+  const line=text.split('\n').find(part=>part.includes(id))||(doc.id===id?text.split('\n')[0]:'');
+  if(!line)continue;
+  const sentence=line.replace(id+':','').replace(id,'').trim();
+  return sentence.length>180?sentence.slice(0,177)+'…':sentence;
+ }
+ return '';
+}
+
+type BriefView=JourneyView&{title?:string;cycle?:number;documents?:{id?:string;text?:string}[]|null;plan?:{endpoint?:string;direction?:string;target?:number;unit?:string;requiredShifts?:number;qualityMaxPct?:number;energyMaxKwhPerGood?:number;qualityMaxWorseningPp?:number;energyMaxWorseningPct?:number}|null;hypotheses?:{id?:string;description?:string;test?:string;supportingEvidenceIds?:string[]}[]|null;action?:{status?:string;description?:string;performedId?:string|null;performedAt?:string|null;performer?:string|null;confirmation?:string|null}|null;verification?:{status?:string;before?:number|null;after?:number|null;outputGain?:number|null;oeeGain?:number|null;beforeMetrics?:{oee?:{value?:number|boolean|null}};afterMetrics?:{oee?:{value?:number|boolean|null}};guardrails?:{quality?:{status?:string};energy?:{status?:string}};safetyPass?:boolean;causalStatus?:string}|null};
+
+/** The manufacturing record the current step will show or save. Content comes from the case. */
+export function journeyBrief(v:BriefView|null|undefined,facts?:{verificationRecorded?:boolean}):{known:string[];records:string[];note:string}{
+ const known:string[]=[];
+ const records:string[]=[];
+ if(!v?.caseId)return {known,records,note:''};
+ const fixture=suppliedCase(v.caseId);
+ const step=journeyAction(v,'manager',facts);
+ const kind=step.command?.kind||'';
+ const follow=followUpStep(v);
+ if(v.cycle&&v.cycle>1)known.push(`Previous cycle: Completed / historical. New cycle: Cycle ${v.cycle} · Open. The earlier cycle's verification is not proof for this cycle.`);
+ if(kind==='request-assignment'&&fixture){
+  const owners=[...new Set(fixture.assignmentAcceptances.map(item=>item.owner).filter(owner=>owner&&!String(owner).includes('backup')))];
+  known.push(owners.length?`The authored acceptance record names ${owners.map(roleName).join(', ')}. The work record is performed by ${fixture.work.performer}.`:'Owner not assigned. No authored acceptance record names a role.');
+ }
+ if(kind==='add-hypothesis'&&fixture){
+  const recorded=new Set(((v.hypotheses||[]) as {id?:string}[]).map(item=>item.id));
+  const hypothesis=fixture.hypotheses.find(item=>!recorded.has(item.id));
+  if(hypothesis){
+   known.push(`Hypothesis: ${hypothesis.description}`);
+   const why=hypothesis.supportingEvidenceIds.map(id=>evidenceSentence(v.documents,id)).filter(Boolean);
+   if(why.length)known.push(`Why this is plausible: ${why.join(' ')}`);
+   records.push(`What would test it: ${hypothesis.test}`);
+  }
+ }
+ if(['recommend-action','request-authorization','authorize-action'].includes(kind)&&fixture){
+  known.push(`Recommended action: ${fixture.work.description}`);
+  known.push('This is not an engineering change. The current controlled instruction remains authoritative. No unreleased engineering change is treated as approved work.');
+  if(kind==='authorize-action')records.push('Approval stays separate from performed work.');
+ }
+ if(kind==='record-performed-work'&&fixture){
+  const work=fixture.work;
+  records.push(/^[A-Z]+(?:-[A-Z]+)*-WO-\d+$/.test(work.id)?`Maintenance record: ${work.id}.`:'Maintenance record for this case.');
+  records.push(`Work performed: ${work.description}`);
+  records.push(`Operator confirmation: ${work.confirmation}`);
+  records.push(`Performed: ${plantMoment(work.performedAt)}.`);
+  known.push('Approval stays separate from performed work.');
+ }
+ if(['record-verification','review-safety','accept-result'].includes(kind)&&v.plan){
+  const plan=v.plan;
+  const name=endpointName(plan.endpoint);
+  const sense=plan.direction==='higher'?'at least':'at most';
+  known.push(`Primary endpoint: ${name}. Baseline and target use ${plan.unit}. Target: ${sense} ${amount(plan.target,2)} ${plan.unit}. Required observations: ${plan.requiredShifts} eligible shifts.`);
+  const quality=plan.qualityMaxPct!=null?`Quality ≤${amount(plan.qualityMaxPct,2)}%`:plan.qualityMaxWorseningPp!=null?`Quality worsening ≤${amount(plan.qualityMaxWorseningPp,2)} percentage points`:'';
+  const energy=plan.energyMaxKwhPerGood!=null?`Energy ≤${amount(plan.energyMaxKwhPerGood,2)} kWh per good unit`:plan.energyMaxWorseningPct!=null?`Energy worsening ≤${amount(plan.energyMaxWorseningPct,2)}%`:'';
+  known.push(['Guardrails:',quality,energy,'Safety review required.'].filter(Boolean).join(' '));
+  const measured=v.verification;
+  if(measured&&measured.before!=null&&measured.after!=null){
+   known.push(`Observed result: ${amount(measured.after)} ${plan.unit}. Baseline was ${amount(measured.before)}.`);
+   const beforeOee=measured.beforeMetrics?.oee?.value;
+   const afterOee=measured.afterMetrics?.oee?.value;
+   if(beforeOee!=null&&afterOee!=null)known.push(`Supporting OEE: ${amount(beforeOee)}% → ${amount(afterOee)}%.`);
+   if(measured.outputGain!=null)known.push(`Good units: ${Number(measured.outputGain)>0?'+':''}${amount(measured.outputGain,0)} across the eligible post cohort.`);
+   const qualityStatus=measured.guardrails?.quality?.status==='pass'?'PASS':measured.guardrails?.quality?.status==='fail'?'FAIL':'PENDING';
+   const energyStatus=measured.guardrails?.energy?.status==='pass'?'PASS':measured.guardrails?.energy?.status==='fail'?'FAIL':'PENDING';
+   known.push(`Quality: ${qualityStatus}. Energy: ${energyStatus}. Safety: ${measured.safetyPass?'PASS':'PENDING'}.`);
+   if(!measured.safetyPass)known.push('Observed improvement is supported by the eligible comparison. Causality is not isolated. Verification cannot be accepted until the safety review is complete.');
+   else if(kind==='accept-result')known.push('The safety review is recorded. Accepting the result does not isolate the cause or claim savings.');
+  }
+ }
+ if((kind==='record-sustain'||v.sustain?.status==='sustained'||v.sustain?.status==='recurrence')&&fixture&&v.plan){
+  const watch=v.plan.direction==='higher'?`reopen if below ${amount(fixture.sustain.threshold)} for ${fixture.sustain.consecutiveRecurrence} consecutive eligible shifts`:`reopen if above ${amount(fixture.sustain.threshold)} for ${fixture.sustain.consecutiveRecurrence} consecutive eligible shifts`;
+  known.push(`Sustain check. Target: ${endpointName(v.plan.endpoint)} ${v.plan.direction==='higher'?'at least':'at most'} ${amount(v.plan.target)} ${v.plan.unit}. Watch threshold: ${watch}.`);
+  const values=fixture.sustain.observations.filter(item=>item.eligible&&v.asOf&&item.at<=v.asOf).map(item=>amount(item.value));
+  if(values.length)known.push(`Recent eligible shifts: ${values.join(', ')}.`);
+  if(v.sustain?.status==='sustained')known.push('Status: Sustained.');
+  if(v.sustain?.status==='recurrence')known.push('Status: Recurrence. The previous cycle stays historical.');
+ }
+ if(kind==='reopen')records.push('Reopening keeps the completed cycle and starts a new one. Its verification is not reused.');
+ return {known,records,note:follow&&step.label===follow.label?follow.note:''};
+}
+
+export function overviewCopy(v:(CaseLike&{events?:{id:string}[]|null;hypotheses?:unknown[]|null;verification?:{status?:string}|null})|null|undefined,facts?:{verificationRecorded?:boolean}){
  if(!v?.title)return 'Open a supplied case from Chat. Nothing here is substituted from another investigation.';
  const life=lifecycleState(v);
  const stops=(v.events||[]).filter(event=>/^stop-/i.test(event.id)).length;
  const hypotheses=v.hypotheses?.length||0;
  const impact=impactLine(v).replace(/[.!?]$/,'');
- return [`${impact}.`,`Status: ${life.status}.`,`Owner: ${life.owner}.`,stops?`${stops.toLocaleString('en-US')} stops are recorded.`:'',hypotheses?`${hypotheses.toLocaleString('en-US')} hypotheses are recorded.`:'No hypothesis is recorded.'].filter(Boolean).join(' ');
+ const status=presentedStatus(v,facts);
+ return [`${impact}.`,`Status: ${status}.`,`Owner: ${life.owner}.`,stops?countSentence(stops,'stop','stops'):'',hypotheses?countSentence(hypotheses,'hypothesis','hypotheses'):'No hypothesis is recorded.'].filter(Boolean).join(' ');
+}
+
+function countSentence(n:number,singular:string,plural:string){
+ if(n===1)return `1 ${singular} is recorded.`;
+ return `${n.toLocaleString('en-US')} ${plural} are recorded.`;
 }
 
 /** Group a count. Leave years, dates, and identifiers alone. */

@@ -10,4 +10,6 @@ WP4 may change journey content and correct a genuine journey defect inside that 
 
 WP4 journey steps use the existing Investigation next-step control. The label and command come from the saved case. Accepting ownership is submitted as maintenance, which is the role the case requested. Later snapshots are the supplied clocks, opened one at a time when the next record is not yet known.
 
-Journey defect, not a shell change: the next-step control could accept another activation before the saved case version was shown, so the visible label and the command diverged. The control now stays unavailable until that newer version is on screen. Navigation, context hierarchy, composer placement, evidence presentation, and the responsive and role shells are unchanged. The eight-screen visual gate is not rerun for this correction.
+Journey defect, not a shell change: the next-step control could accept another activation before the saved case version was shown, so the visible label and the command diverged. The control now stays unavailable until that newer version is on screen.
+
+Documented shell defect from the speed and quality journeys: the Investigation heading touched the frozen context region. The smallest correction is a 16px top margin on that heading. Navigation, context hierarchy, composer placement, evidence presentation, and the role shell are unchanged. The eight-screen visual gate is rerun from the revision that contains this margin and stays pending independent review.

@@ -1,6 +1,6 @@
 import {expect,it} from 'vitest';
 import {fixtureCase} from './cases';
-import {documentLine,eventLine,groupThousands,humanScopeWhen,journeyAction,lifecycleState,nextLifecycleCommand,overviewCopy,presentDocuments,snapshotLabel} from './plantPresentation';
+import {documentLine,eventLine,groupThousands,humanScopeWhen,journeyAction,journeyCommands,lifecycleState,nextLifecycleCommand,overviewCopy,presentDocuments,snapshotLabel} from './plantPresentation';
 import {createWorkflow,executeWorkflow,workflowView} from './workflow';
 
 it('reads the next step from the saved owner and does not invent one',()=>{
@@ -53,16 +53,20 @@ it('follows the saved case through owner, work, verification, sustainment, and a
   const labels:string[]=[];
   for(let i=0;i<40&&w.cycle===1;i++){
    const view=workflowView(w);
-   const step=journeyAction(view,'manager',{verificationRecorded:w.verificationRecorded});
+   const facts={verificationRecorded:w.verificationRecorded};
+   const step=journeyAction(view,'manager',facts);
+   const commands=journeyCommands(view,'manager',facts);
    expect(step.command,`${caseId} ${view.action.status} ${view.verification.status} ${view.sustain.status}`).toBeTruthy();
-   expect(step.label).not.toMatch(/H1|SAFETY-01|investigation-v1|fixture/i);
+   expect(commands.length,caseId).toBeGreaterThan(0);
+   expect(step.label).not.toMatch(/H1|SAFETY-01|investigation-v1|fixture|snapshot|(?:^|\s)Open the /i);
    labels.push(step.label);
-   try{w=executeWorkflow(w,step.command!,step.actor,'journey-'+caseId+'-'+i);}catch(error){throw Error(caseId+' after ['+labels.join(' | ')+'] asOf '+view.asOf+' verification '+view.verification.status+' command '+JSON.stringify(step.command)+' '+(error instanceof Error?error.message:error));}
+   try{commands.forEach((command,index)=>{w=executeWorkflow(w,command,step.actor,'journey-'+caseId+'-'+i+'-'+index);});}catch(error){throw Error(caseId+' after ['+labels.join(' | ')+'] asOf '+view.asOf+' verification '+view.verification.status+' command '+JSON.stringify(commands)+' '+(error instanceof Error?error.message:error));}
   }
   expect(w.cycle,caseId).toBe(2);
   expect(w.priorCycles[0].accepted,caseId).toBe(true);
-  expect(labels,caseId).toEqual(expect.arrayContaining(['Request an owner','Accept ownership','Record a hypothesis','Recommend the action','Request authorization','Authorize the action','Record performed work','Record verification','Review safety','Accept the measured result','Record sustainment','Open a new cycle']));
-  expect(labels.some(label=>label.startsWith('Open the ')),caseId).toBe(true);
+  expect(labels,caseId).toEqual(expect.arrayContaining(['Request an owner','Accept ownership','Record this hypothesis','Recommend this action','Request authorization','Authorize the action','Check the completed repair','Record performed work','Check results after two weeks','Review safety','Review verification result','Check whether the result held','Record sustainment','Check the later shifts','Reopen the investigation']));
+  expect(labels.some(label=>/snapshot|(?:^|\s)Open the /i.test(label)),caseId).toBe(false);
+  expect(labels.join(' '),caseId).not.toContain('Safety review required');
  }
  const fresh=workflowView(createWorkflow('downtime'));
  expect(journeyAction(fresh).label).toBe('Request an owner');
@@ -75,4 +79,6 @@ it('separates overview facts into sentences taken from the case',()=>{
  const requested={...fresh,owner:{requested:'maintenance',accepted:null}};
  expect(overviewCopy(requested)).toBe('150 units below plan. Status: Awaiting maintenance acceptance. Owner: Maintenance — not yet accepted. 12 stops are recorded. No hypothesis is recorded.');
  expect(overviewCopy({title:'Open case',goal:{gap:null}})).toBe('Plan gap is not available at this cutoff. Status: No owner requested. Owner: Not assigned. No hypothesis is recorded.');
+ expect(overviewCopy({title:'Open case',goal:{gap:10},hypotheses:[{id:'h'}],verification:{status:'safety_review_required'}})).toBe('10 units below plan. Status: Measurement recorded. Owner: Not assigned. 1 hypothesis is recorded.');
+ expect(overviewCopy({title:'Open case',goal:{gap:10},hypotheses:[{id:'h'}],verification:{status:'safety_review_required'}},{verificationRecorded:true})).toContain('Status: Safety review pending.');
 });
