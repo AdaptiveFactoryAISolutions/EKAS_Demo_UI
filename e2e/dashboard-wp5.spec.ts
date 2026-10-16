@@ -79,7 +79,7 @@ test('plant operations selects Line 03, explains the 150-unit gap, and opens the
     const style = getComputedStyle(el);
     return { background: style.backgroundColor, color: style.color };
   });
-  expect(activeStyle).toEqual({ background: 'rgb(43, 182, 163)', color: 'rgb(6, 34, 28)' });
+  expect(activeStyle).toEqual({ background: 'rgb(236, 236, 234)', color: 'rgb(28, 28, 26)' });
   await operations.focus();
   await page.keyboard.press('ArrowRight');
   const productionTab = dashboard.getByRole('tab', { name: 'Production and OEE' });
@@ -90,7 +90,7 @@ test('plant operations selects Line 03, explains the 150-unit gap, and opens the
     const style = getComputedStyle(el);
     return { background: style.backgroundColor, color: style.color };
   });
-  expect(productionStyle).toEqual({ background: 'rgb(43, 182, 163)', color: 'rgb(6, 34, 28)' });
+  expect(productionStyle).toEqual({ background: 'rgb(236, 236, 234)', color: 'rgb(28, 28, 26)' });
   await expect(dashboard.locator('[data-chart-id="apq"] .highcharts-container')).toBeVisible();
   await page.keyboard.press('ArrowLeft');
   await expect(operations).toHaveAttribute('aria-selected', 'true');
@@ -226,8 +226,8 @@ test('plant operations selects Line 03, explains the 150-unit gap, and opens the
   await dashboard.getByRole('tab', { name: 'Production and OEE' }).click();
   await expect(dashboard.getByRole('tab', { selected: true })).toHaveText('Production and OEE');
   await expect(dashboard.getByRole('tab', { name: 'Plant operations' })).toHaveAttribute('aria-selected', 'false');
-  const teal = await dashboard.locator('.ekas-dash-family').evaluateAll(nodes => nodes.filter(node => getComputedStyle(node).backgroundColor === 'rgb(43, 182, 163)').map(node => node.textContent?.trim()));
-  expect(teal).toEqual(['Production and OEE']);
+  const selected = await dashboard.locator('.ekas-dash-family').evaluateAll(nodes => nodes.filter(node => getComputedStyle(node).backgroundColor === 'rgb(236, 236, 234)').map(node => node.textContent?.trim()));
+  expect(selected).toEqual(['Production and OEE']);
   await expect(dashboard.locator('[data-chart-id="apq"] .highcharts-container')).toBeVisible();
   await expect(dashboard).toContainText('No time series is supplied');
   await expect(dashboard).toContainText('Availability');
