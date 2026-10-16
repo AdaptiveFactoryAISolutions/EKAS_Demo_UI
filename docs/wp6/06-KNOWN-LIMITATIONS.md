@@ -30,7 +30,7 @@ Keyboard zoom on the automated Chrome session left `visualViewport.scale` at 1. 
 
 ## Test residuals
 
-RC1 left ten failing source tests, classified in `REGRESSION.md`. Patrick accepted them as non-blocking for human acceptance. No P0 or P1. RC2 rewrites those tests only: historical fixtures expect `INVALID_RESULT`, the reply offset expectation is 197px, the removed dashboard label is expected to be absent, and the two proof files use a temporary directory. The validator was not loosened. The one extraction suite result is recorded with the RC2 identity.
+RC1 left ten failing source tests, classified in `REGRESSION.md`. Patrick accepted them as non-blocking for human acceptance. No P0 or P1. RC2 rewrites those tests only: historical fixtures expect `INVALID_RESULT`, the reply offset expectation is 197px, the removed dashboard label is expected to be absent, and the two proof files use a temporary directory. The validator was not loosened. The fresh RC2 extraction suite passed 2,943 tests and failed 0.
 
 ## Human review
 

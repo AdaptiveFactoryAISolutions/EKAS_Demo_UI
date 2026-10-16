@@ -1,3 +1,15 @@
+# Browser evidence catalog — EKAS DEMO RC2 checkpoint
+
+These three frames are the mandatory Step 16 checkpoint on the RC2 production build, in a clean Chrome profile. They are not a pass. “What should I focus on first?” states the 150-unit feeder-jam miss. “Investigate it.” opens Quality loss.
+
+| File | What it shows |
+| --- | --- |
+| `rc2-checkpoint-1-plant-review.png` | After `Run my plant review.` Priority is the Northworks feeder-jam plan miss, 150 good units. |
+| `rc2-checkpoint-2-focus-first.png` | After `What should I focus on first?` The stated priority is still that 150-unit miss. |
+| `rc2-checkpoint-3-investigate-it.png` | After `Investigate it.` The open discovery is Quality loss, 2.18% against 1.50%. The context bar says qualityLoss. |
+
+Reply crops of the same three turns are the `*-reply.png` files beside them. Wording is in `rc2-checkpoint.json`.
+
 # Browser evidence catalog — EKAS DEMO RC1
 
 Fresh Chrome profile against the production build of `63ccec742c73b824c7c99c5ee1ba0a3e689801b6`, served by `vite preview` at `http://127.0.0.1:18192`. Admin frames use the rehearsal demo server at `http://127.0.0.1:18193`. Historical `docs/wp1`, `docs/wp4`, and `docs/wp5` screenshots were not rewritten.

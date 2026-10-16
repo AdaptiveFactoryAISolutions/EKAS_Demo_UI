@@ -17835,8 +17835,8 @@
     },
     "deferredProductionDependency": "Deferred production dependency: current EKAS_Platform_v2 main lacks the complete investigation/case/metrics contract required for full backend-connected EKAS behavior. Backend Gap Contract is defined. Adapter remains fail-closed. Live integration is not claimed.",
     "wp6": {
-      "at": "2026-10-16T23:00:00Z",
-      "phase": "RC2 test-only delta; pending independent review",
+      "at": "2026-10-16T23:13:00Z",
+      "phase": "RC2 frozen; pending independent review",
       "status": "PENDING INDEPENDENT REVIEW",
       "rc1TechnicalGate": "PASS WITH ACCEPTED NON-BLOCKING RESIDUALS",
       "humanGates": "OPEN",
@@ -17844,13 +17844,19 @@
       "residualRegressionDisposition": "Residual regression disposition: 10 accepted as non-blocking for human acceptance. No P0/P1. Six are superseded historical-fixture expectations; two are superseded UI expectations; two are test-only machine-specific path defects. The machine-specific test dependencies must be removed before final release approval.",
       "rc1": "63ccec742c73b824c7c99c5ee1ba0a3e689801b6",
       "zipSha256": "cf3ff8ce6bdda7068c21724761620a1e9245f315a1e285f6fadb649770d87e5a",
+      "rc2": "94517b4d43c04ea378ac71da1e141be4d0f0879e",
+      "rc2Tree": "aa4438af4eff23ea4c10b701ad6d8934ff0f6c44",
+      "rc2ZipSha256": "86b20e3d41ece17d1e7fe9f6e04c47f58b5a310a47cee00122e40e9dd862002e",
+      "rc2Suite": "2943 passed, 0 failed",
+      "productSourceUnchangedFromRc1": true,
+      "buildHashesUnchangedFromRc1": true,
       "statusCounts": {
         "VERIFY": 509,
         "USER ACTION": 5
       },
       "productionOnlyFacetsDeferred": 7,
       "fix": 0,
-      "note": "No new inventory row. FIX is 0. USER ACTION remains only the five Patrick-personal provider rows: M05.05, M44.03, N12.05, N33.03, LIVE-PRIVATE-KEY-AND-TEST. Existing productionOnlyFacets stay DEFERRED-PRODUCTION, including Tom conformance, and the local facet of those rows stays VERIFY. The WP5B backend contract gap is recorded verbatim as deferredProductionDependency. Local criteria stay VERIFY until this exact RC is independently accepted. None is marked DONE. RC1 source tests on the extracted archive: 2933 passed, 10 failed, 2943 product tests. P0 0. P1 0. RC1 Technical Gate is PASS WITH ACCEPTED NON-BLOCKING RESIDUALS. Human Gates remain OPEN. Final Release is NOT YET APPROVED. RC2 rewrites only the ten residual tests. Product source is unchanged. The machine-specific proof paths now use a temporary directory."
+      "note": "No new inventory row. FIX is 0. USER ACTION remains only the five Patrick-personal provider rows: M05.05, M44.03, N12.05, N33.03, LIVE-PRIVATE-KEY-AND-TEST. Existing productionOnlyFacets stay DEFERRED-PRODUCTION, including Tom conformance, and the local facet of those rows stays VERIFY. The WP5B backend contract gap is recorded verbatim as deferredProductionDependency. Local criteria stay VERIFY until this exact RC is independently accepted. None is marked DONE. RC1 source tests on the extracted archive: 2933 passed, 10 failed, 2943 product tests. P0 0. P1 0. RC1 Technical Gate is PASS WITH ACCEPTED NON-BLOCKING RESIDUALS. Human Gates remain OPEN. Final Release is NOT YET APPROVED. RC2 source is 94517b4 and rewrites only the ten residual tests. Product source and the production build hashes are unchanged from RC1. Fresh extraction suite: 2943 passed, 0 failed. The Investigate-it checkpoint still opens Quality loss while the stated priority is the 150-unit feeder-jam miss. That defect is not corrected in RC2 and must be corrected before final approval."
     }
   },
   "isolatedOwnerUxSuccessor": {

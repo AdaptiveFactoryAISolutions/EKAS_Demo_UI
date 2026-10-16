@@ -25,7 +25,11 @@ RC2 does not change product source. `validConversation` is unchanged. The ten re
 | `v102HealthCaseTransitionRegression.test.tsx` | The proof file is written under `os.tmpdir()`, not `/home/pat/...`. |
 | `v102MeasurementCaseTransitionRegression.test.tsx` | The proof file is written under `os.tmpdir()`, not `/home/pat/...`. |
 
-The one full-suite result on a fresh RC2 extraction is recorded with the RC2 identity after this freeze. The RC1 classification below is kept as the record of what failed before this delta.
+Fresh extraction of `94517b4` (`EKAS-DEMO-RC2.zip`): `npm ci`, then `tsc --noEmit && vite build` (exit 0), then one `npx vitest run` after the gitignored `evidence/` directory was created. Result: **2,943 passed, 0 failed, 495 files**. Exit code 0. Duration 419.72s. Started 2026-10-16T23:01:39Z. No failure was deleted. The validator was not changed.
+
+The production build from that extraction is byte-identical to the RC1 dist, including the seven published file hashes. See `RC2-IDENTITY.md`.
+
+The RC1 classification below is kept as the record of what failed before this delta.
 
 # Regression — EKAS DEMO RC1
 

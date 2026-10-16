@@ -18,7 +18,17 @@ Use these phrases, in order, from a clean Chat:
 
 Read the priority named in the second reply before judging the third. The investigation that opens must be that priority. An older locked unit test that expects the Quality-loss discovery does not accept this checkpoint. Final approval requires the correction if Quality opens while the stated priority is the 150-unit feeder-jam miss.
 
-The observed RC2 result for this checkpoint is attached after the clean-profile run and named in `SCREENSHOT-CATALOG.md`. Do not treat this guide as a pass of the checkpoint.
+## Observed on RC2, without a product change
+
+Build: production preview of extracted `94517b4` at `http://127.0.0.1:18194`. Browser: a new Chrome profile, empty before Chat loaded. Light appearance. No prior conversation.
+
+1. `Run my plant review.` Priority: Northworks feeder-jam plan miss. 150 good units below the approved goal (2,154 against 2,304). Next: investigate Northworks feeder-jam plan miss.
+2. `What should I focus on first?` The same priority and the same next step.
+3. `Investigate it.` The reply is Quality loss: observed 2.18%, approved fictional target 1.50%, unfavorable deviation 0.68 percentage points. The context bar becomes Northworks Plant Review, Frozen report 2026-10-06 · qualityLoss. It does not open the 150-unit feeder-jam investigation.
+
+That is the defect named above. RC2 does not correct it. It must be corrected before final approval. An older locked audit-journey test still expects the Quality-loss discovery. That test does not accept this checkpoint.
+
+Frames: `screenshots/rc2-checkpoint-1-plant-review.png`, `screenshots/rc2-checkpoint-2-focus-first.png`, `screenshots/rc2-checkpoint-3-investigate-it.png`. The captured replies are in `rc2-checkpoint.json`.
 
 ## What the reviewer still does
 
