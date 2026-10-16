@@ -149,8 +149,9 @@ test('plant operations selects Line 03, explains the 150-unit gap, and opens the
   await expectTopInView(dashboard.getByRole('heading', { name: 'KPI status' }), 768);
   await expectTopInView(planFigure.locator('.highcharts-container'), 768);
   const planBox = await planFigure.locator('.highcharts-container').boundingBox();
-  expect(planBox && planBox.y + 80 < 768).toBeTruthy();
-  await expectTopInView(planFigure.locator('figcaption'), 768);
+  expect(planBox && planBox.y + 60 < 768).toBeTruthy();
+  const kpiBottom = await dashboard.locator('.ekas-dash-kpis').boundingBox();
+  expect(kpiBottom && kpiBottom.y + kpiBottom.height < 768).toBeTruthy();
   await expectNoOverflow(page);
   await shot(page, 'A-plant-operations-top');
 
@@ -242,9 +243,10 @@ test('plant operations selects Line 03, explains the 150-unit gap, and opens the
   await scrollTop(page);
   await expectTopInView(dashboard.getByRole('tab', { name: 'Production and OEE' }), 768);
   await expectTopInView(dashboard.getByRole('heading', { name: 'KPI status' }), 768);
-  await expectTopInView(dashboard.locator('[data-chart-id="apq"] .highcharts-container'), 768);
-  const apqBox = await dashboard.locator('[data-chart-id="apq"] .highcharts-container').boundingBox();
-  expect(apqBox && apqBox.y + 60 < 768).toBeTruthy();
+  const productionKpis = await dashboard.locator('.ekas-dash-kpis').boundingBox();
+  expect(productionKpis && productionKpis.y + productionKpis.height < 768).toBeTruthy();
+  await expect(dashboard.locator('.ekas-dash-kpis')).toContainText('No governed target');
+  await expect(dashboard.locator('.ekas-dash-kpis')).toContainText('Not evaluated');
   await expectNoOverflow(page);
   await shot(page, 'B-production-oee-kpis');
   await dashboard.getByRole('tab', { name: 'Capacity and constraints' }).click();
