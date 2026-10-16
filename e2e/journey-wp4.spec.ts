@@ -16,6 +16,42 @@ async function shot(page: Page, file: string) {
   await page.screenshot({ path: `${shots}/${file}.png`, fullPage: false });
 }
 
+/** Show the open questions without sliding the case title under the context. */
+async function revealOverview(page: Page) {
+  await page.evaluate(() => {
+    const scroller = document.querySelector<HTMLElement>('[aria-label="Workspace content"]');
+    const title = document.querySelector('.ekas-case-title');
+    const context = document.querySelector('.ekas-context');
+    const overview = document.querySelector('.ekas-overview');
+    if (!scroller || !title || !context || !overview) return;
+    const headings = [...overview.querySelectorAll('h2')];
+    const unknown = headings.find(node => node.textContent?.trim() === 'Not yet known');
+    const next = headings.find(node => node.textContent?.trim() === 'Next decision');
+    const items = [...overview.querySelectorAll('li')].filter(node => {
+      if (!unknown) return false;
+      const top = node.getBoundingClientRect().top;
+      return top >= unknown.getBoundingClientRect().top && (!next || top < next.getBoundingClientRect().top);
+    });
+    const target = items.at(-1) || unknown;
+    if (!target) return;
+    const limit = scroller.getBoundingClientRect().bottom - 12;
+    const overflow = target.getBoundingClientRect().bottom - limit;
+    const room = title.getBoundingClientRect().top - (context.getBoundingClientRect().bottom + 4);
+    if (overflow > 0) scroller.scrollTop += Math.min(overflow, Math.max(0, room));
+  });
+}
+
+/** Bring the Safety result fully inside the frame. The case title stays put on these briefs. */
+async function revealGuardrailResults(page: Page) {
+  await page.evaluate(() => {
+    const scroller = document.querySelector<HTMLElement>('[aria-label="Workspace content"]');
+    const safety = [...document.querySelectorAll('.ekas-guardrail')].reverse().find(node => (node.textContent || '').trim().startsWith('Safety:'));
+    if (!scroller || !safety) return;
+    const overflow = safety.getBoundingClientRect().bottom - (scroller.getBoundingClientRect().bottom - 16);
+    if (overflow > 0) scroller.scrollTop += overflow;
+  });
+}
+
 async function goArea(page: Page, name: string) {
   const nav = page.getByRole('complementary', { name: 'Template sidebar navigation' });
   const button = nav.getByRole('button', { name, exact: true });
@@ -201,6 +237,7 @@ async function advanceUntilReopen(page: Page, id: string, narrow = false) {
       files.add(named);
       const fits = narrow ? await narrowStep(page, summary) : true;
       if (!narrow) await page.locator('[aria-label="Workspace content"]').evaluate(el => { el.scrollTop = 0; });
+      if (!narrow && named === '06-hypothesis') await revealOverview(page);
       await shot(page, `${prefix}-${named}`);
       if (narrow && !fits) {
         await summary.locator('[data-next-cta]').evaluate(el => {
@@ -212,7 +249,11 @@ async function advanceUntilReopen(page: Page, id: string, narrow = false) {
         await shot(page, `${prefix}-${named}-action`);
         await page.locator('[aria-label="Workspace content"]').evaluate(el => { el.scrollTop = 0; });
       }
-      if (named === '12-measurement') await shot(page, `${prefix}-13-guardrails`);
+      if (named === '12-measurement') {
+        if (!narrow) await revealGuardrailResults(page);
+        await shot(page, `${prefix}-13-guardrails`);
+        if (!narrow) await page.locator('[aria-label="Workspace content"]').evaluate(el => { el.scrollTop = 0; });
+      }
     } else if (!named) {
       await shot(page, `${prefix}-step-${slug(label)}`);
     }
