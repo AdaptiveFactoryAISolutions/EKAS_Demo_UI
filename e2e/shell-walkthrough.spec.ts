@@ -140,6 +140,8 @@ test('plant shell walk-through of the closure screens', async ({ page }) => {
   await expect(summary).toContainText('Status: No owner requested');
   await expect(summary).toContainText('Owner: Not assigned');
   await expect(summary).toContainText('Next: Request an owner');
+  await expect(summary).not.toContainText('authored acceptance');
+  await expect(summary).not.toContainText('Fictional maintenance');
   await expect(summary).not.toContainText('Use the sections');
   await expect(summary).not.toContainText('Start with the feeder-jam');
   await expect(summary.getByRole('tab', { name: 'Evidence' })).toBeVisible();

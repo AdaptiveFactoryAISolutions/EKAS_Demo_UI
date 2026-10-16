@@ -1,6 +1,6 @@
 import {expect,it} from 'vitest';
 import {fixtureCase} from './cases';
-import {documentLine,eventLine,groupThousands,humanScopeWhen,journeyAction,journeyCommands,lifecycleState,nextLifecycleCommand,overviewCopy,presentDocuments,snapshotLabel} from './plantPresentation';
+import {demoClockSentence,documentLine,eventLine,groupThousands,humanScopeWhen,journeyAction,journeyBrief,journeyCommands,lifecycleState,nextLifecycleCommand,overviewCopy,plausibleLine,presentDocuments,snapshotLabel} from './plantPresentation';
 import {createWorkflow,executeWorkflow,workflowView} from './workflow';
 
 it('reads the next step from the saved owner and does not invent one',()=>{
@@ -81,4 +81,20 @@ it('separates overview facts into sentences taken from the case',()=>{
  expect(overviewCopy({title:'Open case',goal:{gap:null}})).toBe('Plan gap is not available at this cutoff. Status: No owner requested. Owner: Not assigned. No hypothesis is recorded.');
  expect(overviewCopy({title:'Open case',goal:{gap:10},hypotheses:[{id:'h'}],verification:{status:'safety_review_required'}})).toBe('10 units below plan. Status: Measurement recorded. Owner: Not assigned. 1 hypothesis is recorded.');
  expect(overviewCopy({title:'Open case',goal:{gap:10},hypotheses:[{id:'h'}],verification:{status:'safety_review_required'}},{verificationRecorded:true})).toContain('Status: Safety review pending.');
+});
+
+it('keeps a fresh case on the current owner state and cites only supported plausibility',()=>{
+ const fresh=workflowView(createWorkflow('downtime'));
+ const text=[...journeyBrief(fresh).known,...journeyBrief(fresh).records].join(' ');
+ expect(text).not.toMatch(/authored acceptance|Fictional maintenance|performed by/i);
+ expect(journeyBrief(fresh).known).toEqual([]);
+ const quality=plausibleLine('quality',['quality-investigation-v1-baseline-1-reason']);
+ expect(quality).toContain('controlled acceptance limit');
+ expect(quality).toContain('0.10 mm');
+ expect(quality).not.toMatch(/QUALITY-NOTE-01|superseded|NOT released/);
+ const speed=plausibleLine('speed',['speed-investigation-v1-baseline-1-reason']);
+ expect(speed).toContain('pressure recovery');
+ expect(speed).toContain('Current controlled record');
+ expect(demoClockSentence('2026-10-20T15:15:00Z')).toBe('The demo is now at the follow-up measurement period on Oct 20. Only evidence known by then is available. Existing investigation history and performed-work records stay as recorded.');
+ expect(demoClockSentence('2026-10-20T15:15:00Z')).not.toContain('T15:15:00Z');
 });

@@ -3,13 +3,17 @@ import { expect, test, type Page } from '@playwright/test';
 const shots = 'docs/wp4/screenshots';
 
 const journeys = [
-  { id: 'downtime', prompt: 'We missed our production goal.', asset: 'FEED-03', loss: /feeder-jam|unit loss/i },
-  { id: 'speed', prompt: 'Investigate speed.', asset: 'PRESS-S1', loss: /speed-loss minutes/i },
-  { id: 'quality', prompt: 'Investigate quality.', asset: 'FORM-Q1', loss: /quality-loss minutes/i },
+  { id: 'downtime', prompt: 'We missed our production goal.', asset: 'FEED-03', loss: /feeder-jam|unit loss/i, hypothesis: /Guide wear/, prove: /standard work/i, endpoint: /Feeder-jam time improved from 60 to 30 minutes per eligible shift/, work: /guide restoration/i },
+  { id: 'speed', prompt: 'Investigate speed.', asset: 'PRESS-S1', loss: /speed-loss minutes/i, hypothesis: /Pressure recovery/, prove: /released setup|pressure/i, endpoint: /Speed-loss time improved from 90 to 30 minutes per eligible shift/, work: /pressure-recovery|released setting/i },
+  { id: 'quality', prompt: 'Investigate quality.', asset: 'FORM-Q1', loss: /quality-loss minutes/i, hypothesis: /Tool edge|burr/i, prove: /0\.10 mm/, endpoint: /First-pass yield improved from/, work: /worn tool|first piece/i },
 ] as const;
 
 function slug(label: string) {
   return label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 48);
+}
+
+async function shot(page: Page, file: string) {
+  await page.screenshot({ path: `${shots}/${file}.png`, fullPage: false });
 }
 
 async function settledLabel(button: ReturnType<Page['locator']>, previous = '') {
@@ -21,21 +25,106 @@ async function settledLabel(button: ReturnType<Page['locator']>, previous = '') 
   return current;
 }
 
-async function advanceUntilReopen(page: Page, id: string) {
+async function headingGap(page: Page) {
+  return page.evaluate(() => {
+    const bar = document.querySelector('[aria-label="Current investigation context"]');
+    const heading = document.querySelector('[aria-label="Investigation summary"] > h1');
+    if (!bar || !heading) return -1;
+    return heading.getBoundingClientRect().top - bar.getBoundingClientRect().bottom;
+  });
+}
+
+async function contentBeforeButton(page: Page, summary: ReturnType<Page['locator']>) {
+  const button = summary.locator('[data-next-cta]');
+  const record = summary.locator('.ekas-journey-record');
+  if (!await record.count()) return;
+  const buttonBox = await button.boundingBox();
+  const recordBox = await record.boundingBox();
+  expect(buttonBox, 'action button').toBeTruthy();
+  expect(recordBox, 'step record').toBeTruthy();
+  expect(recordBox!.y + Math.min(recordBox!.height, 8)).toBeLessThanOrEqual(buttonBox!.y + 1);
+}
+
+async function narrowStep(page: Page, summary: ReturnType<Page['locator']>) {
+  const main = page.locator('[aria-label="Workspace content"]');
+  await main.evaluate(el => { el.scrollTop = 0; });
+  const overflow = await main.evaluate(el => ({ sw: el.scrollWidth, cw: el.clientWidth }));
+  expect(overflow.sw).toBeLessThanOrEqual(overflow.cw + 1);
+  await expect(summary.locator('.ekas-case-title')).toBeVisible();
+  await expect(summary.locator('[data-next-action]')).toBeVisible();
+  const button = summary.locator('[data-next-cta]');
+  await button.evaluate(el => {
+    const host = document.querySelector<HTMLElement>('[aria-label="Workspace content"]');
+    if (!host) return;
+    const top = el.getBoundingClientRect().top - host.getBoundingClientRect().top + host.scrollTop;
+    host.scrollTop = Math.max(0, top - 120);
+  });
+  await expect(button).toBeEnabled();
+  const viewport = page.viewportSize()!;
+  const buttonBox = await button.boundingBox();
+  expect(buttonBox).toBeTruthy();
+  expect(buttonBox!.x).toBeGreaterThanOrEqual(-1);
+  expect(buttonBox!.x + buttonBox!.width).toBeLessThanOrEqual(viewport.width + 1);
+  expect(buttonBox!.y).toBeGreaterThanOrEqual(0);
+  expect(buttonBox!.y + buttonBox!.height).toBeLessThanOrEqual(viewport.height + 1);
+  const field = page.getByLabel('Ask EKAS');
+  await field.evaluate(el => {
+    const host = document.querySelector<HTMLElement>('[aria-label="Workspace content"]');
+    if (!host) return;
+    const top = el.getBoundingClientRect().top - host.getBoundingClientRect().top + host.scrollTop;
+    host.scrollTop = Math.max(0, top - 24);
+  });
+  const fieldBox = await field.boundingBox();
+  const sendBox = await page.locator('form.ekas-composer').getByRole('button', { name: 'Send' }).boundingBox();
+  expect(fieldBox).toBeTruthy();
+  expect(sendBox).toBeTruthy();
+  expect(fieldBox!.width).toBeGreaterThan(140);
+  expect(fieldBox!.x).toBeGreaterThanOrEqual(-1);
+  expect(fieldBox!.x + fieldBox!.width).toBeLessThanOrEqual(viewport.width + 1);
+  expect(sendBox!.x + sendBox!.width).toBeLessThanOrEqual(viewport.width + 1);
+  expect(fieldBox!.y).toBeGreaterThanOrEqual(0);
+  expect(sendBox!.y + sendBox!.height).toBeLessThanOrEqual(viewport.height + 1);
+  const top = await main.evaluate(el => {
+    el.scrollTop = 0;
+    const button = document.querySelector('[data-next-cta]');
+    if (!button) return false;
+    const box = button.getBoundingClientRect();
+    return box.top >= 0 && box.bottom <= window.innerHeight + 1;
+  });
+  return top;
+}
+
+async function advanceUntilReopen(page: Page, id: string, narrow = false) {
   const summary = page.getByRole('region', { name: 'Investigation summary' });
   const button = summary.locator('[data-next-cta]');
   const labels: string[] = [];
+  let sustainCount = 0;
+  const files = new Set<string>();
   for (let step = 0; step < 24; step += 1) {
     const label = await settledLabel(button, labels.at(-1) || '');
     if (labels.at(-1) === label) throw new Error(`${id} repeated “${label}” before the case changed`);
     labels.push(label);
     expect(label, id).not.toMatch(/SAFETY-01|-H1|investigation-v1|snapshot|(?:^|\s)Open the /i);
+    await expect(summary).not.toContainText('authored acceptance');
+    await expect(summary).not.toContainText('Fictional maintenance technician');
+    await expect(summary).not.toContainText(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/);
+    if (label === 'Request an owner') {
+      await expect(summary).toContainText('Status: No owner requested');
+      await expect(summary).toContainText('Owner: Not assigned');
+      await expect(summary).toContainText('Next: Request an owner');
+    }
     if (label === 'Record this hypothesis') {
       await expect(summary).toContainText(/Hypothesis:/);
+      await expect(summary).toContainText(/Why this is plausible:/);
       await expect(summary).toContainText(/What would test it:/);
       if (id === 'downtime') await expect(summary).toContainText(/Guide wear/);
       if (id === 'speed') await expect(summary).toContainText(/Pressure recovery/);
-      if (id === 'quality') await expect(summary).toContainText(/Tool edge|burr/i);
+      if (id === 'quality') {
+        await expect(summary).toContainText(/Tool edge|burr/i);
+        await expect(summary).toContainText(/0\.10 mm/);
+        await expect(summary).toContainText(/controlled acceptance limit/);
+        await expect(summary).not.toContainText('QUALITY-NOTE-01');
+      }
     }
     if (label === 'Recommend this action') {
       await expect(summary).toContainText(/Recommended action:/);
@@ -44,33 +133,66 @@ async function advanceUntilReopen(page: Page, id: string) {
     if (label === 'Record performed work') await expect(summary).toContainText(/Work performed:/);
     if (label === 'Review safety') {
       await expect(summary).toContainText('Status: Measurement recorded');
+      await expect(summary).toContainText('Safety review pending');
       await expect(summary).toContainText('Complete safety review');
       await expect(summary).toContainText(/Observed result:/);
       await expect(summary).not.toContainText('Status: Safety review required');
+      await expect(page.locator('[data-case-state]').first()).not.toContainText('Safety review required');
+      await expect(summary).not.toContainText(/\.00\b/);
     }
     if (label === 'Review verification result') await expect(summary).toContainText('Status: Verification ready for acceptance');
     if (label === 'Record sustainment') await expect(summary).toContainText(/Sustain check/);
-    if (label === 'Reopen the investigation') await expect(summary).toContainText(/Recurrence/);
+    if (label === 'Reopen the investigation') {
+      await expect(summary).toContainText('Cycle 1: Completed / historical');
+      await expect(summary).toContainText('Cycle 2: Open after recurrence');
+      await expect(summary).toContainText(/Reason:/);
+    }
+    await contentBeforeButton(page, summary);
     const alert = page.getByRole('alert');
     if (await alert.count()) throw new Error(`${id} at “${label}”: ${await alert.first().innerText()}`);
-    if (id === 'downtime' && label === 'Review safety') {
-      await page.setViewportSize({ width: 320, height: 700 });
-      await page.evaluate(() => {
-        const main = document.querySelector<HTMLElement>('[aria-label="Workspace content"]');
-        if (main) main.scrollTop = 0;
-      });
-      await page.screenshot({ path: `${shots}/downtime-320-review-safety.png`, fullPage: false });
-      await page.setViewportSize({ width: 1440, height: 900 });
+    const named = label === 'Request an owner' ? '08-owner-request'
+      : label === 'Accept ownership' ? '09-owner-acceptance'
+      : label === 'Record this hypothesis' ? '06-hypothesis'
+      : label === 'Recommend this action' ? '07-action'
+      : label === 'Authorize the action' ? '10-authorization'
+      : label === 'Record performed work' ? '11-performed-work'
+      : label === 'Review safety' ? '12-measurement'
+      : label === 'Review verification result' ? '14-verification-decision'
+      : label === 'Record sustainment' ? (sustainCount === 0 ? '15-sustain' : '16-recurrence')
+      : label === 'Reopen the investigation' ? '17-reopen'
+      : '';
+    if (label === 'Record sustainment') sustainCount += 1;
+    const prefix = narrow ? `${id}-320` : id;
+    if (named && !files.has(named)) {
+      files.add(named);
+      const fits = narrow ? await narrowStep(page, summary) : true;
+      await shot(page, `${prefix}-${named}`);
+      if (narrow && !fits) {
+        await summary.locator('[data-next-cta]').evaluate(el => {
+          const host = document.querySelector<HTMLElement>('[aria-label="Workspace content"]');
+          if (!host) return;
+          const top = el.getBoundingClientRect().top - host.getBoundingClientRect().top + host.scrollTop;
+          host.scrollTop = Math.max(0, top - 120);
+        });
+        await shot(page, `${prefix}-${named}-action`);
+        await page.locator('[aria-label="Workspace content"]').evaluate(el => { el.scrollTop = 0; });
+      }
+      if (named === '12-measurement') await shot(page, `${prefix}-13-guardrails`);
+    } else if (!named) {
+      await shot(page, `${prefix}-step-${slug(label)}`);
     }
-    await page.screenshot({ path: `${shots}/${id}-${String(step).padStart(2, '0')}-${slug(label)}.png`, fullPage: false });
     await button.evaluate((el: HTMLButtonElement) => el.click());
     if (label === 'Reopen the investigation') {
       await settledLabel(button, label);
       await expect(summary).toContainText('Status: No owner requested');
-      await expect(summary).toContainText('Previous cycle: Completed / historical');
-      await expect(summary).toContainText(/New cycle: Cycle 2/);
+      await expect(summary).toContainText('Cycle 1: Completed / historical');
+      await expect(summary).toContainText('Cycle 2: Open after recurrence');
+      await expect(summary).toContainText(/Reason:/);
+      await expect(summary).toContainText('Next: Request an owner');
       await expect(button).toHaveText('Request an owner');
-      await page.screenshot({ path: `${shots}/${id}-reopened.png`, fullPage: false });
+      await expect(summary).not.toContainText('simulation');
+      if (narrow) await narrowStep(page, summary);
+      await shot(page, `${prefix}-17-reopen`);
       return labels;
     }
   }
@@ -80,18 +202,25 @@ async function advanceUntilReopen(page: Page, id: string) {
 for (const journey of journeys) {
   test(`plant leader completes the ${journey.id} journey from the visible next step`, async ({ page }) => {
     test.setTimeout(180000);
+    await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/');
     await page.getByRole('button', { name: journey.prompt }).click();
     const answer = page.locator('article.ekas-captured-reply').last();
     await expect(answer).toContainText(/below the approved plan/i);
     await expect(answer).toContainText(journey.loss);
     if (journey.id !== 'downtime') await expect(answer).toContainText(/is the contributor/);
-    await page.screenshot({ path: `${shots}/${journey.id}-goal.png`, fullPage: false });
+    await shot(page, `${journey.id}-01-goal`);
+    await shot(page, `${journey.id}-02-gap`);
+    await page.getByLabel('Ask EKAS').fill('Where is the loss?');
+    await page.locator('form.ekas-composer').getByRole('button', { name: 'Send' }).click();
+    await expect(answer).toContainText(/loss|minutes|contributor/i);
+    await shot(page, `${journey.id}-03-loss`);
+    await shot(page, `${journey.id}-04-contributor`);
 
     await page.getByRole('button', { name: 'Evidence and investigation' }).click();
     const evidence = page.getByRole('dialog', { name: 'Captured evidence and investigation' });
     await expect(evidence).toContainText('What this evidence says');
-    await page.screenshot({ path: `${shots}/${journey.id}-evidence.png`, fullPage: false });
+    await shot(page, `${journey.id}-05-evidence`);
     await page.keyboard.press('Escape');
 
     await page.getByRole('button', { name: 'Dashboards', exact: true }).click();
@@ -106,87 +235,106 @@ for (const journey of journeys) {
     await expect(surface).not.toContainText('training-positive');
     await expect(surface).not.toContainText('ekas.oee');
     await expect(surface).not.toContainText('No chart was published');
-    await page.screenshot({ path: `${shots}/${journey.id}-dashboard.png`, fullPage: false });
+    await shot(page, `${journey.id}-dashboard`);
 
     await page.getByRole('button', { name: 'Investigations', exact: true }).click();
     const summary = page.getByRole('region', { name: 'Investigation summary' });
     await expect(summary).toContainText('Next: Request an owner');
-    if (journey.id === 'downtime') {
-      await page.setViewportSize({ width: 320, height: 700 });
-      await page.evaluate(() => {
-        const main = document.querySelector<HTMLElement>('[aria-label="Workspace content"]');
-        if (main) main.scrollTop = 0;
-      });
-      await expect(summary.locator('.ekas-case-title')).toBeVisible();
-      await expect(summary.locator('[data-next-cta]')).toBeVisible();
-      await expect(page.getByLabel('Investigation section', { exact: true })).toBeVisible();
-      await expect(summary.getByRole('tab')).toHaveCount(0);
-      const send = await page.getByRole('button', { name: 'Send' }).boundingBox();
-      expect(send!.x + send!.width).toBeLessThanOrEqual(322);
-      await page.screenshot({ path: `${shots}/downtime-320-request-owner.png`, fullPage: false });
-      await page.setViewportSize({ width: 1440, height: 900 });
-    }
+    expect(await headingGap(page), `${journey.id} heading gap`).toBeGreaterThanOrEqual(12);
     const labels = await advanceUntilReopen(page, journey.id);
     expect(labels).toEqual(expect.arrayContaining(['Request an owner', 'Accept ownership', 'Record this hypothesis', 'Recommend this action', 'Authorize the action', 'Check the completed repair', 'Record performed work', 'Check results after two weeks', 'Review safety', 'Review verification result', 'Record sustainment', 'Reopen the investigation']));
     expect(labels.join(' ')).not.toMatch(/(?:^|\s)Open the |snapshot/i);
-    if (journey.id === 'downtime') {
-      await page.setViewportSize({ width: 320, height: 700 });
-      await page.evaluate(() => {
-        const main = document.querySelector<HTMLElement>('[aria-label="Workspace content"]');
-        if (main) main.scrollTop = 0;
-      });
-      await expect(summary).toContainText('No owner requested');
-      await expect(summary.locator('.ekas-case-title')).toBeVisible();
-      await page.screenshot({ path: `${shots}/downtime-320-reopened.png`, fullPage: false });
-    }
   });
 }
 
-test('a plant leader can drive the downtime journey in ordinary language', async ({ page }) => {
+test('the downtime journey stays usable from start to reopen at 320px', async ({ page }) => {
   test.setTimeout(180000);
+  await page.setViewportSize({ width: 320, height: 700 });
   await page.goto('/');
-  const turns: { ask: string; expect: RegExp | string; file: string }[] = [
-    { ask: 'What happened?', expect: /feeder-jam|plan miss|below/i, file: 'chat-01-what-happened' },
-    { ask: 'What evidence do we have?', expect: /evidence|standard work|PFMEA/i, file: 'chat-02-evidence' },
-    { ask: 'What are the possible causes?', expect: /Guide wear/, file: 'chat-03-causes' },
-    { ask: 'How would we test that?', expect: /What would test it/i, file: 'chat-04-test' },
-    { ask: 'Record that hypothesis.', expect: /Guide wear/, file: 'chat-05-record-hypothesis' },
-    { ask: 'What should we do?', expect: /hypothesis|owner|standard/i, file: 'chat-06-what-next' },
-    { ask: 'Who should own this?', expect: /maintenance/i, file: 'chat-07-who-owns' },
-    { ask: 'Assign it to maintenance.', expect: /requested|acceptance is still pending/i, file: 'chat-08-assign' },
-    { ask: 'Did they accept it?', expect: /not yet been accepted/i, file: 'chat-09-not-accepted' },
-    { ask: 'Record their acceptance.', expect: /acceptance is recorded/i, file: 'chat-10-accepted' },
-    { ask: 'Recommend this action.', expect: /guide restoration|standard work/i, file: 'chat-11-recommend' },
-    { ask: 'Request approval.', expect: /Authorization has been requested/i, file: 'chat-12-request-approval' },
-    { ask: 'Was it approved?', expect: /requested/i, file: 'chat-13-not-approved-yet' },
-    { ask: 'Approve the action.', expect: /authorized/i, file: 'chat-14-approved' },
-    { ask: 'Check the completed repair.', expect: /follow-up period/i, file: 'chat-15-completed-repair' },
-    { ask: 'What work was done?', expect: /not recorded as approved or performed|action is authorized/i, file: 'chat-16-work-not-yet' },
-    { ask: 'Record the performed work.', expect: /Work performed/i, file: 'chat-17-work-recorded' },
-    { ask: 'Check results after two weeks.', expect: /follow-up period/i, file: 'chat-18-two-weeks' },
-    { ask: 'Did it work?', expect: /safety review is complete|Causality is not isolated/i, file: 'chat-19-did-it-work' },
-    { ask: 'Did we pass the safety check?', expect: /pending|safety/i, file: 'chat-20-safety-pending' },
-    { ask: 'Review safety.', expect: /safety review is recorded/i, file: 'chat-21-safety-reviewed' },
-    { ask: 'Review the verification result.', expect: /accepted/i, file: 'chat-22-result-accepted' },
-    { ask: 'Check whether the result held.', expect: /follow-up period/i, file: 'chat-23-held-window' },
-    { ask: 'Record the sustainment.', expect: /sustain/i, file: 'chat-24-sustain-recorded' },
-    { ask: 'Did it hold?', expect: /sustain/i, file: 'chat-25-did-it-hold' },
-    { ask: 'Check the later shifts.', expect: /follow-up period/i, file: 'chat-26-later-shifts' },
-    { ask: 'Record the sustainment.', expect: /sustain/i, file: 'chat-27-recurrence-recorded' },
-    { ask: 'Why did it reopen?', expect: /recur/i, file: 'chat-28-why-reopen' },
-    { ask: 'Reopen the investigation.', expect: /next investigation cycle/i, file: 'chat-29-reopened' },
-  ];
   await page.getByRole('button', { name: 'We missed our production goal.' }).click();
-  await expect(page.locator('article.ekas-captured-reply').last()).toContainText(/below the approved plan/i);
-  for (const [index, turn] of turns.entries()) {
-    const box = page.getByLabel('Ask EKAS');
-    const send = page.locator('form.ekas-composer').getByRole('button', { name: 'Send' });
-    await box.fill(turn.ask);
-    await expect(send).toBeEnabled();
-    await send.click();
-    const answer = page.locator('article.ekas-captured-reply').last();
-    await expect(answer, turn.ask).toContainText(turn.expect);
-    await page.screenshot({ path: `${shots}/${turn.file}.png`, fullPage: false });
-    expect(index).toBeGreaterThanOrEqual(0);
-  }
+  const answer = page.locator('article.ekas-captured-reply').last();
+  await expect(answer).toContainText(/below the approved plan/i);
+  await shot(page, 'downtime-320-01-goal');
+  await shot(page, 'downtime-320-02-gap');
+  const box = page.getByLabel('Ask EKAS');
+  const send = page.locator('form.ekas-composer').getByRole('button', { name: 'Send' });
+  await box.fill('Where is the loss?');
+  await expect(send).toBeEnabled();
+  await send.click();
+  await expect(answer).toContainText(/loss|feeder-jam|minutes/i);
+  await shot(page, 'downtime-320-03-loss');
+  await shot(page, 'downtime-320-04-contributor');
+  await page.getByRole('button', { name: 'Evidence and investigation' }).click();
+  await expect(page.getByRole('dialog', { name: 'Captured evidence and investigation' })).toContainText('What this evidence says');
+  await shot(page, 'downtime-320-05-evidence');
+  await page.keyboard.press('Escape');
+  await page.getByRole('button', { name: 'Investigations', exact: true }).click();
+  const summary = page.getByRole('region', { name: 'Investigation summary' });
+  await expect(summary).toContainText('Next: Request an owner');
+  expect(await headingGap(page), '320 heading gap').toBeGreaterThanOrEqual(1);
+  await expect(page.getByLabel('Investigation section', { exact: true })).toBeVisible();
+  await expect(summary.getByRole('tab')).toHaveCount(0);
+  const labels = await advanceUntilReopen(page, 'downtime', true);
+  expect(labels).toContain('Reopen the investigation');
+  expect(labels[0]).toBe('Request an owner');
 });
+
+for (const journey of journeys) {
+  test(`a plant leader can ask ordinary questions through the ${journey.id} journey`, async ({ page }) => {
+    test.setTimeout(180000);
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/');
+    const turns: { ask: string; expect: RegExp; file: string; forbid?: RegExp }[] = [
+      { ask: journey.prompt, expect: /below the approved plan/i, file: `chat-${journey.id}-open` },
+      { ask: 'What happened?', expect: /plan miss|loss|minutes|contributor|units/i, file: `chat-${journey.id}-01-what-happened` },
+      { ask: 'Why do you think that?', expect: journey.hypothesis, file: `chat-${journey.id}-02-why` },
+      { ask: 'What would prove it?', expect: /What would test it/i, file: `chat-${journey.id}-03-prove` },
+      { ask: 'Record that hypothesis.', expect: journey.hypothesis, file: `chat-${journey.id}-record-hypothesis` },
+      { ask: 'What are we going to do?', expect: /owner|hypothesis/i, file: `chat-${journey.id}-04-going-to-do` },
+      { ask: 'Who owns it?', expect: /Not assigned|No owner has been requested/i, file: `chat-${journey.id}-05-who-owns` },
+      { ask: 'Assign it to maintenance.', expect: /requested|acceptance is still pending/i, file: `chat-${journey.id}-assign` },
+      { ask: 'Record their acceptance.', expect: /acceptance is recorded/i, file: `chat-${journey.id}-accepted` },
+      { ask: 'Who owns it?', expect: /Maintenance has accepted/i, file: `chat-${journey.id}-05-who-owns-accepted` },
+      { ask: 'Recommend this action.', expect: journey.work, file: `chat-${journey.id}-recommend` },
+      { ask: 'Request approval.', expect: /Authorization has been requested/i, file: `chat-${journey.id}-request-approval` },
+      { ask: 'Approve the action.', expect: /authorized/i, file: `chat-${journey.id}-approved` },
+      { ask: 'Check the completed repair.', expect: /completed-repair check on Oct 6/i, file: `chat-${journey.id}-completed-repair`, forbid: /\d{4}-\d{2}-\d{2}T/ },
+      { ask: 'What work was done?', expect: /authorized|not recorded as approved or performed/i, file: `chat-${journey.id}-06-work-before` },
+      { ask: 'Record the performed work.', expect: /Work performed/i, file: `chat-${journey.id}-06-work-done` },
+      { ask: 'What work was done?', expect: /Work performed/i, file: `chat-${journey.id}-06-work-done-after` },
+      { ask: 'Check results after two weeks.', expect: /follow-up measurement period on Oct 20/i, file: `chat-${journey.id}-two-weeks`, forbid: /\d{4}-\d{2}-\d{2}T|simulation clock/i },
+      { ask: 'Did it work?', expect: journey.endpoint, file: `chat-${journey.id}-07-did-it-work`, forbid: /\.00\b|\d{4}-\d{2}-\d{2}T/ },
+      { ask: 'What is still blocking acceptance?', expect: /safety review is complete|Safety: pending/i, file: `chat-${journey.id}-08-blocking` },
+      { ask: 'Review safety.', expect: /safety review is recorded/i, file: `chat-${journey.id}-safety` },
+      { ask: 'Review the verification result.', expect: /accepted/i, file: `chat-${journey.id}-verification` },
+      { ask: 'Check whether the result held.', expect: /sustainment check on Oct 27/i, file: `chat-${journey.id}-held-window`, forbid: /\d{4}-\d{2}-\d{2}T/ },
+      { ask: 'Record the sustainment.', expect: /sustain/i, file: `chat-${journey.id}-sustain` },
+      { ask: 'Did it hold?', expect: /sustain/i, file: `chat-${journey.id}-09-did-it-hold` },
+      { ask: 'Check the later shifts.', expect: /later-shift check on Nov 3/i, file: `chat-${journey.id}-later-shifts`, forbid: /\d{4}-\d{2}-\d{2}T/ },
+      { ask: 'Record the sustainment.', expect: /sustain/i, file: `chat-${journey.id}-recurrence` },
+      { ask: 'Why did it reopen?', expect: /recur/i, file: `chat-${journey.id}-10-why-reopen` },
+      { ask: 'Reopen the investigation.', expect: /Cycle 2 is open after recurrence/i, file: `chat-${journey.id}-reopened` },
+    ];
+    for (const turn of turns) {
+      if (turn.ask === journey.prompt) {
+        await page.getByRole('button', { name: journey.prompt }).click();
+      } else {
+        const field = page.getByLabel('Ask EKAS');
+        const send = page.locator('form.ekas-composer').getByRole('button', { name: 'Send' });
+        await field.fill(turn.ask);
+        await expect(send).toBeEnabled();
+        await send.click();
+      }
+      const answer = page.locator('article.ekas-captured-reply').last();
+      await expect(answer, turn.ask).toContainText(turn.expect);
+      if (turn.forbid) await expect(answer, turn.ask).not.toContainText(turn.forbid);
+      await expect(answer, turn.ask).not.toContainText('simulation clock');
+      if (journey.id === 'quality' && turn.ask === 'Why do you think that?') {
+        await expect(answer).toContainText(/0\.10 mm/);
+        await expect(answer).toContainText(/Why this is plausible/i);
+      }
+      if (journey.id === 'quality' && turn.ask === 'What would prove it?') await expect(answer).toContainText(journey.prove);
+      await shot(page, turn.file);
+    }
+  });
+}
