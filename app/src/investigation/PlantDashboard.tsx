@@ -17,6 +17,8 @@ function MeasureCards({ rows, showScope }: { rows: DashboardMeasure[]; showScope
 }
 
 function rankName(rank: DashboardRank) {
+  const amount = `${rank.gap.toLocaleString('en-US')} ${rank.unit} below plan`;
+  if (rank.caseId === 'downtime') return `Northworks plant plan miss, ${amount}`;
   return `${rank.line}, ${rank.gap.toLocaleString('en-US')} ${rank.unit} below the approved plan`;
 }
 
@@ -58,13 +60,20 @@ export function PlantDashboard({ view, verificationRecorded, focus, onSelect, on
   const contextLine = selected ? `${focus?.plant || 'Northworks'} › ${focus?.line} · Oct 6 · Day Shift · Synthetic` : family.context;
   const status = view?.title ? presentedStatus(view, { verificationRecorded }) : '';
   const step = view?.title ? journeyAction(view, 'manager', { verificationRecorded }) : null;
-  const happening = view?.title
-    ? `${[view.context?.plant, view.context?.line, view.context?.asset, view.context?.job].filter(Boolean).join(' · ')}. ${view.title}. ${impactLine(view)}.`
-    : family.id === 'operations'
-      ? 'Northworks is on the selected synthetic shift. The largest approved-plan shortfall is the first case below.'
-      : family.charts.length
-        ? `${family.title} uses the same shared context. The chart and its table use one governed result.`
-        : family.context;
+  const line03 = catalog.families.find(item => item.id === 'operations')?.charts.find(item => item.id === 'line-contribution')?.points.find(item => item.label === 'Line 03');
+  const plantRank = catalog.ranks.find(item => item.caseId === 'downtime');
+  const plantStory = plantRank && line03
+    ? `Plant shortfall: ${plantRank.gap.toLocaleString('en-US')} ${plantRank.unit} below plan. Largest contributor: Line 03 contributed ${Math.abs(line03.numeric).toLocaleString('en-US')} units of the plant's ${plantRank.gap.toLocaleString('en-US')}-unit shortfall.`
+    : family.context;
+  const happening = view?.caseId === 'downtime' && plantRank && line03
+    ? `Northworks plant plan miss. ${plantRank.gap.toLocaleString('en-US')} ${plantRank.unit} below plan. Line 03 contributed ${Math.abs(line03.numeric).toLocaleString('en-US')} units of that plant shortfall.`
+    : view?.title
+      ? `${[view.context?.plant, view.context?.line, view.context?.asset, view.context?.job].filter(Boolean).join(' · ')}. ${view.title}. ${impactLine(view)}.`
+      : family.id === 'operations'
+        ? plantStory
+        : family.charts.length
+          ? `${family.title} uses the same shared context. The chart and its table use one governed result.`
+          : family.context;
   const investigate = view?.title
     ? `${view.title}. Status: ${status}. Next: ${step?.next || step?.label}. This is the investigation status.`
     : 'No investigation is open. Choose a line, then ask why or investigate that case.';
@@ -85,7 +94,7 @@ export function PlantDashboard({ view, verificationRecorded, focus, onSelect, on
       {loss.length > 0 && <>
         <h2>Where is the loss</h2>
         <ChartGroup charts={loss} />
-        {family.id === 'operations' && <ul className="ekas-dash-ranks">{catalog.ranks.map(rank => <li key={rank.caseId}><button type="button" aria-pressed={focus?.caseId === rank.caseId} onClick={() => onSelect?.(rank.caseId)}>{rankName(rank)}</button><p>{rank.plant} · {rank.title}. {rank.actual.toLocaleString('en-US')} against {rank.target.toLocaleString('en-US')} {rank.unit}.</p></li>)}</ul>}
+        {family.id === 'operations' && <ul className="ekas-dash-ranks">{catalog.ranks.map(rank => <li key={rank.caseId}><button type="button" aria-pressed={focus?.caseId === rank.caseId} onClick={() => onSelect?.(rank.caseId)}>{rankName(rank)}</button><p>{rank.caseId === 'downtime' ? `Plant scope. ${rank.actual.toLocaleString('en-US')} against ${rank.target.toLocaleString('en-US')} ${rank.unit}. Line 03 contribution: ${line03?.display}.` : `${rank.plant} · ${rank.title}. ${rank.actual.toLocaleString('en-US')} against ${rank.target.toLocaleString('en-US')} ${rank.unit}.`}</p></li>)}</ul>}
       </>}
       <p>{family.interpretation}</p>
       <details className="ekas-dash-technical"><summary>Technical details</summary><ul>{family.kpis.map(row => <li key={row.id}>{row.label}: {row.source}</li>)}</ul></details>

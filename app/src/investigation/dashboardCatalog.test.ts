@@ -127,10 +127,53 @@ it('keeps a dashboard focus on the manufacturing dataset and out of the monthly 
   expect(focused.context.line).toBe('Line 03');
   expect(focused.monthlyContext).toEqual(monthly);
   expect(focused.turns.at(-1)!.answer.text).not.toMatch(/Machine 1|training-positive/);
+  expect(focused.turns.at(-1)!.answer.text).toMatch(/plant plan miss is 150 good units below the approved plan/);
+  expect(focused.turns.at(-1)!.answer.text).toMatch(/Line 03 contributed 138 units of that plant shortfall/);
+  expect(focused.turns.at(-1)!.answer.text).not.toMatch(/Line 03[^.]{0,80}150[^.]{0,40}below plan/i);
   record = await client.turn(record.id, record.version, 'Why?', 'dashboard-why');
   const answer = record.content.conversation.turns.at(-1)!.answer.text;
   expect(record.content.conversation.context.caseFocus).toBe('downtime');
   expect(answer).toMatch(/150/);
   expect(answer).toMatch(/2154/);
   expect(answer).not.toMatch(/Machine 1/);
+});
+
+it('does not label the Line 03 contribution as the 150-unit plant shortfall', () => {
+  const catalog = dashboardCatalog();
+  const operations = catalog.families.find(family => family.id === 'operations')!;
+  const contribution = operations.charts.find(item => item.id === 'line-contribution')!;
+  const line03 = contribution.points.find(item => item.label === 'Line 03')!;
+  const plant = operations.charts.find(item => item.id === 'plan-versus-actual')!.points.find(item => item.id === 'plan-shortfall')!;
+  const cases = operations.charts.find(item => item.id === 'case-shortfall')!;
+  expect(line03).toMatchObject({ numeric: 138, display: '138 good units below plan', sourceLabel: 'Production plan and actuals' });
+  expect(plant.numeric).toBe(150);
+  expect(plant.label).not.toMatch(/Line 03/);
+  expect(cases.points.map(item => item.label)).toEqual(['Northworks plant plan miss', 'Speed line', 'Quality line']);
+  expect(contribution.points.reduce((sum, item) => sum + item.numeric, 0)).toBe(150);
+  const labeled = [
+    operations.interpretation,
+    contribution.note,
+    contribution.description,
+    cases.description,
+    cases.note,
+    ...contribution.points.map(item => `${item.label} ${item.display}`),
+    ...cases.points.map(item => `${item.label} ${item.display}`),
+  ].join('\n');
+  expect(labeled).toMatch(/Plant shortfall: 150 good units below plan/);
+  expect(labeled).toMatch(/Line 03 contributed 138 units of the plant's 150-unit shortfall/);
+  expect(labeled).not.toMatch(/Line 03[^.]{0,80}150[^.]{0,40}below plan/i);
+  expect(labeled).not.toMatch(/plant shortfall[^.]{0,40}\b138\b/i);
+  const focused = routeConversation('Focus the dashboard on Line 03.', emptyConversationContext());
+  const focusText = presentTurn(focused, null).text;
+  const why = presentTurn(routeConversation('Why?', focused.context), workflowView(createWorkflow('downtime')));
+  const view = workflowView(createWorkflow('downtime'));
+  const contributor = view.contributors?.find(row => row.line === 'Line 03');
+  expect(focusText).toMatch(/150 good units below the approved plan/);
+  expect(focusText).toMatch(/Line 03 contributed 138 units/);
+  expect(why.text).toMatch(/150 good units below the approved plan/);
+  expect(why.text).toMatch(/Line 03 missed by 138 units/);
+  expect(why.text).not.toMatch(/Line 03 missed by 150/);
+  expect(view.goal?.gap).toBe(150);
+  expect(contributor?.gap).toBe(138);
+  expect(contributor?.gap).not.toBe(view.goal?.gap);
 });

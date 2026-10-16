@@ -99,10 +99,13 @@ html{scroll-padding-bottom:calc(var(--ekas-composer-h, 168px) + 20px)}
 .ekas-dash button.ekas-dash-family:hover,.ekas-dash button.ekas-dash-family:focus{background-color:#1a2740;color:#e7eef8}
 .ekas-dash button.ekas-dash-family.ekas-dash-family-active,.ekas-dash button.ekas-dash-family.ekas-dash-family-active:hover,.ekas-dash button.ekas-dash-family.ekas-dash-family-active:focus,.ekas-dash button.ekas-dash-family.ekas-dash-family-active:focus-visible{background-color:#2bb6a3;color:#06221c;border-color:#2bb6a3}
 .ekas-dash-context,.ekas-dash-scope{margin:0 0 4px;color:#b7c8df}
-.ekas-dash-kpis{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;list-style:none;margin:2px 0;padding:0}
-.ekas-dash-kpis li,.ekas-dash-cards li{border:1px solid #24344f;border-radius:8px;padding:4px 6px;background:#131d31}
+.ekas-dash-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px;list-style:none;margin:6px 0;padding:0}
+.ekas-dash-kpis li,.ekas-dash-cards li{border:1px solid #24344f;border-radius:8px;background:#131d31}
+.ekas-dash-kpis li{padding:10px 12px}
+.ekas-dash-cards li{padding:6px 8px}
 .ekas-plant .ekas-dash-kpis p,.ekas-plant .ekas-dash-cards p,.ekas-plant .ekas-dash-ranks p,.ekas-plant .ekas-dash-figure figcaption,.ekas-plant .ekas-dash-scope{margin:0}
-.ekas-plant .ekas-dash-kpis p{font-size:11px;line-height:1.2}
+.ekas-plant .ekas-dash-kpis p{font-size:13px;line-height:1.35}
+.ekas-plant .ekas-dash-kpis p:nth-child(2){font-size:18px;font-weight:650;line-height:1.2}
 .ekas-dash-figure{margin:4px 0 8px;min-width:0;max-width:100%}
 .ekas-dash-chart{min-width:0;max-width:100%}
 .ekas-dash-figure figcaption{color:#b7c8df}

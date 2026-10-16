@@ -35,14 +35,14 @@ Tiles, chart labels, and tables share one formatter. Percents show a tenth only 
 | OTIF | KPI | 91.3% | ≥95% | Below target |
 
 Plant operations draws two separate Highcharts column charts, then the loss charts. Both are plant scope for Northworks on Oct 6 Day Shift, and the plan chart is titled "Plant-wide plan vs actual". The approved-plan chart is 2,304 good units, 2,154 good units, and a 150 good-unit shortfall. The capacity chart is a different baseline: theoretical capacity 2,880, downtime loss 480, speed loss 198, quality loss 48, and good output 2,154 good-equivalent units. Those losses are not added to the 150. Each chart’s series and its table are the same points. The case-shortfall chart states that its rows are separate case scopes, not the current line or job.
-| Line 03 case | Ranking bar and button | 150 good units below plan; 2,154 against 2,304 | Approved plant plan |
+| Northworks plant plan miss | Ranking button | 150 good units below plan; 2,154 against 2,304 | Plant scope, not the Line 03 contribution |
 | Speed line case | Ranking bar and button | 114 good units; 706 against 820 | Approved case plan |
 | Quality line case | Ranking bar and button | 58 good units; 792 against 850 | Approved case plan |
 | Line 03 contribution | Table only | 138 good units | 768 good units planned |
 | Line 02 contribution | Table only | 38 good units | 768 good units planned |
 | Line 01 contribution | Table only | 26 good units above plan | 768 good units planned |
 
-The 150 good-unit figure is the approved plant-plan shortfall for the Line 03 investigation. The 138 good-unit line contribution sits inside that plan. The two figures are not added.
+The plant shortfall is 150 good units below plan. Line 03 contributed 138 units of that plant shortfall. Line 02 is 38 below plan and Line 01 is 26 above plan. Those contributions reconcile to the 150. The plant total is not the Line 03 shortfall.
 
 Production and OEE uses the same line pool.
 

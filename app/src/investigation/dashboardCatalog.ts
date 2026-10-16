@@ -151,6 +151,7 @@ export function plainSource(source: string): string {
   if (lower.includes('quality-investigation')) return 'Quality measurement record';
   if (lower.includes('speed-investigation')) return 'Speed measurement record';
   if (lower.includes('#/goal')) return 'Approved production plan';
+  if (lower.includes('line plan inside') || (lower.includes('production-jobs') && lower.includes('plant goal'))) return 'Production plan and actuals';
   if (lower.includes('production-jobs') || lower.includes('operatingreview gaps')) return 'Case measurement record';
   if (lower.includes('parentview') || lower.includes('bridge') || lower.includes('run minutes')) return 'Plant capacity record';
   if (lower.includes('reporting_contexts/schedule')) return 'Schedule record';
@@ -273,9 +274,10 @@ export function dashboardCatalog(asOf = AS_OF): DashboardCatalog {
     point('plan-shortfall', 'Plan shortfall', parent.goal.gap, 'good units', planSource, planScope, asOf),
   ];
   const rankSource = 'operatingReview gaps';
+  const caseShortfallLabel = (caseId: string, line: string) => caseId === 'downtime' ? 'Northworks plant plan miss' : line;
   const rankPoints = review.gaps.filter(gap => gap.gap !== null && gap.gap > 0).map(gap => point(
     gap.caseId,
-    gap.context.line,
+    caseShortfallLabel(gap.caseId, gap.context.line),
     gap.gap as number,
     'good units',
     rankSource,
@@ -336,19 +338,22 @@ export function dashboardCatalog(asOf = AS_OF): DashboardCatalog {
     'primary',
     bridgePoints,
   );
+  const line03Gap = Math.abs(linePoints.find(item => item.label === 'Line 03')?.numeric || 0);
+  const plantShortfall = parent.goal.gap;
+  const relationship = `Plant shortfall: ${formatQuantity(plantShortfall, 'good units')} below plan. Largest contributor: Line 03 contributed ${line03Gap.toLocaleString('en-US')} units of the plant's ${plantShortfall.toLocaleString('en-US')}-unit shortfall.`;
   const lossChart = chart(
     'case-shortfall',
     'Approved plan shortfall by supplied case',
-    ranks.map(rank => `${rank.line} ${rank.gap.toLocaleString('en-US')} good units below the approved plan`).join('. ') + '. These case scopes are not additive and are not the current line or job filter.',
-    'Separate case scopes. Each case keeps its own plan. Do not add these shortfalls together or read them as the current line filter.',
+    review.gaps.filter(gap => gap.gap !== null && gap.gap > 0).map(gap => `${caseShortfallLabel(gap.caseId, gap.context.line)} ${Number(gap.gap).toLocaleString('en-US')} good units below the approved plan`).join('. ') + '. The Northworks figure is the plant plan miss, not the Line 03 contribution. These case scopes are not additive and are not the current line or job filter.',
+    'Separate case scopes. The Northworks plant plan miss is the plant total. It is not the Line 03 contribution. Do not add these shortfalls together.',
     'loss',
     rankPoints,
   );
   const contributionChart = chart(
     'line-contribution',
     'Plant-wide line contribution inside the Northworks plan',
-    linePoints.map(item => `${item.label} ${item.display}`).join('. ') + '. Plant-wide contributions inside the Northworks plan. Not filtered to the current line or job.',
-    'Plant-wide line contributions sit inside the Northworks plan. They are not filtered to the current line or job and are not added to the case shortfall again.',
+    linePoints.map(item => `${item.label} ${item.display}`).join('. ') + `. ${relationship} These contributions reconcile to the plant total.`,
+    `${relationship} These line contributions sit inside the Northworks plan and are not a second shortfall.`,
     'loss',
     linePoints,
   );
@@ -364,7 +369,7 @@ export function dashboardCatalog(asOf = AS_OF): DashboardCatalog {
       breakdownTitle: lossChart.title,
       rows: linePoints.map(item => ({ ...measure(item.id, item.label, item.numeric, item.unit, null, item.source, null, item.cutoff, item.scope), display: item.display })),
       interpretation: top
-        ? `${top.line} carries the largest approved-plan shortfall: ${top.gap.toLocaleString('en-US')} ${top.unit}, ${top.actual.toLocaleString('en-US')} against ${top.target.toLocaleString('en-US')}. These case scopes are not additive. Line contributions sit inside that plant plan and are not added to it again. A metric without an approved target stays an observation and does not create an actionable gap.`
+        ? `${relationship} These case scopes are not additive. A metric without an approved target stays an observation and does not create an actionable gap.`
         : 'No eligible case shortfall is available at this cutoff.',
     },
     {

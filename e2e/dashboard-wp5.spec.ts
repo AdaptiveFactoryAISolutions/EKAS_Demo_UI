@@ -107,6 +107,14 @@ test('plant operations selects Line 03, explains the 150-unit gap, and opens the
   await expect(dashboard).toContainText('Above target');
   await expect(dashboard).toContainText('4.8 days');
   await expect(dashboard).toContainText('91.3%');
+  await expect(dashboard).toContainText('Plant shortfall: 150 good units below plan');
+  await expect(dashboard).toContainText("Line 03 contributed 138 units of the plant's 150-unit shortfall");
+  await expect(dashboard).not.toContainText('Line 03, 150');
+  const kpiValue = dashboard.locator('.ekas-dash-kpis p').nth(1);
+  const kpiSize = await kpiValue.evaluate(el => Number.parseFloat(getComputedStyle(el).fontSize));
+  const kpiCard = await dashboard.locator('.ekas-dash-kpis li').first().boundingBox();
+  expect(kpiSize).toBeGreaterThanOrEqual(16);
+  expect(kpiCard && kpiCard.width).toBeGreaterThanOrEqual(180);
   await expect(dashboard).not.toContainText('4.80 day');
   await expect(dashboard).not.toContainText('91.30%');
   await expect(dashboard.locator('.highcharts-container').first()).toBeVisible();
@@ -177,11 +185,14 @@ test('plant operations selects Line 03, explains the 150-unit gap, and opens the
   await expectTopInView(ask, 768);
   await expectTopInView(dashboard.getByRole('button', { name: 'Investigate' }), 768);
   await expectTopInView(dashboard.getByRole('button', { name: 'Show evidence' }), 768);
-  await expect(lossTable).toContainText('Case measurement record');
+  await expect(lossTable).toContainText('138 good units below plan');
+  await expect(lossTable).toContainText('Production plan and actuals');
+  await expect(lossTable).not.toContainText('Case measurement record');
+  await expect(dashboard.getByRole('button', { name: 'Northworks plant plan miss, 150 good units below plan' })).toBeVisible();
   await shot(page, 'C-plant-operations-lower');
   await scrollTop(page);
 
-  await dashboard.getByRole('button', { name: /Line 03, 150 good units/ }).click();
+  await dashboard.getByRole('button', { name: 'Northworks plant plan miss, 150 good units below plan' }).click();
   await expect(context).toContainText('Northworks');
   await expect(context).toContainText('Line 03');
   await expect(context).not.toContainText('FEED-03');
@@ -200,6 +211,7 @@ test('plant operations selects Line 03, explains the 150-unit gap, and opens the
   await expect(answer).not.toContainText('training-positive');
   await answer.scrollIntoViewIfNeeded();
   await shot(page, '03-why');
+  await shot(page, 'G-line-03-why');
 
   await goArea(page, 'Dashboards');
   await dashboard.getByRole('button', { name: 'Investigate' }).click();
@@ -207,6 +219,7 @@ test('plant operations selects Line 03, explains the 150-unit gap, and opens the
   await expect(page.getByRole('region', { name: 'Investigation summary' })).toContainText('Next: Record this hypothesis');
   await expect(page.getByRole('region', { name: 'Investigation summary' })).toContainText('Status: No owner requested');
   await shot(page, '04-investigate');
+  await shot(page, 'H-line-03-investigate');
 
   await goArea(page, 'Dashboards');
   await dashboard.getByRole('tab', { name: 'Production and OEE' }).click();
@@ -233,7 +246,7 @@ test('plant operations selects Line 03, explains the 150-unit gap, and opens the
   const apqBox = await dashboard.locator('[data-chart-id="apq"] .highcharts-container').boundingBox();
   expect(apqBox && apqBox.y + 60 < 768).toBeTruthy();
   await expectNoOverflow(page);
-  await shot(page, 'B-production-oee-top');
+  await shot(page, 'B-production-oee-kpis');
   await dashboard.getByRole('tab', { name: 'Capacity and constraints' }).click();
   await expect(dashboard.getByRole('tab', { selected: true })).toHaveText('Capacity and constraints');
   await expect(dashboard).toContainText('Do not add');
