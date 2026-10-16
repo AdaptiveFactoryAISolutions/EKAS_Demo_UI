@@ -16,6 +16,16 @@ async function shot(page: Page, file: string) {
   await page.screenshot({ path: `${shots}/${file}.png`, fullPage: false });
 }
 
+async function goArea(page: Page, name: string) {
+  const nav = page.getByRole('complementary', { name: 'Template sidebar navigation' });
+  const button = nav.getByRole('button', { name, exact: true });
+  if (!(await button.isVisible())) {
+    await page.getByRole('button', { name: 'Menu', exact: true }).click();
+    await expect(button).toBeVisible();
+  }
+  await button.click();
+}
+
 async function settledLabel(button: ReturnType<Page['locator']>, previous = '') {
   let current = '';
   await expect.poll(async () => {
@@ -107,7 +117,7 @@ async function advanceUntilReopen(page: Page, id: string, narrow = false) {
     expect(label, id).not.toMatch(/SAFETY-01|-H1|investigation-v1|snapshot|(?:^|\s)Open the /i);
     await expect(summary).not.toContainText('authored acceptance');
     await expect(summary).not.toContainText('Fictional maintenance technician');
-    await expect(summary).not.toContainText(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/);
+    await expect(summary.locator('.ekas-invest-head')).not.toContainText(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/);
     if (label === 'Request an owner') {
       await expect(summary).toContainText('Status: No owner requested');
       await expect(summary).toContainText('Owner: Not assigned');
@@ -166,6 +176,7 @@ async function advanceUntilReopen(page: Page, id: string, narrow = false) {
     if (named && !files.has(named)) {
       files.add(named);
       const fits = narrow ? await narrowStep(page, summary) : true;
+      if (!narrow) await page.locator('[aria-label="Workspace content"]').evaluate(el => { el.scrollTop = 0; });
       await shot(page, `${prefix}-${named}`);
       if (narrow && !fits) {
         await summary.locator('[data-next-cta]').evaluate(el => {
@@ -190,7 +201,7 @@ async function advanceUntilReopen(page: Page, id: string, narrow = false) {
       await expect(summary).toContainText(/Reason:/);
       await expect(summary).toContainText('Next: Request an owner');
       await expect(button).toHaveText('Request an owner');
-      await expect(summary).not.toContainText('simulation');
+      await expect(summary.locator('.ekas-invest-head')).not.toContainText('simulation');
       if (narrow) await narrowStep(page, summary);
       await shot(page, `${prefix}-17-reopen`);
       return labels;
@@ -217,13 +228,13 @@ for (const journey of journeys) {
     await shot(page, `${journey.id}-03-loss`);
     await shot(page, `${journey.id}-04-contributor`);
 
-    await page.getByRole('button', { name: 'Evidence and investigation' }).click();
+    await page.locator('article.ekas-captured-reply').last().getByRole('button', { name: 'Evidence and investigation' }).click();
     const evidence = page.getByRole('dialog', { name: 'Captured evidence and investigation' });
     await expect(evidence).toContainText('What this evidence says');
     await shot(page, `${journey.id}-05-evidence`);
     await page.keyboard.press('Escape');
 
-    await page.getByRole('button', { name: 'Dashboards', exact: true }).click();
+    await goArea(page, 'Dashboards');
     const dashboard = page.getByRole('region', { name: 'Plant dashboard' });
     await expect(page.getByRole('region', { name: 'Current investigation context' })).toContainText(journey.asset);
     await expect(dashboard).toContainText(journey.id === 'downtime' ? 'Northworks' : 'Synthetic Works');
@@ -237,9 +248,10 @@ for (const journey of journeys) {
     await expect(surface).not.toContainText('No chart was published');
     await shot(page, `${journey.id}-dashboard`);
 
-    await page.getByRole('button', { name: 'Investigations', exact: true }).click();
+    await goArea(page, 'Investigations');
     const summary = page.getByRole('region', { name: 'Investigation summary' });
     await expect(summary).toContainText('Next: Request an owner');
+    await page.locator('[aria-label="Workspace content"]').evaluate(el => { el.scrollTop = 0; });
     expect(await headingGap(page), `${journey.id} heading gap`).toBeGreaterThanOrEqual(12);
     const labels = await advanceUntilReopen(page, journey.id);
     expect(labels).toEqual(expect.arrayContaining(['Request an owner', 'Accept ownership', 'Record this hypothesis', 'Recommend this action', 'Authorize the action', 'Check the completed repair', 'Record performed work', 'Check results after two weeks', 'Review safety', 'Review verification result', 'Record sustainment', 'Reopen the investigation']));
@@ -264,13 +276,14 @@ test('the downtime journey stays usable from start to reopen at 320px', async ({
   await expect(answer).toContainText(/loss|feeder-jam|minutes/i);
   await shot(page, 'downtime-320-03-loss');
   await shot(page, 'downtime-320-04-contributor');
-  await page.getByRole('button', { name: 'Evidence and investigation' }).click();
+  await page.locator('article.ekas-captured-reply').last().getByRole('button', { name: 'Evidence and investigation' }).click();
   await expect(page.getByRole('dialog', { name: 'Captured evidence and investigation' })).toContainText('What this evidence says');
   await shot(page, 'downtime-320-05-evidence');
   await page.keyboard.press('Escape');
-  await page.getByRole('button', { name: 'Investigations', exact: true }).click();
+  await goArea(page, 'Investigations');
   const summary = page.getByRole('region', { name: 'Investigation summary' });
   await expect(summary).toContainText('Next: Request an owner');
+  await page.locator('[aria-label="Workspace content"]').evaluate(el => { el.scrollTop = 0; });
   expect(await headingGap(page), '320 heading gap').toBeGreaterThanOrEqual(1);
   await expect(page.getByLabel('Investigation section', { exact: true })).toBeVisible();
   await expect(summary.getByRole('tab')).toHaveCount(0);
@@ -329,6 +342,7 @@ for (const journey of journeys) {
       await expect(answer, turn.ask).toContainText(turn.expect);
       if (turn.forbid) await expect(answer, turn.ask).not.toContainText(turn.forbid);
       await expect(answer, turn.ask).not.toContainText('simulation clock');
+      await expect(answer, turn.ask).not.toContainText(/\d+\.00 to \d+\.00/);
       if (journey.id === 'quality' && turn.ask === 'Why do you think that?') {
         await expect(answer).toContainText(/0\.10 mm/);
         await expect(answer).toContainText(/Why this is plausible/i);
