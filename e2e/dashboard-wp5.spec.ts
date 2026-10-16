@@ -9,8 +9,8 @@ async function shot(page: Page, file: string) {
 }
 
 async function goArea(page: Page, name: string) {
-  const nav = page.getByRole('complementary', { name: 'Template sidebar navigation' });
-  const button = nav.getByRole('button', { name, exact: true });
+  const button = page.getByRole('complementary', { name: 'Template sidebar navigation' }).getByRole('button', { name, exact: true });
+  await expect(page.locator('[aria-label="Workspace content"]')).toBeVisible();
   if (!(await button.isVisible())) {
     await page.getByRole('button', { name: 'Menu', exact: true }).click();
     await expect(button).toBeVisible();
@@ -20,14 +20,19 @@ async function goArea(page: Page, name: string) {
 
 test('plant operations selects Line 03, explains the 150-unit gap, and opens the downtime case', async ({ page }) => {
   test.setTimeout(120000);
+  await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('/');
+  await expect(page.getByRole('heading', { name: 'Chat' })).toBeVisible();
   await goArea(page, 'Dashboards');
   const dashboard = page.getByRole('region', { name: 'Plant dashboard' });
   const context = page.getByRole('region', { name: 'Current investigation context' });
   await expect(dashboard.getByRole('button', { name: 'Plant operations', pressed: true })).toBeVisible();
   await expect(dashboard).toContainText('What is happening');
   await expect(dashboard).toContainText('Production versus plan');
-  await expect(dashboard).toContainText('Unavailable');
+  await expect(dashboard).toContainText('93.49%');
+  await expect(dashboard).toContainText('150 good units');
+  await expect(dashboard.locator('.ekas-dash-table').first()).toBeVisible();
+  await expect(dashboard.locator('.ekas-dash-cards').first()).toBeHidden();
   await expect(context).toContainText('FEED-03');
   await shot(page, '01-plant-operations');
 
@@ -42,6 +47,7 @@ test('plant operations selects Line 03, explains the 150-unit gap, and opens the
   await page.locator('form.ekas-composer').getByRole('button', { name: 'Send' }).click();
   await goArea(page, 'Chat');
   const answer = page.locator('article.ekas-captured-reply').last();
+  await expect(answer).toContainText('Production finished');
   await expect(answer).toContainText(/150/);
   await expect(answer).toContainText(/2,154|2154/);
   await expect(answer).toContainText(/2,304|2304/);
@@ -90,9 +96,13 @@ async function expectStackedActions(page: Page, width: number) {
   await dashboard.getByRole('button', { name: 'Plant operations', pressed: true }).click();
   const cards = dashboard.locator('.ekas-dash-kpis li');
   await expect(cards.first()).toBeVisible();
+  await expect(dashboard.locator('.ekas-dash-table').first()).toBeHidden();
+  await expect(dashboard.locator('.ekas-dash-cards').first()).toBeVisible();
   const first = await cards.nth(0).boundingBox();
   const second = await cards.nth(1).boundingBox();
   expect(first && second && second.y >= first.y + first.height - 2).toBeTruthy();
+  await page.locator('[aria-label="Workspace content"]').evaluate(el => { el.scrollTop = 0; });
+  await shot(page, `12-mobile-${width}-top`);
   const ask = dashboard.getByRole('button', { name: 'Ask about this' });
   const investigate = dashboard.getByRole('button', { name: 'Investigate' });
   const evidence = dashboard.getByRole('button', { name: 'Show evidence' });

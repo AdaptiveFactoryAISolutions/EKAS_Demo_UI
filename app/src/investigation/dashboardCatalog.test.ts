@@ -59,6 +59,7 @@ it('keeps a dashboard focus on the manufacturing dataset and out of the monthly 
   let first = await client.createConversation('dashboard-first');
   first = await client.turn(first.id, first.version, 'Focus the dashboard on Line 03.', 'dashboard-first-line');
   expect(first.content.conversation.dataset).toBe('manufacturing');
+  expect(first.content.conversation.turns.at(-1)!.asOf.startsWith('2026-10-06')).toBe(true);
   expect(first.content.conversation.turns.at(-1)!.answer.text).toMatch(/Northworks › Line 03/);
   expect(first.content.conversation.turns.at(-1)!.answer.text).not.toMatch(/training-positive|Machine 1/);
   let record = await client.createConversation('dashboard-focus');
