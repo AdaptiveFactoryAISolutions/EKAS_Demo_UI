@@ -11,11 +11,48 @@ it('ranks Line 03 by the 150 good-unit plan gap and keeps missing measures unava
   expect(line).toMatchObject({ line: 'Line 03', gap: 150, actual: 2154, target: 2304, unit: 'good units' });
   expect(catalog.ranks.map(rank => rank.gap)).toEqual([150, 114, 58]);
   const operations = catalog.families.find(family => family.id === 'operations')!;
-  expect(operations.kpis.find(row => row.id === 'production')!.target).toMatch(/100/);
-  expect(operations.kpis.find(row => row.id === 'oee')!.target).toBe('80%');
-  expect(operations.kpis.find(row => row.id === 'oee')!.numeric).not.toBeNull();
+  const production = operations.kpis.find(row => row.id === 'production')!;
+  const oee = operations.kpis.find(row => row.id === 'oee')!;
+  const downtime = operations.kpis.find(row => row.id === 'downtime')!;
+  const inventory = operations.kpis.find(row => row.id === 'inventory')!;
+  const otif = operations.kpis.find(row => row.id === 'otif')!;
+  expect(production.display).toBe('93.5%');
+  expect(production.target).toBe('≥100%');
+  expect(production.status).toBe('Below target');
+  expect(oee.display).toBe('74.8%');
+  expect(oee.target).toBe('≥80%');
+  expect(oee.status).toBe('Below target');
+  expect(downtime.display).toBe('240 min');
+  expect(downtime.target).toBe('≤180 min');
+  expect(downtime.status).toBe('Above target');
+  expect(inventory.display).toBe('4.8 days');
+  expect(inventory.target).toBe('≤4.5 days');
+  expect(inventory.status).toBe('Above target');
+  expect(otif.display).toBe('91.3%');
+  expect(otif.status).toBe('Below target');
+  const availability = catalog.families.find(family => family.id === 'production')!.kpis.find(row => row.id === 'availability')!;
+  expect(availability.status).toBe('Unknown');
+  expect(availability.target).toBe('Unavailable');
+  const plan = operations.charts.find(item => item.id === 'plan-versus-actual')!;
+  const bridge = operations.charts.find(item => item.id === 'capacity-bridge')!;
+  expect(plan.points.map(item => item.numeric)).toEqual([2304, 2154, 150]);
+  expect(plan.table).toBe(plan.points);
+  expect(bridge.points.map(item => item.label)).toEqual(['Theoretical capacity', 'Downtime loss', 'Speed loss', 'Quality loss', 'Good output']);
+  expect(bridge.points.find(item => item.label === 'Downtime loss')!.numeric).not.toBe(150);
+  expect(bridge.table.map(item => item.numeric)).toEqual(bridge.points.map(item => item.numeric));
+  expect(operations.charts.find(item => item.id === 'case-shortfall')!.points.map(item => item.numeric)).toEqual([150, 114, 58]);
+  const produced = catalog.families.find(family => family.id === 'production')!;
+  expect(produced.charts.find(item => item.id === 'apq')!.points.map(item => item.id)).toEqual(['availability', 'performance', 'quality-yield']);
+  for (const family of catalog.families) {
+    for (const item of family.charts) {
+      expect(item.table).toEqual(item.points);
+      expect(item.points.length).toBeGreaterThan(0);
+      expect(new Set(item.points.map(point => point.unit)).size).toBe(1);
+      expect(item.points.every(point => point.source === item.source && point.scope === item.scope && point.cutoff === item.cutoff && point.numeric !== null)).toBe(true);
+    }
+  }
   const capacity = catalog.families.find(family => family.id === 'capacity')!;
-  const bridgeGood = capacity.rows.find(row => row.label === 'Good output')!.numeric;
+  const bridgeGood = capacity.charts.find(item => item.id === 'capacity-bridge')!.points.find(item => item.label === 'Good output')!.numeric;
   const planGap = capacity.rows.find(row => row.id === 'plan-gap-row')!.numeric;
   expect(planGap).toBe(150);
   expect(bridgeGood).not.toBe(planGap);
