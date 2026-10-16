@@ -155,17 +155,25 @@ test('plant operations selects Line 03, explains the 150-unit gap, and opens the
   await expectTooltipInFrame(page);
   await expectNoOverflow(page);
   await shot(page, 'D-plan-tooltip');
-  await page.mouse.move(0, 0);
+  await page.mouse.move(40, 300);
+  await page.evaluate(() => {
+    document.querySelectorAll('.highcharts-tooltip-container').forEach(node => node.remove());
+  });
 
   const lossTable = dashboard.locator('[data-chart-id="line-contribution"] .ekas-dash-table');
   const ask = dashboard.getByRole('button', { name: 'Ask about this' });
   await page.locator('[aria-label="Workspace content"]').evaluate(el => {
     const actions = el.querySelector('.ekas-dash .ekas-answer-actions');
-    if (!actions) return;
-    const delta = actions.getBoundingClientRect().bottom - el.getBoundingClientRect().bottom + 12;
-    el.scrollTop += delta;
+    const table = el.querySelector('[data-chart-id="line-contribution"] .ekas-dash-table');
+    const sticky = document.querySelector('.ekas-context')?.getBoundingClientRect().bottom ?? 0;
+    if (!actions || !table) return;
+    el.scrollTop += actions.getBoundingClientRect().bottom - window.innerHeight + 8;
+    const covered = sticky + 4 - table.getBoundingClientRect().top;
+    if (covered > 0) el.scrollTop -= covered;
   });
-  await expectTopInView(lossTable, 768);
+  const stickyBottom = await page.locator('.ekas-context').evaluate(el => el.getBoundingClientRect().bottom);
+  const lossBox = await lossTable.boundingBox();
+  expect(lossBox && lossBox.y >= stickyBottom - 1 && lossBox.y + lossBox.height <= 768).toBeTruthy();
   await expectTopInView(ask, 768);
   await expectTopInView(dashboard.getByRole('button', { name: 'Investigate' }), 768);
   await expectTopInView(dashboard.getByRole('button', { name: 'Show evidence' }), 768);
@@ -279,7 +287,7 @@ async function expectStackedActions(page: Page, width: number) {
   await dashboard.locator('[data-chart-id="plan-versus-actual"]').scrollIntoViewIfNeeded();
   await expect(dashboard.locator('[data-chart-id="plan-versus-actual"] .highcharts-container')).toBeVisible();
   await dashboard.locator('[data-chart-id="plan-versus-actual"] .highcharts-point').first().hover({ force: true });
-  await expect(dashboard.locator('.highcharts-tooltip').last()).toBeVisible();
+  await expect(page.locator('.highcharts-tooltip').last()).toBeVisible();
   await expectNoOverflow(page);
   const ask = dashboard.getByRole('button', { name: 'Ask about this' });
   const investigate = dashboard.getByRole('button', { name: 'Investigate' });

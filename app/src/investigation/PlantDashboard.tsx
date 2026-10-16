@@ -79,7 +79,7 @@ export function PlantDashboard({ view, verificationRecorded, focus, onSelect, on
       <h2>What is happening</h2>
       <p>{happening}</p>
       <h2>KPI status</h2>
-      {sharedKpiScope && <p className="ekas-dash-scope">{sharedKpiScope}</p>}
+      {sharedKpiScope && !contextLine.startsWith(sharedKpiScope) && <p className="ekas-dash-scope">{sharedKpiScope}</p>}
       <MeasureCards rows={family.kpis} showScope={!sharedKpiScope} />
       <ChartGroup charts={primary} />
       {loss.length > 0 && <>

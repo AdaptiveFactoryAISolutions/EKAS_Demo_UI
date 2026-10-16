@@ -11,7 +11,7 @@ export function DashboardChart({ chart }: { chart: DashboardChartModel }) {
     const node = host.current;
     if (!node) return;
     const drawn = Highcharts.chart(node, {
-      chart: { type: 'column', backgroundColor: '#131d31', height: 188, animation: false, spacing: [6, 8, 4, 8], style: { fontFamily: 'IBM Plex Sans, sans-serif' } },
+      chart: { type: 'column', backgroundColor: '#131d31', height: 176, animation: false, spacing: [4, 6, 2, 6], style: { fontFamily: 'IBM Plex Sans, sans-serif' } },
       title: { text: chart.title, style: { color: '#e7eef8', fontSize: '14px' } },
       credits: { enabled: false },
       legend: { enabled: false },
