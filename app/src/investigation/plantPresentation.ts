@@ -6,7 +6,8 @@ const MONTHS=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov',
 
 export function plantDayLabel(iso?:string|null){
  if(!iso)return '';
- const t=Date.parse(iso);
+ const parsed=Date.parse(iso);
+ const t=Number.isFinite(parsed)?parsed:Date.parse(iso.slice(0,10)+'T00:00:00Z');
  if(!Number.isFinite(t))return '';
  const d=new Date(t);
  return `${MONTHS[d.getUTCMonth()]} ${d.getUTCDate()}`;

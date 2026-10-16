@@ -1,6 +1,6 @@
 import {expect,it} from 'vitest';
 import {fixtureCase} from './cases';
-import {demoClockSentence,documentLine,eventLine,groupThousands,humanScopeWhen,journeyAction,journeyBrief,journeyCommands,lifecycleState,nextLifecycleCommand,overviewCopy,plausibleLine,presentDocuments,presentedStatus,snapshotLabel,visiblePeriod} from './plantPresentation';
+import {demoClockSentence,documentLine,eventLine,groupThousands,humanScopeWhen,journeyAction,journeyBrief,journeyCommands,lifecycleState,nextLifecycleCommand,overviewCopy,plantDayLabel,plausibleLine,presentDocuments,presentedStatus,snapshotLabel,visiblePeriod} from './plantPresentation';
 import {createWorkflow,executeWorkflow,workflowView} from './workflow';
 
 it('reads the next step from the saved owner and does not invent one',()=>{
@@ -37,6 +37,8 @@ it('requests the case acceptance owner and prints counts and scope dates for peo
  expect(nextLifecycleCommand({owner:{requested:'maintenance',accepted:null},action:{status:'draft'}})).toEqual({kind:'accept-assignment'});
  expect(groupThousands('Production finished 150 good units below the approved plan: 2154 against 2304. The 726-unit loss. The separate 2026 monthly cohort. 2026-10-06 day shift.')).toBe('Production finished 150 good units below the approved plan: 2,154 against 2,304. The 726-unit loss. The separate 2026 monthly cohort. 2026-10-06 day shift.');
  expect(humanScopeWhen('2026-10-06 day shift','day')).toBe('Oct 6, 2026, day shift');
+ expect(plantDayLabel('2026-10-06 day shift')).toBe('Oct 6');
+ expect(plantDayLabel('2026-10-06T14:45:00Z')).toBe('Oct 6');
 });
 
 it('describes a stop from its own minutes, asset, and UTC day',()=>{
