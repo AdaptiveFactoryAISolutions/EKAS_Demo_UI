@@ -38,6 +38,31 @@ async function expectSeriesMatchesTable(figure: Locator) {
   expect(labels.length).toBeGreaterThan(0);
 }
 
+async function scrollTop(page: Page) {
+  await page.locator('[aria-label="Workspace content"]').evaluate(el => { el.scrollTop = 0; });
+}
+
+async function expectTopInView(locator: Locator, viewportHeight: number) {
+  const box = await locator.boundingBox();
+  expect(box, 'expected an on-screen box').toBeTruthy();
+  expect(box!.y).toBeGreaterThanOrEqual(0);
+  expect(box!.y).toBeLessThan(viewportHeight);
+}
+
+async function expectTooltipInFrame(page: Page) {
+  const tip = page.locator('.highcharts-tooltip-container, .highcharts-tooltip').last();
+  await expect(tip).toBeVisible();
+  const box = await tip.boundingBox();
+  const viewport = page.viewportSize();
+  expect(box && viewport).toBeTruthy();
+  expect(box!.width).toBeGreaterThan(20);
+  expect(box!.height).toBeGreaterThan(20);
+  expect(box!.x).toBeGreaterThanOrEqual(-1);
+  expect(box!.y).toBeGreaterThanOrEqual(-1);
+  expect(box!.x + box!.width).toBeLessThanOrEqual(viewport!.width + 1);
+  expect(box!.y + box!.height).toBeLessThanOrEqual(viewport!.height + 1);
+}
+
 test('plant operations selects Line 03, explains the 150-unit gap, and opens the downtime case', async ({ page }) => {
   test.setTimeout(120000);
   await page.setViewportSize({ width: 1366, height: 768 });
@@ -101,14 +126,52 @@ test('plant operations selects Line 03, explains the 150-unit gap, and opens the
   await expect(dashboard.locator('.ekas-dash-table').first()).toBeVisible();
   await expect(dashboard.locator('.ekas-dash-cards').first()).toBeHidden();
   await expect(context).toContainText('FEED-03');
-  await dashboard.locator('[data-chart-id="plan-versus-actual"]').scrollIntoViewIfNeeded();
-  const point = dashboard.locator('[data-chart-id="plan-versus-actual"] .highcharts-point').first();
-  await point.hover({ force: true });
-  await expect(dashboard.locator('.highcharts-tooltip').last()).toBeVisible();
-  await expect(dashboard.locator('.highcharts-tooltip').last()).toContainText(/2,304|2304/);
+  const sourceCells = await dashboard.locator('.ekas-dash-table tbody td:last-child').allTextContents();
+  expect(sourceCells.some(text => text.includes('Approved production plan'))).toBeTruthy();
+  for (const text of sourceCells) expect(text).not.toMatch(/\.json|#\//);
+  const scopeCells = await dashboard.locator('.ekas-dash-table tbody td:nth-child(3)').allTextContents();
+  for (const text of scopeCells) expect(text).toMatch(/Plant scope|Line scope|Case scope|Separate case scopes/);
+  await expect(planFigure.locator('.ekas-dash-technical')).toContainText('northworks-investigation-v1#/goal');
+  expect(await planFigure.locator('.ekas-dash-technical').evaluate(el => (el as HTMLDetailsElement).open)).toBe(false);
+  await expect(dashboard).toContainText('Plant-wide plan vs actual');
+  await expect(dashboard).toContainText('Plant scope · Northworks · Oct 6 Day Shift');
+  await scrollTop(page);
+  await expectTopInView(dashboard.getByRole('tab', { name: 'Plant operations' }), 768);
+  await expectTopInView(dashboard.getByRole('heading', { name: 'What is happening' }), 768);
+  await expectTopInView(dashboard.getByRole('heading', { name: 'KPI status' }), 768);
+  await expectTopInView(planFigure.locator('.highcharts-container'), 768);
+  const planBox = await planFigure.locator('.highcharts-container').boundingBox();
+  expect(planBox && planBox.y + 80 < 768).toBeTruthy();
+  await expectTopInView(planFigure.locator('figcaption'), 768);
   await expectNoOverflow(page);
-  await shot(page, '01-plant-operations');
-  await shot(page, '17-plan-tooltip');
+  await shot(page, 'A-plant-operations-top');
+
+  await planFigure.evaluate(el => el.scrollIntoView({ block: 'center', inline: 'nearest' }));
+  await dashboard.locator('[data-chart-id="plan-versus-actual"] .highcharts-point').nth(1).hover({ force: true });
+  const tooltip = page.locator('.highcharts-tooltip').last();
+  await expect(tooltip).toBeVisible();
+  await expect(tooltip).toContainText(/2,154|2154/);
+  await expect(tooltip).toContainText('Plant scope');
+  await expectTooltipInFrame(page);
+  await expectNoOverflow(page);
+  await shot(page, 'D-plan-tooltip');
+  await page.mouse.move(0, 0);
+
+  const lossTable = dashboard.locator('[data-chart-id="line-contribution"] .ekas-dash-table');
+  const ask = dashboard.getByRole('button', { name: 'Ask about this' });
+  await page.locator('[aria-label="Workspace content"]').evaluate(el => {
+    const actions = el.querySelector('.ekas-dash .ekas-answer-actions');
+    if (!actions) return;
+    const delta = actions.getBoundingClientRect().bottom - el.getBoundingClientRect().bottom + 12;
+    el.scrollTop += delta;
+  });
+  await expectTopInView(lossTable, 768);
+  await expectTopInView(ask, 768);
+  await expectTopInView(dashboard.getByRole('button', { name: 'Investigate' }), 768);
+  await expectTopInView(dashboard.getByRole('button', { name: 'Show evidence' }), 768);
+  await expect(lossTable).toContainText('Case measurement record');
+  await shot(page, 'C-plant-operations-lower');
+  await scrollTop(page);
 
   await dashboard.getByRole('button', { name: /Line 03, 150 good units/ }).click();
   await expect(context).toContainText('Northworks');
@@ -146,13 +209,23 @@ test('plant operations selects Line 03, explains the 150-unit gap, and opens the
   await expect(dashboard.locator('[data-chart-id="apq"] .highcharts-container')).toBeVisible();
   await expect(dashboard).toContainText('No time series is supplied');
   await expect(dashboard).toContainText('Availability');
+  await expect(dashboard).toContainText('83.3%');
+  await expect(dashboard).toContainText('No governed target');
+  await expect(dashboard).toContainText('Not evaluated');
+  await expect(dashboard).not.toContainText('Target Unavailable');
+  await expect(dashboard.locator('[data-chart-id="apq"]')).toContainText('Plant scope · Northworks · Oct 6 Day Shift');
+  await expect(dashboard.locator('[data-chart-id="feed-stops"]')).toContainText('Line scope · Northworks · Line 03 · FEED-03 · Oct 6 Day Shift');
+  await expect(dashboard.locator('[data-chart-id="feed-stops"] .ekas-dash-table td:last-child').first()).toHaveText('Recorded stop events');
   await expectSeriesMatchesTable(dashboard.locator('[data-chart-id="apq"]'));
   await expectNoEmptyHeading(dashboard);
-  await page.locator('[aria-label="Workspace content"]').evaluate(el => { el.scrollTop = 0; });
-  await shot(page, '05-production-family');
-  await dashboard.locator('[data-chart-id="apq"]').scrollIntoViewIfNeeded();
+  await scrollTop(page);
+  await expectTopInView(dashboard.getByRole('tab', { name: 'Production and OEE' }), 768);
+  await expectTopInView(dashboard.getByRole('heading', { name: 'KPI status' }), 768);
+  await expectTopInView(dashboard.locator('[data-chart-id="apq"] .highcharts-container'), 768);
+  const apqBox = await dashboard.locator('[data-chart-id="apq"] .highcharts-container').boundingBox();
+  expect(apqBox && apqBox.y + 60 < 768).toBeTruthy();
   await expectNoOverflow(page);
-  await shot(page, '05-production-oee');
+  await shot(page, 'B-production-oee-top');
   await dashboard.getByRole('tab', { name: 'Capacity and constraints' }).click();
   await expect(dashboard.getByRole('tab', { selected: true })).toHaveText('Capacity and constraints');
   await expect(dashboard).toContainText('Do not add');
@@ -200,8 +273,9 @@ async function expectStackedActions(page: Page, width: number) {
   const menu = await family.boundingBox();
   expect(menu && kpi && menu.y < kpi.y && kpi.y < 844).toBeTruthy();
   await expect(dashboard.locator('.highcharts-container').first()).toBeAttached();
+  await expect(dashboard).toContainText('Plant scope');
   await expectNoOverflow(page);
-  await shot(page, width === 320 ? '14-plant-320' : '13-plant-390');
+  await shot(page, width === 320 ? 'F-plant-320' : 'E-plant-390');
   await dashboard.locator('[data-chart-id="plan-versus-actual"]').scrollIntoViewIfNeeded();
   await expect(dashboard.locator('[data-chart-id="plan-versus-actual"] .highcharts-container')).toBeVisible();
   await dashboard.locator('[data-chart-id="plan-versus-actual"] .highcharts-point').first().hover({ force: true });

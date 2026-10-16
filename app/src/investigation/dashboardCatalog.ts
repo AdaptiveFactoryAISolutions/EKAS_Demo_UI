@@ -14,7 +14,7 @@ export type DashboardFamilyId = 'operations' | 'production' | 'capacity' | 'main
 export type DashboardDirection = 'higher' | 'lower' | null;
 
 /** Governed reading of a target. Improving or worsening is omitted: this cutoff has no comparison series. */
-export type DashboardStatus = 'On target' | 'Below target' | 'Above target' | 'Unknown' | 'Unavailable';
+export type DashboardStatus = 'On target' | 'Below target' | 'Above target' | 'Not evaluated' | 'Unknown' | 'Unavailable';
 
 export type DashboardMeasure = {
   id: string;
@@ -26,7 +26,10 @@ export type DashboardMeasure = {
   targetNumeric: number | null;
   direction: DashboardDirection;
   status: DashboardStatus;
+  /** Exact provenance key. Shown only inside Technical details. */
   source: string;
+  /** Plain description for the plant-facing source column. */
+  sourceLabel: string;
   cutoff: string;
   scope: string;
 };
@@ -57,9 +60,15 @@ export type DashboardPoint = {
   display: string;
   numeric: number;
   unit: string;
+  /** Exact provenance key. Shown only inside Technical details. */
   source: string;
+  /** Plain description for the plant-facing source column. */
+  sourceLabel: string;
   cutoff: string;
+  /** Shared chart scope. Every point in one chart uses the same sentence. */
   scope: string;
+  /** Row scope when one chart holds separate cases. Equals scope when the row is the chart scope. */
+  scopeDetail: string;
 };
 
 export type DashboardChart = {
@@ -119,20 +128,39 @@ export function formatQuantity(value: number, unit: string): string {
 
 export function measureStatus(value: number | null, target: number | null, direction: DashboardDirection): DashboardStatus {
   if (value === null) return 'Unavailable';
-  if (target === null || !direction) return 'Unknown';
+  if (target === null) return 'Not evaluated';
+  if (!direction) return 'Unknown';
   if (direction === 'higher') return value >= target ? 'On target' : 'Below target';
   return value <= target ? 'On target' : 'Above target';
 }
 
-function targetLabel(target: number | null, unit: string, direction: DashboardDirection) {
-  if (target === null) return 'Unavailable';
+function targetLabel(value: number | null, target: number | null, unit: string, direction: DashboardDirection) {
+  if (value === null) return 'Unavailable';
+  if (target === null) return 'No governed target';
   const shown = formatQuantity(target, unit);
   if (direction === 'higher') return `≥${shown}`;
   if (direction === 'lower') return `≤${shown}`;
   return shown;
 }
 
-function measure(id: string, label: string, value: number | null | undefined, unit: string, target: number | null | undefined, source: string, direction: DashboardDirection | string | null = null, cutoff = AS_OF, scope = 'Northworks'): DashboardMeasure {
+/** Plant-facing source name. The raw key stays on `source` for Technical details. */
+export function plainSource(source: string): string {
+  if (/^No governed\b/i.test(source) || /^Approved plan minus\b/.test(source) || /^No unit dispositions\b/.test(source)) return source;
+  const lower = source.toLowerCase();
+  if (lower.includes('stop_event')) return 'Recorded stop events';
+  if (lower.includes('quality-investigation')) return 'Quality measurement record';
+  if (lower.includes('speed-investigation')) return 'Speed measurement record';
+  if (lower.includes('#/goal')) return 'Approved production plan';
+  if (lower.includes('production-jobs') || lower.includes('operatingreview gaps')) return 'Case measurement record';
+  if (lower.includes('parentview') || lower.includes('bridge') || lower.includes('run minutes')) return 'Plant capacity record';
+  if (lower.includes('reporting_contexts/schedule')) return 'Schedule record';
+  if (lower.includes('reporting_contexts/inventory')) return 'Inventory record';
+  if (lower.includes('reporting_contexts/delivery')) return 'Delivery record';
+  if (lower.includes('#/lines') || lower.includes('scenario-fixture')) return 'Line production results';
+  return source;
+}
+
+function measure(id: string, label: string, value: number | null | undefined, unit: string, target: number | null | undefined, source: string, direction: DashboardDirection | string | null = null, cutoff = AS_OF, scope = 'Plant scope · Northworks · Oct 6 Day Shift'): DashboardMeasure {
   const numeric = typeof value === 'number' && Number.isFinite(value) ? value : null;
   const targetNumeric = typeof target === 'number' && Number.isFinite(target) ? target : null;
   const governed: DashboardDirection = direction === 'higher' || direction === 'lower' ? direction : null;
@@ -142,11 +170,12 @@ function measure(id: string, label: string, value: number | null | undefined, un
     display: numeric === null ? 'Unavailable' : formatQuantity(numeric, unit),
     numeric,
     unit,
-    target: targetLabel(targetNumeric, unit, governed),
+    target: targetLabel(numeric, targetNumeric, unit, governed),
     targetNumeric,
     direction: governed,
     status: measureStatus(numeric, targetNumeric, governed),
     source,
+    sourceLabel: plainSource(source),
     cutoff,
     scope,
   };
@@ -158,8 +187,8 @@ function barsFrom(rows: { id: string; label: string; numeric: number | null; dis
   return finite.map(row => ({ id: row.id, label: row.label, display: row.display, numeric: row.numeric, share: peak > 0 ? Math.abs(row.numeric) / peak * 100 : 0 }));
 }
 
-function point(id: string, label: string, value: number, unit: string, source: string, scope: string, cutoff: string, display?: string): DashboardPoint {
-  return { id, label, numeric: value, unit, source, cutoff, scope, display: display || formatQuantity(value, unit) };
+function point(id: string, label: string, value: number, unit: string, source: string, scope: string, cutoff: string, display?: string, scopeDetail?: string): DashboardPoint {
+  return { id, label, numeric: value, unit, source, sourceLabel: plainSource(source), cutoff, scope, scopeDetail: scopeDetail || scope, display: display || formatQuantity(value, unit) };
 }
 
 function chart(id: string, title: string, description: string, note: string, place: 'primary' | 'loss', points: DashboardPoint[]): DashboardChart {
@@ -223,7 +252,12 @@ export function dashboardCatalog(asOf = AS_OF): DashboardCatalog {
   }
   const scrap = currentUnits.filter(unit => unit.terminalDisposition === 'scrap').length;
   const rework = currentUnits.filter(unit => unit.terminalDisposition === 'accepted_rework').length;
-  const bridgeScope = 'Northworks theoretical capacity';
+  const plantScope = 'Plant scope · Northworks · Oct 6 Day Shift';
+  const separateCaseScope = 'Separate case scopes · not the current line or job';
+  const feedScope = 'Line scope · Northworks · Line 03 · FEED-03 · Oct 6 Day Shift';
+  const qualityScope = 'Case scope · Synthetic Works · Quality line · FORM-Q1 · QUALITY-JOB-01 · Oct 6 Day Shift';
+  const speedScope = 'Case scope · Synthetic Works · Speed line · PRESS-S1 · SPEED-JOB-01 · Oct 6 Day Shift';
+  const bridgeScope = plantScope;
   const bridgeSource = 'northworksParentView bridge';
   const bridgeNames = ['Theoretical capacity', 'Downtime loss', 'Speed loss', 'Quality loss', 'Good output'] as const;
   const bridgePoints = bridgeNames.flatMap((label, index) => {
@@ -231,17 +265,28 @@ export function dashboardCatalog(asOf = AS_OF): DashboardCatalog {
     if (typeof raw !== 'number' || !Number.isFinite(raw)) return [];
     return [point('bridge-' + index, label, Math.abs(raw), 'good-equivalent units', bridgeSource, bridgeScope, asOf)];
   });
-  const planScope = 'Northworks approved plan';
+  const planScope = plantScope;
   const planSource = 'northworks-investigation-v1#/goal';
   const planPoints = [
     point('approved-plan', 'Approved plan', parent.goal.target, 'good units', planSource, planScope, asOf),
     point('actual-good', 'Actual good output', parent.goal.actual, 'good units', planSource, planScope, asOf),
     point('plan-shortfall', 'Plan shortfall', parent.goal.gap, 'good units', planSource, planScope, asOf),
   ];
-  const rankScope = 'Supplied cases, not additive';
   const rankSource = 'operatingReview gaps';
-  const rankPoints = ranks.map(rank => point(rank.caseId, rank.line, rank.gap, 'good units', rankSource, rankScope, asOf));
-  const lineScope = 'Northworks plant plan';
+  const rankPoints = review.gaps.filter(gap => gap.gap !== null && gap.gap > 0).map(gap => point(
+    gap.caseId,
+    gap.context.line,
+    gap.gap as number,
+    'good units',
+    rankSource,
+    separateCaseScope,
+    asOf,
+    undefined,
+    gap.caseId === 'downtime'
+      ? plantScope
+      : ['Case scope', gap.context.plant, gap.context.line, gap.context.asset, gap.context.job, 'Oct 6 Day Shift'].filter(Boolean).join(' · '),
+  ));
+  const lineScope = plantScope;
   const lineSource = 'production-jobs-fixture.json · line plan inside the Northworks plant goal';
   const linePoints = (analysis.contributors || []).map(row => {
     const amount = Math.abs(row.gap).toLocaleString('en-US');
@@ -249,16 +294,16 @@ export function dashboardCatalog(asOf = AS_OF): DashboardCatalog {
     return point('line-' + row.line, row.line, row.gap, 'good units', lineSource, lineScope, asOf, `${amount} good units ${direction}`);
   });
   const operationsKpis = [
-    measure('production', 'Production versus plan', production?.value ?? null, production?.unit || '%', production?.target ?? null, production?.source || 'operating review', production?.deviation.direction ?? null, production?.sourceCutoff || asOf, 'Northworks plant operating review'),
-    measure('oee', 'OEE', oee?.value ?? null, oee?.unit || '%', oee?.target ?? null, oee?.source || 'operating review', oee?.deviation.direction ?? null, oee?.sourceCutoff || asOf, 'Northworks plant operating review'),
-    measure('downtime', 'Downtime', downtime?.value ?? null, downtime?.unit || 'min', downtime?.target ?? null, downtime?.source || 'operating review', downtime?.deviation.direction ?? null, downtime?.sourceCutoff || asOf, 'Northworks plant operating review'),
-    measure('qualityLoss', 'Quality loss', qualityLoss?.value ?? null, qualityLoss?.unit || '%', qualityLoss?.target ?? null, qualityLoss?.source || 'operating review', qualityLoss?.deviation.direction ?? null, qualityLoss?.sourceCutoff || asOf, 'Northworks plant operating review'),
-    measure('schedule', 'Schedule adherence', schedule?.value ?? null, schedule?.unit || '%', schedule?.target ?? null, schedule?.source || 'operating review', schedule?.deviation.direction ?? null, schedule?.sourceCutoff || asOf, 'Northworks plant operating review'),
-    measure('inventory', 'Inventory days', inventory?.value ?? null, inventory?.unit || 'day', inventory?.target ?? null, inventory?.source || 'operating review', inventory?.deviation.direction ?? null, inventory?.sourceCutoff || asOf, 'Northworks plant operating review'),
-    measure('otif', 'OTIF', otif?.value ?? null, otif?.unit || '%', otif?.target ?? null, otif?.source || 'operating review', otif?.deviation.direction ?? null, otif?.sourceCutoff || asOf, 'Northworks plant operating review'),
+    measure('production', 'Production versus plan', production?.value ?? null, production?.unit || '%', production?.target ?? null, production?.source || 'operating review', production?.deviation.direction ?? null, production?.sourceCutoff || asOf, plantScope),
+    measure('oee', 'OEE', oee?.value ?? null, oee?.unit || '%', oee?.target ?? null, oee?.source || 'operating review', oee?.deviation.direction ?? null, oee?.sourceCutoff || asOf, plantScope),
+    measure('downtime', 'Downtime', downtime?.value ?? null, downtime?.unit || 'min', downtime?.target ?? null, downtime?.source || 'operating review', downtime?.deviation.direction ?? null, downtime?.sourceCutoff || asOf, plantScope),
+    measure('qualityLoss', 'Quality loss', qualityLoss?.value ?? null, qualityLoss?.unit || '%', qualityLoss?.target ?? null, qualityLoss?.source || 'operating review', qualityLoss?.deviation.direction ?? null, qualityLoss?.sourceCutoff || asOf, plantScope),
+    measure('schedule', 'Schedule adherence', schedule?.value ?? null, schedule?.unit || '%', schedule?.target ?? null, schedule?.source || 'operating review', schedule?.deviation.direction ?? null, schedule?.sourceCutoff || asOf, plantScope),
+    measure('inventory', 'Inventory days', inventory?.value ?? null, inventory?.unit || 'day', inventory?.target ?? null, inventory?.source || 'operating review', inventory?.deviation.direction ?? null, inventory?.sourceCutoff || asOf, plantScope),
+    measure('otif', 'OTIF', otif?.value ?? null, otif?.unit || '%', otif?.target ?? null, otif?.source || 'operating review', otif?.deviation.direction ?? null, otif?.sourceCutoff || asOf, plantScope),
   ];
   const linePool = 'scenario-fixture.json#/lines';
-  const lineScopeText = 'Northworks synthetic lines';
+  const lineScopeText = plantScope;
   const apqPoints = [
     point('availability', 'Availability', plant.availability, '%', linePool, lineScopeText, asOf),
     point('performance', 'Performance', plant.performance, '%', linePool, lineScopeText, asOf),
@@ -269,41 +314,41 @@ export function dashboardCatalog(asOf = AS_OF): DashboardCatalog {
     measure('performance', 'Performance', plant.performance, '%', null, linePool, null, asOf, lineScopeText),
     measure('quality-yield', 'Quality', plant.quality, '%', null, linePool, null, asOf, lineScopeText),
     measure('good-units', 'Good units', totals.good, 'good units', null, linePool, null, asOf, lineScopeText),
-    measure('plan-attainment', 'Plan attainment', production?.value ?? null, '%', production?.target ?? null, production?.source || 'operating review', production?.deviation.direction ?? null, production?.sourceCutoff || asOf, 'Northworks plant operating review'),
-    measure('oee-production', 'OEE', oee?.value ?? null, '%', oee?.target ?? null, oee?.source || 'operating review', oee?.deviation.direction ?? null, oee?.sourceCutoff || asOf, 'Northworks plant operating review'),
+    measure('plan-attainment', 'Plan attainment', production?.value ?? null, '%', production?.target ?? null, production?.source || 'operating review', production?.deviation.direction ?? null, production?.sourceCutoff || asOf, plantScope),
+    measure('oee-production', 'OEE', oee?.value ?? null, '%', oee?.target ?? null, oee?.source || 'operating review', oee?.deviation.direction ?? null, oee?.sourceCutoff || asOf, plantScope),
   ];
   const stopSource = 'scenario-fixture.json#/line_03_stop_events';
-  const stopScope = 'FEED-03 selected shift';
+  const stopScope = feedScope;
   const stopPoints = [...downtimeReasons.entries()].map(([reason, minutes]) => point(reason, reasonLabel(reason), minutes, 'min', stopSource, stopScope, asOf));
   const planChart = chart(
     'plan-versus-actual',
-    'Approved plan and actual good output',
-    `Approved plan ${formatQuantity(parent.goal.target, 'good units')}, actual good output ${formatQuantity(parent.goal.actual, 'good units')}, plan shortfall ${formatQuantity(parent.goal.gap, 'good units')}. This is the approved-plan baseline and is not the theoretical capacity bridge.`,
-    'Approved-plan baseline. This shortfall is separate from theoretical capacity loss.',
+    'Plant-wide plan vs actual',
+    `Plant-wide plan vs actual. Approved plan ${formatQuantity(parent.goal.target, 'good units')}, actual good output ${formatQuantity(parent.goal.actual, 'good units')}, plan shortfall ${formatQuantity(parent.goal.gap, 'good units')}. This is the approved-plan baseline and is not filtered to the current line or job.`,
+    'Plant-wide plan vs actual. This shortfall is separate from theoretical capacity loss and is not filtered to the current line or job.',
     'primary',
     planPoints,
   );
   const capacityChart = chart(
     'capacity-bridge',
-    'Theoretical capacity, shown separately',
-    `Theoretical capacity and downtime, speed, and quality losses on the capacity bridge. Good output is ${formatQuantity(parent.goal.actual, 'good-equivalent units')}. These amounts are not the approved-plan shortfall.`,
-    'Theoretical-capacity baseline. Do not add these losses to the approved-plan shortfall.',
+    'Plant-wide theoretical capacity, shown separately',
+    `Plant-wide theoretical capacity and downtime, speed, and quality losses. Good output is ${formatQuantity(parent.goal.actual, 'good-equivalent units')}. These amounts are not the approved-plan shortfall and are not filtered to the current line or job.`,
+    'Plant-wide theoretical-capacity baseline. Do not add these losses to the approved-plan shortfall.',
     'primary',
     bridgePoints,
   );
   const lossChart = chart(
     'case-shortfall',
     'Approved plan shortfall by supplied case',
-    ranks.map(rank => `${rank.line} ${rank.gap.toLocaleString('en-US')} good units below the approved plan`).join('. ') + '. These case scopes are not additive.',
-    'Each case keeps its own plan. Do not add these shortfalls together.',
+    ranks.map(rank => `${rank.line} ${rank.gap.toLocaleString('en-US')} good units below the approved plan`).join('. ') + '. These case scopes are not additive and are not the current line or job filter.',
+    'Separate case scopes. Each case keeps its own plan. Do not add these shortfalls together or read them as the current line filter.',
     'loss',
     rankPoints,
   );
   const contributionChart = chart(
     'line-contribution',
-    'Line contribution inside the Northworks plan',
-    linePoints.map(item => `${item.label} ${item.display}`).join('. ') + '. These contributions sit inside the plant plan.',
-    'Line contributions sit inside the Northworks plan. They are not added to the case shortfall again.',
+    'Plant-wide line contribution inside the Northworks plan',
+    linePoints.map(item => `${item.label} ${item.display}`).join('. ') + '. Plant-wide contributions inside the Northworks plan. Not filtered to the current line or job.',
+    'Plant-wide line contributions sit inside the Northworks plan. They are not filtered to the current line or job and are not added to the case shortfall again.',
     'loss',
     linePoints,
   );
@@ -311,7 +356,7 @@ export function dashboardCatalog(asOf = AS_OF): DashboardCatalog {
     {
       id: 'operations',
       title: 'Plant operations',
-      context: 'Northworks · plant operating review · Oct 6 · Day Shift · Synthetic',
+      context: 'Plant scope · Northworks · Oct 6 Day Shift · Synthetic',
       kpis: operationsKpis,
       decisionTitle: planChart.title,
       bars: barsFrom(rankPoints),
@@ -325,13 +370,13 @@ export function dashboardCatalog(asOf = AS_OF): DashboardCatalog {
     {
       id: 'production',
       title: 'Production and OEE',
-      context: 'Northworks synthetic lines · Oct 6 · Day Shift · Synthetic',
+      context: 'Plant scope · Northworks · Oct 6 Day Shift · Synthetic',
       kpis: apq,
       decisionTitle: 'Availability, performance, and quality',
       bars: barsFrom(apqPoints),
       charts: [
-        chart('apq', 'Availability, performance, and quality', `Availability ${formatQuantity(plant.availability, '%')}, performance ${formatQuantity(plant.performance, '%')}, quality ${formatQuantity(plant.quality, '%')}. No OEE trend is drawn because no time series is supplied.`, 'Same synthetic line pool as the operating review. No time series is supplied, so this is not an OEE trend.', 'primary', apqPoints),
-        chart('feed-stops', 'FEED-03 selected-shift stops', stopPoints.map(item => `${item.label} ${item.display}`).join('. ') + '. This is that asset’s selected shift, not a plant failure-mode system.', 'FEED-03 selected shift only. Not a plant speed-loss or quality-loss Pareto.', 'primary', stopPoints),
+        chart('apq', 'Plant-wide availability, performance, and quality', `Plant-wide availability ${formatQuantity(plant.availability, '%')}, performance ${formatQuantity(plant.performance, '%')}, quality ${formatQuantity(plant.quality, '%')}. Not filtered to the current line or job. No OEE trend is drawn because no time series is supplied.`, 'Plant-wide synthetic line pool. Not filtered to the current line or job. No time series is supplied, so this is not an OEE trend.', 'primary', apqPoints),
+        chart('feed-stops', 'FEED-03 selected-shift stops', stopPoints.map(item => `${item.label} ${item.display}`).join('. ') + '. Line scope for FEED-03. This is that asset’s selected shift, not a plant failure-mode system.', 'Line scope · Northworks · Line 03 · FEED-03. Not a plant speed-loss or quality-loss Pareto.', 'primary', stopPoints),
       ],
       breakdownTitle: 'FEED-03 selected-shift stop minutes',
       rows: stopPoints.map(item => measure(item.id, item.label, item.numeric, 'min', null, item.source, null, item.cutoff, item.scope)),
@@ -340,16 +385,16 @@ export function dashboardCatalog(asOf = AS_OF): DashboardCatalog {
     {
       id: 'capacity',
       title: 'Capacity and constraints',
-      context: 'Northworks plant · Oct 6 · Day Shift · Synthetic',
+      context: 'Plant scope · Northworks · Oct 6 Day Shift · Synthetic',
       kpis: [
-        measure('constraint', 'Active constraint', null, '', null, 'No governed constraint record is supplied', null, asOf, 'Northworks plant'),
-        measure('utilization', 'Utilization', parent.metrics.planned > 0 ? parent.metrics.run / parent.metrics.planned * 100 : null, '%', null, 'northworks plant run minutes / planned minutes', null, asOf, 'Northworks plant'),
-        measure('planned-runtime', 'Planned runtime', parent.metrics.planned, 'min', null, 'northworksParentView', null, asOf, 'Northworks plant'),
-        measure('actual-runtime', 'Actual runtime', parent.metrics.run, 'min', null, 'northworksParentView', null, asOf, 'Northworks plant'),
+        measure('constraint', 'Active constraint', null, '', null, 'No governed constraint record is supplied', null, asOf, plantScope),
+        measure('utilization', 'Utilization', parent.metrics.planned > 0 ? parent.metrics.run / parent.metrics.planned * 100 : null, '%', null, 'northworks plant run minutes / planned minutes', null, asOf, plantScope),
+        measure('planned-runtime', 'Planned runtime', parent.metrics.planned, 'min', null, 'northworksParentView', null, asOf, plantScope),
+        measure('actual-runtime', 'Actual runtime', parent.metrics.run, 'min', null, 'northworksParentView', null, asOf, plantScope),
         measure('good-output', 'Actual good output', parent.goal.actual, 'good units', null, 'northworksParentView', null, asOf, planScope),
         measure('approved-plan', 'Approved plan', parent.goal.target, 'good units', parent.goal.target, 'northworks-investigation-v1#/goal', 'higher', asOf, planScope),
         measure('plan-gap', 'Plan gap', parent.goal.gap, 'good units', null, 'Approved plan minus actual good output', null, asOf, planScope),
-        measure('recoverable', 'Recoverable opportunity', caseFixtures.downtime.costAssumptions.recoverableUnitsEstimate ?? null, 'good units', null, 'No governed recoverable-opportunity record is supplied', null, asOf, 'Northworks plant'),
+        measure('recoverable', 'Recoverable opportunity', caseFixtures.downtime.costAssumptions.recoverableUnitsEstimate ?? null, 'good units', null, 'No governed recoverable-opportunity record is supplied', null, asOf, plantScope),
       ],
       decisionTitle: capacityChart.title,
       bars: barsFrom(bridgePoints),
@@ -375,7 +420,7 @@ export function dashboardCatalog(asOf = AS_OF): DashboardCatalog {
       ],
       decisionTitle: 'Recorded downtime minutes by line',
       bars: barsFrom(lines.map(line => ({ id: line.id, label: line.id, numeric: line.down, display: formatQuantity(line.down, 'min') }))),
-      charts: [chart('line-downtime', 'Recorded downtime minutes by line', lines.map(line => `${line.id} ${formatQuantity(line.down, 'min')}`).join('. ') + '. These are production downtime minutes, not mean time between failures.', 'Recorded production downtime. Not MTBF, and not the approved-plan shortfall.', 'primary', lines.map(line => point(line.id, line.id, line.down, 'min', 'scenario-fixture.json#/lines', 'Northworks synthetic lines', asOf)))],
+      charts: [chart('line-downtime', 'Plant-wide recorded downtime minutes by line', lines.map(line => `${line.id} ${formatQuantity(line.down, 'min')}`).join('. ') + '. Plant-wide production downtime minutes, not mean time between failures, and not filtered to the current line or job.', 'Plant-wide recorded production downtime. Not filtered to the current line or job. Not MTBF, and not the approved-plan shortfall.', 'primary', lines.map(line => point(line.id, line.id, line.down, 'min', 'scenario-fixture.json#/lines', plantScope, asOf)))],
       breakdownTitle: 'FEED-03 selected-shift stop reasons',
       rows: stopPoints.map(item => measure(item.id, item.label, item.numeric, 'min', null, item.source, null, item.cutoff, item.scope)),
       interpretation: 'Line downtime minutes come from the synthetic production lines. They are not mean time between failures, repair time, or a maintenance backlog. PM compliance, work-order aging, and repeat failures are unavailable. The maintenance fixture is a design fixture with no CMMS.',
@@ -383,20 +428,20 @@ export function dashboardCatalog(asOf = AS_OF): DashboardCatalog {
     {
       id: 'quality',
       title: 'Quality and corrective action',
-      context: 'Quality line · FORM-Q1 · selected shift · Synthetic',
+      context: `${qualityScope} · Synthetic`,
       kpis: [
-        measure('fpy', 'First-pass yield', typeof qualityShift.fpy.value === 'number' ? qualityShift.fpy.value : null, '%', null, 'quality-investigation-v1 current shift', null, asOf, 'Quality selected shift'),
-        measure('final-yield', 'Final yield', typeof qualityShift.quality.value === 'number' ? qualityShift.quality.value : null, '%', null, 'quality-investigation-v1 current shift', null, asOf, 'Quality selected shift'),
-        measure('scrap', 'Scrap', currentUnits.length ? scrap : null, 'units', null, currentUnits.length ? 'quality-investigation-v1 current shift dispositions' : 'No unit dispositions are supplied', null, asOf, 'Quality selected shift'),
-        measure('rework', 'Rework', currentUnits.length ? rework : null, 'units', null, currentUnits.length ? 'quality-investigation-v1 current shift dispositions' : 'No unit dispositions are supplied', null, asOf, 'Quality selected shift'),
-        measure('ppm', 'PPM', null, 'PPM', null, 'No governed PPM record is supplied', null, asOf, 'Quality selected shift'),
+        measure('fpy', 'First-pass yield', typeof qualityShift.fpy.value === 'number' ? qualityShift.fpy.value : null, '%', null, 'quality-investigation-v1 current shift', null, asOf, qualityScope),
+        measure('final-yield', 'Final yield', typeof qualityShift.quality.value === 'number' ? qualityShift.quality.value : null, '%', null, 'quality-investigation-v1 current shift', null, asOf, qualityScope),
+        measure('scrap', 'Scrap', currentUnits.length ? scrap : null, 'units', null, currentUnits.length ? 'quality-investigation-v1 current shift dispositions' : 'No unit dispositions are supplied', null, asOf, qualityScope),
+        measure('rework', 'Rework', currentUnits.length ? rework : null, 'units', null, currentUnits.length ? 'quality-investigation-v1 current shift dispositions' : 'No unit dispositions are supplied', null, asOf, qualityScope),
+        measure('ppm', 'PPM', null, 'PPM', null, 'No governed PPM record is supplied', null, asOf, qualityScope),
       ],
       decisionTitle: 'Defect modes on the quality selected shift',
       bars: barsFrom([...defectCounts.entries()].map(([mode, count]) => ({ id: mode, label: mode, numeric: count, display: formatQuantity(count, 'units') }))),
-      charts: defectCounts.size ? [chart('defect-modes', 'Defect modes on the quality selected shift', [...defectCounts.entries()].map(([mode, count]) => `${mode} ${formatQuantity(count, 'units')}`).join('. ') + '. Selected quality shift only.', 'Selected quality shift. Not a plant-wide Pareto.', 'primary', [...defectCounts.entries()].map(([mode, count]) => point(mode, mode, count, 'units', 'quality-investigation-v1 current shift', 'Quality selected shift', asOf)))] : [],
+      charts: defectCounts.size ? [chart('defect-modes', 'Defect modes on the quality selected shift', [...defectCounts.entries()].map(([mode, count]) => `${mode} ${formatQuantity(count, 'units')}`).join('. ') + '. Case scope for the quality selected shift. Not a plant-wide Pareto.', 'Case scope · Synthetic Works · Quality line · FORM-Q1 · QUALITY-JOB-01. Not a plant-wide Pareto.', 'primary', [...defectCounts.entries()].map(([mode, count]) => point(mode, mode, count, 'units', 'quality-investigation-v1 current shift', qualityScope, asOf)))] : [],
       breakdownTitle: 'Controlled quality records',
       rows: [
-        measure('speed-loss-note', 'PRESS-S1 speed-loss time', typeof speedShift.speedLoss.value === 'number' ? speedShift.speedLoss.value : null, 'min', null, 'speed-investigation-v1 current shift · not a quality defect', null, asOf, 'Speed selected shift'),
+        measure('speed-loss-note', 'PRESS-S1 speed-loss time', typeof speedShift.speedLoss.value === 'number' ? speedShift.speedLoss.value : null, 'min', null, 'speed-investigation-v1 current shift · not a quality defect', null, asOf, speedScope),
       ],
       interpretation: `First-pass yield is available only for the quality fixture, where first-pass dispositions exist. Final yield counts terminal good units and is a different measure. PPM, NCR, and a document count used as a defect rate are unavailable. ${typeof speedShift.speedLoss.value === 'number' ? `PRESS-S1 speed-loss time is ${formatQuantity(speedShift.speedLoss.value, 'min')} and is not a quality defect. ` : ''}The effective PFMEA, control plan, and standard work are read from the open quality investigation. Hypotheses, actions, verification, and sustainment appear only from that investigation.`,
     },
@@ -405,12 +450,12 @@ export function dashboardCatalog(asOf = AS_OF): DashboardCatalog {
       title: 'Flow, delivery, and inventory',
       context: 'Separate reporting windows · Synthetic',
       kpis: [
-        measure('otif-flow', 'OTIF', otif?.value ?? null, '%', otif?.target ?? null, otif?.source || 'operating review', otif?.deviation.direction ?? null, otif?.sourceCutoff || asOf, 'Northworks orders due'),
+        measure('otif-flow', 'OTIF', otif?.value ?? null, '%', otif?.target ?? null, otif?.source || 'operating review', otif?.deviation.direction ?? null, otif?.sourceCutoff || asOf, 'Plant scope · Northworks · orders due'),
         measure('otd', 'OTD', null, '%', null, 'No governed OTD record is supplied'),
         measure('fill-rate', 'Fill rate', null, '%', null, 'No governed fill-rate record is supplied'),
-        measure('schedule-flow', 'Schedule adherence', schedule?.value ?? null, '%', schedule?.target ?? null, schedule?.source || 'operating review', schedule?.deviation.direction ?? null, schedule?.sourceCutoff || asOf, 'Northworks shift schedule'),
+        measure('schedule-flow', 'Schedule adherence', schedule?.value ?? null, '%', schedule?.target ?? null, schedule?.source || 'operating review', schedule?.deviation.direction ?? null, schedule?.sourceCutoff || asOf, 'Plant scope · Northworks · shift schedule'),
         measure('wip', 'WIP', null, 'units', null, 'No governed WIP record is supplied'),
-        measure('inventory-flow', 'Inventory days', inventory?.value ?? null, 'day', inventory?.target ?? null, inventory?.source || 'operating review', inventory?.deviation.direction ?? null, inventory?.sourceCutoff || asOf, 'Northworks unit-basis inventory'),
+        measure('inventory-flow', 'Inventory days', inventory?.value ?? null, 'day', inventory?.target ?? null, inventory?.source || 'operating review', inventory?.deviation.direction ?? null, inventory?.sourceCutoff || asOf, 'Plant scope · Northworks · unit-basis inventory'),
         measure('turns', 'Inventory turns', null, '', null, 'No governed inventory-turns record is supplied'),
         measure('shortage', 'Shortage or excess', null, '', null, 'No governed shortage or excess record is supplied'),
         measure('lead-time', 'Lead time', null, '', null, 'No governed lead-time record is supplied'),

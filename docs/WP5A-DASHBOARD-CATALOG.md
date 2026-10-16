@@ -22,7 +22,7 @@ Speed line and Quality line use the same focus pattern for the speed and quality
 
 Plant operations, cutoff 2026-10-06T14:45:00Z. Targets are the effective synthetic approvals. They are not illustrative goals from the older summary list.
 
-Tiles, chart labels, and tables share one formatter. Percents show a tenth only when the rounded value is not whole. Days show one tenth and a plural. Minutes and counts stay whole. Status is a word from the approved direction. There is no comparison series, so nothing is marked improving or worsening. A missing target stays Unknown.
+Tiles, chart labels, and tables share one formatter. Percents show a tenth only when the rounded value is not whole. Days show one tenth and a plural. Minutes and counts stay whole. Status is a word from the approved direction. There is no comparison series, so nothing is marked improving or worsening. A value with no governed target reads "No governed target" and "Not evaluated". It is not colored and it is not called passed or failed. A missing metric stays Unavailable. Tables show a plain source description. The exact source key stays under Technical details. Every chart states plant, line, or case scope. A plant-wide chart says so when the shell context is a line or job.
 
 | Measure | Visual | Value | Target | Status |
 | --- | --- | --- | --- | --- |
@@ -34,7 +34,7 @@ Tiles, chart labels, and tables share one formatter. Percents show a tenth only 
 | Inventory days | KPI | 4.8 days | ≤4.5 days | Above target |
 | OTIF | KPI | 91.3% | ≥95% | Below target |
 
-Plant operations draws two separate Highcharts column charts, then the loss charts. The approved-plan chart is 2,304 good units, 2,154 good units, and a 150 good-unit shortfall. The capacity chart is a different baseline: theoretical capacity 2,880, downtime loss 480, speed loss 198, quality loss 48, and good output 2,154 good-equivalent units. Those losses are not added to the 150. Each chart’s series and its table are the same points.
+Plant operations draws two separate Highcharts column charts, then the loss charts. Both are plant scope for Northworks on Oct 6 Day Shift, and the plan chart is titled "Plant-wide plan vs actual". The approved-plan chart is 2,304 good units, 2,154 good units, and a 150 good-unit shortfall. The capacity chart is a different baseline: theoretical capacity 2,880, downtime loss 480, speed loss 198, quality loss 48, and good output 2,154 good-equivalent units. Those losses are not added to the 150. Each chart’s series and its table are the same points. The case-shortfall chart states that its rows are separate case scopes, not the current line or job.
 | Line 03 case | Ranking bar and button | 150 good units below plan; 2,154 against 2,304 | Approved plant plan |
 | Speed line case | Ranking bar and button | 114 good units; 706 against 820 | Approved case plan |
 | Quality line case | Ranking bar and button | 58 good units; 792 against 850 | Approved case plan |
@@ -48,10 +48,10 @@ Production and OEE uses the same line pool.
 
 | Measure | Visual | Value | Target | Status |
 | --- | --- | --- | --- | --- |
-| Availability | KPI and Highcharts column | 83.3% | Unavailable | Unknown |
-| Performance | KPI and Highcharts column | 91.8% | Unavailable | Unknown |
-| Quality | KPI and Highcharts column | 97.8% | Unavailable | Unknown |
-| Good units | KPI | 2,154 good units | Unavailable | Unknown |
+| Availability | KPI and Highcharts column | 83.3% | No governed target | Not evaluated |
+| Performance | KPI and Highcharts column | 91.8% | No governed target | Not evaluated |
+| Quality | KPI and Highcharts column | 97.8% | No governed target | Not evaluated |
+| Good units | KPI | 2,154 good units | No governed target | Not evaluated |
 | Plan attainment | KPI | 93.5% | ≥100% | Below target |
 | OEE | KPI | 74.8% | ≥80% | Below target |
 | FEED-03 feeder jams | Highcharts column and table | 72 min | Unavailable |
@@ -93,4 +93,4 @@ Dashboards → Plant operations → Line 03 sets the shared context to Northwork
 
 Below 768px the frozen shell compacts the context bar. The dashboard repeats Northworks › Line 03 in its own context line. At 390px and 320px the seven family names collapse to one Dashboard family menu, the KPI cards stack, each chart table is replaced by the same rows as cards, and Ask about this, Investigate, and Show evidence stay full-height buttons. The first viewport keeps the selected family, the context, and the first KPI.
 
-Role depth does not fork the calculation. An engineering session can reveal the source line under each KPI. The numbers stay the same.
+Role depth does not fork the calculation. Raw source keys stay under Technical details for every session. The numbers stay the same.
