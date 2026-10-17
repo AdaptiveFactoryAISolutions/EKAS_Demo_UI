@@ -33,3 +33,23 @@ Readable times are a view of the stored UTC instant. Technical details keep the 
 ## Evidence stays with the reply
 
 A saved answer is not rewritten when a later turn learns something else. The as-of instant is part of the reply.
+
+## AI operates inside the enterprise architecture
+
+AI is not the architecture. AI is one intelligence component inside a governed manufacturing enterprise architecture. The model or the provider may change without changing manufacturing definitions, the ContextContract, source ownership, evidence, authorization, lifecycle, verification, or the adapter and API contract.
+
+The running demo already keeps a model call off the manufacturing record. Local rules and the case state answer the accepted journeys. See [05 Frontend architecture](05-frontend-architecture.md) and [06 API and backend integration](06-api-and-backend-integration.md).
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** The path from orchestration through the adapter into manufacturing systems, and back through governed evidence, is the target architecture. It is not a verified live integration. Adapter Verified remains NO.
+
+```mermaid
+flowchart LR
+  ai[AI / LLM] --> orch[Orchestration]
+  gov[Governor / ContextContract] --> orch
+  sec[Security] --> orch
+  orch --> adapter[Adapter]
+  adapter --> systems[Manufacturing Systems]
+  systems --> evidence[Governed Evidence]
+  evidence --> ui[UI]
+  ui --> outcome[Decision / Action / Verification / Sustain]
+```

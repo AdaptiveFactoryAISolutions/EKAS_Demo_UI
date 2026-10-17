@@ -32,3 +32,11 @@ SOURCE SYSTEMS OWN FACTS. EKAS OWNS THE GOVERNED DECISION CONTEXT THAT CONNECTS 
 - It will not add unlike gaps into one plant total.
 - It will not substitute a neighboring metric, machine, or case.
 - It will not present a synthetic fixture as a live plant while live mode is on.
+
+## What stays when the model changes
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** The cross-system connection named below is doctrine. RC3 chat remains the governed demo. The connection is not a running production capability.
+
+Most manufacturing systems own one part of the story. EKAS connects those parts through governed context and evidence, then guides the user from operational loss to accountable action and verified improvement.
+
+The model can change. The manufacturing truth, governance, evidence chain and user workflow must not.

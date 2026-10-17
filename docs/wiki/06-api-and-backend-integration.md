@@ -32,6 +32,25 @@ sequenceDiagram
   UI-->>Person: Answer or the refusal
 ```
 
+## How the UI connects to the backend
+
+The UI and the backend are separate. The API contract is the agreed language between them. The adapter is the controlled wiring harness. The UI asks for normalized EKAS records. Source-specific implementation stays behind the adapter. The UI is not redesigned for each MES, ERP, CMMS, QMS, or historian vendor. An unsupported live capability fails clearly. The UI never silently falls back to synthetic data.
+
+The live path into MES, CMMS, QMS, SCADA, ERP, and PLM is **DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** Adapter Verified remains NO. Live Integration Verified remains NO. The refusal for an unsupported live capability is the running rule. Demo mode remains the synthetic local product in [07 Demo vs production](07-demo-vs-production.md).
+
+```mermaid
+flowchart LR
+  leader[Plant Leader] --> ui[UI]
+  ui --> contract[EKAS API Contract]
+  contract --> adapter[Adapter]
+  adapter --> backend[EKAS Backend]
+  backend --> sources[MES / CMMS / QMS / SCADA / ERP / PLM]
+  sources --> adapter
+  adapter --> ui
+```
+
+The UI stops at the EKAS API contract. Vendor payloads stay behind the adapter. A missing live capability returns on the same path as a clear refusal, and the synthetic service is not substituted.
+
 ## Envelope
 
 `POST /api/v1/application` with `apiVersion`, `requestId`, `method`, `path`, optional `body`, and optional `idempotencyKey`. The browser does not put a provider key on this call. Credentials for the demo session are the synthetic session cookie. Live bearer tokens are caller-supplied and are not the fictional role name.
