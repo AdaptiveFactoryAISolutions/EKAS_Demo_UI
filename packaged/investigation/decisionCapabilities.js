@@ -1,0 +1,243 @@
+import { gapLedger } from "../decision.js";
+//#region app/src/investigation/decisionCapabilities.ts
+const local = {
+	11: {
+		area: "Improvements",
+		control: "Temporary containment and verified corrective-action follow-through",
+		command: "decision-lifecycle",
+		path: "/api/v1/manufacturing/decision-support/{id}",
+		qualification: "Exact affected scope, named ownership, separate review and explicit later simulation activation; performed correction, accepted verification and eligible sustainment gate separately confirmed simulated release. Recurrence reopening retains captures; external release remains held."
+	},
+	1: {
+		area: "Brief",
+		control: "Supplied investigation starters",
+		path: "/api/v1/manufacturing/conversations",
+		qualification: "Outcome-led supplied cases; original case and source context retained."
+	},
+	2: {
+		area: "Improvements",
+		control: "Current case eligibility and prerequisites",
+		path: "/api/v1/manufacturing/investigations/{id}/view",
+		qualification: "Exact source, plan and cutoff eligibility; missing data does not become a measured answer."
+	},
+	4: {
+		area: "Brief",
+		control: "Exact asset clarification",
+		path: "/api/v1/manufacturing/conversations/{id}/messages",
+		qualification: "Policy4 recognizes only canonical formatting against authored IDs; unknown assets refuse without defaulting."
+	},
+	5: {
+		area: "Improvements",
+		control: "Primary endpoint, plan and guardrails",
+		path: "/api/v1/manufacturing/investigations/{id}/view",
+		qualification: "Case-specific endpoint units and exact verification plan; OEE remains supporting."
+	},
+	6: {
+		area: "Explore",
+		control: "Constrained portfolio proposal",
+		command: "record-portfolio-review",
+		path: "/api/v1/manufacturing/decision-support",
+		qualification: "Explicit budget/hours/dimensionless priorities; no numerical endpoint pooling, employee ranking or dispatch."
+	},
+	7: {
+		area: "Brief",
+		control: "Exact ISA95 case context",
+		path: "/api/v1/manufacturing/conversations/{id}/messages",
+		qualification: "Plant/line/asset/job/part/revision/operation/shift context; unsupported tuples withhold case numbers."
+	},
+	8: {
+		area: "Brief",
+		control: "Plant operating review and problem jobs",
+		path: "/api/v1/manufacturing/review",
+		qualification: "Exact current denominators; historical jobs without exposure remain unranked."
+	},
+	9: {
+		area: "Knowledge",
+		control: "Separate controlled comparison",
+		path: "/api/v1/manufacturing/comparisons",
+		qualification: "Separate experiment/cohort identity and acceptance; no automatic current-case comparison substitution."
+	},
+	15: {
+		area: "Knowledge",
+		control: "Controlled documents and quote review",
+		path: "/api/v1/manufacturing/governed-records",
+		qualification: "Applicability, versions and known-time gates; unreleased EC remains distinct from like-for-like repair."
+	},
+	16: {
+		area: "Brief",
+		control: "Natural scoped followups",
+		path: "/api/v1/manufacturing/conversations/{id}/messages",
+		qualification: "Metric, asset, period and comparative cursor preserved through formatting and clarification."
+	},
+	17: {
+		area: "Explore",
+		control: "Candidate lesson",
+		command: "record-lesson",
+		path: "/api/v1/manufacturing/decision-support",
+		qualification: "Exact case evidence anchors; candidate learning does not release standard work or confirm cause."
+	},
+	18: {
+		area: "Improvements",
+		control: "Performed-work proof and verification",
+		path: "/api/v1/manufacturing/investigations/{id}/commands",
+		qualification: "Exact known work IDs and cycle/preregistration boundaries; approval alone is not performed proof."
+	},
+	19: {
+		area: "Explore",
+		control: "Held PM proposal",
+		command: "record-pm-review",
+		path: "/api/v1/manufacturing/decision-support",
+		qualification: "Recurring-failure feedback is a held synthetic proposal; no PM release, schedule change or intervention."
+	},
+	21: {
+		area: "Explore",
+		control: "Handover note; owner acceptance remains separate",
+		command: "record-handover",
+		path: "/api/v1/manufacturing/decision-support",
+		qualification: "Same canonical case; a handover note does not accept or reassign ownership."
+	},
+	22: {
+		area: "Improvements",
+		control: "Next step and prerequisites",
+		path: "/api/v1/manufacturing/investigations/{id}/view",
+		qualification: "Readiness derives from actual command guards; no parallel approval ledger."
+	},
+	28: {
+		area: "Metrics",
+		control: "Proposed API and explicit synthetic datasets",
+		path: "/api/v1/manufacturing/contract",
+		qualification: "Synthetic fake provider currently; server-side OpenAI key remains unconfigured. Tom conformance unverified."
+	},
+	31: {
+		area: "Knowledge",
+		control: "Human-reviewed source correction and dependency refresh",
+		path: "/api/v1/manufacturing/dependencies",
+		qualification: "Original captures immutable; revised current numbers, raw evidence and cohort membership remain separately qualified."
+	},
+	32: {
+		area: "Brief",
+		control: "Check saved operation and exact retry",
+		path: "/api/v1/manufacturing/conversations/{id}/messages",
+		qualification: "ExpectedVersion/idempotency receipts; stopped or unknown delivery is reconciled without duplicate commands."
+	},
+	33: {
+		area: "Knowledge",
+		control: "Exact matched comparison cohorts",
+		path: "/api/v1/manufacturing/comparison-catalog",
+		qualification: "Matched source IDs/versions, scope, work, safety and separate acceptance; no historical ranking without exposure."
+	},
+	34: {
+		area: "Explore",
+		control: "Bounded downtime recovery scenario",
+		command: "save-scenario",
+		path: "/api/v1/manufacturing/decision-support",
+		qualification: "Explicit bounded assumptions and exact baseline exposure; modeled opportunity is not observed causal gain."
+	},
+	35: {
+		area: "Explore",
+		control: "Six-stage opportunity bridge",
+		command: "save-scenario",
+		path: "/api/v1/manufacturing/decision-support",
+		qualification: "Distinct physical/expected/constraint/demand/financial units and horizon; USD is not pooled into a unit waterfall."
+	},
+	37: {
+		area: "Brief",
+		control: "Hypothesis tests and disposition",
+		path: "/api/v1/manufacturing/investigations/{id}/commands",
+		qualification: "Source-bound tests, refutation and inconclusive results; confirming cause still requires unavailable qualifying proof."
+	},
+	38: {
+		area: "Brief",
+		control: "Typed qualification and negative outcomes",
+		path: "/api/v1/manufacturing/conversations/{id}/messages",
+		qualification: "Availability, uncertainty and hypothesis status stay separate; observed improvements do not prove cause."
+	},
+	39: {
+		area: "Explore",
+		control: "Exact captured evidence and review packet",
+		path: "/api/v1/manufacturing/decision-support/{conversationId}/packet",
+		qualification: "Immutable original versions and source anchors; no hidden current restatement of a historical answer."
+	},
+	40: {
+		area: "Explore",
+		control: "Unverified operator note",
+		command: "record-observation",
+		path: "/api/v1/manufacturing/decision-support",
+		qualification: "Fictional note with exact case/source/plan/cutoff; no worker ranking, causal promotion or production dispatch."
+	},
+	41: {
+		area: "Improvements",
+		control: "Owned workload and verification-duty planning",
+		command: "decision-lifecycle",
+		path: "/api/v1/manufacturing/decision-support",
+		qualification: "Explicit synthetic role-window capacity/person-hours, absence/overload/deadline holds, named duty acceptance and manager review. Linked recommendation review/application requires exact current endorsed planning basis; no actual roster, work, dispatch or endpoint pooling."
+	},
+	45: {
+		area: "Explore",
+		control: "Export exact synthetic review packet",
+		path: "/api/v1/manufacturing/decision-support/{conversationId}/packet",
+		qualification: "Shared workflow, conversations, support entries, scoped audit records and source anchors. Production/finance signoff explicitly missing."
+	},
+	47: {
+		area: "Improvements",
+		control: "Sustainment observer eligibility",
+		path: "/api/v1/manufacturing/investigations/{id}/view",
+		qualification: "Coverage, freshness, ownership/cycle, definition and source versions; stale observations reject sustainment."
+	},
+	48: {
+		area: "Improvements",
+		control: "Verification plan and cycle governance",
+		path: "/api/v1/manufacturing/investigations/{id}/commands",
+		qualification: "Plan changes invalidate acceptance and require later matching work/cohorts; no inherited verification across cycles."
+	},
+	49: {
+		area: "Explore",
+		control: "Capability disclosure and missing gates",
+		path: "/api/v1/manufacturing/decision-support/capabilities",
+		qualification: "Proposed local capabilities only; actual backend/session/tenant policy and experience negotiation require Tom conformance."
+	},
+	50: {
+		area: "Explore",
+		control: "Requirement disposition review",
+		path: "/api/v1/manufacturing/decision-support/capabilities",
+		qualification: "All56 exact dispositions retained;82whole obligations remain unaccepted pending their complete criteria."
+	},
+	54: {
+		area: "Knowledge",
+		control: "Reviewed manual count/quote and unverified notes",
+		path: "/api/v1/manufacturing/governed-records",
+		qualification: "Explicit human review and scope validation; unrestricted extraction remains unimplemented."
+	},
+	56: {
+		area: "Explore",
+		control: "Highcharts connected evidence and saved layout",
+		path: "/api/v1/manufacturing/conversations/{id}",
+		qualification: "Actual Board/DataPool/components/Grid; source-bound units and schema-preserving layout restore. Native/human acceptance remains separate."
+	}
+};
+const decisionCapabilities = {
+	apiVersion: "ekas-proposed-v1",
+	candidate: "V98-provisional",
+	synthetic: true,
+	productionConformance: false,
+	rows: gapLedger.map((r, i) => {
+		const binding = local[i + 1];
+		return {
+			...r,
+			status: binding ? "local_flow" : r.disposition === "contract_before_production" || r.disposition === "customer_decision" ? "external_gate" : "unimplemented",
+			wholeAccepted: false,
+			...binding || {
+				area: "Explore",
+				control: null,
+				path: null,
+				qualification: "No complete callable local flow is supplied for this requirement. " + (r.disposition === "demo_now" ? "Local implementation remains incomplete." : "The retained source disposition and relevant authority decision remain open.")
+			},
+			...i === 9 ? {
+				status: "unimplemented",
+				qualification: "Canonical lot/shipment genealogy and bounded affected-scope navigation remain unimplemented; no unrelated job or source is substituted."
+			} : {}
+		};
+	})
+};
+//#endregion
+export { decisionCapabilities };

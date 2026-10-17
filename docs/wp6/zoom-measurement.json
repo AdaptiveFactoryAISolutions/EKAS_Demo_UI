@@ -1,0 +1,13 @@
+{
+  "before": {
+    "visualViewport": 1,
+    "devicePixelRatio": 2
+  },
+  "pageScale": "set",
+  "after": {
+    "visualViewport": 2,
+    "devicePixelRatio": 2,
+    "scrollWidth": 683,
+    "innerWidth": 683
+  }
+}

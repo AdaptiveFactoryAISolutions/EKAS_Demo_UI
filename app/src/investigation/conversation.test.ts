@@ -16,6 +16,11 @@ it('recognizes conversational workflow questions and typed command intents witho
  expect(routeConversation('Maintenance accepted it.',context).commands).toEqual([{kind:'record-assignment-acceptance'}]);
  expect(routeConversation('Record the repair.',context).commands[0].kind).toBe('record-performed-work');
  expect(presentTurn(routeConversation('Was it approved?',context),view).text).toMatch(/not.*approved|draft/i);
+ const why=routeConversation('Why did it reopen?',context);
+ expect(why.intent).toBe('sustain');
+ expect(why.commands).toEqual([]);
+ expect(presentTurn(why,view).text).toMatch(/Reopen if feeder-jam minutes goes above 45 minutes per eligible shift/);
+ expect(routeConversation('Reopen the investigation.',context).commands).toEqual([{kind:'reopen'}]);
 });
 it('unknown ambiguity clarifies without mutating dimensional context or issuing lifecycle commands',()=>{
  const c={...emptyConversationContext(),period:'March',comparisonPeriod:'February',machine:'Machine 2'};

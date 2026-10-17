@@ -1,6 +1,6 @@
 import{validConservativeDisposition,unresolvedReservation}from'./conservativeDisposition';
 import{localBudgetHistoryDigest}from'./localBudgetHistoryDigest';
-import{createProviderBudget,type BudgetPolicy}from'./providerBudget';import type{LocalBudget,LocalBudgetStatus}from'./localAiRuntime';
+import{createProviderBudget,type BudgetPolicy}from'./providerBudget';import type{LocalBudget,LocalBudgetStatus}from'./localAiRuntime';import{createProviderTestBudget,isProviderTestRaw}from'./providerTestBudget';
 const integer=(x:unknown,min=0):x is number=>Number.isSafeInteger(x)&&Number(x)>=min;
 const exact=(x:any,keys:string[])=>!!x&&typeof x==='object'&&!Array.isArray(x)&&Object.keys(x).sort().join(',')===[...keys].sort().join(',');
 const oldReservation=(output:number)=>Math.ceil((1050000*55+output*165)/10/10000)*10000;
@@ -15,6 +15,7 @@ const blockedStatus:LocalBudgetStatus={available:false,synthetic:false,ceilingMi
  * No live allowance when history is absent. Full original bytes and reservations survive
  * in the local owned journal; no signing sidecar, reset, refund or automatic reconciliation. */
 export function createLocalDemoBudget({originalRaw,store,now,nextId}:{originalRaw:string|null;store:{read():string|null;write(value:string):void};now:()=>Date;nextId:()=>string}):LocalBudget{
+ if(isProviderTestRaw(originalRaw))return createProviderTestBudget({originalRaw:originalRaw!,store,now,nextId});
  let h:ReturnType<typeof history>;try{if(!originalRaw||originalRaw.length>2097152)throw Error();h=history(originalRaw)}catch{return{status:()=>({...blockedStatus}),reserve(){throw Error('ORIGINAL_BUDGET_HISTORY_REQUIRED')},beforeRequest(){throw Error('ORIGINAL_BUDGET_HISTORY_REQUIRED')},recordUsage(){throw Error('ORIGINAL_BUDGET_HISTORY_REQUIRED')},markUnknown(){throw Error('ORIGINAL_BUDGET_HISTORY_REQUIRED')}}}
  let wrapped:any=null;const prior=store.read();if(prior!==null){try{wrapped=JSON.parse(prior)}catch{throw Error('DEMO_BUDGET_RECOVERY_REQUIRED')}if(!exact(wrapped,['schema','originalRaw','current'])||wrapped.schema!=='local-demo-budget-v1'||wrapped.originalRaw!==originalRaw)throw Error('ORIGINAL_BUDGET_HISTORY_CHANGED')}
  const available=18000000-h.reserved;if(available===0)return{status:()=>({...blockedStatus,available:true,unknownMicroUsd:h.entries.filter(unresolvedReservation).reduce((n,e)=>n+e.reservationMicroUsd,0)}),reserve(){throw Error('DEMO_BUDGET_EXHAUSTED')},beforeRequest(){throw Error('DEMO_BUDGET_EXHAUSTED')},recordUsage(){throw Error('DEMO_BUDGET_EXHAUSTED')},markUnknown(){throw Error('DEMO_BUDGET_EXHAUSTED')}};

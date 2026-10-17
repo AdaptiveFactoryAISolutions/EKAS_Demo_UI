@@ -1,0 +1,141 @@
+import { evaluateMetric, metricDefinitions } from "./metricEngine.js";
+import { namespace, tables } from "../inputs/metric-oracle/training-relational-seed.js";
+import { comparePilotInstants } from "./pilotTime.js";
+import { namespace as namespace$1, tables as tables$1 } from "../inputs/metric-oracle/positive-extension-v2/additive-domain-records.js";
+import { InvalidFact, MissingFact } from "./rawFacts.js";
+import { validateSelectedSources } from "./sourceIntegrity.js";
+import { baseSha256, files } from "../inputs/metric-oracle/positive-extension-v2/manifest.js";
+import { contexts, metricContexts, provenance as provenance$1 } from "../inputs/metric-oracle/positive-extension-v2/context-metadata.js";
+import { productionPolicyDecisions } from "../inputs/metric-oracle/positive-extension-v2/policy-decisions.js";
+import { aggregatePositive } from "./positiveAggregation.js";
+//#region app/src/platform/positiveBinding.ts
+const positiveContexts = contexts;
+const positiveMetricContexts = metricContexts;
+const provenance = provenance$1;
+/** All reducer values come from base/sidecar records. Metadata supplies context and source instructions only. */
+function positiveValue(metricId, query, baseTables = tables, domainTables = tables$1) {
+	const definition = metricDefinitions.find((d) => d.id === metricId), contextId = query.scope.scenarioId, context = contextId ? positiveContexts[contextId] : null;
+	const empty = (availability, reason) => ({
+		value: null,
+		unit: definition?.unit || "unknown",
+		availability,
+		reason,
+		reasonCode: {
+			missing_input: "REQUIRED_SOURCE_MISSING",
+			future_record: "FUTURE_SOURCE",
+			partial_coverage: "PARTIAL_SOURCE_COVERAGE",
+			masked: "REQUIRED_SOURCE_MASKED",
+			unsupported: "UNSUPPORTED_CONTEXT"
+		}[availability] || availability.toUpperCase(),
+		numerator: null,
+		denominator: null,
+		evidenceIds: []
+	});
+	if (!definition || query.definitionVersions[metricId] !== 1 || !contextId || !context || positiveMetricContexts[metricId] !== contextId) return empty("unsupported", "Exact definition/context is not bound to this declared positive scenario.");
+	if (query.groupBy.length || query.filters.length || query.scope.shiftId) return empty("unsupported", "Positive scenarios currently support their exact declared cohort, not arbitrary grouping/filters/shift substitution.");
+	if (query.scope.revision && query.scope.revision !== context.scope.revisionId || query.scope.operationId && query.scope.operationId !== context.scope.operationId || query.scope.jobId && query.scope.jobId !== context.scope.jobId || query.scope.partId) return empty("unsupported", "Supplied part/revision/operation/job differs from the declared scenario; no substitution.");
+	if (query.scope.assetIds.length !== tables.assets.length || !tables.assets.every((a) => query.scope.assetIds.includes(a.id))) return empty("unsupported", "Use the explicit scenario cohort. A narrower asset request cannot silently reuse its aggregate.");
+	const sources = definition.requiredOperands.map((operand) => provenance[contextId]?.[operand]);
+	if (sources.some((s) => !s)) return empty("missing_input", "An operand lacks its source aggregation mapping.");
+	for (const table of new Set(sources.flatMap((source) => source.tables))) {
+		const rows = table.startsWith("base.") ? baseTables[table.slice(5)] : domainTables[table];
+		if (!Array.isArray(rows)) return empty("missing_input", "Required raw register missing or invalid: " + table);
+		for (let index = 0; index < rows.length; index++) {
+			const row = rows[index];
+			if (!row || typeof row !== "object" || Array.isArray(row) || typeof row.id !== "string" || !row.id) return empty("missing_input", "Required raw record identity missing: " + table + "/row[" + index + "].id");
+		}
+	}
+	const records = /* @__PURE__ */ new Map();
+	for (const source of sources) for (const id of source.recordIds) {
+		let found = false;
+		for (const table of source.tables) {
+			const rows = table.startsWith("base.") ? baseTables[table.slice(5)] : domainTables[table];
+			for (const record of rows || []) if (record.id === id) {
+				found = true;
+				const namespace$2 = table.startsWith("base.") ? namespace : namespace$1;
+				records.set(namespace$2 + "/" + table.replace(/^base\./, "") + "/" + id, {
+					record,
+					table,
+					namespace: namespace$2
+				});
+			}
+		}
+		if (!found) return empty("missing_input", "Required source record missing: " + id);
+	}
+	try {
+		validateSelectedSources([...records.values()], baseTables, domainTables);
+	} catch (error) {
+		return {
+			...empty(error instanceof InvalidFact ? "unsupported" : "missing_input", error instanceof Error ? error.message : "Selected source integrity could not be validated."),
+			...error instanceof InvalidFact ? { reasonCode: "INVALID_SOURCE_FACT" } : {}
+		};
+	}
+	if ([...records.values()].some(({ record }) => record.known_at && comparePilotInstants(record.known_at, query.asOf) > 0)) return empty("future_record", "Required source is later than the explicit cutoff. Annual postings and complete verification remain withheld.");
+	if (Date.parse(context.window[1]) > Date.parse(query.asOf)) return empty("future_record", "Declared observation window has not ended at this cutoff.");
+	if (query.from !== context.window[0] || query.to !== context.window[1]) return empty("partial_coverage", "Exact declared source horizon required; a wider/shorter window cannot borrow this scenario result.");
+	if (query.simulationCase === "masked_evidence") return empty("masked", "Explicit negative simulation denies a required raw source; cached aggregates are withheld.");
+	if (query.simulationCase === "production_protocol") return empty("unsupported", "This limited synthetic protocol does not authorize a production or expanded-run-rule protocol.");
+	if (query.simulationCase === "unrelated_cohorts") return empty("unsupported", "Explicit negative simulation supplies unrelated operand cohorts for " + metricId + " in " + contextId + "; the exact cohort required by this definition is unavailable, so its result is withheld.");
+	let aggregated;
+	try {
+		aggregated = aggregatePositive(contextId, baseTables, domainTables, definition.requiredOperands);
+	} catch (error) {
+		return {
+			...empty(error instanceof InvalidFact ? "unsupported" : "missing_input", error instanceof InvalidFact || error instanceof MissingFact ? error.message : "Required operand records could not be extracted for this exact context; inspect source coverage."),
+			...error instanceof InvalidFact ? { reasonCode: "INVALID_SOURCE_FACT" } : {}
+		};
+	}
+	const inputs = Object.fromEntries(definition.requiredOperands.map((operand) => [operand, aggregated.inputs[operand]]));
+	const exposureOverrides = query.simulationCase === "zero_exposure" ? definition.requiredOperands.filter((operand) => /planned_min|operating_h|worked_h|labor_h|total_units|produced_units|entering_units|good_units|eligible_orders|denominator/.test(operand) && !operand.endsWith("_per_unit")) : [];
+	for (const operand of exposureOverrides) inputs[operand] = 0;
+	const exposureNote = query.simulationCase === "zero_exposure" && !exposureOverrides.length ? "No applicable exposure override for " + metricId + " (" + definition.expression + "). The original declared raw scenario is unchanged; this result is not a zero-exposure observation." : "";
+	const evaluation = evaluateMetric(metricId, inputs, aggregated.policy), observed = evaluation.availability === "observed";
+	if (exposureOverrides.length) {
+		const explanation = "Explicit mathematical counterfactual for " + metricId + " in " + contextId + ": " + exposureOverrides.join(", ") + " set to0; formula " + definition.expression + "; unit " + definition.unit + ". Raw observations are unchanged. No physically eligible observation cohort is established by these overrides.";
+		if (evaluation.availability === "zero_denominator") return empty("zero_denominator", explanation + " The counterfactual denominator is zero; result withheld.");
+		if (observed) return empty("unsupported", explanation + " Arithmetic remains defined, but this counterfactual is not an observed physical result; value withheld.");
+	}
+	const undatedIds = new Set([...records.values()].filter(({ record }) => !Object.hasOwn(record, "known_at")).map(({ record }) => record.id));
+	const ratio = definition.expression.match(/^100 \* ([a-z_]+) \/ ([a-z_]+)$/), notes = definition.requiredOperands.map((operand) => operand + ": " + provenance[contextId][operand].aggregation), policies = productionPolicyDecisions.filter((p) => p.metricIds.includes(metricId)).map((p) => p.id + ": " + p.decision);
+	return {
+		value: observed ? evaluation.value : null,
+		unit: evaluation.unit,
+		availability: observed ? "observed" : evaluation.availability === "zero_denominator" ? "zero_denominator" : evaluation.availability === "partial_coverage" ? "partial_coverage" : evaluation.availability === "future_record" ? "future_record" : evaluation.availability === "masked" ? "masked" : evaluation.availability === "missing_input" ? "missing_input" : "unsupported",
+		reason: [
+			evaluation.reason,
+			exposureNote,
+			"Synthetic positive scenario " + contextId + "; " + context.grain,
+			context.operandWindowPolicy ? "Operand horizons: " + JSON.stringify(context.operandWindowPolicy) : "",
+			...policies,
+			...notes,
+			undatedIds.size ? "Undated fixture master records are fixed synthetic snapshots in this declared context; no independent observation timestamp is claimed." : "",
+			aggregated.qualification ? "Raw limited capability protocol: " + JSON.stringify(aggregated.qualification) : "",
+			"No production certification, causal proof or validated financial realization."
+		].filter(Boolean).join(" "),
+		numerator: ratio && typeof inputs[ratio[1]] === "number" ? inputs[ratio[1]] : null,
+		denominator: ratio && typeof inputs[ratio[2]] === "number" ? inputs[ratio[2]] : null,
+		reasonCode: observed ? "OBSERVED_SYNTHETIC" : evaluation.availability.toUpperCase(),
+		semanticVersions: {
+			aggregation: "positive-raw-v2.3",
+			policy: "proposed-demo-policy-v2",
+			metric: 1,
+			fixture: query.fixtureVersion,
+			metricContract: "independent-metric-contract-1.0",
+			rawSnapshotHash: files["additive-domain-records.json"],
+			baseSnapshotHash: baseSha256,
+			policyHash: files["policy-decisions.json"]
+		},
+		operandContexts: definition.requiredOperands.map((operand) => ({
+			operand,
+			aggregation: provenance[contextId][operand].aggregation,
+			tables: provenance[contextId][operand].tables,
+			recordIds: provenance[contextId][operand].recordIds,
+			windowPolicy: context.operandWindowPolicy || context.window,
+			coverage: provenance[contextId][operand].recordIds.some((id) => undatedIds.has(id)) ? "Exact declared sources resolved; includes undated fixture master snapshots, without independent observation-time confirmation" : "Exact declared dated source records resolved and known at cutoff",
+			authority: "Synthetic proposed convention; no production approval"
+		})),
+		evidenceIds: [...records.entries()].map(([key, { record }]) => key + "@" + (record.record_version || 1))
+	};
+}
+//#endregion
+export { positiveContexts, positiveMetricContexts, positiveValue };

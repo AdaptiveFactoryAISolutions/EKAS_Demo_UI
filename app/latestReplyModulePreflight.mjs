@@ -1,6 +1,11 @@
+if(typeof globalThis.ResizeObserver==='undefined'){globalThis.ResizeObserver=class{observe(){}unobserve(){}disconnect(){}};}
 import{mkdirSync,writeFileSync}from'node:fs';
 import{dirname,resolve}from'node:path';
 import{beforeAll,expect}from'vitest';
+// Historical proof writers record under a gitignored evidence/ directory beside the app.
+// npm test runs with cwd app/, so ../evidence is that directory. Create it here.
+// A fresh extraction does not need a manual mkdir, and evidence/ is not a product contract.
+mkdirSync(resolve(process.cwd(),'../evidence'),{recursive:true});
 // These are functional DOM assertions, not a cold TypeScript/module compiler benchmark.
 // Prepare after file mocks are registered, before its unchanged five-second callbacks.
 // A setup failure holds the suite; no timed-out callback may start concurrent DOM roots.

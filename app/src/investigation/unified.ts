@@ -31,9 +31,9 @@ export function cancelManufacturingSubmission(){if(submissionAttempt?.pending){s
 export function invalidateConversationTransition(){cancelManufacturingSubmission();const t=activeTransition();t.epoch++;t.pending=undefined;}
 export function beginNewConversation(){
  cancelManufacturingSubmission();
- const t=activeTransition(),epoch=++t.epoch,client=manufacturingClient(),state=useEkas.getState(),query=structuredClone(state.query),drafts={...(state.manufacturingDrafts||{}),...(state.manufacturingConversationId?{[state.manufacturingConversationId]:state.askText}:{})};
+ const t=activeTransition(),epoch=++t.epoch,client=manufacturingClient(),state=useEkas.getState(),drafts={...(state.manufacturingDrafts||{}),...(state.manufacturingConversationId?{[state.manufacturingConversationId]:state.askText}:{})};
  if(!useEkas.setState({manufacturingDrafts:drafts,manufacturingConversationId:undefined,conversationRoute:'manufacturing',askText:'',askThread:state.askThread.filter(r=>!r.manufacturing)}))throw Error('The new conversation transition could not be saved.');
- const pending=client.createConversation(crypto.randomUUID(),query).then(async r=>{if(activeTransition()===t&&t.epoch===epoch){if(!useEkas.setState({manufacturingConversationId:r.id,conversationRoute:'manufacturing'}))throw Error('The new conversation identity could not be saved; retain the draft.');await useEkas.persist.flush();}return r;});
+ const pending=client.createConversation(crypto.randomUUID()).then(async r=>{if(activeTransition()===t&&t.epoch===epoch){if(!useEkas.setState({manufacturingConversationId:r.id,conversationRoute:'manufacturing'}))throw Error('The new conversation identity could not be saved; retain the draft.');await useEkas.persist.flush();}return r;});
  t.pending=pending;void pending.finally(()=>{if(t.pending===pending)t.pending=undefined}).catch(()=>{});return pending;
 }
 export function resumeConversation(id:string){
@@ -58,7 +58,7 @@ export function submitUnifiedConversation(text:string){
 async function performSubmission(text:string,attempt:SubmissionAttempt){
  const submitted=text; if(!submitted.trim()||submitted.length>4000)throw Error('Enter a question of at most 4,000 characters.');
  const client=manufacturingClient(useEkas.getState().manufacturingChatActor||'manager'),t=activeTransition(),epoch=t.epoch,pending=t.pending;let id=pending?(await pending).id:useEkas.getState().manufacturingConversationId;
- if(!id){const created=await client.createConversation(crypto.randomUUID(),useEkas.getState().query);id=created.id;if(activeTransition()===t&&t.epoch===epoch){if(!useEkas.setState({manufacturingConversationId:id,conversationRoute:'manufacturing'}))throw Error('Conversation identity was not saved; retain the draft.');await useEkas.persist.flush();}}
+ if(!id){const created=await client.createConversation(crypto.randomUUID());id=created.id;if(activeTransition()===t&&t.epoch===epoch){if(!useEkas.setState({manufacturingConversationId:id,conversationRoute:'manufacturing'}))throw Error('Conversation identity was not saved; retain the draft.');await useEkas.persist.flush();}}
  if(attempt.id!==id||attempt.version===undefined){const prior=await client.readConversation(id);attempt.id=id;attempt.version=prior.version;}
  if(attempt.stopRequested)throw Error('MODEL_CANCELLED');
  if(!saveOperationCursor(attempt,'submitted'))throw Error('Operation identity could not be saved; retain the draft.');await useEkas.persist.flush();if(attempt.stopRequested)throw Error('MODEL_CANCELLED');

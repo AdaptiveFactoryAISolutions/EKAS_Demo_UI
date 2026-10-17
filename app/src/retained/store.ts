@@ -147,6 +147,7 @@ type State = {
   alertOn: boolean;
   coach: boolean;
   compact: boolean;
+  appearance: 'light' | 'dark';
   displayName: string;
   welcome: string;
   rls: boolean;
@@ -268,6 +269,7 @@ export const useEkas = create<State>()(
       alertOn: true,
       coach: true,
       compact: false,
+      appearance: "light",
       displayName: "EKAS",
       welcome: "Ask a governed question. A change is not a cause.",
       rls: selectedFixture?.runCtx.rls??false,
@@ -329,7 +331,7 @@ export const useEkas = create<State>()(
       onboarding: { source: true, answer: false, board: false, monitor: false },
       maintenance: "Sunday 03:30–03:45 UTC — definitions freeze, not a data delete.",
       expertNote:"",expertNoteSaved:false,
-      askText: "Why did OEE move in TP-S1 manufacturing?",
+      askText: "",
       askThread: [],
       feedback: {},
       insightFeedback: {},

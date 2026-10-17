@@ -1,0 +1,66 @@
+//#region app/inputs/current-unit-ledgers-v63.json
+var ledgers = [{
+	"caseId": "speed",
+	"sourceRowId": "speed-investigation-v1-current",
+	"scope": {
+		"tenant": "synthetic-demo",
+		"plant": "Synthetic Works",
+		"line": "Speed line",
+		"asset": "PRESS-S1",
+		"job": "SPEED-JOB-01",
+		"part": "SP-A",
+		"revision": "S1",
+		"operation": "OP-S10",
+		"from": "2026-10-06T06:00:00Z",
+		"to": "2026-10-06T14:00:00Z"
+	},
+	"source": "speed-investigation-v1#/current",
+	"knownAt": "2026-10-06T16:15:00Z",
+	"total": 720,
+	"good": 706,
+	"firstPassGood": null,
+	"unitDispositionRanges": [{
+		"first": 1,
+		"last": 706,
+		"disposition": "accepted_terminal",
+		"firstPassAccepted": null
+	}, {
+		"first": 707,
+		"last": 720,
+		"disposition": "scrap",
+		"firstPassAccepted": null
+	}]
+}, {
+	"caseId": "downtime",
+	"sourceRowId": "NW-CURRENT-003",
+	"scope": {
+		"tenant": "synthetic-demo",
+		"plant": "Northworks",
+		"line": "Line 03",
+		"asset": "FEED-03",
+		"job": "JOB-8303",
+		"part": "NW-A",
+		"revision": "P2",
+		"operation": "OP-030",
+		"from": "2026-10-06T06:00:00Z",
+		"to": "2026-10-06T14:00:00Z"
+	},
+	"source": "production-jobs-fixture.json#/jobs/JOB-8303",
+	"knownAt": "2026-10-06T16:15:00Z",
+	"total": 648,
+	"good": 630,
+	"firstPassGood": null,
+	"unitDispositionRanges": [{
+		"first": 1,
+		"last": 630,
+		"disposition": "accepted_terminal",
+		"firstPassAccepted": null
+	}, {
+		"first": 631,
+		"last": 648,
+		"disposition": "scrap",
+		"firstPassAccepted": null
+	}]
+}];
+//#endregion
+export { ledgers };

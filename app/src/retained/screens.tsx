@@ -48,6 +48,7 @@ import { toast } from "./notices";
 import { Viz } from "./viz";
 import { WORKFLOWS } from "./workflows";
 import { useEkas, type Screen } from "./store";
+import {commitWhilePageLive,usePageLifetime,commitWhileDomOpen} from './pageLifetime';
 import {
   COLUMNS,
   DEFINITIONS,
@@ -113,7 +114,7 @@ function download(name: string, text: string, type = "text/plain", kind:import("
   a.href = URL.createObjectURL(new Blob([text], { type }));
   a.download = name;
   withGuideInspection(kind,()=>({filename:name,mediaType:type,bytes:new Blob([text],{type}).size,preparedText:text.slice(0,12000),textFullyCaptured:text.length<=12000,filePrepared:true,fileSaved:false,nativeDeliveryConfirmed:false}),()=>a.click());
-  setTimeout(()=>URL.revokeObjectURL(a.href),0);
+  setTimeout(()=>{if(typeof window!=='undefined')URL.revokeObjectURL(a.href)},0);
 }
 
 export function ScreenBody(){const screen=useEkas(s=>s.screen);return <section data-guide-page={screen} tabIndex={-1} aria-label={"Current workspace page: "+screen} style={{minWidth:0}}><ScreenContents/></section>;}
@@ -140,7 +141,7 @@ function ScreenContents() {
   return <Admin />;
 }
 
-function Home() {
+function Home() {const pageLive=usePageLifetime();
   const homeInput=useRef<HTMLInputElement>(null);
   const welcome = useEkas((s) => s.welcome);
   const askText = useEkas((s) => s.askText);
@@ -150,7 +151,7 @@ function Home() {
   const favorites=useEkas(s=>s.favorites),removedLibrary=useEkas(s=>s.removedLibrary);
   const librarySearch = useEkas((s) => s.librarySearch);
   const attachment=useRef<HTMLInputElement>(null);const attachments=useEkas(s=>s.attachments);const [submitting,setSubmitting]=useState(false);
-  const submitHome=async()=>{if(submitting)return;setSubmitting(true);try{await submitUnifiedConversation(homeInput.current?.value??useEkas.getState().askText);useEkas.getState().go('ask')}catch(error){toast(error instanceof Error?error.message:'Conversation failed')}finally{setSubmitting(false)}};
+  const submitHome=async()=>{if(submitting)return;setSubmitting(true);try{await submitUnifiedConversation(homeInput.current?.value??useEkas.getState().askText);commitWhileDomOpen(()=>useEkas.getState().go('ask'))}catch(error){toast(error instanceof Error?error.message:'Conversation failed')}finally{commitWhilePageLive(pageLive,()=>setSubmitting(false))}};
   const q = librarySearch.toLowerCase();
   const recents = [
     ...boards.map((b) => ({ id: b.id, kind: "Board", name: b.name, query:b.tiles[0]?.query, screen: "board" as Screen })),
@@ -177,7 +178,7 @@ function Home() {
           </Btn>
         </div>
         <div className="mt-2 flex flex-wrap gap-2">
-          <Btn onClick={()=>attachment.current?.click()}>Add file</Btn><input hidden type="file" ref={attachment} onChange={async event=>{const file=event.target.files?.[0];if(!file)return;if(file.size>2000000){toast('Attachment exceeds the 2 MB local evidence limit.');return}try{const bytes=await file.arrayBuffer(),hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(b=>b.toString(16).padStart(2,'0')).join('');useEkas.setState(s=>({attachments:[...s.attachments,{id:crypto.randomUUID(),name:file.name,bytes:file.size,sha256:hash,capturedAt:new Date().toISOString(),status:'unreviewed'}]}));toast('Local evidence reference attached. It does not establish cause or change governed measurements.')}catch{toast('Attachment could not be read; no evidence added.')}}}/>{attachments.map(file=><small key={file.id}>{file.name} · {file.bytes} bytes · SHA256 {file.sha256} · unreviewed reference <button onClick={()=>useEkas.setState(s=>({attachments:s.attachments.filter(a=>a.id!==file.id)}))}>Remove attachment</button></small>)}
+          <Btn onClick={()=>attachment.current?.click()}>Add file</Btn><input hidden type="file" ref={attachment} onChange={async event=>{const file=event.target.files?.[0];if(!file)return;if(file.size>2000000){toast('Attachment exceeds the 2 MB local evidence limit.');return}try{const bytes=await file.arrayBuffer(),hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(b=>b.toString(16).padStart(2,'0')).join('');commitWhileDomOpen(()=>useEkas.setState(s=>({attachments:[...s.attachments,{id:crypto.randomUUID(),name:file.name,bytes:file.size,sha256:hash,capturedAt:new Date().toISOString(),status:'unreviewed'}]})));toast('Local evidence reference attached. It does not establish cause or change governed measurements.')}catch{toast('Attachment could not be read; no evidence added.')}}}/>{attachments.map(file=><small key={file.id}>{file.name} · {file.bytes} bytes · SHA256 {file.sha256} · unreviewed reference <button onClick={()=>useEkas.setState(s=>({attachments:s.attachments.filter(a=>a.id!==file.id)}))}>Remove attachment</button></small>)}
           <Btn
             onClick={() => {
               useEkas.getState().setQuery(compilePhrase(askText));
@@ -233,7 +234,7 @@ function Home() {
               <div className="retained-recent-actions">
               <Btn onClick={()=>{if(!r.query){toast("No captured query is available for this item.");return}useEkas.getState().setQuery(structuredClone(r.query),false);useEkas.setState({shareOpen:true})}}>Share {r.kind.toLowerCase()}</Btn><Btn onClick={()=>{try{toggleFavorite(r.id)}catch(error){toast(error instanceof Error?error.message:'Save failed')}}}>{favorites.includes(r.id)?'Unfavorite':'Favorite'}</Btn><Btn onClick={()=>{try{removeLibraryItem(r.id,r.kind as 'Board'|'Answer');useEkas.getState().log('Removed local library item '+r.id+'; restorable')}catch(error){toast(error instanceof Error?error.message:'Removal failed')}}}>Remove from library</Btn>
               <Btn
-                onClick={async () => {try{const board=r.kind==='Board'?useEkas.getState().boards.find(b=>b.id===r.id):undefined;if(r.kind==='Board'&&!board)throw new Error('Exact board missing.');const binding=board?{targetBoard:await captureBoardSchedule(board,ctxOf())}:{targetQuery:structuredClone(r.query)};useEkas.setState(s=>({schedules:[...s.schedules,{id:crypto.randomUUID(),name:r.name,...binding,cadence:'Weekdays 06:30',target:'You',status:'ok',last:'not run',statusNote:board?'Full board captured with content revision; local only.':'Captured single query; local only.'}]}));toast('Local schedule recorded; no external delivery')}catch(error){toast(error instanceof Error?error.message:'Schedule not created')}}}
+                onClick={async () => {try{const board=r.kind==='Board'?useEkas.getState().boards.find(b=>b.id===r.id):undefined;if(r.kind==='Board'&&!board)throw new Error('Exact board missing.');const binding=board?{targetBoard:await captureBoardSchedule(board,ctxOf())}:{targetQuery:structuredClone(r.query)};commitWhileDomOpen(()=>useEkas.setState(s=>({schedules:[...s.schedules,{id:crypto.randomUUID(),name:r.name,...binding,cadence:'Weekdays 06:30',target:'You',status:'ok',last:'not run',statusNote:board?'Full board captured with content revision; local only.':'Captured single query; local only.'}]})));toast('Local schedule recorded; no external delivery')}catch(error){toast(error instanceof Error?error.message:'Schedule not created')}}}
               >
                 Schedule
               </Btn>
@@ -247,7 +248,7 @@ function Home() {
 }
 
 function CapturedQuestion({capture}:{capture:import("./capturedView").Capture}){const current={rls:useEkas(s=>s.rls),site:useEkas(s=>s.siteScope),maskDowntime:useEkas(s=>s.maskDowntime)},visible=eligibleCapture(capture,current);return <section><p>Historical query · {capture.capturedAt} · {visible.allowed?capturedScopeSummary(capture):"Captured query scope withheld under current restrictions"} · {visible.reason}</p>{visible.allowed&&<><Viz rows={visible.rows} query={capture.query} maskDowntime={visible.maskDowntime} onPoint={()=>{}}/><details><summary>Captured query details</summary><pre className="overflow-x-auto font-mono">{sqlOf(capture.query,capture.context)}</pre></details></>}</section>}
-function Ask() {
+function Ask() {const pageLive=usePageLifetime();
   const askInput=useRef<HTMLTextAreaElement>(null);
   const askText = useEkas((s) => s.askText);
   const manufacturingActive=useEkas(s=>s.conversationRoute==='manufacturing');
@@ -260,7 +261,7 @@ function Ask() {
   const sql = sqlOf(query, ctxOf());
   const [running,setRunning]=useState(false);const runningRef=useRef<{epoch:number}|null>(null);const currentEpoch=conversationTransitionEpoch();const busy=running&&runningRef.current?.epoch===currentEpoch;const [submissionStatus,setSubmissionStatus]=useState({epoch:-1,text:''});
   const conversationId=useEkas(s=>s.conversationId);const [conversationScope,setConversationScope]=useState<{id:string;query?:Query;version?:number;error?:string}>({id:''});
-  useEffect(()=>{let active=true;if(!conversationId){setConversationScope({id:''});return}setConversationScope({id:conversationId});void loadConversationContext(conversationId).then(result=>{if(active)setConversationScope({id:conversationId,...result})}).catch(error=>{if(active)setConversationScope({id:conversationId,error:error instanceof Error?error.message:'Conversation context unavailable.'})});return()=>{active=false}},[conversationId,thread.length]);
+  useEffect(()=>{let active=true;if(!conversationId){setConversationScope({id:''});return}setConversationScope({id:conversationId});void loadConversationContext(conversationId).then(result=>{if(active)commitWhilePageLive(pageLive,()=>setConversationScope({id:conversationId,...result}))}).catch(error=>{if(active)commitWhilePageLive(pageLive,()=>setConversationScope({id:conversationId,error:error instanceof Error?error.message:'Conversation context unavailable.'}))});return()=>{active=false}},[conversationId,thread.length]);
   const suggestionQuery=conversationId?(conversationScope.id===conversationId?conversationScope.query:undefined):query;
   const suggestions = manufacturingActive?["What evidence do we have?","What should we test?","What should we do next?","Did it work?"]:["Good units by line", "OEE by line", "FPY by part", "OEE trend"];
   return (
@@ -287,8 +288,8 @@ function Ask() {
           tone="solid" disabled={busy}
           onClick={async () => {
             const epoch=conversationTransitionEpoch();if(runningRef.current?.epoch===epoch)return;const request={epoch};const submitted=askInput.current?.value??useEkas.getState().askText;runningRef.current=request;setRunning(true);setSubmissionStatus({epoch,text:'Saving this question locally…'});try{
-              const result=await submitUnifiedConversation(submitted);if(conversationTransitionEpoch()!==epoch)return;const latest=result.content.conversation.turns.at(-1);if(useEkas.getState().manufacturingConversationId!==result.id||!useEkas.getState().askThread.some(r=>r.manufacturing?.conversationId===result.id&&r.manufacturing.turnId===latest?.id))throw Error('The turn was saved, but its current reply is not indexed. Open saved history to recover it.');setSubmissionStatus({epoch,text:'Reply saved.'});
-            }catch(e){if(conversationTransitionEpoch()!==epoch)return;const message=e instanceof Error?e.message:'Local conversation failed';setSubmissionStatus({epoch,text:message+' Your draft remains available; retry the same question to reconcile its saved receipt.'});toast(message)}finally{if(runningRef.current===request){runningRef.current=null;setRunning(false)}}
+              const result=await submitUnifiedConversation(submitted);if(conversationTransitionEpoch()!==epoch)return;const latest=result.content.conversation.turns.at(-1);if(useEkas.getState().manufacturingConversationId!==result.id||!useEkas.getState().askThread.some(r=>r.manufacturing?.conversationId===result.id&&r.manufacturing.turnId===latest?.id))throw Error('The turn was saved, but its current reply is not indexed. Open saved history to recover it.');commitWhilePageLive(pageLive,()=>setSubmissionStatus({epoch,text:'Reply saved.'}));
+            }catch(e){if(conversationTransitionEpoch()!==epoch)return;const message=e instanceof Error?e.message:'Local conversation failed';commitWhilePageLive(pageLive,()=>setSubmissionStatus({epoch,text:message+' Your draft remains available; retry the same question to reconcile its saved receipt.'}));toast(message)}finally{if(runningRef.current===request){runningRef.current=null;commitWhilePageLive(pageLive,()=>setRunning(false))}}
           }}
         >
           {busy?"Preparing reply…":"Run"}
@@ -750,7 +751,7 @@ function Schedules() {
         <Card key={s.id}>
           <div className="font-semibold">{s.name}</div>
           <div className="text-sm text-muted">{s.cadence} · {s.target} · {s.status} · {s.last}<p>{s.statusNote||"Local simulated schedule; no automatic external delivery."} {s.resultId}</p></div>
-          {s.targetBoard&&<p>Board {s.targetBoard.boardId} · revision {s.targetBoard.sourceRevision} · {s.targetBoard.source.tabs.join(', ')} · {s.targetBoard.source.tiles.length} tiles</p>}{!s.targetBoard&&<p>Single-query schedule · legacy board schedules retain only their original captured query.</p>}{s.boardRun?.tiles.map(t=><p key={t.id}>{t.tab} / {t.title} · {t.status} · {t.rows.length} rows</p>)}<Btn onClick={async()=>{try{const next=s.targetBoard?await runBoardSchedule(s.targetBoard,ctxOf()):undefined;useEkas.setState(st=>({schedules:st.schedules.map(x=>x.id===s.id&&(!next||x.targetBoard?.sourceRevision===next.sourceRevision)?(next?{...x,boardRun:next,last:next.runAt,status:next.status,statusNote:next.note}:runCapturedSchedule(x,ctxOf())):x)}))}catch(error){toast(error instanceof Error?error.message:'Run failed')}}}>Run now</Btn>
+          {s.targetBoard&&<p>Board {s.targetBoard.boardId} · revision {s.targetBoard.sourceRevision} · {s.targetBoard.source.tabs.join(', ')} · {s.targetBoard.source.tiles.length} tiles</p>}{!s.targetBoard&&<p>Single-query schedule · legacy board schedules retain only their original captured query.</p>}{s.boardRun?.tiles.map(t=><p key={t.id}>{t.tab} / {t.title} · {t.status} · {t.rows.length} rows</p>)}<Btn onClick={async()=>{try{const next=s.targetBoard?await runBoardSchedule(s.targetBoard,ctxOf()):undefined;commitWhileDomOpen(()=>useEkas.setState(st=>({schedules:st.schedules.map(x=>x.id===s.id&&(!next||x.targetBoard?.sourceRevision===next.sourceRevision)?(next?{...x,boardRun:next,last:next.runAt,status:next.status,statusNote:next.note}:runCapturedSchedule(x,ctxOf())):x)})))}catch(error){toast(error instanceof Error?error.message:'Run failed')}}}>Run now</Btn>
         </Card>
       ))}
       <CurrentScheduleButton context={ctxOf()}/>
@@ -831,7 +832,7 @@ const OBJECTS = [
   { type: "Table", name: "dim_date", source: "Local synthetic fixture", tags: "monday", author: "System", when: "Today" },
 ];
 
-function DataScreens() {
+function DataScreens() {const pageLive=usePageLifetime();
   const screen = useEkas((s) => s.screen);
   const reviews=useEkas(s=>s.boardReviews);
   const aliasRevision=useEkas(s=>s.aliasRevision);
@@ -942,7 +943,7 @@ function DataScreens() {
         ))}
         <div className="flex gap-2">
           <input value={phrase} onChange={(e) => setPhrase(e.target.value)} className="min-h-11 flex-1 rounded-lg border border-line bg-surface px-3" />
-          <Btn tone="solid" onClick={async() => { const value=phrase.trim(); const current=useEkas.getState().memory; if (!value || value.length>2000 || current.length>=100 || current.includes(value)) return; useEkas.setState({ memory: [...current, value] }); if (!useEkas.getState().memory.includes(value)) return; useEkas.getState().log("Added local memory phrase"); try{await useEkas.persist.flush();setPhrase("")}catch(error){toast(error instanceof Error?error.message:"Local memory save failed; draft retained.")} }}>Add</Btn>
+          <Btn tone="solid" onClick={async() => { const value=phrase.trim(); const current=useEkas.getState().memory; if (!value || value.length>2000 || current.length>=100 || current.includes(value)) return; useEkas.setState({ memory: [...current, value] }); if (!useEkas.getState().memory.includes(value)) return; useEkas.getState().log("Added local memory phrase"); try{await useEkas.persist.flush();commitWhilePageLive(pageLive,()=>setPhrase(""))}catch(error){toast(error instanceof Error?error.message:"Local memory save failed; draft retained.")} }}>Add</Btn>
         </div>
       </div>
     );
@@ -1014,12 +1015,13 @@ function Studio() {
   </div>;
 }
 
-function Develop() {
+function Develop() {const pageLive=usePageLifetime();
   const screen = useEkas((s) => s.screen);
   const query = useEkas((s) => s.query);
   const rows = useRows(query);
   const name = useEkas((s) => s.displayName);
   const compact = useEkas((s) => s.compact);
+  const appearance = useEkas((s) => s.appearance);
   const links = useEkas((s) => s.links);
   const webhooks = useEkas((s) => s.webhooks);
   const webhookEvents=useEkas(s=>s.webhookEvents);
@@ -1047,7 +1049,7 @@ function Develop() {
         <h1 className="text-2xl font-semibold">Embed</h1>
         <p>Exact local query snapshot · cutoff {query.asOf??'not captured'} · {activeMeasures(query).map(id=>columnById(id)?.name??id).join(', ')||'No selected metrics'}. Proposed local embed format; no production access grant.</p>
         <pre aria-label="Exact embed payload" className="overflow-x-auto rounded-lg bg-surface p-3 font-mono text-sm">{embedText}</pre>
-        <Btn onClick={async()=>{setCopyStatus('');const capturedText=embedText;try{const current=await copyGuidePayload('embed-copied',capturedText,()=>currentEmbedText.current===capturedText);if(!current){setCopyStatus('Copied the earlier payload; current context changed. No current Guide observation recorded.');return}setCopyStatus('Copied exact embed payload containing '+activeMeasures(query).map(id=>columnById(id)?.name??id).join(', ')+' for cutoff '+(query.asOf??'not captured'));}catch{setCopyStatus('Copy failed. Select the exact payload above and copy it manually.');}}}>Copy exact embed payload</Btn>{copyStatus&&<p role="status">{copyStatus}</p>}
+        <Btn onClick={async()=>{setCopyStatus('');const capturedText=embedText;try{const current=await copyGuidePayload('embed-copied',capturedText,()=>currentEmbedText.current===capturedText);if(!current){commitWhilePageLive(pageLive,()=>setCopyStatus('Copied the earlier payload; current context changed. No current Guide observation recorded.'));return}commitWhilePageLive(pageLive,()=>setCopyStatus('Copied exact embed payload containing '+activeMeasures(query).map(id=>columnById(id)?.name??id).join(', ')+' for cutoff '+(query.asOf??'not captured')));}catch{commitWhilePageLive(pageLive,()=>setCopyStatus('Copy failed. Select the exact payload above and copy it manually.'));}}}>Copy exact embed payload</Btn>{copyStatus&&<p role="status">{copyStatus}</p>}
         {activeMeasures(query).map(metric=><Card key={metric}><h2>{columnById(metric)?.name??metric} ({columnById(metric)?.unit??'Unavailable'})</h2><Viz rows={rows} query={{ ...query,columns:[...activeGroup(query),metric],chart:"headline" }} maskDowntime={maskDowntime} onPoint={()=>{}}/></Card>)}
         <div className="flex gap-2">
           <Btn onClick={() => useEkas.getState().go("apiguide")}>API guide</Btn>
@@ -1074,7 +1076,9 @@ function Develop() {
           <input value={name} onChange={(e) => saveLocalPreference("displayName",e.target.value)} className="mt-1 min-h-11 w-full rounded-lg border border-line bg-surface px-3" />
         </label>
         <Btn data-guide-action="theme-density" onClick={() => saveLocalPreference("compact",!compact)}>Density {compact ? "compact" : "comfortable"}</Btn>
-        <p className="text-sm text-muted">Dark theme only. Theme edits the display name and compact density. The palette does not change.</p>
+        <Btn onClick={() => saveLocalPreference("appearance","light")} aria-pressed={appearance !== "dark"}>Light appearance</Btn>
+        <Btn onClick={() => saveLocalPreference("appearance","dark")} aria-pressed={appearance === "dark"}>Dark appearance</Btn>
+        <p className="text-sm text-muted">Light is the default. Dark is saved with your other local display preferences. It does not change plant data, calculations, or the conversation.</p>
       </div>
     );
   }
@@ -1124,7 +1128,7 @@ function Develop() {
   );
 }
 
-function Admin() {
+function Admin() {const pageLive=usePageLifetime();
   const screen = useEkas((s) => s.screen);
   const users = useEkas((s) => s.users);
   const userSearch = useEkas((s) => s.userSearch);
@@ -1175,7 +1179,7 @@ function Admin() {
             onClick={async() => {
               if(!name.trim()){setUserError("Enter a user name and a valid email.");return}if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())){setUserError("Enter a valid email address.");return}if(useEkas.getState().users.some(u=>u.email.trim().toLowerCase()===email.trim().toLowerCase())){setUserError("A simulated user with this email already exists.");return}setUserError("");
               const id=crypto.randomUUID();if(!useEkas.setState((s) => ({ users: [...s.users, { id, name: name.trim(), email: email.trim(), createdAt:new Date().toISOString(),groups: ["Viewers"], status: "Invited" }],groups:s.groups.map(g=>g.name==="Viewers"?{...g,members:g.members+1}:g) })))return;useEkas.getState().log("Recorded local user "+id);
-              try{await useEkas.persist.flush();setName("");setEmail("");toast("Simulated invitation recorded; no email sent")}catch(error){setUserError(error instanceof Error?error.message:"Local user save failed; draft retained.")}
+              try{await useEkas.persist.flush();commitWhilePageLive(pageLive,()=>setName(""));commitWhilePageLive(pageLive,()=>setEmail(""));toast("Simulated invitation recorded; no email sent")}catch(error){commitWhilePageLive(pageLive,()=>setUserError(error instanceof Error?error.message:"Local user save failed; draft retained."))}
             }}
           >
             Add user
@@ -1234,12 +1238,12 @@ function Admin() {
   return <MaintenanceNote key={screen} saved={maintenance}/>;
 }
 
-function MaintenanceNote({saved}:{saved:string}) {
+function MaintenanceNote({saved}:{saved:string}) {const pageLive=usePageLifetime();
   const [draft,setDraft]=useState(saved);
   const [status,setStatus]=useState("");
   return <Card><h1 className="text-2xl font-semibold">Maintenance</h1><p>Optional local simulation freeze-window note. Saving an empty or blank note clears this local note. Nothing is actually frozen.</p>
     <label>Freeze-window sentence<textarea aria-label="Freeze-window sentence" value={draft} onChange={e=>{setDraft(e.target.value);setStatus("")}} className="min-h-20 w-full rounded-lg border border-line bg-surface p-3"/></label>
-    <Btn data-guide-action="maintenance-save" onClick={async()=>{setStatus("Saving local note…");try{const value=draft.trim()?draft:"";if(!useEkas.setState({maintenance:value}))throw new Error("Local note save refused.");await useEkas.persist.flush();useEkas.getState().log("Saved local maintenance note");setDraft(value);setStatus(value?"Saved locally; available after reload. No operational freeze.":"Cleared local note; available after reload. No operational freeze.")}catch(error){setStatus(error instanceof Error?error.message:"Local save failed; draft retained.")}}}>Save note</Btn>
+    <Btn data-guide-action="maintenance-save" onClick={async()=>{setStatus("Saving local note…");try{const value=draft.trim()?draft:"";if(!useEkas.setState({maintenance:value}))throw new Error("Local note save refused.");await useEkas.persist.flush();useEkas.getState().log("Saved local maintenance note");commitWhilePageLive(pageLive,()=>setDraft(value));commitWhilePageLive(pageLive,()=>setStatus(value?"Saved locally; available after reload. No operational freeze.":"Cleared local note; available after reload. No operational freeze."))}catch(error){commitWhilePageLive(pageLive,()=>setStatus(error instanceof Error?error.message:"Local save failed; draft retained."))}}}>Save note</Btn>
     <Btn onClick={()=>{setDraft(saved);setStatus("Draft cancelled; saved note unchanged.")}}>Cancel</Btn>
     {status&&<p role="status">{status}</p>}
   </Card>;

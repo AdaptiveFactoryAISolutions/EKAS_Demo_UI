@@ -1,0 +1,77 @@
+import { validateWorkflow } from "./workflow.js";
+//#region app/src/investigation/guideActions.ts
+function validGuideOrigin(o) {
+	return !!o && typeof o.id === "string" && !!o.id && Number.isSafeInteger(o.version) && o.version > 0 && validateWorkflow(o.workflow);
+}
+function verifiedGuideOrigin(r) {
+	if (!r || r.content.domain !== "manufacturing-investigation-v2") return null;
+	const o = {
+		id: r.id,
+		version: r.version,
+		workflow: structuredClone(r.content.workflow)
+	};
+	if (!validGuideOrigin(o)) throw Error("Retained investigation requires recovery; no prior context is inferred.");
+	return o;
+}
+function guideRecoveryActions(origin, policyVersion = 1) {
+	if (policyVersion !== 1 || origin && !validGuideOrigin(origin)) throw Error("Invalid Guide action context.");
+	return origin ? [{
+		id: "return-original",
+		command: "Return to original investigation.",
+		requires: "verified retained manufacturing cursor"
+	}] : [
+		"downtime",
+		"speed",
+		"quality"
+	].map((caseId) => ({
+		id: "open-" + caseId,
+		command: "Investigate " + caseId + ".",
+		requires: "explicit supplied-case selection"
+	}));
+}
+function guideRecoveryText(origin) {
+	const actions = guideRecoveryActions(origin);
+	return origin ? "The original manufacturing case is an inactive retained investigation " + origin.id + ", version " + origin.version + ", at " + origin.workflow.asOf + ". To select it, enter “" + actions[0].command + "” before its approval readiness. This does not approve or perform work." : "No verified original manufacturing investigation is saved in this conversation. Explicit supplied-case openings: " + actions.map((a) => "“" + a.command + "”").join("; ") + ". Nothing is opened by reading Help.";
+}
+const isGuideReturnQuestion = (q) => /^(?:return|go back) to (?:the )?original investigation[.]?$/i.test(q.trim());
+function guideReturnContext(origin, c) {
+	if (!origin) return {
+		...c,
+		lastIntent: "guide-return-unavailable"
+	};
+	const w = origin.workflow, x = w.context;
+	return {
+		...c,
+		caseFocus: w.caseId,
+		plant: x.plant,
+		line: x.line,
+		machine: x.asset,
+		job: x.job,
+		part: x.part,
+		revision: x.revision,
+		operation: x.operation,
+		period: x.from.slice(0, 10) + " day shift",
+		shift: "day",
+		sourceCutoff: w.asOf,
+		activeInvestigationId: origin.id,
+		investigationStage: w.action.status,
+		clarification: null,
+		lastIntent: "guide-return"
+	};
+}
+function validGuideReturnCapture(c) {
+	return c?.schemaVersion === 1 && isGuideReturnQuestion(c.question) && !!c.context && Number.isFinite(Date.parse(c.asOf)) && (c.origin === null || validGuideOrigin(c.origin) && c.asOf === c.origin.workflow.asOf);
+}
+function guideReturnPresentation(c) {
+	if (!validGuideReturnCapture(c)) throw Error("Captured Guide return requires recovery.");
+	return {
+		text: c.origin ? "Returned to original investigation " + c.origin.id + " at " + c.asOf + ". Its saved workflow, work proof and acceptance are unchanged. Training answers retain their original query and clock." : "No verified original manufacturing investigation is saved in this conversation. " + guideRecoveryText(null),
+		evidence: "none",
+		chart: false,
+		metric: c.context.metric,
+		sourceIds: c.origin ? [c.origin.id] : [],
+		qualification: "Explicit synthetic cursor selection only; no workflow transition, clock advance, cause or savings inferred."
+	};
+}
+//#endregion
+export { guideRecoveryActions, guideRecoveryText, guideReturnContext, guideReturnPresentation, isGuideReturnQuestion, validGuideOrigin, validGuideReturnCapture, verifiedGuideOrigin };
