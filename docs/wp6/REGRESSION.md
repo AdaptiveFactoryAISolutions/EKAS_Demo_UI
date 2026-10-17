@@ -1,3 +1,11 @@
+# Regression — EKAS DEMO RC3 referent correction
+
+Source under test: extracted `EKAS-DEMO-RC3.zip`, git archive of `45568c575a00a8810b661929624995ec24e6de1e` excluding the nested RC1 and RC2 zip binaries.
+
+Command: `npm ci`, then `npm run build` (`tsc --noEmit && vite build`, exit 0), then one `npx vitest run` in `app/` after the gitignored `evidence/` directory was created. Started 2026-10-17T00:15:18Z. Duration 467.90s. Result: **2,952 passed, 0 failed, 496 files**. Exit code 0. No failure was deleted. `validConversation` was not loosened.
+
+`src/investigation/rcReferent.test.ts` on that extraction: 9 passed, including the eight referent cases and the policy-7 replay. The clean Chrome checkpoint on this build opened the feeder-jam case for “Investigate it.” See `16-REHEARSAL-GUIDE.md`. That checkpoint is not Step 16.
+
 # Regression — EKAS DEMO RC2 test-only delta
 
 Patrick's decision, recorded verbatim:

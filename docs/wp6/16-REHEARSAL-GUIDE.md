@@ -30,6 +30,18 @@ That was the RC2 defect. RC2 does not correct it. RC3 does: the same three phras
 
 Frames: `screenshots/rc2-checkpoint-1-plant-review.png`, `screenshots/rc2-checkpoint-2-focus-first.png`, `screenshots/rc2-checkpoint-3-investigate-it.png`. The captured replies are in `rc2-checkpoint.json`.
 
+## Observed on RC3, clean Chrome profile
+
+Build: production preview of extracted `45568c5` at `http://127.0.0.1:18195`. Browser: a new Chrome profile, empty before Chat loaded. Light appearance. No prior conversation. This recorded pass is not the unaided rehearsal and does not mark Step 16 done.
+
+1. `Run my plant review.` Priority: Northworks feeder-jam plan miss. 150 good units below the approved goal (2,154 against 2,304). Next: investigate Northworks feeder-jam plan miss.
+2. `What should I focus on first?` The same scorecard priority and the same next step.
+3. `Investigate it.` Production finished 150 good units below the approved plan: 2,154 against 2,304. Line 03 missed by 138 units. The reply does not open Quality loss.
+
+Frames: `screenshots/rc3-checkpoint-1-plant-review.png`, `screenshots/rc3-checkpoint-2-focus-first.png`, `screenshots/rc3-checkpoint-3-investigate-it.png`. Wording is in `rc3-checkpoint.json`.
+
+The same profile then asked `Investigate the quality audit gap.` The normal answer says `Oct 6, 2026 · 2:45 PM`. Technical details still say `Saved with this reply at 2026-10-06T14:45:00Z`. Frames: `screenshots/rc3-timestamp-normal.png`, `screenshots/rc3-timestamp-technical.png`.
+
 The unaided reviewer still runs this checkpoint. A recorded clean-profile pass is not a substitute for that rehearsal.
 
 ## What the reviewer still does

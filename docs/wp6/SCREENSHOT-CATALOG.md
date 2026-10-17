@@ -1,3 +1,17 @@
+# Browser evidence catalog — EKAS DEMO RC3 checkpoint
+
+Clean Chrome profile against `vite preview` of extracted `45568c5` at `http://127.0.0.1:18195`. These frames are the referent correction. They are not the unaided Step 16 rehearsal.
+
+| File | What it shows |
+| --- | --- |
+| `rc3-checkpoint-1-plant-review.png` | After `Run my plant review.` Priority is the Northworks feeder-jam plan miss, 150 good units (2,154 against 2,304). |
+| `rc3-checkpoint-2-focus-first.png` | After `What should I focus on first?` The stated priority is still that 150-unit miss. |
+| `rc3-checkpoint-3-investigate-it.png` | After `Investigate it.` The open case is the feeder-jam plan miss: 150 good units, Line 03 missed by 138. |
+| `rc3-timestamp-normal.png` | A later quality-gap answer shows `Oct 6, 2026 · 2:45 PM` in the normal reply. |
+| `rc3-timestamp-technical.png` | Technical details of that reply keep `2026-10-06T14:45:00Z`. |
+
+Reply crops of the three checkpoint turns are the `*-reply.png` files beside them. Wording is in `rc3-checkpoint.json`.
+
 # Browser evidence catalog — EKAS DEMO RC2 checkpoint
 
 These three frames are the mandatory Step 16 checkpoint on the RC2 production build, in a clean Chrome profile. They are not a pass. “What should I focus on first?” states the 150-unit feeder-jam miss. “Investigate it.” opens Quality loss.

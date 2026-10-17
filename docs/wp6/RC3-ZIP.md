@@ -30,3 +30,9 @@ The RC3 archive is a git archive of the RC3 source commit with two path exclusio
 Those files stay in git history and in the repository. They are the frozen RC1 and RC2 packages. Nesting them again would make RC3 carry both previous packages and grow by another ~57 MB. No source fixture, screenshot, or closure record is removed to make the package smaller.
 
 Required fixture JSON files above remain in the archive. They are inputs the product and the suite read.
+
+## Measured RC3 archive
+
+`docs/wp6/EKAS-DEMO-RC3.zip` is a git archive of `45568c575a00a8810b661929624995ec24e6de1e` with the two exclusions above. It is 31,634,629 bytes. SHA256 `aa80bc8e551c68b4b7b897b87f72b0d56004a2203f388005cfe5ffc03e839b14`. 1,903 entries (1,844 files and 59 directories), 0 symlinks, 0 nested `.zip` members, no `node_modules`, and no `app/dist`. Member hashes are `docs/wp6/RC3-MEMBERS.sha256`.
+
+Largest uncompressed members are the same required fixtures: `app/inputs/negative-outcomes-v56.json` (10.53 MB), `app/inputs/speed-investigation-v1.json` (7.41 MB), `app/inputs/quality-investigation-v1.json` (5.85 MB), then the capability-audit and historical census JSON. `docs/wp6/screenshots` is about 5.27 MB across 70 files in this archive (the RC3 frames were added after the archive). Those screenshots stay.

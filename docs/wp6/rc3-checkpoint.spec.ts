@@ -77,7 +77,9 @@ test('RC3 referent and timestamp checkpoint on a clean Chrome profile', async ()
   await quality.getByRole('button', { name: 'Evidence and investigation' }).click();
   const dialog = page.getByRole('dialog');
   await dialog.getByText('Technical details', { exact: true }).click();
-  await expect(dialog).toContainText('2026-10-06T14:45:00Z');
+  const recorded = dialog.getByText('Saved with this reply at 2026-10-06T14:45:00Z');
+  await expect(recorded).toBeVisible();
+  await recorded.scrollIntoViewIfNeeded();
   await page.screenshot({ path: `${shots}/rc3-timestamp-technical.png` });
   writeFileSync('/workspace/docs/wp6/rc3-checkpoint.json', JSON.stringify({ turns, qualityText }, null, 2));
   await context.close();

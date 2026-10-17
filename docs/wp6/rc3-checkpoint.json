@@ -1,0 +1,17 @@
+{
+  "turns": [
+    {
+      "question": "Run my plant review.",
+      "answer": "Plant review\n\nPriority: Northworks feeder-jam plan miss. 150 good units below the approved goal (2,154 against 2,304).\n\nSpeed and quality keep their authored plant, Synthetic Works. They are listed beside the Northworks review and are not Northworks production.\n\nCase shortfalls, largest first\nCase\tPlant\tActual\tGoal\tShortfall\nNorthworks feeder-jam plan miss\tNorthworks\t2,154\t2,304\t150 good units\nPressure-recovery speed loss\tSynthetic Works\t706\t820\t114 good units\nBurr first-pass quality loss\tSynthetic Works\t792\t850\t58 good units\n\nNext: investigate Northworks feeder-jam plan miss.\n\nFull recorded review"
+    },
+    {
+      "question": "What should I focus on first?",
+      "answer": "Plant review\n\nPriority: Northworks feeder-jam plan miss. 150 good units below the approved goal (2,154 against 2,304).\n\nSpeed and quality keep their authored plant, Synthetic Works. They are listed beside the Northworks review and are not Northworks production.\n\nCase shortfalls, largest first\nCase\tPlant\tActual\tGoal\tShortfall\nNorthworks feeder-jam plan miss\tNorthworks\t2,154\t2,304\t150 good units\nPressure-recovery speed loss\tSynthetic Works\t706\t820\t114 good units\nBurr first-pass quality loss\tSynthetic Works\t792\t850\t58 good units\n\nNext: investigate Northworks feeder-jam plan miss.\n\nFull recorded review"
+    },
+    {
+      "question": "Investigate it.",
+      "answer": "Production finished 150 good units below the approved plan: 2,154 against 2,304. Line 03 missed by 138 units; Line 02 missed by 38 units; Line 01 exceeded plan by 26 units. The 726-unit loss from theoretical capacity is a different baseline from this 150-unit plan miss.\n\nI would start with the feeder-jam evidence on Line 03. The speed residual remains unattributed."
+    }
+  ],
+  "qualityText": "Quality loss: observed 2.18 %, approved fictional target 1.50 %, unfavorable deviation 0.68 percentage points. Review cutoff Oct 6, 2026 · 2:45 PM. Scope northworks/all-lines; reporting horizon Oct 6, 2026 · 6:00 AM to Oct 6, 2026 · 2:00 PM. A persistent Plant Review discovery investigation is open for this selected metric. Reason-coded dispositions and a confirmed cause for these non-good units are not supplied. The current-job trace does not establish an approved quality intervention or performed work. Controlled action, acceptance, work proof and comparison cohorts remain unavailable."
+}
