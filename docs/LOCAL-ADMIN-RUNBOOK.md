@@ -4,13 +4,13 @@ Current CF provisional implementation reference; independent ordinary review is 
 
 ## Start the portable local server
 
-After extracting the candidate, use Node 20.20.2 or a compatible supported Node release:
+After extracting the candidate, use Node. This command was verified on Node v22.14.0. The archive already contains the compiled server and the static UI, so do not compile, copy, or install packages before starting:
 
 ```sh
 node integration/local-demo/start.mjs --port 18330 --state /absolute/private-demo/workspace.json --owner-code /absolute/private-demo/owner-code
 ```
 
-This starts on `127.0.0.1`, creates a private one-time owner-code file, and leaves AI disabled. The workspace and owner code must be outside the served static directory. Keep the chosen workspace path to preserve conversations and controlled synthetic records. No private legacy repository, key file or environment secret is required. No provider request occurs on startup in this normal launch.
+`integration/local-demo/start.mjs` imports `packaged/server/localDemoServer.js` and serves the `static/` directory. That module is the compiled `app/src/server/localDemoServer.ts` graph. `static/` is the production UI build. This starts on `127.0.0.1`, creates a private one-time owner-code file, and leaves AI disabled. The workspace and owner code must be outside the served static directory. Keep the chosen workspace path to preserve conversations and controlled synthetic records. No private legacy repository, key file or environment secret is required. No provider request occurs on startup in this normal launch. Without `--original-budget-history`, paid use stays blocked. Supplying the provider-test history file activates the $40 cumulative ceiling; it does not enable AI or attach a key.
 
 Open the displayed exact loopback address. Use **Admin AI**, then privately enter the local owner code from the chosen file. This code is not the OpenAI key and does not grant a real manufacturing role. Fictional roles remain a separate synthetic business context.
 

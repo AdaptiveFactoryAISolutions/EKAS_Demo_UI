@@ -1,0 +1,35 @@
+import { integrationHealthProjection } from "./integrationHealth.js";
+//#region app/src/investigation/integrationHealthConversation.ts
+function integrationHealthQuestion(q) {
+	return /^(?:show (?:the )?(?:integration|feed|data) health|which inputs block (?:the )?verification|why is (?:the )?current evidence unavailable|show (?:the )?feed recovery evidence)[?.!]?$/i.test(q.trim());
+}
+function captureIntegrationHealth(record, question) {
+	return {
+		schemaVersion: 1,
+		question,
+		projection: integrationHealthProjection(record),
+		synthetic: true,
+		physicalInterventionPerformed: false,
+		causalStatus: "unconfirmed",
+		financiallyValidated: false
+	};
+}
+function integrationHealthPresentation(c) {
+	const p = c.projection, r = p.record, sources = r ? [r.id] : [], blocked = p.decisions.filter((x) => x.eligible === false).map((x) => x.id), transfer = r ? `Snapshot ${r.id}, source ${r.sourceId} version ${r.sourceVersion}, known ${r.knownAt}. Last successful sync ${r.lastSuccessfulSyncAt}; age ${p.ageMin ?? "unavailable"} min. Successful latency ${r.lastSuccessfulLatencyMs === null ? "unavailable" : r.lastSuccessfulLatencyMs + " ms"}; last attempt ${r.lastAttemptDurationMs} ms / ${r.lastAttemptOutcome}. Transfer coverage ${r.coverage.provided}/${r.coverage.expected} ${r.coverage.unit}; this is not a production exposure denominator.` : "No health snapshot is selected. Health is unassessed; no healthy connector, zero latency or complete coverage is inferred.";
+	return {
+		text: `Selected synthetic ${p.caseId} case-evidence feed: ${p.effectiveStatus} at ${p.asOf}.
+
+${transfer}
+
+${p.reasons.join(" ")} ${blocked.length ? "Blocked decision inputs: " + blocked.join(", ") + "." : "Original independent business guards still apply."} Applicable knowledge and ownership/planning remain separate.
+
+Recovery does not perform work or certify a physical asset, calibration, cause or savings. Cause remains unconfirmed. Inspect exact required inputs and select only an explicitly reviewed newer known synthetic snapshot.`,
+		evidence: r ? "events" : "none",
+		chart: false,
+		metric: "integration_health",
+		sourceIds: sources,
+		qualification: p.qualification
+	};
+}
+//#endregion
+export { captureIntegrationHealth, integrationHealthPresentation, integrationHealthQuestion };

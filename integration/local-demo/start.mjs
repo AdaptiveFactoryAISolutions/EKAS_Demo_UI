@@ -1,4 +1,4 @@
-import{readFileSync,realpathSync}from'node:fs';import{resolve,dirname}from'node:path';import{fileURLToPath}from'node:url';import{startLocalAiApplicationDemo}from'../../server/localDemoServer.js';
+import{readFileSync,realpathSync}from'node:fs';import{resolve,dirname}from'node:path';import{fileURLToPath}from'node:url';import{startLocalAiApplicationDemo}from'../../packaged/server/localDemoServer.js';
 // Exact local launch only. No key arguments/environment reads, real network test,
 // automatic activation, signing infrastructure or private repository dependency.
 const args=process.argv.slice(2),allowed=new Set(['--port','--state','--owner-code','--original-budget-history']),values={};

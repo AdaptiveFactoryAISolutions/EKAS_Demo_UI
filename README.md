@@ -52,6 +52,16 @@ npm run dev
 
 The dev server listens at `http://127.0.0.1:18191/`. Chat opens first. The synthetic badge is visible. Light appearance is the default.
 
+## Local owner server
+
+A clean extract starts the documented Admin server with Node alone. No `npm ci`, no compile step, and no copied files are required for this command:
+
+```bash
+node integration/local-demo/start.mjs --port 18330 --state /absolute/private-demo/workspace.json --owner-code /absolute/private-demo/owner-code
+```
+
+The launcher imports `packaged/server/localDemoServer.js` and serves `static/`. Those are the compiled form of `app/src/server/localDemoServer.ts` and the production UI build. The private state and owner-code paths must be outside `static/`. The process creates the owner-code file, listens on `127.0.0.1`, and leaves the provider disabled. It does not read an API key. The procedure is [docs/LOCAL-ADMIN-RUNBOOK.md](docs/LOCAL-ADMIN-RUNBOOK.md) and [docs/wp6/RC6-STARTUP.md](docs/wp6/RC6-STARTUP.md).
+
 The accepted journeys and the plant review run in this demo without a paid provider. Answers come from the governed local rules and the synthetic fixtures.
 
 To serve the production build of this checkout instead:

@@ -1,0 +1,75 @@
+import { fixtureCase } from "./cases.js";
+import { diagnosticClock, diagnosticSource, diagnosticSourceCutoff } from "./diagnosticSource.js";
+//#region app/src/investigation/diagnosticChecks.ts
+function applyDiagnosticCheck(w, command, actor, key) {
+	const c = command, h = w.hypotheses.find((h) => h.id === c.hypothesisRef?.hypothesisId), ref = c.hypothesisRef;
+	if (!ref || Object.keys(ref).some((k) => ![
+		"investigationId",
+		"cycleId",
+		"hypothesisId",
+		"hypothesisVersion"
+	].includes(k)) || typeof ref.investigationId !== "string" || !ref.investigationId || ref.cycleId !== w.cycle || !h || ref.hypothesisVersion !== h.version) throw Error("Exact current investigation/cycle/hypothesis/version reference is required.");
+	if (w.diagnostics?.events.some((e) => e.hypothesisRef.investigationId !== ref.investigationId)) throw Error("Diagnostic investigation identity changed.");
+	if (c.confirmation !== "CONFIRM_UNVERIFIED_DIAGNOSTIC_CHECK" || c.knownAt !== diagnosticClock(w) || c.sourceVersion !== 1 || typeof c.reason !== "string" || c.reason.trim().length < 10 || c.reason.length > 1e3) throw Error("Review an explicit unverified diagnostic check at its exact current cutoff/source version with a bounded reason.");
+	if (![
+		"controller-response",
+		"measurement-trust",
+		"upstream-disturbance",
+		"insufficient-evidence",
+		"cause-assessment"
+	].includes(c.checkType) || ![
+		"inconclusive",
+		"refuted",
+		"supported-by-inspection",
+		"consistent-with-symptom"
+	].includes(c.outcome) || !Array.isArray(c.evidenceIds) || !c.evidenceIds.length || c.evidenceIds.length > 8 || new Set(c.evidenceIds).size !== c.evidenceIds.length || c.evidenceIds.some((id) => typeof id !== "string")) throw Error("Select a typed check/outcome and exact nonduplicate eligible evidence.");
+	const f = diagnosticSource(w), tests = fixtureCase(w.caseId, w.condition).tests.filter((t) => t.hypothesisId === h.id && h.testResultId === t.id && t.knownAt <= w.asOf && w.cycle === 1), records = f.records.filter((r) => r.cycle === w.cycle && r.eventTime <= diagnosticClock(w) && r.knownAt <= diagnosticClock(w) && r.knownAt <= diagnosticSourceCutoff(w));
+	const evidenceRefs = c.evidenceIds.map((id) => {
+		const r = records.find((r) => r.id === id);
+		if (r) return {
+			id: r.id,
+			sourceId: r.sourceId,
+			knownAt: r.knownAt,
+			sourceVersion: r.sourceVersion,
+			cycleId: r.cycle,
+			sensorOriginId: r.sensorOriginId,
+			independenceGroupId: r.independenceGroupId,
+			kind: r.kind
+		};
+		const t = tests.find((t) => t.id === id);
+		if (t) return {
+			id: t.id,
+			sourceId: t.source,
+			knownAt: t.knownAt,
+			sourceVersion: 1,
+			cycleId: 1,
+			kind: "recorded-inspection"
+		};
+		throw Error("Foreign, future, unavailable or prior-cycle diagnostic reference; no source was substituted.");
+	});
+	if (c.outcome === "supported-by-inspection" && !tests.some((t) => c.evidenceIds.includes(t.id) && t.result === "supported")) throw Error("Chronology/correlation cannot establish supported inspection; an exact recorded authoritative test is required.");
+	if (c.outcome === "refuted" && !tests.some((t) => c.evidenceIds.includes(t.id) && t.result === "refuted")) throw Error("A refuted interpretation needs its exact recorded contradictory test; prose cannot replace its source outcome.");
+	if (c.outcome === "consistent-with-symptom" && (c.checkType !== "controller-response" || !records.some((r) => c.evidenceIds.includes(r.id) && r.kind === "controller-response" && r.eventTime >= f.illustrativeStopAt))) throw Error("A current recorded controller response is required for this qualified symptom interpretation.");
+	const events = w.diagnostics?.events || [];
+	w.diagnostics = {
+		schemaVersion: 1,
+		events: [...events, {
+			key,
+			version: events.length + 1,
+			actor,
+			knownAt: diagnosticClock(w),
+			cycleId: w.cycle,
+			hypothesisRef: structuredClone(ref),
+			checkType: c.checkType,
+			outcome: c.outcome,
+			reason: c.reason.trim(),
+			evidenceRefs,
+			contextRef: structuredClone(w.context),
+			causalStatus: "unconfirmed",
+			financiallyValidated: false,
+			notDispatched: true
+		}]
+	};
+}
+//#endregion
+export { applyDiagnosticCheck };

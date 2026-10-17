@@ -1,0 +1,29 @@
+import { measurementTrustProjection } from "./measurementTrust.js";
+//#region app/src/investigation/measurementTrustConversation.ts
+function measurementTrustQuestion(q) {
+	return /^(?:show (?:the )?measurement trust|which measurement decisions are blocked|why is calibration insufficient|show (?:the )?measurement recovery evidence)[?.!]?$/i.test(q.trim());
+}
+function captureMeasurementTrust(record, question) {
+	return {
+		schemaVersion: 1,
+		question,
+		projection: measurementTrustProjection(record),
+		synthetic: true,
+		physicalInterventionPerformed: false,
+		causalStatus: "unconfirmed",
+		financiallyValidated: false
+	};
+}
+function measurementTrustPresentation(c) {
+	const p = c.projection, r = p.selectedRecord, blocked = p.decisions.filter((d) => d.eligible === false).map((d) => d.id);
+	return {
+		text: `Synthetic ${p.caseId} measurement assurance: ${p.effectiveStatus} at ${p.asOf}.\n\n${r ? `Record ${r.id}, source ${r.sourceId} version ${r.sourceVersion}, known ${r.knownAt}. Calibration ${r.calibration.status}; measurement-system review (MSA) ${r.msa.status} for ${r.measurementFamily}. Decision effectivity ${r.decisionEffectiveFrom} to ${r.decisionEffectiveUntil} (exclusive). Original operand unit: ${r.operandUnit}. ${r.uncertainty.qualification}` : "No measurement assurance record is selected. Calibration and measurement-system qualification are unassessed; a real traceability or fitness-for-purpose claim is not inferred."}\n\n${p.reasons.join(" ")} ${blocked.length ? "Blocked dependent decisions: " + blocked.join(", ") + "." : "All original business prerequisites still apply."} Applicable knowledge, ownership and compatible performed-work evidence remain separate.\n\nExplicit newer assurance is not performed calibration or repair. Cause remains unconfirmed; no real calibration, dimensional capability, confidence probability or financial savings is certified. Historical captures retain their original source/time/status.`,
+		evidence: r ? "events" : "none",
+		chart: false,
+		metric: "measurement_trust",
+		sourceIds: r ? [r.id] : [],
+		qualification: "Synthetic measurement-policy rehearsal; real calibration/uncertainty/MSA conformance unverified."
+	};
+}
+//#endregion
+export { captureMeasurementTrust, measurementTrustPresentation, measurementTrustQuestion };

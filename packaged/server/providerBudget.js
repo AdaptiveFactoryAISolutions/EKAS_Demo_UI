@@ -1,0 +1,154 @@
+import { unresolvedReservation, validConservativeDisposition } from "./conservativeDisposition.js";
+//#region app/src/server/providerBudget.ts
+const integer = (x, min = 0) => Number.isSafeInteger(x) && Number(x) >= min;
+const exact = (x, keys) => !!x && typeof x === "object" && !Array.isArray(x) && Object.keys(x).length === keys.length && Object.keys(x).every((k) => keys.includes(k));
+/** Configured prices and authorization are supplied by a trusted operator.
+* This module claims no current model price or user approval. No network/keys.
+* Store must enforce exclusive ownership and crash-safe durable writes. */
+function createProviderBudget({ policy, store, now, nextId }) {
+	policy = structuredClone(policy);
+	if (!exact(policy, [
+		"version",
+		"authorizationId",
+		"model",
+		"expiresAt",
+		"totalMicroUsd",
+		"inputContextTokenBound",
+		"maxOutputTokens",
+		"inputMicroUsdPerMillion",
+		"outputMicroUsdPerMillion"
+	]) || policy.version !== 1 || !policy.authorizationId?.trim() || !policy.model?.trim() || !Number.isFinite(Date.parse(policy.expiresAt)) || ![
+		"totalMicroUsd",
+		"inputContextTokenBound",
+		"maxOutputTokens",
+		"inputMicroUsdPerMillion",
+		"outputMicroUsdPerMillion"
+	].every((k) => integer(policy[k], 1))) throw Error("DEMO_BUDGET_POLICY_REQUIRED");
+	const amount = (output) => {
+		const product = policy.inputContextTokenBound * policy.inputMicroUsdPerMillion + output * policy.outputMicroUsdPerMillion;
+		if (!integer(product)) throw Error("DEMO_BUDGET_POLICY_REQUIRED");
+		return Math.ceil(product / 1e6);
+	};
+	const validUsage = (u, e) => !!u && integer(u.input_tokens) && u.input_tokens <= policy.inputContextTokenBound && integer(u.output_tokens) && u.output_tokens <= e.maxOutputTokens;
+	const valid = (s) => exact(s, [
+		"version",
+		"policy",
+		"halted",
+		"entries"
+	]) && s.version === 1 && JSON.stringify(s.policy) === JSON.stringify(policy) && typeof s.halted === "boolean" && Array.isArray(s.entries) && new Set(s.entries.map((e) => e?.id)).size === s.entries.length && s.entries.every((e) => (exact(e, [
+		"id",
+		"maxOutputTokens",
+		"reservationMicroUsd",
+		"phase",
+		"usage"
+	]) || exact(e, [
+		"id",
+		"maxOutputTokens",
+		"reservationMicroUsd",
+		"phase",
+		"usage",
+		"reviewDisposition"
+	]) && validConservativeDisposition(e)) && typeof e.id === "string" && e.id.length > 0 && e.id.length <= 128 && integer(e.maxOutputTokens, 1) && e.maxOutputTokens <= policy.maxOutputTokens && e.reservationMicroUsd === amount(e.maxOutputTokens) && [
+		"reserved",
+		"in_flight",
+		"accounted",
+		"unknown"
+	].includes(e.phase) && (e.phase === "accounted" ? validUsage(e.usage, e) : e.usage === null)) && integer(s.entries.reduce((sum, e) => sum + e.reservationMicroUsd, 0)) && s.entries.reduce((sum, e) => sum + e.reservationMicroUsd, 0) <= policy.totalMicroUsd;
+	let state, poisoned = false;
+	try {
+		const raw = store.read();
+		state = raw === null ? {
+			version: 1,
+			policy: structuredClone(policy),
+			halted: false,
+			entries: []
+		} : JSON.parse(raw);
+		if (!valid(state)) throw Error();
+	} catch {
+		throw Error("DEMO_BUDGET_RECOVERY_REQUIRED");
+	}
+	const persist = (next) => {
+		if (poisoned || !valid(next)) throw Error("DEMO_BUDGET_RECOVERY_REQUIRED");
+		try {
+			store.write(JSON.stringify(next));
+			state = next;
+		} catch {
+			poisoned = true;
+			throw Error("DEMO_BUDGET_RECOVERY_REQUIRED");
+		}
+	};
+	if (state.entries.some(unresolvedReservation)) {
+		const next = structuredClone(state);
+		next.halted = true;
+		for (const e of next.entries) if (e.phase === "in_flight") e.phase = "unknown";
+		persist(next);
+	}
+	const eligible = () => {
+		if (poisoned) throw Error("DEMO_BUDGET_RECOVERY_REQUIRED");
+		if (state.halted || state.entries.some(unresolvedReservation)) throw Error("DEMO_USAGE_REVIEW_REQUIRED");
+		if (!Number.isFinite(now().getTime()) || now().getTime() >= Date.parse(policy.expiresAt)) throw Error("DEMO_PRICE_REVIEW_REQUIRED");
+	};
+	const summary = () => {
+		if (poisoned) throw Error("DEMO_BUDGET_RECOVERY_REQUIRED");
+		const reservedMicroUsd = state.entries.reduce((s, e) => s + e.reservationMicroUsd, 0);
+		return {
+			reservedMicroUsd,
+			remainingMicroUsd: policy.totalMicroUsd - reservedMicroUsd,
+			halted: state.halted,
+			entries: state.entries.length
+		};
+	};
+	const markUnknown = (id) => {
+		if (poisoned) throw Error("DEMO_BUDGET_RECOVERY_REQUIRED");
+		const next = structuredClone(state), entry = next.entries.find((e) => e.id === id);
+		if (!entry) throw Error("DEMO_USAGE_REVIEW_REQUIRED");
+		if (entry.phase === "accounted" || validConservativeDisposition(entry)) return;
+		entry.phase = "unknown";
+		entry.usage = null;
+		next.halted = true;
+		persist(next);
+	};
+	return {
+		summary,
+		reserve({ model, maxOutputTokens, inputBytes }) {
+			eligible();
+			if (model !== policy.model) throw Error("DEMO_MODEL_REFUSED");
+			if (!integer(inputBytes) || !integer(maxOutputTokens, 1) || maxOutputTokens > policy.maxOutputTokens) throw Error("INVALID_OUTPUT_LIMIT");
+			const reservationMicroUsd = amount(maxOutputTokens);
+			if (summary().reservedMicroUsd + reservationMicroUsd > policy.totalMicroUsd) throw Error("DEMO_BUDGET_EXHAUSTED");
+			const id = nextId();
+			if (typeof id !== "string" || !id || id.length > 128 || state.entries.some((e) => e.id === id)) throw Error("DEMO_BUDGET_RECOVERY_REQUIRED");
+			const next = structuredClone(state);
+			next.entries.push({
+				id,
+				maxOutputTokens,
+				reservationMicroUsd,
+				phase: "reserved",
+				usage: null
+			});
+			persist(next);
+			return id;
+		},
+		beforeRequest(id) {
+			eligible();
+			const next = structuredClone(state), entry = next.entries.find((e) => e.id === id);
+			if (!entry || entry.phase !== "reserved") throw Error("DEMO_USAGE_REVIEW_REQUIRED");
+			entry.phase = "in_flight";
+			persist(next);
+			if (now().getTime() >= Date.parse(policy.expiresAt)) throw Error("DEMO_PRICE_REVIEW_REQUIRED");
+		},
+		recordUsage(id, usage) {
+			const next = structuredClone(state), entry = next.entries.find((e) => e.id === id);
+			if (!entry || entry.phase !== "in_flight" || !validUsage(usage, entry)) {
+				markUnknown(id);
+				throw Error("DEMO_USAGE_REVIEW_REQUIRED");
+			}
+			entry.phase = "accounted";
+			entry.usage = structuredClone(usage);
+			persist(next);
+		},
+		markUnknown
+	};
+}
+//#endregion
+export { createProviderBudget };

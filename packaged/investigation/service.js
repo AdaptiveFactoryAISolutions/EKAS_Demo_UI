@@ -1,0 +1,1969 @@
+import { API_VERSION } from "../platform/contract.js";
+import { MockRepository } from "../platform/mockRepository.js";
+import { currentTrainingContext, validTrainingSourceContext } from "../platform/trainingContext.js";
+import { auditDiscoveryReply } from "./auditDiscoveryDialogue.js";
+import { plantReviewPriorityQuestion } from "./plantReviewPriority.js";
+import { notificationRequest } from "./notifications.js";
+import { captureNotification, notificationPresentation, notificationQuestion } from "./notificationConversation.js";
+import { obligationRequest } from "./obligations.js";
+import { captureObligation, obligationPresentation, obligationQuestion } from "./obligationConversation.js";
+import { caseFixtures } from "./cases.js";
+import { genealogyRequest } from "./lotGenealogy.js";
+import { captureGenealogy, genealogyPresentation, genealogyQuestion } from "./lotGenealogyConversation.js";
+import { integrationHealthRequest } from "./integrationHealth.js";
+import { createWorkflow, executeWorkflow, validateWorkflow, workflowView } from "./workflow.js";
+import { measurementTrustRequest } from "./measurementTrust.js";
+import { captureMeasurementTrust, measurementTrustPresentation, measurementTrustQuestion } from "./measurementTrustConversation.js";
+import { captureIntegrationHealth, integrationHealthPresentation, integrationHealthQuestion } from "./integrationHealthConversation.js";
+import { evidenceRequest, validEvidenceQuery } from "./evidenceQueries.js";
+import { evidenceCaptureRequest, validEvidenceCapture } from "./evidenceCaptures.js";
+import { diagnosticRequest } from "./diagnostics.js";
+import { captureDiagnostic, diagnosticPresentation, diagnosticQuestion } from "./diagnosticConversation.js";
+import { requestedCalendarMonth, requestedHypothesisOrdinal, requestedScopeText } from "./requestOperands.js";
+import { interpretCutoff } from "./cutoffInterpretation.js";
+import { operatingReview } from "./operatingReview.js";
+import { demoClockSentence, roleName } from "./plantPresentation.js";
+import { acceptsOfferedProductionDay, emptyConversationContext, presentTurn, routeConversation, unselectedConversationContext, unselectedInvestigationQuestion } from "./conversation.js";
+import { assetScopeClarificationContext, assetScopeClarificationPresentation, canonicalAssetSyntaxQuestion, resolveAssetScope } from "./assetScopeInterpretation.js";
+import { currentConversationScopeIssue, historicalScopeAntecedent } from "./conversationScopeEligibility.js";
+import { validWorkspaceQuery } from "../retained/stateValidation.js";
+import { executeTrainingTurn, initialTrainingContext, initialTrainingPresentation, trainingAssetIds } from "./trainingPort.js";
+import { createMetricDemonstrationResult, metricDemonstrationPresentation, metricDemonstrationRequest, validMetricDemonstrationCapture } from "./metricDemonstrationConversation.js";
+import { metricDemonstrationRequest as metricDemonstrationRequest$1 } from "./metricDemonstrations.js";
+import { collectorScopeMatches } from "./collectorScope.js";
+import { governedRequest, validCorrectionChain } from "./governedRecords.js";
+import { dependencyRequest, dependencyView, validDependencyRecords } from "./dependencies.js";
+import { decisionSupportRequest } from "./decisionSupport.js";
+import { canonicalTurnReceipt, validCanonicalSupplement } from "../server/canonicalTurnReceipt.js";
+import { modelPresentation, validModelCapture } from "../server/modelCapture.js";
+import { bindMetricPublication, bindMetricPublicationV2, bindMetricPublicationV3, bindMetricPublicationV4, bindMetricPublicationV5 } from "./metricPublication.js";
+import { isPresentationRequest, presentationContract } from "./presentationContract.js";
+import { publicationScopeIssueV11, scopePublicationContext, scopePublicationPresentation } from "./publicationScope.js";
+import { guideReturnContext, guideReturnPresentation, isGuideReturnQuestion, validGuideReturnCapture, verifiedGuideOrigin } from "./guideActions.js";
+import { comparisonCatalog, comparisonRequest, validComparison } from "./comparison.js";
+import { contextualGuideClock, contextualGuidePresentation, isGuideQuestion, nonManufacturingGuideTarget, validContextualGuide } from "./contextualGuide.js";
+import { reviewedClaimsPresentation, validReviewedClaimsCapture } from "./claimReadModel.js";
+import { evidenceReviewPresentation, evidenceReviewStep, isEvidenceReviewCancellation, validEvidenceReviewDraft } from "./conversationalEvidenceReview.js";
+import { claimReviewPresentation, claimReviewStep, isClaimReviewCancellation, validClaimReviewDraft } from "./conversationalClaimReview.js";
+import { comparisonClarificationPresentation, comparisonTurnPresentation, routeComparisonQuestion } from "./conversationComparison.js";
+import { correctionReviewPresentation, correctionReviewStep, validCorrectionDraft } from "./conversationalReview.js";
+import { auditClaims, auditPresentation, auditRequest, auditView, validAuditCapture } from "./auditRefresh.js";
+import { correctionRecords, revisionClaims, revisionPresentation, sourceRevision, validRevisionCapture } from "./revisionPolicy.js";
+import { turnSemantics } from "./turnSemantics.js";
+import { manufacturingContract } from "./manufacturingContract.js";
+import { createAuditDiscovery, createMonthlyInvestigation, executeMonthly, monthlySummary, validateMonthly } from "./monthlyInvestigation.js";
+import "./clientPort.js";
+//#region app/src/investigation/service.ts
+const domain = "manufacturing-investigation-v2";
+const conversationDomain = "manufacturing-conversation-v1";
+const owner = "manufacturing-demo";
+const syntheticManufacturingAssets = Object.freeze([
+	"FEED-01",
+	"FEED-02",
+	"FEED-03",
+	"PRESS-S1",
+	"FORM-Q1",
+	"MONTH-MACHINE1",
+	"MONTH-MACHINE2",
+	...trainingAssetIds
+]);
+[...syntheticManufacturingAssets];
+const validatedSnapshots = /* @__PURE__ */ new Map();
+function validCapturedView(snapshot, view, asOf, includeSemantics = false) {
+	if (snapshot === null) return view === null;
+	if (!snapshot || snapshot.asOf !== asOf) return false;
+	const key = (includeSemantics ? "typed:" : "legacy:") + JSON.stringify(snapshot);
+	let expected = validatedSnapshots.get(key);
+	if (expected === void 0) {
+		if (!validateWorkflow(snapshot)) return false;
+		expected = JSON.stringify(workflowView(snapshot, includeSemantics));
+		if (validatedSnapshots.size >= 200) validatedSnapshots.delete(validatedSnapshots.keys().next().value);
+		validatedSnapshots.set(key, expected);
+	}
+	return JSON.stringify(view) === expected;
+}
+function validConversationResult(value, id) {
+	const r = value;
+	return !!r && r.kind === "conversation" && r.synthetic === true && typeof r.id === "string" && (!id || r.id === id) && Number.isSafeInteger(r.version) && r.version > 0 && Array.isArray(r.assetIds) && r.assetIds.every((a) => typeof a === "string") && r.content?.domain === conversationDomain && validConversation(r.content.conversation, r.id);
+}
+function retainPausedCollector(c) {
+	const capture = c.turns.filter((t) => c.claimReviewDraft ? !!t.claimReviewCapture?.after : c.evidenceReviewDraft ? !!t.evidenceReviewCapture?.after : false).at(-1);
+	if (capture?.captureId) c.pausedCollectorIds = [.../* @__PURE__ */ new Set([...c.pausedCollectorIds || [], capture.captureId])];
+}
+function validConversation(value, containerId) {
+	const c = value;
+	if (!c || c.schemaVersion !== 1 || typeof c.archived !== "boolean" || !Array.isArray(c.turns) || c.turns.length > 200 || !c.context || ![
+		"oee",
+		"availability",
+		"performance",
+		"quality",
+		"fpy",
+		"downtime"
+	].includes(c.context.metric) || !c.investigationIds || ![
+		"manufacturing",
+		"training",
+		"metric-demonstration"
+	].includes(c.dataset) || !validWorkspaceQuery(c.trainingContext) || !c.trainingPresentation || !c.monthlyContext) return false;
+	if (c.dataset === "metric-demonstration") {
+		const last = c.turns.filter((t) => t.metricDemonstrationCapture).at(-1)?.metricDemonstrationCapture;
+		if (!last) return false;
+		const r = last.result, expected = {
+			metricId: r.query.metricIds[0],
+			contextId: r.query.scope.scenarioId,
+			resultId: r.id,
+			asOf: r.query.asOf
+		};
+		if (JSON.stringify(c.metricDemonstrationContext) !== JSON.stringify(expected)) return false;
+	}
+	if (c.pausedCollectorIds !== void 0 && (!Array.isArray(c.pausedCollectorIds) || new Set(c.pausedCollectorIds).size !== c.pausedCollectorIds.length || c.pausedCollectorIds.some((id) => !c.turns.some((t) => t.captureId === id && (t.claimReviewCapture?.after || t.evidenceReviewCapture?.after))))) return false;
+	if (c.collectorScopePaused !== void 0 && (typeof c.collectorScopePaused !== "boolean" || c.collectorScopePaused !== !!((c.evidenceReviewDraft || c.claimReviewDraft) && !collectorScopeMatches(c.context, caseFixtures[(c.evidenceReviewDraft || c.claimReviewDraft).caseId])))) return false;
+	if (c.evidenceReviewDraft && JSON.stringify(c.evidenceReviewDraft) !== JSON.stringify(c.turns.filter((t) => t.evidenceReviewCapture).at(-1)?.evidenceReviewCapture?.after) || c.claimReviewDraft && JSON.stringify(c.claimReviewDraft) !== JSON.stringify(c.turns.filter((t) => t.claimReviewCapture).at(-1)?.claimReviewCapture?.after)) return false;
+	if (c.evidenceReviewDraft && !validEvidenceReviewDraft(c.evidenceReviewDraft) || c.claimReviewDraft && !validClaimReviewDraft(c.claimReviewDraft) || c.reviewDraft && !validCorrectionDraft(c.reviewDraft) || c.comparisonId !== void 0 && !/^comparison-[1-9]\d*$/.test(c.comparisonId)) return false;
+	return c.turns.every((t, index) => (t.assetScopeClarificationCapture?.schemaVersion !== 3 || c.turns.slice(0, index).some((o) => o.id === t.assetScopeClarificationCapture.originTurnId && o.question === t.assetScopeClarificationCapture.originQuestion && JSON.stringify(o.requestContext) === JSON.stringify(t.assetScopeClarificationCapture.originRequestContext))) && (t.dialogueVersion !== 1 || typeof t.captureId === "string" && (!containerId || t.captureId === containerId + "/" + t.id)) && typeof t.question === "string" && typeof t.answer?.text === "string" && Array.isArray(t.answer.sourceIds) && t.answer.sourceIds.every((s) => typeof s === "string") && t.context && t.actor && Array.isArray(t.commands) && validCapturedView(t.workflowSnapshot, t.view, t.asOf, t.dialogueVersion === 1) && (!t.presentationCapture || index > 0 && t.presentationCapture.previousTurnId === c.turns[index - 1].id && JSON.stringify(t.presentationCapture.previousAnswer) === JSON.stringify(c.turns[index - 1].answer) && JSON.stringify(t.presentationCapture.previousView) === JSON.stringify(c.turns[index - 1].presentationCapture?.previousView || c.turns[index - 1].view || (t.presentationCapture.schemaVersion >= 2 && c.turns[index - 1].guideReturnCapture?.origin ? workflowView(c.turns[index - 1].guideReturnCapture.origin.workflow, true) : null)) && JSON.stringify(t.presentationCapture.beforeContext) === JSON.stringify(t.requestContext)) && (!t.providerInterpretationCapture || validCanonicalSupplement(t.providerInterpretationCapture, t, containerId)) && validCapturedAnswer(t, c.turns.slice(0, index)) && validCapturedSemantics(t));
+}
+function capturedSemantics(t) {
+	const routed = routeConversation(t.routingQuestion, t.requestContext, t.reviewAsOf, t.reviewAsOf === void 0, t.dialogueVersion === 1, t.scopedDialogue === 1, t.interactionVersion === 1, t.scopeInterpretationVersion ?? 1, t.assignmentIntentVersion === 2 ? 2 : 1, t.intentContextVersion === 5 ? 5 : t.intentContextVersion === 4 ? 4 : t.intentContextVersion === 3 ? 3 : t.intentContextVersion === 2 ? 2 : 1, t.clockOperandVersion === 2 ? 2 : 1, t.diagnosticPolicyVersion === 1 ? 1 : 0, t.integrationHealthPolicyVersion === 1 ? 1 : 0, t.measurementTrustPolicyVersion === 1 ? 1 : 0, t.genealogyPolicyVersion === 1 ? 1 : 0, t.obligationPolicyVersion === 1 ? 1 : 0, t.notificationPolicyVersion === 1 ? 1 : 0, t.topicContextPolicyVersion === 8 ? 8 : t.topicContextPolicyVersion === 7 ? 7 : t.topicContextPolicyVersion === 6 ? 6 : t.topicContextPolicyVersion === 5 ? 5 : t.topicContextPolicyVersion === 4 ? 4 : t.topicContextPolicyVersion === 3 ? 3 : t.topicContextPolicyVersion === 2 ? 2 : t.topicContextPolicyVersion === 1 ? 1 : 0);
+	const envelope = turnSemantics({
+		turnId: t.captureId || t.id,
+		asOf: t.asOf,
+		intent: t.context.lastIntent,
+		question: t.question,
+		answer: t.answer,
+		...t.training?.sourceContext || t.trainingModelContext ? { sourceDomain: "training" } : {},
+		previousContext: t.requestContext,
+		context: t.context,
+		workflow: t.workflowSnapshot,
+		view: t.view,
+		monthly: t.monthlySnapshot,
+		review: t.reviewSnapshot,
+		committedKinds: t.commands.map((c) => c.kind),
+		attemptedKinds: routed.commands.map((c) => c.kind),
+		blocked: t.blocked
+	});
+	if (t.auditRefreshCapture) envelope.claims = auditClaims(t.auditRefreshCapture, t.captureId || t.id);
+	if (t.revisionCapture) envelope.claims = revisionClaims(t.revisionCapture, t.captureId || t.id);
+	return envelope;
+}
+function validCapturedSemantics(t) {
+	try {
+		if (t.topicContextPolicyVersion !== void 0 && ![
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8
+		].includes(t.topicContextPolicyVersion)) return false;
+		if (t.notificationPolicyVersion !== void 0 && t.notificationPolicyVersion !== 1) return false;
+		if (t.genealogyPolicyVersion !== void 0 && t.genealogyPolicyVersion !== 1) return false;
+		if (t.measurementTrustPolicyVersion !== void 0 && t.measurementTrustPolicyVersion !== 1) return false;
+		if (t.integrationHealthPolicyVersion !== void 0 && t.integrationHealthPolicyVersion !== 1) return false;
+		if (t.metricPublicationVersion !== void 0 && ![
+			1,
+			2,
+			3,
+			4,
+			5
+		].includes(t.metricPublicationVersion)) return false;
+		if (t.scopeInterpretationVersion !== void 0 && ![
+			2,
+			3,
+			4
+		].includes(t.scopeInterpretationVersion)) return false;
+		if (t.assignmentIntentVersion !== void 0 && t.assignmentIntentVersion !== 2) return false;
+		if (t.intentContextVersion !== void 0 && ![
+			2,
+			3,
+			4,
+			5
+		].includes(t.intentContextVersion)) return false;
+		if (t.clockOperandVersion !== void 0 && t.clockOperandVersion !== 2) return false;
+		if (t.interactionVersion !== void 0 && t.interactionVersion !== 1) return false;
+		if (t.scopedDialogue !== void 0 && t.scopedDialogue !== 1) return false;
+		if (t.dialogueVersion !== void 0 && t.dialogueVersion !== 1) return false;
+		if (t.dialogueVersion === 1 && (t.context.lastIntent === "audit" || t.reviewSnapshot) && JSON.stringify(t.reviewSnapshot) !== JSON.stringify(operatingReview(t.reviewAsOf))) return false;
+		return t.dialogueVersion === 1 ? JSON.stringify(t.semanticEnvelope) === JSON.stringify(capturedSemantics(t)) : t.semanticEnvelope === void 0;
+	} catch {
+		return false;
+	}
+}
+function validCapturedAnswer(t, previousTurns = []) {
+	try {
+		if (t.notificationCapture) {
+			if (!t.workflowSnapshot || !t.investigationId || !t.investigationVersion || t.commands.length || t.notificationPolicyVersion !== 1 || !validateWorkflow(t.workflowSnapshot)) return false;
+			const r = {
+				id: t.investigationId,
+				version: t.investigationVersion,
+				content: { workflow: t.workflowSnapshot }
+			};
+			return JSON.stringify(t.notificationCapture) === JSON.stringify(captureNotification(r, t.question)) && JSON.stringify(t.answer) === JSON.stringify(notificationPresentation(t.notificationCapture));
+		}
+		if (t.obligationCapture) {
+			if (!t.workflowSnapshot || !t.investigationId || !t.investigationVersion || t.commands.length || t.obligationPolicyVersion !== 1 || !validateWorkflow(t.workflowSnapshot)) return false;
+			const r = {
+				id: t.investigationId,
+				version: t.investigationVersion,
+				content: { workflow: t.workflowSnapshot }
+			};
+			return JSON.stringify(t.obligationCapture) === JSON.stringify(captureObligation(r, t.question)) && JSON.stringify(t.answer) === JSON.stringify(obligationPresentation(t.obligationCapture));
+		}
+		if (t.genealogyCapture) {
+			if (!t.workflowSnapshot || !t.investigationId || !t.investigationVersion || t.commands.length || t.genealogyPolicyVersion !== 1 || !validateWorkflow(t.workflowSnapshot)) return false;
+			const r = {
+				id: t.investigationId,
+				version: t.investigationVersion,
+				content: { workflow: t.workflowSnapshot }
+			};
+			return JSON.stringify(t.genealogyCapture) === JSON.stringify(captureGenealogy(r, t.question)) && JSON.stringify(t.answer) === JSON.stringify(genealogyPresentation(t.genealogyCapture));
+		}
+		if (t.measurementTrustCapture) {
+			if (!t.workflowSnapshot || !t.investigationId || !t.investigationVersion || t.commands.length || t.measurementTrustPolicyVersion !== 1 || !validateWorkflow(t.workflowSnapshot)) return false;
+			const r = {
+				id: t.investigationId,
+				version: t.investigationVersion,
+				content: { workflow: t.workflowSnapshot }
+			};
+			return JSON.stringify(t.measurementTrustCapture) === JSON.stringify(captureMeasurementTrust(r, t.question)) && JSON.stringify(t.answer) === JSON.stringify(measurementTrustPresentation(t.measurementTrustCapture));
+		}
+		if (t.integrationHealthCapture) {
+			if (!t.workflowSnapshot || !t.investigationId || !t.investigationVersion || t.commands.length || t.integrationHealthPolicyVersion !== 1 || !validateWorkflow(t.workflowSnapshot)) return false;
+			const r = {
+				id: t.investigationId,
+				version: t.investigationVersion,
+				content: { workflow: t.workflowSnapshot }
+			};
+			return JSON.stringify(t.integrationHealthCapture) === JSON.stringify(captureIntegrationHealth(r, t.question)) && JSON.stringify(t.answer) === JSON.stringify(integrationHealthPresentation(t.integrationHealthCapture));
+		}
+		if (t.diagnosticCapture) {
+			const d = t.diagnosticCapture;
+			if (!t.workflowSnapshot || !t.investigationId || !t.investigationVersion || t.commands.length || t.diagnosticPolicyVersion !== 1 || !validateWorkflow(t.workflowSnapshot)) return false;
+			const r = {
+				id: t.investigationId,
+				version: t.investigationVersion,
+				content: { workflow: t.workflowSnapshot }
+			};
+			return JSON.stringify(d) === JSON.stringify(captureDiagnostic(r, t.question, t.context.lastIntent, t.context)) && JSON.stringify(t.answer) === JSON.stringify(diagnosticPresentation(d));
+		}
+		if (t.metricDemonstrationCapture) return validMetricDemonstrationCapture(t.metricDemonstrationCapture) && t.question === t.metricDemonstrationCapture.question && t.asOf === t.metricDemonstrationCapture.result.query.asOf && t.view === null && t.workflowSnapshot === null && t.commands.length === 0 && JSON.stringify(t.answer) === JSON.stringify(metricDemonstrationPresentation(t.metricDemonstrationCapture));
+		if (t.modelCapture && t.trainingModelContext && JSON.stringify(t.trainingModelContext) !== JSON.stringify(currentTrainingContext({
+			trainingContext: t.trainingModelContext.query,
+			turns: previousTurns
+		}))) return false;
+		if (t.modelCapture) return t.question === t.modelCapture.question && t.commands.length === 0 && validModelCapture(t.modelCapture, t.view, t.context, t.trainingModelContext) && JSON.stringify(t.answer) === JSON.stringify(modelPresentation(t.modelCapture));
+		if (t.presentationCapture) {
+			const p = t.presentationCapture;
+			return t.question === p.question && t.asOf === p.asOf && t.view === null && t.workflowSnapshot === null && t.commands.length === 0 && JSON.stringify(t.context) === JSON.stringify(p.context) && JSON.stringify(t.answer) === JSON.stringify(presentationContract(p));
+		}
+		if (t.scopePublicationCapture) {
+			const c = t.scopePublicationCapture;
+			return (c.schemaVersion === 7 ? [void 0, "v82"] : [void 0]).some((policy) => {
+				try {
+					return t.question === c.question && t.asOf === c.asOf && t.view === null && t.workflowSnapshot === null && t.commands.length === 0 && JSON.stringify(t.requestContext) === JSON.stringify(c.before) && JSON.stringify(t.context) === JSON.stringify(scopePublicationContext(c, policy)) && JSON.stringify(t.answer) === JSON.stringify(scopePublicationPresentation(c, policy));
+				} catch {
+					return false;
+				}
+			});
+		}
+		if (t.guideReturnCapture) {
+			const g = t.guideReturnCapture;
+			return validGuideReturnCapture(g) && t.question === g.question && t.asOf === g.asOf && JSON.stringify(t.requestContext) === JSON.stringify(g.context) && JSON.stringify(t.context) === JSON.stringify(guideReturnContext(g.origin, g.context)) && t.commands.length === 0 && t.view === null && t.workflowSnapshot === null && JSON.stringify(t.answer) === JSON.stringify(guideReturnPresentation(g));
+		}
+		if (t.contextualGuideCapture) return validContextualGuide(t.contextualGuideCapture) && t.asOf === contextualGuideClock(t.contextualGuideCapture) && t.investigationVersion === t.contextualGuideCapture.resourceVersion && t.question === t.contextualGuideCapture.question && JSON.stringify(t.requestContext) === JSON.stringify(t.contextualGuideCapture.context) && t.commands.length === 0 && t.view === null && t.workflowSnapshot === null && JSON.stringify(t.answer) === JSON.stringify(contextualGuidePresentation(t.contextualGuideCapture));
+		if (t.evidenceReviewCapture) return t.question === t.evidenceReviewCapture.question && t.view === null && t.workflowSnapshot === null && t.commands.length === 0 && t.reviewSnapshot === void 0 && t.monthlySnapshot === void 0 && JSON.stringify(t.answer) === JSON.stringify(evidenceReviewPresentation(t.evidenceReviewCapture));
+		if (t.claimReviewCapture) return t.question === t.claimReviewCapture.question && t.view === null && t.workflowSnapshot === null && t.commands.length === 0 && t.reviewSnapshot === void 0 && t.monthlySnapshot === void 0 && JSON.stringify(t.answer) === JSON.stringify(claimReviewPresentation(t.claimReviewCapture));
+		if (t.assetScopeClarificationCapture) {
+			const c = t.assetScopeClarificationCapture;
+			return [
+				2,
+				3,
+				4
+			].includes(t.scopeInterpretationVersion || 0) && t.question === c.question && t.asOf === c.asOf && (c.schemaVersion !== 2 || JSON.stringify(t.context) === JSON.stringify(assetScopeClarificationContext(c))) && JSON.stringify(t.requestContext) === JSON.stringify(c.previousContext) && t.view === null && t.workflowSnapshot === null && t.monthlySnapshot === void 0 && t.reviewSnapshot === void 0 && t.commands.length === 0 && JSON.stringify(t.answer) === JSON.stringify(assetScopeClarificationPresentation(c));
+		}
+		if (t.comparisonTurnCapture) return t.asOf === (t.comparisonTurnCapture.originalClock?.asOf || t.comparisonTurnCapture.record.state.asOf) && t.view === null && t.workflowSnapshot === null && JSON.stringify(t.answer) === JSON.stringify(comparisonTurnPresentation(t.comparisonTurnCapture));
+		if (t.comparisonClarificationCapture) return t.question === t.comparisonClarificationCapture.question && t.view === null && t.workflowSnapshot === null && JSON.stringify(t.answer) === JSON.stringify(comparisonClarificationPresentation(t.comparisonClarificationCapture));
+		if (t.correctionReviewCapture) return t.question === t.correctionReviewCapture.question && t.view === null && t.workflowSnapshot === null && t.reviewSnapshot === void 0 && t.monthlySnapshot === void 0 && JSON.stringify(t.answer) === JSON.stringify(correctionReviewPresentation(t.correctionReviewCapture));
+		if (t.reviewedClaimsCapture) return validReviewedClaimsCapture(t.reviewedClaimsCapture) && t.asOf === t.reviewedClaimsCapture.asOf && t.view === null && t.workflowSnapshot === null && t.monthlySnapshot === void 0 && t.reviewSnapshot === void 0 && JSON.stringify(t.answer) === JSON.stringify(reviewedClaimsPresentation(t.reviewedClaimsCapture));
+		if (t.auditRefreshCapture) return validAuditCapture(t.auditRefreshCapture) && t.asOf === t.auditRefreshCapture.asOf && t.view === null && t.workflowSnapshot === null && t.reviewSnapshot === void 0 && t.monthlySnapshot === void 0 && JSON.stringify(t.answer) === JSON.stringify(auditPresentation(t.auditRefreshCapture));
+		if (t.revisionCapture) return validRevisionCapture(t.revisionCapture) && t.asOf === t.revisionCapture.asOf && t.view === null && t.workflowSnapshot === null && t.reviewSnapshot === void 0 && t.monthlySnapshot === void 0 && JSON.stringify(t.answer) === JSON.stringify(revisionPresentation(t.revisionCapture, t.context.metric));
+		if (t.monthlySnapshot) {
+			if (!validateMonthly(t.monthlySnapshot) || t.asOf !== t.monthlySnapshot.asOf || !t.investigationId || t.view !== null || t.workflowSnapshot !== null) return false;
+			for (const policy of t.intentContextVersion === 5 ? [5] : t.intentContextVersion === 4 ? [4] : t.intentContextVersion === 2 ? [2, 3] : t.intentContextVersion === 3 ? [3] : [1]) {
+				const routed = routeConversation(t.routingQuestion, t.requestContext, t.reviewAsOf, t.reviewAsOf === void 0, t.dialogueVersion === 1, t.scopedDialogue === 1, t.interactionVersion === 1, t.scopeInterpretationVersion ?? 1, t.assignmentIntentVersion === 2 ? 2 : 1, policy, t.clockOperandVersion === 2 ? 2 : 1, t.diagnosticPolicyVersion === 1 ? 1 : 0, t.integrationHealthPolicyVersion === 1 ? 1 : 0, t.measurementTrustPolicyVersion === 1 ? 1 : 0, t.genealogyPolicyVersion === 1 ? 1 : 0, t.obligationPolicyVersion === 1 ? 1 : 0, t.notificationPolicyVersion === 1 ? 1 : 0, t.topicContextPolicyVersion === 8 ? 8 : t.topicContextPolicyVersion === 7 ? 7 : t.topicContextPolicyVersion === 6 ? 6 : t.topicContextPolicyVersion === 5 ? 5 : t.topicContextPolicyVersion === 4 ? 4 : t.topicContextPolicyVersion === 3 ? 3 : t.topicContextPolicyVersion === 2 ? 2 : t.topicContextPolicyVersion === 1 ? 1 : 0);
+				const expected = (t.topicContextPolicyVersion ?? 0) >= 3 && t.monthlySnapshot.sourceKind === "operating-review" ? auditDiscoveryReply(t.monthlySnapshot, t.routingQuestion, routed.intent, t.blocked, routed.precedingIntent, (t.topicContextPolicyVersion ?? 0) >= 5 ? 1 : 0) : t.blocked ? {
+					text: "I could not progress that step. " + t.blocked + " The saved investigation remains unchanged.",
+					evidence: "none",
+					chart: false,
+					metric: t.context.metric,
+					sourceIds: [],
+					qualification: t.blocked
+				} : [
+					"audit-discovery",
+					"command",
+					"hypothesis-records",
+					"hypotheses",
+					"tests",
+					"owner",
+					"action",
+					"verification",
+					"verification-plan",
+					"sustain",
+					"next"
+				].includes(routed.intent) ? monthlySummary(t.monthlySnapshot, t.dialogueVersion !== 1) : presentTurn(routed, null, void 0, t.reviewAsOf, t.reviewAsOf === void 0, t.dialogueVersion === 1, t.interactionVersion === 1);
+				if (JSON.stringify(t.metricPublicationVersion === 5 ? bindMetricPublicationV5(t.question, t.context, t.view, expected, t.requestContext) : t.metricPublicationVersion === 4 ? bindMetricPublicationV4(t.question, t.context, t.view, expected, t.requestContext) : t.metricPublicationVersion === 3 ? bindMetricPublicationV3(t.question, t.context, null, expected, t.requestContext) : t.metricPublicationVersion === 2 ? bindMetricPublicationV2(t.question, t.context, null, expected, t.requestContext) : expected) === JSON.stringify(t.answer)) return true;
+			}
+			return false;
+		}
+		if (!t.requestContext || typeof t.routingQuestion !== "string") return false;
+		if (t.training) return validWorkspaceQuery(t.training.queryContext) && t.training.asOf === t.asOf && Array.isArray(t.training.rows) && Array.isArray(t.training.answers) && (t.training.sourceContext === void 0 || validTrainingSourceContext(t.training.sourceContext, t.training));
+		for (const policy of t.intentContextVersion === 5 ? [5] : t.intentContextVersion === 4 ? [4] : t.intentContextVersion === 2 ? [2, 3] : t.intentContextVersion === 3 ? [3] : [1]) {
+			const routed = routeConversation(t.routingQuestion, t.requestContext, t.reviewAsOf, t.reviewAsOf === void 0, t.dialogueVersion === 1, t.scopedDialogue === 1, t.interactionVersion === 1, t.scopeInterpretationVersion ?? 1, t.assignmentIntentVersion === 2 ? 2 : 1, policy, t.clockOperandVersion === 2 ? 2 : 1, t.diagnosticPolicyVersion === 1 ? 1 : 0, t.integrationHealthPolicyVersion === 1 ? 1 : 0, t.measurementTrustPolicyVersion === 1 ? 1 : 0, t.genealogyPolicyVersion === 1 ? 1 : 0, t.obligationPolicyVersion === 1 ? 1 : 0, t.notificationPolicyVersion === 1 ? 1 : 0, t.topicContextPolicyVersion === 8 ? 8 : t.topicContextPolicyVersion === 7 ? 7 : t.topicContextPolicyVersion === 6 ? 6 : t.topicContextPolicyVersion === 5 ? 5 : t.topicContextPolicyVersion === 4 ? 4 : t.topicContextPolicyVersion === 3 ? 3 : t.topicContextPolicyVersion === 2 ? 2 : t.topicContextPolicyVersion === 1 ? 1 : 0), expected = t.blocked ? {
+				text: "I could not progress that step. " + t.blocked + " The saved investigation remains unchanged.",
+				evidence: "none",
+				chart: false,
+				metric: routed.context.metric,
+				sourceIds: [],
+				qualification: t.blocked
+			} : presentTurn(routed, t.view, t.commands.length && t.workflowSnapshot ? commandSummary(t.commands[0], t.workflowSnapshot, t.reviewAsOf === void 0) : void 0, t.reviewAsOf, t.reviewAsOf === void 0, t.dialogueVersion === 1, t.interactionVersion === 1);
+			if (JSON.stringify(t.metricPublicationVersion === 5 ? bindMetricPublicationV5(t.question, t.context, t.view, expected, t.requestContext) : t.metricPublicationVersion === 4 ? bindMetricPublicationV4(t.question, t.context, t.view, expected, t.requestContext) : t.metricPublicationVersion === 3 ? bindMetricPublicationV3(t.question, t.context, t.view, expected, t.requestContext) : t.metricPublicationVersion === 2 ? bindMetricPublicationV2(t.question, t.context, t.view, expected, t.requestContext) : t.metricPublicationVersion === 1 ? bindMetricPublication(t.question, t.context, t.view, expected) : expected) === JSON.stringify(t.answer)) return true;
+		}
+		return false;
+	} catch {
+		return false;
+	}
+}
+/** Mock transport for real deterministic application services. No provider,
+* network, CMMS dispatch or actual authorization grant is available here. */
+var ManufacturingService = class ManufacturingService {
+	repository;
+	failure = null;
+	armFailure(kind) {
+		this.failure = kind;
+	}
+	constructor(repository) {
+		this.repository = repository;
+	}
+	async prepareConversationTurn(request, assertLease) {
+		const snapshot = await this.repository.exclusive(async () => {
+			await this.repository.ready;
+			assertLease?.();
+			if (["corrupt", "unavailable"].includes(this.repository.recovery)) throw Error("STORAGE_UNAVAILABLE");
+			return structuredClone(this.repository.state);
+		});
+		const fork = new MockRepository();
+		fork.state = structuredClone(snapshot);
+		const response = await new ManufacturingService(fork).send(request, assertLease);
+		assertLease?.();
+		if (response.error || !response.data?.content?.conversation) throw Error("CANONICAL_REQUEST_REFUSED: " + (response.error?.message || "No canonical turn"));
+		const result = response.data, turn = result.content.conversation.turns.at(-1);
+		if (!turn || turn.question !== request.body?.text) throw Error("INVALID_RESULT");
+		return {
+			baseFingerprint: JSON.stringify(snapshot),
+			state: structuredClone(fork.state),
+			result: structuredClone(result),
+			receipt: canonicalTurnReceipt(turn)
+		};
+	}
+	async commitPreparedConversationTurn(prepared, capture, actor, fingerprint, assertLease) {
+		return this.repository.exclusive(async () => {
+			await this.repository.ready;
+			assertLease?.();
+			if (["corrupt", "unavailable"].includes(this.repository.recovery)) throw Error("STORAGE_UNAVAILABLE");
+			if (JSON.stringify(this.repository.state) !== prepared.baseFingerprint) throw Error("CONTEXT_CONFLICT");
+			const existing = this.repository.state.resources.find((r) => r.id === capture.conversationId);
+			if (!existing || existing.version !== capture.expectedVersion || prepared.result.id !== capture.conversationId || prepared.result.version !== capture.expectedVersion + 1) throw Error("CONTEXT_CONFLICT");
+			const result = structuredClone(prepared.result), turn = result.content.conversation.turns.at(-1);
+			if (!validCanonicalSupplement(capture, turn, result.id) || turn.actor !== actor) throw Error("INVALID_MODEL_CAPTURE");
+			turn.providerInterpretationCapture = structuredClone(capture);
+			if (!validConversation(result.content.conversation, result.id)) throw Error("INVALID_MODEL_CAPTURE");
+			const next = structuredClone(prepared.state);
+			next.resources[next.resources.findIndex((r) => r.id === result.id)] = result;
+			for (const [key, entry] of Object.entries(next.idempotency)) if (!Object.hasOwn(this.repository.state.idempotency, key) && entry.result.id === result.id && entry.result.version === result.version) entry.result = structuredClone(result);
+			const operation = next.resources.find((r) => r.content.domain === "manufacturing-model-operation-v1" && r.content.operationId === capture.operationId && r.content.actor === actor);
+			if (!operation) throw Error("INVALID_RESULT");
+			operation.version++;
+			operation.content.status = "COMMITTED";
+			operation.updatedAt = (/* @__PURE__ */ new Date()).toISOString();
+			next.idempotency["model:" + actor + ":" + capture.operationId] = {
+				fingerprint,
+				result: structuredClone(result)
+			};
+			if (!validateManufacturingState(next)) throw Error("INVALID_MODEL_CAPTURE");
+			assertLease?.();
+			await this.repository.commit(next);
+			return structuredClone(result);
+		});
+	}
+	async commitModelTurn(capture, actor, view, workflow, asOf, fingerprint, assertLease) {
+		return this.repository.exclusive(async () => {
+			await this.repository.ready;
+			if (this.repository.recovery === "corrupt" || this.repository.recovery === "unavailable") throw Error("STORAGE_UNAVAILABLE");
+			assertLease?.();
+			const slot = "model:" + actor + ":" + capture.operationId, prior = this.repository.state.idempotency[slot];
+			if (prior) {
+				if (prior.fingerprint !== fingerprint) throw Error("IDEMPOTENCY_CONFLICT");
+				return structuredClone(prior.result);
+			}
+			const record = this.repository.state.resources.find((r) => r.id === capture.conversationId && r.content.domain === conversationDomain);
+			if (!record || !validConversation(record.content.conversation, record.id)) throw Error("INVALID_RESULT");
+			if (record.version !== capture.expectedVersion) throw Error("CONTEXT_CONFLICT");
+			const c = structuredClone(record.content.conversation);
+			if (c.archived) throw Error("CONVERSATION_ARCHIVED");
+			const trainingModelContext = c.dataset === "training" ? currentTrainingContext(c) : void 0;
+			if (!validModelCapture(capture, view, c.context, trainingModelContext)) throw Error("INVALID_MODEL_CAPTURE");
+			const turn = {
+				id: "turn-" + (c.turns.length + 1),
+				captureId: record.id + "/turn-" + (c.turns.length + 1),
+				dialogueVersion: 1,
+				question: capture.question,
+				routingQuestion: capture.question,
+				requestContext: structuredClone(c.context),
+				context: structuredClone(c.context),
+				asOf,
+				investigationId: c.investigationId,
+				investigationVersion: null,
+				view: structuredClone(view),
+				workflowSnapshot: structuredClone(workflow),
+				actor,
+				commands: [],
+				blocked: null,
+				answer: modelPresentation(capture),
+				modelCapture: structuredClone(capture),
+				...trainingModelContext ? { trainingModelContext: structuredClone(trainingModelContext) } : {}
+			};
+			turn.semanticEnvelope = capturedSemantics(turn);
+			c.turns.push(turn);
+			const result = {
+				...record,
+				version: record.version + 1,
+				content: {
+					domain: conversationDomain,
+					conversation: c
+				},
+				updatedAt: trainingModelContext ? (/* @__PURE__ */ new Date()).toISOString() : asOf
+			};
+			if (!validConversation(c, record.id)) throw Error("INVALID_MODEL_CAPTURE");
+			const next = structuredClone(this.repository.state);
+			const operation = next.resources.find((r) => r.content.domain === "manufacturing-model-operation-v1" && r.content.operationId === capture.operationId && r.content.actor === actor);
+			if (operation) {
+				operation.version++;
+				operation.content.status = "COMMITTED";
+				operation.updatedAt = (/* @__PURE__ */ new Date()).toISOString();
+			}
+			next.resources[next.resources.findIndex((r) => r.id === record.id)] = result;
+			next.idempotency[slot] = {
+				fingerprint,
+				result
+			};
+			await this.repository.commit(next);
+			return structuredClone(result);
+		});
+	}
+	async send(request, assertLease) {
+		let mutationCommitStarted = false;
+		const healthMutation = request.method === "POST" && [
+			"select-notification-snapshot",
+			"record-notification-attention",
+			"select-obligation-snapshot",
+			"record-obligation-review",
+			"select-integration-health-snapshot",
+			"select-measurement-trust-record",
+			"select-genealogy-snapshot",
+			"record-genealogy-scope-review"
+		].includes(request.body?.command?.kind);
+		const response = (status, data, code, message) => {
+			assertLease?.();
+			return {
+				requestId: request.requestId,
+				apiVersion: API_VERSION,
+				status,
+				synthetic: true,
+				...code ? { error: {
+					code,
+					message: message || code,
+					retryable: code === "STORAGE_UNAVAILABLE",
+					...healthMutation ? { details: { commitOutcome: !mutationCommitStarted && [
+						"INVALID_REQUEST",
+						"CONFLICT",
+						"FORBIDDEN",
+						"NOT_FOUND",
+						"UNKNOWN_ENDPOINT",
+						"INVALID_RESULT"
+					].includes(code) ? "not_committed" : "unknown" } } : {}
+				} } : { data }
+			};
+		};
+		return this.repository.exclusive(async () => {
+			await this.repository.ready;
+			assertLease?.();
+			if (request.apiVersion !== "ekas-proposed-v1" || request.session?.presentationOnly !== true || typeof request.session.id !== "string" || !Array.isArray(request.session.allowedAssetIds) || request.session.allowedAssetIds.some((a) => typeof a !== "string")) return response(400, void 0, "INVALID_REQUEST");
+			const actor = request.session.id.replace(/^manufacturing-/, "");
+			if (!request.session.id.startsWith("manufacturing-") || ![
+				"supervisor",
+				"maintenance",
+				"manager",
+				"safety",
+				"viewer"
+			].includes(actor)) return response(403, void 0, "FORBIDDEN");
+			if (["corrupt", "unavailable"].includes(this.repository.recovery)) return response(503, void 0, "STORAGE_UNAVAILABLE", "Stored originals require recovery; no fallback or reset was performed.");
+			if (request.path === "/api/v1/manufacturing/governed-records" || request.path.startsWith("/api/v1/manufacturing/governed-records/projections/") || request.path.startsWith("/api/v1/manufacturing/governed-records/editor/")) return await governedRequest(this.repository, request, actor, true, assertLease);
+			if (!validCorrectionChain(correctionRecords(this.repository.state.resources))) return response(422, void 0, "INVALID_RESULT", "Source correction records require recovery; no original values substituted.");
+			if (request.path === "/api/v1/manufacturing/dependencies" || request.path.startsWith("/api/v1/manufacturing/dependencies/")) return await dependencyRequest(this.repository, request, actor);
+			if (!validDependencyRecords(this.repository.state.resources)) return response(422, void 0, "INVALID_RESULT", "Dependency records require recovery.");
+			if (request.path === "/api/v1/manufacturing/evidence-captures" || request.path.startsWith("/api/v1/manufacturing/evidence-captures/")) return await evidenceCaptureRequest(this.repository, request, actor, assertLease);
+			if (request.path === "/api/v1/manufacturing/evidence-queries" || request.path.startsWith("/api/v1/manufacturing/evidence-queries/") || request.path.startsWith("/api/v1/manufacturing/evidence-queries?")) return await evidenceRequest(this.repository, request, actor, assertLease);
+			if (request.path === "/api/v1/manufacturing/metric-demonstrations") return await metricDemonstrationRequest$1(this.repository, request, assertLease);
+			if (request.path.startsWith("/api/v1/manufacturing/attention/")) return await notificationRequest(this.repository, request);
+			if (request.path.startsWith("/api/v1/manufacturing/obligations/")) return await obligationRequest(this.repository, request);
+			if (request.path.startsWith("/api/v1/manufacturing/genealogy/")) return await genealogyRequest(this.repository, request);
+			if (request.path.startsWith("/api/v1/manufacturing/measurement-trust/")) return await measurementTrustRequest(this.repository, request);
+			if (request.path.startsWith("/api/v1/manufacturing/integration-health/")) return await integrationHealthRequest(this.repository, request);
+			if (/^\/api\/v1\/manufacturing\/investigations\/[^/]+\/(diagnostics|chronology|neighborhood)(\?|$)/.test(request.path)) return await diagnosticRequest(this.repository, request, actor);
+			if (request.path === "/api/v1/manufacturing/decision-support" || request.path.startsWith("/api/v1/manufacturing/decision-support/")) return await decisionSupportRequest(this.repository, request, actor, assertLease);
+			if (request.path === "/api/v1/manufacturing/comparison-catalog" && request.method === "GET") {
+				if (!request.session.allowedAssetIds.includes("FORM-Q1")) return response(403, void 0, "FORBIDDEN");
+				return response(200, comparisonCatalog());
+			}
+			if (request.path === "/api/v1/manufacturing/comparisons" || request.path.startsWith("/api/v1/manufacturing/comparisons/")) return await comparisonRequest(this.repository, request, actor);
+			if (request.path === "/api/v1/manufacturing/audit-refresh" || request.path.startsWith("/api/v1/manufacturing/audit-refresh/")) return await auditRequest(this.repository, request, actor);
+			if (request.path === "/api/v1/manufacturing/contract" && request.method === "GET") return response(200, manufacturingContract);
+			if (request.path === "/api/v1/manufacturing/review" && request.method === "GET") {
+				if (![
+					"FEED-01",
+					"FEED-02",
+					"FEED-03",
+					"PRESS-S1",
+					"FORM-Q1"
+				].every((a) => request.session.allowedAssetIds.includes(a))) return response(403, void 0, "FORBIDDEN", "The complete operating review requires every declared plant and case asset.");
+				if (this.failure === "read") {
+					this.failure = null;
+					return response(503, void 0, "STORAGE_UNAVAILABLE", "The review read failed; prior evidence remains intact.");
+				}
+				if (sourceRevision(this.repository.state.resources, [
+					"downtime",
+					"speed",
+					"quality"
+				], "2026-10-06T14:45:00Z")) return response(409, void 0, "CONFLICT", "Plant Review is stale after an eligible source revision. Explicitly refresh revised source; original rankings and contributors are unavailable for the revised row.");
+				return response(200, operatingReview());
+			}
+			const sourceResultRoute = request.path.match(/^\/api\/v1\/manufacturing\/results\/(downtime|speed|quality)$/);
+			if (sourceResultRoute && request.method === "GET") {
+				const w = createWorkflow(sourceResultRoute[1]);
+				if (!request.session.allowedAssetIds.includes(w.context.asset)) return response(403, void 0, "FORBIDDEN");
+				if (sourceRevision(this.repository.state.resources, [w.caseId], w.asOf)) return response(409, void 0, "CONFLICT", "The original result is stale after a source revision. Refresh revised source; raw unit evidence and verification cohorts remain baseline.");
+				return response(200, {
+					...w.origin,
+					synthetic: true,
+					view: workflowView(w)
+				});
+			}
+			const route = request.path.match(/^\/api\/v1\/manufacturing\/(conversations|investigations)(?:\/([^/]+)(?:\/(messages|commands|view))?)?$/);
+			if (!route) return response(404, void 0, "UNKNOWN_ENDPOINT");
+			const [, collection, id, operation] = route, isConversation = collection === "conversations", expectedDomain = isConversation ? conversationDomain : domain;
+			const record = id ? this.repository.state.resources.find((r) => r.id === id && r.ownerSessionId === owner && (r.content.domain === expectedDomain || !isConversation && r.content.domain === "monthly-investigation-v1")) : void 0;
+			if (id && !record) return response(404, void 0, "NOT_FOUND");
+			if (record && !record.assetIds.every((a) => request.session.allowedAssetIds.includes(a))) return response(403, void 0, "FORBIDDEN");
+			if (record && (isConversation ? !validConversation(record.content.conversation, record.id) : record.content.domain === "monthly-investigation-v1" ? !validateMonthly(record.content.monthly) : !validateWorkflow(record.content.workflow))) return response(422, void 0, "INVALID_RESULT");
+			if (request.method === "GET" && this.failure === "read") {
+				this.failure = null;
+				return response(503, void 0, "STORAGE_UNAVAILABLE", "The read failed; existing records remain intact.");
+			}
+			if (request.method === "GET" && operation === "view" && !isConversation && record?.content.domain === domain) {
+				const w = record.content.workflow;
+				if (sourceRevision(this.repository.state.resources, [w.caseId], w.asOf)) return response(409, void 0, "CONFLICT", "Investigation numeric view is stale after an eligible source revision. Refresh revised source. Baseline contributors/raw unit evidence/verification cohorts cannot be used silently.");
+			}
+			if (request.method === "GET") return response(200, operation === "view" && !isConversation ? record.content.domain === "monthly-investigation-v1" ? monthlySummary(record.content.monthly) : workflowView(record.content.workflow, true) : id ? structuredClone(record) : structuredClone(this.repository.state.resources.filter((r) => (r.content.domain === expectedDomain || !isConversation && r.content.domain === "monthly-investigation-v1") && r.ownerSessionId === owner && r.assetIds.every((a) => request.session.allowedAssetIds.includes(a)))));
+			if (request.method !== "POST" || actor === "viewer" && !(record && !isConversation && operation === "commands" && request.body?.command?.kind === "record-notification-attention" && request.body?.command?.operation === "read") || request.session.role !== "engineer" && !(actor === "viewer" && request.session.role === "viewer" && record && !isConversation && operation === "commands" && request.body?.command?.kind === "record-notification-attention" && request.body?.command?.operation === "read")) return response(403, void 0, "FORBIDDEN");
+			const body = request.body, key = request.idempotencyKey;
+			if (!body || typeof body !== "object" || Array.isArray(body) || !key || key.length > 100) return response(400, void 0, "INVALID_REQUEST");
+			const allowed = isConversation ? record ? operation === "messages" ? ["expectedVersion", "text"] : ["expectedVersion", "kind"] : ["initialQuery"] : record ? ["expectedVersion", "command"] : [
+				"caseId",
+				"condition",
+				"resultRef"
+			];
+			if (Object.keys(body).some((k) => !allowed.includes(k)) || operation === "messages" && typeof body.text !== "string") return response(400, void 0, "INVALID_REQUEST", "Request fields do not match this typed endpoint.");
+			const fingerprint = JSON.stringify({
+				actor,
+				path: request.path,
+				...body,
+				expectedVersion: void 0
+			}), slot = "manufacturing:" + actor + ":" + key, old = this.repository.state.idempotency[slot];
+			if (old) return old.fingerprint === fingerprint ? response(200, structuredClone(old.result)) : response(409, void 0, "IDEMPOTENCY_CONFLICT");
+			if (record && (!Number.isSafeInteger(body.expectedVersion) || body.expectedVersion !== record.version)) return response(409, void 0, "CONFLICT", "The saved conversation or investigation changed; reload its current version.");
+			if (this.failure === "calculation") {
+				this.failure = null;
+				return response(503, void 0, "COMPUTATION_FAILED", "Calculation failed; no turn or lifecycle command was committed.");
+			}
+			const next = structuredClone(this.repository.state);
+			let result;
+			const put = (r) => {
+				const i = next.resources.findIndex((x) => x.id === r.id);
+				if (i < 0) next.resources.push(r);
+				else next.resources[i] = r;
+			};
+			const allocate = (kind, content, at, assetIds) => ({
+				id: kind + "-" + ++next.sequence,
+				kind,
+				content,
+				version: 1,
+				createdAt: at,
+				updatedAt: at,
+				ownerSessionId: owner,
+				assetIds,
+				synthetic: true,
+				notDispatched: true,
+				notGranted: true
+			});
+			try {
+				if (!record) {
+					if (operation) return response(404, void 0, "UNKNOWN_ENDPOINT");
+					if (isConversation) {
+						const training = body.initialQuery ?? initialTrainingContext();
+						if (!validWorkspaceQuery(training)) throw Error("Invalid initial query context.");
+						result = allocate("conversation", {
+							domain: conversationDomain,
+							conversation: {
+								schemaVersion: 1,
+								dataset: "manufacturing",
+								trainingContext: training,
+								trainingPresentation: initialTrainingPresentation(training),
+								monthlyContext: emptyConversationContext(),
+								context: emptyConversationContext(),
+								investigationId: null,
+								investigationIds: {},
+								archived: false,
+								turns: []
+							}
+						}, "2026-10-06T14:45:00Z", ["MONTH-MACHINE1", "MONTH-MACHINE2"]);
+					} else {
+						const w = createWorkflow(body.caseId, body.condition || "complete");
+						if (body.resultRef !== void 0 && JSON.stringify(body.resultRef) !== JSON.stringify(w.origin)) throw Error("Result, goal, fixture version, context and cutoff must match the exact source-bound result reference.");
+						if (!request.session.allowedAssetIds.includes(w.context.asset)) return response(403, void 0, "FORBIDDEN");
+						result = allocate("action", {
+							domain,
+							workflow: w
+						}, w.asOf, [w.context.asset]);
+					}
+				} else if (!isConversation && operation === "commands") {
+					const command = body.command;
+					if (!command || typeof command.kind !== "string") return response(400, void 0, "INVALID_REQUEST");
+					if (record.content.domain === "monthly-investigation-v1") {
+						const m = executeMonthly(record.content.monthly, command, key);
+						result = {
+							...record,
+							version: record.version + 1,
+							content: {
+								domain: "monthly-investigation-v1",
+								monthly: m
+							},
+							updatedAt: m.asOf
+						};
+					} else {
+						const original = record.content.workflow;
+						if (command.kind === "record-diagnostic-check" && command.hypothesisRef?.investigationId !== record.id) throw Error("Foreign diagnostic investigation reference.");
+						if (sourceRevision(next.resources, [original.caseId], original.asOf)) throw Error("Source revision changed this result. Refresh revised source; matching raw evidence and verification cohorts are required before progressing.");
+						const w = executeWorkflow(original, command, actor, key);
+						result = {
+							...record,
+							version: record.version + 1,
+							content: {
+								domain,
+								workflow: w
+							},
+							updatedAt: w.asOf
+						};
+					}
+				} else if (isConversation && operation === "messages") {
+					const c = structuredClone(record.content.conversation);
+					if (c.archived) throw Error("Restore this archived conversation before continuing.");
+					const text = String(body.text || "");
+					if (!text.trim() || text.length > 4e3) throw Error("Enter a question of at most 4,000 characters.");
+					const acceptOfferedDay = c.context.lastIntent === "period-offer" && acceptsOfferedProductionDay(text);
+					const monthlyReturn = /return.*monthly (?:cohort|dataset)/i.test(text), explicitManufacturing = notificationQuestion(text) || obligationQuestion(text) || genealogyQuestion(text) || measurementTrustQuestion(text) || integrationHealthQuestion(text) || !!diagnosticQuestion(text) || /refresh (?:the )?(?:revised|corrected) source|(?:correct|change|revise).*?(?:output|count|measurement)|record.*?(?:reviewed|quote|observation)|january|february|march|machine\s*[12]|missed.*(?:goal|target)|why did we miss production|missed production yesterday|production yesterday|PRESS-S1|FORM-Q1|FEED-03|audit (?:gap|issue)|feeder.jam|northworks|investigate.*(?:speed|quality|downtime)|(?:plant|daily|operating) review|plant audit|focus the dashboard/i.test(canonicalAssetSyntaxQuestion(text)) || acceptOfferedDay;
+					const explicitNewPlantReview = /^(?:run|start|open|show)\s+(?:(?:my|the|a)\s+)?(?:plant|daily|operating)\s+review\b|^plant audit\b/i.test(text.trim());
+					const monthlyAlias = resolveAssetScope(requestedScopeText(text));
+					const requestedMonthlyAlias = monthlyAlias.kind === "resolved" && monthlyAlias.resolutions.some((x) => /^Machine [12]$/.test(x.canonical));
+					const explicitTraining = !requestedMonthlyAlias && (/\btraining\b|\bTP-[A-Z0-9-]+\b/i.test(requestedScopeText(text)) || requestedCalendarMonth(text) === "July");
+					const training = !(c.turns.length === 0 && unselectedConversationContext(c.context) && unselectedInvestigationQuestion(text)) && !requestedMonthlyAlias && (/\btraining\b|\bTP-[A-Z0-9-]+\b/i.test(requestedScopeText(text)) || requestedCalendarMonth(text) === "July" || !monthlyReturn && !explicitManufacturing && (c.dataset === "training" || c.turns.length === 0));
+					const combined = text.match(/^refresh (?:the )?combined (?:plant )?audit(?: as of (\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z))?[.]?$/i);
+					const claimRead = /^(?:show|list|what are|tell me about|review) (?:the |our )?(?:reviewed|recorded) (?:claims|claim relationships|contradictions)/i.test(text);
+					const claimCutoff = interpretCutoff(text);
+					const reviewCase = c.context.caseFocus, reviewRecords = reviewCase ? next.resources.filter((r) => r.content.domain === "manufacturing-governed-record-v1" && r.content.kind === "correct-current-source" && r.content.caseId === reviewCase) : [], reviewStep = explicitNewPlantReview ? null : correctionReviewStep(text, reviewCase, c.reviewDraft || null, reviewRecords);
+					const claimRecords = reviewCase ? next.resources.filter((r) => r.content.domain === "manufacturing-governed-record-v1" && r.content.caseId === reviewCase && ["record-reviewed-claim", "record-reviewed-claim-link"].includes(String(r.content.kind))) : [], claimStep = explicitNewPlantReview ? null : claimReviewStep(text, reviewCase, c.claimReviewDraft || null, claimRecords);
+					const evidenceRecords = reviewCase ? next.resources.filter((r) => ["manufacturing-governed-record-v1", "manufacturing-source-dependencies-v1"].includes(String(r.content.domain)) && r.content.caseId === reviewCase) : [], evidenceStep = explicitNewPlantReview ? null : evidenceReviewStep(text, reviewCase, c.evidenceReviewDraft || null, evidenceRecords);
+					const comparisonRoute = routeComparisonQuestion(text, !!c.comparisonId, 3, c.dataset !== "training" && !training && !explicitNewPlantReview);
+					const collectedReviewReason = reviewStep && reviewStep.after?.reason === text.trim() && reviewStep.after.reason !== c.reviewDraft?.reason;
+					const claimContent = !!claimStep && /^(?:quote|reviewer|reason)\s*:/i.test(text);
+					const assetScope = plantReviewPriorityQuestion(text, c.context) || collectedReviewReason || claimContent || !!evidenceStep && /^(?:reviewer|reason)\s*:/i.test(text) ? { kind: "none" } : resolveAssetScope(requestedScopeText(text), explicitTraining ? void 0 : c.context);
+					const metricRequest = metricDemonstrationRequest(text, c.metricDemonstrationContext, c.dataset === "metric-demonstration");
+					if (metricRequest) {
+						if (!trainingAssetIds.every((a) => request.session.allowedAssetIds.includes(a))) return response(403, void 0, "FORBIDDEN");
+						const capturedResult = createMetricDemonstrationResult(metricRequest.metricId, metricRequest.asOf, "result-" + ++next.sequence);
+						next.results.push(capturedResult);
+						const capture = {
+							schemaVersion: 1,
+							question: text,
+							mode: metricRequest.mode,
+							result: capturedResult
+						}, at = capturedResult.query.asOf;
+						c.dataset = "metric-demonstration";
+						c.metricDemonstrationContext = {
+							metricId: metricRequest.metricId,
+							contextId: capturedResult.query.scope.scenarioId,
+							resultId: capturedResult.id,
+							asOf: at
+						};
+						const turn = {
+							id: "turn-" + (c.turns.length + 1),
+							captureId: record.id + "/turn-" + (c.turns.length + 1),
+							dialogueVersion: 1,
+							question: text,
+							routingQuestion: text,
+							requestContext: structuredClone(c.context),
+							context: structuredClone(c.context),
+							asOf: at,
+							investigationId: c.investigationId,
+							investigationVersion: null,
+							view: null,
+							workflowSnapshot: null,
+							actor,
+							commands: [],
+							blocked: null,
+							answer: metricDemonstrationPresentation(capture),
+							metricDemonstrationCapture: capture
+						};
+						turn.semanticEnvelope = capturedSemantics(turn);
+						c.turns.push(turn);
+						result = {
+							...record,
+							version: record.version + 1,
+							updatedAt: at > record.updatedAt ? at : record.updatedAt,
+							assetIds: [.../* @__PURE__ */ new Set([...record.assetIds, ...trainingAssetIds])],
+							content: {
+								domain: conversationDomain,
+								conversation: c
+							}
+						};
+					} else if (!acceptOfferedDay && !explicitTraining && historicalScopeAntecedent(c) && assetScope.kind === "none" && !isGuideReturnQuestion(text) && !/(?:investigate (?:the )?(?:downtime|speed|quality)|(?:plant|daily|operating) review|plant audit|\btraining\b|return.*monthly (?:cohort|dataset))/i.test(text)) {
+						const origin = historicalScopeAntecedent(c), requestContext = structuredClone(c.context), at = c.turns.at(-1)?.asOf || "2026-10-06T14:45:00Z", capture = {
+							schemaVersion: 3,
+							policyVersion: 4,
+							question: text,
+							originQuestion: origin.question,
+							originRequestContext: structuredClone(origin.requestContext),
+							originTurnId: origin.id,
+							previousContext: requestContext,
+							asOf: at,
+							clearedCorrectionReview: false
+						};
+						c.context = assetScopeClarificationContext(capture);
+						const turn = {
+							id: "turn-" + (c.turns.length + 1),
+							captureId: record.id + "/turn-" + (c.turns.length + 1),
+							dialogueVersion: 1,
+							scopedDialogue: 1,
+							interactionVersion: 1,
+							scopeInterpretationVersion: 4,
+							assignmentIntentVersion: 2,
+							intentContextVersion: 5,
+							clockOperandVersion: 2,
+							question: text,
+							routingQuestion: text,
+							requestContext,
+							context: structuredClone(c.context),
+							asOf: at,
+							investigationId: c.investigationId,
+							investigationVersion: null,
+							view: null,
+							workflowSnapshot: null,
+							actor,
+							commands: [],
+							blocked: null,
+							answer: assetScopeClarificationPresentation(capture),
+							assetScopeClarificationCapture: capture
+						};
+						turn.semanticEnvelope = capturedSemantics(turn);
+						c.turns.push(turn);
+						result = {
+							...record,
+							version: record.version + 1,
+							content: {
+								domain: conversationDomain,
+								conversation: c
+							}
+						};
+					} else if (isGuideQuestion(text)) {
+						const retained = next.resources.find((r) => r.id === c.investigationId && r.content.domain === domain), current = c.dataset !== "manufacturing" || c.comparisonId ? void 0 : retained, workflow = current ? structuredClone(current.content.workflow) : null, requestContext = structuredClone(c.context), capture = {
+							schemaVersion: 1,
+							question: text,
+							context: requestContext,
+							actor,
+							workflow,
+							resourceVersion: current?.version || null,
+							pendingReview: !!(c.reviewDraft || c.claimReviewDraft || c.evidenceReviewDraft)
+						};
+						const comparison = c.comparisonId ? next.resources.find((r) => r.id === c.comparisonId && r.content.domain === "manufacturing-comparison-v63") : void 0;
+						if (c.dataset !== "training" && c.comparisonId && (!comparison || !validComparison(comparison.content.state))) throw Error("Active comparison requires recovery; no retained investigation was substituted.");
+						const activeTarget = nonManufacturingGuideTarget(c, comparison ? {
+							id: comparison.id,
+							version: comparison.version,
+							state: comparison.content.state
+						} : void 0);
+						if (activeTarget) {
+							capture.schemaVersion = 3;
+							capture.activeTarget = activeTarget;
+							capture.retainedOrigin = verifiedGuideOrigin(retained);
+							capture.recoveryPolicyVersion = 1;
+							if (activeTarget.kind === "comparison") {
+								capture.schemaVersion = 4;
+								capture.comparisonState = structuredClone(comparison.content.state);
+							}
+						}
+						c.context = {
+							...c.context,
+							lastIntent: "contextual-guide"
+						};
+						const at = contextualGuideClock(capture);
+						const turn = {
+							id: "turn-" + (c.turns.length + 1),
+							captureId: record.id + "/turn-" + (c.turns.length + 1),
+							dialogueVersion: 1,
+							scopedDialogue: 1,
+							interactionVersion: 1,
+							scopeInterpretationVersion: 4,
+							assignmentIntentVersion: 2,
+							intentContextVersion: 5,
+							clockOperandVersion: 2,
+							question: text,
+							routingQuestion: text,
+							requestContext,
+							context: structuredClone(c.context),
+							asOf: at,
+							reviewAsOf: at,
+							investigationId: c.investigationId,
+							investigationVersion: current?.version || null,
+							view: null,
+							workflowSnapshot: null,
+							actor,
+							commands: [],
+							blocked: null,
+							answer: contextualGuidePresentation(capture),
+							contextualGuideCapture: capture
+						};
+						turn.semanticEnvelope = capturedSemantics(turn);
+						c.turns.push(turn);
+						result = {
+							...record,
+							version: record.version + 1,
+							content: {
+								domain: conversationDomain,
+								conversation: c
+							}
+						};
+					} else if (isGuideReturnQuestion(text) && !c.comparisonId) {
+						const origin = verifiedGuideOrigin(next.resources.find((r) => r.id === c.investigationId));
+						if (origin && !request.session.allowedAssetIds.includes(origin.workflow.context.asset)) return response(403, void 0, "FORBIDDEN");
+						const requestContext = structuredClone(c.context), at = origin?.workflow.asOf || (c.dataset === "training" ? c.trainingContext.asOf : void 0) || c.context.sourceCutoff || "2026-10-06T14:45:00Z", capture = {
+							schemaVersion: 1,
+							question: text,
+							origin,
+							context: requestContext,
+							asOf: at
+						};
+						c.context = guideReturnContext(origin, c.context);
+						if (origin) c.dataset = "manufacturing";
+						const turn = {
+							id: "turn-" + (c.turns.length + 1),
+							captureId: record.id + "/turn-" + (c.turns.length + 1),
+							dialogueVersion: 1,
+							scopedDialogue: 1,
+							interactionVersion: 1,
+							scopeInterpretationVersion: 4,
+							assignmentIntentVersion: 2,
+							intentContextVersion: 5,
+							clockOperandVersion: 2,
+							question: text,
+							routingQuestion: text,
+							requestContext,
+							context: structuredClone(c.context),
+							asOf: at,
+							reviewAsOf: at,
+							investigationId: c.investigationId,
+							investigationVersion: origin?.version || null,
+							view: null,
+							workflowSnapshot: null,
+							actor,
+							commands: [],
+							blocked: null,
+							answer: guideReturnPresentation(capture),
+							guideReturnCapture: capture
+						};
+						turn.semanticEnvelope = capturedSemantics(turn);
+						c.turns.push(turn);
+						result = {
+							...record,
+							version: record.version + 1,
+							content: {
+								domain: conversationDomain,
+								conversation: c
+							}
+						};
+					} else if (!acceptOfferedDay && !(collectedReviewReason || claimContent || !!evidenceStep && /^(?:reviewer:|reason:|source row |unit |from claim |to claim |relation:)/i.test(text)) && !(c.dataset === "manufacturing" && !c.comparisonId && c.turns.length && c.turns.at(-1).answer.evidence === "none" && c.turns.at(-1).answer.sourceIds.length === 0 && isPresentationRequest(text)) && publicationScopeIssueV11(text, c.context, training)) {
+						const requestContext = structuredClone(c.context), at = c.turns.at(-1)?.asOf || "2026-10-06T14:45:00Z", capture = {
+							schemaVersion: 11,
+							...training ? { sourceDataset: "training" } : {},
+							question: text,
+							before: requestContext,
+							asOf: at
+						};
+						c.dataset = "manufacturing";
+						c.context = scopePublicationContext(capture);
+						const turn = {
+							id: "turn-" + (c.turns.length + 1),
+							captureId: record.id + "/turn-" + (c.turns.length + 1),
+							dialogueVersion: 1,
+							scopedDialogue: 1,
+							interactionVersion: 1,
+							scopeInterpretationVersion: 4,
+							assignmentIntentVersion: 2,
+							intentContextVersion: 5,
+							clockOperandVersion: 2,
+							question: text,
+							routingQuestion: text,
+							requestContext,
+							context: structuredClone(c.context),
+							asOf: at,
+							reviewAsOf: at,
+							investigationId: c.investigationId,
+							investigationVersion: null,
+							view: null,
+							workflowSnapshot: null,
+							actor,
+							commands: [],
+							blocked: null,
+							answer: scopePublicationPresentation(capture),
+							scopePublicationCapture: capture
+						};
+						turn.semanticEnvelope = capturedSemantics(turn);
+						c.turns.push(turn);
+						result = {
+							...record,
+							version: record.version + 1,
+							content: {
+								domain: conversationDomain,
+								conversation: c
+							}
+						};
+					} else if (!acceptOfferedDay && !(c.context.sourceFocus === "plant" && c.context.auditMetricId) && !obligationQuestion(text) && !genealogyQuestion(text) && !measurementTrustQuestion(text) && c.dataset === "manufacturing" && !c.comparisonId && c.turns.length && !(c.context.lastIntent === "asset-scope-clarify" && assetScope.kind === "resolved") && isPresentationRequest(text, c.context)) {
+						const presentationRequestContext = structuredClone(c.context), presentationRoute = routeConversation(text, c.context);
+						c.context = {
+							...c.context,
+							metric: presentationRoute.context.metric
+						};
+						const previous = c.turns.at(-1), current = next.resources.find((r) => r.id === c.investigationId && r.content.domain === domain), workflow = current?.content.workflow;
+						const currentUnavailable = currentConversationScopeIssue(c) || (workflow ? !collectorScopeMatches(c.context, workflow) ? "Requested plant, line, asset, part/revision, job, operation, shift or period differs from the exact saved observation." : sourceRevision(next.resources, [workflow.caseId], workflow.asOf) ? "Eligible source revision changed; refresh the source before presenting." : (previous.guideReturnCapture?.origin?.version ?? previous.presentationCapture?.investigationVersion ?? previous.investigationVersion) !== null && (previous.guideReturnCapture?.origin?.version ?? previous.presentationCapture?.investigationVersion ?? previous.investigationVersion) !== current.version ? "The investigation version changed; request a new source-bound answer." : null : null);
+						const capture = {
+							schemaVersion: 6,
+							question: text,
+							previousTurnId: previous.id,
+							context: structuredClone(c.context),
+							beforeContext: presentationRequestContext,
+							previousAnswer: structuredClone(previous.answer),
+							previousView: structuredClone(previous.presentationCapture?.previousView || previous.view || (previous.guideReturnCapture?.origin ? workflowView(previous.guideReturnCapture.origin.workflow, true) : null)),
+							investigationVersion: previous.guideReturnCapture?.origin?.version ?? previous.presentationCapture?.investigationVersion ?? previous.investigationVersion,
+							asOf: previous.asOf,
+							currentUnavailable
+						};
+						const turn = {
+							id: "turn-" + (c.turns.length + 1),
+							captureId: record.id + "/turn-" + (c.turns.length + 1),
+							dialogueVersion: 1,
+							scopedDialogue: 1,
+							interactionVersion: 1,
+							scopeInterpretationVersion: 4,
+							assignmentIntentVersion: 2,
+							intentContextVersion: 5,
+							clockOperandVersion: 2,
+							question: text,
+							routingQuestion: text,
+							requestContext: presentationRequestContext,
+							context: structuredClone(c.context),
+							asOf: capture.asOf,
+							reviewAsOf: capture.asOf,
+							investigationId: c.investigationId,
+							investigationVersion: null,
+							view: null,
+							workflowSnapshot: null,
+							actor,
+							commands: [],
+							blocked: null,
+							answer: presentationContract(capture),
+							presentationCapture: capture
+						};
+						turn.semanticEnvelope = capturedSemantics(turn);
+						c.turns.push(turn);
+						result = {
+							...record,
+							version: record.version + 1,
+							content: {
+								domain: conversationDomain,
+								conversation: c
+							}
+						};
+					} else if (assetScope.kind === "clarify") {
+						const requestContext = structuredClone(c.context), at = c.dataset === "training" ? c.turns.at(-1)?.asOf || c.trainingContext.asOf || "2026-10-06T14:45:00Z" : (next.resources.find((r) => r.id === c.investigationId && r.content.domain === domain)?.content.workflow)?.asOf || c.context.sourceCutoff || "2026-10-06T14:45:00Z", capture = {
+							schemaVersion: 2,
+							policyVersion: 4,
+							question: text,
+							previousContext: requestContext,
+							asOf: at,
+							clearedCorrectionReview: !!c.reviewDraft
+						};
+						retainPausedCollector(c);
+						delete c.reviewDraft;
+						delete c.claimReviewDraft;
+						delete c.evidenceReviewDraft;
+						c.context = assetScopeClarificationContext(capture);
+						const turn = {
+							id: "turn-" + (c.turns.length + 1),
+							captureId: record.id + "/turn-" + (c.turns.length + 1),
+							dialogueVersion: 1,
+							scopedDialogue: 1,
+							interactionVersion: 1,
+							scopeInterpretationVersion: 4,
+							assignmentIntentVersion: 2,
+							intentContextVersion: 5,
+							clockOperandVersion: 2,
+							question: text,
+							routingQuestion: text,
+							requestContext,
+							context: structuredClone(c.context),
+							asOf: at,
+							reviewAsOf: at,
+							investigationId: c.investigationId,
+							investigationVersion: null,
+							view: null,
+							workflowSnapshot: null,
+							actor,
+							commands: [],
+							blocked: null,
+							answer: assetScopeClarificationPresentation(capture),
+							assetScopeClarificationCapture: capture
+						};
+						turn.semanticEnvelope = capturedSemantics(turn);
+						c.turns.push(turn);
+						result = {
+							...record,
+							version: record.version + 1,
+							content: {
+								domain: conversationDomain,
+								conversation: c
+							}
+						};
+					} else if (evidenceStep) {
+						if (!reviewCase) throw Error("Open an exact investigation before reviewing a claim.");
+						const f = caseFixtures[reviewCase];
+						if (!request.session.allowedAssetIds.includes(f.context.asset)) return response(403, void 0, "FORBIDDEN");
+						if (!isEvidenceReviewCancellation(text) && !collectorScopeMatches(c.context, f)) throw Error("Review paused: the selected scope differs from the original review. Your entered fields remain saved. Explicitly restate the original date, day shift and investigation context before confirming, or cancel and start a new review.");
+						const before = c.evidenceReviewDraft ? structuredClone(c.evidenceReviewDraft) : null;
+						let committedRecord = null;
+						if (evidenceStep.command) {
+							const staged = new MockRepository();
+							staged.state = structuredClone(next);
+							const raw = evidenceStep.command.kind === "record-raw-reconciliation", written = await (raw ? dependencyRequest : governedRequest)(staged, {
+								...request,
+								path: raw ? "/api/v1/manufacturing/dependencies" : "/api/v1/manufacturing/governed-records",
+								method: "POST",
+								body: evidenceStep.command,
+								idempotencyKey: key
+							}, actor);
+							if (written.error) return response(written.status, void 0, written.error.code, written.error.message);
+							committedRecord = structuredClone(staged.state.resources.at(-1));
+							Object.assign(next, staged.state);
+						}
+						delete c.claimReviewDraft;
+						delete c.reviewDraft;
+						if (evidenceStep.after) c.evidenceReviewDraft = evidenceStep.after;
+						else delete c.evidenceReviewDraft;
+						const capture = {
+							schemaVersion: 1,
+							caseId: reviewCase,
+							question: text,
+							before,
+							after: evidenceStep.after,
+							sourceRecords: structuredClone(evidenceRecords),
+							committedRecord
+						}, requestContext = structuredClone(c.context);
+						c.dataset = "manufacturing";
+						c.context = {
+							...c.context,
+							lastIntent: "evidence-review"
+						};
+						const at = committedRecord?.createdAt || evidenceStep.after?.knownAt || before?.knownAt || c.context.sourceCutoff || "2026-10-06T14:45:00Z";
+						const turn = {
+							id: "turn-" + (c.turns.length + 1),
+							captureId: record.id + "/turn-" + (c.turns.length + 1),
+							dialogueVersion: 1,
+							scopedDialogue: 1,
+							interactionVersion: 1,
+							scopeInterpretationVersion: 4,
+							assignmentIntentVersion: 2,
+							intentContextVersion: 5,
+							clockOperandVersion: 2,
+							question: text,
+							routingQuestion: text,
+							requestContext,
+							context: structuredClone(c.context),
+							asOf: at,
+							reviewAsOf: at,
+							investigationId: c.investigationId,
+							investigationVersion: null,
+							view: null,
+							workflowSnapshot: null,
+							actor,
+							commands: [],
+							blocked: null,
+							answer: evidenceReviewPresentation(capture),
+							evidenceReviewCapture: capture
+						};
+						turn.semanticEnvelope = capturedSemantics(turn);
+						c.turns.push(turn);
+						result = {
+							...record,
+							version: record.version + 1,
+							content: {
+								domain: conversationDomain,
+								conversation: c
+							}
+						};
+					} else if (claimStep) {
+						if (!reviewCase) throw Error("Open an exact investigation before reviewing a claim.");
+						const f = caseFixtures[reviewCase];
+						if (!request.session.allowedAssetIds.includes(f.context.asset)) return response(403, void 0, "FORBIDDEN");
+						if (!isClaimReviewCancellation(text) && !collectorScopeMatches(c.context, f)) throw Error("Review paused: the selected scope differs from the original review. Your entered fields remain saved. Explicitly restate the original date, day shift and investigation context before confirming, or cancel and start a new review.");
+						const before = c.claimReviewDraft ? structuredClone(c.claimReviewDraft) : null;
+						let committedRecord = null;
+						if (claimStep.command) {
+							const staged = new MockRepository();
+							staged.state = structuredClone(next);
+							const written = await governedRequest(staged, {
+								...request,
+								path: "/api/v1/manufacturing/governed-records",
+								method: "POST",
+								body: claimStep.command,
+								idempotencyKey: key
+							}, actor);
+							if (written.error) return response(written.status, void 0, written.error.code, written.error.message);
+							committedRecord = structuredClone(staged.state.resources.at(-1));
+							Object.assign(next, staged.state);
+						}
+						delete c.evidenceReviewDraft;
+						delete c.reviewDraft;
+						if (claimStep.after) c.claimReviewDraft = claimStep.after;
+						else delete c.claimReviewDraft;
+						const capture = {
+							schemaVersion: 1,
+							caseId: reviewCase,
+							question: text,
+							before,
+							after: claimStep.after,
+							sourceRecords: structuredClone(claimRecords),
+							committedRecord
+						}, requestContext = structuredClone(c.context);
+						c.dataset = "manufacturing";
+						c.context = {
+							...c.context,
+							lastIntent: "claim-review"
+						};
+						const at = committedRecord?.createdAt || claimStep.after?.knownAt || before?.knownAt || c.context.sourceCutoff || "2026-10-06T14:45:00Z";
+						const turn = {
+							id: "turn-" + (c.turns.length + 1),
+							captureId: record.id + "/turn-" + (c.turns.length + 1),
+							dialogueVersion: 1,
+							scopedDialogue: 1,
+							interactionVersion: 1,
+							scopeInterpretationVersion: 4,
+							assignmentIntentVersion: 2,
+							intentContextVersion: 5,
+							clockOperandVersion: 2,
+							question: text,
+							routingQuestion: text,
+							requestContext,
+							context: structuredClone(c.context),
+							asOf: at,
+							reviewAsOf: at,
+							investigationId: c.investigationId,
+							investigationVersion: null,
+							view: null,
+							workflowSnapshot: null,
+							actor,
+							commands: [],
+							blocked: null,
+							answer: claimReviewPresentation(capture),
+							claimReviewCapture: capture
+						};
+						turn.semanticEnvelope = capturedSemantics(turn);
+						c.turns.push(turn);
+						result = {
+							...record,
+							version: record.version + 1,
+							content: {
+								domain: conversationDomain,
+								conversation: c
+							}
+						};
+					} else if (comparisonRoute) {
+						const requestContext = structuredClone(c.context);
+						const originalWorkflow = next.resources.find((r) => r.id === c.investigationId)?.content.workflow || null;
+						let comparisonCapture, clarificationCapture, answer, at = (next.resources.find((r) => r.id === c.investigationId)?.content.workflow)?.asOf || c.context.sourceCutoff || "2026-10-06T14:45:00Z";
+						const originalClock = {
+							asOf: at,
+							workflow: structuredClone(originalWorkflow),
+							sourceCutoff: c.context.sourceCutoff || null
+						};
+						if (comparisonRoute.kind === "clarify" || comparisonRoute.kind === "open" && !comparisonRoute.asOf) {
+							clarificationCapture = {
+								schemaVersion: 1,
+								routingVersion: 3,
+								question: text,
+								active: !!c.comparisonId
+							};
+							answer = comparisonClarificationPresentation(clarificationCapture);
+							if (c.comparisonId) at = (next.resources.find((r) => r.id === c.comparisonId)?.content.state)?.asOf || at;
+						} else {
+							const staged = new MockRepository();
+							staged.state = structuredClone(next);
+							let read;
+							if (comparisonRoute.kind === "open" && !c.comparisonId) {
+								if (c.context.caseFocus !== "quality") throw Error("Open the exact Quality investigation before opening its separate comparison; no other case was substituted.");
+								const origin = dependencyView(next.resources, "quality", comparisonRoute.asOf);
+								read = await comparisonRequest(staged, {
+									...request,
+									path: "/api/v1/manufacturing/comparisons",
+									method: "POST",
+									body: {
+										sourceVersion: origin.current.sourceVersion,
+										asOf: comparisonRoute.asOf,
+										variant: "complete"
+									},
+									idempotencyKey: key
+								}, actor);
+							} else if (comparisonRoute.kind === "command") read = await comparisonRequest(staged, {
+								...request,
+								path: "/api/v1/manufacturing/comparisons/" + c.comparisonId + "/commands",
+								method: "POST",
+								body: {
+									expectedVersion: next.resources.find((r) => r.id === c.comparisonId)?.version,
+									command: comparisonRoute.command
+								},
+								idempotencyKey: key
+							}, actor);
+							else read = await comparisonRequest(staged, {
+								...request,
+								path: "/api/v1/manufacturing/comparisons/" + c.comparisonId,
+								method: "GET",
+								body: void 0
+							}, actor);
+							if (read.error) return response(read.status, void 0, read.error.code, read.error.message);
+							const comparison = read.data;
+							Object.assign(next, staged.state);
+							comparisonCapture = {
+								schemaVersion: 2,
+								record: structuredClone(comparison),
+								operation: comparisonRoute.kind === "command" ? comparisonRoute.command.kind : comparisonRoute.kind,
+								...comparisonRoute.kind === "return" ? { originalClock } : {}
+							};
+							answer = comparisonTurnPresentation(comparisonCapture);
+							at = comparisonRoute.kind === "return" ? originalClock.asOf : comparison.state.asOf;
+							if (comparisonRoute.kind === "return") delete c.comparisonId;
+							else c.comparisonId = comparison.id;
+						}
+						c.dataset = "manufacturing";
+						c.context = {
+							...c.context,
+							lastIntent: "separate-comparison"
+						};
+						const turn = {
+							id: "turn-" + (c.turns.length + 1),
+							captureId: record.id + "/turn-" + (c.turns.length + 1),
+							dialogueVersion: 1,
+							scopedDialogue: 1,
+							interactionVersion: 1,
+							scopeInterpretationVersion: 4,
+							assignmentIntentVersion: 2,
+							intentContextVersion: 5,
+							clockOperandVersion: 2,
+							question: text,
+							routingQuestion: text,
+							requestContext,
+							context: structuredClone(c.context),
+							asOf: at,
+							reviewAsOf: at,
+							investigationId: c.investigationId,
+							investigationVersion: null,
+							view: null,
+							workflowSnapshot: null,
+							actor,
+							commands: [],
+							blocked: null,
+							answer,
+							...comparisonCapture ? { comparisonTurnCapture: comparisonCapture } : {},
+							...clarificationCapture ? { comparisonClarificationCapture: clarificationCapture } : {}
+						};
+						turn.semanticEnvelope = capturedSemantics(turn);
+						c.turns.push(turn);
+						result = {
+							...record,
+							version: record.version + 1,
+							content: {
+								domain: conversationDomain,
+								conversation: c
+							}
+						};
+					} else if (reviewStep && reviewCase) {
+						const f = caseFixtures[reviewCase];
+						if (!request.session.allowedAssetIds.includes(f.context.asset)) return response(403, void 0, "FORBIDDEN");
+						if ([
+							["machine", "asset"],
+							["job", "job"],
+							["part", "part"],
+							["revision", "revision"],
+							["operation", "operation"],
+							["plant", "plant"],
+							["line", "line"]
+						].some(([query, source]) => c.context[query] !== null && c.context[query] !== f.context[source])) throw Error("Correct the exact investigation context before reviewing this source; no cross-scope write was made.");
+						const before = c.reviewDraft ? structuredClone(c.reviewDraft) : null;
+						let committedRecord = null;
+						if (reviewStep.command) {
+							const staged = new MockRepository();
+							staged.state = structuredClone(next);
+							const written = await governedRequest(staged, {
+								...request,
+								path: "/api/v1/manufacturing/governed-records",
+								method: "POST",
+								body: reviewStep.command,
+								idempotencyKey: key
+							}, actor);
+							if (written.error) return response(written.status, void 0, written.error.code, written.error.message);
+							committedRecord = structuredClone(staged.state.resources.at(-1));
+							Object.assign(next, staged.state);
+						}
+						delete c.evidenceReviewDraft;
+						delete c.claimReviewDraft;
+						if (reviewStep.after) c.reviewDraft = reviewStep.after;
+						else delete c.reviewDraft;
+						const capture = {
+							schemaVersion: 1,
+							interpretationVersion: 2,
+							caseId: reviewCase,
+							question: text,
+							before,
+							after: reviewStep.after,
+							sourceRecords: structuredClone(reviewRecords),
+							committedRecord
+						}, answer = correctionReviewPresentation(capture), requestContext = structuredClone(c.context);
+						c.dataset = "manufacturing";
+						c.context = {
+							...c.context,
+							lastIntent: "correction-review"
+						};
+						const at = committedRecord?.createdAt || before?.knownAt || reviewStep.after?.knownAt || "2026-10-06T14:45:00Z";
+						const turn = {
+							id: "turn-" + (c.turns.length + 1),
+							captureId: record.id + "/turn-" + (c.turns.length + 1),
+							dialogueVersion: 1,
+							scopedDialogue: 1,
+							interactionVersion: 1,
+							scopeInterpretationVersion: 4,
+							assignmentIntentVersion: 2,
+							intentContextVersion: 5,
+							clockOperandVersion: 2,
+							question: text,
+							routingQuestion: text,
+							requestContext,
+							context: structuredClone(c.context),
+							asOf: at,
+							reviewAsOf: at,
+							investigationId: c.investigationId,
+							investigationVersion: null,
+							view: null,
+							workflowSnapshot: null,
+							actor,
+							commands: [],
+							blocked: null,
+							answer,
+							correctionReviewCapture: capture
+						};
+						turn.semanticEnvelope = capturedSemantics(turn);
+						c.turns.push(turn);
+						result = {
+							...record,
+							version: record.version + 1,
+							content: {
+								domain: conversationDomain,
+								conversation: c
+							}
+						};
+					} else if (claimRead && claimCutoff.kind !== "unsupported") {
+						const caseId = c.context.caseFocus;
+						if (!caseId) throw Error("Open the exact downtime, speed or quality investigation before reading reviewed claims.");
+						const f = caseFixtures[caseId];
+						if (!request.session.allowedAssetIds.includes(f.context.asset)) return response(403, void 0, "FORBIDDEN");
+						const w = c.investigationId ? next.resources.find((r) => r.id === c.investigationId && r.content.domain === domain)?.content.workflow : void 0, at = claimCutoff.kind === "explicit" ? claimCutoff.asOf : c.context.sourceCutoff || w?.asOf || "2026-10-06T14:45:00Z";
+						const capture = {
+							schemaVersion: 1,
+							caseId,
+							asOf: at,
+							records: structuredClone(next.resources.filter((r) => r.content.domain === "manufacturing-governed-record-v1" && r.content.caseId === caseId && ["record-reviewed-claim", "record-reviewed-claim-link"].includes(String(r.content.kind)) && Date.parse(r.createdAt) <= Date.parse(at)))
+						}, answer = reviewedClaimsPresentation(capture), requestContext = structuredClone(c.context);
+						c.dataset = "manufacturing";
+						c.context = {
+							...c.context,
+							lastIntent: "reviewed-claims"
+						};
+						const turn = {
+							id: "turn-" + (c.turns.length + 1),
+							captureId: record.id + "/turn-" + (c.turns.length + 1),
+							dialogueVersion: 1,
+							scopedDialogue: 1,
+							interactionVersion: 1,
+							scopeInterpretationVersion: 4,
+							assignmentIntentVersion: 2,
+							intentContextVersion: 5,
+							clockOperandVersion: 2,
+							question: text,
+							routingQuestion: text,
+							requestContext,
+							context: structuredClone(c.context),
+							asOf: at,
+							reviewAsOf: at,
+							investigationId: c.investigationId,
+							investigationVersion: null,
+							view: null,
+							workflowSnapshot: null,
+							actor,
+							commands: [],
+							blocked: null,
+							answer,
+							reviewedClaimsCapture: capture
+						};
+						turn.semanticEnvelope = capturedSemantics(turn);
+						c.turns.push(turn);
+						result = {
+							...record,
+							version: record.version + 1,
+							content: {
+								domain: conversationDomain,
+								conversation: c
+							}
+						};
+					} else if (combined) {
+						if (![
+							"FEED-01",
+							"FEED-02",
+							"FEED-03",
+							"PRESS-S1",
+							"FORM-Q1"
+						].every((a) => request.session.allowedAssetIds.includes(a))) return response(403, void 0, "FORBIDDEN");
+						const at = combined[1] || c.context.sourceCutoff || c.context.reviewCutoff || "2026-10-06T14:45:00Z", capture = {
+							schemaVersion: 1,
+							asOf: at,
+							records: structuredClone(next.resources.filter((r) => ["manufacturing-governed-record-v1", "manufacturing-source-dependencies-v1"].includes(String(r.content.domain)) && r.createdAt <= at))
+						}, answer = auditPresentation(capture), requestContext = structuredClone(c.context);
+						c.dataset = "manufacturing";
+						c.context = {
+							...c.context,
+							sourceCutoff: at,
+							sourceFocus: "plant",
+							lastIntent: "audit-refreshed"
+						};
+						const turn = {
+							id: "turn-" + (c.turns.length + 1),
+							captureId: record.id + "/turn-" + (c.turns.length + 1),
+							dialogueVersion: 1,
+							scopedDialogue: 1,
+							interactionVersion: 1,
+							scopeInterpretationVersion: 4,
+							assignmentIntentVersion: 2,
+							intentContextVersion: 5,
+							clockOperandVersion: 2,
+							question: text,
+							routingQuestion: text,
+							requestContext,
+							context: structuredClone(c.context),
+							asOf: at,
+							reviewAsOf: at,
+							investigationId: c.investigationId,
+							investigationVersion: null,
+							view: null,
+							workflowSnapshot: null,
+							actor,
+							commands: [],
+							blocked: null,
+							answer,
+							auditRefreshCapture: capture
+						};
+						turn.semanticEnvelope = capturedSemantics(turn);
+						c.turns.push(turn);
+						result = {
+							...record,
+							version: record.version + 1,
+							assetIds: [.../* @__PURE__ */ new Set([
+								...record.assetIds,
+								"FEED-01",
+								"FEED-02",
+								"FEED-03",
+								"PRESS-S1",
+								"FORM-Q1"
+							])],
+							content: {
+								domain: conversationDomain,
+								conversation: c
+							}
+						};
+					} else if (training) {
+						if (explicitTraining && c.context.lastIntent === "asset-scope-clarify") c.context = {
+							...c.context,
+							lastIntent: "training",
+							clarification: null
+						};
+						const { capture, answer } = executeTrainingTurn(text, c.trainingContext, c.trainingPresentation, request.session.allowedAssetIds, record.id);
+						c.dataset = "training";
+						c.trainingContext = capture.queryContext;
+						c.turns.push({
+							id: "turn-" + (c.turns.length + 1),
+							question: text,
+							answer,
+							context: structuredClone(c.context),
+							requestContext: structuredClone(c.context),
+							routingQuestion: text,
+							asOf: capture.asOf || capture.createdAt,
+							investigationId: null,
+							investigationVersion: null,
+							view: null,
+							workflowSnapshot: null,
+							actor,
+							commands: [],
+							blocked: null,
+							training: capture
+						});
+						result = {
+							...record,
+							version: record.version + 1,
+							updatedAt: capture.createdAt,
+							assetIds: [.../* @__PURE__ */ new Set([...record.assetIds, ...trainingAssetIds])],
+							content: {
+								domain: conversationDomain,
+								conversation: c
+							}
+						};
+					} else {
+						c.dataset = "manufacturing";
+						if (monthlyReturn) {
+							c.context = structuredClone(c.monthlyContext);
+							c.investigationId = null;
+						}
+						const requestContext = structuredClone(c.context);
+						let routingQuestion = monthlyReturn ? "What was " + c.context.metric + "?" : text;
+						let investigation = c.investigationId ? next.resources.find((r) => r.id === c.investigationId && r.content.domain === domain) : void 0;
+						let reviewAsOf = investigation ? investigation.content.workflow.asOf : "2026-10-06T14:45:00Z";
+						const refreshActive = / for (?:the )?current investigation/i.test(text), refresh = /^refresh (?:the )?(?:revised|corrected) source(?: for (?:the )?current investigation)?(?: as of \d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z)?[.]?$/i.test(text), refreshAt = refresh ? text.match(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z/)?.[0] : void 0;
+						const routed = refresh ? {
+							question: text,
+							context: structuredClone(c.context),
+							intent: "source-refresh",
+							commands: [],
+							createCase: null,
+							actor: null
+						} : routeConversation(monthlyReturn ? "What was " + c.context.metric + "?" : text, c.context, reviewAsOf, false, true, true, true, 4, 2, 5, 2, 1, 1, 1, 1, 1, 1, 8);
+						if (routed.intent === "audit" && routed.context.sourceFocus === "plant") delete c.comparisonId;
+						if (refreshAt) {
+							if (!Number.isFinite(Date.parse(refreshAt)) || new Date(refreshAt).toISOString().replace(".000Z", "Z") !== refreshAt) throw Error("Valid exact UTC refresh cutoff required.");
+							reviewAsOf = refreshAt;
+						}
+						reviewAsOf = refreshAt || routed.context.reviewCutoff || routed.context.sourceCutoff || reviewAsOf;
+						if (refresh) routed.context.sourceCutoff = reviewAsOf;
+						if (routed.createCase) {
+							const priorId = c.investigationIds[routed.createCase];
+							investigation = priorId ? next.resources.find((r) => r.id === priorId && r.content.domain === domain) : void 0;
+							if (!investigation) {
+								const w = createWorkflow(routed.createCase, routed.createCondition || "complete");
+								investigation = allocate("action", {
+									domain,
+									workflow: w
+								}, w.asOf, [w.context.asset]);
+								put(investigation);
+								c.investigationIds[routed.createCase] = investigation.id;
+							}
+							if (routed.createCondition && investigation.content.workflow.condition !== routed.createCondition) throw Error("This saved case retains its original variant. Start a new conversation to inspect a different declared variant without replacing history.");
+							c.investigationId = investigation.id;
+						}
+						const priorAudit = [...c.turns].reverse().find((t) => t.auditRefreshCapture)?.auditRefreshCapture, currentAuditRecords = next.resources.filter((r) => ["manufacturing-governed-record-v1", "manufacturing-source-dependencies-v1"].includes(String(r.content.domain)) && r.createdAt <= reviewAsOf);
+						const refreshedAudit = priorAudit && priorAudit.asOf === reviewAsOf && JSON.stringify(priorAudit.records) === JSON.stringify(currentAuditRecords) ? priorAudit : void 0;
+						if (refreshedAudit && c.context.sourceFocus === "plant" && /investigate (?:the )?top (?:issue|problem|audit gap)/i.test(text)) {
+							routingQuestion = "Investigate the top audit gap.";
+							Object.assign(routed, routeConversation(routingQuestion, c.context, reviewAsOf));
+							routed.context.auditMetricId = auditView(refreshedAudit.records, reviewAsOf).metricGaps[0]?.id || null;
+						}
+						const auditScope = ["audit", "audit-discovery"].includes(routed.intent);
+						if (auditScope && routed.intent === "audit-discovery" && !refreshedAudit && sourceRevision(next.resources, [
+							"downtime",
+							"speed",
+							"quality"
+						], reviewAsOf)) routed.intent = "source-stale";
+						let monthlyRecord;
+						if (!routed.context.caseFocus) {
+							if (routed.intent === "audit-discovery") {
+								const review = refreshedAudit ? auditView(refreshedAudit.records, reviewAsOf) : operatingReview(reviewAsOf), metricId = routed.context.auditMetricId || review.metricGaps[0]?.id, metric = review.bundle.find((m) => m.id === metricId);
+								if (!metricId || !metric || metric.value === null || metric.target === null) {
+									routed.intent = "cutoff-clarify";
+									routed.context.clarification = "No eligible same-scope observations and target exist at this cutoff. No current discovery was substituted.";
+								}
+								routed.context.auditMetricId = metricId || null;
+								routed.context.machine = "Northworks Plant Review";
+								routed.context.plant = "Northworks";
+								routed.context.line = null;
+								routed.context.job = null;
+								routed.context.part = null;
+								routed.context.revision = null;
+								routed.context.operation = null;
+								routed.context.period = "Frozen report 2026-10-06 · " + metricId;
+							}
+							const exactContext = (m) => m.context.machine === routed.context.machine && m.context.period === routed.context.period && (!routed.context.reviewCutoff || m.asOf === reviewAsOf) && (routed.intent !== "audit-discovery" || JSON.stringify(m.refreshedAudit || null) === JSON.stringify(refreshedAudit || null));
+							monthlyRecord = next.resources.find((r) => r.ownerSessionId === owner && r.content.domain === "monthly-investigation-v1" && r.content.conversationId === record.id && exactContext(r.content.monthly));
+							if (routed.intent === "audit-discovery" && !monthlyRecord) {
+								const m = createAuditDiscovery(routed.context, routed.context.auditMetricId, reviewAsOf, true, refreshedAudit);
+								monthlyRecord = allocate("action", {
+									domain: "monthly-investigation-v1",
+									conversationId: record.id,
+									monthly: m
+								}, m.asOf, [
+									"FEED-01",
+									"FEED-02",
+									"FEED-03"
+								]);
+								put(monthlyRecord);
+							}
+							if (/investigate (?:the )?root cause/i.test(text) && !monthlyRecord) {
+								const m = createMonthlyInvestigation(routed.context);
+								monthlyRecord = allocate("action", {
+									domain: "monthly-investigation-v1",
+									conversationId: record.id,
+									monthly: m
+								}, m.asOf, [routed.context.machine === "Machine 1" ? "MONTH-MACHINE1" : "MONTH-MACHINE2"]);
+								put(monthlyRecord);
+							}
+							if (routed.intent !== "cutoff-clarify") {
+								if (monthlyRecord) c.investigationId = monthlyRecord.id;
+								else c.investigationId = null;
+							} else monthlyRecord = void 0;
+							investigation = void 0;
+						}
+						if (monthlyRecord && !monthlyRecord.assetIds.every((a) => request.session.allowedAssetIds.includes(a))) return response(403, void 0, "FORBIDDEN");
+						if (monthlyRecord && !validateMonthly(monthlyRecord.content.monthly)) return response(422, void 0, "INVALID_RESULT");
+						if (investigation && !request.session.allowedAssetIds.includes(investigation.assetIds[0])) return response(403, void 0, "FORBIDDEN");
+						if (investigation && !validateWorkflow(investigation.content.workflow)) return response(422, void 0, "INVALID_RESULT");
+						let blocked = null, commands = [], commandMessage;
+						const tupleMismatch = investigation && (routed.context.shift && routed.context.shift !== "day" || routed.context.period !== investigation.content.workflow.context.from.slice(0, 10) + " day shift" || [
+							["machine", "asset"],
+							["job", "job"],
+							["part", "part"],
+							["revision", "revision"],
+							["operation", "operation"],
+							["plant", "plant"],
+							["line", "line"]
+						].some(([query, source]) => !(query === "revision" && routed.commands.length === 1 && routed.commands[0].kind === "correct-revision") && routed.context[query] !== null && routed.context[query] !== investigation.content.workflow.context[source]));
+						const revisionCases = refreshedAudit && auditScope ? [] : auditScope || refresh && routed.context.sourceFocus === "plant" && !refreshActive ? [
+							"downtime",
+							"speed",
+							"quality"
+						] : routed.context.caseFocus ? [routed.context.caseFocus] : refresh && routed.context.reviewFocus && !refreshActive ? [
+							"downtime",
+							"speed",
+							"quality"
+						] : [];
+						if (refresh && tupleMismatch && !(refresh && !refreshActive && routed.context.sourceFocus === "plant" || auditScope)) throw Error("The requested tuple does not match this investigation; correct the exact scope before source refresh.");
+						let revised = tupleMismatch && !auditScope && !(refresh && !refreshActive && routed.context.sourceFocus === "plant") || [
+							"data-correction-clarify",
+							"quote-clarify",
+							"cutoff-clarify"
+						].includes(routed.intent) ? null : sourceRevision(next.resources, revisionCases, reviewAsOf, refresh ? "refreshed" : "stale");
+						if (refresh && revised) {
+							const changed = [...new Set(revised.records.map((r) => r.content.caseId))];
+							if (changed.length > 1) throw Error("Multiple revised scopes are eligible. Open the exact investigation, then ask Refresh revised source for current investigation as of the chosen UTC cutoff.");
+							revised.caseIds = changed;
+						}
+						if (refresh && !revised) {
+							const selected = revisionCases[0];
+							if (!selected) throw Error("Open the exact investigation or Plant Review before refreshing a revised source.");
+							revised = {
+								schemaVersion: 1,
+								mode: "original",
+								asOf: reviewAsOf,
+								caseIds: [selected],
+								records: []
+							};
+						}
+						if (routed.commands.length) {
+							if (revised) blocked = "Eligible source revision changed this result. Refresh revised source; matching raw unit evidence and verification cohorts remain unavailable.";
+							else if (monthlyRecord) try {
+								const m = executeMonthly(monthlyRecord.content.monthly, routed.commands[0], key);
+								monthlyRecord = {
+									...monthlyRecord,
+									version: monthlyRecord.version + 1,
+									content: {
+										...monthlyRecord.content,
+										monthly: m
+									}
+								};
+								put(monthlyRecord);
+								commands = routed.commands;
+							} catch (error) {
+								blocked = error instanceof Error ? error.message : "The command did not progress.";
+							}
+							else if (tupleMismatch) blocked = "The requested tuple does not match this investigation. Correct it explicitly before progressing; the authoritative investigation was retained.";
+							else if (!investigation) blocked = "Open an investigation first; no lifecycle transition was made.";
+							else {
+								let w = investigation.content.workflow;
+								const effectiveActor = actor;
+								try {
+									for (const [index, attempted] of routed.commands.entries()) {
+										const ordinal = requestedHypothesisOrdinal(routingQuestion), resolved = attempted.kind === "plan-test" && ordinal !== void 0 && w.hypotheses[ordinal] ? {
+											...attempted,
+											hypothesisId: w.hypotheses[ordinal].id
+										} : attempted;
+										const command = w.testPolicyVersion === 2 && resolved.kind === "record-test" ? {
+											...resolved,
+											kind: "record-test-evidence"
+										} : resolved;
+										if (command.kind === "review-safety" && !w.verificationRecorded) {
+											const preview = workflowView(w);
+											if (preview.verification.proof && preview.verification.baselineCount >= w.plan.requiredShifts && preview.verification.postCount >= w.plan.requiredShifts) w = executeWorkflow(w, { kind: "record-verification" }, effectiveActor, key + "-" + index + "-measurement");
+										}
+										w = executeWorkflow(w, command, effectiveActor, key + "-" + index);
+										commands.push(command);
+									}
+									investigation = {
+										...investigation,
+										version: investigation.version + 1,
+										updatedAt: w.asOf,
+										content: {
+											domain,
+											workflow: w
+										}
+									};
+									put(investigation);
+									commandMessage = commandSummary(commands[0], w);
+								} catch (error) {
+									blocked = error instanceof Error ? error.message : "The command did not progress.";
+									commands = [];
+								}
+							}
+						}
+						if (commands.some((command) => command.kind === "advance-time") && !blocked) {
+							reviewAsOf = investigation.content.workflow.asOf;
+							revised = sourceRevision(next.resources, routed.context.caseFocus ? [routed.context.caseFocus] : [], reviewAsOf);
+						}
+						const notificationCapture = investigation && !blocked && !revised && routed.intent === "notifications" ? captureNotification(investigation, text) : void 0;
+						const obligationCapture = investigation && !blocked && !revised && routed.intent === "obligations" ? captureObligation(investigation, text) : void 0;
+						const genealogyCapture = investigation && !blocked && !revised && routed.intent === "genealogy" ? captureGenealogy(investigation, text) : void 0;
+						const measurementTrustCapture = investigation && !blocked && !revised && routed.intent === "measurement-trust" ? captureMeasurementTrust(investigation, text) : void 0;
+						const integrationHealthCapture = investigation && !blocked && !revised && routed.intent === "integration-health" ? captureIntegrationHealth(investigation, text) : void 0;
+						const diagnosticCapture = investigation && !blocked && !revised && routed.intent.startsWith("diagnostic-") && routed.intent !== "diagnostic-select" ? captureDiagnostic(investigation, text, routed.intent, routed.context) : void 0;
+						const historicalCutoff = routed.intent === "cutoff-clarify" || !!routed.context.reviewCutoff && routed.context.reviewCutoff !== (investigation?.content.workflow)?.asOf;
+						const view = investigation && !historicalCutoff && !revised ? workflowView(investigation.content.workflow, true) : null, answer = notificationCapture ? notificationPresentation(notificationCapture) : obligationCapture ? obligationPresentation(obligationCapture) : genealogyCapture ? genealogyPresentation(genealogyCapture) : measurementTrustCapture ? measurementTrustPresentation(measurementTrustCapture) : integrationHealthCapture ? integrationHealthPresentation(integrationHealthCapture) : diagnosticCapture ? diagnosticPresentation(diagnosticCapture) : revised ? revisionPresentation(revised, routed.context.metric) : monthlyRecord && monthlyRecord.content.monthly.sourceKind === "operating-review" ? auditDiscoveryReply(monthlyRecord.content.monthly, text, routed.intent, blocked, routed.precedingIntent, 1) : blocked ? {
+							text: "I could not progress that step. " + blocked + " The saved investigation remains unchanged.",
+							evidence: "none",
+							chart: false,
+							metric: routed.context.metric,
+							sourceIds: [],
+							qualification: blocked
+						} : monthlyRecord && [
+							"audit-discovery",
+							"command",
+							"hypothesis-records",
+							"hypotheses",
+							"tests",
+							"owner",
+							"action",
+							"verification",
+							"verification-plan",
+							"sustain",
+							"next"
+						].includes(routed.intent) ? monthlySummary(monthlyRecord.content.monthly) : presentTurn(routed, view, commandMessage, reviewAsOf);
+						if (revised) {
+							routed.intent = refresh ? "source-refresh" : "source-stale";
+							routed.context.sourceFocus = auditScope || refresh && !refreshActive && routed.context.sourceFocus === "plant" ? "plant" : "case";
+						}
+						c.context = {
+							...routed.context,
+							lastIntent: routed.intent,
+							activeInvestigationId: c.investigationId,
+							investigationStage: monthlyRecord ? "discovery" : view ? view.sustain.status === "recurrence" ? "recurrence" : view.sustain.status === "sustained" ? "sustained" : view.verification.status === "accepted" ? "accepted" : view.action.status : routed.context.investigationStage
+						};
+						if (!c.context.caseFocus && monthlyRecord?.content.monthly && monthlyRecord.content.monthly.sourceKind === "operating-review") {} else if (!c.context.caseFocus && c.context.sourceFocus !== "plant") c.monthlyContext = structuredClone(c.context);
+						const publishedAnswer = notificationCapture || obligationCapture || genealogyCapture ? answer : bindMetricPublicationV5(text, c.context, view, answer, requestContext);
+						if (publishedAnswer.metric === "financial_savings") c.context.lastIntent = "financial_unavailable";
+						const captured = {
+							topicContextPolicyVersion: 8,
+							notificationPolicyVersion: 1,
+							...notificationCapture ? { notificationCapture } : {},
+							obligationPolicyVersion: 1,
+							...obligationCapture ? { obligationCapture } : {},
+							genealogyPolicyVersion: 1,
+							...genealogyCapture ? { genealogyCapture } : {},
+							measurementTrustPolicyVersion: 1,
+							...measurementTrustCapture ? { measurementTrustCapture } : {},
+							integrationHealthPolicyVersion: 1,
+							...integrationHealthCapture ? { integrationHealthCapture } : {},
+							diagnosticPolicyVersion: 1,
+							...diagnosticCapture ? { diagnosticCapture } : {},
+							...revised ? { revisionCapture: revised } : {},
+							id: "turn-" + (c.turns.length + 1),
+							captureId: record.id + "/turn-" + (c.turns.length + 1),
+							dialogueVersion: 1,
+							scopedDialogue: 1,
+							interactionVersion: 1,
+							scopeInterpretationVersion: 4,
+							assignmentIntentVersion: 2,
+							intentContextVersion: 5,
+							clockOperandVersion: 2,
+							...routed.intent === "audit" && !revised ? { reviewSnapshot: operatingReview(reviewAsOf) } : {},
+							question: text,
+							answer: publishedAnswer,
+							metricPublicationVersion: 5,
+							context: structuredClone(c.context),
+							requestContext,
+							routingQuestion,
+							reviewAsOf,
+							asOf: revised ? revised.asOf : routed.context.reviewCutoff || [
+								"audit",
+								"cutoff-clarify",
+								"audit-referent-clarify",
+								"dashboard-focus",
+								"investigation-select"
+							].includes(routed.intent) ? reviewAsOf : view?.asOf || (monthlyRecord?.content.monthly)?.asOf || "2026-04-01T00:00:00Z",
+							investigationId: c.investigationId,
+							investigationVersion: investigation?.version || monthlyRecord?.version || null,
+							...monthlyRecord && !revised ? { monthlySnapshot: structuredClone(monthlyRecord.content.monthly) } : {},
+							view,
+							workflowSnapshot: investigation && view ? structuredClone(investigation.content.workflow) : null,
+							actor,
+							commands,
+							blocked
+						};
+						captured.semanticEnvelope = capturedSemantics(captured);
+						c.turns.push(captured);
+						result = {
+							...record,
+							version: record.version + 1,
+							updatedAt: view?.asOf || record.updatedAt,
+							assetIds: [.../* @__PURE__ */ new Set([...record.assetIds, ...investigation?.assetIds || []])],
+							content: {
+								domain: conversationDomain,
+								conversation: c
+							}
+						};
+					}
+				} else if (isConversation && operation === "commands") {
+					const c = structuredClone(record.content.conversation);
+					if (!["archive", "restore"].includes(String(body.kind))) throw Error("Unsupported conversation command.");
+					c.archived = body.kind === "archive";
+					result = {
+						...record,
+						version: record.version + 1,
+						content: {
+							domain: conversationDomain,
+							conversation: c
+						}
+					};
+				} else return response(404, void 0, "UNKNOWN_ENDPOINT");
+				if (result.content.domain === conversationDomain) {
+					const saved = result.content.conversation;
+					const pending = saved.evidenceReviewDraft || saved.claimReviewDraft;
+					saved.collectorScopePaused = !!(pending && !collectorScopeMatches(saved.context, caseFixtures[pending.caseId]));
+					if ((saved.evidenceReviewDraft || saved.claimReviewDraft) && (saved.dataset !== "manufacturing" || (saved.evidenceReviewDraft || saved.claimReviewDraft).caseId !== saved.context.caseFocus || !!saved.comparisonId)) retainPausedCollector(saved);
+					if (saved.evidenceReviewDraft && (saved.dataset !== "manufacturing" || saved.evidenceReviewDraft.caseId !== saved.context.caseFocus || !!saved.comparisonId)) delete saved.evidenceReviewDraft;
+					if (saved.claimReviewDraft && (saved.dataset !== "manufacturing" || saved.claimReviewDraft.caseId !== saved.context.caseFocus || !!saved.comparisonId)) delete saved.claimReviewDraft;
+					saved.collectorScopePaused = !!((saved.evidenceReviewDraft || saved.claimReviewDraft) && !collectorScopeMatches(saved.context, caseFixtures[(saved.evidenceReviewDraft || saved.claimReviewDraft).caseId]));
+				}
+				put(result);
+				next.idempotency[slot] = {
+					fingerprint,
+					result: structuredClone(result)
+				};
+				if (!validateManufacturingState(next)) return response(422, void 0, "INVALID_RESULT");
+				assertLease?.();
+				mutationCommitStarted = true;
+				try {
+					await this.repository.commit(next);
+				} catch {
+					return response(503, void 0, "STORAGE_UNAVAILABLE", "The transaction failed. The prior saved conversation and investigation remain intact; retain your draft and retry after recovery.");
+				}
+				return response(201, structuredClone(result));
+			} catch (error) {
+				return response(400, void 0, "INVALID_REQUEST", error instanceof Error ? error.message : "Invalid typed request.");
+			}
+		});
+	}
+};
+function validateManufacturingState(s) {
+	return s.resources.every((r) => r.content.domain === "manufacturing-evidence-capture-v1" ? validEvidenceCapture(r) : r.content.domain === "manufacturing-evidence-query-v1" ? validEvidenceQuery(r) : r.content.domain === "manufacturing-comparison-v63" ? validComparison(r.content.state) : r.content.domain === "monthly-investigation-v1" ? validateMonthly(r.content.monthly) : r.content.domain === domain ? validateWorkflow(r.content.workflow) : r.content.domain === conversationDomain ? validConversation(r.content.conversation, r.id) : true);
+}
+function commandSummary(command, w, legacyReview = false) {
+	if (!legacyReview && ["create-verification-plan", "revise-verification-plan"].includes(command.kind) && w.planDraft) {
+		const d = w.planDraft.plan;
+		return `I saved draft version ${d.version}: ${d.endpoint}, target ${d.target} ${d.unit}, ${d.requiredShifts} comparable shifts. Active version ${w.plan.version} remains at ${w.plan.target} ${w.plan.unit}. Explicit adoption fixes the prospective prerequisites; this is not performed work or verified improvement.`;
+	}
+	if (!legacyReview && command.kind === "add-hypothesis" && command.description) return "The hypothesis is recorded as a conversation proposal; no supporting evidence is supplied. Its cause remains unconfirmed.";
+	const base = {
+		"correct-revision": "The draft investigation reference is corrected to the declared source revision " + w.context.revision + ". Source measurements and unrelated dimensions are unchanged.",
+		"set-action-due-date": "The action due date is saved as " + w.action.dueAt + ". Authorization, performed work and verification are unchanged.",
+		"record-test-evidence": "The known same-case test evidence is recorded as TESTED. Source disposition and confirmed cause remain separate.",
+		"dispose-tested-hypothesis": "The recorded test now has its source-bound disposition. Cause remains unconfirmed.",
+		"create-verification-plan": "I saved a prospective verification-plan draft; the active protocol and measurements are unchanged. Review and explicitly use that plan to fix it.",
+		"revise-verification-plan": "I saved a reasoned prospective plan revision. Adoption versions the plan and invalidates prior acceptance; old work/outcomes cannot verify the new protocol.",
+		"adopt-verification-plan": "The exact verification plan is fixed under fictional local governance. This is not work authorization or proof of improvement.",
+		"request-assignment": "Ownership is requested from " + roleName(String(w.owner.requested || "")) + ". Acceptance is still pending.",
+		"accept-assignment": roleName(String(w.owner.accepted || w.owner.requested || "")) + " accepted the assignment. Work is not yet authorized or performed.",
+		"record-assignment-acceptance": roleName(String(w.owner.accepted || w.owner.requested || "")) + " acceptance is recorded. Work is not yet authorized or performed.",
+		"add-hypothesis": "The source-linked hypothesis is recorded. Its cause remains unconfirmed.",
+		"plan-test": "The hypothesis test is planned against the controlled inspection requirement.",
+		"record-test": "The known inspection result is recorded. It supports the hypothesis without establishing isolated causation.",
+		"recommend-action": "The bounded restoration is recommended against applicable standard work. Its opportunity is an estimate, not savings.",
+		"request-authorization": "Authorization has been requested. Approval and performed work remain pending.",
+		"authorize-action": "The fictional manager authorized the bounded restoration in the synthetic service. No real permission or work dispatch occurred.",
+		"record-performed-work": "The separate technician work proof and operator confirmation are recorded. The verification result remains a separate decision.",
+		"record-verification": "The eligible before/after measurement is recorded. Safety and guardrail review precede result acceptance.",
+		"review-safety": "The safety review is recorded. Quality and energy guardrails remain part of acceptance.",
+		"accept-result": "The observed operational result is accepted. This does not establish causation or verified financial savings.",
+		"record-sustain": "The eligible observations known at this cutoff are recorded. We can now assess sustainment and recurrence.",
+		"reopen": "Cycle 2 is open after recurrence. Cycle 1 stays completed and historical. This cycle does not reuse the earlier verification.",
+		"advance-time": demoClockSentence(w.asOf)
+	}[command.kind] || "The typed command was committed to the persistent synthetic investigation.";
+	if (command.kind === "add-hypothesis") {
+		const h = w.hypotheses.at(-1);
+		return base + (h ? ` Recorded: ${h.description} Test: ${h.test}` : "");
+	}
+	if (command.kind === "recommend-action" && w.action.description) return base + " Recommended action: " + w.action.description;
+	if (command.kind === "record-performed-work") return base + ` Work performed: ${w.action.description || ""} Operator confirmation: ${w.action.confirmation || ""}.`;
+	return base;
+}
+/** Exact immutable diagnostic turn source; does not disclose unrelated conversation turns/assets. */
+function validSavedDiagnosticTurn(value, conversationId) {
+	try {
+		const t = value;
+		return !!t && typeof t.id === "string" && t.captureId === conversationId + "/" + t.id && t.diagnosticPolicyVersion === 1 && !!t.diagnosticCapture && typeof t.question === "string" && typeof t.routingQuestion === "string" && !!t.requestContext && !!t.context && [
+			"manager",
+			"supervisor",
+			"maintenance",
+			"safety",
+			"viewer"
+		].includes(t.actor) && Array.isArray(t.commands) && t.commands.length === 0 && !!t.workflowSnapshot && !!t.view && validateWorkflow(t.workflowSnapshot) && validCapturedView(t.workflowSnapshot, t.view, t.asOf, true) && validCapturedAnswer(t) && validCapturedSemantics(t);
+	} catch {
+		return false;
+	}
+}
+//#endregion
+export { ManufacturingService, syntheticManufacturingAssets, validConversationResult, validSavedDiagnosticTurn };

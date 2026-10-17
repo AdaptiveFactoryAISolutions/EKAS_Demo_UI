@@ -1,0 +1,28 @@
+//#region app/src/admin/localAiAdminMessages.ts
+const localAiAdminMessages = {
+	LOCAL_OWNER_REQUIRED: "Sign in as the local demo owner. The fictional chat role does not grant administrator access.",
+	LOCAL_ORIGIN_REFUSED: "Open the configured local address; this request came from a different origin or host.",
+	LOCAL_CSRF_REFUSED: "Your session could not authorize this action. Sign in again.",
+	CONFIGURATION_CONFLICT: "Configuration changed. Reload current settings before submitting again.",
+	CREDENTIAL_REQUIRED: "Enter a credential to set or replace it. Blank input never removes a saved key.",
+	CREDENTIAL_REPLACEMENT_FAILED: "Replacement failed; the previous credential remains configured.",
+	CREDENTIAL_MOCK_ONLY: "Mock rehearsal accepts dummy credentials only.",
+	COST_CONFIRMATION_REQUIRED: "Explicitly confirm that a connection test may incur cost.",
+	AI_TEST_REQUIRED: "Test this exact configuration before enabling AI.",
+	AI_BUDGET_UNAVAILABLE: "The cumulative budget is unavailable, exhausted or has unresolved usage.",
+	AI_LIVE_BUDGET_REQUIRED: "Connect the original cumulative budget history before real OpenAI calls.",
+	AI_MOCK_BUDGET_REQUIRED: "Use a separate synthetic budget for mock rehearsal.",
+	AI_PRICING_EXPIRED: "Reviewed pricing expired. Verify current pricing before paid use.",
+	AI_SETTINGS_SAVE_FAILED: "Settings could not be saved; the previous configuration is preserved. Check local workspace storage, refresh status and retry deliberately.",
+	AI_SETTINGS_REFUSED: "Check the supported provider, model and safe request limits.",
+	AI_TEST_FAILED: "The connection test failed. No credential or raw provider error is returned.",
+	AI_TEST_INCOMPLETE: "The test returned an incomplete response; accounting is retained.",
+	AI_TEST_BUSY: "A connection test is already in progress. Wait for its outcome.",
+	AI_MODE_UNAVAILABLE: "Select a supported OpenAI or mock mode.",
+	AI_MOCK_TRANSPORT_REQUIRED: "Mock transport is unavailable; no live fallback is allowed.",
+	CREDENTIAL_CONFIRMATION_REQUIRED: "Confirm removal explicitly. It does not revoke the provider key.",
+	AI_REHEARSAL_ONLY: "This public rehearsal identity can use only synthetic mock mode and dummy credentials. A separate private local-owner launch is required for an authorized real test.",
+	AI_REQUEST_REFUSED: "The administrator request is invalid."
+};
+//#endregion
+export { localAiAdminMessages };
