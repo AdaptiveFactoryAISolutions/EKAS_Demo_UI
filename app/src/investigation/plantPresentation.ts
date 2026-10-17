@@ -66,6 +66,21 @@ export function plantPhrase(text:string){
   .replace(/\bEC-003\b/g,'Engineering change 003');
 }
 
+/** Plant wording when a fresh conversation has no selected investigation. */
+export const NO_INVESTIGATION_YET="I don't have an investigation selected yet. Tell me what you want to investigate, or run the plant review first.";
+
+/** Hide internal grammar, fixture ids, and dataset-cutoff diagnostics from a normal reply. Technical details keep the stored text. */
+export function plantFacingReply(text:string){
+ const cleaned=text
+  .replace(/[^.\n]*\bfinite training grammar\b[^.\n]*\.?/gi,'')
+  .replace(/\btraining-(?:plant-v1|ui-acceptance-v1|positive-v2)\b/g,'')
+  .replace(/Dataset:\s*[^.\n]*\.?/gi,'')
+  .replace(/[ \t]{2,}/g,' ')
+  .replace(/\n{3,}/g,'\n\n')
+  .trim();
+ return cleaned||NO_INVESTIGATION_YET;
+}
+
 /** The disclosed synthetic home scope. It is not an open investigation. */
 export function demoPlantScope(){
  const c=fixtureCase('downtime').context;

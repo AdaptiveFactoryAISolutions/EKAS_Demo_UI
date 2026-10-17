@@ -2,6 +2,7 @@ import{it,expect}from'vitest';
 import{MockRepository}from'../platform/mockRepository';
 import{ManufacturingService,createManufacturingClient}from'./service';
 import{emptyConversationContext,routeConversation}from'./conversation';
+import{NO_INVESTIGATION_YET}from'./plantPresentation';
 import{operatingReview}from'./operatingReview';
 
 const live=(question:string,previous=emptyConversationContext())=>routeConversation(question,previous,'2026-10-06T14:45:00Z',false,true,true,true,4,2,5,2,1,1,1,1,1,1,8);
@@ -97,7 +98,34 @@ it('7. a new conversation does not keep the previous referent',async()=>{
  expect(next.content.conversation.investigationId).toBeNull();
  expect(next.content.conversation.context.dashboardCase??null).toBeNull();
  expect(next.content.conversation.turns.at(-1)!.answer.text).not.toMatch(/Northworks feeder-jam plan miss|150 good units below the approved plan/);
+ expect(next.content.conversation.turns.at(-1)!.answer.text).toBe(NO_INVESTIGATION_YET);
+ expect(next.content.conversation.turns.at(-1)!.answer.text).not.toMatch(/FEED-03|JOB-8303|training-plant-v1|finite training grammar/);
+ expect(next.content.conversation.context).toMatchObject({caseFocus:null,line:null,job:null,plant:'Monthly synthetic plant',machine:'Machine 1'});
+ expect(next.content.conversation.dataset).toBe('manufacturing');
  expect((await client.readConversation(first.id)).content.conversation.context.dashboardCase).toBe('downtime');
+ const again=await client.turn(next.id,next.version,'Run the plant review.','referent-new-review');
+ const opened=await client.turn(again.id,again.version,'Investigate it.','referent-new-open');
+ expect(opened.content.conversation.context.caseFocus).toBe('downtime');
+ expect(opened.content.conversation.turns.at(-1)!.answer.text).toMatch(/150 good units/);
+ expect(opened.content.conversation.turns.at(-1)!.answer.text).toMatch(/Line 03 missed by 138/);
+ expect((await client.readConversation(first.id)).content.conversation.context.caseFocus).toBeNull();
+});
+
+it('9. a fresh focus-first question does not inherit the previous conversation case',async()=>{
+ const client=createManufacturingClient(new ManufacturingService(new MockRepository()));
+ let first=await client.createConversation('referent-focus-old');
+ first=await client.turn(first.id,first.version,'Investigate quality.','referent-focus-old-quality');
+ expect(first.content.conversation.context.caseFocus).toBe('quality');
+ let next=await client.createConversation('referent-focus-new');
+ next=await client.turn(next.id,next.version,'What should I focus on first?','referent-focus-new-first');
+ expect(next.content.conversation.context.caseFocus).toBeNull();
+ expect(next.content.conversation.context.dashboardCase??null).toBeNull();
+ expect(next.content.conversation.context.machine).not.toBe('FORM-Q1');
+ expect(next.content.conversation.context.line).toBeNull();
+ expect(next.content.conversation.context.job).toBeNull();
+ expect(next.content.conversation.turns.at(-1)!.answer.text).not.toMatch(/FEED-03|JOB-8303|FORM-Q1|training-plant-v1|finite training grammar/);
+ expect((await client.readConversation(first.id)).content.conversation.context.caseFocus).toBe('quality');
+ expect((await client.readConversation(first.id)).content.conversation.context.machine).toBe('FORM-Q1');
 });
 
 it('8. an explicit new topic overrides the prior referent',async()=>{

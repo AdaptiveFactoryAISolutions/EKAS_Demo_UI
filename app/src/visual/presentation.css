@@ -315,3 +315,46 @@ html[data-theme="dark"] .retained-console .highcharts-dashboards-edit-toolbar-it
   .retained-console aside button.ekas-nav-item svg,
   .retained-console .retained-primary-header button svg { width: 20px; height: 20px; }
 }
+
+/* Dark controls keep author colors. Native button faces must not replace them. */
+html[data-theme="dark"] { color-scheme: dark; }
+html[data-theme="dark"] .retained-console button,
+html[data-theme="dark"] .ekas-plant button,
+html[data-theme="dark"] .ekas-plant textarea,
+html[data-theme="dark"] .ekas-plant select,
+html[data-theme="dark"] .retained-console textarea,
+html[data-theme="dark"] .retained-console select { appearance: none; }
+html[data-theme="dark"] .retained-console aside button.ekas-nav-item[aria-current="page"],
+html[data-theme="dark"] .retained-console aside button.ekas-nav-item[aria-current="page"]:hover {
+  background-color: #3a3a3a;
+  color: #f3f3f1;
+}
+html[data-theme="dark"] .ekas-plant .ekas-starts button,
+html[data-theme="dark"] .ekas-plant .ekas-starts button:hover:not(:disabled) {
+  background-color: #2a2a2a;
+  color: #f3f3f1;
+  border-color: #6e6e68;
+}
+html[data-theme="dark"] .ekas-plant textarea,
+html[data-theme="dark"] .ekas-composer,
+html[data-theme="dark"] .ekas-composer textarea {
+  background-color: #1f1f1f;
+  color: #f3f3f1;
+}
+html[data-theme="dark"] .ekas-composer button[type="submit"]:not(:disabled),
+html[data-theme="dark"] .ekas-plant button.ekas-next-cta {
+  background-color: #f3f3f1;
+  color: #161616;
+}
+html[data-theme="dark"] .ekas-composer button[type="submit"]:disabled:not([aria-busy="true"]) {
+  background-color: #262626;
+  color: #c4c4be;
+}
+html[data-theme="dark"] .retained-more-panel,
+html[data-theme="dark"] .retained-more-panel button {
+  background-color: #1f1f1f;
+  color: #f3f3f1;
+}
+html[data-theme="dark"] .ekas-scope-meta,
+html[data-theme="dark"] .ekas-context-compact,
+html[data-theme="dark"] .retained-console .text-muted { color: #c4c4be; }
