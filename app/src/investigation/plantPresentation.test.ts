@@ -1,6 +1,6 @@
 import {expect,it} from 'vitest';
 import {fixtureCase} from './cases';
-import {demoClockSentence,documentLine,eventLine,groupThousands,humanScopeWhen,journeyAction,journeyBrief,journeyCommands,lifecycleState,nextLifecycleCommand,overviewCopy,plantDayLabel,plausibleLine,presentDocuments,presentedStatus,snapshotLabel,visiblePeriod} from './plantPresentation';
+import {demoClockSentence,documentLine,eventLine,groupThousands,humanScopeWhen,journeyAction,journeyBrief,journeyCommands,lifecycleState,nextLifecycleCommand,overviewCopy,plantDayLabel,plantInstantLabel,plausibleLine,presentDocuments,presentPlantTimestamps,presentedStatus,snapshotLabel,visiblePeriod} from './plantPresentation';
 import {createWorkflow,executeWorkflow,workflowView} from './workflow';
 
 it('reads the next step from the saved owner and does not invent one',()=>{
@@ -47,6 +47,8 @@ it('describes a stop from its own minutes, asset, and UTC day',()=>{
 
 it('prints the plant snapshot without a raw clock label',()=>{
  expect(snapshotLabel('2026-10-06T14:45:00Z')).toBe('Snapshot: Oct 6, 2026 · 2:45 PM · Synthetic');
+ expect(plantInstantLabel('2026-10-06T14:45:00Z')).toBe('Oct 6, 2026 · 2:45 PM');
+ expect(presentPlantTimestamps('Review cutoff 2026-10-06T14:45:00Z. Window 2026-10-06T06:00:00Z to 2026-10-06T14:00:00Z.')).toBe('Review cutoff Oct 6, 2026 · 2:45 PM. Window Oct 6, 2026 · 6:00 AM to Oct 6, 2026 · 2:00 PM.');
  expect(snapshotLabel('2026-10-20T15:15:00Z')).not.toMatch(/UTC|T15:15:00Z/);
  expect(visiblePeriod('2026-10-06T14:45:00Z')).toBe('Oct 6');
  expect(visiblePeriod('2026-10-20T15:15:00Z')).toBe('Follow-up measurement period · Oct 20');

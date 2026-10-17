@@ -17,6 +17,6 @@ Accepted baselines that this candidate does not reopen:
 - Visual system at `0d54c01`
 - WP5B reconciliation at `e0074f2`
 
-RC2 is test-only, source `94517b4`. Product source and the production build hashes are unchanged from RC1. The extracted suite passed 2,943 and failed 0. Final Release is not approved. The Investigate-it checkpoint still opens Quality while the stated priority is the 150-unit feeder-jam miss. That defect must be corrected before final approval.
+RC2 is test-only, source `94517b4`. Product source and the production build hashes are unchanged from RC1. The extracted suite passed 2,943 and failed 0. RC3 corrects the Investigate-it referent: the pronoun follows the recommended feeder-jam plan miss instead of Quality loss. Final Release is not approved. Steps 15, 16, and 20 remain human gates.
 
 The final stop condition is not met. Steps 15, 16, and 20 need people. This package does not self-certify.

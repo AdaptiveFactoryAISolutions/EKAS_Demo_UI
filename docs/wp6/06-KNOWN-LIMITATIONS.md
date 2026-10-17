@@ -14,9 +14,9 @@ No real provider key was entered. No paid call was made. Pricing in the older fi
 
 ## Plant Review pronoun
 
-After “Run my plant review.”, “What's off target?”, and “What should I focus on first?”, the scorecard priority is the Northworks feeder-jam plan miss, 150 good units. The next phrase, “Investigate it.”, opens the selected Quality loss Plant Review discovery. An older locked audit-journey test expects that Quality-loss discovery. It does not open the feeder-jam case or fall back to Machine 1 in January.
+RC2 left a release-blocking gap. After “Run my plant review.” and “What should I focus on first?”, the scorecard priority is the Northworks feeder-jam plan miss, 150 good units, and “Investigate it.” opened Quality loss.
 
-That mismatch is a real usability/context defect. The mandatory Step 16 checkpoint is in `16-REHEARSAL-GUIDE.md`. If Investigate it opens Quality while the stated priority is the 150-unit feeder-jam miss, the defect must be corrected before final approval. RC2 does not change this behavior. Later operational phrases on that discovery say approval, performed work, verification, sustainment, and reopen are not supplied. They do not invent those records.
+RC3 resolves “it” from the current conversational referent. Plant Review and the focus-first answer name that feeder-jam plan miss, and “Investigate it.” opens that case: plant gap 150 good units, largest contributor Line 03, 138 units. An explicit quality or speed question still opens that named case. A reply that names more than one case asks which one, instead of choosing. A new conversation does not keep the previous referent. Topic policy 7 replays the older Quality-loss pronoun; new turns use policy 8. The Step 16 rehearsal in `16-REHEARSAL-GUIDE.md` is still a human gate. This note does not mark it done.
 
 The downtime, speed, and quality journeys are separate. Each reached reopen from a clean profile, including downtime at 320px.
 

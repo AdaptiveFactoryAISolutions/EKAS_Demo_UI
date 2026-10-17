@@ -13,6 +13,26 @@ export function plantDayLabel(iso?:string|null){
  return `${MONTHS[d.getUTCMonth()]} ${d.getUTCDate()}`;
 }
 
+/** Plant-facing instant. The exact UTC value stays in technical details. */
+export function plantInstantLabel(iso?:string|null){
+ if(!iso)return '';
+ const t=Date.parse(iso);
+ if(!Number.isFinite(t))return '';
+ const d=new Date(t);
+ let hour=d.getUTCHours();
+ const suffix=hour>=12?'PM':'AM';
+ hour=hour%12||12;
+ const minute=String(d.getUTCMinutes()).padStart(2,'0');
+ const second=d.getUTCSeconds();
+ const clock=second?`${hour}:${minute}:${String(second).padStart(2,'0')} ${suffix}`:`${hour}:${minute} ${suffix}`;
+ return `${MONTHS[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()} · ${clock}`;
+}
+
+/** Replace exact UTC instants in a normal answer. Stored timestamps are unchanged. */
+export function presentPlantTimestamps(text:string){
+ return text.replace(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z/g,match=>plantInstantLabel(match)||match);
+}
+
 /** Human snapshot for the plant view. The exact timestamp stays in technical details. */
 export function snapshotLabel(iso?:string|null){
  if(!iso)return 'Snapshot: Synthetic';
