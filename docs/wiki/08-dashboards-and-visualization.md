@@ -41,3 +41,9 @@ At desktop widths the KPI row wraps onto two rows with readable type. At 390px a
 ## Clean-room rule
 
 External dashboard images are research references only. Do not copy their images, layouts, branding, wording, composition, icons, titles, or colors. Take only generic KPI concepts, questions, workflow patterns, and decision-support ideas.
+
+## Future maturity context
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.**
+
+A later dashboard could name which maturity layer the selected case's evidence supports. That idea is [22 EKAS Manufacturing AI Maturity Model](22-manufacturing-ai-maturity-model.md). Plant Operations and Production & OEE do not show a maturity level. They remain views of the governed gaps.

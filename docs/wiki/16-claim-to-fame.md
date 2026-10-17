@@ -48,3 +48,9 @@ The model can change. The manufacturing truth, governance, evidence chain and us
 EKAS can be designed to understand which product, revision, controlled definition, engineering change, and process conditions were in force at the time of the event. The contract is [Product / part identity and PLM context](cross-system/11-product-part-identity-and-plm-context.md). The running conversation does not yet read PLM.
 
 Most systems own one piece of the story. EKAS connects those pieces into governed manufacturing context.
+
+## Maturity and the claim
+
+The claim is a governed path from a missed goal to verified improvement. [22 EKAS Manufacturing AI Maturity Model](22-manufacturing-ai-maturity-model.md) says that path is earned one layer at a time. A conversation can explain and propose. The manufacturing truth, the evidence, the authorization, and the verification stay outside the model. Governed autonomy is not required for the claim, and it is not claimed here.
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** Cross-system evidence for that path, predictive optimization, orchestration into source systems, and any governed-autonomy action are not running capabilities.

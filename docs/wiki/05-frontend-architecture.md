@@ -60,7 +60,7 @@ Each conversation has an id, a version, turns, and the current context. Policy v
 
 ## Investigation state
 
-An open case has a stage and a next action. Owner, hypothesis, recommendation, authorization, performed work, verification, sustain, and reopen are stages. The summary region exposes the next control. Cycle 2 after reopen does not inherit cycle 1 proof.
+An open case has a stage and a next action. Owner, hypothesis, recommendation, authorization, performed work, verification, sustain, and reopen are stages. The summary region exposes the next control. Cycle 2 after reopen does not inherit cycle 1 proof. The same stages are the decision execution model in [21 Decision execution model](21-decision-execution-model.md).
 
 ```mermaid
 stateDiagram-v2

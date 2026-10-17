@@ -1,6 +1,6 @@
 # 04 Journeys
 
-Three accepted journeys share one lifecycle. The prompts are “We missed our production goal.”, “Investigate speed.”, and “Investigate quality.” Each opens its case and can be walked to reopen.
+Three accepted journeys share one lifecycle. The prompts are “We missed our production goal.”, “Investigate speed.”, and “Investigate quality.” Each opens its case and can be walked to reopen. That lifecycle is named, without adding a stage, in [21 Decision execution model](21-decision-execution-model.md).
 
 ```mermaid
 flowchart LR

@@ -48,6 +48,14 @@ The running demo already keeps a model call off the manufacturing record. Local 
 
 **DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** The path from orchestration through the adapter into manufacturing systems, and back through governed evidence, is the target architecture. It is not a verified live integration. Adapter Verified remains NO.
 
+## Autonomy must be earned
+
+Autonomy is earned layer by layer. A connection to data is not permission to act. Integration, evidence, governance, authorization, orchestration, and verification come first. Governed autonomy is not the default destination. Some decisions stay human-authorized by design.
+
+The model is [22 EKAS Manufacturing AI Maturity Model](22-manufacturing-ai-maturity-model.md). The stages a later layer may coordinate are [21 Decision execution model](21-decision-execution-model.md).
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** No governed-autonomy action is implemented. This decision does not authorize one.
+
 ```mermaid
 flowchart LR
   ai[AI / LLM] --> orch[Orchestration]
