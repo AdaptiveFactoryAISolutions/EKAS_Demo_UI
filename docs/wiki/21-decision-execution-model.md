@@ -1,34 +1,66 @@
 # 21 Decision execution model
 
-The decision execution model is the governed sequence from a recognized loss to a verified outcome, and then to sustain or reopen. This wiki already walks that sequence in [03 Using EKAS](03-using-ekas.md), [04 Journeys](04-journeys.md), and the investigation state diagram in [05 Frontend architecture](05-frontend-architecture.md). This page names the model in one place. It does not add a stage.
+## Executive model
 
-`docs/integration/BACKEND-CONTRACT.md` records the same separation for the local demo: goal, loss, evidence, hypothesis, action, owner acceptance, authorization, performed work, verification, sustainment, and reopen. Approval is not performed work. Performed work is not verification.
+Detect → Diagnose → Predict → Recommend → Authorize → Act → Verify → Sustain
 
-## Stages
+This is the executive simplification. It does not replace the detailed lifecycle.
 
-| Stage | What becomes true | Where the demo already says it |
-| --- | --- | --- |
-| Recognize the loss | A missed goal is stated as a gap, with its scope and its measure | [04 Journeys](04-journeys.md): goal, gap, loss, contributor |
-| Bind context | Plant, line, machine, job, period, and case are the conversation context | [05 Frontend architecture](05-frontend-architecture.md): one context object |
-| Cite evidence | The answer carries source ids, the as-of instant, and the qualification. A missing record stays missing | [05 Frontend architecture](05-frontend-architecture.md): evidence model |
-| Recommend | A hypothesis and a bounded action are recorded as a recommendation | [04 Journeys](04-journeys.md): hypothesis, action |
-| Authorize | A named authority approves or withholds the bounded action | [04 Journeys](04-journeys.md): authorization. No recorded approval means the work is not treated as authorized |
-| Record performed work | Work that was actually done is a separate record from the recommendation | [05 Frontend architecture](05-frontend-architecture.md): Performed |
-| Verify | The governed measure is compared with the target after the work. A missing result blocks acceptance | [04 Journeys](04-journeys.md): verification |
-| Sustain or reopen | The result held under the sustain rule, or a new cycle opens. Cycle 1 proof is not cycle 2 proof | [04 Journeys](04-journeys.md): sustain, reopen |
+Predict is optional. Do not force prediction where evidence does not support it.
 
-The state machine on the running shell is Open, Owned, Hypothesis, Recommended, Authorized, Performed, Verified, Sustained, and Reopened. Reopened returns to a new hypothesis.
+Recommendation ≠ authorization. Authorization ≠ performed work. Performed work ≠ verification. Verification ≠ sustainment.
 
-## What the demo executes
+```mermaid
+flowchart LR
+  Detect --> Diagnose --> Predict --> Recommend --> Authorize --> Act --> Verify --> Sustain
+```
 
-The synthetic investigation lifecycle is implemented for the supplied cases. The downtime case is the Northworks feeder-jam plan miss. Speed and quality keep their own cases. `docs/integration/BACKEND-CONTRACT.md` records that implementation under workflow transitions, and records that decision-support writes do not release production or dispatch work.
+Predict is on the diagram so the stage can be named. A case goes from Diagnose to Recommend when the evidence does not support a prediction. The arrow through Predict is not an instruction to invent one.
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** Predict is not a running production capability. Cross-system diagnosis, effectivity-aware product context, orchestration of Act into a source system, and governed autonomy are not running production capabilities either.
+
+| Executive stage | What it is for |
+| --- | --- |
+| Detect | See the missed goal or the loss |
+| Diagnose | Separate the contributor, the evidence, and the hypothesis. Name what is missing |
+| Predict | Optional. A bounded statement of what may happen next, and only when the evidence supports it. A prediction is not a cause and not a recommendation |
+| Recommend | Propose a bounded action |
+| Authorize | A named authority approves or withholds that action. The recommendation does not authorize itself |
+| Act | Record work that was actually done. Authorization is not that record. The source system still owns the work it executes |
+| Verify | Compare the governed measure with the target after the work. Performed work is not verification. A missing result blocks acceptance |
+| Sustain | Decide whether the verified result held. Verification is not sustainment |
+
+## Detailed lifecycle
+
+The detailed lifecycle remains:
+
+Goal → Gap → Loss → Contributor → Evidence → Hypothesis → Action → Owner → Authorization → Performed Work → Verification → Sustain → Reopen
+
+That sequence is the journey in [04 Journeys](04-journeys.md), the investigation in [03 Using EKAS](03-using-ekas.md), and the state machine in [05 Frontend architecture](05-frontend-architecture.md). The executive model is a shorter reading of those steps. It does not delete Reopen, Owner, or any other detailed step. Predict is the one executive stage the detailed lifecycle does not force.
+
+## Mapping
+
+| Executive stage | Detailed lifecycle steps |
+| --- | --- |
+| Detect | Goal, Gap, Loss |
+| Diagnose | Contributor, Evidence, Hypothesis |
+| Predict | None. Predict is optional. It is not inserted into the detailed lifecycle when the evidence does not support it |
+| Recommend | Action |
+| Authorize | Owner, Authorization |
+| Act | Performed Work |
+| Verify | Verification |
+| Sustain | Sustain. Reopen stays in the detailed lifecycle when the result does not hold and a new cycle starts |
+
+## Synthetic demo
+
+The synthetic demo exercises workflow concepts corresponding to the detailed lifecycle. It does not establish production maturity at the executive stages, and it does not establish Predict. `docs/integration/BACKEND-CONTRACT.md` records the local separation of goal, loss, evidence, hypothesis, action, owner acceptance, authorization, performed work, verification, sustainment, and reopen. The same record states that decision-support writes do not release production or dispatch work.
 
 ## What stays in the source system
 
 MES executes and records. CMMS records the maintenance work it owns. QMS records the disposition it owns. EKAS holds the decision context that cites those records. See [18 MES boundary](18-mes-boundary.md).
 
-**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** Coordinating this model across live MES, CMMS, QMS, ERP, PLM, SCADA, or the historian is not implemented. [14 Production backend gaps](14-production-backend-gaps.md) marks the investigation aggregate and its commands MISSING on the inspected backend. Orchestration in [22 EKAS Manufacturing AI Maturity Model](22-manufacturing-ai-maturity-model.md) means coordinating these stages. It does not mean replacing the system that owns the work.
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** Coordinating Act, Verify, or Sustain across live MES, CMMS, QMS, ERP, PLM, SCADA, or the historian is not implemented. [14 Production backend gaps](14-production-backend-gaps.md) marks the investigation aggregate and its commands MISSING on the inspected backend. Orchestration in [22 EKAS Manufacturing AI Maturity Model](22-manufacturing-ai-maturity-model.md) means coordinating these stages under governance. It does not mean replacing the system that owns the work.
 
 ## How a later layer may use the model
 
-A recommendation can exist before authorization. Authorization can exist before performed work. Verification can exist only after a result is recorded. No stage skips backward to invent a missing record. Governed autonomy, if it is ever authorized for a bounded class of action, still has to pass authorization, source-system confirmation, and verification. The maturity rules for that are on [page 22](22-manufacturing-ai-maturity-model.md).
+No executive stage skips backward to invent a missing record. Governed autonomy, if a plant ever authorizes a bounded class of action, still passes Authorize, source-system confirmation, and Verify. The maturity rules are on [page 22](22-manufacturing-ai-maturity-model.md). **DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.**

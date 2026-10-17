@@ -10,7 +10,7 @@ PLM owns the product definition. EKAS may cite the definition that was in force 
 
 A historical job was built to a definition. That definition is a part, a revision, a controlled document, a bill, and any engineering change the source says was effective then. A later revision can already exist in PLM and still be the wrong definition for that job.
 
-This page is the contract for that distinction. It extends the part and part-revision kinds in [3 Canonical identity](03-canonical-ekas-identity-model.md) and the PLM shape in [7 Adapter normalization](07-adapter-normalization.md). It does not change RC3 chat, and it does not add a product-data store.
+This page is the contract for that distinction. It extends the part and part-revision kinds in [3 Canonical identity](03-canonical-ekas-identity-model.md) and the PLM shape in [7 Adapter normalization](07-adapter-normalization.md). It does not change the running chat, and it does not add a product-data store. Current release status is tracked in the [release](../12-release-and-deployment.md) and [acceptance](../09-testing-and-acceptance.md) documentation.
 
 ## Canonical identity
 
@@ -137,7 +137,7 @@ The request and the refusal to guess a newest revision are the [product context 
 
 ## Future chat questions
 
-These are questions a later conversation could ask once this contract is implemented. They are not production claims. RC3 chat does not answer them from PLM.
+These are questions a later conversation could ask once this contract is implemented. They are not production claims. The running chat does not answer them from PLM.
 
 - Which revision of part 100-2045 was in force for JOB-8303 on 2026-03-20?
 - Which controlled drawing did that revision use on that date?
@@ -151,7 +151,7 @@ Until the contract is implemented, the honest answer is that product context was
 
 ## Acceptance tests
 
-These tests are specified and not in the RC3 suite. None has been run. Adapter Verified stays NO. They extend [8 Integration acceptance tests](08-integration-acceptance-tests.md). A pass has to show the source ids, the effectivity window, and the revision that was bound or the refusal.
+These tests are specified and are not part of the current acceptance suite. None has been run. Adapter Verified stays NO. They extend [8 Integration acceptance tests](08-integration-acceptance-tests.md). Current release status is tracked in the [release](../12-release-and-deployment.md) and [acceptance](../09-testing-and-acceptance.md) documentation. A pass has to show the source ids, the effectivity window, and the revision that was bound or the refusal.
 
 | Id | Setup | Required result |
 | --- | --- | --- |

@@ -35,7 +35,7 @@ SOURCE SYSTEMS OWN FACTS. EKAS OWNS THE GOVERNED DECISION CONTEXT THAT CONNECTS 
 
 ## What stays when the model changes
 
-**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** The cross-system connection named below is doctrine. RC3 chat remains the governed demo. The connection is not a running production capability.
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** The cross-system connection named below is doctrine. Current release status is tracked in the [release](12-release-and-deployment.md) and [acceptance](09-testing-and-acceptance.md) documentation. The connection is not a running production capability.
 
 Most manufacturing systems own one part of the story. EKAS connects those parts through governed context and evidence, then guides the user from operational loss to accountable action and verified improvement.
 
