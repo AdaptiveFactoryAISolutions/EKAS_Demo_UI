@@ -103,11 +103,12 @@ test('plant shell walk-through of the closure screens', async ({ page }) => {
   await expect(menu.getByRole('button', { name: 'Create', exact: true })).toHaveCount(0);
   const bar = page.getByRole('region', { name: 'Current investigation context' });
   await expect(bar).toContainText('Northworks');
-  await expect(bar).toContainText('Line 03');
-  await expect(bar).toContainText('FEED-03');
-  await expect(bar).toContainText('JOB-8303');
-  await expect(bar).toContainText(/Oct 6/);
-  await expect(bar).toContainText('Day Shift');
+  await expect(bar).toContainText('No investigation selected');
+  await expect(bar).not.toContainText('Line 03');
+  await expect(bar).not.toContainText('FEED-03');
+  await expect(bar).not.toContainText('JOB-8303');
+  await expect(bar).not.toContainText(/Oct 6/);
+  await expect(bar).not.toContainText('Day Shift');
   await expect(bar).toContainText('Synthetic');
   await contextUnderHeader(page);
   await page.screenshot({ path: `${shots}/01-first-load.png`, fullPage: false });

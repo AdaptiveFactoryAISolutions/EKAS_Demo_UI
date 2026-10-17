@@ -133,7 +133,10 @@ test('plant operations selects Line 03, explains the 150-unit gap, and opens the
   await expectNoEmptyHeading(dashboard);
   await expect(dashboard.locator('.ekas-dash-table').first()).toBeVisible();
   await expect(dashboard.locator('.ekas-dash-cards').first()).toBeHidden();
-  await expect(context).toContainText('FEED-03');
+  await expect(context).toContainText('Northworks');
+  await expect(context).toContainText('No investigation selected');
+  await expect(context).not.toContainText('FEED-03');
+  await expect(context).not.toContainText('JOB-8303');
   const sourceCells = await dashboard.locator('.ekas-dash-table tbody td:last-child').allTextContents();
   expect(sourceCells.some(text => text.includes('Approved production plan'))).toBeTruthy();
   for (const text of sourceCells) expect(text).not.toMatch(/\.json|#\//);
