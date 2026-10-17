@@ -74,7 +74,7 @@ npm test
 npm run build
 ```
 
-`npm test` is `vitest run`. `npm run build` is `tsc --noEmit && vite build`. The RC3 extraction counted 2,952 passed, 0 failed, 496 files, and that process exited 0. An independent rerun of the same 2,952 passed tests exited 1. Vitest reported an unhandled rejection, `ReferenceError: window is not defined` at `app/src/investigation/CanonicalWorkspace.tsx:58`, while `app/src/server/v95SameDraftRecovery.test.tsx` was running. RC4 drains that update before unmount in the test file. The product component is unchanged for that bug. A full RC4 extraction is required to exit 0. Historical writers expect a gitignored `evidence/` directory beside the app; create it before a full run if a proof file fails to open.
+ `npm test` is `vitest run`. `npm run build` is `tsc --noEmit && vite build`. The RC3 extraction counted 2,952 passed, 0 failed, 496 files, and that process exited 0. An independent rerun of the same 2,952 passed tests exited 1. Vitest reported an unhandled rejection, `ReferenceError: window is not defined` at `app/src/investigation/CanonicalWorkspace.tsx:58`, while `app/src/server/v95SameDraftRecovery.test.tsx` was running. RC4 drained that update only inside that test file. An independent RC4 extraction still exited 1 after 2,962 passed tests, with the same rejection attributed to a different file. RC5 skips React state updates from an in-flight CanonicalWorkspace send, acceptance, or case advance after the page unmounts or the DOM environment is gone. Replies, draft clearing, and manufacturing results stay the same while the page is mounted. Historical proof writers still record under a gitignored `evidence/` directory beside the app. The Vitest setup creates that directory, so a fresh extraction does not need `mkdir` before `npm test`.
 
 Browser frames from the RC3 production preview are [docs/wp6/screenshots](docs/wp6/screenshots) files named `rc3-*`. The catalog is [docs/wp6/RC3-FRAME-INDEX.md](docs/wp6/RC3-FRAME-INDEX.md). Other filenames in that folder are the RC1 set from `63ccec7`. The frozen ZIP does not contain the `rc3-*` frames. Browser checks need Chrome plus a running app. They are not a substitute for `npm test`.
 
@@ -84,7 +84,7 @@ Browser frames from the RC3 production preview are [docs/wp6/screenshots](docs/w
 | --- | --- |
 | npm 11 `npm ci` says the lock file is out of sync | That is the frozen RC3 lockfile. This checkout's lockfile is required to install on npm 11.21.0. Do not regenerate it with `npm install --package-lock-only`; that drops jsdom |
 | A local `app/node_modules` symlink from an older checkout | Remove that local symlink, then `npm ci`. This branch does not track `app/node_modules` |
-| A proof test cannot write `../evidence` | `mkdir -p evidence` from the repository root and rerun |
+ | A proof test cannot write `../evidence` | Run `npm test` from `app/`. The Vitest setup creates the gitignored `evidence/` directory beside the app |
 | Chat says the provider is not connected | That is Demo mode. Governed local answers continue. Do not paste a key into Chat |
 | Admin says pricing has expired | RC3 expired `2026-10-16T00:00:00Z`. RC4 reviews the official gpt-6.1-sol rates on 2026-10-17 and expires `2026-11-16T00:00:00Z`, with a server-enforced $40 cumulative cap. Do not type a key until RC4 is frozen. See [docs/wp6/PHASE-2-PROVIDER-PREP.md](docs/wp6/PHASE-2-PROVIDER-PREP.md) |
 | Port already in use | Stop the other preview or pick another port. RC evidence used 18192 (RC1), 18194 (RC2), and 18195 (RC3) |
