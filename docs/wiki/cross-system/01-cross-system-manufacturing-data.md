@@ -2,7 +2,7 @@
 
 **DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.**
 
-Section: [2 Ownership](02-system-ownership-boundaries.md) · [3 Identity](03-canonical-ekas-identity-model.md) · [4 Resolution](04-entity-resolution.md) · [5 Lineage](05-evidence-lineage.md) · [6 Correlation](06-cross-system-correlation-rules.md) · [7 Adapter](07-adapter-normalization.md) · [8 Tests](08-integration-acceptance-tests.md) · [9 Risks](09-known-data-quality-risks.md) · [10 Roadmap](10-production-integration-roadmap.md)
+Section: [2 Ownership](02-system-ownership-boundaries.md) · [3 Identity](03-canonical-ekas-identity-model.md) · [4 Resolution](04-entity-resolution.md) · [5 Lineage](05-evidence-lineage.md) · [6 Correlation](06-cross-system-correlation-rules.md) · [7 Adapter](07-adapter-normalization.md) · [8 Tests](08-integration-acceptance-tests.md) · [9 Risks](09-known-data-quality-risks.md) · [10 Roadmap](10-production-integration-roadmap.md) · [11 Product and PLM](11-product-part-identity-and-plm-context.md)
 
 SOURCE SYSTEMS OWN FACTS. EKAS OWNS THE GOVERNED DECISION CONTEXT THAT CONNECTS THEM.
 

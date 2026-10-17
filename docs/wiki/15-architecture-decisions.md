@@ -34,6 +34,12 @@ Readable times are a view of the stored UTC instant. Technical details keep the 
 
 A saved answer is not rewritten when a later turn learns something else. The as-of instant is part of the reply.
 
+## Manufacturing product context is effectivity-aware
+
+The newest revision is not automatically the correct revision. A historical job binds the revision, controlled definition, and engineering change the source shows were in force at the time of the event. Rev C being newer than Rev B does not move a March job onto Rev C when Rev C becomes effective in May.
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** Effectivity-aware product context is specified in [Product / part identity and PLM context](cross-system/11-product-part-identity-and-plm-context.md) and in the product-context read on [06 API and backend integration](06-api-and-backend-integration.md). The running demo does not resolve PLM effectivity.
+
 ## AI operates inside the enterprise architecture
 
 AI is not the architecture. AI is one intelligence component inside a governed manufacturing enterprise architecture. The model or the provider may change without changing manufacturing definitions, the ContextContract, source ownership, evidence, authorization, lifecycle, verification, or the adapter and API contract.

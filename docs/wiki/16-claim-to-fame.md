@@ -40,3 +40,11 @@ SOURCE SYSTEMS OWN FACTS. EKAS OWNS THE GOVERNED DECISION CONTEXT THAT CONNECTS 
 Most manufacturing systems own one part of the story. EKAS connects those parts through governed context and evidence, then guides the user from operational loss to accountable action and verified improvement.
 
 The model can change. The manufacturing truth, governance, evidence chain and user workflow must not.
+
+## Product definition at the time of the event
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.**
+
+EKAS can be designed to understand which product, revision, controlled definition, engineering change, and process conditions were in force at the time of the event. The contract is [Product / part identity and PLM context](cross-system/11-product-part-identity-and-plm-context.md). The running conversation does not yet read PLM.
+
+Most systems own one piece of the story. EKAS connects those pieces into governed manufacturing context.

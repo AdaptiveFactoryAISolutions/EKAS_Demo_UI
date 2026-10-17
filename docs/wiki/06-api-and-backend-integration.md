@@ -314,6 +314,26 @@ These reads are specified and not available. Live mode does not call them.
 | Relationships | entity or evidence id | Descriptive relationships. No automatic cause |
 | Effectivity and history | entity, document, and time | The record effective at that time, or an explicit miss |
 | Source version | `sourceSystem`, `sourceRecordId`, `sourceVersion` | That version, or a miss. A newer version is not substituted |
+| Product context | `ProductContextRequest`: part id, plus a job id or an event time. Optional serial and lot | `unresolved` or `ambiguous`. The newest revision is not returned |
+
+### Product context
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.**
+
+`ProductContextRequest` asks which product definition was in force. The response is the matching `RevisionContext`, or `unresolved`, or `ambiguous`. A newest revision is not a valid answer when effectivity does not prove it. The contract is [Product / part identity and PLM context](cross-system/11-product-part-identity-and-plm-context.md).
+
+Every product, revision, bill line, controlled document, and change object the adapter returns carries:
+
+| Field | Contract |
+| --- | --- |
+| `sourceSystem` | Owning system. PLM for the controlled definition |
+| `sourceRecordId` | Id in that system |
+| `sourceVersion` | Version the source assigned. Distinct from the part revision |
+| `knownAt` | When this integration knew the record |
+| `effectiveFrom` | When the source says it became effective |
+| `effectiveTo` | When the source says it stopped. Empty when the source gave no end |
+
+Live mode does not call this read. A missing PLM stays missing.
 
 ## Backend gap contract
 
