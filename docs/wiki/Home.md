@@ -26,6 +26,9 @@ EKAS is a chat-first governed manufacturing decision-intelligence system. It is 
 18. [MES boundary / execution data model](18-mes-boundary.md)
 19. [Build method, engineering quality, and known risks](19-build-method-engineering-quality-and-known-risks.md)
 20. [Glossary](20-glossary.md)
+21. [Decision execution model](21-decision-execution-model.md)
+22. [EKAS Manufacturing AI Maturity Model](22-manufacturing-ai-maturity-model.md)
+23. [Deployment and scale strategy](23-deployment-and-scale-strategy.md)
 
 ## Cross-system context, identity, and lineage
 
@@ -41,9 +44,10 @@ EKAS is a chat-first governed manufacturing decision-intelligence system. It is 
 8. [Integration acceptance tests](cross-system/08-integration-acceptance-tests.md)
 9. [Known data quality risks](cross-system/09-known-data-quality-risks.md)
 10. [Production integration roadmap](cross-system/10-production-integration-roadmap.md)
+11. [Product / part identity and PLM context](cross-system/11-product-part-identity-and-plm-context.md)
 
 The repository README is the start-here page for a new engineer: [../../README.md](../../README.md).
 
 ## Self-check
 
-A new engineer can clone, install, and start Demo from the README and [02 Quick start](02-quick-start.md). Architecture, Chat, context, journeys, and dashboards are pages 03, 04, 05, and 08. The API contract and Demo versus Production are pages 06 and 07. Backend gaps are page 14. Security is page 10. Tests, build, and troubleshooting are the README and pages 09 and 11. What may be refactored, and what must not regress, is page 19. Cross-system identity and lineage are the section above. They are specified and not implemented. If a page and the running RC3 disagree, the running source wins and the page should be corrected in documentation only.
+A new engineer can clone, install, and start Demo from the README and [02 Quick start](02-quick-start.md). Architecture, Chat, context, journeys, and dashboards are pages 03, 04, 05, and 08. The API contract and Demo versus Production are pages 06 and 07. Backend gaps are page 14. Security is page 10. Tests, build, and troubleshooting are the README and pages 09 and 11. What may be refactored, and what must not regress, is page 19. Cross-system identity and lineage are the section above. They are specified and not implemented. Product, revision, and effectivity context is [cross-system page 11](cross-system/11-product-part-identity-and-plm-context.md), also specified and not implemented. The decision execution model is [page 21](21-decision-execution-model.md). The maturity model is [page 22](22-manufacturing-ai-maturity-model.md). Governed autonomy, orchestration, and predictive layers on that page are specified and not implemented. Deployment on existing systems, from one governed problem toward other lines and sites, is [page 23](23-deployment-and-scale-strategy.md). Live connectors, deployment modes, and cross-site scale on that page are specified and not implemented. If a page and the running RC3 disagree, the running source wins and the page should be corrected in documentation only.

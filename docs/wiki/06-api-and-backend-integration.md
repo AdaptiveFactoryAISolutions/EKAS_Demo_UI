@@ -32,6 +32,25 @@ sequenceDiagram
   UI-->>Person: Answer or the refusal
 ```
 
+## How the UI connects to the backend
+
+The UI and the backend are separate. The API contract is the agreed language between them. The adapter is the controlled wiring harness. The UI asks for normalized EKAS records. Source-specific implementation stays behind the adapter. The UI is not redesigned for each MES, ERP, CMMS, QMS, or historian vendor. An unsupported live capability fails clearly. The UI never silently falls back to synthetic data.
+
+The live path into MES, CMMS, QMS, SCADA, ERP, and PLM is **DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** Adapter Verified remains NO. Live Integration Verified remains NO. The refusal for an unsupported live capability is the running rule. Demo mode remains the synthetic local product in [07 Demo vs production](07-demo-vs-production.md).
+
+```mermaid
+flowchart LR
+  leader[Plant Leader] --> ui[UI]
+  ui --> contract[EKAS API Contract]
+  contract --> adapter[Adapter]
+  adapter --> backend[EKAS Backend]
+  backend --> sources[MES / CMMS / QMS / SCADA / ERP / PLM]
+  sources --> adapter
+  adapter --> ui
+```
+
+The UI stops at the EKAS API contract. Vendor payloads stay behind the adapter. A missing live capability returns on the same path as a clear refusal, and the synthetic service is not substituted.
+
 ## Envelope
 
 `POST /api/v1/application` with `apiVersion`, `requestId`, `method`, `path`, optional `body`, and optional `idempotencyKey`. The browser does not put a provider key on this call. Credentials for the demo session are the synthetic session cookie. Live bearer tokens are caller-supplied and are not the fictional role name.
@@ -295,6 +314,26 @@ These reads are specified and not available. Live mode does not call them.
 | Relationships | entity or evidence id | Descriptive relationships. No automatic cause |
 | Effectivity and history | entity, document, and time | The record effective at that time, or an explicit miss |
 | Source version | `sourceSystem`, `sourceRecordId`, `sourceVersion` | That version, or a miss. A newer version is not substituted |
+| Product context | `ProductContextRequest`: part id, plus a job id or an event time. Optional serial and lot | `unresolved` or `ambiguous`. The newest revision is not returned |
+
+### Product context
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.**
+
+`ProductContextRequest` asks which product definition was in force. The response is the matching `RevisionContext`, or `unresolved`, or `ambiguous`. A newest revision is not a valid answer when effectivity does not prove it. The contract is [Product / part identity and PLM context](cross-system/11-product-part-identity-and-plm-context.md).
+
+Every product, revision, bill line, controlled document, and change object the adapter returns carries:
+
+| Field | Contract |
+| --- | --- |
+| `sourceSystem` | Owning system. PLM for the controlled definition |
+| `sourceRecordId` | Id in that system |
+| `sourceVersion` | Version the source assigned. Distinct from the part revision |
+| `knownAt` | When this integration knew the record |
+| `effectiveFrom` | When the source says it became effective |
+| `effectiveTo` | When the source says it stopped. Empty when the source gave no end |
+
+Live mode does not call this read. A missing PLM stays missing.
 
 ## Backend gap contract
 
@@ -303,3 +342,9 @@ The field-level gap against backend main `473bdc0d2458fcffdbe516d220d4f88bcb2f19
 ## Live integration verification
 
 Not verified. A future live test needs the contract present, the adapter pointed at it, synthetic fallback confirmed off, and an authorized run. Until that run passes, Live Integration Verified stays NO.
+
+## Deployment profiles use this contract
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.**
+
+On-premise, private, cloud, and hybrid deployment are configuration and infrastructure around this same contract. They are not a second API and they are not a plant-specific UI. A new source is an adapter mapping. The UI still asks for normalized EKAS records. The scale doctrine is [23 Deployment and scale strategy](23-deployment-and-scale-strategy.md). Current release status is tracked in the [release](12-release-and-deployment.md) and [acceptance](09-testing-and-acceptance.md) documentation. None of those deployment modes is independently verified.

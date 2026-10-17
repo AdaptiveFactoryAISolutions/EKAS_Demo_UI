@@ -60,7 +60,7 @@ Each conversation has an id, a version, turns, and the current context. Policy v
 
 ## Investigation state
 
-An open case has a stage and a next action. Owner, hypothesis, recommendation, authorization, performed work, verification, sustain, and reopen are stages. The summary region exposes the next control. Cycle 2 after reopen does not inherit cycle 1 proof.
+An open case has a stage and a next action. Owner, hypothesis, recommendation, authorization, performed work, verification, sustain, and reopen are stages. The summary region exposes the next control. Cycle 2 after reopen does not inherit cycle 1 proof. The same stages are the decision execution model in [21 Decision execution model](21-decision-execution-model.md).
 
 ```mermaid
 stateDiagram-v2
@@ -108,3 +108,35 @@ Light is the default on a fresh profile. Dark is an explicit choice. Both use th
 ## Role and navigation
 
 The fictional chat role is manager, supervisor, maintenance, safety, or viewer. That role does not grant Admin. Admin requires the local owner session. Navigation does not hide a failed live capability behind an empty chart. The refusal is a sentence.
+
+## End-to-end governed request flow
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.**
+
+The sections above describe the running demo shell. This sequence is the governed request flow the architecture requires when a question depends on source systems. `Governor` and `ContextContract` are names in the product goal. This UI does not import either type. Local command guards are the demo stand-in, as recorded in `docs/integration/BACKEND-CONTRACT.md`. Orchestration across MES, ERP, CMMS, QMS, SCADA, and PLM is not a running capability.
+
+AI does not own manufacturing truth. The model may interpret and explain. Governed context, evidence, source records, authorization, case state and verification remain authoritative.
+
+```mermaid
+sequenceDiagram
+  participant Leader as Plant Leader
+  participant UI as EKAS Chat UI
+  participant Gov as Governor / ContextContract
+  participant Orch as Orchestration / Reasoning
+  participant Adapter as Backend Adapter
+  participant Sources as Source Systems
+  participant Evidence as Evidence / Case State
+  participant Answer as Answer / Action / Verification
+  Leader->>UI: Ask
+  UI->>Gov: Bind governed context
+  Gov->>Orch: Context the governor allows
+  Orch->>Adapter: Request for normalized EKAS records
+  Adapter->>Sources: Read the system of record
+  Sources-->>Adapter: Source records
+  Adapter-->>Evidence: Normalized evidence and case state
+  Evidence-->>Answer: Authoritative result
+  Answer-->>UI: Answer, action, or verification
+  UI-->>Leader: What the governed record supports
+```
+
+A model sentence stays inside Orchestration / Reasoning. It does not become a source record, an authorization, a case-state change, or a verification. Those remain on Evidence / Case State and on Answer / Action / Verification.

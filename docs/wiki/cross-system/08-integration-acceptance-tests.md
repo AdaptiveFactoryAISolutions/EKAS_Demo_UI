@@ -38,6 +38,12 @@ The test names the source ids, the map version, the evidence ids, and the senten
 
 `CAUSED_BY` has no positive test that creates it from co-occurrence. A test that does so fails.
 
+## Product and effectivity tests
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.**
+
+Job, revision, serial, lot, deviation, superseded and obsolete documents, variant and alternate bills, where-used, a missing revision, a PLM/MES conflict, a future change, and an unavailable PLM are specified on [11 Product / part identity and PLM context](11-product-part-identity-and-plm-context.md). EFF-8303 is the anchor: JOB-8303, part 100-2045, on 2026-03-20, binds Rev B effective 2026-03-01. Rev C, effective 2026-05-01, must not be used. Those tests are not part of the current acceptance suite. None has been run. Current release status is tracked in the [release](../12-release-and-deployment.md) and [acceptance](../09-testing-and-acceptance.md) documentation.
+
 ## Relationship to the RC3 suite
 
 The RC3 extraction count remains the count for RC3 product tests. These rows are additional future tests. They are specified here so a later implementation can be accepted or rejected without inventing the bar at the time.

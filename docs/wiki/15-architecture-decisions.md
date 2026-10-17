@@ -33,3 +33,49 @@ Readable times are a view of the stored UTC instant. Technical details keep the 
 ## Evidence stays with the reply
 
 A saved answer is not rewritten when a later turn learns something else. The as-of instant is part of the reply.
+
+## Manufacturing product context is effectivity-aware
+
+The newest revision is not automatically the correct revision. A historical job binds the revision, controlled definition, and engineering change the source shows were in force at the time of the event. Rev C being newer than Rev B does not move a March job onto Rev C when Rev C becomes effective in May.
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** Effectivity-aware product context is specified in [Product / part identity and PLM context](cross-system/11-product-part-identity-and-plm-context.md) and in the product-context read on [06 API and backend integration](06-api-and-backend-integration.md). The running demo does not resolve PLM effectivity.
+
+## AI operates inside the enterprise architecture
+
+AI is not the architecture. AI is one intelligence component inside a governed manufacturing enterprise architecture. The model or the provider may change without changing manufacturing definitions, the ContextContract, source ownership, evidence, authorization, lifecycle, verification, or the adapter and API contract.
+
+The running demo already keeps a model call off the manufacturing record. Local rules and the case state answer the accepted journeys. See [05 Frontend architecture](05-frontend-architecture.md) and [06 API and backend integration](06-api-and-backend-integration.md).
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** The path from orchestration through the adapter into manufacturing systems, and back through governed evidence, is the target architecture. It is not a verified live integration. Adapter Verified remains NO.
+
+## Autonomy must be earned
+
+Autonomy is earned layer by layer. A connection to data is not permission to act. Integration, evidence, governance, authorization, orchestration, and verification come first. Governed autonomy is not the default destination. Some decisions stay human-authorized by design.
+
+The model is [22 EKAS Manufacturing AI Maturity Model](22-manufacturing-ai-maturity-model.md). The stages a later layer may coordinate are [21 Decision execution model](21-decision-execution-model.md).
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** No governed-autonomy action is implemented. This decision does not authorize one.
+
+```mermaid
+flowchart LR
+  ai[AI / LLM] --> orch[Orchestration]
+  gov[Governor / ContextContract] --> orch
+  sec[Security] --> orch
+  orch --> adapter[Adapter]
+  adapter --> systems[Manufacturing Systems]
+  systems --> evidence[Governed Evidence]
+  evidence --> ui[UI]
+  ui --> outcome[Decision / Action / Verification / Sustain]
+```
+
+## Deploy on existing infrastructure before replacing it
+
+EKAS integrates with the systems the plant already runs where that is practical. Replacement of MES, ERP, CMMS, QMS, a historian, PLCs, SCADA, or PLM is not a prerequisite for value. Those systems remain the systems of record. EKAS adds the governed decision layer above them.
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** Live integration with those systems is specified in [23 Deployment and scale strategy](23-deployment-and-scale-strategy.md) and is not verified. Adapter Verified remains NO.
+
+## One codebase, governed profiles
+
+Do not fork by customer or by deployment size. A new plant or a new site is a governed deployment profile, adapter mappings, site context, a capability profile, and policy configuration. The UI and the manufacturing definitions stay shared. Scale comes from configuration and governed adapters, not from a customer-specific codebase.
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** Multi-site profiles are not a verified deployment. Current release status is tracked in the [release](12-release-and-deployment.md) and [acceptance](09-testing-and-acceptance.md) documentation.
