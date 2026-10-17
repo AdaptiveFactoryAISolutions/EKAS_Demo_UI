@@ -44,3 +44,9 @@ The RC3 ZIP excludes the nested RC1 and RC2 archives so the package does not car
 ## What release does not mean
 
 A green suite is not Adapter Verified and is not Live Integration Verified. PENDING stays until an independent reviewer writes the verdict.
+
+## Plant deployment is a different page
+
+The sections above are the demo package and the release record. Current release status stays in this page and in [09 Testing and acceptance](09-testing-and-acceptance.md).
+
+How a later deployment uses systems the plant already runs, starts from one governed problem, and grows by configuration is [23 Deployment and scale strategy](23-deployment-and-scale-strategy.md). **DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** That strategy does not make a release package into a verified on-premise, private, cloud, hybrid, or multi-site deployment.

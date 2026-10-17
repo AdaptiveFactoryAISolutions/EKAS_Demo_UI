@@ -66,3 +66,13 @@ Governed identity and evidence lineage are the only join this package allows alo
 [18 MES boundary](../18-mes-boundary.md) stays in force. MES executes and records. EKAS interprets, connects evidence, governs decisions, and verifies outcomes. This roadmap does not move execution writes into EKAS. The new ownership sentence is the same boundary stated for every source system, not only MES:
 
 SOURCE SYSTEMS OWN FACTS. EKAS OWNS THE GOVERNED DECISION CONTEXT THAT CONNECTS THEM.
+
+## Deployment source expansion
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.**
+
+[23 Deployment and scale strategy](../23-deployment-and-scale-strategy.md) ties the addition of live sources to deployment stages. The recommended source order there is MES, then CMMS, then controlled documents and PLM, then QMS, then historian and SCADA, then ERP, then additional governed sources. That order is recommended, not mandatory. The pilot problem chooses the first integration.
+
+This page's numbered list above is a different order. It is the dependency order for the software: identity map, evidence reference, adapter normalization, relationships, search, presentation, and acceptance tests. A plant that connects MES first still needs the map and the evidence reference before records are joined. The source order does not replace that dependency order.
+
+[17 PLC to P&L](../17-plc-to-pl-strategy.md) is a third order: the chain of claims from the PLC to finance. It is not the order sources are turned on, and it is not the dependency order above. Current release status is tracked in the [release](../12-release-and-deployment.md) and [acceptance](../09-testing-and-acceptance.md) documentation. None of the live source connections is accepted.

@@ -269,3 +269,13 @@ A reader who has used this page with [15 Architecture decisions](15-architecture
 5. How the levels sit on the journey from loss to verification and sustain.
 6. How the levels sit on the chain from the PLC to a finance-accepted figure, and why a modeled opportunity is not verified savings.
 7. What this repository actually shows about EKAS today, and which levels are not claimed.
+
+## 22 Relationship to deployment and scale
+
+[23 Deployment and scale strategy](23-deployment-and-scale-strategy.md) is how a deployment grows. This page is capability maturity. The two are not the same ladder.
+
+A deployment may begin low and advance only as integrations and governance are proved. A pilot might be planned around Connect, Collect, and Understand. A later expansion might be planned around Integrate, Reason, and Orchestrate. Governed Autonomy remains optional and bounded. The example is not an automatic sales ladder, and it does not mean those levels have been earned.
+
+Platform layers on page 23 are architecture. The eight levels on this page are maturity. A layer can exist in the design while the process is still at an earlier level.
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** Live deployment across sources, lines, and sites is not a verified capability. The synthetic demo exercises workflow concepts corresponding to these stages. It does not establish production maturity at those levels.

@@ -67,3 +67,15 @@ flowchart LR
   evidence --> ui[UI]
   ui --> outcome[Decision / Action / Verification / Sustain]
 ```
+
+## Deploy on existing infrastructure before replacing it
+
+EKAS integrates with the systems the plant already runs where that is practical. Replacement of MES, ERP, CMMS, QMS, a historian, PLCs, SCADA, or PLM is not a prerequisite for value. Those systems remain the systems of record. EKAS adds the governed decision layer above them.
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** Live integration with those systems is specified in [23 Deployment and scale strategy](23-deployment-and-scale-strategy.md) and is not verified. Adapter Verified remains NO.
+
+## One codebase, governed profiles
+
+Do not fork by customer or by deployment size. A new plant or a new site is a governed deployment profile, adapter mappings, site context, a capability profile, and policy configuration. The UI and the manufacturing definitions stay shared. Scale comes from configuration and governed adapters, not from a customer-specific codebase.
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** Multi-site profiles are not a verified deployment. Current release status is tracked in the [release](12-release-and-deployment.md) and [acceptance](09-testing-and-acceptance.md) documentation.

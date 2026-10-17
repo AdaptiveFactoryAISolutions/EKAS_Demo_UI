@@ -54,3 +54,11 @@ Most systems own one piece of the story. EKAS connects those pieces into governe
 The claim is a governed path from a missed goal to verified improvement. [22 EKAS Manufacturing AI Maturity Model](22-manufacturing-ai-maturity-model.md) says that path is earned one layer at a time. A conversation can explain and propose. The manufacturing truth, the evidence, the authorization, and the verification stay outside the model. Governed autonomy is not required for the claim, and it is not claimed here.
 
 **DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** Cross-system evidence for that path, predictive optimization, orchestration into source systems, and any governed-autonomy action are not running capabilities.
+
+## Start with one problem
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.**
+
+EKAS can start with one bounded manufacturing problem and expand across systems, lines, and sites without changing its core governed decision architecture. The value of EKAS is not that it replaces plant systems. The value is that it connects their evidence into one governed decision workflow.
+
+The deployment doctrine is [23 Deployment and scale strategy](23-deployment-and-scale-strategy.md). A live multi-site expansion is not a running capability. Current release status is tracked in the [release](12-release-and-deployment.md) and [acceptance](09-testing-and-acceptance.md) documentation.

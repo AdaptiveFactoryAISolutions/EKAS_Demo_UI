@@ -44,3 +44,9 @@ The production chain this package joins, and does not replace, is PLC and sensor
 [22 EKAS Manufacturing AI Maturity Model](22-manufacturing-ai-maturity-model.md) reads this chain as layers that have to be earned. Connect and collect sit with the PLC, the sensors, SCADA, and the historian. Integrate is the governed join across MES, QMS, CMMS, and ERP. Understand and reason may explain the loss. Optimize may describe a modeled opportunity. Orchestrate may carry the [decision execution model](21-decision-execution-model.md). The figure at the end of the chain is verified financial value only when finance accepts it.
 
 Financial proof stays outside model ownership. The model may explain a unit gap. It does not certify the financial outcome. Observed loss, modeled opportunity, and verified financial value remain three quantities. A modeled opportunity is not verified savings.
+
+## Existing systems, then proof
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.**
+
+[23 Deployment and scale strategy](23-deployment-and-scale-strategy.md) starts from the systems a plant already runs. A pilot may identify an opportunity on this chain. Verified financial value still requires an implemented change, a verified operational result, and finance evidence. Expanding to another line or site does not convert a modeled opportunity into that figure.

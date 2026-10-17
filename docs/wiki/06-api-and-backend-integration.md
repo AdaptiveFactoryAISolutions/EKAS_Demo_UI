@@ -342,3 +342,9 @@ The field-level gap against backend main `473bdc0d2458fcffdbe516d220d4f88bcb2f19
 ## Live integration verification
 
 Not verified. A future live test needs the contract present, the adapter pointed at it, synthetic fallback confirmed off, and an authorized run. Until that run passes, Live Integration Verified stays NO.
+
+## Deployment profiles use this contract
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.**
+
+On-premise, private, cloud, and hybrid deployment are configuration and infrastructure around this same contract. They are not a second API and they are not a plant-specific UI. A new source is an adapter mapping. The UI still asks for normalized EKAS records. The scale doctrine is [23 Deployment and scale strategy](23-deployment-and-scale-strategy.md). Current release status is tracked in the [release](12-release-and-deployment.md) and [acceptance](09-testing-and-acceptance.md) documentation. None of those deployment modes is independently verified.

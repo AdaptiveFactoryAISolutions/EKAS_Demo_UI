@@ -58,3 +58,9 @@ If a capability is missing, the UI fails clearly and does not use synthetic data
 - [ ] Synthetic fallback proven off
 - [ ] Smoke test recorded
 - [ ] Adapter Verified still NO until that evidence is independently accepted
+
+## Same rules in every deployment shape
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.**
+
+On-premise, private or air-gapped, cloud, and hybrid are profiles of the production rules above. They keep the same context, the same evidence rules, the same adapter contract, and the same refusal when a capability is missing. They are not separate products. They are not verified by a demo run. The deployment doctrine is [23 Deployment and scale strategy](23-deployment-and-scale-strategy.md). Current release status is tracked in the [release](12-release-and-deployment.md) and [acceptance](09-testing-and-acceptance.md) documentation.
