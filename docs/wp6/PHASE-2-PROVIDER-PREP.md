@@ -55,6 +55,12 @@ A budget file placed beside the demo is also refused unless it is the old $20 hi
 
 Enforcing the $40 ceiling and the current official price therefore needs a source change. This pass stops there and does not change source. Phases 3 through 6 stay unrun.
 
+## RC4 enforcement
+
+RC4, after the RC3 freeze, is that source change. It does not rerun phases 3 through 6 and it does not make a paid call.
+
+The server accepts authorization `Patrick-20261017-USD40-provider-test` at 40,000,000 micro-USD, reviewed 2026-10-17, expiring `2026-11-16T00:00:00Z`. Official standard rates recorded that day: input $2, cached input $0.10, cache writes $2.50, and output $10 per 1M tokens. The reservation uses the cache-write rate on the input side so a cache write is not under-reserved. Standard input and cached input stay on the pricing record. Fast, Batch, Flex, Ultrafast, regional processing, and input above 272K are refused with `DEMO_PRICE_REVIEW_REQUIRED` and the open reservation is marked unknown. A reservation that would pass 40,000,000 micro-USD is refused with `DEMO_BUDGET_EXHAUSTED`. The same recorded usage is not charged twice. An interrupted call stays unknown and is not refunded. The historical `Patrick-20261010-USD20-total` file remains readable, is not counted toward the $40 cap, and is refused if it is presented as the new authorization. The key never enters the browser, logs, fixtures, or screenshots.
+
 ## What a later source change would have to do
 
 It is not implemented here. A future change would have to accept the 2026-10-17 official rates (or a newer reviewed quote), set a hard cumulative ceiling of 40,000,000 micro-USD, refuse another call when the next reservation would pass that ceiling, and keep the key out of the browser, logs, and fixtures. Until that change is reviewed, Patrick does not press Test connection.

@@ -1,8 +1,8 @@
 # Operator runbook — phases 3 to 7
 
-Status: **PENDING**. Phases 3, 4, 5, and 6 are not run in this package. Phase 2 found that RC3 cannot enforce the $40 ceiling or a current price without a source change. Do not enter a key and do not press Test connection until that change exists and is reviewed. The steps below are the exact procedure for that later session. They are not a record of a session that already happened.
+Status: **PENDING**. Phases 3, 4, 5, and 6 are not run in this package. RC3 cannot enforce the $40 ceiling. RC4 source can. Do not enter a key and do not press Test connection until RC4 is frozen and `RC4-IDENTITY.md` names the source under test. The steps below are the exact procedure for that later session. They are not a record of a session that already happened.
 
-Build under test when that session is allowed: RC3 source `45568c575a00a8810b661929624995ec24e6de1e`, or a later commit that only adds the reviewed pricing and $40 ceiling. The key is typed only into the Admin password field.
+Build under test when that session is allowed: the frozen RC4 source named in `docs/wp6/RC4-IDENTITY.md`. The key is typed only into the Admin password field. Confirm the screen before any test: pricing reviewed 2026-10-17, expires `2026-11-16T00:00:00Z`, input $2, cached input $0.10, cache writes $2.50, output $10 per 1M tokens, and a cumulative provider-test cap of $40. Prior $20 history, if shown, is audit-only and is not counted toward that cap.
 
 ## Phase 3 — one Admin Test connection
 
@@ -20,7 +20,7 @@ Pass only if all of these are true:
 
 - The key was accepted. Status says a credential is configured. The key string is absent from the page, the status JSON, the audit file, and the screenshot.
 - The model was available. The test status is passed, kind tiny synthetic inference, and the assistant reply completed.
-- Pricing was accepted. Readiness does not say pricing expired, and the rates on screen match the reviewed quote. On RC3 this check fails with `AI_PRICING_EXPIRED`.
+- Pricing was accepted. Readiness does not say pricing expired, and the rates on screen match the reviewed quote above. On RC3 this check fails with `AI_PRICING_EXPIRED`. On RC4 the reviewed window runs through `2026-11-16T00:00:00Z` and a later clock is refused before the call.
 - The reservation is correct. One reservation was taken, usage was recorded, the reservation is not left in flight or unknown, and the remaining ceiling dropped by that reservation only.
 - Nothing leaked. The provider error body, if any, is not shown. The key is not in the reply.
 - There was no duplicate call. Pressing the same test again returns the original outcome and does not send a second request.

@@ -20,11 +20,13 @@ The authoritative reference is the Wiki under [docs/wiki/Home.md](docs/wiki/Home
 
 Later documentation commits sit on top of that source SHA. They do not change the ZIP bytes. RC2 and RC1 stay frozen. Identity detail is in [docs/wp6/RC3-IDENTITY.md](docs/wp6/RC3-IDENTITY.md).
 
+This checkout is the RC4 release-maintenance candidate on top of that frozen RC3 source. RC4 is not a new product. It adds the reviewed gpt-6.1-sol rates and a server-enforced $40 cumulative provider-test authorization, the npm 11 lockfile entries with `jsdom@29.1.1` pinned as a devDependency, the v95 suite teardown, a new-conversation context reset, and dark-mode contrast for the starter suggestions and the active navigation item. RC4 is not frozen in the RC3 ZIP. No paid provider call is part of the candidate.
+
 Demo Complete is not claimed. Adapter Verified is **NO**. Live Integration Verified is **NO**.
 
 ## Prerequisites
 
-- Node.js and npm 10.9.x. RC3 was installed with npm 10.9.9. npm 10.9.2 also accepts `app/package-lock.json`. npm 11.21.0 does not: `npm ci` exits with EUSAGE because that lockfile is missing the non-Linux optional packages. The regeneration is proposed in [docs/wp6/RC3-COORDINATOR-PHASE1.md](docs/wp6/RC3-COORDINATOR-PHASE1.md) and is not applied.
+- Node.js and npm 10.9.x or npm 11.21.0. RC3 was installed with npm 10.9.9, and npm 11.21.0 rejected that lockfile. This checkout adds the missing optional platform entries and pins `jsdom@29.1.1` as a devDependency, so `npm ci` is required to succeed on both npm 10.9.9 and npm 11.21.0. The RC3 diagnosis remains in [docs/wp6/RC3-COORDINATOR-PHASE1.md](docs/wp6/RC3-COORDINATOR-PHASE1.md).
 - Google Chrome, if you run the browser checks.
 - A clean working copy. Do not point the demo at a production database or a real provider key.
 
@@ -61,7 +63,7 @@ npx vite preview --host 127.0.0.1 --port 18195 --strictPort
 
 ## Reset Demo
 
-Use **New conversation** in the sidebar. That clears the current thread and the current referent. It does not delete the browser history of earlier conversations. To wipe local demo state, close the app and remove the browser profile or the demo state directory the local server was given. Do not delete source fixtures to reset a session.
+Use **New conversation** in the sidebar. That starts a conversation with no selected investigation. The header keeps the synthetic plant and says no investigation is selected. It does not keep the previous line, asset, job, or case. A bare “Investigate it.” asks what to investigate. Saved history of earlier conversations stays available. To wipe local demo state, close the app and remove the browser profile or the demo state directory the local server was given. Do not delete source fixtures to reset a session.
 
 ## Tests and build
 
@@ -72,7 +74,7 @@ npm test
 npm run build
 ```
 
-`npm test` is `vitest run`. `npm run build` is `tsc --noEmit && vite build`. The RC3 extraction counted 2,952 passed, 0 failed, 496 files, and that process exited 0. An independent rerun of the same 2,952 passed tests exited 1. Vitest reported an unhandled rejection, `ReferenceError: window is not defined` at `app/src/investigation/CanonicalWorkspace.tsx:58`, while `app/src/server/v95SameDraftRecovery.test.tsx` was running. That file passes alone. The process exit is timing-dependent. The proposed teardown guard is in [docs/wp6/RC3-COORDINATOR-PHASE1.md](docs/wp6/RC3-COORDINATOR-PHASE1.md) and is not applied. Historical writers expect a gitignored `evidence/` directory beside the app; create it before a full run if a proof file fails to open.
+`npm test` is `vitest run`. `npm run build` is `tsc --noEmit && vite build`. The RC3 extraction counted 2,952 passed, 0 failed, 496 files, and that process exited 0. An independent rerun of the same 2,952 passed tests exited 1. Vitest reported an unhandled rejection, `ReferenceError: window is not defined` at `app/src/investigation/CanonicalWorkspace.tsx:58`, while `app/src/server/v95SameDraftRecovery.test.tsx` was running. RC4 drains that update before unmount in the test file. The product component is unchanged for that bug. A full RC4 extraction is required to exit 0. Historical writers expect a gitignored `evidence/` directory beside the app; create it before a full run if a proof file fails to open.
 
 Browser frames from the RC3 production preview are [docs/wp6/screenshots](docs/wp6/screenshots) files named `rc3-*`. The catalog is [docs/wp6/RC3-FRAME-INDEX.md](docs/wp6/RC3-FRAME-INDEX.md). Other filenames in that folder are the RC1 set from `63ccec7`. The frozen ZIP does not contain the `rc3-*` frames. Browser checks need Chrome plus a running app. They are not a substitute for `npm test`.
 
@@ -80,11 +82,11 @@ Browser frames from the RC3 production preview are [docs/wp6/screenshots](docs/w
 
 | What you see | What to do |
 | --- | --- |
-| npm 11 `npm ci` says the lock file is out of sync | Expected on this lockfile. npm 10.9.x installs it. The npm 11 regeneration is proposed and not applied |
+| npm 11 `npm ci` says the lock file is out of sync | That is the frozen RC3 lockfile. This checkout's lockfile is required to install on npm 11.21.0. Do not regenerate it with `npm install --package-lock-only`; that drops jsdom |
 | A local `app/node_modules` symlink from an older checkout | Remove that local symlink, then `npm ci`. This branch does not track `app/node_modules` |
 | A proof test cannot write `../evidence` | `mkdir -p evidence` from the repository root and rerun |
 | Chat says the provider is not connected | That is Demo mode. Governed local answers continue. Do not paste a key into Chat |
-| Admin says pricing has expired | The saved price expired `2026-10-16T00:00:00Z`. RC3 will not take a new price or a $40 ceiling from the Admin screen. See [docs/wp6/PHASE-2-PROVIDER-PREP.md](docs/wp6/PHASE-2-PROVIDER-PREP.md) |
+| Admin says pricing has expired | RC3 expired `2026-10-16T00:00:00Z`. RC4 reviews the official gpt-6.1-sol rates on 2026-10-17 and expires `2026-11-16T00:00:00Z`, with a server-enforced $40 cumulative cap. Do not type a key until RC4 is frozen. See [docs/wp6/PHASE-2-PROVIDER-PREP.md](docs/wp6/PHASE-2-PROVIDER-PREP.md) |
 | Port already in use | Stop the other preview or pick another port. RC evidence used 18192 (RC1), 18194 (RC2), and 18195 (RC3) |
 | Live mode shows a missing-capability sentence | The adapter failed closed. It did not substitute synthetic data. Adapter Verified remains NO |
 
@@ -97,7 +99,7 @@ Current production and backend status:
 - The UI adapter fails closed.
 - Current EKAS backend main does not implement the investigation, case, and metric contract this UI needs.
 - No live integration test has been accepted.
-- The paid provider test is not authorized on RC3 until a reviewed source change can enforce current pricing and the $40 cumulative ceiling.
+- The paid provider test is not run on RC3. RC4 source enforces the current rates and the $40 cumulative ceiling on the server. The key is entered only in Admin after RC4 is frozen. No paid call has been made.
 
 ## Wiki
 
