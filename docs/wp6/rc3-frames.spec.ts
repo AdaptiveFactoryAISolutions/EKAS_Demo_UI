@@ -106,6 +106,9 @@ test('RC3 shell, dashboard, mobile, and tooltip frames', async () => {
 test('RC3 ambiguous referent, new conversation, investigation, and evidence frames', async () => {
   const { context, page } = await openClean('referent');
   await ask(page, 'Run my plant review.');
+  const review = page.locator('article.ekas-captured-reply').last();
+  await expect(review).toContainText(/150 good units/);
+  await shot(page, 'rc3-plant-review');
   await ask(page, 'Compare the speed loss and the quality loss.');
   await ask(page, 'Investigate it.');
   const ambiguous = page.locator('article.ekas-captured-reply').last();

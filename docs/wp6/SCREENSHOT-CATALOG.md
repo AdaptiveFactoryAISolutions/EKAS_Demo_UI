@@ -1,6 +1,10 @@
-# Browser evidence catalog — EKAS DEMO RC3 checkpoint
+# Browser evidence catalog — EKAS DEMO RC3
 
-Clean Chrome profile against `vite preview` of extracted `45568c5` at `http://127.0.0.1:18195`. These frames are the referent correction. They are not the unaided Step 16 rehearsal.
+The full `rc3-*` set was recaptured on 2026-10-17 from `vite preview` of extracted `45568c5` at `http://127.0.0.1:18195`. The catalog is [RC3-FRAME-INDEX.md](RC3-FRAME-INDEX.md). Hashes are [RC3-FRAMES.sha256](RC3-FRAMES.sha256). Files in `screenshots/` that are not named `rc3-*` are the RC1 set from `63ccec7` and the RC2 checkpoint, listed below. The frozen ZIP has 70 png members under `docs/wp6/screenshots/` and no `rc3-` member. These later frames are not inside the ZIP.
+
+## RC3 checkpoint
+
+Clean Chrome profile against that same preview. These frames are the referent correction. They are not the unaided Step 16 rehearsal.
 
 | File | What it shows |
 | --- | --- |

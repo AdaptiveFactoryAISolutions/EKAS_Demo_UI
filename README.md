@@ -24,7 +24,7 @@ Demo Complete is not claimed. Adapter Verified is **NO**. Live Integration Verif
 
 ## Prerequisites
 
-- Node.js and npm, matching the lockfile in `app/` (the app was built with the Vite 8 / TypeScript toolchain pinned by `app/package-lock.json`).
+- Node.js and npm 10.9.x. RC3 was installed with npm 10.9.9. npm 10.9.2 also accepts `app/package-lock.json`. npm 11.21.0 does not: `npm ci` exits with EUSAGE because that lockfile is missing the non-Linux optional packages. The regeneration is proposed in [docs/wp6/RC3-COORDINATOR-PHASE1.md](docs/wp6/RC3-COORDINATOR-PHASE1.md) and is not applied.
 - Google Chrome, if you run the browser checks.
 - A clean working copy. Do not point the demo at a production database or a real provider key.
 
@@ -32,13 +32,13 @@ Demo Complete is not claimed. Adapter Verified is **NO**. Live Integration Verif
 
 ```bash
 git clone https://github.com/AdaptiveFactoryAISolutions/EKAS_Demo_UI.git
-cd EKAS_Demo_UI
-rm -f app/node_modules
-cd app
+cd EKAS_Demo_UI/app
 npm ci
 ```
 
-`npm ci` uses `app/package-lock.json`. If `app/node_modules` is a symlink left by an older checkout, remove that symlink first so the install can create a real directory.
+`npm ci` uses `app/package-lock.json`. This branch does not track `app/node_modules`. The README inside the frozen RC3 ZIP still says that path is a tracked symlink and that the suite was 2,896 passed and 13 failed. That is the README at source `45568c5`. It is not this page.
+
+If an older local checkout left `app/node_modules` as a symlink, remove that local symlink before `npm ci`.
 
 ## Start Demo
 
@@ -72,15 +72,16 @@ npm test
 npm run build
 ```
 
-`npm test` is `vitest run`. `npm run build` is `tsc --noEmit && vite build`. The RC3 extraction suite was 2,952 passed, 0 failed, 496 files. Historical writers expect a gitignored `evidence/` directory beside the app; create it before a full run if a proof file fails to open.
+`npm test` is `vitest run`. `npm run build` is `tsc --noEmit && vite build`. The RC3 extraction counted 2,952 passed, 0 failed, 496 files, and that process exited 0. An independent rerun of the same 2,952 passed tests exited 1. Vitest reported an unhandled rejection, `ReferenceError: window is not defined` at `app/src/investigation/CanonicalWorkspace.tsx:58`, while `app/src/server/v95SameDraftRecovery.test.tsx` was running. That file passes alone. The process exit is timing-dependent. The proposed teardown guard is in [docs/wp6/RC3-COORDINATOR-PHASE1.md](docs/wp6/RC3-COORDINATOR-PHASE1.md) and is not applied. Historical writers expect a gitignored `evidence/` directory beside the app; create it before a full run if a proof file fails to open.
 
-Browser checks live at the repository root and need Chrome plus a running app. They are not a substitute for `npm test`.
+Browser frames from the RC3 production preview are [docs/wp6/screenshots](docs/wp6/screenshots) files named `rc3-*`. The catalog is [docs/wp6/RC3-FRAME-INDEX.md](docs/wp6/RC3-FRAME-INDEX.md). Other filenames in that folder are the RC1 set from `63ccec7`. The frozen ZIP does not contain the `rc3-*` frames. Browser checks need Chrome plus a running app. They are not a substitute for `npm test`.
 
 ## Troubleshooting
 
 | What you see | What to do |
 | --- | --- |
-| `npm ci` refuses because `app/node_modules` is a symlink | `rm -f app/node_modules`, then `npm ci` again |
+| npm 11 `npm ci` says the lock file is out of sync | Expected on this lockfile. npm 10.9.x installs it. The npm 11 regeneration is proposed and not applied |
+| A local `app/node_modules` symlink from an older checkout | Remove that local symlink, then `npm ci`. This branch does not track `app/node_modules` |
 | A proof test cannot write `../evidence` | `mkdir -p evidence` from the repository root and rerun |
 | Chat says the provider is not connected | That is Demo mode. Governed local answers continue. Do not paste a key into Chat |
 | Admin says pricing has expired | The saved price expired `2026-10-16T00:00:00Z`. RC3 will not take a new price or a $40 ceiling from the Admin screen. See [docs/wp6/PHASE-2-PROVIDER-PREP.md](docs/wp6/PHASE-2-PROVIDER-PREP.md) |
