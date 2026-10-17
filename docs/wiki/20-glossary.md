@@ -19,3 +19,7 @@
 | Referent | The case or metric a pronoun such as “it” points at |
 | Synthetic | Fixture data. Marked in the UI. Not a live plant |
 | Verified financial value | A finance-accepted result. Distinct from observed loss and from modeled opportunity |
+| Canonical entity | The governed EKAS id a source identifier may resolve to. Not a merge of similar names |
+| EvidenceReference | Source system, source id, type, version, known-at, effectivity, and controlled status. Documented, not implemented on RC3 |
+| Governed mapping | An authorized identity link. The only basis for combining cross-system evidence |
+| Unresolved mapping | Two or more source records kept apart because no governed map links them |

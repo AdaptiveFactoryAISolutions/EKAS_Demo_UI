@@ -30,3 +30,19 @@ Use the sections in `docs/integration/WP5B-GAP-CONTRACT.md` for the field lists 
 2. Add a dedicated governed metric read with definition version, scope, period, value, unit, target, direction, status, and source time.
 3. Map those routes in the adapter and remove the matching fail-closed refusal only after the contract is present.
 4. Run an authorized live test. Until that test passes, Live Integration Verified stays NO.
+
+## Cross-system gaps, documented after RC3
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.**
+
+These rows are not part of the RC1 handoff above and do not change the deferred investigation, case, and metrics dependency. They are additional missing capabilities, specified for a later authorization. The contract text is [docs/wiki/14-production-backend-gaps.md](../wiki/14-production-backend-gaps.md) and [docs/wiki/cross-system/](../wiki/cross-system/01-cross-system-manufacturing-data.md).
+
+- Canonical entity resolve: external system plus external id to a canonical entity. A miss stays unresolved.
+- Entity aliases: canonical entity to the source ids a mapping version allows.
+- Evidence search by context: plant, line, asset, job, part, revision, and period.
+- Evidence search by canonical entity.
+- Cross-system relationship lookup. `CAUSED_BY` is never created from correlation.
+- Historical and effectivity lookup.
+- Source-version lookup.
+
+No adapter refusal is removed for these rows. None of the future acceptance tests has been run.

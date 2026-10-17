@@ -29,6 +29,14 @@ Orders, execution state, genealogy as the execution system records it, and the t
 
 A conversation that ties a missed goal to the evidence the systems already hold, a named owner, an authorization, a record of work, a verification, and a sustain or reopen decision. If the evidence is not in the record, EKAS says it is not supplied.
 
+## Every source system
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.**
+
+SOURCE SYSTEMS OWN FACTS. EKAS OWNS THE GOVERNED DECISION CONTEXT THAT CONNECTS THEM.
+
+The MES sentence above is the execution case of that rule. PLM, ERP, CMMS, QMS, SCADA, the historian, and requirements or V&V keep the same standing: each owns the facts it creates. EKAS owns the decision context that cites them. The cross-system contract is [Cross-system context, identity, and lineage](cross-system/01-cross-system-manufacturing-data.md). It does not move an execution write into EKAS, and it is not implemented on RC3.
+
 ## Boundary rules
 
 - Do not claim EKAS replaces MES.

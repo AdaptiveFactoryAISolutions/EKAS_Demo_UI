@@ -30,6 +30,10 @@ The RC3 ZIP is a git archive of `45568c5` excluding the nested RC1 and RC2 zip f
 
 RC1 is frozen. RC2 is a test-only delta on RC1 and is frozen. RC3 changes the referent and the plant-facing timestamp presentation and is the accepted source for this Wiki. A documentation commit after `45568c5` does not change those ZIP bytes.
 
+## Cross-system acceptance
+
+The tests in [Cross-system integration acceptance](cross-system/08-integration-acceptance-tests.md) are a future specification. They are not part of the RC3 suite. None is passed. Documenting them does not mark the capability implemented.
+
 ## Human rehearsal
 
 The 120-minute unaided rehearsal is Phase 8. The packet is `docs/wp6/PHASE-8-REHEARSAL-PACKET.md`. The mandatory checkpoint is Plant Review, focus first, Investigate it, opening the feeder-jam case. A recorded screenshot is not that rehearsal. The required result, which is not claimed here, is READY FOR LIVE USER TESTING with 0 P0, 0 P1, and critical P2 closed.

@@ -246,6 +246,56 @@ Message and command keys make a repeat of the same operation return the original
 
 Invalid request, unauthorized, forbidden, stale authorization, conflict, dependency unavailable, and unsupported capability. Unsupported is local: `UNSUPPORTED_BACKEND_OPERATION`. The UI shows the sentence. It does not fill the screen from the demo service.
 
+## Cross-system records
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.**
+
+RC3 does not send these objects and the adapter does not normalize them. The shapes are the contract every important future record has to be able to answer: where did this come from, what does it refer to, when was it true, which version, and how does it connect to other evidence. The field lists and the refusal rules are [Cross-system evidence lineage](cross-system/05-evidence-lineage.md). Missing means missing. Do not infer.
+
+### EvidenceReference
+
+| Field | Contract |
+| --- | --- |
+| `sourceSystem` | Owning system of record |
+| `sourceRecordId` | Id in that system |
+| `sourceRecordType` | Record type in that system |
+| `sourceVersion` | Version the source assigned |
+| `knownAt` | When this integration knew the record. A future instant is not present evidence |
+| `effectiveFrom` | Source effectivity start, when the source has one |
+| `effectiveTo` | Source effectivity end, when the source has one |
+| `controlledStatus` | Source control state. Not invented by EKAS |
+
+### Context
+
+`plantId`, `lineId`, `assetId`, `workCenterId`, `jobId`, `operationId`, `partId`, `revision`, `lotId`, `serialId`, `shift`, `period`.
+
+A canonical id is written only after a governed map resolves it. An unresolved source id stays on the EvidenceReference and is not copied into the canonical context field.
+
+### Lineage
+
+| Field | Contract |
+| --- | --- |
+| `canonicalEntityId` | Canonical entity when resolution succeeded |
+| `relatedEvidenceIds` | Evidence the relationship points at |
+| `relationshipType` | A type from the correlation rules. `CAUSED_BY` is never implied |
+| `relationshipAuthority` | Governed map, source foreign key, or explicit human assertion |
+| `relationshipConfidence` | Only when a governed rule supplies it. Otherwise the field is absent |
+| `mappingVersion` | Map version used for the link |
+
+### Reads the UI will need later
+
+These reads are specified and not available. Live mode does not call them.
+
+| Read | Request | Response when missing |
+| --- | --- | --- |
+| Resolve | `sourceSystem` plus external id | Unresolved. No canonical id is guessed |
+| Aliases | `canonicalEntityId` and map version | The source ids the map allows at that version |
+| Evidence by context | plant, line, asset, job, part, revision, period | Only records whose context fields are present and match. Absent context does not match "all" |
+| Evidence by canonical entity | `canonicalEntityId` | Evidence linked at a governed map version |
+| Relationships | entity or evidence id | Descriptive relationships. No automatic cause |
+| Effectivity and history | entity, document, and time | The record effective at that time, or an explicit miss |
+| Source version | `sourceSystem`, `sourceRecordId`, `sourceVersion` | That version, or a miss. A newer version is not substituted |
+
 ## Backend gap contract
 
 The field-level gap against backend main `473bdc0d2458fcffdbe516d220d4f88bcb2f1916` is [14 Production backend gaps](14-production-backend-gaps.md). Deferred production dependency: current EKAS_Platform_v2 main lacks the complete investigation, case, and metrics contract required for full backend-connected EKAS behavior.

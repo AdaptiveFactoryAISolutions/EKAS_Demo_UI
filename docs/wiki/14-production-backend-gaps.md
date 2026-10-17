@@ -23,7 +23,16 @@ Deferred production dependency, verbatim in substance: current EKAS_Platform_v2 
 | Health probe | Unauthenticated `/healthz` and `/livez` exist as a shape the UI knows how to validate | `/healthz`, `/livez` | PARTIAL | A green probe is not readiness for the rows above |
 | Expected-version conflicts for investigation commands | Not applicable | No command | MISSING | Define the stale-version error when the command exists |
 | Live integration test | Not run | — | UNVERIFIED | Run only after the missing rows exist |
+| Canonical entity resolve | No resolve from external system plus external id | No route | MISSING | Add resolve. Documented now, not implemented. An unmatched id stays unresolved |
+| Entity aliases | No canonical-to-source alias list | No route | MISSING | Add the alias read at a mapping version. Documented now, not implemented |
+| Evidence search by context | No search by plant, line, asset, job, part, revision, and period | No route | MISSING | Add the search. Absent fields do not match everything. Documented now, not implemented |
+| Evidence search by canonical entity | No search by canonical entity id | No route | MISSING | Add the search. Documented now, not implemented |
+| Cross-system relationship lookup | No relationship resource. Correlation is not a cause | No route | MISSING | Add descriptive relationships. Never create `CAUSED_BY` from correlation. Documented now, not implemented |
+| Historical and effectivity lookup | No effectivity or as-of read across source versions | No route | MISSING | Add the lookup. A superseded document stays superseded. Documented now, not implemented |
+| Source-version lookup | Evidence-by-hash is not a source version read | `/v1/evidence/sha256:{hash}` is a different identity | MISSING | Add lookup by source system, source id, and source version. Documented now, not implemented |
 
 Status meanings: VERIFIED means an accepted test against this main; PARTIAL means a related surface exists and is not the required contract; MISSING means the contract is absent; UNVERIFIED means this pass did not re-fetch the backend.
 
 Required action for every MISSING row is the same shape: add it on the backend, map it in the adapter, then remove the matching refusal only after a test. Until then the refusal stays.
+
+The seven cross-system rows are **DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION**. They were added after RC3 as contract only. They are not part of the RC1 handoff against main `473bdc0d2458fcffdbe516d220d4f88bcb2f1916`, and they do not change that deferred dependency. The field contract is [Cross-system context](cross-system/01-cross-system-manufacturing-data.md). Acceptance tests for a future implementation are [page 8 of that section](cross-system/08-integration-acceptance-tests.md). None of those tests has been run.

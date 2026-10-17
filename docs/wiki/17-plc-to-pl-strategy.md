@@ -30,3 +30,9 @@ A feeder jam is a machine or process loss. The 150 good units below plan are a p
 ## Where EKAS sits
 
 EKAS reads across this chain to interpret and to govern the decision. The systems in the chain remain the systems of record for their own data. See [18 MES boundary](18-mes-boundary.md).
+
+## Cross-system chain
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.**
+
+The production chain this package joins, and does not replace, is PLC and sensors, then SCADA and the historian, then MES, QMS, and CMMS, then ERP, then finance and the P&L. The join is governed identity and evidence lineage, specified in [Cross-system context](cross-system/01-cross-system-manufacturing-data.md). Observed loss is not modeled opportunity. Modeled opportunity is not verified financial value. Retrieving an ERP cost beside an MES quantity does not create verified financial value.

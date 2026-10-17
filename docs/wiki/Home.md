@@ -27,8 +27,23 @@ EKAS is a chat-first governed manufacturing decision-intelligence system. It is 
 19. [Build method, engineering quality, and known risks](19-build-method-engineering-quality-and-known-risks.md)
 20. [Glossary](20-glossary.md)
 
+## Cross-system context, identity, and lineage
+
+**DOCUMENTED NOW — NOT YET IMPLEMENTED IN PRODUCTION.** This section does not change RC3 and does not create RC4. Start at [Cross-system manufacturing data](cross-system/01-cross-system-manufacturing-data.md).
+
+1. [Cross-system manufacturing data](cross-system/01-cross-system-manufacturing-data.md)
+2. [System ownership boundaries](cross-system/02-system-ownership-boundaries.md)
+3. [Canonical EKAS identity model](cross-system/03-canonical-ekas-identity-model.md)
+4. [Entity resolution](cross-system/04-entity-resolution.md)
+5. [Evidence lineage](cross-system/05-evidence-lineage.md)
+6. [Cross-system correlation rules](cross-system/06-cross-system-correlation-rules.md)
+7. [Adapter normalization](cross-system/07-adapter-normalization.md)
+8. [Integration acceptance tests](cross-system/08-integration-acceptance-tests.md)
+9. [Known data quality risks](cross-system/09-known-data-quality-risks.md)
+10. [Production integration roadmap](cross-system/10-production-integration-roadmap.md)
+
 The repository README is the start-here page for a new engineer: [../../README.md](../../README.md).
 
 ## Self-check
 
-A new engineer can clone, install, and start Demo from the README and [02 Quick start](02-quick-start.md). Architecture, Chat, context, journeys, and dashboards are pages 03, 04, 05, and 08. The API contract and Demo versus Production are pages 06 and 07. Backend gaps are page 14. Security is page 10. Tests, build, and troubleshooting are the README and pages 09 and 11. What may be refactored, and what must not regress, is page 19. If a page and the running RC3 disagree, the running source wins and the page should be corrected in documentation only.
+A new engineer can clone, install, and start Demo from the README and [02 Quick start](02-quick-start.md). Architecture, Chat, context, journeys, and dashboards are pages 03, 04, 05, and 08. The API contract and Demo versus Production are pages 06 and 07. Backend gaps are page 14. Security is page 10. Tests, build, and troubleshooting are the README and pages 09 and 11. What may be refactored, and what must not regress, is page 19. Cross-system identity and lineage are the section above. They are specified and not implemented. If a page and the running RC3 disagree, the running source wins and the page should be corrected in documentation only.

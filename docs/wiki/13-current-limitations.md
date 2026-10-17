@@ -12,5 +12,6 @@ These are limits of RC3. They are not a backlog of features to add in this pass.
 - The senior engineering review has not returned a verdict.
 - Final release is not approved.
 - External dashboard pictures, if anyone consults them, are research references only. Nothing visual is copied from them.
+- Cross-system identity, lineage, and adapter normalization are documented and not implemented. See `docs/wiki/cross-system/01-cross-system-manufacturing-data.md`. RC3 chat, dashboards, evidence, and the adapter runtime are unchanged.
 
 Known product sentences that must remain true are the 150 plant shortfall, the 138 Line 03 contribution, and the refusal sentences in live mode.

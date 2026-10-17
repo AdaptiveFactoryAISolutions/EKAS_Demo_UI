@@ -101,4 +101,4 @@ Current production and backend status:
 
 ## Wiki
 
-Start at [docs/wiki/Home.md](docs/wiki/Home.md).
+Start at [docs/wiki/Home.md](docs/wiki/Home.md). Cross-system context, identity, and lineage is documented under [docs/wiki/cross-system/](docs/wiki/cross-system/01-cross-system-manufacturing-data.md) and is not implemented in RC3.
